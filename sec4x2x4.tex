@@ -1,0 +1,127 @@
+\pagebreak
+\subsection{ Taylor の公式}
+\label{sec4x2x4}
+
+Taylor の公式(\ref{eq3x39})の部分積分による別証明を述べる．
+$f=f(x),	g=g(x)$を或る区間$I$で$n$回連続微分可能な関数，$f^{(k)}=f^{(k)}(x),
+g^{(k)}=g^{(k)}(x)$をそれぞれその$k$次導関数として部分積分を繰り返せば
+\begin{align*}
+	\int	fg^{(n)}dx
+									&=fg^{(n-1)}	-	\int	f'g^{(n-1)}	dx	\\
+									&=fg^{(n-1)}	-	f'	g^{(n-2)}	+	\int	f''	g^{(n-2)}	dx	\\
+									&=fg^{(n-1)}	-	f'	g^{(n-2)}	+	f''	g^{(n-3)}	-	\int	f'''	g^{(n-3)}	dx	\\
+									&=	\cdots	\\
+									&=	fg^{(n-1)}	+	\sum_{k=1}^{n-1}(-1)^k	f^{(k)}	g^{(n-1-k)}	+	(-1)^n	\int	f^{(n)}g	dx
+\end{align*}
+を得る．すなわち
+\begin{equation}
+	\int	f	g^{(n)}	dx	=	fg^{(n-1)}	+	\sum_{k=1}^{n-1}	(-1)^k	f^{(k)}	g^{(n-1-k)}	+	(-1)^n	\int	f^{(n)}	g	dx.
+\label{eq4x30}
+\end{equation}
+ここで$g^{(0)}	=	g$としていることは言うまでもない．$b$を$I$に属する任意の点として
+\[
+	g=g(x)	=	\frac{(-1)^n}{(n-1)!}	(b-x)^{n-1}	=	-	\frac{1}{(n-1)!}	(x-b)^{n-1}
+\]
+とおく．これを$k$回微分すると
+\[
+	\frac{d^k }{d x^k}	(x-b)^{n-1}	=	(n-1)(n-2)	\cdots	(n-k)(x-b)^{n-1-k}
+\]
+であるから
+\[
+	g^{(k)}	=	-	\frac{1}{(n-k-1)!}	(	x	-	b)^{n-1-k}.
+\]
+したがって
+\begin{align*}
+	g^{(n-1-k)}	
+		&=	-	\frac{1}{(n-(n-1-k)-1)!}(x-b)^{n-1-(n-1-k)}	\\
+		&=	-	\frac{1}{k!}(x-b)^k	=	-	\frac{(-1)^k}{k!}(b-x)^k,	\quad	k=0,1,2,\cdots	,	n-1,	\\
+\end{align*}
+特に$g^{(n-1)}=	g^{(n-1-0)}	=	-1,		\quad	(k=0\text{のとき})$，これをさらに1回微分すると，$g^{(n)}=0$である
+\footnote{
+負の数の階乗$(-1)!$の議論との整合性を取らなければならない．別途必要か？
+}
+．
+故に，(\ref{eq4x30})により，
+\begin{align*}
+	0	=	\int	f	\cdot	0	\:	dx
+		=	f(x)	-	\sum_{k=1}^{n-1}	\frac{f^{(k)}(x)}{k!}	(b-x)^k	+	\int	\frac{f^{(n)}(x)}{(n-1)!}(b-x)^{n-1}	dx.
+\end{align*}
+区間$I$に属する点$a$を一つ定めたとき，この式から直ちに
+\[
+	0	=	\left[
+				-f(x)	-	\sum_{k=1}^{n-1}	\frac{f^{(k)}	(x)}{k!}	(b-x)^k
+			\right]_a^b
+		+	\int_a^b	\frac{f^{(n)}(x)}{(n-1)!}	(b-x)^{n-1}	dx,
+\]
+すなわち
+\[
+	f(b)	=	f(a)	+	\sum_{k=1}^{n-1}	\frac{f^{(k)}(a)}{k!}	(b-a)^k
+								+	\frac{1}{(n-1)!}	\int_a^b	f^{(n)}(x)(b-x)^{n-1}	dx
+\]
+を得る．積分変数$x$を$t$，$b$を$x$に書き換えれば，
+\begin{align}
+	f(x)	=	f(a)	+	\sum_{k=1}^{n-1}	\frac{f^{(k)}(a)}{k!}	(x-a)^k	+	R_n,	\notag	\\
+		R_n	=	\frac{1}{(n-1)!}	\int_a^x	f^{(n)}(t)	(x-t)^{n-1}	dt.	
+\label{eq4x31}
+\end{align}
+$a	<	x$なる場合には，$a	\leqq	t	<	x$のとき$(x-t)^{n-1}	>	0$であるから，
+定理4.3
+\footnote{\small 
+定理4.3　閉区間$[a,b]$で$f(x),g(x)$が共に\underline{連続}で開区間$(a,b)$でつねに$g(x) >0$ならば
+\[
+	\int_a^b	f(x)	g(x)	dx	=	f(\xi)	\int_a^b	g(x)	dx	,	\quad	a	<	\xi	<	b
+\]
+なる点$\xi$が存在する．
+}により，
+\[
+	\int_a^x	f^{(n)}(t)(x-t)^{n-1}	dt	=	f^{(n)}(\xi)	\int_a^x	(x-t)^{n-1}	dt,	a	<	\xi	<	x,
+\]
+なる$\xi$が存在する．$x	<	a$なる場合には，
+\[
+	\int_x^a		f^{(n)}(t)(t-x)^{n-1}	dt	=	f^{(n)}(\xi)	\int_x^a	(t-x)^{n-1}	dt	,	\quad
+	x	<	\xi	<	a,
+\]
+なる$\xi$が存在するが，$(t-x)^{n-1}	=	(-1)^{n-1}	(x-t)^{n-1}$であるから，
+\begin{align*}
+	&(-1)	\int_a^x	f^{(n)}(t)	(t-x)^{n-1}	dt	=	(-1)	f^{(n}(\xi)	\int_a^x	(t-x)^{n-1}	dt	\\
+	&	\Rightarrow	\int_a^x	f^{(n)}	(t-x)^{n-1}	dt	=	f^{(n)}(\xi)	\int_a^x	(t-x)^{n-1}	dt	\\
+	&	\Rightarrow	\int_a^x	f^{(n)}	(-1)^{n-1}(x-t)^{n-1}	dt	=	f^{(n)}(\xi)	\int_a^x	(-1)^{n-1}	(x-t)^{n-1}	dt	\\
+	&	\Rightarrow	\int_a^x	f^{(n)}(t)	(x-t)^{n-1}	dt	=	f^{(n)}	(\xi)	\int_a^x	(x-t)^{n-1}	dt	
+\end{align*}
+となる．いずれの場合にも結局
+\begin{align*}
+	\int_a^x	f^{(n)}	(t)	(x-t)^{n-1}	dt	=	f^{(n)}(\xi)	&\int_a^x	(x-t)^{n-1}	dt,	\\
+																												\xi	=	a	+	\theta	(x-a)	,	\quad	0	<	\theta	<1,
+\end{align*}
+なる$\xi$が存在することになる．
+$\displaystyle	\int_a^x	(x-t)^{n-1}	dt	=	(1/n)	(x-a)^n$であるから，
+したがって
+\begin{align}
+	R_n	&=	\frac{1}{(n-1)!}	\int_a^x	f^{(n)}(t)	(x-t)^{n-1}	dt	\notag	\\
+			&=	\frac{f^{(n)}(\xi)}{n!}	(x-a)^n,	\quad	\xi	=	a	+	\theta	(x-a)	,	\quad	0	<	\theta	<1.
+		\label{eq4x32}
+\end{align}
+これでTaylorの公式(\ref{eq3x39})が証明されたのである．
+
+この積分法によるTaylorの公式の証明は\S \ref{sec3x4x3}で述べた微分法による証明よりも見通しがよいが，
+$f(x)$が$n$回\underline{連続}微分可能であると仮定することが必要である
+\footnote{
+定理 4.3 を使うには$f^{(n)}(t)$が(定理 4.3の$f(x)$に該当する）\underline{連続}でなければならない．
+}
+\S \ref{sec3x4x3}では$f(x)$は$n$回微分可能ならばよかったのである．しかしこの仮定のわずかな相違は
+効用乗はあまり重要でない．それよりも(\ref{eq4x31})において剰余項$R_n$が定積分で表わされている
+ことに興味がある．この$R_n$の積分表示から(\ref{eq4x32})を導くのに
+$\displaystyle	\int_a^x	f^{(n)}(t)(x-t)^{n-1}dt$の被積分関数を$f^{(n)}(t)$と
+$(x-t)^{n-1}$の積と考えて定理4.3を適用したが，
+$f^{(n)}(t)(x-t)^q	$と$(x-t)^{n-1-q},	q$は$0	\leqq	q	\leqq	n-1$なる整数，
+の積と見なして定理4.3を適用すれば
+\begin{align*}
+	\int_a^x	f^{(n)}(t)(x-t)^{n-1}dt	&=	f^{(n)}(\xi)(x-\xi)^q	\int_a^x	(x-t)^{n-1-q}	dt	\\
+																		&=	f^{(n)}(\xi)(x-\xi)^q	\frac{(x-a)^{n-q}}{n-q},
+																		&	\xi	=	a	+	\theta	(x-a),	\quad	0	<	\theta	<1,
+\end{align*}
+なる$\xi$の存在がわかる．$x-\xi	=	(1-\theta)(x-a)$であるから
+\[
+	R_n	=	\frac{f^{(n)}(\xi)	(1-\theta)^q}{(n-1)!(n-q)}(x-a)^n,	\quad	\xi	=	a+\theta	(x-a),	\quad	0	<	\theta	<	1.
+\]
+これはすなわSchl\"omilshの剰余項(\ref{eq3x42})に他ならない．

@@ -1,0 +1,124 @@
+\section{偏微分}
+\label{sec6x2}
+
+\subsection{偏微分}
+\label{sec6x2x1}
+
+$f	(x,y)$を平面$	\R^2$上の或る領域$D$で定義された関数とし，$(a,b)$を$D$
+に属する一つの点とする．$x$の関数$f	(x,b)$が$a$で$x$について微分可能ならば，
+2変数$x,y$の関数$f(x,y)$は点$(a,b)$で$x$について偏撒分可能（partially	differentiable）
+であるといい，$f(x,b)$の$a$におげる微分係数を$f_x	(a,b)$で表わす：
+\begin{equation}
+	f_x(a,b)	=	\lim_{x\rightarrow a}	\frac{f(x,b)	-	f(a,b)}{x-a}.
+\label{eq6x5}
+\end{equation}
+そしてこの$f_x	(a,b)$を点$(a,b)$における$f(x,y)$の$x$に関する
+\textbf{偏微分係数}（partial differential coefficient）とよぶ．
+$x$の関数$	f(x,b)$の定義域は或る区間$(a	-	\varepsilon,	a	+	\varepsilon),
+\varepsilon	>	0$，を含むから（\ref{eq6x5}）の右辺の極限を考察することが
+できるのである．
+$D$に属する点の座標を変数と同じ文字で表わす習慣に従って，
+（\ref{eq6x5}）の$a,b$をそれぞれ$x,y$で，（\ref{eq6x5}）の右辺の
+$x$を$x+h$で置き換えれば
+\begin{equation}
+	f_x	(x,y)	=	\lim_{h\rightarrow 0}	\frac{f(x+h,	y)	-	f(x,y)}{h}
+\label{eq6x6}
+\end{equation}
+$	z	=	f(x,y)$とおきたとき，$f_x	(x,y)$を$\partial z / \partial x$で
+表わす：
+\[
+	\frac{\partial z}{\partial x} =	f_x	(x,y)	,	\quad	z	=	f(x,y)
+\]
+関数$f	(x,y)$がその定義域$D$に属するすべての点$(x,y)$で$x$について偏微分
+可能であるとき$f(x,y)$は$x$について偏微分可能であるという．
+このとき$f_x(x,y)$も$D$で定義された2変数$x,y$の関数となる．
+この関数$f_x	(x,y)$を$f(x,y)$の$x$に関する\textbf{偏導関数}
+(	partial derivative ) とよぴ，$f	(x,y)$から$	f_x	(x,y)$を求めることを関数
+$f(x,y)$を$x$について\textbf{偏微分する}という．
+
+$f(x,y)$を$x$について偏微分することは，すなわち，$y$に固定して
+$f(x,y)$を$x$の関数と考えて微分することに他ならない．
+関数$z	=	f(x,y)$の$x$に関する偏導関数を表わす記号には
+$f_x	(x,y)$，$	\partial	z	/	\partial	x$の他に
+$\partial f(x,y) / \partial x$，$	(	\partial	/	\partial	x	)	f(x,y)$，
+$D_x	f(x,y)$等がある．
+
+同様に，点$(x,y)$において極限：
+\begin{equation}
+	f_y	(	x,y)	=	\lim_{k\rightarrow 0}	\frac{f(x,y+k)	-	f(x,y)}{k}
+\label{eq6x7}
+\end{equation}
+が存在すれば，$f	(x,y)$は点$(x,y)$で$y$について偏微分可能であるといい,
+$f_y	(x,y)$を$y$に関する偏微分係数とよぶこと，
+$f(x,y)$が$D$に属するすべての点で$y$について偏微分可能ならば
+$f(x,y9$は$y$について偏微分可能ならば$f(x,y)$は$y$は$y$について
+偏微分可能であるといい，$f_y(x,y)$を$f(x,y$)の$y$に関する
+偏導関数とよぶこと，$z=f(x,y)$とおいたとき
+$f_y(x,y)$を$\partial z / \partial y$で表すこと，等はいうまでもない．
+
+$z=f(x,y)$が$x$について偏微分可能で偏導関数$\partial z / \partial x f_x(x,y)$が
+$x$あるい$y$について偏微分可能ならば，$f_x(x,y)$を$x$あるいは$y$について偏微分して
+$2$次の偏導関数
+\[
+\frac{\partial }{\partial x}	\left(	\frac{\partial z}{\partial x}\right)
+=
+\frac{\partial ^2z}{\partial x^x}	=	f_{xx}	(x,y)	
+\quad	\text{あるいは}	\quad
+\frac{\partial }{\partial y}	\left(	\frac{\partial z}{\partial x}\right)
+=
+\frac{\partial ^2z}{\partial y\partial x}	=	f_{xy}(x,y)
+\]
+を得る．
+\[
+	\frac{\partial }{\partial x}
+	\left(	\frac{\partial z}{\partial y}
+	\right)
+	=	\frac{\partial ^2z}{\partial x\partial y}	=	f_{yx}(x,y),
+	\quad
+	\frac{\partial }{\partial y}
+	\left(	\frac{\partial z}{\partial y}
+	\right)
+	=	\frac{\partial ^2z}{\partial y^2}	=	f_{yy}	(x,y),
+\]
+$3$次以上の偏導関数
+\begin{align*}
+	\frac{\partial }{\partial x}
+		\left(	\frac{\partial ^2z}{\partial y\partial x}
+		\right)
+	=	\frac{\partial ^3z}{\partial x	\partial y \partial x}	=	f_{xyx*}(x,y),	\\
+	\frac{\partial }{\partial x}
+	\left(	\frac{\partial ^3z}{\partial x^3}
+	\right)
+	=	\frac{\partial ^4z}{\partial x^3}
+	=	\frac{\partial^4	z}{\partial x^4}	=	f_{xxxx}(x,y),
+\end{align*}
+等についても同様である．
+
+\例{6.3}
+\S\ref{sec6x1}，例6.2の関数$f(x,y)$は，$y=0$のとき$(x,0)=0,y	\ne	0$
+のとき$f(x,y)	=	2xy/(x^2+	y^2)$であるから，
+$x$について偏微分可能であって
+\[
+	y\ne	0	\:	\text{のとき}	\quad	f_x(x,0)	=0,			
+\]
+\begin{align*}
+	f_x(x,y)	&=	2y(x^2+y^2)^{-1} 	+ 2xy \{ (x^2 + y^2)^{-1} \}'	\\
+						&=	2y(x^2+y^2)^{-1}	+	2xy \cdot (-1) \cdot (x^2 + y^2)^{-2} \cdot 2x	\\
+						&=	2y(x^2+y^2)(x^2+y^2)^{-2} - 4x^2y \cdot (x^2 + y^2)^{-2}	\\
+						&=	\frac{4x^2y + 2y^3 - 4x^2y}{(x^2+y^2)^{2}}	\\
+						&=	\frac{2y^3	-	2x^2y}{(x^2+y^2)^2}.	
+\end{align*}
+同様に$f(x,y)$は$y$についても偏微分可能である．
+しかし$f(x,y)$は原点$(0,0)$で連続でない
+\footnote{
+
+}
+．――
+
+この例6.3が示すように，領域$D$で定義された関数$f(x,y)$は$x$および$y$に
+ついて偏微分可能であっても$2$変数$x,y$の関数としては必ずしも連続であると
+は限らない．偏微分可能性は変数$x,y$の“一方だけを変動させて他方を固定し
+た”ときの$f(x,y)$の性質，連続性は$x,y$“同時に変動させた”ときの$f(x,y)$
+の性質であるから，偏微分可能性から連続性が出ないのは当然であるが，このこ
+とは，$f(x,y)$の$x$および$y$に関する偏微分可能性とは別に，2変数$x,y$の関数
+としての$f(x,y)$の微分可能性を定義すべきであることを示唆する．

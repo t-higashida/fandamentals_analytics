@@ -1,0 +1,170 @@
+\subsection{矩形塊上の積分}
+
+平面$\R^2$上における有限個の矩形の合併集合を\textbf{矩形塊}という．
+\footnote{
+高木貞治“解析概論”，p.422.
+}
+\補題{7.l}
+$\R^2$上に有限個の矩形瓦={@，ッ)1の≦$x$≦あ，oえ≦Ψ≦4λ}が与えられたとき，
+矩形$K= \{ \: (x,y) \: | \: a \leqq x \leqq b , c \leqq y \leqq d \: \}$と
+その分割 $ \varDelta = ( \{ x_0 , x_1 , \cdots , x_m \} , \quad , \{ y_0 , y_1 , \cdots , y_m \: \} ),
+a = x_0 < x_1 < \cdots < x_m = b , c=y_0 < y_1 < \cdots < y_n = d$，を
+\[
+	a_\lambda , b_\lambda \in \{ x_0 , x_1 , \cdots , x_m \} , c_\lambda , d_\lambda \in \{ y_0 , y_1 , \cdots , y_n \}
+\]
+なるように選べぱ，各矩形$K_\lambda $は$K_\lambda$に含まれる小矩形$K_{jk} = \{ \: (x,y) \: | \: x_{j-1} \leqq x \leqq x_j , y_{k-1} \leqq y \leqq y_k \}$
+の合併集合となる：
+\[
+	K_\lambda = \cup_{K_{jk} \subset K_\lambda } K_{jk},
+\]
+
+\証明
+
+仮定により$ a_\lambda = x_{i(\lambda ) } , b_\lambda = x_{j( \lambda )} , c_\lambda = y_{h ( \lambda )} , d_\lambda = y_{k(\lambda)}$であるから
+\[
+	K_\lambda = \bigcup_{j=i ( \lambda ) + 1}^{j(\lambda)} \bigcup_{k = h(\lambda ) + 1 }^{k (\lambda )} K_{jk} = \bigcup_{K_{jk} \subset K_\lambda} K_{jk}.
+\]
+\■
+
+\underline{矩形塊はどの二つも内点を共有しない有限個の矩形の合併集合として表わされる.}
+\証明 
+矩形塊$A = \bigcup_{\lambda = 1}^\nu K_\lambda , K_\lambda$は矩形，が与えられたとき，上記の補題7.1により
+\[
+	K_\lambda = \bigcup_{K_{jk} \subset K_\lambda} K_{jk},
+\]
+故に
+\[
+	A= \subset_{\lambda = 1}^\nu K_\lambda = \bigcup_{K_{jk} \subset \varLambda} K_{jk}.
+\]
+$K_{jk}$と$K_{ih}, \quad (i,h) \ne (j,k)$，が内点を共有しないことは明らかである．
+\■
+
+矩形塊$A$をどの二つも内点を共有しない矩形$K_\lambda , \lambda=1,2, \cdots , \nu$の合併集合として
+\[
+	A= K_1 \cup K_2 \cup \cdots \cup K_\lambda \cup \cdots \cup K_\nu \quad
+(K_\lambda) \cap (K_\rho ) = \varnothing \quad (\lambda \ne \rho),
+\]
+と表わすことを$A$を\underline{有限個の矩形}$ K_1 , K_2 , \cdots , K_\lambda , \cdots , K_\rho$
+\underline{に分割する}という．
+矩形塊$A$上で連続な関数$f(x,y)$が与えられたとする．このとき，$A$を有限個の矩形$K_\lambda, \lambda=1,2,\cdots , \nu$，
+に分割して
+\[
+	\sigma = \sum_{ \lambda=1 }^\nu \int_{K_\lambda} f(x,y) dx dy
+\]
+とおけば，$ \sigma$は$A$だけで定まり$A$を矩形$K_\lambda$に分割する分割の仕方にはよらない．
+\証明
+$A$を別な仕方で有限個の矩形$L_1 , L_2 , \cdots , L_\nu$に分割したとして，矩形
+$ K_1 , K_2 , \cdots , K_\nu , L_1 , L_2 , \cdots , L_\nu$に補題7.1を適用すれば
+\[
+	K_\lambda = \bigcup_{ K_{jk} \subset K_\lambda } K_{jk} , L_\lambda = \bigcup_{ K_{jk} \subset L_\lambda } K_{jk}.
+\]
+故に，定理7.2により
+\[
+	\int_{K_\lambda} f(x,y) dx dy = \sum_{K_{jk} \subset K_\lambda} \int_{K_{jk}} f(x,y) dx dy.
+\]
+$A = \bigcup_{\lambda = 1 }^\nu K_\lambda = \bigcup_{ K_{jk}  \subset A } K_{jk}$であるが，
+$K_\lambda$と$K_\rho, \rho \ne \lambda$，は内点を共有しないから，各$ K_{jk} \subset A$に対して
+$K_{jk} \subset K_\lambda$なる$K_\lambda$がただ一つ定まる．したがって
+\[
+	\sigma = \sum_{\lambda=1}^\nu \sum_{K_{jk} \subset K_\lambda } \int_{K_{jk}} f(x,y) dx dy
+= \sum_{K_{jk} \subset \varLambda}^{} \int_{K_{jk} } f(x,y) dx dy.
+\]
+この右辺は$ K_1 , K_2 , \cdots , K_\lambda , \cdots , K_\nu$を
+$L_1 , L_2 , \cdots , L_\lambda , \cdots , L_\mu$でおきあえても変わらない．
+すなわち$ \sigma$$A$だけで定まる．
+\■
+
+\定義{7.2}
+$\sigma$を$A$における$f(x,y)$の積分あるいは$f(x,y)$の$A$上の積分といい
+$ \displaystyle \int_A f(x,y) dx dy$で表わす：
+\begin{align}
+	\int_A f(x,y) dx dy= \sum_{\lambda=1}^{\nu}	\int_{K_\lambda} f(x,y) dx dy,	\label{sec7x16}	 \\
+A = \bigcup_{\lambda=1}^\nu K_\lambda , \quad (K_\lambda ) \cap ( K_\rho ) = \varnothing \quad	\notag
+(\lambda \ne \rho ) . 
+\end{align}
+$f(P) = f(x,y), g(P) = g(x,y)$，とおいたとき積分$\displaystyle \int_A f(x,y) dx dy$を
+$\displaystyle \int_A f(P) dw$などと書く．
+
+\定理{7.5}
+$ f(P) = f(x,y) , g(P) = g(x,y), P=(x,y)$，を矩形塊$A$上で連続な関数とする．
+\begin{list}{}{}
+	\item	$(1^\circ)$ $A$は無い点を共有しない二つの矩形塊$B,E$の合併集合：$A =B \cup E , (B) \cap (E) = \varnothing$
+ならば
+\begin{equation}
+	\int_A f(x,y) dx dy = \int_B f(x,y) dx dy + \int_E f(x,y) dx dy.
+\label{sec7x17}
+\end{equation}
+	\item $(2^\circ)$ $c_1 , c_2$を任意の定数としたとき
+\[
+	\int_A ( c_1 f(P) + c_2 g(P)) d w = c_1 \int_A f(P) dw + c_2 \int_A g(P) dw.
+\]
+\item $(3^\circ)$ 矩形塊$A$においてつねに$f(x,y) \geqq g(x,y)$ならば
+\[
+	\int_A f(x,y) dx dy \geqq \int_A g(x,y) dx dy
+\]
+であって，$A$で恒等的に$f(x,y) = g(x,y)$である場合を除けば
+\[
+	\int_A f(x,y) dx dy > \int_A g(x,y) dx dy.
+\]
+\item $(4^\circ)$ 
+\begin{equation}
+	\left|	\int_A f(x,y) dxdy 
+	\right|
+	\leqq \int_A | f(x,y) | dx dy.
+\label{sec7x18}
+\end{equation}
+\item $(5^\circ)$ 矩形塊$B$が$A$に含まれている：$B \subset A$ならば
+\begin{align}
+	\int_B | f(x,y) | dx dy \geqq \int_A | f(x,y) | dx dy,	\label{sec7x19}	\\
+	\left|	\int_A f(P) dw - \int_B f(P) dw \right| \leqq \int_A | f(P) | dw - \int_B | f(P) | dw.
+	\label{sec7x20}
+\end{align}
+\end{list}
+\証明
+$(1^\circ)$ $B,E$をそれぞれ有限個の矩形に分割して$B = \bigcup_{\lambda=1}^\mu K_\lambda , E= \bigcup_{\lambda = \mu + 1}^\nu K_\lambda$
+と表わせば，$(B) \cap (E)= \varnothing$であるから，結局$A = \bigcup_{\lambda=1}^\nu K_\lambda , (K_\lambda) \cap (K_\rho) = \varnothing \: ( \lambda \ne \rho)$
+となる．故に，定義7.2により，直ちに（\ref{eq7x17}）を得る．
+
+$(2^\circ)$，$(3^\circ)$，$(4^\circ)$は定理7.1，$(2^\circ)$，$(3^\circ)$，$(4^\circ)$によって明らかである．
+
+$(5^\circ)$　$A= \bigcup_{\lambda=1}^\nu K_\lambda , B= \bigcup_{\rho = 1}^\nu H_\rho$として
+矩形$K_1 , K_2 , \cdots , K_\nu , H_1 , H_2 , \cdots , H_\mu$に穂題7.1を適用すれば
+\[
+	A = \bigcup_{K_{jk} \subset A} K_{jk} , \quad B = \bigcup_{K_{jk} \subset B} K_{jk}
+\]
+となることがわかる．$E$を$K_{jk} \subset A$，$K_{jk} \not\subset B$なる小矩形K齢の合併集合とすれば，したがって
+\[
+	A = B \cup E , (B) \cap (E) = \varnothing.
+\]
+故に，$(1^\circ)$と$(3^\circ)$により
+\begin{equation}
+	\int_A | f(P) | dw - \int_B | f(P) | dw = \int_E | f(P)| dw \geqq 0,
+\label{eq7x21}
+\end{equation}
+すなわち不等式$(\ref{eq7x19})$が成り立つ．さらに，$(1^\circ)$により
+\[
+	\int_A f(P) dw - \int_B f(P) dw = \int_E f(P) dw
+\]
+であるが，（\ref{eq7x18}）と（\ref{eq7x21}）により
+\[
+	\left|	\int_E f(P) dw
+	\right|
+	\leqq
+	\int_E |f(P)| dw
+	=
+	\int_A |f(P)| dw - \int_B |f(P)| dw.
+\]
+故に（\ref{eq7x21}）が成り立つ．さらに，$(1^\circ)$により
+\[
+	\int_A f(P) dw - \int_B f(p) dw = \int_E f(P) dw
+\]
+であるが，（\ref{eq7x18}）と（\ref{eq7x21}）により
+\[
+	\left|	\int_E f(P) dw
+	\right|
+	\leqq
+	\int_E | f(P)| dw
+	=	\int_A | f(P) | dw	-	\int_B | f(P) | dw.
+\]
+故に(\label{eq7x20})が成り立つ．
+

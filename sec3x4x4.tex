@@ -1,0 +1,112 @@
+\subsection{凸関数，凹関数}
+
+$x$の関数$f(x)$が与えられたとし，$I$を$f(x)$の定義域に含まれている区間とする．
+$I$に属する任意の2点$x_1,	x_2,	\:	x_1	\ne	x_2$，と$\lambda	+	\mu	=1$なる任意の
+正の実数$\lambda	,	\mu$に対して，つねに不等式：
+\begin{equation}
+	f(\lambda	x_1	+	\mu	x_2)	\leqq	\lambda	f(x_1)	+	\mu	f(x_2)
+\label{eq3x47}
+\end{equation}
+が成り立つならば，関数$f(x)$は区間$I$で\textbf{凸 (convex) }である，あるいは下に凸
+であるといい，つねに不等式：
+\begin{equation}
+	f(\lambda	x_1	+	\mu	x_2)	<	\lambda	f(x_1)	+	\mu	f(x_2)
+\label{eq3x48}
+\end{equation}
+が成り立つならば，$f(x)$は$I$で\textbf{狭義に凸 (strictly convex)}であるという．
+
+関数$f(x)$のグラフを$G_f$とし，$P_1	=	(x_1	,	f(x_1)),	\:	P_2	=	(x_2	,	f(x_2))$とおけば，
+\[
+	P=	(	\lambda	x_1	+	\mu	x_2	,	\lambda	f(x_1)	+	\mu	f(x_2))
+\]
+は線分$P_1P_2$上の点，
+\[
+	Q=	(\lambda	x_1	+	\mu	x_2	,	f(\lambda	x_1	+	\mu	x_2))
+\]
+は$G_f$上の点である．したがって，不等式(\ref{eq3x47})が常に成り立つということは
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=5cm,height=4cm]{p138.bmp}
+\end{figure}
+線分$P_1	P_2$上の各点$P$がグラフ$G_f$の‘上側’にあるか，または$G_f$上にあることを意味し，
+不等式(\ref{eq3x48})が常に成り立つということは成分$P_1P_2$上の各点$P, \: P \ne P_1 \ne P_2,$が
+$G_f$の‘上側’にあることを意味する．
+
+$I$に属する任意の2点$x_1 ,	x_2$と$\lambda	+	\mu	=	1$なる任意の正の実数$\lambda	,	\mu$に対して，
+(\ref{eq3x47})の不等式の向きを逆にした不等式：
+\[
+	f(\lambda	x_1	+	\mu	x_2)	\geqq	\lambda	f(x_1)	+	\mu	f(x_2)	
+\]
+が常に成り立つならば，$f(x)$は$I$で\textbf{凹 (concave) }である，あるいは上に凸であるといい，
+不等式：
+\[
+	f(\lambda	x_1	+	\mu	x_2)	>	\lambda	f(x_1)	+	\mu	f(x_2)		
+\]
+が常に成り立つならば，$f(x)$は$I$で\textbf{狭義に凹 (strictly concave) }であるという．
+$f(x)$が$I$で凹である，あるいは狭義に凹であるということは，すなわち$-f(x)$が$I$で凸である，
+あるいは狭義に凸であることに他ならないから，以下主として凸な関数について考察する．
+
+区間$I$で定義された関数$f(x)$が$I$で凸であるとき，$f(x)$を\textbf{凸関数 (convex function)}とよぶ．
+さらに$f(x)$が$I$で狭義に凸ならば，$f(x)$を\textbf{狭義の凸関数 (strictly convex function)}とよぶ．
+\textbf{凹関数,狭義の凹関数}の定義も同様である．
+
+\定理{3.15}
+関数$f(x)$は区間$I$で2回微分可能であるとする．
+\begin{list}{}{}
+	\item	$(1^{\circ})$ $f(x)$が$I$で凸であるための必要かつ十分な条件は$I$の内点$x$でつねに$f''(x) \geqq 0$なることである．
+	\item $(2^{\circ})$ $I$の内点$x$でつねに$f''(x) > 0$ならば$f(x)$は$I$で狭義に凸である．
+\end{list}
+
+\証明
+$(1^{\circ})$ まず，$f(x)$が$I$で凸であると仮定して，$I$の内点$x$で常に$f''(x) \geqq 0$となることを
+示す．仮定により不等式(\ref{eq3x47})，すなわち
+\[
+	f(\lambda	x_1	+	\mu	x_2) \leqq \lambda f(x_1) + \mu f(x_2)
+\]
+が成り立つ．$x$を$I$の内点として，$x_1 = x-h$，$x_2 = x+ h$，$\lambda = \mu = 1/2$とおけば，
+$\lambda x_1 + \mu x_2 = x$となるから
+\[
+	f(x) \leqq \frac{1}{2} f(x-h) + \frac{1}{2} f(x+h)
+\]
+を得る．故に，(\ref{eq3x41})により，
+\[
+	f''(x) = \lim_{h\rightarrow 0} \frac{f(x+h) + f(x-h) - 2f(x)}{h^2} \geqq 0.
+\]
+
+逆に，$I$の内点$x$でつねに$f''(x) \geqq 0$であると仮定して，関数$f(x)$が$I$で凸であることを証明する．
+このために不等式(\ref{eq3x47})の両辺の差を
+\[
+	\varDelta = \lambda f(x_1) + \mu f(x_2) - f(\lambda x_1 + \mu x_2)
+\]
+と表わす．$x_1 < x_2$として$a= \lambda x_1 + \mu x_2$とおけば，Taylorの公式(\ref{eq3x39})により
+\begin{align*}
+	f(x_1)	-	f(a)	&=	f'(a)	(x_1	-	a)	+	\frac{1}{2}	f''(\xi_1)	(x_1	-	a)^2	,	\quad	x_1	<	\xi_1	<	a,	\\
+	f(x_2)	-	f(a)	&=	f'(a)	(x_2	-	a)	+	\frac{1}{2}	f''(\xi_2)	(x_2	-	a)^2	,	\quad	a	<	\xi_2	<	x_2.
+\end{align*}
+この二つの等式にそれぞれ$\lambda	,	\mu$を掛けて
+\begin{align*}
+	\lambda	f(x_1)	-	\lambda	f(a)	=	\lambda	f'(a)(x_1	-a)	+	\lambda	\frac{1}{2}	f''(\xi_1)	(x_1	-a)^2	\\
+	\mu			f(x_2)	-	\mu	f(a)			=	\mu			f'(a)(x_2	-a)	+	\mu			\frac{1}{2}	f''(\xi_2)	(x_2	-a)^2
+\end{align*}
+辺々加えれば，$\lambda	(	x_1	-a)	+	\mu	(x_2	-	a)	=	\lambda	x_1	+	\mu	x_2	-a=0$であるから
+\begin{align}
+	&\lambda	f(x_1)	+	\mu	f(x_2)	-f(\lambda x_1 + \mu x_2)	\notag	\\
+	&\quad	=	f(a) (\lambda	(	x_1	-a)	+	\mu	(x_2	-	a)	)
+			+ \lambda	\frac{1}{2}	f''(\xi_1)	(x_1	-a)^2 + \mu			\frac{1}{2}	f''(\xi_2)	(x_2	-a)^2 \notag\\
+	&\Longrightarrow
+	\varDelta = \frac{1}{2}	\lambda	f''(\xi_1)	(x_1	-a)^2	+	\frac{1}{2}	\mu	f''(\xi_2)	(x_2	-a)^2	\label{eq3x49}
+\end{align}
+を得る．$\xi_1	,	\xi_2$は共に$I$の内点であるから，仮定により$f''(\xi_1)	\geqq	0,	f''(\xi_2)	\geqq	0$.
+故に$\varDelta \geqq 0$，すなわち不等式(\ref{eq3x47})が成り立つ．したがって$f(x)$は$I$で凸である．
+
+($2^\circ$) $I$の内点$x$でつねに$f''(x) > 0$であると仮定すれば，(\ref{eq3x49})において
+$f''(\xi_1) > 0, f''(\xi_2) > 0$であるから$\varDelta > 0$，すなわち不等式(\ref{eq3x48})が成り立つ．
+故に$f(x)$は$I$で狭義に凸である．
+\■
+
+\textbf{定理 3.15 の系}　
+$f(x)$は区間$I$で2回微分可能であるとする．
+\begin{list}{}{}
+	\item	($1^\circ$) $f(x)$が$I$で凹であるための必要かつ十分な条件は，$I$の内点$x$でつねに$f''(x) \leqq 0$なることである．
+	\item ($2^\circ$) $I$の内点$x$でつねに$f''(x) < 0$ならば，$f(x)$は$I$で狭義に凹である．
+\end{list}

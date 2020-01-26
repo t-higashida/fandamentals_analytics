@@ -1,0 +1,723 @@
+\chapter{多変数の関数}
+
+\section{2変数の関数}
+\label{sec6x1}
+$D	\subset	\R^2$を平面$\R^2$上の点集合とする．\S \ref{sec1x6x1}で述べたように，
+平面$\R^2$は，定義により，直積集合$\R	\times \R$，
+すなわち，二つの実数の対$(\xi,\eta)$全体の集合である．
+$D$に属するおのおのの点$P=(\xi,\eta)$にそれぞれ一つの実数$\zeta$を対応させる対
+応を$D$で定義された関数という．
+$f$を$D$で定義された関数としたとき，$f$によって
+$P=(\xi	,	\eta)	\in	D$に対応する実数$\zeta	$を$P=(\xi,\eta)$における$f$の値といい，
+それを$f(P)$あるいは$f(\xi,	\eta)$で表わす：
+\[
+	\zeta	=	f(P)	=	f(\xi	,	\eta).
+\]
+さらに，$S$を$D$の任意の部分集合としたとき，$f(P),P	\in	S$の全体の集合を
+$f(S)$で表わす：
+\[
+	f(S)	=	\{\:	f(P)	\:	|	\;	P	\in	S		\:\}
+\]
+そして$D$を関数$f$の定義域，
+$f$の値$f(P)$の全体の集合$f(D)$を関数$f$の値域という．
+
+関数$f$を$f(x,y)$で表わし，$x,y$を変数，$f(x,y)$を二つの変数$x,y$の関数と
+いう．これに対して\S	\ref{sec2x1}で導入した関数$f(x)$を1変数$x$の関数という．
+関数$f(x,y)$において，$x,y$は$D$に属する任意の点$P=(\xi,\eta)$の座標
+$\xi,\eta$を代表する記号，
+あるいは座標$\xi,\eta$を代入すべき揚所を示す記号であることは$1$変数の関数
+の場合と同様である．以下一般の習慣に従って$D$
+\underline{に属する点の座標を変数と同じ文字}$x,y$\underline{で表わす．}
+したがって$D$に属する点$P=(\xi,\eta)$は$P=(x,y)$と表わされる．
+$z	=	f(x,y)$とおいて$z$は$x$と$y$の関数であるといい，
+$x,y$を独立変数，$z$を従属変数ということがある．
+$z$が独立変数$x$と$y$の関数であるというとき，
+“$z$は$x$と$y$が変動するときそれに伴って変動する量である”と考えているので
+あるが，形式的には上記のように関数を対応として定義する．
+論証に際して誤りを侵さないためには厳密な形式的定義が有用である．
+2変数の関数の簡単な例としては，$x,y$の多項式，たとえば$x^4	+	y^4	-	4x^3y$，
+有理式，たとえば$2xy	/	(x^2	+	y^2)$，多項式の初等関数，たとえば
+$\log	(1-(x^2	+y^2	-	2)^2)$，初等関数の有理式，等がある．
+$x,y$の多項式の定義域はもちろん平面$\R^2$全体である．
+対数関数$\log$の定義域は$\R^+=(0,+\infty)$であるから，
+$\log	(1-(x^2	+	y^2	-2)^2)$の定義域は$1x^2	+	y^2-2|	<1$，いい換えれば
+\[
+	1	<	x^2	+	y^2	<	3
+\]
+なる点$(x,y)$の全体の集合，すなわち原点$0$を中心とする半径$1$の円周と半径
+$\sqrt{3}$の円周の間の部分である．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=60mm,height=50mm]{p254.bmp}
+	\label{p254}
+\end{figure}
+平面$\R^2$の任意の部分集合$D$に対して$D$を定義域とする2変数の関数
+$f(x,y)$を考えることはもちろん自由であるが，$D$として極端に‘狭い’集合，
+たとえば$D	=	\{	\:	(x,y)	\:	|	\:	y=x^2	,	0	\leqq	x	\leqq	1	\:\}$
+をとれば，$D$で定義された関数$f(x,y)$は実は1変数$x$の関数$f(x,x^2)$となる．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=50mm,height=40mm]{p254_2.bmp}
+	\label{p254_2}
+\end{figure}
+
+\例{6.1}
+2変数$x,y$の‘人工的’な関数の例を述べる．
+実数$x,y, \:	0	<	x	<1$，$0	<	y<1$，の10進小数表示をそれぞれ
+\begin{align*}
+	x	&=	0	.h_1	h_2	h_3	\cdots	h_n	\cdots	=	\frac{h_1}{10}	+	\frac{h_2}{10^2}	+	\frac{h_3}{10^3}	+	\cdots	+	\frac{h_n}{10^n}	+	\cdots	,	\\
+	y	&=	0	.k_1	k_2	k_3	\cdots	k_n	\cdots	=	\frac{k_1}{10}	+	\frac{k_2}{10^2}	+	\frac{k_3}{10^3}	+	\cdots	+	\frac{k_n}{10^n}	+	\cdots
+\end{align*}
+として
+\[
+	f(x,y)	=	0.h_1k_1	h_2k_2	\cdots	h_n	k_n	\cdots
+=	\frac{h_1}{10}	+	\frac{k_1}{10^2}	+	\frac{h_2}{10^3}	+	\frac{k_2}{10^4}	+	\cdots
+\]
+とおく．$x$あるいは$y$が有限小数に等しい揚合にはその10進小数表示として有
+限小数表示をとることにすれば，\S\ref{sec1x4x6}により，$x,y$の10進小数表示は一意的に定まり，
+$f(x,y)$は正方形の内部：$D=	\{	\:	(x,y)	\:	|	\:	0	<	x	<	1,	0	<	y	<	1	\}$で定義された関数となる．
+この関数の値域$f(D)$は開区間$(0,1)$から
+\[
+	z	=	0.	l_1	l_2	l_3	\cdots	l_{m-2}	9	l_m	9	l_{m+2}	9	\cdots	l_{m+2n}	9	l_{m+2n+2}	9	\cdots
+\]
+なる（1桁飛びおきに$m+2n+1$桁目に‘$9$’が現れるように表示される）形の無限小数をすぺて除いて得られる集合である．
+
+\subsubsection{領域,閉領域}
+平面$\R^2$上の開集合$U$が共通点をもたない二つの空でない開集合
+$V,W$合併集合:$U	=	V	\cup	W,	V	\cap	W	=	\varnothing$，であるとき，
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=100mm,height=50mm]{p255.bmp}
+	\label{p255}
+\end{figure}
+$U$で定義された関数$f(x,y)$を考察するには，$f(x,y)$を$V$および$W$で別々に考察すればよい．
+開集合$U$が共通点をもたない二つの空でない開集合の合併集合とならないとき，
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=100mm,height=50mm]{p255_2.bmp}
+	\label{p255_2}
+\end{figure}
+$U$は\textbf{連結}（connected）であるという．
+
+平面$\R^2$上の2点$P,Q$に対して，
+有限個の線分$PP_1,P_1P_2,P_2P_3,	\cdots	,P_{m-1}.Q$を
+継ぎ合せたもの，すなわち合併集合：
+\[
+	L=PP_1	\cup	P_1P_2	\cup	P_2P_3	\cup	\cdots	\cup	P_{m-2}P_{m-1}	\cup	P_{m-1}	Q
+\]
+を$P$と$Q$を結ぶ折線という．
+
+\underline{開集合 }$U$\underline{に属する任意の2点}$P,Q$\underline{を }$U$
+\underline{内にある折線で結ぶことができるならば }$U$\underline{は連結である．}
+\証明 $U$が連結でない，すなわち，$U	=	V	\cup	W,	V	\cap	W	=	\varnothing,	V,W$は空でない開集合，
+とする．点$P	\in	V,	Q	\in	W$を任意にとれば，仮定により，$U$内に$P$と$Q$を結ぶ折線：
+\[
+	L=	\bigcup_{k=1}^m	P_{k-1}P_k,	\quad	P_0	=	P	,	\quad	P_m	=	Q,
+\]
+が存在する．明らかに或る$k$に対して$P_{k-1}	\in	V,	P_k	\in	W$となる．
+\footnote{
+$P_{k-1}, P_k \in U = V \cup W$より．
+}
+$P_k	=(u_k,v_k)$とすれば
+\[
+	P_{k-1}P_k	=	\{	R	\:	|	\:	R=(\lambda	u_{k-1}	+	\mu	u_k,	\lambda	v_{k-1}	+	\mu	v_k),	\mu	=1-\lambda	,	0	\leqq	\lambda	\leqq	1	\:	\}
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=50mm,height=25mm]{p256.bmp}
+\end{figure}
+であるが，$R$と$P_{k-1}$の距離は
+\begin{align*}
+	r	=	|RP_{k-1}|	&=  \sqrt{( \lambda u_{k-1} + \mu u_k - u_{k-1})^2 + (\lambda	v_{k-1}	+ \mu v_k - v_{k-1})^2} \\
+									&=	\sqrt{( (\lambda-1) u_{k-1} + \mu u_k)^2 + ((\lambda	-1) v_{k-1}	+ \mu v_k)^2} \\
+									&=	\sqrt{( \mu u_k	-\mu u_{k-1})^2 + (\mu v_k - \mu v_{k-1})^2} \\
+									&=	\mu	\sqrt{(u_k	-	u_{k-1})^2	+	(v_k	-	v_{k-1})^2}	=	\mu	|	P_k	P_{k-1}|.
+\end{align*}
+故に$\rho	=	|P_k	P_{k-1}	|$とおいて$R$を$P(r)$で表わせぱ
+\[
+	P_{k-1}P_k	=	\{	P(r)	\:	|	\:	0	\leqq	r	\leqq	\rho	\:	\}
+\]
+である．明らかに$P(0)=P_{k-1}\in	V	,	P(\rho	)	=	P_k	\in	W$．
+なる実数$r	,	0	\leqq	r	\leqq	\rho$，の上限を
+\[
+	s	=	\sup_{P(r)	\in	V}	r
+\]
+とする．いま$P(s)	\in	V$
+\footnote{
+上限$s$が表される点が$V$に属する．
+}
+とすれば，$V$は開集合であるから，$P(s)$の或る
+$\varepsilon$近傍$U_\varepsilon	(P(s)),	\varepsilon	>	0$は
+$V$に含まれ，したがって$s	\leqq	r	<	s+	\varepsilon$ならば$P(r)	\in	V$
+となるが，これは$s$の定義に反する．故に$P(s)	\not\in	V$．
+同様に，$P(s)	\in	W$とすれば，
+或る$\varepsilon	,	\varepsilon	>	0$，に対して，$s	-	\varepsilon	<	r	\leqq	s$
+のとき$P(r)	\in	W$，したがって$P(r)	\not\in	V$となって
+$s$の定義に反する．故に$P(s)	\not\in	W$．
+すなわち$P(s)	\not\in	V	\cup	W	=	U$となるが，
+これは$P(s)	\in	P_{k-1}P_k	\subset	U$であることに矛盾する．
+故に$U$は連結である．
+
+逆に$ U$\underline{が連結開集合ならば} $ U$
+\underline{に属する任意の2点} $ P,Q$ \underline{を}$U$
+\underline{内にある折線で結ぶことができる．}
+
+\証明
+点$P	\in	U$を任意に選んで$U$内にある折線で$P$と結ぶことができる点
+$Q	\in	U$の全体の集合を$V$，$U$から$V$に属する点をすべて除いた残りを
+$W=U-V$とする．$U$が$V$と一致すること，
+すなわち$W$が空集合であることをいえばよい．
+このためには$V$と$W$が共に開集合であることを確かめればよい．
+なぜなら$U	=	V	\cup	W$，$V	\cap	W	=	\varnothing$
+で$U$が連結であるからである．
+\footnote{
+「連結」の定義の復習：開集合$U$が共通点を持たない二つの空でない開集合の
+合併集合と\underline{ならないとき}，$U$は連結であるという.
+}
+$U$は開集合であるから，各点$Q	\in	U$はそれぞれ
+$\varepsilon$近傍$U_\varepsilon	(Q)	\subset	U$をもつ．
+
+点$R	\in	U_\varepsilon(Q)$を任意にとったとき，
+線分$QR$はもちろん$U$内にあるから，
+$P$と$Q$を$U$内にある折線で結ぶことができるならば，
+$P$と$R$も$U$内にある折線で結ぶことができる．
+すなわち$Q	\in	 V$ならば$R	\in	V$，したがって$U_\varepsilon	(Q)	\subset	V$となる．
+故に$V$は開集合である．同様に$P$と$R$を$U$内にある折線で結ぶことができる
+ならば$P$と$Q$も$U$内にある折線で結ぶことができる．
+いい換えれば$U_\varepsilon	(Q)$と$V$が共通点$R$をもてぱ$	Q	\in	V$である．
+故に$Q	\in	W$
+\footnote{
+$P$と$Q$を線分で結ぶことができない
+}
+ならば
+\footnote{
+一つ前の結論の対偶をとって「$R$は$P$と線分で結ぶことが出来ない，$R \in W$
+}
+$	U_\varepsilon	(Q)	\subset	W$，すなわち$W$も開集合である．
+\■
+これで \underline{開集合} $U$が連結であるための必要かつ十分な条件は $U$
+\underline{に属する任意の2点} $P,Q$ \underline{を$U$内にある折線で } 
+\underline{結ぶことができることである}ことが証明された．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=100mm,height=50mm]{p257.bmp}
+\end{figure}
+これで連結の意味が明らかになったわけである．
+連結開集合を領域（domain,region）という．
+領域の閉包を閉領域とよぶ．この“解析入門”では主として領域
+で定義された関数，および閉領域で定義された関数を考察する．
+
+点集合$D	\subset	\R^2$の内点全体の集合$U$を$D$の
+\textbf{開核}（openkernel）という．
+
+\underline{$D$が閉領域ならば$D$の開核$U$は領域であって，
+$D$は$U$の閉包である：$D=[U]$}．
+\証明
+仮定により$D$は或る領域$\Omega	$の閉包である：
+$D	=	[	\Omega	]	$．各点$P	\in	\Omega$は$D$の内点であるから
+$	\Omega	\subset	U$，すなわち$	[	\Omega ] \subset [ U ]$
+\footnote{
+  \S \ref{sec1x6x2}，「故に$ T \subset S$ならば，$ [T] \subset [S]$」 
+}，$ U \subset D \subset [ \Omega ] $は自明ですなわち$[U] \subset [[\Omega]]=[\Omega]$
+\footnote{
+ \S \ref{sec1x6x3}，「$[S]=S$なるとき$S$を閉集合と呼ぶ（定義）」，
+「任意の点集合$S$の閉包$[S]$は閉集合である（命題）」
+}
+，したがって$D=	[	\Omega	]	=	[		U	]	$．
+$U$は開集合であるから，$U$が連結であることをいえぱよい．
+$U	=	V	\cup	W$，$	V	\cap	W	=	\varnothing$，
+$V,W$は開集合，とすれば，$	\Omega$は連結で$	\Omega	\subset	V	\cup	W$であるから，
+$	\Omega	\subset	V$または$	\Omega	\subset	W$である．
+$	\Omega	\subset	V$ならば$W	=	W	\cap	D	=	W	\cap	[	\Omega	]	\subset	W	\cap	[	V	]	=	\varnothing$
+\footnote{ 
+\small 
+「$W	\cap	[	V	]	=	\varnothing$」ついて検証。
+$W \cap [V] \ni \exists x$と仮定する．$\exists \varepsilon > 0$に対して$W \supset U_\varepsilon(x)$．
+一方$x \in [V] = V \cup \partial V$であるが，$V \cap W = \varnothing$より$x \in \partial V$となり，
+$\forall \varepsilon > 0$について $U_\varepsilon(x) \not\subset V, U_\varepsilon(x) \cap \ne \varnothing$
+（\S \ref{sec1x6x2}，境界点の定義より）．したがって$U_\varepsilon(x)$を媒介にして$V \cap W \ne \varnothing$
+となり矛盾．
+}，
+同様に$	\Omega	\subset	W$ならば	$	V	=	\varnothing$．故に$U$は連結である．
+\■
+
+$f(x,y)$を$D	\subset	\R^2$で定義された関数，
+$A	=	(a,b)$を$D$に属する点とすれば，
+$f(x,b)$は$(\xi,b)	\in	D$なる各実数$\xi$において$f	(	\xi	,	b)$なる値をとる
+$x$の関数を表わす．$f(x,b)$の定義域は$	\{	\xi	\:	|	\:	(	\xi,b)	\in	D	\}$
+である．たとえば$D	=	\{(x,y)	\:	|	\:	y=x^2,	0	\leqq	x	\leqq	1	\:	\}$
+である場合
+\footnote{
+この場合，$D$は領域ではない．
+}
+には，$(\xi	,	b)	\in	D$ならば$\xi	=	\sqrt{b}$となるから，
+$f(x,b)$はただ一つのの実数$	\sqrt{b}$からなる集合
+$\{	\sqrt{b}	\}$で定義された関数となってつまらないが，$D$が領域である揚合には，
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=50mm,height=50mm]{p258.bmp}
+	\caption{}
+	\label{p258}
+\end{figure}
+$|	\xi	-	a	|	<	\xi$のとき$(\xi	,	b)	\in	D$となるように正の実数
+$\varepsilon$を定めることができるから，
+$f(x,b)$の定義域は開区間$(a	-	\xi	,	a	+	\xi)$を含み，
+$f(x,b)$は実際に$x$の関数となる．
+
+関数$f(x,y)$の変数$y$を定数$b$で置き換えて得られる$x$の関数$f(x,b)$を考察
+するとき，文字$y$を文字$b$で置き換える手数を省略して，
+同じ文字$y$で定数を表わすことが多い．
+このとき，$y$\underline{を固定して}$f(x,y)$\underline{を}$x$\underline{の関数と考える}
+という．明らかにこのいい方の背景にも“$z	=	f(x,y)$は$x$と$y$が変動するのに伴って
+変動する量である”という考えがあるのである．$x$を固定して$f(x,y)$を$y$の関数と
+考えるということの意味も同様である．$y$を固定したとき$f(x,y)$が$x$の連続
+関数であるならば，関数$f(x,y)$は$x$について連続であるという．
+
+\subsubsection{極限}
+\S	\ref{sec2x1}で述べた1変数の関数の極限に関する考察は2変数の関数の極限
+についてもそのまま適用される．まず：
+
+\定義{6.l}
+$D$を平面$\R^2$上の任意の点集合，$f(P)	=	f(x,y),	P=(x,y)$，
+を$D$で定義された関数とし，$A$を$D$の集積点，$\alpha$を実数とする．
+任意の正の実数$\varepsilon$に対応して正の実数$\delta	(\varepsilon)$が定まって
+\begin{equation}
+	0	<	|	PA|	<	\delta	(\varepsilon)	\quad	\text{のとき}	\quad	|	f(P)	-	\alpha	|	<	\varepsilon
+\label{eq6x1}
+\end{equation}
+となるならば，$P	\to	A$のとき$f(P)$は$\alpha	$に収束する，
+$\alpha$は$	P		\to	A$のときの$f(P)$の極限であるといい，
+\[
+	\lim_{P\rightarrow	A}	f(P)	=	\alpha
+\]
+あるいは
+\[
+	P	\to	A	\quad	\text{のとき}	\quad	f(P)	\to	\alpha
+\]
+と書く．
+
+（\ref{eq6x1}）において$P	\in	D$と考えていることは1変数の関数の揚合と同様である．
+$A$を$D$の集積点と仮定したのは$	0	<	|PA| <	\delta	(\varepsilon)	$，
+なる点$P$が一つも存在しない揚合を除外するためである．
+
+$P	\to	A$のとき$f(P)$が$\alpha$に収束するならば，
+ $A$ に収束するすべての点列 $\{P_n	\}$，
+ $P_N	\in	D	,	P_n	\ne	A$，に対して数列 $\{	f(P_n)	\}$ は $\alpha$ に収束する．
+\証明
+$\{ P_n \}$が$A$に収束しているから，任意の正の実数$\delta$に対応して，
+\[
+	n	>	n_0		(	\delta	)		\quad	\text{のとき}	\quad	|PA|	<	\delta
+\]
+$n_0	(	\delta	)$を定めることができる．（\ref{eq6x1}）より任意の正の実数$	\varepsilon$に
+対応して，或る正数$\delta$が存在して，
+\[
+	0	<	|PA| < \delta \quad \text{のとき} \quad |f(P_n) - \alpha	|	<	\varepsilon
+\]
+となるが，このような$\delta$に対しても，$n_0	(	\delta)$が存在する。すなわち，
+\[
+	n	>	n_0	(	\delta	)	\quad	\text{のとき}	\quad |f(P_n)	-	\alpha	|	<	\varepsilon
+\]
+となり，$\{	f	(	P_n)	\}$は$\alpha$に収束する．
+\■
+
+逆に，$A$\underline{に収束するすべての点列}	$\{	P_n	\}$，
+$P_n	\ne	A$， \underline{に対して数列}	$\{	f(P_n)	\}$	\underline{が収束するならば}
+，$	P	\to	A$のとき $f(P)$	\underline{は収束する}．
+証明は	\S	\ref{sec2x1}で述べた1変数の関数の場合と同様である．
+
+\証明
+仮定により，$A$に収束する各々の点列$\{P_n\},	P_n \ne A$，に対して$	\alpha	= \lim_{n\rightarrow\infty} f(P_n)$
+が定まるが，この極限$A$は実は点列$\{P_n\}$によらない．なぜかといえば，$\{ P_n \}, P_n \ne A , \{ Q_n \} , Q_n \ne A$，
+が共に$A$に収束するならば，$P_n$と$Q_n$を交互に並べた点列$P_1, Q_1 , P_2, Q_2, \cdots , P_n , Q_n, \cdots$も
+$A$に収束する．この点列を$\{R_n \}$と表せば，
+\[
+	\lim_{n\rightarrow\infty} f(P_n) = \lim_{n\rightarrow\infty} f(R_n) = \lim_{n\rightarrow\infty} f(Q_n) = \alpha.
+\]
+すなわち，$\alpha = \lim_{n\rightarrow\infty} f(P_n)$は$\{ P_n \}$によらない．
+
+$P \to A$のとき，$f(P)$が$\alpha$に収束することを証明するために，$P \to A$のとき，
+$f(P)$が$\alpha$に収束しないと仮定してみよう．そうすれば，或る正の実数$\varepsilon_0$に対しては
+どんな正の実数$\delta$をとっても
+\[
+	0 < | P - A | < \delta \quad \text{ならば} \quad | f(P) - \alpha | < \varepsilon_0
+\]
+とはならない，すなわち，
+\[
+	0 < | P - A | < \delta \quad \text{でかつ} \quad | f(P) - \alpha | \geqq \varepsilon_0
+\]
+なる点$P$んが存在する．$\delta = 1/n$，$n$は自然数，とおけば，
+\[
+	0 < | P_n - A | < \frac{1}{n}, \quad , | f(P_n) - \alpha | \geqq \varepsilon_0
+\]
+なる点$P_0$が存在することになる．このようにして得られた点列$\{ P_n \}$，$ P_n \ne A$，は
+$A$に収束するから$\displaystyle \lim_{n\rightarrow\infty}	f(P_n) = \alpha$であるが，
+これは$|f(P_n) - \alpha | \geqq \varepsilon_0$に矛盾する．
+\■
+
+
+この結果から，1変数の関数の揚合と同様にして，Cauchy の判定法が導かれる：
+
+\定理{6.1}	（Cauchyの判定法）
+$f(P)$を$D$で定義された関数，$A$を$D$の集積点とする．
+$P	\to	A$のとき$f(P)$が収束するための\underline{必要かつ十分な条件は}任意の正の
+実数$\varepsilon$に対応して正の実数$\delta(\varepsilon)$が定まって
+\[
+	0	<	|PA|	<	\delta	(\varepsilon),
+	0	<	|QA|	<	\delta	(	\varepsilon	)
+\quad	\text{ならば}	\quad	|	f(P)	-	f(Q)	|	<	\varepsilon
+\]
+となることである．
+
+\証明
+
+必要性：
+$\displaystyle	\lim_{P\rightarrow A} f(P) = \alpha$とする．定義より任意の正の実数に対応する
+$	\displaystyle	\frac{\varepsilon}{2} $に対しても，ある正の実数$	\displaystyle	\delta \left(	\frac{\varepsilon}{2} \right)	> 0$
+が存在して
+\begin{align*}
+	0	<	|	P-A|	<	\delta \left(	\frac{\varepsilon}{2} \right) \Leftrightarrow | f(P) - \alpha | < \frac{\varepsilon}{2} \\
+	0	<	|	Q-A|	<	\delta \left(	\frac{\varepsilon}{2} \right) \Leftrightarrow | f(Q) - \alpha | < \frac{\varepsilon}{2}
+\end{align*}
+すなわち，
+\begin{align*}
+	| f(P) - f(Q) | &= 			| f(P) - \alpha + \alpha - f(Q) |	\\
+									&\leqq	| f(P) - \alpha | + | \alpha - f(Q) |	\\
+									&<      \frac{\varepsilon}{2} + \frac{\varepsilon}{2} < \varepsilon.
+\end{align*}
+
+十分性：「任意の正の実数$\varepsilon > 0$に対応して正の実数$	\delta ( \varepsilon )$が定まって，
+$	0 < |PA| < \delta ( \varepsilon) , 0 < |QA| < \delta(	\varepsilon )$ ならば $|f(P) - f(Q) | < \varepsilon$」
+が満たされていると仮定$(X)$して，$A$に収束する任意の数列$\{P_n\}	,	P_n \ne  A$，をとる．任意の正の実数$	\varepsilon > 0$
+に対して仮定$(X)$より$	\delta >0$が存在するから，$A$に収束する$	\{ P_n \}$においても$	\delta$，$	\varepsilon$に
+対して自然数	$	n_0 ( \delta ) $が定まって
+\[
+	n	>	n_0 ( \delta ) \quad \text{ならば} \quad | P_n - A | < \delta
+\]
+となっているから，$(X)$により，任意の正の実数$\varepsilon$に対して
+\[
+	m,n > n_0 (	\delta ( \varepsilon )) \quad \text{ならば} \quad | f( P_m) - f(P_n) | < \varepsilon
+\]
+となる．故に，数列の収束に関するCauchyの判定法により，数列$ \{ f(P_n ) \}$は収束する．
+したがって，上述の結果により，$P \to A$のとき$f(P)$は収束する．
+\■
+
+つぎの演算の法則が導かれることも1変数の関数の場合と同様である：
+$P	\to	A$のとき関数$	f(P)	,	g(P)$が共に収束するならば,
+その1次結合$	c_1	f(P)	+	c_2	g(P)$，
+$c_1,c_2$は定数，およびその積$f(P)g(P)$も収束して
+\begin{align*}
+	&\lim_{P\rightarrow A}	(c_1	f(P)	+	c_2g(P))	=	c_1	\lim_{P\rightarrow A}f(P)+c_2	\lim_{P\rightarrow A}g(P)	\\
+  &\lim_{P\rightarrow A}	(f(P)g(P))	=	\lim_{P\rightarrow A}f(P)	\cdot	\lim_{P\rightarrow A}f(P).
+\end{align*}
+さらに$\displaystyle	\lim_{P\rightarrow A} g(P)	\ne 0$ならば商$f(P)/g(P)$も収束して
+\[
+	\lim_{P\rightarrow A} (f(P)/g(P)) = \lim_{P\rightarrow A} f(P) / \lim_{P\rightarrow A} g(P).
+\]
+\証明
+$A$に収束する任意の数列$\{P_n\}, P_n \ne A$をとる．$\displaystyle	\lim_{P\rightarrow A} f(P) \lim_{P\rightarrow A} g(P)$
+が共に収束するから，数列$ \{ f(P_n) \} , \{ g(P_n) \}$も収束する．故に定理1.15，定理1.19により
+\begin{align*}
+	\lim_{P\rightarrow A}	(c_1 	f(P) 	\pm c_2 g(P) )
+&= \lim_{n\rightarrow\infty}	(c_1	 f(P_n) \pm	c_2	g(P_n)	)
+	=	c_1	\lim_{n\rightarrow\infty}	f(P_n)	\pm	c_2	\lim_{n\rightarrow\infty}	g(P_n)	\\
+&=	c_1	\lim_{P\rightarrow A}	f(P)				\pm	c_2	\lim_{P\rightarrow A}	g(P) \\
+	\lim_{P\rightarrow A}	(	f(P)	g(P))
+&=	\lim_{n\rightarrow \infty}	(f	(P_n)	g(P_n))
+	=	\lim_{n\rightarrow \infty}	f(P_n)	\lim_{n\rightarrow \infty}	g(P_n)
+	=	\lim_{P\rightarrow A}	f	(P)	\lim_{P\rightarrow A}	g(P)	\\
+	\lim_{P\rightarrow A}	\frac{	f(P)	}{g(P)}
+&=	\lim_{n\rightarrow \infty}	\frac{	f(P)	}{	g(P)}
+=	\frac{	\displaystyle	\lim_{n\rightarrow \infty}	f(P_n)	}{
+						\displaystyle	\lim_{n\rightarrow \infty}	g(P_n)	}
+=	\frac{	\displaystyle	\lim_{P\rightarrow A}	f(P)	}{
+						\displaystyle	\lim_{P\rightarrow A}	g(P)	}
+\end{align*}
+\■
+\subsubsection{連続性}
+$D$を平面$\R^2$上の任意の点集合とし，
+$f(P) = f(x,y),	P	=	(x,y)$，を$D$で定義された関数，
+$A = (a,b)$を$D$に属する点とする．
+
+\定義{6.2} 任意の正の実数$\varepsilon$に対応して正の実数$\delta(\varepsilon)$を定めて
+\begin{equation}
+	|PA	|	<	\delta(\varepsilon)	\quad	\text{ならば}	\quad	|f(P)	-	f(A)|	<	\varepsilon
+\label{eq6x2}
+\end{equation}
+となるようにできるとき，関数$f(P)$は$A$で連続であるという．
+$|PA|	=	\sqrt{(x-a)^2	+	(y-b)^2}$であるから，この定義6.2を座標
+を用いて述べればつぎのようになる：任意の正の実数$\varepsilon$に対応して
+正の実数$\delta	(	\varepsilon	)$を定めて
+\begin{equation}
+	|x-a|	<	\delta	(\varepsilon)	,\quad	|y-b|	<	\delta	(	\varepsilon	)	
+	\quad
+	\text{ならば}
+	\quad
+	|f(x,y)	-	f(a,b)|	<	\varepsilon
+\label{eq6x3}
+\end{equation}
+となるようにできるとき，関数$f(x,y)$は点$(a,b)$で連続であるという．
+
+上記の定義6.2において$D	\subset \R^2$は任意の点集合であるから，
+$A$が$D$の孤立点である場合もあるが，この場合には，正の実数$\delta$を
+十分小さく定めたとき$|PA|<	\delta	,	P	\in	D$，ならば
+$P=A$となるから，$D$を定義域とする関数はすべて$A$で連続であるというつまらないことになる． 
+この場合を除けば$A$は$D$の集積点であって，
+関数$f(P)$が$A$で連続であるということは
+\[
+	\lim_{P\rightarrow A} f(P)	=	f(A)
+\]
+となることに他ならない．
+
+関数$f(x,y)$がその定義域$D$に属するすべての点で連続であるとき，
+$f(x,y)$を\textbf{連続関数}，あるいは二つの変数$x,y$の連続関数とよぶ．
+また，このとき，関数$f(x,y)$は$D$で連続である，あるいは$D$で二つの変数$x,y$
+について連続であるという．
+
+或る領域$D$を定義域とする関数$f(x,y)$が$D$で連続ならば，
+（\ref{eq6x3}）から明らかなように，$f(x,y)$は$y$を固定したとき$x$について連続，
+$x$を固定したとき$y$について連続である．
+この逆は必ずしも成立しない．すなわち，$f(x,y)$が$y$を
+固定したときのに$x$ついて連続，$x$を固定したとき$y$について連続であっても，
+$f(x,y)$は必ずしも$D$で連続とは限らない.
+
+\例{6.2}$(x,y)	\ne	(0,0)$のとき$f(x,y)	=	2xy/(x^2	+	y^2),	f(0,0)	=	0$とおけば，
+$\R^2$を定義域とする関数$f(x,y)$を得る．
+明らかに$y$を固定すれば$f(x,y)$は$x$について連続，$x$を固定すれば
+$f(x,y)$は$y$について連続であるが，$x	\ne	0$のとき
+$f(x,x)=1$であるから，2変数$x,y$の関数としては$f(x,y)$は原点$O=(0,0)$
+で連続でない．――
+
+$f(x,y)$が共に$D	\subset	\R^2$で定義された連続関数ならば，
+その1次結合$c_1	f(x,y)	+	c_2	g(x,y)$，$c_1,c_2$は定数,およびその積
+$f(x,y)g(x,y)$は$D$で連続な関数である．
+さらに$D$でつねに$g(x,y)	\ne	0$ならば商$f(x,y)/g(x,y)$も$D$で連続な関数である．
+このことは関数の極限に関する演算の法則により明らかである．
+
+$x$および$y$は共に平面$\R^2$上で定義された2変数$x,y$の連続関数である．
+故に，上記の結果により，$x$と$y$の多項式：
+\[
+	f(x,y)	=	\sum_{k=0}^{m}	\sum_{k=0}^{n}	a_{hk}	x^hy^k,	\quad	\text{$a_{hk}$は定数，}
+\]
+は2変数$x,y$の連続関数である．
+有理式：$f(x,y)	/	g(x,y)$，$f(x,y),	g(x,y)$は多項式，は
+$g(x,y)=	0$となる点$(x,y)$を除いて$\R^2$上で連続である．
+
+\subsubsection{合成関数}
+$f(P)	=	f(x,y)$，$g(P)	=	g(x,y)$，を$D	\subset	\R^2$
+で定義された連続関数，$\varphi(u,v)$を$\varDelta	\subset	\R^2$で定義された
+$u,v$の連続関数とし，すべての$P	\in	D$について$(f(P),g(P))	\in	\varDelta$
+とする．このとき合成関数$\varphi(	f(x,y),	g(x,y))$は$D$ \underline{で} $x,y$ \underline{について連続である}．
+\証明
+証明は簡単である．点$A	\in	D$を任意にとって$\alpha	=f(A),	\beta	=	g(A)$
+とおけば$(\alpha	,	\beta	)	\in	\varDelta$．$f,g,\varphi$は連続関数であるから，
+任意の正の実数$\varepsilon$に対応して正の実数$\delta_1	(	\varepsilon)	$と$\delta_2	(	\varepsilon)$
+を定めて
+\begin{align*}
+	|PA|	<	\delta_1	(\varepsilon	)	\quad	\text{ならば}	\quad	|f(P)	-	f(A)	|	<	\varepsilon,	\quad	|	g(P)	-	g(A)	|	<	\varepsilon,	\\
+	|u-	\alpha	|	<	\delta_2	(	\varepsilon),	\quad	|v	-\beta|	<	\delta_2	(	\varepsilon)	\quad	\text{ならば}	\quad	|	\varphi(u,v)	-	\varphi(\alpha,	\beta)|	<	\varepsilon
+\end{align*}
+となるようにできる．故に$\delta(\varepsilon)	=	\delta_1	(	\delta_2	(	\varepsilon))$とおけば，
+\[
+	|PA|	<	\delta	(	\varepsilon	)	\quad	\text{のとき}	\quad
+|	\varphi	(	f(P),	g(P))	-	\varphi(f(A),g(A)))	|	<	\varepsilon
+\]
+となる．すなわち関数$\varphi	(	f(x,y)	,g(x,y))$は点$A$において連続であるが，
+$A$は$D$に属する任意の点であった．
+故に$\varphi	(f(x,y)	,g(x,y))$は$D$で連続である．
+\■
+
+この結果と上記の多項式の連続性により，たとえば，$f(x,y),	g(x,y)$が$D$で
+連続ならば
+\[
+	\sum_{h=0}^{m}	\sum_{k=0}^{n}	a_{hk}	f(x,y)^h	g(x,y)^k,
+	\quad	\text{$a_{hk}$は定数，}
+\]
+も$D$で連続であることがわかる．
+
+\subsubsection{連続関数の性質}
+\S \ref{sec2x2x2}で証明した1変数の連続関数に関する定理2.3-2.6
+は容易に2変数の連続関数の揚合に拡張される．
+\定義{6.3}
+$f(P)=f(x,y),	P=(x,y)$を$D	\subset	\R^2$で定義された関数とする．
+任意の正の実数$\varepsilon$に対応して正の実数$\delta	(	\varepsilon)$が定まって
+\[
+	|PQ	|	<	\delta	(	\varepsilon),	P\in	D,	Q	\in	D
+	\quad	\text{ならば}	\quad
+	|f(P)	-	f(Q)	|	<	\varepsilon
+\]
+となるとき，$f(x,y)$は$D$で一様連続であるという．
+
+\定理{6.2}
+有界な閉集合$	D	\subset	\R^2$で定義された連続関数は$D$で一様連続である．
+
+\証明
+閉区間で連続な関数の一様連続性に関する定理2.3の証明は閉区間が
+コンパクトであることだけに基づいているのであって，\S	\ref{sec1x6x5}，
+定理1.28により$D$はコンパクトであるから，そのまま定理6.2の証明に適用されるが，
+ここでは定理1.30に基づく別な証明を述べる．
+
+有界な閉集合$D$で定義された連続関数$f(P)	=	f(x,y),P	=	(x,y)$，
+が$D$で一様連続でなかったと仮定すれば，或る正の実数$\varepsilon$
+に対しては如何なる正の実数$\delta$をとっても
+\[
+	|P-Q|	<	\delta	,\quad	P	\in	D	,	Q	\in	D
+	\quad	\text{のとき}	\quad
+	|f(P)	-	f(Q)|	<	\varepsilon
+\]
+とはならない．したがって各自然数$n$に対して
+\begin{equation}
+	|P_n	-	Q_n	|	<	\frac{1}{n},	\quad	P_n	\in	D,	Q_n	\in	D,
+	\quad
+	|f(P_n)	-	f(Q_n)	|	\geqq	\varepsilon
+\label{eq6x4}
+\end{equation}
+なる点$P_n,	Q_n$が存在する．
+点列$\{P_n	\}$は有界であるから，定理1.30により，収束する部分列：
+\[
+P_{n_1},	P_{n_2},	P_{n_3},	\cdots,	P_{n_j},	\cdots,	n_1	<	n_2	<	n_3	<	\cdots	<	n_j	<	\cdots,
+\]
+をもつ．
+その極限を$\displaystyle	A	=	\lim_{j\rightarrow\infty}	P_{n_j}$とすれば，$D$が閉集合であるから$A	\in	D$，また
+\[
+	|P_{n_j}	-	Q_{n_j}	|	<	\frac{1}{n_j}	\to	0	\quad	(j	\to	\infty)
+\]
+であるから，$\displaystyle	\lim_{j\rightarrow\infty}	Q_{n_j}	=	\lim_{j\rightarrow\infty}	P_{n_j}	=	A$
+ある．仮定により$f(P)$は$D$で連続であるから，したがって
+\[
+	\lim_{j\rightarrow\infty}	f(Q_{n_j})	=	\lim_{j\rightarrow\infty}	f(P_{n_j})	=	f(A)
+\]
+となる，つまり任意の正の実数$	\varepsilon >0$に対して或る自然数$j_0$が定まって
+\[
+	j	>	j_0	\quad \text{ならば}	\quad	|f(Q_{n_j})	-	f(P_{n_j})|	<	\varepsilon
+\]
+である．これは（\ref{eq6x4}）により$|f(Q_{n_j})	-	f(P_{n_j})	|	\geqq	\varepsilon	$
+であることた矛盾する．
+\footnote{
+「全ての$n_j$に対して」$< \varepsilon$でありながら，「$	j	>	j_n$なる$j$に対しては」$	\geq	\varepsilon$.
+}
+故に$f(x,y)$は$D$で一様連続である．
+\■
+
+\注意{}
+$A$が$D$の孤立点である場合には或る自然数$j_0$に対して$	j	>	j_0$のとき
+$Q_{n_j}	=	P_{n_j}	=A$となって（\ref{eq6x4}）に矛盾する．
+
+\定理{6.3}
+有界な閉集合$D$で定義された連続関数は最大値と最小値をもつ．
+
+\証明
+この証明は定理2.4の証明と同様である：$f(P)$を有界閉集合$D$で定義された連続関数とする．
+$f(P)$が有界，すなわち値域$f(D)$が有界であることを証明するために，
+$f(D)$が有界でなかったと仮定すれば，$n	\to	\infty$のとき
+$|f(P_n)|	\to	+	\infty$となる点列$\{	P_n	\},	P_n	\in	D$，が存在する．
+$\{	P_n	\}$は，定理1.30により，
+収束する部分列：$P_{n_1}	,	P_{n_2},	\cdots	,	P_{n_j},	\cdots$をもち，
+$	\displaystyle	A=	\lim_{j\rightarrow\infty}	P_{n_j}	\in	D$，
+したがって，$f(P)$が連続であるから，
+$\displaystyle	\lim_{j\rightarrow\infty}	f(P_{n_j})	=	f(A)$となるが，
+これは$	|f(P_n	)	|	\to	\infty	\:	(	n	\to	\infty)	$に
+矛盾する．故に，$f(D)$は有界である．そこで$f(D)$の上限を$\beta$とすれば，
+$\beta$は$f(P)$の最大値である．なぜなら，$\beta$が$f(P)$の最大値でないとすれば，
+つねに$f(P)	<	\beta$となるから$	1/	(\beta	-	f(P))$も$D$で定義された連続関数であって，
+したがって有界，すなわち
+\[
+	\frac{1}{\beta	-	f(P)}	<	\gamma
+\]
+なる定数$	\gamma$が存在する．故に$f(P)	<	\beta	-	1	/	\gamma$となって
+$	\beta$が$f(D)$の上限であることに矛盾するからである．
+同様に$f(D)$下限を$\alpha	$とすれば$\alpha	$は$f(P)$の最小値である．
+\■
+
+\定理{6.4}
+領域$D$で定義された連続関数$	f(x,y)	$の値域$f(D)$は一つの区間である．
+
+\証明	$\alpha	\in	f(D)	,	\beta	\in	f(D),	\alpha	<	\mu	<	\beta$ならば
+$	\mu	\in	f(D)$であることを証明すればよい．
+このために$	\mu	\not\in	f(D)$と仮定して
+\[
+	V	=	\{	\:	P	\:	|	\:	P	\in	D,	f(P)	<	\mu	\}
+\]
+とおけば$V$は開集合である．
+なぜなら，$	f(x,y)$が$D$で連続であるから，
+$f(P)	<	\mu	$ならば$	\mu - f(P)$に対しても或る$\varepsilon$が存在して
+\begin{align*}
+	|QP|	<	\varepsilon	\quad	&\Rightarrow	\quad	|	f(P) - f(Q)	| <	\mu -f(P)	\\
+														&\Rightarrow	\quad	f(P) - \mu < 	f(P) - f(Q)	 <	\mu -f(P)
+\end{align*}
+つまり，
+\[
+	|QP|	<	\varepsilon	\quad	\text{のとき}	\quad	f(Q)	<	\mu
+\]
+となる正の実数$	\varepsilon$が存在する，
+すなわち，$P$の$\varepsilon$近傍$U_\varepsilon	(P)	\subset	V$が存在するか
+らである．仮定により$f(A)	=	\alpha	<	\mu$なる点$A	\in	D$が存在するから
+$V$は空集合ではない．
+\[
+	W	=	\{	\:	P	\:	|	\:	P	\in	D,	f(P)	>	\mu	\}
+\]
+とおけば，同様に，$W$も空でない開集合であって，明らかに
+\[
+	D	=	V	\cup	W,	\quad	V	\cap	W	=	\varnothing
+\]
+であるが，これは$D$が連結であることに矛盾する．
+故に$	\mu	\in	f(D)$である．
+\■
+
+\定理{6.5}
+有界な閉領域$D$で定義された連続関数$	f(x,y)	$の値域
+$	f(D)$は閉区間である．
+
+\証明
+仮定により$D$は或る領域$U$の閉包である：
+$	D	=	[	U	]	$，定理6.3により$	f(x,y)$	は最小値
+$	\alpha	=	f(A),	A	\in	D$，と最大値	$	\beta	=	f(B)$，をもつ．
+一方，定理6.4により$f	(U)	$は一つの区間である．
+\[
+	f(U)	\subset	f(D)	\subset	[	\alpha,	\beta	]	,	
+	\quad	\alpha	\in	f(D),	\beta	\in	f(D),
+\]
+であるから，$f(D)$が閉区間$[	\alpha	,	\beta	]$と一致することを証明するには
+$	\alpha	$と$\beta$が共に区間	$f	(U)	$の閉包$	[	f(U)	]	$に含まれていることをいえばよい．
+$	A	\in	D	=	[	U	]	$であるから，$A	\not\in	U$ならば
+$A$は$	U$の集積点であって
+\footnote{
+閉包の定義は$[ U ] = U \cup \partial U$であるから，$	A \in \partial U$．また\S \ref{sec1x6x2}の記述
+「$S$の境界点$P$が$S$に属さないならば$P$は$S$の集積点である」，による
+}
+，したがって$A$に収束する点列
+$	\{	\;	P_n	\;	\}$，$P_n	\in	U$が存在する
+\footnote{
+	\S \ref{sec16x4}「$P$が$S$の集積点であるための必要十分条件は，$P_n \in S, P_n \ne P , 
+\displaystyle	\lim_{n\rightarrow \infty} P_n = P$
+なる点列$\{ P_n \}$が存在することである．」
+}
+．
+故に，$	f(x,y)$は$D$で連続であるから，$	\alpha	=	f(A)
+=	\lim_{n\rightarrow\infty}	f(P_n)	\in	[	f(U)	]	$．
+$A	\in	U	$ならば	$	\alpha	\in	[	f(U)	]	$なることは明らかである．
+同様に	$	\beta	\in	[	f(U)	]	$である，
+
+したがって$[ \alpha , \beta ] \subset [ f(U) ] \subset [ f(D) ]$，つまり，
+$f(D) = [ \alpha , \beta]$．
+\■
+
+数直線$\R$上の領域はすなわち開区間，有界閉領域はすなわち閉区間であるから，
+上記の定理6.5，定理6.4は1変数の連続関数に関する定理2.5，
+定理2.6の2変数の揚合への拡張と考えられる．
+
+\subsubsection{関数のグラフ}
+
+一般に点集合	$	D	\subset	\R^2	\subset	\R^2$	で定義された関数
+$f$に対して，点$P	\in	D$と$P$における$f$の値$f(P)$の対：
+$(P,	f(P))$の全体から成る$	\R^2	\times	\R	=	\R^3$の部分集合を
+関数$f$のグラフといい$	G_f$で表わすことは1変数の関数の場合と同じであ
+る．座標を用いて書けば
+\[
+	G_f	=	\{	\;	(x,y,z)	\:	|	\:	z	=	f(x,y)	,	(x,y)	\in	D	\:	\}.
+\]
+3次元空間$	\R^3$内にあるグラブ$G_f$を2次元の紙の上に描くことは一般
+易しくないが，$G_f$の形を頭の中で想像するだけでも関数$f$の性質を
+把握するのに役立つことが少なくない．たとえば上記の例6.2の関数
+$	f(x,y)$がおのおのの変数	$x,y$については連続であるが2変数
+$x,y$の関数としては原点$0$で不連続となることは
+$f$のグラフ$G_f$の形を想像すれば容易に理解される．

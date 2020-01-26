@@ -1,0 +1,161 @@
+\section{原始関数，不定積分}
+\subsection{原始関数，不定積分}
+\label{sec4x2x1}
+
+$f(x)$を区間$I$で連続な関数とし，$a,b,c$を$I$に属する3点とする．このとき，
+定理4.1,$(1^\circ)$により，$a	<	c	<	b$ならば等式：
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\int_a^c	f(x)	dx	+	\int_c^b	f(x)	dx
+\label{eq4x9}
+\end{equation}
+が成り立つが，$b	<	a$のとき
+\[
+	\int_a^b	f(x)	dx	=	-	\int_b^a	f(x)	dx,
+\]
+$b=a$のとき
+\[
+	\int_a^b	f(x)	dx	=	0
+\]
+\underline{と定義すれば，等式(\ref{eq4x9})は$a,b,c$の大小の如何に関せず成り立つ．}
+\証明
+$a=c	\leqq	b$のとき，および$a	\leqq	c	=	b$のとき，(\ref{eq4x9})が成り立つことは
+明らかである．簡単のため$\displaystyle	\int_a^b	f(x)	dx$の
+$f(x)	dx$を省略することにすれば，$c	\leqq	a	\leqq	b$のとき，
+$\displaystyle	\int_c^b	=	\int_c^a	+	\int_a^b$，故に
+\[
+	\int_a^b	=	-	\int_c^a	+	\int_c^b	=	\int_a^c	+	\int_c^b.
+\]
+$	a	\leqq	b	\leqq	c$のとき，$\displaystyle	\int_c^a	=	\int_c^b	+	\int_b^a$，
+故に
+\[
+	\int_a^b	=	-	\int_b^a	=	-	\int_c^a	+	\int_c^b	=	\int_a^c	+	\int_c^b.
+\]
+その他の場合も(\ref{eq4x9})が成り立つことは同様にして確かめられる．
+\■
+$I$に属する点$a$を一つ定めて，$I$に属する任意の点$\xi$に対して
+\begin{equation}
+	F(\xi)	=	\int_a^\xi	f(x)	dx
+\label{eq4x10}
+\end{equation}
+とおけば，おのおのの$\xi	\in	I$に$F(\xi)$を対応させる関数$F(x)$が定まる．
+この関数を$\displaystyle	\int_a^x	f(x)	dx$で表わす：
+\begin{equation}
+	F(x)	=	\int_a^x	f(x)	dx.
+\label{eq4x11}
+\end{equation}
+この右辺において，$\displaystyle	\int_a^x	$の$x$は関数$F(x)$の独立変数，
+$f(x)	dx$の$x$の積分変数であって，同じ文字$x$を用いているけれど，積分変数$x$は
+独立変数$x$とは全く別なものである．独立変数$x$に実数$\xi$を代入すれば，
+(\ref{eq4x11})は(\ref{eq4x10})となるのである．積分変数を$x$と異なる文字，
+例えば$t$で表わして(\ref{eq4x11})を
+\[
+	F(x)	=	\int_a^x	f(t)	dt
+\]
+と書けば，独立変数と積分変数が別なものであることは一目瞭然となる．
+
+厳密にいえば変数$x$は，\S	\ref{sec2x1}で述べたように，変域$I$に属する任煮の
+実数$\xi$を代入すべき場所を表わす記号$()$であるから，(\ref{eq4x11})の右辺は，
+$\displaystyle	\int_a^{()}	f(x)	dx$であって，定積分としては無意味である．
+故に，$\displaystyle	\int_a^x	f(x)	dx$は各$\xi	\in	I$に対して
+$\displaystyle	\int_a^\xi	f(x)	dx$を対応させる関数を表わすと
+\underline{定義}したのである．われわれはしかし，一般の習慣にしたがって，$I$に
+属する実数を変数と同じ文字$x$で表わしているのであって，(\ref{eq4x11})は$I$に属する
+任意の実数$x$に対して関数$F(x)$の$x$における値$F(x)$が定積分$\displaystyle	\int_a^x	f(x)	dx$に
+等しいことを意味すると考えてよい．
+
+\定理{4.4}
+$f(x)$を区間$I$で連続な関数，$a$を$I$に属する点とし，任意の$x	\in	I$に対して
+\[
+	F(x)	=	\int_a^x	f(x)	dx
+\]
+とおけば
+\begin{equation}
+	\frac{d }{d x}	F(x)	=	f(x)
+\label{eq4x12}
+\end{equation}
+
+\証明
+(\ref{eq4x9})により
+\[
+	F(x	+	h)	-	F(x)	=	\int_a^{x+h}	f(x)	dx	-	\int_a^x	f(x)	dx	=	\int_x^{x+h}	f(x)	dx
+\]
+であるから，$h	>	0$のとき，平均値の定理（定理4.2）により
+\[
+	\frac{F(x+h)	-	F(x)}{h}	=	\frac{1}{h}	\int_x^{x+h}	f(x)	dx	=	f(\xi)
+\]
+なる$\xi,		x	<	\xi	<	x	+	h$，が存在する．また，$h	<0$のとき，
+\[
+	\frac{F(x+h)	-	F(x)}{h}	=	\frac{1}{h}	\int_x^{x+h}	f(x)	dx
+														=	\frac{1}{|h|}	\int_{x-|h|}^x	f(x)	dx	=	f(\xi)
+\]
+なる$\xi	,	x	+	h	<	\xi	<	x$，が存在する．$h	\ne	0$のとき，
+いずれにしても
+\[
+	\frac{F(x+h)	-	F(x)}{h}	=	f(\xi)	,	\quad	\xi	=	x	+	\theta	h	,	0	<	\theta	<1.
+\]
+故に
+\[
+	\lim_{h\rightarrow 0} \frac{F(x+h)	-	F(x)}{h}	=	\lim_{\xi\rightarrow x} f(\xi)	=	f(x),
+\]
+すなわち，(\ref{eq4x12})が成り立つ．
+\■
+
+$\displaystyle	\int_x^a	f(x)	dx	=	-	\int_a^x	f(x)	dx$であるから，
+(\ref{eq4x12})により
+\begin{equation}
+	\frac{d}{dx}	\int_x^a	f(x)	dx	=	-	f(x).
+\label{eq4x13}
+\end{equation}
+
+一般に或る区間$I$で定義された関数$f(x)$が与えられたとき，$f(x)$を
+導関数とする関数，すなわち$F'(x)=f(x)$なる$I$で定義さえた関数$F(x)$を$f(x)$の
+\textbf{原始関数}(primitive function)という．もちろん与えられた関数$f(x)$に対して
+原始関数が存在するとは限らない．たとえば$f(x)$が区間$I$の内点の一つ$c$において
+不連続で，しかも$\displaystyle	\lim_{x\rightarrow c-0}	f(x),	\lim_{x\rightarrow c+0}	f(x)$
+が共に存在して$\displaystyle	\lim_{x\rightarrow c-0} f(x)	\ne	\displaystyle	\lim_{x\rightarrow c+0}	f(x)$ならば，
+\S \ref{sec3x3}で定理3.10の系に関連して述べた結果により，$f(x)$の原始関数は存在しない．
+
+$f(x)$の原始関数が存在するならば，それは\underline{加法的定数}(additive constant)\underline{を除いて
+一意的に定まる}.すなわち，$f(x)$の原始関数の一つを$F_0(x)$とすれば，
+$f(x)$の任意の原始関数$F(x)$は
+\[
+	F(x)	=	F_0(x)	+	C,	\quad	\text{$C$は定数},
+\]
+と表わされる．なぜなら，
+\[
+	\frac{d}{d x}	(F(x)	-F_0(x))=	F'(x)	-	F_0'(x)	=	f(x)	-	f(x)	=	0,
+\]
+したがって，\S \ref{sec3x3}，定理3.6により，$F(x)	-	F_0(x)$は定数となるからである．
+
+$f(x)$が区間$I$で定義された連続関数ならば，$a$を$I$に属する点としたとき，
+(\ref{eq4x12})により，$I$で定義された$x$\underline{の関数}$\displaystyle	\int_a^x	f(x)	dx$
+\underline{は}$f(x)$\underline{の原始関数である．}故に，$f(x)$\underline{の任意の原始関数}$F(x)$
+\underline{は}
+\begin{equation}
+	F(x)	=	\int_a^x	f(x)	dx	+	C,	\quad	\text{$C$は定数},
+\label{eq4x14}
+\end{equation}
+\underline{と表わされる}.(\ref{eq4x14})の右辺の$C$を\textbf{積分定数}とよぶ．
+
+$I$に属する任意の2点$b,c$に対して，(\ref{eq4x9})を用いて，(\ref{eq4x14})から
+\[
+	F(b)	-	F(c)	=	\int_a^b	f(x)	dx	-	\int_a^c	f(x)	dx	=	\int_c^b	f(x)	dx
+\]
+を得る．すなわち
+
+\定理{4.5} $f(x)$を区間$I$で定義された連続関数，$F(x)$を$f(x)$の原始関数とすれば
+\begin{equation}
+	\int_a^b	f(x)	dx	=	F(b)	-	F(a).
+\label{eq4x15}
+\end{equation}
+この公式(\ref{eq4x15})を\textbf{微分積分法の基本公式}という．
+或る区間$I$で定義された関数$f(x)$の原始関数を，また$f(x)$の\textbf{不定積分}(indefinite integral)といい，
+記号$\displaystyle	\int f(x)	dx$で表わす．
+
+\注意{}
+不定積分の定義は確定していないようである．“岩波　数学辞典　第3版”，
+p.522によれｂ，$x$の関数$\displaystyle	\int_a^x	f(x)	dx$を$f(x)$の不定積分という．
+高木貞治“解析概論”，pp.101-102では，$\displaystyle	\int_a^x	f(x)	dx$の下限$a$を指定しない
+場合にそれを$\displaystyle	\int	f(x)	dx$と書いて$f(x)$の不定積分と読んでいる．
+“この解析入門”では藤原松三郎“微分積分学Ⅰ”，p.293にしたがって，不定積分は
+すなわち原始関数である，と定義したのである．

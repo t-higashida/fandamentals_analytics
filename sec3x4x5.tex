@@ -1,0 +1,152 @@
+\subsection{極大，極小}
+\label{sec3x4x5}
+
+極大，極小についてはすでに高校数学で学んだ．$f(x)$を区間$I$で連続な関数とし，
+$a$を$I$の内点とする．或る正の実数$\varepsilon$に対して，
+\[
+	0	<	|x-a|	< \varepsilon	\quad	\text{ならば} \quad f(x) < f(a)
+\]
+となるとき，$f(a)$を関数$f(x)$の\textbf{極大値},
+\[
+	0	<	|x-a|	< \varepsilon	\quad	\text{ならば} \quad f(x) > f(a)
+\]
+となるとき，$f(a)$を関数$f(x)$の\textbf{極小値}といい，極大値，極小値を総称して
+\textbf{極値}という．ここで，$a$は$I$の内点であるとしているから，
+$a$の$\varepsilon$近傍$(a- \varepsilon, a+ \varepsilon)$は$I$に含まれていると
+考えてよい．そうすれば，$f(a)$が$f(x)$の極大値なるときは
+$f(a)$は区間$(a-\varepsilon , a+ \varepsilon)$における$f(x)$の最小値である．
+このことから，\S \ref{sec3x3}，補題3.1(Rolleの定理)の証明と全く同じ論法によって，
+次の定理を得る：
+
+\定理{3.16}
+区間$I$で微分可能な関数$f(x)$が$I$の内点$a$で極値をとるならば，$f'(a)=0$である．――
+
+\証明
+極小値の場合も同様であるから，極大値の場合のみを証明する．
+$f(a)$は$f(x)$の極大値であるから，ある正の実数$\varepsilon$が存在して，
+\[
+	0	<	|	x-a	|	<	\varepsilon	\quad	\text{ならば} \quad f(x) < f(a).
+\]
+$f(x)$は$I$の内点$a$で微分可能であるから，
+\[
+	f'(a)	=	\lim_{h\rightarrow 0}\frac{f(a+h)	-f(a)}{h}
+\]
+が存在する．とくに$h$を$|a+h	-	a| < \varepsilon$を満たすよう十分に小さくとれば，
+\[
+	f(a	+	h)	<	f(a)
+\]
+であるから，$h	>	0$か$h	<	0$かにしたがって，
+$(f(a+h)	-	f(a)	)/h	>	0$か$< 0$となる．したがって，その極限は
+\begin{align*}
+	f'(a)	=	\lim_{h\rightarrow +0}	\frac{f(a+h)	-f(a)}{h}	\leqq	0,	\\
+	f'(a)	=	\lim_{h\rightarrow -0}	\frac{f(a+h)	-f(a)}{h}	\leqq	0
+\end{align*}
+であるが，いずれの場合も成立しなければならないので，
+\[
+	f'(a)	=	\lim_{h\rightarrow 0}	\frac{f(a+h)	-f(a)}{h}	=	0	
+\]
+このように，$f'(a)=0$は$f(a)$が関数$f(x)$の極値であるための必要条件であるが，
+それは十分条件ではない，このことを考察する．
+いま区間$I$で$f(x)$が2回微分可能であるとすれば，
+Taylorの公式(\ref{eq3x40})により，$f'(a)=0$のとき
+\[
+	f(x)	=	f(a)	+	\frac{f''(a)}{2}(x-a)^2	+	o((x-a)^2).
+\]
+$f''(a)	<	0$なる場合には，或る正の実数$\varepsilon$を十分小さくとれば
+（無限小$o((x-a)^2)$を十分に小さくすることができ），
+\[
+	0	<	|x-a|	<	\varepsilon \quad	\text{のとき} \quad	f(x)	-	f(a)	=	\frac{f''(a)}{2}(x-a)^2	+	o((x-a)^2)	<	0,
+\]
+したがって$f(a)$は$f(x)$の極大値である．同様に$f''(a)	>0$ならば$f(a)$は$f(x)$の極小値である．
+
+つぎに$f''(a) = 0$なる場合にどうなるかを見るために，$a=0$として，$f'(0) = f''(0) = 0$なる典型例として，
+$f(x)=x^n$，$n$は3以上の自然数，を考察する．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=12cm,height=5cm]{p141.bmp}
+\end{figure}
+$f^{(k)}(x) = n(n-1)\cdots (n-k+1) x^{n-k}$であるから，
+\[
+	f(0) = f'(0) = f''(0) = \cdots	=	f^{(n-1)}(0)	=	0,	\quad	f^{(n)}(0)	=	n!,
+\]
+であって，$n$が奇数のときは$x > 0$ならば$x^n > 0$，$x	<	0$ならば$x^n	<	0$であるから，
+$f(0) = 0$は関数$f(x)=x^n$の極値でない．$n$が偶数のときは，$x	\ne	0$ならば
+$x^n	>	0$であるから，$f(0)	=	0$は$f(x)=x^n$の極小値である．
+
+一般に
+
+\定理{3.17}
+$f(x)$は区間$I$で$n$回微分可能，$n	\geqq	2$，で$I$の一つの内点$a$において
+\[
+	f'(a)	=	f''(a)	=	\cdots	=	f^{(n-1)}(a)	=	0,	\quad	f^{(n)}(a)	\ne	0,
+\]
+であったとする．このとき，$n$が奇数ならば$f(a)$は関数$f(x)$の極値でない．
+$n$が偶数ならば$f^{(n)}(a)	>	0$のとき$f(a)$は$f(x)$の極小値，
+$f^{(n)}(a)	<	0$ならば$f(a)$は$f(x)$の極小値である．
+
+\証明
+Taylorの公式(\ref{eq3x40})により
+\[
+	f(x)	=	f(a)	+	\frac{f^{(n)}(a)}{n!}	(x-a)^n	+	o((x-a)^n).
+\]
+したがって，正の実数$\varepsilon$を十分小さくとれば，$0	<	|	x-a|	<	\varepsilon$のとき，
+$f(x)	-	f(a)$の符号は$(f^{(n)}(a)/n!)(x-a)^n$の符号と一致する．
+$n$が奇数ならば$(x-a)^n$は$x	<	a$と$x<a$によって符号が逆転し，
+$n$が偶数ならば$(x-a)^n$はつねに正である，定理3.17が成り立つことはこのことから直ぐにわかる．
+\■
+
+$f(x)$が区間$I$で$n$回微分可能で，$I$の一つの内点$a$において$f'(a) = f''(a) = \cdots = f^{(n-1)}(a) = 0$，
+$f^{(n)}(a) \ne 0$，で$n$が3以上の奇数のとき，$f(a)$を関数$f(x)$の\textbf{停留値}(stationalry value)，
+$a$を$f(x)$の\textbf{停留値}という．$f(a)$が$f(x)$の停留値であるとき，Taylorの公式(\ref{eq3x40})の両辺を
+2回微分して，
+\[
+	f''(x)	=	\frac{f^{(n)}(a)}{(n-2)!}(x-a)^{n-2}	+	o((x-a)^{n-2}).
+\]
+故に
+\begin{list}{}{}
+	\item	(1) $f^{(n)}(a) > 0$とすれば，$a$の近傍において，
+		\begin{list}{}{}
+			\item	(1-1) $x > a$のとき$f''(x) > 0$,
+			\item (1-2) $x < a$のとき$f''(x) < 0$
+		\end{list}
+したがって，正の実数$\varepsilon$を十分小さくとれば，定理3.15とその系により，
+$f(x)$は区間$[a,a+\varepsilon]$で狭義に凸，$[a-\varepsilon,a]$で狭義に凹である．
+	\item (2) $f^{(n)}(a) < 0$とすれば，同様に，
+		\begin{list}{}{}
+			\item	(2-1) $x > a$のとき$f(x)$は$[a,a+\varepsilon]$で狭義に凹，
+			\item (2-2) $x < a$のとき$f(x)$は$[a-\varepsilon,a]$で狭義に凸
+		\end{list}
+\end{list}
+である．このように，停留点$a$の近傍においては，$x	<	a$のときと$x>a$のときと関数$f(x)$の凹凸は
+逆になる．――
+
+高校数学で学んだように，関数$f(x)$が与えられたとき，$f(x)$の増・減，極値，凹・凸を調べて
+そのグラフ$G_f$の概略の形を描くと$f(x)$の性質が見易くなる．
+
+\例{3.8}
+区間$(0,	+	\infty)$で定義された関数$f(x) = \log x /x^2$を考察する．
+\S \ref{sec2x3x3}，例2.9により
+\[
+	\lim_{x\rightarrow +\infty} \frac{\log	x}{x^2}	=	\lim_{x\rightarrow +\infty} \frac{1}{x} \cdot \frac{\log x}{x} = 0,
+\]
+（無限遠で$0$に近づく）．
+$t=1/x$とおけば
+\[
+	\lim_{x\rightarrow +0} \frac{\log x}{x^2} = - \lim_{t\rightarrow +\infty} t^2 \log t = - \infty,
+\]
+（限りなく$-\infty$に近づく）．
+また，明らかに，$f(1) = 0$である．
+\begin{align*}
+	f'(x)		&=	\frac{\displaystyle	\frac{1}{x} x^2 -2	x \log	x}{x^4}	=	\frac{1	-	2	\log	x}{x^3}	,	\\
+	f''(x)	&=	\frac{\displaystyle\frac{-2}{x}x^3	-(1-2\log	x)	3x^2}{x^6}=	\frac{6	\log	x	-	5}{x^4}
+\end{align*}
+であるから，$f'(\sqrt{e})=0$で，$x	<	\sqrt{e}$のとき$f'(x) > 0$，$x	>	\sqrt{e}$のとき
+$f'(x) < 0$，したがって，\S \ref{sec3x3}，定理3.6により，$f(x)$は区間$(0,	\sqrt{e} \:	]$で単調
+増加，$(\sqrt{e} , + \infty)$で単調減少，$f( \sqrt{e}) = 1/(2e)$は$f(x)$の最大値である．
+さらに，$x	<	e^{5/6}$のとき$f''(x) < 0$，$x > e^{5/6}$のとき$f''(x) > 0$であるから，
+定理3.15とその系により，$f(x)$は区間$(0,	e^{5/6} ]$で狭義に凸，
+$[e^{5/6} , + \infty)$で狭義に凸であって，$f(e^{5/6})=(5/6) (1/e^{5/3})$.
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=12cm,height=8cm]{p143.bmp}
+\end{figure}

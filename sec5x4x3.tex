@@ -1,0 +1,115 @@
+\subsection{優関数をもつ関数列}
+\label{sec5x4x3}
+
+$	f_n	(x)	,	n=1	,	2,	3,	\cdots$，を或る区間$I$で定義された連続関数とする．
+このとき$I$で定義された連続関数$\delta	(	x)$，
+$	\delta	(x)	>	0$，が存在して，すべての$n$について，つねに
+$	|	f_n	(x)	|	\leqq	\delta	(x	)$となるならば，
+$	\delta	(	x)	$を関数列$	\{	f_n	(x)	\}$の\textbf{優関数}（majorant）
+という．関数列が\underline{一様に有界ではないが}優関数をもつ場合，定理5.11はつぎのよ
+うに拡張される:
+
+\定理{5.12}
+区間$	(	a	,	+	\infty)$において関数$	\sigma	(x),	\sigma(x)	>	0$は連続で
+$\displaystyle	\int_a^{+	\infty}	\sigma	(x)	dx	<	+	\infty$，
+関数$f_n	(x),	n=1,2,3,	\cdots$，は連続でつねに
+$	|	f_n	(x)	|	\leqq	\sigma	(	x)	$であるとする．
+このとき関数列$	\{	f_n	(x)	\}$が収束して
+その極限$\displaystyle	f	(x)	=	\lim_{n\rightarrow\infty}	f_n	(x)$が連続ならば
+\begin{equation}
+	\int_a^{+	\infty}	f(x)	dx
+	=
+	\lim_{n\rightarrow\infty}	\int_a^{+	\infty}	f_n	(x)	dx,
+	\quad	f(x)	=	\lim_{n\rightarrow\infty}	f_n	(x).
+\label{eq5x37}
+\end{equation}
+
+\証明
+点$	c	,	a	<	c$，を定め
+\[
+	\psi	(	x	)	=	\int_c^x	\sigma	(x)	dx
+\]
+とおいて，（\ref{eq5x37}）の両辺の積分変数$x$を$	t=	\psi	(x)	$に変換してみる．
+まず定理の仮定より$	\psi'	(x)	=	\sigma	(x)	>	0$であるから，
+\S	3.3	，定理3,6により，$t	=	\psi	(x)	$は区間$	(	a	+	\infty)$で定義された
+$x$の連続微分可能
+\footnote{
+微分可能でその導関数が連続
+}
+な単調増加関数であって，
+$\displaystyle
+	\int_a^{+	\infty}
+	\sigma	(x)	dx	<	+	\infty
+$
+と仮定しているから，極限:
+\[
+	\alpha	=	\lim_{x\rightarrow	a	+ 0}	\psi	(x)
+					=	\int_c^a	\sigma	(x)	dx
+					=	-	\int_a^c	\sigma	(x)	dx,	\quad
+	\beta		=	\lim_{x\rightarrow	+\infty}
+					=	\int_c^{+	\infty}	\sigma(x)	dx
+\]
+が存在して，$\psi	(x)	$の値域は開区間$(\alpha	,	\beta)$である．
+したがって，$t=\psi	(x)	$の逆関数を
+$x	=	\varphi	(t	)	=	\psi^{-1}	(t)$とすれば，
+\S	\ref{sec2x2x3}，定理2.7と
+\S	\ref{sec3x2x3}，定理3.4により，
+$	\varphi	(t)$は区間$(\alpha	,\beta)$で微分可能な単調増加関数で
+\[
+	\varphi'(t)	=	\frac{1}{\psi'	(x)}
+							=	\frac{1}{\sigma	(x)},
+		\quad
+				x	=	\varphi	(t).
+\]
+したがって$	\varphi'	(t)	=	1/	\sigma	(\varphi	(t))$も$t$について連読である．
+故に，置換積分の公式（\ref{eq4x56}）により，
+\[
+	\int_a^{+	\infty}	f_n	(x)	dx
+	=
+	\int_\alpha^\beta	f_n	(\varphi	(t))	\varphi'	(t)	dt
+	=
+	\int_\alpha^\beta	\frac{	f_n	(	\varphi	(t))}{	\sigma	(\varphi	(t))}	dt,
+\]
+同様に
+\[
+		\int_a^{+	\infty}	f(x)	dx
+		=
+		\int_\alpha^\beta	\frac{f	(\varphi	(t))}{	\sigma	(	\varphi	(t))}	dt.
+\]
+
+仮定により，
+$	|	f_n	(x)	|	\leqq	\sigma	(x)	,	\displaystyle	f(x)	=	\lim_{n\rightarrow\infty}	f_n	(x)$であるから
+\[
+	\left|	\frac{	f_n	(	\varphi	(t))}{	\sigma	(\varphi	(t))}
+	\right|
+	\leqq	1	\quad	\text{（一様に有界）},
+	\quad
+	\frac{	f(\varphi	(t))}{	\sigma	(	\varphi	(t))}
+	=	
+	\lim_{n	\rightarrow	\infty}	\frac{	f_n	(	\varphi	(t))}{	\sigma	(	\varphi	(t))}
+	\quad	\text{（連続）}.
+\]
+故に，定理5.11により，
+したがって
+\[
+	\int_a^{+	\infty}	f(x)	dx
+	=
+	\lim_{n\rightarrow\infty}	\int_a^{+\infty}	f_n	(x)	dx
+\]
+
+この定理5.12は区間$	(	a	,	+	\infty)$を任意の区間$I$で置き換えても成り立つ．
+
+無限級数の項別積分に関するつぎの定理はこの定理5.12の系である:
+
+\定理{5.13}
+関数$\sigma	(x)	,	\sigma	(x)	>	0$，は区間$(	a	,	+	\infty)$で連続で
+$\displaystyle	\int_a^{+\infty}	\sigma	(x)	dx	<	+	\infty$
+であるとする．区間$(\alpha	,	+	\infty)$において関数
+$f_n	(x)	,	n	=1,	2,	3,	\cdots$，は連続，級数
+$	\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)	$は収束してその和
+$\displaystyle		s(x)	=	\sum_{n=1}^{\infty}	f_n	(x)$も連続で，
+部分和$\displaystyle	s_m	(x)	=	\sum_{n=1}^{\infty}	f_n	(x)$ががつねに不等式：
+$	|	s_m	(x)	\leqq	\sigma	(x)	=	\sum_{n=1}^{\infty}	f_n	(x)$を満たすならば
+\[
+	\int_a^{+\infty}	\sum_{n=1}^{\infty}	f_n	(x)	dx	=	\sum_{n=1}^\infty	\int_a^{+\infty}	f_n	(x)	dx.
+\]

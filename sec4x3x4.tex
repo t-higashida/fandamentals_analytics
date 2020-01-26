@@ -1,0 +1,74 @@
+\subsection{平均値の定理}
+
+積分法における平均値の定理（定理4.2）は広義積分についても成り立つ．すなわち
+
+\定理{4.12}
+（平均値の定理）$x$の関数$f(x)$が開区間$(a,b)$で連続で広義積分
+$\displaystyle	\int_a^b	f(x)	dx$が収束しているならば
+\begin{equation}
+	\frac{1}{b-a}	\int_a^b	f(x)	dx	=	f(\xi),	\quad	a	<	\xi	<	b,
+\label{eq4x53}
+\end{equation}
+なる点$\xi$が存在する．
+
+\証明
+点$c$，$a	<	c	<	b$，を一つ定めて
+\[
+	F(x)	=	\int_c^x	f(x)	dx
+\]
+とおけば，定理4.7，$(1^\circ)$により，$F(x)$は$[a,b]$で連続，
+$(a,b)$で微分可能であるから，微分法における平均値の定理（\S	3.3，定理3.5）により，
+\begin{equation}
+		\frac{F(b)	-	F(a)}{b-a}	=	F'(\xi)	,	\quad	a	<	\xi	<	b,
+\label{eq4x54}
+\end{equation}
+なる$\xi$が存在する．$\displaystyle	F(b)	-	F(a)	=	\int_a^b	f(x)	dx$，$F'(\xi)	=	f(\xi)$であるから，
+（\ref{eq4x54}）はすなわち（\ref{eq4x53}）である．
+\■
+
+この証明は，積分法における平均値の定理と微分法における平均値の定理が本質的には
+同じ定理であることを意味している．
+
+微分法における平均値の定理を用いず定理4.12を証明するには，つぎのようにすればよい：
+\[
+	\mu	=	\frac{1}{b-a}	\int_a^b	f(x)	dx
+\]
+とおいて，すべての$\xi,	\:	a	<	\xi	<	b$，について$f(\xi)	\ne	\mu$であったと仮定してみる．
+そうすれば，中間値の定理（\S	\ref{sec2x2x2}，定理2.2）により，開区間$(a,b)$でつねに
+$f(x)	>	\mu$となるか，または，つねに$f(x)	<	\mu$となる．したがって，
+定理4.6，$(3^\circ)$により，
+\[
+	\int_a^b	f(x)	dx	>	\int_a^b	\mu	dx	=	\mu	(b-a)	
+	\quad	\text{または}	\quad
+	\int_a^b	f(x)	dx	<	\mu	(b-a)
+\]
+となるが，これは$\mu$の定義に反する．故に$f(	\xi)	=	\mu$なる$\xi	,	a	<	\xi	<	b$，が存在する．
+
+拡張された平均値の定理：定理4.3も広義積分について成り立つ．すなわち
+
+\定理{4.13}
+\underline{開区間$(a,b)$}で$f(x)	,	g(x)$は連続，$g(x)	>	0$であるとき，広義積分
+$\displaystyle	\int_a^b	f(x)	g(x)	dx,\int_a^b	g(x)	dx$が共に収束しているならば
+\begin{equation}
+	\int_a^b	f(x)	g(x)	dx	=	f(\xi)	\int_a^b	g(x)	dx,	\quad	a	<	\xi	<	b,
+\label{eq4x55}
+\end{equation}
+なる点$\xi$が存在する．
+
+\証明
+点$c	,	\:	a	<	c	<	b$，を一つ定めて
+\[
+	F(x)	=	\int_c^x	f(x)	g(x)	dx	,	\quad
+	G(x)	=	\int_c^x	g(x)	dx,
+\]
+とおく．$F(x),	G(x)$は共に$[a,b]$で連続，$(a,b)$で微分可能であって，$(a,b)$で
+$G'(x)	=	g(x)	>0$，また$\displaystyle	G(b)	-	G(a)	=	\int_a^b	g(x)	dx	>	0$である．したがって，
+\S	\ref{sec3x3}，定理3.9により，
+\[
+	\frac{F(b)	-	F(a)	}{G(b)	-	G(a)	}	=	\frac{F'(\xi)	}{	G'(\xi)	}	,	\quad		a	<	\xi	<	b,
+\]
+なる$\xi$が存在するが，$\displaystyle	F(b)	-	F(a)	=	\int_a^b	f(x)	g(x)	dx,	F'(\xi)	/	G'(\xi)	=	f(\xi)g(\xi)	/	g(\xi)	=f(\xi)$である．
+故に，この$\xi$について（\ref{eq4x55}）が成り立つ．
+\■
+
+

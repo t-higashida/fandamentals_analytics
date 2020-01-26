@@ -1,0 +1,66 @@
+\subsection{面積}
+
+恒等的に$1$に等しい関数$1$の積分，たとえば$ \displaystyle \int_A 1 dx dy$を
+$\int_A dx dy$あるいは$ \int_A dw$と書く．
+矩形$ K= \{ (x,y) \: | \: a \leqq x \leqq b , c \leqq y \leqq d \:\}$については
+\[
+	\int_K dw = \int_a^b \int_c^d dx dy = (b-a)(d-c)
+\]
+はもちろん$K$の面積である．したがって矩形塊$A$に対しても，$A$を有限個の矩形
+$K_1 , K_2 , \cdots , K_\lambda , \cdots , K_\mu$に分割して考えれば
+\[
+	\int_A dw = \sum_{\lambda=1}^{\mu}	\int_{K_\lambda} dw
+\]
+ば$A$の面積である．$A$の面積を$w(A)$で表わす：$ w (A) = \int_A dw$．
+任意の領域$D$の\textbf{面積}を
+\[
+	w ( D ) = \int_D dw
+\]
+と定義する.すべての矩形塊$A, \; A \subset D$，について$w (A) $)が上に有界ならば，
+(\ref{eq7x24})こより
+\[
+	w(D) = \sup_{A \subset D} w (A),
+\]
+$w (A) $が上に有界でないときには$w(D) = + \infty$である．また$ \{ A_m \} $を内部から単調に
+$D$に収束する矩形塊列とすれば
+\[
+	w ( D ) = \lim_{m\rightarrow \infty} w(A_m).
+\]
+$E$が$D$の部分領域ならば
+\[
+	w ( E ) \leqq w (D) , \quad E \subset D
+\]
+となることは明らかであろう.
+
+$f(P)$を矩形塊$A$において連続な関数とする.定理7.5，$(2^\circ)$により，任意の定数
+$c$に対して$ \displaystyle \int_A c dw = c \int_A dw = c w (A$) であるから，$A$においてつねに
+$ \mu \leqq f(P) \leqq \rm{M}, \mu \rm{M}$は定数，ならば定理7.5，$(3^\circ)$により
+\begin{align*}
+	\mu w ( A ) \leqq \int_A f(P) dw \leqq \rm{M} w (A).
+\end{align*}
+したがって，$A$においてつねに$ | f(P)1 \leqq \rm{M}$ならば
+\begin{equation}
+	\left|	f(p) dw
+	\right|
+	\leqq \rm{M} w (A)\leqq \rm{M} w (D).
+\label{eq7x28}
+\end{equation}
+$f(P)$が領域$D$で連続であるときには，$ w (D) < + \infty$で$D$において$f(P)$が有界：
+$ | f(P) \leqq \rm{M}$ならば，任意の矩形塊$A$，$A \subset D$，に対して
+\[
+	\int_A | f(P) | dw \leqq \rm{M} w (A) \leqq \rm{M} w (D).
+\]
+故に(\ref{eq7x24})により
+\[
+	\int_D | f(P) | dw \leqq  \rm{M} w (D),
+\]
+すなわち広義積分$\int_D f(P) dw $は絶対収束する．そして(\ref{eq7x26})により
+\begin{equation}
+	\left|	\int_D f(P) dw
+	\right|
+	\leqq \rm{M} w (D).
+\label{eq7x29}
+\end{equation}
+$D$が有界ならば$ w (D) < + \infty$なることは明らかであるから，\underline{有界領域$D$上で有界な連続関数}
+$f(P)$\underline{の広義積分}$ \displaystyle	\int_D f(P) dw$\underline{はつねに絶対収束する.}
+

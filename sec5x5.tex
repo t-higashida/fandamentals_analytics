@@ -1,0 +1,132 @@
+\section{巾級数}
+\subsection{収束半径}
+$x$の巾級数$\displaystyle	\sum_{n=0}^\infty	a_n	x^n$の収束について考察する．
+$x$を$x-c$で置き換えれば，考察の結果がそのまま$x-c$の巾級数$\displaystyle	\sum_{n=0}^{\infty}a_n	(x-c)^n$
+に適用されることはいうまでもない．
+数直線$\R$上の1点$x$において$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$が収束したとすれば，
+$n	\rightarrow	\infty$のとき$a_nx^n	\rightarrow	0$となる
+\footnote{
+\S \ref{sec1x5x4} の例1.3の次のあたりの記述に証明がある．
+}
+から，すべての$n$について$|a_nx^n|	\leqq	M$なる正の定数$M$が存在する．
+故に
+\[
+	|x||a_n|^{1/n}	\leqq	M^{1/n}.
+\]
+一般に，すべての$n$について	$b_n	\leqq	c_n$ならば$\displaystyle	\limsup_{n\rightarrow	\infty}	b_n	\leqq	\limsup_{n\rightarrow	\infty}	c_n$
+\footnote{
+	$c_n$が単調減少，$b_n$が単調増加の場合を考えれば十分．
+このとき$\displaystyle	\limsup_{n\rightarrow\infty}	c_n	=	c_1$，$\displaystyle	\limsup_{n\rightarrow\infty}	b_n	=	\lim_{n\rightarrow\infty}	b_n$
+であるが，$	\displaystyle	\limsup_{n\rightarrow\infty}	c_n	=	c_1	>	\lim_{n\rightarrow\infty}	c_n	>	\lim_{n\rightarrow\infty}	b_n	=	\limsup_{n\rightarrow\infty}	b_n$
+である．
+}
+，
+また(\ref{eq2x5})により，$\displaystyle	\lim_{n\rightarrow	\infty}	M^{1/n}=1$であるから，
+したがって
+\begin{equation}
+	|x|\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}	\leqq	\limsup_{n\rightarrow	\infty}	M^{1/n}	=1.
+	\label{eq5x38}
+\end{equation}
+故に，$\displaystyle	0	<	\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}	<	+\infty$である場合には，
+\[
+	r=	\frac{1}{\displaystyle	\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}}
+\]
+とおけば，
+\begin{equation}
+	|x|	\leqq	r.
+	\label{eq5x39}
+\end{equation}
+$\displaystyle	\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}	=	+	\infty$となる場合には$r=0$とおく．
+$|x|>0$と仮定すると(\ref{eq5x38})の両辺を$|x|$で割ると
+$\displaystyle	\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}	<	\infty$となり矛盾，
+したがってこの場合$|x|=0$である．すなわち(\ref{eq5x39})が成り立つ．
+$\displaystyle	\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}	=0$なる場合には，
+$r=+\infty$とおく．この場合(\ref{eq5x39})は自明である．
+このように定義された$r$についてつぎの定理が成り立つ：
+
+\定理{5.14}
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$は$|x|<r$のとき絶対収束し，
+$|x|>r$のとき発散する．
+
+\証明
+まず，$|x|<r$のとき，$|x|	<	\rho	<	r$なる実数$\rho$を一つ選べば，
+$\displaystyle	1/\rho	>	1/r	=	\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}$となるから，
+\S 1.5.3で述べた上極限の性質(ⅰ)により，自然数$n_0$が定まって
+\[
+	n	>	n_0	\quad	\text{ならば}	\quad	|a_n|^{1/n}	<	\frac{1}{\rho},
+	\quad	\text{したがって}	\quad	|a_n|	<	\frac{1}{\rho^n}
+\]
+となる．故に
+\[
+	n	>	n_0	\quad	\text{ならば}	\quad	|a_n	x^n|	<	\left(\frac{|x|}{\rho}	\right)^n.
+\]
+仮定より$|x|/\rho	<	1$であるから正項\underline{等比}級数$\displaystyle	\sum_{n=0}^{\infty}	(|x|/\rho	)^n$
+は収束する．故に，\S \ref{sec1x5x4}，定理1.22により，
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_nx^n$は絶対収束する．
+
+$|x|>r$のとき，$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$が収束した仮定すると，
+$n	\to	\infty$のとき$a_n	x^n	\to	0$となり，(\ref{eq5x39})までに至る推論，そして
+(\ref{eq5x39})により$|x|	\leqq	r$となって矛盾を生じする．
+故に，このとき，$\sum_{n=0}^{\infty}	a_n	x^n$は発散する．
+\■
+
+この定理5.14の$r$を$x$の巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$の
+\textbf{収束半径}(radius of convergence)と呼ぶ．
+$1/	+	\infty$は$0$を，$1/0$は$+\infty$を表すものと約束すれば，
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$の収束半径$r$は，
+$\displaystyle	\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}	=	+	\infty$および
+$=0$なる場合も含めて，\textbf{Cauchy-Hadamardの公式}:
+\begin{equation}
+	r=	\frac{1}{\displaystyle	\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}}
+	\label{eq5x40}
+\end{equation}
+によって与えられる．
+
+$0	<	r	<	+	\infty$なる場合，$|x|	=	r$，すなわち$x	=	-r	$あるいは$x	=r$ならば
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$は収束することも発散することもある．
+したがって$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$が収束する
+$x$の集合は区間$(-r	,	r),	\:	[	-r	,	r	]	,	\:	[	-r	,	r),	\:	(-r,r]$のいずれかである．
+
+\例{5.9}
+巾級数$\displaystyle	\sum_{n=1}^{\infty}	x^n/n$を考察する．\S 2.3.3，例2.9により
+\[
+	\lim_{n\rightarrow	\infty}	\log	n^{1/n}	=	\lim_{n\rightarrow	\infty}	\frac{\log	n}{n}	=	0,
+\]
+したがって
+\begin{equation}
+	\lim_{n\rightarrow	\infty}	n^{1/n}	=	1.
+	\label{eq5x41}
+\end{equation}
+故に$\displaystyle	\sum_{n=1}^{\infty}	x^n/n$の収束半径は$r=1$である．
+$\displaystyle	\sum_{n=1}^{\infty}	x^n/n$は$x=1$のとき発散する(例1.4)が，
+$x=-1$のときには，\S 1.5.4，定理1.23により,収束する．$\displaystyle	\sum_{n=1}^{\infty}	x^n/n$が
+収束する$x$の集合は区間$[-1,1)$である．
+
+巾級数の収束に関する定理 5.14は複素数$c_n$を係数とする複素数$z$の巾級数
+$	\displaystyle	\sum_{n=0}^{\infty}	c_n	z^n$についてもそのまま成り立つ：
+
+\定理{5.15}
+\[
+	r	=	\frac{1}{\displaystyle	\limsup_{n\rightarrow\infty}	|	c_n	|^{1/n}}
+\]
+とおけば，巾級数$\displaystyle	\sum_{n=0}^{\infty}	c_n	z^n$は
+$|z|	<	r$のとき絶対収束し，$|z|	>	r$のとき発散する．
+
+\証明
+
+絶対値$|	\:	|$の性質だけによる定理 5.14 の証明がそのまま通用する．
+\■
+　
+この定理5.15の$r$を巾級数$\displaystyle	\sum_{n=0}^{\infty}	c_n	z^n$の収束半径という．
+もちろん$	0	\leqq	r	\leqq	\infty$である．
+
+$	0	<	r	<	+	\infty$である揚合，複素平面$\C$上の原点$0$を中心とする半径
+$r$の円周$C	=	\{	\:	z	\:	|	\:	|z|	=r	\}	$を巾級数
+$\displaystyle	\sum_{n=0}^{\infty}	c_n	z^n$の\textbf{収束円}
+（circleofconvergence）という．定理5.15によれば，
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	c_n	z^n$は，
+点$z$が収束円$C$の内部にあれば絶対収束し，外部にあれば
+発散する．$z$が収束円$C$上にあるときには
+$\displaystyle	\sum_{n=0}^{\infty}	c_n	z^n$は収束することも発
+散することもある．$r$を収束半径というのはそれが収束円の半径で
+あるからである．

@@ -1,0 +1,134 @@
+\pagebreak
+\subsection{部分積分}
+\label{sec4x2x3}
+
+$f(x),g(x)$は共に或る区間$I$で連続微分可能な関数である．このとき，
+(\ref{eq3x11})により，
+\[
+	\frac{d }{d x}	(	f(x)g(x))	=	f'(x)	g(x)	+	f(x)	g'(x)
+\]
+であるから，
+\[
+	f(x)	g(x)	=	\int	f'(x)	g(x)	dx	+	\int	f(x)	g'(x)	dx.
+\]
+故に
+\begin{equation}
+	\int	f(x)	g'(x)	dx	=	f(x)	g(x)	-	\int	f'(x)	g(x)	dx.
+\label{eq4x21}
+\end{equation}
+一般に$h(x)$が$I$で連続であるとき，$I$に属する任意の2点$a,b$に対して，
+$h(b)-f(a)$を記号$[	h(x)	]_a^b$，あるいは$h(x)	|_a^b$で表わす:
+\[
+	[	h(x)	]_a^b	=	h(x)	|_a^b	=	h(b)	-	f(a).
+\]
+この記法を用いれば，(\ref{eq4x21})から直ちに
+\begin{equation}
+	\int_a^b	f(x)	g'(x)	dx	=	[		f(x)g(x)]_a^b	-	\int_a^b	f'(x)	g(x)	dx
+\label{eq4x22}
+\end{equation}
+を得る．(\ref{eq4x21}),(\ref{eq4x22})を\textbf{部分積分}(integration by parts)の公式という．
+
+\例{4.3}
+(\ref{eq4x21})において$g(x)=x$とおけば
+\begin{equation}
+	\int	f(x)	dx	=	x	f(x)	-	\int	x	f'(x)	dx
+\label{eq4x23}
+\end{equation}
+を得る．ここで$f(x)	=	\log	x$とおけば，$f'(x)	=	1/x$であるから，
+\[
+	\int	\log	x	dx	=	x	\log	x	-x.
+\]
+また，$|x|<	1$として$f(x)	=	\sqrt{1-x^2}$とおけば
+\[
+	x	f'(x)	=	\frac{-x^2}{\sqrt{1-x^2}}	=	\frac{1-x^2}{\sqrt{1-x^2}}	-	\frac{1}{\sqrt{1-x^2}}
+					=	\sqrt{1-x^2}	-	\frac{1}{\sqrt{1-x^2}}
+\]
+であるから，(\ref{eq4x18})により，
+\[
+	\int	\sqrt{1-x^2}	dx	=	x	\sqrt{1-x^2}	-	\int	\sqrt{1-x^2}	dx	+	\Arcsin	x.
+\]
+故に
+\begin{equation}
+	\int	\sqrt{1-x^2}	dx	=	\frac{1}{2}	(	x	\sqrt{1-x^2}	+	\Arcsin	x),	\quad	|x|	<1.
+\label{eq4x24}
+\end{equation}
+
+\例{4.4}
+$n$を自然数として，$\displaystyle	S_n	=	\int_0^{\pi/2}	(	\sin	x)^n	dx$とおく．
+$f(x)	=	(\sin	x	)	^{n-1},	g(x)	=	\cos	x$とおけば$(\sin	x)^n	=	f(x)	g'(x)$であるから，
+部分積分の公式(\ref{eq4x22})により
+\begin{align*}
+	S_n	&=	\int_0^{\pi	/	2}	(	\sin	x)^n		dx	\\
+			&=	[	-	(\sin	x)^{n-1}	\cos	x	]_0^{\pi	/	2}
+				+	\int_0^{\pi	/	2}	(	n	-1)	(	\sin	x	)	^{n-2}	\cos^2	x	dx	\\
+			&=	(n-1)	\int_0^{\pi/2}	(	\sin	x	)^{n-2}	(1	-	\sin^2	x)	dx	\\
+			&=	(n-1)	S_{n-2}	-	(n-1)	S_n.
+\end{align*}
+故に$n	S_n	=	(n-1)	S_{n-2}$，すなわち
+\begin{equation}
+	S_n	=	\frac{n-1}{n}	S_{n-2}.
+\label{eq4x25}
+\end{equation}
+この式は，$\displaystyle	S_0	=	\int_0^{\pi	/	2}	1	dx	=	\pi/2$とおけば，
+$n	\geqq	2$のとき成り立つ．$\displaystyle	S_1	=	\int_0^{\pi/2}	\sin	x	dx	=1$であるから，
+$n$が偶数の場合と奇数の場合を別々に考えれば，
+\begin{align*}
+	S_{2n}		&=	\frac{2n-1}{2n}	\cdot	\frac{2n-3}{2n-2}	\cdots	\frac{3}{4}	\cdot	\frac{1}{2}	\cdot	\frac{\pi}{2},	\\
+	S_{2n+1}	&=	\frac{2n}{2n+1}	\cdot	\frac{2n-2}{2n-1}	\cdots	\frac{4}{5}	\cdot	\frac{2}{3}	\cdot	1,	\\
+\end{align*}
+を得る．したがって，
+\begin{align*}
+	&2n	(2n-2)	(2n-4)	\cdots	4	\cdot	2	=	2^n	n!,	\\
+	&	(2n+1)(2n-1)(2n-3)	\cdots	5	\cdot	3	=	\frac{(2n+1)!}{2^n	n!}
+\end{align*}
+であるから，
+\begin{equation}
+	\begin{cases}
+		\:	S_{2n}		=	\displaystyle	
+												\frac{\displaystyle	\frac{(2n-1)!}{2^{n-1}	(n-1)!}}{2^n	n!}	\cdot	\frac{\pi}{2}
+									=	\displaystyle
+												\frac{\displaystyle	\frac{(2n-1)!	2n}{2^{n-1}	(n-1)!	2n}}{2^n	n!}
+									=	\frac{(2n)!}{2^{2n}(n!)^2}	\cdot	\frac{\pi}{2},	\\
+			\\
+		\:	S_{2n+1}	=	\displaystyle
+												\frac{{2^n	n!}}{\frac{\displaystyle	(2n+1)!}{	\displaystyle	2^n	n!}}
+									=	\frac{2^{2n}(n!)^2}{(2n+1)!}.
+	\end{cases}
+\label{eq4x26}
+\end{equation}
+$	0	<	x	<	\pi	/2$のとき$(\sin	x)^n	>	(\sin	x)^{n+1}$であるから，
+定理4.1,$(4^\circ)$により，$S_n	>	S_{n+1}$.したがって，(\ref{eq4x25})により，
+\[
+	1	>	\frac{S_{2n+1}}{S_{2n}}	>	\frac{S_{2n+2}}{S_{2n}}	
+	=	\frac{	
+			\displaystyle	\frac{(2n+2)!}{2^{2n+2}	\{(n+1)!	\}^2}	}{
+			\displaystyle	\frac{(2n)!}{2^{2n}(n!)^2}
+		}
+	=	\frac{(2n+2)(2n+1)}{2^2(n+1)^2}
+	=	\frac{2n+1}{2n+2}.
+\]
+故に
+\begin{equation}
+	\lim_{n\rightarrow\infty}	\frac{S_{2n+1}}{S_2n}	=	1.
+\label{eq4x27}
+\end{equation}
+(\ref{eq4x26})により$S_{2n+1}S_{2n}	=	\pi	/	(4n+2)$であるから，
+(\ref{eq4x27})を用いて
+\[
+	\lim_{n\rightarrow\infty}	n(S_{2n+1})^2	=	\lim_{n\rightarrow\infty}	\frac{n}{4n+2}	\frac{S_{2n+1}}{S_2n}	\pi	=	\frac{\pi}{4},
+\]
+したがって
+\begin{equation}
+	\lim_{n\rightarrow\infty}	\sqrt{n}	S_{2n+1}	=	\sqrt{\pi}/2
+\label{eq4x28}
+\end{equation}
+を得る．この結果と(\ref{eq4x27}),(\ref{eq4x26})を組み合わせれば
+\[
+	\sqrt{\pi}/2	=	\lim_{n\rightarrow\infty}	\sqrt{n}	S_{2n+1}	=	\lim_{n\rightarrow\infty}	\sqrt{n}	S_{2n}
+	=	\frac{\pi}{2}	\lim_{n\rightarrow\infty}	\frac{\sqrt{n}	(2n)!}{2^{2n}(n!)^2},
+\]
+故に
+\begin{equation}
+	\sqrt{\pi}	=	\lim_{n\rightarrow\infty}	\frac{2^{2n}(n!)^2}{\sqrt{n}	(2n)!}.
+\label{eq4x29}
+\end{equation}

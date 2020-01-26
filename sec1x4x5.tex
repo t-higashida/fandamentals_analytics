@@ -1,0 +1,124 @@
+\subsection{極限の乗法，除法}
+
+\定理{1.19}
+\begin{list}{}{}
+	\item	(1$^\circ$)	　数列$\{\alpha_n\}$,$\{\beta_n\}$が収束すれば
+										$\{\alpha_n\beta_n\}$も収束し，
+										\[
+												\lim_{n	\rightarrow	\infty}\alpha_n\beta_n
+											=	\lim_{n	\rightarrow	\infty}\alpha_n	\cdot
+												\lim_{n	\rightarrow	\infty}\beta_n
+										\]
+	\item	(2$^\circ$)　数列$\{\alpha_n\}$，$\{\beta_n\}$が収束すれば，
+										$\alpha_n	\ne	0$，$\displaystyle	\lim_{n	\rightarrow	\infty}\alpha_n	\ne	0$の
+										仮定のもとで，数列$\{\beta_n/\alpha_n\}$も収束し，
+									\[
+										\lim_{n	\rightarrow	\infty}	\frac{\beta_n}{\alpha_n}
+									=	\frac{\displaystyle\lim_{n	\rightarrow	\infty}	\beta_n}{\displaystyle\lim_{n	\rightarrow	\infty}	\alpha_n}
+									\].
+\end{list}
+\証明
+	(1$^\circ$)	　$\displaystyle	\lim_{n	\rightarrow	\infty}\alpha_n=\alpha$，
+$\displaystyle	\lim_{n	\rightarrow	\infty}\beta_n=\beta$とおけば，任意の正の実数$\varepsilon$に対応して
+\[
+	n	>	m_0(\varepsilon)	\quad	\text{ならば}	\quad	|\alpha_n-\alpha|	<	\varepsilon,	\:	|\beta_n-\beta|<\varepsilon
+\]
+となる自然数$m_0(\varepsilon)$が定まる．
+\[
+	|\alpha_n\beta_n-\alpha\beta|	=			|\alpha_n(\beta_n-\beta)+\beta(\alpha_n-\alpha)|
+																\leqq	|\alpha_n||\beta_n-\beta|+|\beta||\alpha_n-\alpha|
+\]
+であるから，
+\[
+	n	>	m_0(\varepsilon)	\quad	\text{ならば}	\quad	|\alpha_n\beta_n-\alpha\beta|<(|\alpha_n|+|\beta|)\cdot	\varepsilon
+\]
+となる．一方$n	>	m_0(1)$ならば$|\alpha_n|	\leqq	|\alpha_n-\alpha|+|\alpha|<1+|\alpha|$.故に，任意の正の
+実数$\varepsilon$に対応して，
+\[
+	n_0(\varepsilon)=m_0\left(\frac{\varepsilon}{1+|\alpha|+|\beta|}\right)+m_0(1)
+\]
+とおけば，
+\[
+	n_0(\varepsilon)	\geqq	m_0\left(\frac{\varepsilon}{1+|\alpha|+|\beta|}\right),\quad
+	n_0(\varepsilon)	\geqq	m_0(1)
+\]
+\[
+	n	>	n_0(\varepsilon)	\quad	\text{のとき}	\quad	
+				|\alpha_n\beta_n	-	\alpha\beta|	
+			<	(|\alpha_n|+|\beta|)\cdot	\frac{\varepsilon}{1+|\alpha|+|\beta|}
+			<	(1+|\alpha|+|\beta|)\cdot	\frac{\varepsilon}{1+|\alpha|+|\beta|}
+			<	\varepsilon.
+\]
+すなわち数列$\{\alpha_n\beta_n\}$は
+$\displaystyle
+	\alpha\beta=\lim_{n	\rightarrow	\infty}\alpha_n	\cdot	\lim_{n	\rightarrow	\infty}	\beta_n
+$
+に収束する．
+
+	(2$^\circ$)	　まず
+$\displaystyle	\lim_{n	\rightarrow	\infty}	\alpha_n	=	\alpha$とおけば
+$\displaystyle	\lim_{n	\rightarrow	\infty}	1/\alpha_n	=	1/\alpha$なることを証明しよう．
+任意の正の実数$\varepsilon$に対応して自然数$m_0(\varepsilon)$が定まって
+\[
+	n>m_0(\varepsilon)	\quad	\text{ならば}	\quad	|\alpha_n-\alpha|<\varepsilon
+\]
+となる．仮定により$|\alpha|>0$だから，
+\[
+	\left|\frac{1}{\alpha_n}-\frac{1}{\alpha}=\frac{\alpha-\alpha_n}{\alpha_n\alpha}\right|
+	<	\frac{\varepsilon}{|\alpha_n||\alpha|}.
+\]
+
+ここで$n>m_0(|\alpha|/2)$とすれば
+$	|\alpha_n-\alpha|<|\alpha|/2
+	\Rightarrow	|\alpha|	-	|\alpha_n|	<	|\alpha_n-\alpha|	<	|\alpha/2|\
+$，したがって$|\alpha_n|>|\alpha|/2$，
+すならち$1/|\alpha_n|<2/|\alpha|$となる．
+\begin{align*}
+	-\frac{|\alpha|}{2}	<	\alpha_n-\alpha	<	\frac{|\alpha|}{2}	\\
+	\Longrightarrow	\alpha-\frac{|\alpha|}{2}	<	\alpha_n	<	\frac{|\alpha|}{2}	+	\alpha
+\end{align*}
+$\alpha	>	0$のとき（上式の左側に注目して）
+\[
+	\frac{\alpha}{2}	<	\alpha_n	=	|\alpha_n|
+\]
+$\alpha	<	0$のとき
+\begin{align*}
+	&-|\alpha|-\frac{|\alpha|}{2}	<	\alpha_n	<	\frac{|\alpha|}{2}	-	|\alpha|	=	-\frac{|\alpha|}{2}	\\
+	&\Longrightarrow	\frac{|\alpha|}{2}	<	-\alpha_n	=	|\alpha_n|
+\end{align*}
+つまり，
+\[
+	\left|\frac{1}{\alpha_n}-\frac{1}{\alpha}\right|=\left|\frac{\alpha-\alpha_n}{\alpha_n\alpha}\right|
+	<	\frac{\varepsilon}{|\alpha_n||\alpha|}
+	<	\frac{\varepsilon}{\displaystyle\frac{|\alpha|}{2}|\alpha|}	=	\frac{2\varepsilon}{|\alpha|^2}.
+\]
+故に，ここで
+\[
+	n_0(\varepsilon)	=	m_0\left(\frac{|\alpha|^2\varepsilon}{2}	\right)
+										+	m_0\left(\frac{|\alpha|}{2}	\right)
+\]
+とおけば，
+\begin{align*}
+	n	>	n_0(\varepsilon)	
+		\Longrightarrow	
+			\left|\frac{1}{\alpha_n}-\frac{1}{\alpha}	\right|	
+			&\leqq
+					\frac{|\alpha-\alpha_n|}{|\alpha_n||\alpha|}	\\
+			&<
+					\frac{2}{|\alpha|^2}|\alpha_n-\alpha|	\\
+			&<
+					\frac{2}{\alpha^2}\cdot\frac{|\alpha|^2}{2}	\varepsilon	\\
+			&=\varepsilon.															
+\end{align*}
+となる．すなわち$\{1/\alpha_n\}$は
+$\displaystyle
+	1/\alpha=1/\lim_{n	\rightarrow	\infty}\alpha_n$に収束する．
+さて，この結果と(1$^\circ$)を組み合せれば，数列$\{\beta_n/\alpha_n\}$
+が$\displaystyle
+	\beta/\alpha	=	\lim_{n	\rightarrow	\infty}	\beta_n	/\lim_{n	\rightarrow	\infty}	\alpha_n
+$
+に収束することがわかる．
+\■
+
+上記の定理1.14，1.15，1.19で高校数学で学んだ極限の大・小，加・減・乗・除に関する基本的に法則が
+確立された．以後これらの法則は自由に用いることにする．

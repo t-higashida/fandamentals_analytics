@@ -1,0 +1,175 @@
+\subsection{定積分の性質}
+\label{sec4x1x2}
+
+\定理{4.1}
+$f(x),g(x)$を閉区間$[a,b]$で連続な関数とする．
+\begin{list}{}{}
+	\item	$(1^\circ)$	$a	<	c	<	b$ならば
+				\begin{equation}
+						\int_a^b	f(x)	dx	=	\int_a^c	f(x)	dx	+	\int_c^b	f(x)	dx
+				\label{eq4x4}
+				\end{equation}
+	\item	$(2^\circ)$	$c_1,	c_2$を任意の定数としたとき
+				\begin{equation}
+						\int_a^b	(c_1	f(x)	+	c_2	g(x))	dx	=	c_1	\int_a^b	f(x)	dx	+	c_2	\int_a^b	g(x)	dx.
+				\label{eq4x5}
+				\end{equation}
+	\item	$(3^\circ)$	区間$[a,b]$でつねに$f(x)	\geqq	0$ならば
+				\[
+						\int_a^b	f(x)	dx	\geqq	0
+				\]
+				であって，$[a,b]$で恒等的に$f(x)=0$である場合を除けば
+					\[
+						\int_a^b	f(x)	dx	>	0
+					\]
+	\item	$(4^\circ)$	区間$[a,b]$においてつねに$f(x)	\geqq	g(x)$ならば
+					\[
+							\int_a^b	f(x)	dx	\geqq	\int_a^b	g(x)	dx
+					\]
+				であって，$[a,b]$で恒等的に$f(x)	=	g(x)$である場合を除けば
+					\[
+							\int_a^b	f(x)	dx	>	\int_a^b	g(x)	dx.
+					\]
+	\item	$(5^\circ)$
+					\begin{equation}
+						\left|
+							\int_a^b	f(x)	dx
+						\right|
+						\leqq
+							\int_a^b	|f(x)|	dx.
+					\label{eq4x6}
+\end{equation}
+\end{list}
+
+\証明
+$(1^\circ)$ 定積分の定義4.1において，$[a,b]$の分割$\varDelta$として$c$を分点の一つとするもの：
+$\varDelta = \{ x_1 , x_1 , \cdots , x_j , \cdots , x_m \}	,	\:	x_j=c$，だけをとれば，
+\[
+	\sum_{k=1}^{m}	f(\xi_k)	(x_k	-	x_{k-1})
+=	\sum_{k=1}^{j}	f(\xi_k)	(x_k	-	x_{k-1})	+	
+	\sum_{k=j+1}^{m}	f(\xi_k)	(x_k	-	x_{k-1}).
+\]
+この両辺の$\delta	[	\varDelta	]	\rightarrow	0$のときの極限をとれば，直ちに(\ref{eq4x4})を得る．
+
+$(2^\circ)$
+\begin{align*}
+	&	\sum_{k=1}^m	(c_1	(\xi_k)	+	c_2	g(\xi_k))	(x_k-	x_-1)	\\
+	&	=	c_1	\sum_{k=1}^m	f(\xi_k)	(x_k	-	x_{k-1})	+	c_2	\sum_{k=1}^m	g(\xi_k)	(x_k	-	x_{k-1})
+\end{align*}
+によって明らかである．
+
+$(3^\circ)$ 区間$[a,b]$でつねに$f(x)	\geqq	0$ならば$\displaystyle	\int_a^b	f(x)	dx	\geqq	0$となることは明らかである．
+$[a,b]$に属する或る点$c$で$f(c)	>	0$とすれば，仮定により$f(x)$は$[a,b]$で連続であるから，
+$c$を含むある区間$[\alpha	,	\beta]	,	a	\leqq	\alpha	<	\beta	\leqq	b$，において$f(x)	>	\gamma	=	f(c)/2$となる．
+$[a,b]$の分割$\varDelta	$として$\alpha	,	\beta$をその分点とするもの：
+$\varDelta	=	\{	x_0	,	x_1	,	\cdots	,	x_{m-1}	,	x_m	\},	a	<	x_0	<	x_1	<	\cdots	<	x_{m-1}	<	x_m	=	b$，
+$x_{j-1}	=	\alpha	,	x_h	=	\beta$，をとれば
+\[
+	\sum_{k=1}^m	f(\xi_k	)	(x_k	-	x_{k-1})	\geqq
+	\sum_{k=j}^h	f(\xi_k	)	(x_k	-	x_{k-1})	\geqq
+	\sum_{k=j}^h	\gamma(x_k	-	x_{k-1})	=	\gamma	(	\beta	-	\alpha).
+\]
+故に
+\[
+	\int_a^b	f(x)	dx	=	\lim_{\delta [ \varDelta ]\rightarrow 0}
+	\sum_{k=1}^m	f(\xi_k)	(x_k	-	x_{k-1})	\geqq	\gamma	(	\beta	-	\alpha)	>0.
+\]
+
+$(4^\circ)$ $(2^\circ)$により
+\[
+	\int_a^b	f(x)	dx	-	\int_a^b	g(x)	dx	=	\int_a^b	(f(x)	-	g(x))	dx
+\]
+であるから，$(4^\circ)$を証明するには$f(x)-g(x)$に$(3^\circ)$を適用すればよい．
+
+$(5^\circ)$ $-|f(x)	|	\leqq	f(x)	\leqq	|f(x)|$であるから，
+$(2^\circ)$と$(4^\circ)$により，
+\[
+	-	\int_a^b	|f(x)|	dx	\leqq	\int_a^b	f(x)	dx	\leqq	\int_a^b	|f(x)|dx,
+\]
+すなわち(\ref{eq4x6})が成り立つ．
+\■
+
+\定理{4.2}（平均値の定理）
+$f(x)$が閉区間$[a,b]$で連続ならば
+\begin{equation}
+	\frac{1}{b-a}	\int_a^b	f(x)	dx	=	f(\xi)	,	\quad	a	<	\xi	<	b,
+\label{eq4x7}
+\end{equation}
+なる点$\xi$が存在する．
+
+\証明
+
+仮定により$f(x)$は$[a,b]$で連続であるから，\S \ref{sec2x2x2}，定理2.4により，
+$f(x)$は$[a,b]$で最大値$\mathsf{M}$と最小値$\mu$をもつ．
+$\mu	=	\mathsf{M}$ならば(\ref{eq4x7})は明らかであるから，
+$\mu	<	\mathsf{M}$なる場合について考察する．区間$[a,b]$において
+$\mu	\leqq	f(x)	\leqq	\mathsf{M}$であって，恒等的に$f(x)	=	\mu$でも
+$f(x)=\mathsf{M}$でもないから，定理4.1，$(4^\circ)$により，
+\[
+	\mu	(	b-a	)	=	\int_a^b	\mu	dx
+<	\int_a^b	f(x)	dx
+<	\int_a^b	\mathsf{M}	dx
+=	\mathsf{M}(b-a),
+\]
+すなわち
+\[
+	\mu	<	\frac{1}{b-a}	\int_a^b	f(x)	dx	<	\mathsf{M}.
+\]
+$\mu	=	f(\alpha)	,	a	\leqq	\alpha	\leqq	b,	\mathsf{M}=f(\beta)	,	a	\leqq	\beta	\leqq	b$で，
+$\alpha	<	\beta$また$\beta	<	\alpha$であるから，中間値の定理(\S \ref{sec2x2x2}，定理2.2)により，
+\[
+	f(\xi)	=	\frac{1}{b-a}	\int_a^b	f(x)	dx	,	\quad	\alpha	<	\xi	<	\beta	\quad	\text{または}	\beta	<	\xi	<	\alpha,
+\]
+なる点$\xi$が存在する．
+\■
+\pagebreak
+
+定理4.2はふつう平均値の第１定理とよばれるが，この“解析入門”ではこれを単に平均値の定理ということにする．
+
+(\ref{eq4x7})の左辺：$\displaystyle	\int_a^b	f(x)	dx	\bigg/	(b-a)$を，
+関数$f(x)$の区間$[a,b]$における\textbf{平均値}(mean value)という．
+$x_k	=a+	k(b-a)/m,	\:	k=0,1,2	\cdots	,	m,$によって区間$[a,b]$を$m$等分すれば，
+$x_k	-	x_{k-1}	=	(b-a)	/m$であるから，任意の$\xi$として特に$x_k$をとれば
+\[
+	\frac{1}{b-a}	\sum_{k=1}^m	f(x_k)	(x_k	-	x_{k-1})
+=	\frac{1}{m}	\sum_{k=1}^m	f(x_k).
+\]
+故に
+\[
+	\frac{1}{b-a}	\int_a^b	f(x)	dx	=	\lim_{m\rightarrow\infty}	\frac{1}{m}	\sum_{k=1}^m	f(x_k).
+\]
+すなわち，$\displaystyle	\int_a^b	f(x)	dx	/	(b-a)$は区間$[a,b]$を$m$等分したときの
+等分点$x_k$における$f(x)$の値$f(x_k),	k=1,	2,	\cdots	,	m$，の平均値の
+$m	\rightarrow	\infty$のときの極限である．
+
+次の定理は上記の平均値の定理の拡張である：
+
+\定理{4.3}
+閉区間$[a,b]$で$f(x),g(x)$が共に連続で開区間$(a,b)$でつねに
+$g(x)	>	0$ならば
+\begin{equation}
+	\int_a^b	f(x)	g(x)	dx	=	f(\xi)	\int_a^b	g(x)	dx	,	\quad	a	<	\xi	<	b,
+\label{eq4x8}
+\end{equation}
+なる点$\xi$が存在する．
+
+\証明
+$[a,b]$における$f(x)$の最大値を$\mathsf{M}$，最小値を$\mu$とする．
+$\mathsf{M}$なる場合には(\ref{eq4x8})は明らかであるから，$\mathsf{M}	>	\mu$とする．
+区間$[a,b]$において$\mu	g(x)	\leqq	f(x)	g(x)	\leqq	\mathsf{M}g(x)$であって，
+恒等的に$\mu	g(x)	=	f(x)	g(x)$でも$f(x)	g(x)	=	\mathsf{M}	g(x)$でもないから，
+定理4.1，$(4^\circ)$により，
+\[
+	\mu	\int_a^b	g(x)	dx	<	\int_a^b	f(x)	g(x)	dx	<	\mathsf{M}	\int_a^b	g(x)	dx.
+\]
+$\displaystyle	\gamma	=	\int_a^b	g(x)$とおけば，すなわち
+\[
+	\mu	<	\frac{1}{\gamma}	\int_a^b	f(x)	g(x)	dx	<	\mathsf{M}.
+\]
+故に，中間値の定理により，
+\[
+	f(\xi	)	=	\frac{1}{\gamma}	\int_a^b	f(x)	g(x)	dx	,	\quad	a	<	\xi	<	b,
+\]
+なる$\xi$が存在する．
+\■
+

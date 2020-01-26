@@ -1,0 +1,777 @@
+\section{積分変数の変換}
+
+$f(x)$を或る区間$I$で連続な$x$の関数，$\varphi	(t)$を区間$J$で定義された連続微分可能な$t$の関数とし，
+$\varphi$の値域$\varphi	(J)$が$I$に含まれているとして$f$と$\varphi$の合成関数
+$f(\varphi(t))$を考察する．仮定により，$\varphi(t)$の導関数$\varphi'(t)$は$t$の連続関数である．
+
+\定理{4.14}
+$\alpha	,	\beta	,	\alpha	\ne	\beta$，を$J$に属する2点とし，$a	=	\varphi(\alpha)	,	b	=	\varphi(\beta)$とおけば
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\int_\alpha^\beta	f(\varphi(t))	\varphi'(t)	dt.
+\label{eq4x56}
+\end{equation}
+\証明
+\[
+	F(x)	=	\int_a^x	f(x)	dx
+\]
+とおく．$F(x)$は$I$で$x$について微分可能で$F'(x)	=	f(x)$であるから，合成関数の微分法により，
+$F(\varphi(t))$は$t$について微分可能で
+\begin{equation}
+	\frac{d}{dt}	F(\varphi(t))	=	F'(\varphi(t))	\varphi'(t)	=	f(\varphi(t))	\varphi'(t).
+\label{eq4x57}
+\end{equation}
+したがって
+\[
+	F(b)	-	F(a)	=	F(\varphi(\beta))	-	F(\varphi(\alpha))	=	\int_\alpha^\beta	f(\varphi(t))	\varphi'(t)	dt,
+\]
+故に
+\[
+	\int_a^b	f(x)	dx	=	\int_\alpha^\beta	f(\varphi(t))	\varphi'(t)	dt.
+\]
+\■
+	
+（\ref{eq4x56}）の左辺の定積分を右辺の形に表すことを，積分変数$x$を$t$に\textbf{変換}するという．
+また関数$\varphi$を\textbf{変換}とよぶことがある．$d	\varphi	(t)	=	\varphi'(t)	dt$であるから，
+（\ref{eq4x56}）の右辺は左辺の$x,a,b$をそれぞれ$\varphi(t)	,	\varphi(\alpha)	,	\varphi(\beta)$で
+置き換えて得られる．故に（\ref{eq4x56}）を\textbf{置換積分の公式}という．
+（\ref{eq4x57}）を
+\begin{equation}
+	\int	f(x)	dx	=	\int	f(\varphi	(t)	)	\varphi'(t)	dt
+\label{eq4x58}
+\end{equation}
+と書き表すことがある．
+
+つねに$\varphi	'	(t)	>	0$で$I	=	\varphi	(	J)	$なる場合には，\S	\ref{sec3x3}，定理3.6により，
+$x	=	\varphi(t)$は$t$の単調増加関数，\S	\ref{sec3x4x6}，定理3.18，$(3^\circ)$により，
+逆関数$	t	=	\varphi^{-1}	(x)$も連続微分可能な$x$の単調増加関数であって，$x	=	\varphi(t)$によって
+$I$の各点$x$と$J$の各点$t$が1対1に対応する．
+故に，この場合，$t$を点$x	=	\varphi(t)$の新しい座標と考え，
+$\varphi^{-1}	$を座標$x$を新座標$t$に変換する\textbf{座標変換}とみなすことができる．
+
+\例{4.9}
+$\displaystyle	\int_0^1	\frac{	\log	(1+x)	}{1+	x^2}	dx	=	\frac{\pi}{8}	\log	2$．
+\証明	$x=	\tan	t$は区間$	(-	\pi	/2	,	\pi	/2)$で連続微分可能な$t$の単調増加関数で，
+\[
+	\frac{dx}{dt}	=	\frac{1}{\cos^2	t}	=	\frac{1-\sin^2	t}{1-	\sin^2	t}	+	\frac{\sin^2	t}{1-\sin^2	t}	
+=1	+	\frac{	\sin^2	t}{\cos^2	t}
+=1	+	\tan^2	t	=	1	+	x^2
+\]
+である．故に，公式（\ref{eq4x56}）により
+\[
+	\int_0^1	\frac{\log	(1+	x)}{1+	x^2}	dx	
+=	\int_0^{\pi/4}	\log	(1	+	\tan	t)	\frac{dt}{dx}	dx
+=	\int_0^{\pi/4}	\log	(1+\tan	t)	dt.
+\]
+$1	+	\tan	t	=	(\cos	t	+	\sin	t)	/	\cos	t$であるが，加法定理により，
+\[
+	\cos	\left(	\frac{\pi}{4}	-	t	\right)	=	
+	\cos	\frac{\pi}{4}	\cos	t	+	\sin	\frac{\pi}{4}	\sin	t	
+	=	\frac{1}{\sqrt{2}}	(	\cos	t	+	\sin	t),
+\]
+したがって\begin{align*}
+	\log	(	1	+	\tan	t)	
+&=	\log	\frac{\displaystyle	\sqrt{2}	\cos	\left(	\frac{\pi}{4}	-	t	\right)}{\cos	t}	\\
+&=	\log	\sqrt{2}	+	\log	\cos	\left(	\frac{\pi}{4}	-	t	\right)	-	\log	\cos	t.
+\end{align*}
+$\displaystyle	t	=	\frac{\pi}{4}	-	s$とおけば，$\displaystyle	\frac{dt}{ds}	=	-1$であるから，
+（\ref{eq4x56}）により，
+\[
+	\int_0^{\pi/4}	\log	\cos	\left(	\frac{\pi}{4}	-	t	\right)	dt
+	=	-	\int_{\pi/4}^0	\log	\cos	s	ds	
+	=	\int_0^{\pi/4}	\log	\cos	s	ds
+\]
+となる．故に
+\[
+	\int_0^{\pi/4}	\log	(1	+	\tan	t)	dt	
+=	\int_0^{\pi/4}	\log	\sqrt{2}	dt
+=	\frac{\pi}{4}	\log	\sqrt{2}	=	\frac{\pi}{8}	\log	2.
+\]
+\■
+
+置換積分の公式（\ref{eq4x56}）は広義積分についても成り立つ．すなわち
+
+\定理{4.15}
+$f(x)$は開区間$(a,b)$で連続な$x$の関数，$\varphi	(t)	$は$(	\alpha	,	\beta)$で\underline{連続微分可能な} $t$の関数で，
+$\alpha	<	t	<	\beta$のとき$	a	<	\varphi(t)	<	b$，$\displaystyle	a=	\lim_{t\rightarrow\alpha + 0}	\varphi(t),
+b	=	\lim_{t\rightarrow \beta - 0}	\varphi	(t)$であると仮定する．
+この仮定のもとで，広義積分$\displaystyle	\int_a^b	f(x)	dx$が収束するための
+\underline{必要かつ十分な条件}は
+広義積分$\displaystyle	\int_\alpha^\beta	f(	\varphi(t)	)	\varphi'(t)	dt$が収束することであって，収束するときには
+等式：
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\int_\alpha^\beta	f(\varphi(t))	\varphi'(t)	dt
+\label{eq4x59}
+\end{equation}
+が成り立つ．
+
+\証明
+まず，十分性（$\Rightarrow$）を証明する．
+$\alpha	<	\rho	<	\sigma	<	\beta$
+\footnote{		定理4.14の仮定	}，$r	=	\varphi(\rho	)$
+	,$s	=	\varphi(	\sigma)$とすれば，上記の定理
+4.14（狭義積分に関する置換積分の定理）により，
+\[
+	\int_r^s	f(x)	dx	=	\int_\rho^\sigma	f(	\varphi(t)	)	\varphi'(t)	dt.
+\]
+仮定により，$\rho	\to	\alpha	+	0$のとき$	r	\to	a	+	0	,	\sigma	\to	\beta	-0$のとき
+$s	\to	b-0$であるから，広義積分
+\[
+	\int_a^b	f(x)	dx	\stackrel{\text{def}}{=}	\lim_{	\substack{s	\rightarrow	b-0	\\	r	\to	a+0}}	\int_r^s	f(x)	dx
+\]
+が収束するならば
+\[
+	\int_\alpha^\beta	f(	\varphi(t))	\varphi'(t)	dt	\stackrel{\text{def}}{=}
+	\lim_{\substack{\sigma	\rightarrow \beta - 0	\\	\rho	\to \alpha	+	0}}
+	\int_\rho^\sigma	f(	\varphi(t))	\varphi'(t)	dt	
+=	\lim_{\substack{s \rightarrow b - 0	\\	r \to a	+	0}}
+	\int_r^s	f(x)	dx	=	\int_a^b	f(x)	dx,
+\]
+すなわち広義積分$\displaystyle	\int_\alpha^\beta	f(	\varphi(t))	\varphi'(t)	dt$も
+収束して等式（\ref{eq4x59}）が成立する．
+
+逆に広義積分
+\[
+	\int_\alpha^\beta	f(\varphi	(t))	\varphi'	(t)	dt	
+\stackrel{\text{def}}{=}
+\lim_{\substack{\sigma\rightarrow\beta - 0	\\	\rho	\to	\alpha	+	0}}	\int_\rho^\sigma	f(\varphi	(t))	\varphi'(t)dt
+\]
+が収束するならば広義積分
+\[
+	\int_a^b	f(x)	dx	=	\lim_{\substack{s\rightarrow b-0	\\	r	\to	a+0}}	\int_r^s	f(x)	dx
+\]
+も収束すること（必要性$\Leftarrow$）を証明する．極限
+$\displaystyle	\lim_{\substack{s\rightarrow b-0 \\r\rightarrow a+0 \\}}	\int_r^s	f(x)	dx$が存在(収束）すること，
+すなわち，いかなる変換$\varphi(t)$に対しても収束することを証明するためには，
+\S \ref{sec2x1} 「関数の極限」の項に述べたように，
+$a	<	r_n	<	s_n	<	b$，$\displaystyle	\lim_{n\rightarrow\infty}	r_n	=a,	\lim_{n\rightarrow\infty}	s_n	=b$
+なるすべての数列$	\{	r_n	\}	,	\{s_n	\}$に対して，
+極限$\displaystyle	\lim_{n\rightarrow\infty}	\int_{r_n}^{s_n}	f(x)	dx$が収束することをいえばよい．
+仮定により$\displaystyle	\lim_{t\rightarrow \alpha+0}	\varphi(t)	=a	,	
+\lim_{t	\rightarrow	\beta	-	0}	\varphi(t)	=	b$であるから，中間値の定理（定理2.2）によって，
+各$r_n	,	s_n$に対して$r_n	=	\varphi(	\rho_n)	,	s_n	(\sigma_n)$なる
+$\rho_n,	\sigma_n	,	\alpha		<	\rho_n	<	\beta,	\alpha	<	\sigma_n	<	\beta$，が存在する．
+数列$\{	\rho_n	\}$が$\alpha$に収束することを確かめるために，$\{	\rho_n	\}$は$\alpha$に
+収束しないと仮定すれば，或る正の実数$\varepsilon$に対して
+$\alpha	+	\varepsilon	\leqq	\rho_n	<	\beta$なる（有界な点列）$\rho_n$が無数に存在することになる．
+\S	\ref{sec1x6x5}，定理1.30により，これらの無数の項$\rho_n$から成る$\{	\rho_n	\}$の部分列
+は収束する部分列$\rho_{n_1}	,	\rho_{n_2}	,	\cdots	,	\rho_{n_m}	,	\cdots	$をもつ．
+その極限を$\displaystyle	\omega	=	\lim_{m\rightarrow\infty}	\rho_{n_m}$とすれば，
+$\alpha	+	\varepsilon	\leqq	\rho_{n_m}	<	\beta$であるから，
+$\alpha	+	\varepsilon		\leqq	\omega	\leqq	\beta$であるが，
+$\omega	=	\beta$ならば
+\[
+	\lim_{m\rightarrow\infty}	\varphi(	\rho_{n_m}	)	=	\lim_{t\rightarrow\beta-0}	\varphi(t)	=	b	>	a,
+\]
+$\omega	<	\beta$ならば
+\[
+	\lim_{m\rightarrow\infty}	\varphi(	\rho_{n_m})	=	\varphi(	\omega	)	>	a
+\]
+となって，いずれにしても
+\[
+	\lim_{m\rightarrow\infty}	\varphi(\rho_{n_m})	
+=	\lim_{m\rightarrow\infty}	r_{n_m}
+=	\lim_{n\rightarrow\infty}	r_n	=	a
+\]
+であることに矛盾する．故に$\displaystyle	\lim_{n\rightarrow\infty}	\rho_n	=	\alpha$，
+同様に$\displaystyle	\lim_{n\rightarrow\infty}	\sigma_n	=	\beta$である．故に
+\[
+	\lim_{n\rightarrow\infty}	\int_{r_n}^{s_n}	f(x)	dx
+=	\lim_{n\rightarrow\infty}	\int_{\rho_n}^{\sigma_n}	f(	\varphi(t)	)	\varphi'(t)	dt
+=	\int_\alpha^\beta	f(\varphi(t))	\varphi'(t)	dt.
+\]
+（いかなる変換$\varphi(t)$に対しても同じ値に収束し，変換$\varphi$によらない．）
+すなわち広義積分$\displaystyle	\int_a^b	f(x)	dx$は収束して等式（\ref{eq4x59}）が成り立つ
+\■
+
+この定理4.15において，$\displaystyle	a	=	\lim_{t\rightarrow \alpha+0}	\varphi(t)	,	
+b	=	\lim_{t\rightarrow\beta - 0}	\varphi(t)$の代わりに
+$\displaystyle	b	=	\lim_{t\rightarrow \alpha + 0}	\varphi(t),a	=	\lim_{t\rightarrow\beta - 0}$と
+仮定すれば，等式（\ref{eq4x59}）が
+\begin{equation}
+	\int_b^a	f(x)	dx	=	\int_\alpha^\beta	f(	\varphi(t)	)	\varphi'(t)	dt
+\label{eq4x60}
+\end{equation}
+に変わるだけで，あとはそのまま成り立つ．定理4.15は，また，$a	,	b	,	\alpha	,	\beta$の
+いくつかを$+	\infty$あるいは$-	\infty$で置き換えても成り立つ．
+証明は置き換えに応じて修正すればよい．たとえば$\beta$を$+	\infty$で置き換えたとき，上記の証明は，
+数列$\{	\rho_n	\}$が$\alpha$に収束しないと仮定すれば或る正の実数$\varepsilon$に対して
+$\alpha	+	\varepsilon	\leqq	\rho_n	<	+	\infty$なる項$\rho_n$が無数に存在する，という所までそのまま
+通用する．これらの無数の項$\rho_n$から成る$\{	\rho_n	\}$の部分列は有界でなければ
+$+	\infty$に発散する部分列$\rho_{n_1},	\rho_{n_2},	\cdots	,	\rho_{n_m},	\cdots$	をもち，
+有界ならば或る$\omega	,	\alpha	+	\varepsilon	\leqq	\omega	<	+	\infty$，に収束する部分列
+$\rho_{n_1},	\cdots	,	\rho_{n_m},	\cdots	$をもつ．したがって
+\[
+	\lim_{m\rightarrow\infty}	\varphi(	\rho_{n_m})
+=	\lim_{t\rightarrow+\infty}	\varphi	(t)	=	b	>	a
+\]
+となるか，または
+\[
+	\lim_{m\rightarrow\infty}	\varphi	(	\rho_{n_m})	=	\varphi	(	\omega	)	>	a
+\]
+となって
+\[
+	\lim_{m\rightarrow\infty}	\varphi	(	\rho_{n_m}	)	=	\lim_{m\rightarrow\infty}	r_{n_m}	=	a
+\]
+に矛盾する．故に$\displaystyle	\lim_{n\rightarrow\infty}	\rho_n	=	a$．
+同様に，$\displaystyle\lim_{n\rightarrow\infty}	\sigma_n	=	+\infty$でないと仮定すれば，
+$\alpha	\leqq	\sigma_n	$であるから，数列$\{	\sigma_n	\}$は或る$	\omega	,	\alpha	\leqq	\omega	<	+	\infty$，
+に収束する部分列$\sigma_{n_1},	\sigma_{n_2}	,	\cdots	,	\sigma_{n_m},	\cdots	$をもつことになり，
+$\displaystyle	\lim_{m\rightarrow\infty}	\varphi	(\sigma_{n_m})$が$a$または
+$\varphi	(	\omega	)	,	\alpha	<	\omega	<	+	\infty$，に等しくなって
+\[
+	\lim_{m\rightarrow\infty}	\varphi	(	\sigma_{n_m}	)	=	\lim_{m\rightarrow\infty}	s_{n_m}	=	b
+\]
+であることに矛盾する．故に$\displaystyle	\lim_{n\rightarrow\infty}	\sigma_n	=	+	\infty$．
+故に
+\[
+	\lim_{n\rightarrow\infty}	\int_{r_n}^{s_n}	f(x)	dx
+=	\lim_{n\rightarrow\infty}	\int_{\rho_n}^{\sigma_n}	f(\varphi(t))	\varphi'(t)	dt
+=	\int_\alpha^{+\infty}	f(	\varphi	(	t)	)	\varphi'(t)	dt
+\]
+を得る．
+\■
+
+$x	=	-t$は積分変数の変換のもっとも簡単な例である．この変換に公式
+（\ref{eq4x60}）を適用すれば，$dx	=	-dt$であるから，
+\[
+	\int_a^b	f(x)	dx	=	-	\int_{-a}^{-b}	f(-t)	dt	=	\int_{-b}^{-a}	f(-t)	dt
+\]
+を得る．この右辺の積分の積分変数$t$を$x$と書き換えれば，公式：
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\int_{-b}^{-a}	f(-x)	dx
+\label{eq4x61}
+\end{equation}
+を得る．この公式は$(a,b)$を$(a,+\infty),(-\infty,b)$あるいは
+$(-\infty,	+	\infty)$で置き換えても成り立つ．$f(x)$の定義域が
+変換$x	\to	-x$で不変で恒等的に$f(-x)	=	f(x)$であるとき，
+$f(x)$を$x$の\textbf{偶関数}（even function），
+恒等的に$f(-x)	=	-f(x)$であるとき$f(x)$を$x$の\textbf{奇関数}（odd function）
+という．たとえば$\cos	x$は$x$の偶関数，$\sin	x$は$x$の奇関数である．
+（\ref{eq4x61}）により，$f(x)$が$x$の偶関数ならば
+\[
+	\int_a^b	f(x)	dx	=	\int_{-b}^{-a}	f(x)	dx,
+\]
+$f(x)$が$x$の奇関数ならば
+\[
+	\int_a^b	f(x)	dx	=	-	\int_{-b}^{-a}	f(x)	dx
+\]
+である．このことは$f(x)$のグラフを描いてみれば一目瞭然である．
+
+\例{4.10}
+$\displaystyle	\int_0^{\pi/2}	\log	\sin	x	dx	=	-	\frac{\pi}{2}	\log	2$.
+
+\証明 区間$(0,\pi/2]$で$\log	\sin	x$は連続関数で，$\displaystyle	\lim_{x\rightarrow +0}	\log	\sin	x
+=	-\infty$である．広義積分$\displaystyle	\int_0^{\pi/2}	\log	\sin	x	dx$は収束する，
+このことを定理4.15を用いて確かめる．
+
+まず，
+\[
+	\log	\sin	x	=	\log	\left(	\frac{\sin	x}{x	}	\right)+	\log	x	
+\]
+で，（\ref{eq3x23}）により
+$\displaystyle	\lim_{x\rightarrow+0}	\log	(\sin	x	/x	)	=0$，
+（\ref{eq4x23}）により$\displaystyle	\int	\log	x	dx	=	x	\log	x	-	x$で，
+\S \ref{sec2x3x3}，例2.9により
+$\displaystyle	\lim_{x\rightarrow+0}	x	\log	x	=	-	\lim_{x\rightarrow	+0}	x	\log	(1/x)	=0$
+であるから$\displaystyle	\int_0^{\pi/2}	\log	\left(	\frac{\sin	x}{x}	\right)	dx	$は有界
+，つまり
+\begin{align*}
+	\int_0^{\pi/2}	\log	\sin	x	dx	
+&=	\int_0^{\pi/2}	\left\{
+											\log	\left(
+															\frac{\sin	x}{	x}	+	\log	x
+														\right)
+										\right\}	dx
+	=	\int_0^{\pi/2}	\log	\left(	\frac{\sin	x}{x}	\right)	dx	+	
+		\int_0^{\pi/2}	\log	x	dx	\\
+&	=	\int_0^{\pi/2}	\log	\left(
+														\frac{\sin	x	}{x	}
+													\right)	dx	+	\left[	x	\log	x	-	x	\right]_0^{\pi/2}
+	=	\int_0^{\pi/2}	\log	\left(
+														\frac{\sin	x}{x}
+													\right)	dx	+	\frac{\pi}{2}	\log	\frac{\pi}{2}	-	\frac{\pi}{2}	\\
+&=	\int_0^{\pi/2}	\log	\left(
+														\frac{\sin	x}{x}
+													\right)	dx	+	\frac{\pi}{2}	\left(	\log	\frac{\pi}{2}	-1	\right)
+\end{align*}
+つぎに，
+\[
+	S	=	\int_0^{\pi/2}	\log	\sin	x	dx
+\]
+とおく．積分変数の変換：$x	=	\pi	-t$を行えば，$dx	=	-dx$であるから，
+\[
+	S	=	-	\int_\pi^{\pi/2}	\log	\sin	(	\pi	-t)	dt
+		=		\int_{\pi/2}^\pi	\log	\sin	t	dt	=	\int_{\pi/2}^\pi	\log	\sin	x	dx.
+\]
+故に
+\[
+	2S	=	\int_0^{\pi}	\log	\sin	x	dx.
+\]
+ここで変数変換：$x=2t$を行えば，$dx	=	2	dt$で
+\[
+	\log	\sin	(2t)	=	\log	(2	\sin	t	\cdot	\cos	t)	=	
+	\log	2	+	\log	\sin	t	+	\log	\cos	t
+\]
+であるから
+\[
+	S=	\int_0^{\pi/2}	\log	\sin	(2t)	dt	=	\frac{\pi}{2}	\log	2
+	+	\int_0^{\pi/2}	\log	\sin	t	dt	+	\int_0^{\pi/2}	\log	\cos	t	dt
+\]
+を得るが，$t	=	\pi/2	-	u$とおけば
+\[
+	\int_0^{\pi/2}	\log	\cos	t	dt	=	-\int_{\pi/2}^0	\log	\cos	\left(	\frac{\pi}{2}	-	u	\right)	du
+																		=	\int_0^{\pi/2}	\log	\sin	u	du.
+\]
+故に
+\[
+	S	=	\frac{\pi}{2}	\log	2	+	2S.
+\]
+したがって
+\[
+	S	=	-	\frac{\pi}{2}	\log2.
+\]
+\■
+
+\例{4.11}
+$\displaystyle	\int_{-\infty}^{+\infty}	e^{-x^2}	dx	=	\sqrt{\pi}$．
+
+\証明
+$e^{-x^2}$は$x$の偶関数であるから，（\ref{eq4x61}）により，
+\[
+	\int_{-\infty}^0	e^{-x^2}	dx	=	\int_0^{+\infty}	e^{-x^2}	dx.
+\]
+故に
+\[
+	\int_0^{+\infty}	e^{x^2}	dx	=	\frac{\sqrt{\pi}}{2}
+\]
+を証明すればよい．Taylorの公式（\ref{eq3x39}）により
+\[
+	e^x	=	1	+	x	+	\frac{1}{2}	e^{\theta	x}x^2,	\quad	0	<	\theta	<	1,
+\]
+であるから，$x	\ne	0$のとき$e^x	>	1	+	x$．$x$を$x^2$あるいは$-x^2$で置き換えれば，
+$e^{x^2}	>	1	+	x^2	,	e^{-x^2}	>	1-x^2$，すなわち
+\[
+	1	-	x^2	<	e^{-x^2}	<	\frac{1}{1+x^2}
+\]
+を得る．故に，任意の自然数$n$に対して，
+\[
+	(1-x^2)^n	<	e^{-nx^2}	<	\frac{1}{(1+x^2)^n}	,	
+\]
+したがって
+\begin{equation}
+	\int_0^1	(1-x^2)^n	dx	<	\int_0^{+\infty}	e^{-n	x^2}	dx	
+													<	\int_0^{+\infty}	\frac{1}{(1+x^2)^n}	dx.
+\label{eq4x62}
+\end{equation}
+ここで最左辺の広義積分が収束することは，\S \ref{sec4x3}，例4.6により
+\[
+	\int_0^{+\infty}	\frac{dx}{(1+x^2)^n}	\leqq
+	\int_0^{+\infty}	\frac{dx}{1+x^2}	=	\frac{\pi}{2}
+\]
+となることから明らかである．
+（\ref{eq4x62}）の左辺と右辺の積分の値を求めるために，
+\S \ref{eq4x2}，例4.4で扱った定積分
+$\displaystyle	S_n	=	\int_0^{\pi/2}	(\sin	x)^n	dx$を考察する．
+まず$x	=	\cot	t	=	1/\tan	t$とおいて積分変数$x$を$t$に変換する．
+$\cot	t$は区間$(0	,	\pi/2]$で連続微分可能な$t$の関数，$0	\leqq	\cot	t	<	+	\infty$，
+$\displaystyle	\lim_{t	\to	+	0}	\cot	t	=	+	\infty$，
+$\cot	(	\pi	/2)	=	0$，$d	(\cot	t)/	dt	=	(-\sin	t	\sin	t - \cos t \cos t) / (\sin^2	t)	=-1	/	\sin^2	t$，
+また$1	+	x^2	=	1	/	\sin^2	t$であるから，定理4.15により
+\[
+	\int_0^{+\infty}	\frac{dx}{(1+x^2)^n}
+=		\int_{\pi/2}^0	\sin^{2n}	t	\frac{-1}{\sin^2	t}	dt
+=	-	\int_{\pi/2}^0	(\sin	t)^{2n-2}	dt
+=	\int_0^{\pi/2}	(\sin	t)^{2n	-	2}	dt
+=	S_{2n-2}.
+\]
+同様に，$x	=	\cos	t,	0	\leqq	t	\leqq	\pi/2$，とけば，
+$d	(	\cos	t)	/dt	=	-	\sin	t$，$1-x^2	=	\sin^2	t$で
+あるから
+\[
+	\int_0^1	(1-x^2)^n	dx
+=	\int_0^{\pi/2}	(\sin	t)^{2n+1}	dt
+=	S_{2n+1}.
+\]
+一方，変数変換：$x	=	t	/\sqrt{n}$によって
+\begin{align*}
+	\int_0^{+\infty}	e^{-n	x^2}	dx	=	\frac{1}{\sqrt{n}}	\int_0^{+\infty}	e^{-t^2}	dt
+\end{align*}
+となるから，（\ref{eq4x62}）から
+\[
+	\sqrt{n}	S_{2n+1}	<	\int_0^{+\infty}	e^{-x^2}	dx	<	\sqrt{n}	S_{2n-2}
+\]
+を得る．（\ref{eq4x27}）と（\ref{eq4x28}）により
+\[
+		\lim_{n\rightarrow\infty}	\sqrt{n}	S_{2n-2}
+	=	\lim_{n\rightarrow\infty}	\sqrt{n}	S_{2n+1}
+	=	\frac{\sqrt{n}}{2}.
+\]
+故に
+\[
+	\int_0^{+\infty}	e^{-x^2}dx
+=	\frac{\sqrt{\pi}}{2}.
+\]
+\■
+$	\displaystyle
+	\int_{-\infty}^{+\infty}	e^{-x^2}	dx	=	\sqrt{\pi}$
+において変数変換：$x	=	t	/	\sqrt{2}$を行えば，
+$\displaystyle
+	\int_{-\infty}^{+\infty}	e^{-t^2/2}	dt	=	\sqrt{2	\pi}	$を得る．
+すなわち
+\[
+	\int_{-\infty}^{+\infty}	\frac{e^{-x^2/2}}{\sqrt{2	\pi}}	dx	=1.
+\]
+$	\displaystyle	\frac{e^{-x^2/2}}{\sqrt{2	\pi}}$は
+高校数学で学んだ標準正規分布の確率密度である．
+
+\subsubsection{問題}
+
+\textbf{31.}
+次の不定積分を初等関数で表わせ（変数変換$t=e^x,	t=\sin	x,	t=	\tan	x,	t	=	\displaystyle	\tan	\frac{x}{2},$等を試みよ）：
+
+(ⅰ) $\displaystyle	\int	\frac{dx}{e^x	+	e^{-x}}$，
+
+\解
+$t	=	e^x$とおくと$\displaystyle	\frac{dt}{dx}	=	e^x	=t$．
+\[
+	\int	\frac{dx}{e^x	+	e^{-x}}	=	\int	\frac{dt}{t^2	+	1}	=	\text{Arctan}\: t = \text{Arctan}\: e^x
+\]
+\□
+
+(ⅱ) $\displaystyle	\int	\cos^3	x	dx$，
+
+\解
+$\sin	x	=	t$とおくと，$\cos	x	dx	=	dt$となるから，
+\[
+	\int	\cos^3	x	dx	=	\int	(	1-	\sin^2	x)	\cos	x	dx	
+=	\int	(1-t^2)	dt	=	t	-	\frac{t^3}{3}	=	\sin	x	-	\frac{\sin^3	x}{3}
+\]
+\□
+
+(ⅲ) $\displaystyle	\int	\frac{dx}{a	\cos^2	x	+	b	\sin^2	x}$
+
+\解
+$	\tan	x	=	t$とおくと，$\displaystyle	\frac{dx}{\cos^2	x}	=	dt$であるから，
+\begin{align*}
+	\text{与式}
+&	=	\int \frac{\displaystyle	\frac{dx}{\cos^2	x}}{\displaystyle	a	+	b	\frac{\sin^2	x}{\cos^2	x}}	
+	=	\int	\frac{dt}{a+	b	t^2	}
+	=	\frac{1}{b}	\int	\frac{dt}{\displaystyle	\left(	\sqrt{\frac{a}{b}} \: \right)^2	+	t^2}
+	=	\frac{1}{b}	\frac{1}{\displaystyle	\frac{a}{b}}	\int	\frac{dt}{\displaystyle	1	+	\left(	t/\sqrt{	a/b	}	\right)^2	}
+\end{align*}
+ここで$\displaystyle	\frac{t}{\sqrt{a/b}}=s$とおくと，$\displaystyle	dt	=	\sqrt{a/b}	ds$，よって
+\begin{align*}
+	\text{与式}	=	\frac{1}{a}	\sqrt{\frac{a}{b}}		\int	\frac{ds}{1+s^2}	=\frac{1}{\sqrt{ab}}	\text{Arctan} \: \frac{t}{\sqrt{a/b}}
+							=	\frac{1}{\sqrt{ab}}	\:	\text{Arctan} \: \left(	\sqrt{\frac{b}{a}}	\tan x \right)
+\end{align*}
+
+(ⅳ) $\displaystyle	\int	\frac{dx}{\sin	x}	$
+
+\解
+$\displaystyle	t=	\tan	\left(	\frac{x}{2}	\right)$とおくと，
+\begin{align*}
+	\sin	x	&=	\sin	\left(	2	\frac{x}{2}\right)
+						=	\cos	\left(	\frac{x}{2}	\right)	\sin	\left(	\frac{x}{2}	\right)	+	\sin	\left(\frac{x}{2}	\right)	\cos	\left(	\frac{x}{2}	\right)
+						=	2	\cos	\frac{x}{2}	\sin	\frac{x}{2}
+						=	\frac{\displaystyle	2	\frac{\sin	\frac{x}{2}}{\cos	\frac{x}{2}}
+										}{\displaystyle	\frac{1}{\cos^2	\frac{x}{2}}
+										}
+						=	\frac{2t}{1+t^2}
+\end{align*}
+ここで$\displaystyle	dt	=	\frac{1}{2}	\frac{1}{	\displaystyle	\cos^2	\frac{x}{2}}	dx	=	\frac{1}{2}	\frac{1}{\displaystyle	\frac{1}{t^2+1}}	dx	
+				=	\frac{t^2+1}{2}	dx$だから，$\displaystyle	dx	=	\frac{2}{t^2+1}	dt$
+\begin{align*}
+	\text{与式}
+=	\int	\frac{1+t^2}{2t}	\frac{2}{t^2*1}	dt	=	\int	\frac{1}{t}	dt	=	\log	t	=	\log\left(	\tan \frac{x}{2}	\right)x
+\end{align*}
+
+(ⅴ) $\displaystyle	\int	\frac{dx}{\cos	x	+a}	\quad	a	>	1$．
+
+\解
+$\displaystyle	t=	\tan	\frac{x}{2}$とおくと，
+\begin{align*}
+	\cos	x	&	=	\cos	\left(2	\frac{x}{2}	\right)	=	\cos^2	\frac{x}{2}	-	\sin^2\frac{x}{2}
+						=	\frac{\displaystyle	1	-	\frac{\sin^2	\frac{x}{2}}{\cos^2	\frac{x}{2}}
+							}{	\frac{1}{\cos^2	\frac{x}{2}}}
+					=\frac{1-t^2}{1+t^2}	
+\end{align*}
+$\displaystyle	dt	=	\frac{\frac{1}{2}}{\cos^2	\frac{x}{2}}	=	\frac{1}{2}(1+t^2)	dx$であるから，
+\begin{align*}
+	\text{与式}
+&	=	\int	\frac{1}{\frac{1-t^2}{1+t^2}	+a}	\frac{2}{1+t^2}	dt
+	=	\int	\frac{2}{1	-	t^2	+	a(1+t^2)}	dt
+	=	\int	\frac{2	dt}{(1+a)	+	(a-1)t^2}	\\
+&	=	\frac{2}{a-1}	\int	\frac{dt}{\sqrt{\frac{(1+a)^2}{(a-1)^2}}	+	t^2}
+	=	\frac{2}{a-1}	\frac{1}{\frac{1+a}{a-1}}	\int	\frac{dt}{1	+	\frac{t^2}{(1+a)/(a-1)}}
+\end{align*}
+ここで，$\displaystyle	s=	\frac{t}{\sqrt{(1-a)/(1+a)}}$とおくと，
+$\displaystyle	ds	=	\frac{dt}{\sqrt{(1-a)/(1+a)}}$，
+\begin{align*}
+	\text{与式}
+&	=	\frac{2}{1+a}	\int	\frac{\sqrt{(1+a)/(a-1)}ds	}{1+s^2}
+	=	\frac{2}{\sqrt{a^2	-1}}	\int	\frac{ds}{1+s^2}
+	=	\frac{2}{\sqrt{a^2-1}}	\text{Arctan} \: s	\\
+&	=	\frac{2}{\sqrt{a^2	-1}}	\text{Arctan} \: \sqrt{\frac{a-1}{a+1}}	t
+	=	\frac{2}{\sqrt{a^2	-1}}	\text{Arctan}	\: \sqrt{\frac{a-1}{a+1}}	\tan \frac{x}{2}.
+\end{align*}
+
+\textbf{32.}
+次の不定積分を初等関数で表わせ（部分積分を試みよ）：
+
+(ⅰ) $\displaystyle	\int	\frac{dx}{(x^2+1)^2}$，
+
+\解
+\begin{align*}
+	\text{与式}
+&	=	\int	\left(	-\frac{x}{(x^2+1)^2}	\right)\cdot	\left(	-	\frac{1}{x}	\right)	dx
+	=	\int	\left(	\frac{1}{2(x^2+1)}	\right)'	\cdot	\left(	-	\frac{1}{x}	\right)	dx	\\
+&	=	-	\frac{1}{2(x^2+1)}	\cdot	\frac{1}{x}	-	\int	\frac{1}{2(x^2+1)}	\cdot	\left(	-	\frac{1}{x}	\right)	'	dx
+	=	-	\frac{1}{2x(x^2+1)}	-	\int	\frac{dx}{2x^2	(x^2+1)}	\\
+&	=	-\frac{1}{2x}	+	\frac{1}{2}	\frac{x}{x^2+1}	-	\int	\left(	\frac{1}{2x^2}	-	\frac{1}{2}\frac{1}{x^2+1}	\right)	dx	\\
+&	=	-\frac{1}{2x}	+	\frac{1}{2(x^2+1)}	+	\frac{1}{2x}	+	\frac{1}{2}	\text{Arctan}\; x	
+	=	\frac{1}{2}	\left(	\frac{1}{x^2+1}	+	\text{Arctan} \; x
+								\right)
+\end{align*}
+
+(ⅱ) $\displaystyle	\int	e^{px}	\cos	(qx)	dx,	\int	e^{px}	\sin	(qx)	dx$，$p,q$は定数．
+
+\解
+$\displaystyle	I	=	\int	e^{px}	\cos	(qx)	dx,	\:	J	=	\int	e^{px}	\sin	(qx)	dx$とおいて部分積分すると，
+\begin{align*}
+	I	&=	\frac{1}{p}	e^{px}	\cos	(qx)	+	\int	\frac{1}{p}	e^{px}	q	\sin	(qx)	dx	=	\frac{1}{p}	\cos	(qx)	+	\frac{q}{p}	J,	\\
+	J	&=	\frac{1}{p}	e^{px}	\sin	(qx)	-	\int	\frac{1}{p}	e^{px}	q	\cos	(qx)	dx	=	\frac{1}{p}	e^{px}	\sin	qx	-	\frac{q}{p}	I
+\end{align*}
+であるから，
+\begin{align*}
+&	I	+	\frac{q}{p}J	=	\frac{1}{p}	e^px	\cos	qx	+	\frac{q}{p}	J	
+											+	\frac{q}{p^2}	e^{px}	\sin	qx	-	\frac{q^2}{p^2}	I	\\
+&\Rightarrow		\quad
+I	+	\frac{q^2}{p^2}I
+	=	\frac{1}{p}	e^{px}	\cos	qx	+	\frac{q}{p^2}	e^{px}	\sin	qx
+\quad	\therefore
+I	=	\frac{e^{px}}{p^2+q^2}	(	p	\cos	qx	+	q	\sin	qx	).
+\end{align*}
+同様に，
+\begin{align*}
+&\frac{q}{p}	I	-	J	=	\frac{q}{p^2}	e^{px}	\cos	qx	+	\frac{q^2}{p^2}	J	
+											-	\left(	\frac{1}{p}	e^{px}	\sin	qx	-	\frac{q}{p}	I	\right)	\\
+&\Rightarrow	\quad
+	-J	-	\frac{q^2}{p^2}J	=	\frac{q}{p^2}	e^{px}	\cos	qx	-	\frac{1}{p}	e^{px}	\sin	qx
+\quad	\therefore
+	J	=	\frac{e^{px}}{p^2+	q^2}	(	p	\sin	qx	-	q	\cos	qx	)
+\end{align*}
+\■
+
+(ⅲ) $\displaystyle	\int x^n	e^{-x} dx$，$n$は自然数，
+
+\解
+$\displaystyle	S_n	=	\int	x^n	e^{-x}	dx$とおくと，これを部分積分して得られる漸化式
+\[
+	S_n	=	-e^{-x}	x^n	+	n	\int	e^{-x}	x^{n-1}	dx	=	-e^{-x}	x^n	+	n	S_{n-1}
+\]と$S_0	=	-e^{-x}$より，
+\[
+		S_n	=	-x^ne^{-x}	-	nx^{n-1}e^{-x}	-	n(n-1)	x^{n-2}	e^{-x}	-	\cdots	-	n!	xe^{-x}	-n!	e^{-x}.
+\]
+
+(ⅳ) $\displaystyle	\int \cos^4 x	dx$.
+
+\解 部分積分と倍角公式\footnote{
+\begin{align*}
+	\sin	2	\alpha	&=	2	\sin	\alpha	\cos	\alpha	\\
+	\cos	2	\alpha	&=	2	\cos^2	\alpha	-1	=	1	-2	\sin^2	\alpha
+\end{align*}
+}
+により
+\begin{align*}
+	\int	\cos^4	x	dx	
+&	=	\sin	x	\cos^3	x	+	3	\int	\sin^2	x	\cos^2	x	dx
+	=	\frac{\sin	2x}{2}	\frac{1+	\cos	2x}{2}	+	3	\int	\frac{1-\cos	4x}{8}	dx	\\
+&	=	\frac{\sin	2x	+	\cos	2x	\sin	2x}{4}	+	\frac{3}{8}x	-	\frac{3	\sin	4x}{32}
+	=	\frac{\sin	2x}{4}	+	\frac{\sin	4x}{8}	+	\frac{3}{8}x	-	\frac{3	\sin	4x}{32}	\\
+&	=	\frac{3}{8}x	+	\frac{	\sin	2x	}{4}	+	\frac{\sin	4x}{32}.
+\end{align*}
+
+
+\textbf{33.} 次の定積分の値を求めよ：
+
+(ⅰ) $\displaystyle	\int_0^1	x^a	\log	x	dx$，$\alpha	>	-1$，
+
+\解 部分積分により
+\[
+	\int_0^1	x^\alpha	\log	x	dx	=	
+	\left[	
+			\frac{x^{\alpha	+1}}{\alpha	+1}	\log	x
+	\right]_0^1
+	-
+	\int_0^1	\frac{x^{\alpha	+1}}{\alpha+1}	\frac{1}{x}	dx.
+\]
+ここで右辺の第1項は$0$で第2項は$-1	/	(\alpha	+1)^2$となる．
+\■
+
+(ⅱ) $\displaystyle	\int_0^{\pi/2}	\frac{dx}{a	\cos^2	x	+	b	\sin^2	x},	\quad	a	>0	\:	,	b	>	0$，
+
+\解 問題31の（ⅲ) より
+\[
+	\text{与式}
+=	\left[	\frac{1}{\sqrt{ab}}	\text{Arctan}\: \left(	\sqrt{\frac{b}{a}}	\tan x
+																								\right)
+		\right]_0^{\pi/2}	=	\frac{1}{\sqrt{ab}}	\frac{\pi}{2}.
+\]
+
+(ⅲ) $\displaystyle	\int_0^\pi	\frac{dx}{\cos	x	+	a},	\quad	a	>	1$，
+
+\解 問題31の (ⅴ)より
+\[
+	\text{与式}
+=	\left[	\frac{2}{\sqrt{a^2-1}}	\text{Arctan}\:	
+		\left(	\sqrt{\frac{a-1}{a+1}}	\tan	\frac{x}{2}
+		\right)
+	\right]_0^\pi
+=	\frac{\pi}{\sqrt{a^2	-1}}
+\]
+\■
+
+(ⅳ) $\displaystyle	\int_0^{+\infty}	\sin	ax	e^{-x}	dx,	a	>	0$．
+
+\解 問題32の（ⅱ）により
+\[
+	\text{与式}
+=	\left[
+		\frac{e^{-x}}{1+a^2}	(	-a	\cos	ax	-	\sin	ax)
+	\right]_0^\infty
+=	\frac{a}{1+a^2}.
+\]
+
+\textbf{34.} 積分$\displaystyle	\int_0^{+\infty	}	|	\sin	x|	e^{-x}	dx$の値を求めよ
+（三村正征雄“微分積分学”\footnote{三村征雄編“大学演習微分積分学”，裳華房.	}p.149）.
+
+\解 
+$\displaystyle	I	=	\int_0^{+\infty}	|	\sin	x	|	e^{-x}	dx
+									=	\int_0^\pi	e^{-x}	\sin	x	dx	-	\int_\pi^{2\pi}	e^{-x}	\sin	x	dx	+	\cdots$，
+である．さて問題32の（ⅱ）により
+\begin{align*}
+	&	\int_{2k	\pi}^{(2k+1)\pi}	e^{-x}	\sin	x	dx
+		=	\left[	\frac{e^{-x}}{2}	(	-\sin	x	-	\cos	x)
+			\right]_{2k	\pi}^{(2k+1)\pi}
+		=	\frac{1}{2}	(	e^{-2	k	\pi}	+	e^{-(2k+1)	\pi}	),	\\
+	&	\int_{(2k	+	1)\pi}^{(2k+2)\pi}	e^{-x}	\sin	x	dx
+		=	\left[	\frac{e^{-x}}{2}	(	-\sin	x	-	\cos	x)
+			\right]_{(2k	+	1)\pi}^{(2k+2)\pi}
+		=	\frac{1}{2}	(	-	e^{(2k+1)\pi}	-	e^{-(2k+2)	\pi}	)
+\end{align*}
+であるから．
+\begin{align*}
+	I	&=	\frac{1}{2}	(1	+	e^{-\pi}	+	e^{-\pi}	+	e^{-2\pi}	+	e^{-2\pi}	+	e^{-3	\pi}	+	\cdots	)	\\
+		&=	\frac{1}{2}	+	e^{-\pi}	+	e^{-2	\pi}	+	e^{-3\pi}	+	\cdots	
+\end{align*}
+となる．$e^{-x}	<	1$であるからこの等比級数は収束しその和は
+\[
+	I	=	\frac{1}{2}	+	\frac{e^{-\pi}}{1	-	e^{-\pi}}	=	\frac{1	+	e^{-\pi}}{2(1-e^{-\pi})}.
+\]
+\■
+
+\textbf{35.} 問題26のHermite 多項式$H_n (x)$について
+\[
+	\int_{-\infty}^{+\infty}	x^m	H_n	(x)	e^{-x^2}	dx	
+=	\begin{cases}
+		\:	0	,						&	m	<	n,	\\
+		\:	n!\sqrt{\pi}	&	m	=	n
+	\end{cases}
+\]
+であることを証明せよ．
+
+\証明 問題26により$\displaystyle	\frac{d^n}{dx^n}	e^{-x^2}	=	(-1)^n	H_n(x)	e^{-x^2}$で
+$H_n(x)$は$n$次の多項式である．
+\[
+	I_{m,n}	=	\int_{-\infty}^{+\infty}	x^m	H_n(x)	e^{-x^2}	dx
+					=	\int_{-\infty}^{+\infty}	(-1)^n	x^m	\frac{d^n}{dx^n}	e^{-x^2}	dx
+\]
+とおく．部分積分により
+\begin{align*}
+	I_{m,n}
+&=	\left[
+			(-1)^nx^m	\frac{d^{n-1}}{dx^{n-1}}	e^{-x^2}
+		\right]_{-\infty}^{+\infty}
+-		\int_{-\infty}^{+\infty}	(-1)^n	m	x^{m-1}	\frac{d^{n-1}}{dx^{n-1}}	e^{-x^2}	dx	\\&=	\left[	-x^m	H_{n-1}	(x)	e^{-x^2}
+		\right]_{-\infty}^{+\infty}	+	m	I_{m-1,n-1}.
+\end{align*}
+$H_{n-1}(x)$が$x$の多項式であるから，この式の$[	\quad	]_{-\infty}^{+\infty}$は$0$
+となる
+\footnote{$e^{-x^2}$の部分が強く$0$に収束する
+}
+．ゆえに
+\[
+	I_{m,n}	=	m	I_{m-1,n-1}
+\]
+\begin{list}{}{}
+	\item	（ⅰ）$m	<	n$のときは
+\begin{align*}
+	I_{m,n}	&=	m!	I_{0,n-m}	\\
+					&=	m!	(-1)^{n-m}	\int_{-\infty}^{+\infty}	\frac{d^{n-m}}{dx^{n-m}}	e^{-x^2}	dx	\\
+					&=	m!	(-1)^{n-m}	\left[	\frac{d^{n-m-1}	}{d	x^{n-m-1}	}	e^{-x^2}
+															\right]_{-\infty}^{+\infty}	
+					=	m!	(-1)^{n-m}	\left[	(-1)^{n-m-1}	H_{n-m-1}	(x)e^{-x^2}
+															\right]_{-\infty}^{+\infty}	
+					=	0.
+\end{align*}
+	\item	（ⅱ）$m	=	n$のときは
+\begin{align*}
+	I_{m,n}	=	n!	I_{0,0}	=	n!	\int_{-\infty}^{+\infty}	e^{-x^2}	dx	=	n!	\sqrt{\pi}.
+\end{align*}
+\end{list}
+\■
+
+\textbf{36.} 区間$[a,b]$で連続な任意の関数$f(x)	,	g(x)$に対して
+\textbf{Schwarz の 不等式}:
+\[
+	\left(
+		\int_a^b	f(x)g(x)	dx
+	\right)^2
+	\leqq
+	\int_a^b	f(x)^2	dx	\int_a^b	g(x)^2	dx
+\]
+を証明せよ．
+\footnote{
+	『集合と位相』第Ⅱ部 1.2 2次形式と計量，式(1.3)参照．
+}
+
+\証明
+$f$が恒等的に$0$のときはよいのでそうでないとする．$t$に関する$2$次式
+\begin{align*}
+	0	&\leqq	\int_a^b	(t	f-g)^2	dx	\\
+		&=	t^2	\int_a^b	f(x)^2	dx	-	2t	\int_a^b	f(x)	g(x)	dx	+	\int_a^b	g(x)^2	dx
+\end{align*}
+の$t$に関する判別式が$\leqq	0$でなければならない．これから求める不等式を得る．
+\■
+
+\textbf{37.} 区間$I$において$y$の関数$\varphi(y)$は2回連続微分可能で$\varphi''	(y)	>0$であるとする．
+区間$[a,b]$で定義された連続関数$f(x)$の値域が$I$に含まれているとき，不等式：
+\[
+	\varphi
+		\left(	\frac{1}{b-a}	\int_a^b	f(x)	dx
+		\right)
+	\leqq
+		\frac{1}{b-a}	\int_a^b	\varphi(f(x))	dx
+\]
+が成り立つ．このことを証明せよ（問題29参照）．
+
+\証明
+$[a,b]$を$n$等分して$a	=	a_0	<	a_1	<	a_2	<	\cdots	<	a_n	=b$として
+$f(a_i)	=	x_i,	\varphi(x_i)	=	y_i$とすると
+問題29の不等式を適用することができて
+
+\begin{align*}
+	\varphi	\left(	\frac{x_1	+	\cdots	+	x_n}{n}
+					\right)
+	&\leqq	\frac{y_1	+	\cdots	+	y_n}{n}	\\
+	\varphi	\left(	\frac{1}{b-a}	\frac{b-a}{n}	(x_1	+	\cdots	+	x_n)
+					\right)
+	&\leqq	\frac{1}{b-a}\frac{b-a}{n}	(y_1	+	\cdots	+	y_n).
+\end{align*}
+ここで$n	\to	\infty$とすると
+\[
+	\varphi	\left(	\frac{1}{b-a}	\int_a^b	f(x)	dx
+					\right)
+	\leqq	\frac{1}{b-a}	\int_a^b	\varphi(f(x))	dx.
+\]
+\■

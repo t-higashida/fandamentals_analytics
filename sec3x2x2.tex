@@ -1,0 +1,97 @@
+\subsection{合成関数の微分法}
+
+$f(x)$を区間$I$で定義された$x$の関数，
+$g(y)$を区間$J$で定義された$y$の関数とし，
+$f(x)$の値域$f(I)$が$g(y)$の定義域$J$に含まれているとして，
+$f$と$g$の合成関数$g(f(x))$を考察する．
+
+\定理{3.3}
+$f(x)$が$I$で$x$について微分可能，$g(y)$が$J$で$y$について微分可能
+ならば，合成関数$g(f(x))$は$I$で$x$について微分可能であって
+\begin{equation}
+	\frac{d }{d x}g(f(x)) = g'(f(x)) f'(x).
+\label{eq3x13}
+\end{equation}
+
+\証明
+$y=f(x)$，$z=g(y)= g(f(x))$とおいて，$x$の増分$\varDelta x$に対応する
+$y,z$の増分を$\varDelta y, \varDelta z$とすれば，(\ref{eq3x4})により，
+\[
+	\varDelta y = f'(x) \varDelta x + o(\varDelta x), \quad
+  \varDelta z = g'(y) \varDelta y + o(\varDelta y),
+\]
+ここで
+\begin{align*}
+	o(\varDelta x) = \varepsilon_1 (\varDelta x) \varDelta x,
+  & \quad \lim_{\varDelta x\rightarrow 0} \varepsilon _1 (\varDelta x) = \varepsilon_1 (0)=0. \\
+	o(\varDelta y) = \varepsilon_2 (\varDelta y) \varDelta y,
+  & \quad \lim_{\varDelta y\rightarrow 0} \varepsilon _2 (\varDelta y) = \varepsilon_2 (0)=0.
+\end{align*}
+故に
+\[
+	\varDelta z = (g'(y) + \varepsilon_2(\varDelta y)) \varDelta y 
+ = (g'(y) + \varepsilon_2(\varDelta y)) (f'(x) + \varepsilon_1 (\varDelta x)) \varDelta x.
+\]
+したがって
+\[
+	\varepsilon (\varDelta x) = (g'(y) + \varepsilon_2(\varDelta y)) \varepsilon_1 (\varDelta x) +f'(x) \varepsilon_2 (\varDelta y)
+\]
+とおけば
+\[
+	\varDelta z = g'(y) f'(x) \varDelta x + \varepsilon (\varDelta x) \varDelta x.
+\]
+$\varDelta x \rightarrow 0$のとき$\varDelta y \rightarrow 0$，
+$\varepsilon_1 ( \varDelta x ) \rightarrow 0$，また
+$\varDelta y \rightarrow 0$のとき$\varepsilon_2 (\varDelta y) \rightarrow 0$，
+したがって
+\[
+	\lim_{\varDelta x\rightarrow0} \varepsilon (\varDelta x) = 0.
+\]
+故に
+\[
+	\lim_{\varDelta x\rightarrow0} \frac{\varDelta z}{\varDelta x} = g'(y) f'(x).
+\]
+すなわち$g(f(x))$は$x$について微分可能であって
+\[
+	\frac{d }{d x} g(f(x)) = g'(y) f'(x), \quad y= f(x). 
+\]
+\■
+$y=f(x),z=g(y)$とおけば(\ref{eq3x13})は
+\begin{equation}
+	\frac{d z}{d x} = \frac{d z}{d y} \cdot \frac{d y}{d x}
+\label{eq3x14}
+\end{equation}
+と書かれる．微分の記号を用いれば
+\begin{equation}
+	dz = g'(y) f'(x) dx.
+\label{eq3x15}
+\end{equation}
+この結果によれば，$dz$を求めるには$dz = g'(y) dy$に機械的に
+$dY=f'(x) dx$を代入すればよい．
+
+\注意{}
+上記の定理3.3の証明において，$\varDelta x \rightarrow 0$のとき
+$\varDelta y \rightarrow 0$であるが，$\varDelta x \ne 0$でも
+$\varDelta y =0$となることがある．このために極限の計算：
+\[
+	\lim_{\varDelta x\rightarrow0} \frac{\varDelta z}{\varDelta x}
+ =\lim_{\varDelta x\rightarrow0} \left( \frac{\varDelta z}{\varDelta y}  \frac{\varDelta y}{\varDelta x} \right)
+ =\lim_{\varDelta x\rightarrow0} \left( \frac{\varDelta z}{\varDelta y} \right)
+  \lim_{\varDelta x\rightarrow0} \left( \frac{\varDelta y}{\varDelta x} \right)
+\]
+から(\ref{eq3x14})を導く証明は一般には成立しない．なぜなら，
+$\varDelta y =0$となったとき，$\varDelta z / \varDelta y$は無意味となるからである．上記の証明
+では，$\varDelta x \ne 0$，$\varDelta y=0$となっても
+$\varepsilon_2 (\varDelta y) = \varepsilon_2 (0) =0$となるから，
+$\varDelta x \rightarrow 0$のとき$\varepsilon_2 (\varDelta y) \rightarrow 0$，
+したがって$\varepsilon (\varDelta x) \rightarrow 0$となったのである．
+
+\定理{3.3'}
+$f(x)$が$x=a$で微分可能，$g(y)$が$y=f(a)$で微分可能ならば，合成関数
+$\sigma (x) =g(f(x))$は$x=a$で微分可能であって
+\[
+	\sigma'(a) =g'(f(a)) f'(a).
+\]
+\証明
+定理3.3の証明において，$x$を$a$，$b=f(a)$で置き換えればよい．
+\■

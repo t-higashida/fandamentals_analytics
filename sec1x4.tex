@@ -1,0 +1,127 @@
+\section{数列の極限；実数の乗法；除法}
+\subsection{極限の定義}
+
+$\alpha_1,\alpha_2,\alpha_3,\cdots,\alpha_n,\cdots$のように実数を一列に並べたものを
+\textbf{数列}(sequence)といい，数列を$\{\alpha_n\}$であらわす．そしておのおのの実数$\alpha_n$を
+数列の\textbf{項}という．数列の極限についてはすでに高校数学で学んだ．すなわち，数列$\{\alpha_n\}$
+の項$\alpha_n$が，$n$が限りなくおおきくなるにつれて，一定に実数$\alpha$に限りなく近づくとき，数列
+$\{\alpha_n\}$は$\alpha$に収束する，また$\alpha$は数列$\{\alpha_n\}$の極限値であるといい，
+\[
+	\lim_{n	\rightarrow	\infty}	\alpha_n	=	\alpha
+\]
+と書き表したのである．“$n$が限りなく大きくなるにつれて$\alpha_n$が$\alpha$に限りなく近づく”
+ということを明確に言い表したのが，次の定義である：
+
+\定義{1.4}
+数列$\{a_n\}$が与えられたとし，$\alpha$をひとつの実数とする．任意の正の実数
+$\varepsilon$に対応して自然数$n_0(\varepsilon)$が定まって
+\[
+		n	>	n_0(\varepsilon)	\quad	\text{ならば}	\quad	|\alpha_n	-	\alpha	|	<	\varepsilon
+\]
+となるとき，数列$\{	\alpha_n	\}$は$\alpha$に\text{収束}(converge)する，また
+$\alpha$は数列$\{\alpha_n\}$の\textbf{極限}(limit)である，あるいは極限値である
+といい
+\[
+	\lim_{n	\rightarrow	\infty}	\alpha_n	=	\alpha
+\]
+と書く．
+
+数列$\{\alpha_n	\}$がある一つの実数に収束するとき，$\{\alpha_n\}$は収束する，
+$\{\alpha_n\}$は収束する数列である，極限値$\lim_{n	\rightarrow	\infty}	\alpha_n$が
+存在する，などという．――
+
+上の定義1.4は，“$n$が限りなく大きくなるにつれて$\alpha_n$が$\alpha$に限りなく近づく”
+という代りに，“任意の正の実数$\varepsilon$に対して，$n$が$n_0(\varepsilon)$より大きく
+なれば$\alpha_n$と$\alpha$の距離は$\varepsilon$以下になる”といっているわけである．
+このいい表わし方の著しい特徴は，'限りなく大きく’とか，‘限りなく近づく’という
+無限大，無限小を意味する曖昧な句を避けて，すべて有限の自然数，有限の実数だけを用いていること
+である．$\varepsilon$は任意だから，$\varepsilon$としてどんな小さな正の実数を選んでもよい．
+そして正の実数$\varepsilon$を選んでも，$n$を大きくしていけば遂には$n>n_0(\varepsilon)$となる
+から，$|\alpha_n-\alpha|	<	\varepsilon$となる．すなわち，定義1.4は“$n$が限りなく大きく
+なるにつれて$\alpha_n$が$\alpha$に限りなく近づく”という文章のいおうとしていることを，
+有限の自然数，実数だけを用いて，正確に言い表しているのである．
+
+\例{1.1}
+\[
+	\lim_{n	\rightarrow	\infty}	\frac{n+1}{n-1}=1.
+\]
+これは高校数学で学んだ数列の極限の簡単な例であるが，これが定義1.4の意味で成立している
+ことを確かめてみよう．正の実数$\varepsilon$が任意の与えられたとき，
+有理数の稠密性により，$0	<	a	<	\varepsilon$なる有理数$a$が存在する．
+\[
+	\left|	\frac{n+1}{n-1}	-1	\right	|	=	\frac{2}{n-1}
+\]
+であって，不等式：$2/(n-1)	<	a$は$n	>	2/a+1$と同値であるから，
+$n_0	\geqq	2/a	+	1$なる自然数$n_0$を一つ選んで$n_0(\varepsilon	)	=	n_0$とおけば，
+\[
+	\varepsilon	>	a	\geqq	\frac{2}{n_0-1}	>	\frac{2}{n-1}	>	0
+\]
+であるから
+\[
+	n	>	n_0(\varepsilon		)	\quad	\text{ならば}		\quad	\left|\frac{n+1}{n-1}-1	\right|	<	\varepsilon.
+\]
+故に
+\[
+	\lim_{n	\rightarrow	\infty}	\frac{n+1}{n-1}	=	1.	\quad\quad	\text{――}
+\]
+
+収束の定義1.4を次のように言い換えておくと応用上しばしば便利である：
+
+\定理{1.12}
+数列$\{\alpha_n\}$が実数$\alpha$に収束する：
+$\lim_{n	\rightarrow	\infty}	\alpha_n	=	\alpha
+$
+ための必要かつ十分な条件は，$\rho	<	\alpha	<	\sigma$
+なる実数$\rho,\sigma$が任意に与えられたとき，不等式：
+\[
+	\rho	<	\alpha_n	<	\sigma
+\]
+が有限個の自然数$n$を除いて成立することである．
+
+ここで“有限個の自然数を除いて成立する”というのは，いうまでもなく，
+“或る有限個の自然数以外のすべての自然数$n$について成立する”という意味である．
+
+\証明
+
+条件が必要なことを示すために，$\{\alpha_n\}$は$\alpha$に収束すると仮定し，$\rho	<	\alpha	<	\sigma$
+なる実数$\rho,\sigma$が与えられたとする．正の実数$\alpha	-	\rho$と$\sigma	-	\alpha$のうち
+小さい方を$\varepsilon$とすれば，明らかに
+\[
+	\rho	\leqq	\alpha-\varepsilon	<	\alpha+\varepsilon	\leqq	\sigma.
+\]
+仮定：
+$\lim_{n	\rightarrow	\infty}	\alpha_n	=	\alpha$
+により，$n>n_0(\varepsilon)$のとき$|\alpha_n	-	\alpha|<\varepsilon$，すなわち
+\[
+	\alpha-\varepsilon	<	\alpha_n	<	\alpha+\varepsilon.
+\]
+故に有限個の自然数$n=1,2,\cdots,n_0(\varepsilon)$を除いて
+\[
+	\rho	<	\alpha_n	<	\sigma
+\]
+が成り立つ．
+
+条件が十分なことを示す．$\rho,\:	\sigma$は任意であるから，
+正の実数$\varepsilon$が任意に与えられたとすれば，条件
+により，
+\[
+	\alpha	-	\varepsilon	<	\alpha_n	<	\alpha	+	\varepsilon
+\]
+が有限個の自然数$n$を除いて成り立つ．この有限個の自然数の最大のものを
+$n_0(\varepsilon)$とすれば，
+\[
+	n>n_0(\varepsilon)	\quad	\text{のとき}	|\alpha_n	-\alpha|	<	\varepsilon.
+\]
+したがって
+\[
+	\lim_{n	\rightarrow	\infty}	\alpha_n	=	\alpha.
+\]
+\■
+
+この定理1.12を用いれば，収束する数列$\{\alpha_n	\}$の極限がただ一つしかないことが
+つぎのようにして確かめられる：いま極限が二つあったとしてそれを$\alpha$，$\beta$，
+$\alpha<	\beta$，とすれば，有理数の稠密性により$\alpha	<	r	<	\beta$なる有理数$r$
+が存在する．定理1.12により有限個の$n$を除いて$\alpha_n	<	r$，または有限個の$n$を除いて
+$r	<	\alpha_n$．したがって無数の$n$について$a_n	<	r$と$r	<	\alpha_n$が両立することと
+なって矛盾を生じる．
+

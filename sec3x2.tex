@@ -1,0 +1,109 @@
+\section{微分の方法}
+
+前節では一つの定まった区間$I$で定義された関数$f(x)$を考察したが，
+一般には，$f(x)$はその定義域が$I$を含む関数とし，
+$f(x)$\underline{を区間}$I$\underline{で考察する}，すなわち
+$f(x)$の$I$への制限$f_I(x)$を考察することが多い．
+この場合，\S 2.2.1で述べた規約に従って，$f_I(x)$\underline{が
+微分可能であるとき}，$f(x)$\underline{は}$I$\underline{で
+微分可能である}，あるいは$I$\underline{で}$x$
+\underline{について微分可能である}という．
+
+たとえば，$I=[a,b)$とすれば，$f(x)$が$I$で微分可能であるということは，
+$f(x)$が$(a,b)$の各点で微分可能で$a$で右微分可能であることを意味する．
+このとき，$f(x)$を$[a,b)$で考察する限り，$f'(a)$
+\underline{は}$D^+ f(a)$\underline{を表わす}ものと
+約束する．$f(x)$が$a$で微分可能ならば$D^+ f(a)$は
+$f(x)$の$a$における微分係数と一致するから，この約束によって
+混乱が生じる恐れはない．
+
+\subsection{関数の1次結合，積，商の微分法}
+
+つぎの定理は高校数学で学んだ．
+
+\定理{3.2}
+関数$f(x),g(x)$がある区間で微分可能ならば，その1次結合$c_1 f(x) + c_2 g(x)$，
+$c_1,c_2$は定数，およびその積$f(x)g(x)$もその区間で微分可能であって，
+\begin{align}
+	& \frac{d }{d x} (c_1 f(x) + c_2 g(x)) = c_1 f'(x) + c_2 g'(x), \label{eq3x10} \\
+	& \frac{d }{d x} (f(x)g(x)) = f'(x)g(x) + f(x)g'(x). \label{eq3x11}
+\end{align}
+さらにその区間で$g(x) \ne 0$ならば商$f(x)/g(x)$もその区間で
+微分可能であって，
+\begin{equation}
+	\frac{d }{d x} \left(
+                   \frac{f(x)}{g(x)}
+                 \right)
+  = \frac{f'(x) g(x) - f(x) g'(x)}{g(x)^2}.
+\label{eq3x12}
+\end{equation}
+証明も高校数学で学んだ通りであるが，念のため積と商の微分法について
+証明を述べる．$y=f(x) , z=g(x)$とおけば，$x$の増分$\varDelta x$に
+対応する$yz$の増分は，
+\[
+	\varDelta (yz) = (y+\varDelta y)(z + \varDelta z) - yz 
+  =
+  \varDelta y \cdot z + y \cdot \varDelta z + \varDelta y \varDelta z.
+\]
+したがって
+\[
+	\frac{\varDelta (yz)}{\varDelta x} = \frac{\varDelta y }{\varDelta x}z
+  +
+  y \frac{\varDelta z}{\varDelta x} + \varDelta y \cdot \frac{\varDelta z}{\varDelta x}
+\]
+であるが，仮定により，
+$\varDelta y \rightarrow 0$のとき$\varDelta y / \varDelta x \rightarrow f'(x),
+\varDelta z / \varDelta x \rightarrow g'(x)$,また(\ref{eq3x4})により，
+$\varDelta y \rightarrow 0$であるから，
+\[
+	\frac{d (yz)}{d x} = \lim_{\varDelta x\rightarrow0} \frac{\varDelta (yz)}{\varDelta x}
+                     = f'(x) \cdot z + y \cdot g'(x),
+\]
+すなわち
+\[
+	\frac{d }{d x}(f(x)g(x)) = f'(x) g(x) + f(x) g'(x).
+\]
+$z = g(x) \ne 0$ならば，
+\[
+	\varDelta \left( \frac{1}{z}
+            \right)
+  = \frac{1}{z + \varDelta z} - \frac{1}{z} = \frac{-\varDelta z}{(z + \varDelta z) z},
+\]
+したがって
+\[
+	\frac{\displaystyle  \varDelta \left( \frac{1}{z}
+                   \right)}{\varDelta x}
+  =
+  - \frac{1}{(z + \varDelta z) z} \cdot \frac{\varDelta z}{\varDelta x}.
+\]
+故に（(\ref{eq3x4})の$\varDelta y$を$\varDelta z$に見立てれば$\varDelta z \rightarrow 0$）
+\[
+	\frac{d }{d x} \left( \frac{1}{g(x)}
+                 \right)
+  =
+  \lim_{\varDelta x\rightarrow0} \frac{\displaystyle\varDelta \left( \frac{1}{z}
+                                                 \right)}{\varDelta x}
+  =
+  - \frac{1}{z^2} g'(x)  = -\frac{g'(x)}{g(x)^2}.
+\]
+$f(x) / g(x) = f(x) \cdot 1/g(x)$と考えて上で証明した(\ref{eq3x11})を
+用いれば，
+\[
+	\frac{d }{d x} \left( \frac{f(x)}{g(x)}
+                 \right)
+  =
+  f'(x) \cdot \frac{1}{g(x)} - f(x) \cdot \frac{g'(x)}{g(x)^2}
+  =
+  \frac{f'(x) g(x) - f(x) g'(x)}{g(x)^2}.
+\]
+\■
+
+この証明における極限の計算は，$f(x),g(x)$が一つの点$x$で微分可能ならば，
+その点において成り立つ．故に：
+
+\定理{3.2'}
+或る区間で定義された関数$f(x),g(x)$がその区間に属する一つの
+点$x$で微分可能ならば，その点$x$で$c_1 f(x) + c_2 g(x), f(x)g(x)$は微分可能で，
+その微分係数はそれぞれ(\ref{eq3x10}),(\ref{eq3x11})で与えられる．
+さらにもしその点$x$で$g(x) \ne 0$ならば，$f(x) / g(x)$も点$x$で微分可能で，
+その微分係数は(\ref{eq3x12})で与えられる．

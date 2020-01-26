@@ -1,0 +1,150 @@
+\section{平面上の点集合}
+
+中学校の数学ですでに学んだように，平面上に座標軸を定めれば，その平面上の点$P$は
+$P$の座標$(x,y)$によって表わされる．ここで$x,y$は共に実数である．
+前節で述べた直積を表わす記号$\times$を用いれば，二つの実数$x,y$の対$(x,y)$の
+全体の集合は直積集合$\R	\times	\R$である．したがって，平面上の各点$P$をその座標
+$(x,y)$と同じものと見なせば，平面上の点全体の集合は直積集合$\R	\times	\R$と一致
+する．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,5.5)
+
+	%座標軸
+	\thicklines	\put(0,1){\vector(1,0){5.5}}
+							\put(5.2,0.5){$X$}
+	\thicklines	\put(1,0){\vector(0,1){5.5}}
+							\put(0.5,5.2){$Y$}
+	%原点
+							\put(0.6,0.6){$O$}
+
+	%P	(x,y)
+	\thicklines	\put(4,4){\circle{0.05}}
+							\put(4.1,4.1){$P$}
+							\qbezier[25](1,4)(2.5,4)(4,4)
+							\qbezier[25](4,1)(4,2.5)(4,4)
+
+							\put(4,0.7){$x$}
+							\put(0.7,4){$y$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+平面はその上の点全体の集合であると考えれば，平面はすなわち直積集合
+$\R	\times	\R$となる．しかし，高校数学までの数学には平面の定義はなかった．平面の
+意味ははじめからわかっているものとして，紙の上に描かれた図形を観察する
+ことによって養われた平面図形の感覚的イメージに基づいて，平面上の点の座標の
+概念を導入し，それによって平面が直積集合$\R	\times	\R$であることを示したのであ
+る．本節ではこの過程を逆にして，まず平面とは$\R	\times	\R$のことであると定義し，
+つぎに平面上の点の集合の基本的な性質について述べる．これらの性質は論理的
+には平面$\R	\times	\R$と考える立場から厳密に導き出されるが，その意味を理解する
+には図を描いてそのイメージを感覚的に把握しなければならない．
+
+
+\subsection{平面}
+\label{sec1x6x1}
+
+直積集合$\R	\times	\R$を\textbf{平面}といい，その要素$(x,y)	\in	\R	\times	\R$をその平面上の点と
+よぶ．平面$\R	\times	\R$を$\R^2$で表わす．以下平面$\R^2$を一つ定めてその上の点について考えるから，
+特に断らない限り，点といえばその平面$\R^2$上の点を意味するものと約束しておく．
+
+二つの点$P=(x,y),Q=(u,v)$に対して，$\sqrt{(x-u)^2+(y-v)^2}$を$P$と$Q$の\textbf{距離}
+(distance)といい，$|PQ|$で表わす：
+\begin{equation}
+	|PQ|	=	\sqrt{(x-u)^2+(y-v)^2}.
+\end{equation}
+また，$P	\ne	Q$のとき，点$(\lambda	x	+	(1-\lambda)u,\lambda	y	+	(1-\lambda)v),	\lambda	\in	[0,1]$，の全体の集合
+を$P$と$Q$を結ぶ\textbf{線分}といい，$PQ$で表わす．$\mu	=	1	-	\lambda$とおけば，すなわち
+\begin{equation}
+	PQ	=	\{(\lambda	x	+	\mu	u,\lambda	y	+	\mu	v)	\:	|	\:	\mu=1-\lambda	,	\lambda	\in	[0,1]	\}.
+\end{equation}
+
+
+\begin{figure}[htbp]
+	\vspace*{2cm}
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,1)
+				\thicklines	\path(-2,0)(4,3)
+										\put( 4.1,3){$Q$}
+										\put(4,3){\circle{0.05}}
+										\put(-2.3,0){$P$}
+										\put(-2,0){\circle{0.05}}
+										\put(2,1.5){$(\lambda	x+	\mu	u,	\lambda	y+	\mu	v)$}
+										\put(2,2){\circle{0.05}}
+		\end{picture}
+\end{center}
+\end{figure}
+
+
+$|PQ|$を線分$PQ$の\textbf{長さ}という．\footnote{
+高校数学では線分とその長さを同じ記号$PQ$で表わしたが，ここでは線分を$PQ$，長さを$|PQ|$で表わすことにする．
+}
+
+高校数学では$(1.18),(1.19)$は定理であったが，平面は$\R	\times	\R$であると定義する立場では
+$(1.18),(1.19)$は定義である．もちろん高校数学で学んだ事実が定義(1.18)，(1.19)の背景をなしているので
+あって，その事実を知らなければなぜ距離，線分を(1.18)，(1.19)で定義するか理解できないであろう．
+高校数学で学んだ事実を背景とすれば，線分に限らず，直線，円周，正方形，等いろいろな図形をわれわれの
+立場から如何に定義すればよいか，おのずから明らかであろう．
+
+2点$P=(x,y),	\:	Q=(u,v),	\:	P	\ne	Q$，に対して
+\[
+	l	=	\{	(	\lambda	x	+\mu	u,	\lambda	y	+	\mu	v)	\:	|	\:	\mu=1-\lambda,	\nu	\in	\R	\}
+\]
+を$P$と$Q$を通る\textbf{直線}という．
+
+点$P$と正の実数$r$が与えられたとき，$P$から距離が$r$に等しい点$Q$全体の集合
+\[
+	\{	Q	\:	|	\:	|QP|	=	r	\}
+\]
+を$P$を中心とする半径$r$の\textbf{円周}とい，等々．――
+
+距離について：$P=Q$であるときに限って$|PQ|=0$となる．これは明らかであろう．
+任意の3点$P,Q,R$について\textbf{三角不等式}（triangle	inequality)とよばれる不等式：
+\begin{equation}
+	|PR|	\leqq	|PQ|+|QR|
+\end{equation}
+が成り立つ．この不等式は簡単な計算によって容易に確かめられる．すなわち
+$P=(x,y),	\:	Q=(s,t),	\:	R=(u,v)$とし，
+\[
+	\xi	=	x-s,	\quad	\eta	=	y-t,	\quad	\sigma=s-u,	\quad	\tau	=	t-v
+\]
+とおけば，不等式(1.20)は
+\[
+	\sqrt{(\xi	+	\sigma)^2	+	(	\eta	+	\tau)^2	}
+	\leqq	\sqrt{\xi^2	+	\eta^2}	+	\sqrt{\sigma^2	+	\tau^2}
+\]
+と書かれる．一般に$\alpha	\geqq	0,\beta	\leqq	0$のとき，$\alpha^2	-	\beta^2	=	(\alpha+\beta)(\alpha-\beta)$に
+よって明らかなように，$\alpha^2	\leqq	\beta^2$ならば$\alpha	\leqq	\beta$である．ゆえにこの不等式を証明するには
+両辺を2乗した不等式：
+\[
+	(\xi	+	\sigma)^2	+	(	\eta	+	\tau)^2
+		\leqq	\xi^2	+	\eta^2	+	2\sqrt{\xi^2	+	\eta^2}\sqrt{\sigma^2	+	\tau^2}	+	\sigma^2	+	\tau^2
+\]
+すなわち
+\[
+		\xi\sigma	+	\eta\tau
+		\leqq	\sqrt{\xi^2	+	\eta^2}\sqrt{\sigma^2	+	\tau^2}
+\]
+を証明すればよい．このためには
+\[
+		(\xi\sigma	+	\eta\tau)^2
+		\leqq	(\xi^2	+	\eta^2)(\sigma^2	+	\tau^2)
+\]
+であることをいえばよいが，これは
+\[
+	(\xi^2+\eta^2)(\sigma^2	+	\tau^2)	-	(\xi\sigma	+	\eta\tau)^2	=	(\xi\tau	-	\eta\sigma)^2	\geqq	0
+\]
+によって明らかである．
+
+以後三角不等式(1.20)はいちいち断らずに自由に用いる．
+$P$を$\R^2$の1点，$\varepsilon$を正の実数としたとき，$|QP|	<	\varepsilon$なる点
+$Q	\in	\R^2$の全体から成る集合を$P$の$\varepsilon$\textbf{近傍}（$\varepsilon$-neighborhood)といい，
+$U_\varepsilon(P)$で表わす：
+\[
+	U_\varepsilon(P)	=	\{	Q	\in	\R^2	\:	|	\:	|QP|<\varepsilon	\}
+\]
+$U_\varepsilon(P)$はすなわち$P$を中心とする半径$\varepsilon$の円の内部である．

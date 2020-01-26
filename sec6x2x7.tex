@@ -1,0 +1,547 @@
+\subsection{2重級数}
+
+上記の公式（\ref{eq6x31}）に関連して2重級数について述べる.
+\[
+	\begin{matrix}
+		\vdots 	& \vdots 	& \vdots	&	\vdots	&	\vdots	&	\vdots	\\	
+    a_{1n}	&	a_{2n}	&	a_{3n}	&	\cdots	&	a_{mn}	&	\cdots	\\
+		\vdots 	& \vdots 	& \vdots	&	\cdots	&	\vdots	&	\vdots	\\	
+    a_{13}	&	a_{23}	&	a_{33}	&	\cdots	&	a_{m3}	&	\cdots	\\
+    a_{12}	&	a_{22}	&	a_{32}	&	\cdots	&	a_{m2}	&	\cdots	\\
+    a_{11}	&	a_{21}	&	a_{31}	&	\cdots	&	a_{m1}	&	\cdots	\\
+	\end{matrix}
+\]
+このように実数を並べたものを2重数列（double sequence）といい$\{	a_{mn}	\}$で表わす．
+自然数全体の集合を$\N$で表わせば，2重数列$\{	a_{mn}	\}$は直積$\N \times \N$で定義された二つの変数
+$m,n$の関数：$a(m,n)	=	a_{mn}$に他ならない．
+$a_{mn}$を$a_{m,n}$と書くことがある．
+
+\定義{6.5}
+2重数列$\{ a_{mn} \}$が与えられたとする．
+一つの実数$\alpha$が存在して，任意の正の実数$\varepsilon$に対応して一つの自然数$n_0(\varepsilon)$を定めて
+\[
+	m	>	n_0	(	\varepsilon), \quad
+	n	>	n_0	(	\varepsilon)	\quad \text{ならば}	\quad
+	|	a_{mn} - \alpha | < \varepsilon
+\]
+となるようにできるとき，2重数列$\{ a_{mn}	\}$は$a$に収束するといい
+\[
+	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	a_{mn}	=	\alpha
+\]
+と書く．そして$\alpha	$を2重数列$\{	a_{mn}	\}$の極限あるいは極限値とよぶ．
+
+2重数列$\{	a_{mn}	\}$が或る実数に収束するとき，$\{	a_{mn}	\}$は収束する，
+極限$\displaystyle	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	a_{mn}	$
+が存在する，などというととは数列の場合と同様である．
+
+\定理{6.16}
+（Cauchyの判定法）2重数列
+$\{a_{mn}	\}$が収束するための必要かつ十分な条件は任意の正の実数
+$\varepsilon$に対応して一つの自然数$n_0 ( \varepsilon) $が定まって
+\begin{equation}
+	m	\geqq p > n_0(\varepsilon	), \quad
+	n	\geqq q > n_0(\varepsilon	)	\quad \text{のとき} 
+	|	a_{mn}	-	a_{pq}	|	<	\varepsilon
+\label{eq6x32}
+\end{equation}
+となることである．
+
+\証明
+条件が必要なことは明らかである
+\footnote{
+\[
+ | a_{mn} - a_{pq} | < |	a_{mn} - \alpha | + | a_{pq} - \alpha | < \varepsilon	
+\]
+}
+から
+，条件が十分なこと，すなわち，
+条件を満たす2重数列$\{ a_{mn}	 \}$は或る実数$\alpha$に収束することを証明する．
+まず，$	a_n	=	a_{nm}$おけば，（\ref{eq6x32}）にょり，
+\[
+	n	\geqq q > n_0 (\varepsilon	)	\quad \text{のとき} \quad | a_n - a_q| < \varepsilon.
+\]
+故に，Cauchy の判定法（\S \ref{sec1x4x2}，定理1.13）により，
+数列$ \{ \alpha_n \}$は収束する．その極限を$	\alpha	$とすると，
+$\displaystyle \lim_{q\rightarrow \infty} a_q = \alpha$である，
+すなわち，特に$\displaystyle \frac{\varepsilon}{2} > 0$に対しても或る自然数
+$\displaystyle n_1\left(\varepsilon/2 \right)$が定まって
+\[
+	q > n_1 \left( \frac{\varepsilon}{2} \right) \Rightarrow | a_q - \alpha | > \frac{\varepsilon}{2}
+\]
+となる．
+
+次に2重数列$\{a_{mn}\}$の$ | a_{mn} - a_q|$の振る舞いを考えると，（\ref{eq6x32}）により
+特に$p=q, \frac{\varepsilon}{2}$の場合において，
+\[
+	m \geqq q > n_2 \left( \frac{\varepsilon}{2} \right),
+	n \geqq q > n_2 \left( \frac{\varepsilon}{2} \right)
+  \Rightarrow \frac{\varepsilon}{2}
+\]
+となる．
+
+したがって，このように存在した$\{ n_1 \left(\frac{\varepsilon}{2}\right), n_2 \left(\frac{\varepsilon}{2}\right) \}$
+のうち，小さい方を改めて$n_0(\varepsilon) $として選び出せば，任意の$ \varepsilon > 0$に対して
+\[
+	m > n_0 ( \varepsilon ) , n > n_0( \varepsilon) \Rightarrow
+  | a_{mn} - \alpha | < | a_{mn} - a_q | + | a_q - \alpha | < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} < \varepsilon.
+\]
+故に2重数列$	\{	a_{mn}	\}$は$	\alpha	$に収束する．
+\■
+
+2重数列の極限$	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	a_{mn}$は
+順次に極限をとった$	\lim_{n\rightarrow\infty}	\lim_{m\rightarrow\infty}	a_{mn}$や
+$	\lim_{m\rightarrow\infty}	\lim_{n\rightarrow\infty}	a_{mn}$と
+は異なる意味をもつ．
+
+\例{6.9}
+$	a_{mn}	=	a_{m,n}	=	2mn	/	(m^2	+	n^2)$とおけば，
+$	\displaystyle	\lim_{m\rightarrow\infty}	a_{mn}	=0$，$\displaystyle \lim_{n\rightarrow\infty}	a_{mn}	=0$
+となるから
+$	\displaystyle \lim_{n\rightarrow\infty}	\lim_{m\rightarrow\infty}	a_{mn}	=	\lim_{m\rightarrow\infty}	\lim_{n\rightarrow\infty}	a_{mn}	=	0$
+であるが，極限$	\displaystyle	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	a_{mn}$は存在しない．
+なぜなら，自然数$k$を任意に選んで$	m=	kn$とおけば'
+\[
+	a_{mn}	=	a_{kn,n}	=	\frac{2k}{k^2+1},
+\]
+したがって，極限$\displaystyle	\alpha	=	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	a_{mn}$が存在したとすればすべての自然数$k$に対して
+$	\alpha	=	2k	/	(k^2	+1)$となって矛盾を生じるからである．
+
+\例{6.10}
+$	a_{mn}	=	(-1)^n	/m + (-1)^m / n$とおけば，
+$	\displaystyle	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	a_{mn}=0$である．
+これは，任意の$\varepsilon > 0$に対して$ n_0(\varepsilon) = \displaystyle \frac{1}{2\varepsilon }$なる$n_0(\varepsilon)$を選べばよい．
+
+しかし，$	\displaystyle	\lim_{m\rightarrow\infty}	a_{mn}$も$\displaystyle	\lim_{n\rightarrow\infty}	a_{mn}$も存在しない．
+
+\定理{6.17}
+極限$	\displaystyle	\alpha	=	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	a_{mn}	$が存在するとき，
+おのおのの$n$に対して$	\displaystyle	\lim_{m\rightarrow\infty}	a_{mn}$が存在すれば
+$	\displaystyle	\lim_{n\rightarrow\infty}	\lim_{m\rightarrow\infty}	a_{mn}	=	\alpha$．
+また，このとき，おのおのの$m$に対して$	\displaystyle	\lim_{n\rightarrow\infty}	a_{mn}	$
+が存在すれば$	\displaystyle	\lim_{m\rightarrow\infty}	\lim_{n\rightarrow\infty}	a_{mn}	=	\alpha$．
+
+
+\証明
+仮定により任意の正の実数$	\varepsilon$に対応して自然数$	\displaystyle	n_0	\left( \frac{\varepsilon}{2}	\right)	$が定まって
+\[
+	m	>	n_0	\left(	\frac{\varepsilon}{2}	\right)	,	\quad	n	>	n_0	\left(	\frac{\varepsilon}{2} \right)	\quad	\text{のとき}	\quad
+	|	a_{mn}	-	\alpha	|	<	\frac{\varepsilon}{2}
+\]
+となる．$	\displaystyle	l_n	=	\lim_{m\rightarrow\infty}	a_{mn}$とおけば，特に$ \displaystyle	\frac{\varepsilon}{2} > 0$に対応して
+或る自然数$ \displaystyle	n_1	\left(	\frac{\varepsilon}{2} \right) > 0$が定まって，
+\[
+	m > n_1	\left(	\frac{\varepsilon}{2} \right) \Rightarrow | a_{mn} - l_n | < \frac{\varepsilon}{2}
+\]
+したがって，
+\[
+	|	l_n	- \alpha | < | l_n - a_{mn} | + | a_{mn} - \alpha | < \varepsilon.
+\]
+故に$	\displaystyle	\lim_{n\rightarrow\infty}	l_n		=	\alpha$．
+\■
+2重数列$	\{	a_{mn}	\}$が与えられたとき
+\[
+	\sum_{m,n=1}^{\infty}	a_{mn}
+\]
+なる形の式を\textbf{2重級数}（double series）といい，$a_{mn}$をその項という．
+2重級数に対して級数$\displaystyle	\sum_{n=1}^{\infty}	a_n	$を\textbf{単一級数}（simple series）とよぶことがある．
+単一級数の場合と同様に，2重級数$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{mn}$に対してその部分和：
+\[
+	s_{mn}	=	\sum_{p=1}^{m}	\sum_{q=1}^{n}	a_{pq}
+\]
+を考え，2重数列$	\{	s_{mn}	\}$が収束するとき2重級数$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{mn}$は
+収束するといい，$	\displaystyle	s	=	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	s_{mn}$を
+この2重級数の和とよんで
+\[
+		s=	\sum_{m,n=1}^{\infty}	a_{mn}
+\]
+と書く．$	\displaystyle	\{	s_{mn}	\}$が収束しないとき
+$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{mn}$は発散するという．
+また，各項$	a_{mn}$の絶対値$|a_{mn}|$を項とする2重級数
+$	\displaystyle	\sum_{m,n=1}^{\infty}	|a_{mn}|$
+が収束するとき2重級数$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{mn}$は
+絶対収束するという．\underline{絶対収束する2重級数が収束する}ことは，
+\[
+	\sigma_{mn}	=	\sum_{p=1}^{m}	\sum_{q=1}^{n}	|a_{pq}|
+\]
+とおけぱ
+\[
+	m	\geqq	p,	\quad	n	\geqq	q	\quad	\text{のとき}	\quad
+|s_{mn}	-	s_{pq}	|	\leqq	\sigma_{mn}	-	\sigma_{pq}
+\]
+となるから（左上以外の部分を比較），
+\[
+	\begin{array}{ccc|ccc}
+		a_{11}		&	a_{12}	&	\cdots	&	a_{1q+1}	&	\cdots	&	a_{1n}	\\
+		a_{21}		&	a_{22}	&	\cdots	&	a_{2q+1}	&	\cdots	&	a_{2n}	\\
+			\vdots	&	\vdots	&	\vdots	&	\vdots		&	\cdots	&	\vdots	\\
+\hline
+		a_{p+11}	&	a_{p+12}&	\cdots	&	a_{p+1q+1}&	\cdots	&	a_{p+1n}\\
+			\vdots	&	\vdots	&	\vdots	&	\vdots		&	\cdots	&	\vdots	\\
+		a_{m1}		&	a_{m2}	&	\cdots	&	a_{mq+1}	&	\cdots	&	a_{mn}	\\
+	\end{array}
+,\quad
+	\begin{array}{ccc|ccc}
+		|a_{11}|		&	|a_{12}|	&	\cdots	&	|a_{1q+1}|	&	\cdots	&	|a_{1n}|	\\
+		|a_{21}|		&	|a_{22}|	&	\cdots	&	|a_{2q+1}|	&	\cdots	&	|a_{2n}|	\\
+			\vdots		&	\vdots		&	\vdots	&	\vdots			&	\cdots	&	\vdots		\\
+\hline
+		|a_{p+11}|	&	|a_{p+12}|&	\cdots	&	|a_{p+1q+1}| &	\cdots	&	|a_{p+1n}| \\
+			\vdots	&	\vdots	&	\vdots			&	\vdots		&	\cdots	&	\vdots			\\
+		|a_{m1}|		&	|a_{m2}|	&	\cdots	&	|a_{mq+1}|	&	\cdots	&	|a_{mn}|	\\
+	\end{array}
+\]
+
+Cauchyの判定法（定理6.16）によって明らかである．
+\begin{equation}
+	m	\geqq	p	,	\quad	n	\geqq	q	\quad	\text{のとき}	\quad	\sigma_{pq}	\leqq	\sigma_{mn}
+\label{eq6x33}
+\end{equation}
+であるから，$	\{	\sigma_{mn}	\}$が収束すれば$	\sigma_{pq}\displaystyle		\leqq	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	\sigma_{mn}$
+したがって2重数列$	\{	\sigma_{mn}	\}$は（収束すれば）有界である．
+逆に$\{	\sigma_{mn}	\}$が有界ならば$	\{	\sigma_{mn}	\}$は収束する．
+なぜなら，$	\sigma_n	=	\sigma_{nn}$とおけば，数列$\{	\sigma_n	\}$はもちろん有界で
+（\ref{eq6x33}）により単調非減少，したがって，\S	\ref{sec1x5x2}，定理1.20
+\footnote{
+\定理{1.20}
+	上に（下に）有界な単調非減少（非増加）数列はその上限（下限）に収束する．
+}
+により，
+$\{	\sigma_n	\}$は収束する．そして，（\ref{eq6x33}）により，$	\sigma_{mn}$は
+$	\sigma_m	$と	$	\sigma_n$	の間にあるからである．
+\[
+	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	\sigma_n
+	\leqq
+	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	\sigma_{mn}
+	\leqq
+	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	\sigma_{m}.
+\]
+すなわち，2重級数
+$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{mn}$が絶対収束するための必要かつ十分な条件は，
+すべての自然数$m,n$について
+\begin{equation}
+	\sum_{p=1}^{m}	\sum_{q=1}^{n}	|	a_{pq}	|	\leqq	M
+\label{eq6x34}
+\end{equation}
+なる定数$M$が存在することである．
+
+$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{m,n}$が絶対収束するならばそのすべて
+の項$	a_{m,n}$を任意の順序で一列に並べて得られる単一級数も絶対収束して，その和
+は$\displaystyle	\sum_{m=1}^{\infty}	a_{m,n}$に等しい．たとえば単一級数：
+\[
+	a_{1,1}	+	a_{2,1}	+	a_{1,2}	+	a_{1,3} + a_{2,2} + a_{3,1} + \cdots	+	a_{1,n} + a_{n-1,	2}	+	\cdots	+	a_{1,n}	+	\cdots
+\]
+は絶対収束して
+\begin{equation}
+	\sum_{n=2}^{\infty}	\sum_{p+q=n}^{}	a_{p,q}	=	\sum_{m,n=1}^{\infty}	a_{m,n}.
+\label{eq6x35}
+\end{equation}
+$	a_{m,n}$を一列に並べた単一級数が絶対収束することは
+（\ref{eq6x34}）によって明らかであろう，すなわち
+\[
+	\sum_{n=2}^{k}	\sum_{p+q=n}^{}	|a_{p,q}|	\leqq	\sum_{p=1}^{k}	\sum_{q=1}^{k}	|a_{p,q}	|	\leqq	M.
+\]
+その和が$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{m,n}$に等しいことをいうには，
+収束する単一級数の和は定理5.1により項の順序を変更しても変わらないから，
+等式（\ref{eq6x35}）を証明すればよい．明らかに$	m	\to	\infty$のとき
+\[
+	\left|	\sum_{p=1}^{m}	\sum_{q=1}^{m}	a_{p,q}	-	\sum_{n=2}^{m}	\sum_{p+q=n}^{}	a_{p,q}
+	\right|
+	\leqq	\sum_{n=m+1}^{2m}	\sum_{p+q=n}^{}	|	a_{p,q}	|	
+	=	\sum_{n=1}^{2m}	\sum_{p+q=n}^{}	|	a_{p,q}	|	-	\sum_{n=1}^{m}	\sum_{p+q=n}^{}	|	a_{p,q}	|
+	\to	0
+\]
+となるから
+\begin{figure}[hp]
+	\vspace*{3cm}
+		\begin{center}
+		\setlength{\unitlength}{0.8cm}
+			\begin{picture}(2,-2)
+				\thicklines	\path(0,0)(4,0)
+				\thicklines	\path(4,0)(4,4)
+				\thicklines	\path(4,4)(0,4)
+				\thicklines	\path(0,4)(0,0)
+				\thinlines	\path(0,0)(4,4)
+				\thinlines	\path(0,2)(2,2)
+				\thinlines	\path(2,2)(2,4)
+				\thinlines	\path(0,2)(2,4)
+				\put(-0.4,4){\small	$O$}
+				\put(2,4.1){\small	$m$}
+				\put(4,4.1){\small	$2m$}
+				\put(-0.4,2){\small	$m$}
+				\put(-0.4,-0.4){\small	$2m$}
+		\end{picture}
+\end{center}
+\end{figure}
+\[
+	\sum_{n=2}^{\infty}	\sum_{p+q=n}^{}	a_{p,q}
+	=
+	\lim_{m\rightarrow\infty}	\sum_{p=1}^{m}	\sum_{q=1}^{m}	a_{p,q}	=	\sum_{m,n=1}^{\infty}	a_{m,n},
+\]
+なわち（\ref{eq6x35}）が成り立つ．――
+
+また，$	\displaystyle	\sum_{m,n=0}^{\infty}	a_{mn}$が絶対収束するならばおのおのの$m$に対して単一級数
+$	\displaystyle	\sum_{n=1}^{\infty}	a_{mn}$は絶対収束，その和を項とする単一級数
+$	\displaystyle	\sum_{m=1}^{\infty}	\left(	\sum_{n=1}^{\infty}	a_{mn}	\right)$も絶対収束して等式：
+\begin{equation}
+	\sum_{m=1}^{\infty}	\sum_{n=1}^{\infty}	a_{mn}	=	\sum_{m,n=1}^{\infty}	a_{mn}
+\label{eq6x36}
+\end{equation}
+が成り立つ．
+
+\証明
+仮定により（\ref{eq6x34}）の不等式：
+$	\displaystyle	\sum_{p=1}^{m}	\sum_{q=1}^{n}	|	a_{pq}	|	\leqq	M$
+が成立しているからおのおのの$m$に対して$	\displaystyle	\sum_{q=1}^{n}	|	a_{mq}	|	\leqq	M$，
+故に$	\displaystyle	\sum_{n=1}^{\infty}	a_{mn}$は絶対収束する．
+そして，級数の三角不等式（定理1.21）により
+\[
+	\sum_{p=1}^{m}	\left|	\sum_{n=1}^{\infty}	a_{pn}	
+\right|	\leqq	\sum_{p=1}^{m}	\sum_{n=1}^{\infty}	|	a_{pn}	|	\leqq	M
+\]
+となるから
+$	\displaystyle	\sum_{m=1}^{\infty}	\left(	\sum_{n=1}^{\infty}	a_{mn}
+	\right)$も絶対収束する．部分和$\displaystyle	s_{mn}	=	\sum_{p=1}^{m}	\sum_{q=1}^{n}	a_{pq}$
+を考えれば，したがって，極限$	\displaystyle	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	s_{mn}$
+が存在するから，定理6.17により，
+\[
+	\lim_{m	\rightarrow\infty}	\lim_{n\rightarrow\infty}	s_{mn}	=	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	s_{mn},
+\]
+すなわち（\ref{eq6x36}）が成り立つ．
+\■
+
+同様に$	\displaystyle	\sum_{m,n==1}^{\infty}	a_{mn}$が絶対収束するならば
+$	\displaystyle	\sum_{m=1}^{\infty}	a_{mn}$は絶対収束，
+$\displaystyle	\sum_{n=1}^{\infty}	\sum_{m=1}^{\infty}	a_{mn}$
+も絶対収束して
+\begin{equation}
+	\sum_{n=1}^{\infty}	\sum_{m=1}^{\infty}	a_{mn}	=	\sum_{m,n=1}^{\infty}	a_{mn}.
+\label{eq6x37}
+\end{equation}
+
+$\displaystyle	\sum_{m,n=1}^{\infty}	a_{mn}$が収束するけれども
+絶対収束しないとき2重級数$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{mn}$は条件収
+するという。2重級数の条件収束は複雑である．$\displaystyle	\sum_{m,n=1}^{\infty}	a_{mn}$
+の各項$	_{mn}$の部分和$	\displaystyle	s_{m,n}	=	\sum_{p=1}^{m}	\sum_{q=1}^{n}	a_{pq}$を用いて
+\[
+	a_{mn}=s_{m,n}	-	s_{m,n-1}	-	s_{m-1,n}	+	s_{m-1,n-1}
+\]
+（引き過ぎた重複部分$s_{m-1,n-1}$を最後に足し込む）と表されるから，$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{m,n}$が収束すれば
+$	\displaystyle\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	a_{mn}	=	0$
+となるが，条件収束の場合には$	\{	a_{mn}	\}$は必ずしも有界であるとは限らない．
+
+\例{6.11}
+$	a_{11}	=	-1	,	a_{a1}	=	a_{1n}	=	-	n	,	a_{n2}	=	a_{2n}	=	n	,	n=2,3,4,	\cdots,	\cdots$
+とすれば，
+\[
+	\begin{matrix}
+		\cdot	&	\cdot	&	\cdot	&	\cdot	&	\cdot	&	\cdot	&	\cdot	\\
+\\
+		\cdot	&	\cdot	&	\cdot	&	\cdot	&	\cdot	&	\cdot	&	\cdot	\\
+\\
+		-4		&	4			&	a_{34}&	a_{44}&	a_{54}&	\cdot	&	\cdot	\\
+\\
+		-3		&	3			&	a_{33}&	a_{43}&	a_{53}&	\cdot	&	\cdot	\\
+\\
+		-2		&	2			&	3			&	4			&	5			&	\cdot	&	\cdot	\\
+\\
+		-1		&	-2		&	-3		&	-4		&	-5		&	\cdot	&	\cdot	\\
+	\end{matrix}
+\]
+を見れば明らかなように，$m	\geqq	3	,	n	\geqq	3$のとき
+\[
+	s_{m,n}	=	-3	+	\sum_{p=3}^{m}	\sum_{q=3}^{n}	a_{pq}
+\]
+となる．故に2重級数$	\displaystyle	\sum_{m,n=3}^{\infty}	a_{mn}$が収束すれば
+$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{mn}$も収束するが，
+$	\{	a_{mn}	\}$は明らかに有界でない．――
+
+
+$	\displaystyle	\sum_{m,n=1}^{\infty}	a_{mn}$は絶対収束するとき
+$\{	a_{mn} \}$が有界であることはいうまでもない．
+
+$	\displaystyle	\sum_{m,n=0}^{\infty}	a_{mn}	x^m	y^n$なる形の
+2重級数を\textbf{2変数}	$x,y$ \textbf{の巾級数}という．
+
+\underline{平面}	$\R^2$ \underline{上の点}	$(	\xi	,	\eta),	\:	\xi	\ne	0,	\eta	\ne	0$，
+\underline{に対して2重数列}	$\{	a_{mn}	\xi^m	\eta^n\}$	\underline{が有界ならば，}
+$|x|	<	|\xi|,	|y|<	|\eta|	$
+\underline{のとき巾級数}$	\displaystyle	\sum_{m,n=0}^{\infty}	a_{mn}	x^m	y^n$
+\underline{	は絶対収束する．}
+もちろん2重数列	$\{	a_{mn}	\xi^m	\eta^n	\}$における
+$m,n$の変域は負でない整数の全体	$	\{	0	\}	\cup \N$としているのある．
+\証明
+仮定により
+\[
+  |	a_{mn} \xi^m \eta^n 
+  | < M,\quad \text{$M$は定数},
+\]
+であるから
+\[
+	|a_{mn}	| < \frac{M}{|\xi|^m | \eta |^n } ,
+\]
+したがって，$	|	x	|	/ | \xi	|	<1	,	|	y|	/	|	\eta	|	<	1$であるから，
+\begin{align*}
+	\sum_{p=0}^{m}	\sum_{q=0}^{n}
+|	a_{pq}	x^p y^q |
+&\leqq	\sum_{p=0}^{m}	\sum_{q=0}^{n}
+					\frac{M}{|\xi|^p|\eta|^q	}	|x|^p	|y|^q
+	\leqq M \sum_{p=0}^{m}
+				\left(	\frac{|x|}{|\xi	|}
+				\right)^p
+				\sum_{q=0}^{n}
+				\left(	\frac{|y|}{|\eta|}
+				\right)^q	\\
+&\leq	M	\sum_{p=0}^{\infty}
+				\left(	\frac{|x|}{|\xi|}
+				\right)^p
+				\sum_{q=0}^{\infty}
+				\left(
+					\frac{|y|}{|\eta|}
+				\right)^q	\\
+&=	\frac{M	|\xi||\eta|}{(|\xi|-|x|)(|\eta| - |y|)}	
+\end{align*}
+故に$	\displaystyle	\sum_{m,n=0}^{\infty}	a_{mn}x^my^n $は絶対収束する．
+\■
+\begin{equation}
+	U_{\xi,\eta}	=	\{	(x,y) \: | \: |x| < |\xi| , | y| < | \eta |
+\}
+\label{eq6x38}
+\end{equation}
+とおけば，すなわち，$(x,y) \in U_{\xi,\eta}$のとき巾級数$	\displaystyle	\sum_{m,n=0}^{\infty}	a_{mn}x^my^n$は絶対収束する
+のである．$	\displaystyle	\{	a_{mn}	\xi^m \eta^n\}$が有界となるすべての
+点$(\xi	,	\eta)	,		\xi	\ne 0 , \eta \ne 0$，に対してそれぞれ
+(\ref{eq6x38})によって開矩形$	U_{\xi,	\eta}$を定め，その合併集合を
+\[
+	G=	\bigcup	U_{\xi	,	\eta}
+\]
+とする．$G$は明らかに$\R^2$上の領域で，
+\footnote{ \small
+\begin{list}{}{}
+	\item	(1) 開集合の任意の合併はまた，開集合である。
+	\item (2) $p \in U_{\xi\eta},q \in U_{\xi'\eta'}$を接線で結ぶことができる，
+\end{list}
+すなわち任意の$U_{\xi\eta},U_{\xi'\eta'}$の合併は連結である。
+(1)は証明済み。(2)の\textbf{証明}:
+$U_{\xi\eta} \not\subset U_{\xi'\eta'}$の場合。$U_{\xi\eta} \cap U_{\xi'\eta'} \ne \varnothing$であり，
+このような点を通過する接線を用いることにより，$U_{\xi\eta} \cup U_{\xi'\eta'}$ の任意の2点を接線で結ぶことができる。
+}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=100mm,height=62.5mm]{p292.bmp}
+\end{figure}
+$(x,y) \in G$ならぱ巾級数
+$	\displaystyle	\sum_{m,n=0}^{\infty}a_{mn}x^my^n$は
+絶対収束する．逆に$	\displaystyle \sum_{m,n=0}^{\infty}	a_{mn}x^my^m$が絶対収束するならば
+$	x	\ne	0	,	y	\ne	0$のとき$(x,y)$は$G$の閉包$[G]$に属する．
+なぜなら，このとき上記の結果により
+$	U_{x,y} \subset G$，したがって$	(x,y)	\in [U_{x,y} ] \subset [ G ]$となるからである．
+故に$(x,y) \not\in [G], x \ne 0 , y \ne 0$ならば巾級数$	\displaystyle	\sum_{m,n=0}^{\infty}	a_{mn}x^my^n$
+は絶対収束しない．領域$G$を巾級数$	\displaystyle	\sum_{m,n=0}^{\infty}	a_{mn}x^m y^n$
+の\textbf{収束域}という
+\footnote{
+絶対収束にともなる概念，条件収束の場合は適用除外。
+}
+．巾級数$	\displaystyle	\sum_{m,n=0}^{\infty}	a_{mn}x^m y^n$
+がすべての点$(x,y) , x \ne 0, y \ne 0$，において絶対収束しない場合にはその収束域は空集合であると考える 
+
+前項の終りに述べたように，或る領域$W , A \in W \subset D_A , A=(a,b)$
+\footnote{
+線分$AP$が，定義域$D$内に在るような点$P=(x,y)$の全体の集合を$D_A$で表わす：
+}
+の各点
+$(x,y)$においてTaylorの公式 (\ref{eq6x30})
+\begin{align*}
+f(x,y)
+		&= f(a,b) + \sum_{1 \leq p+q \leq n-1}^{}
+								\frac{1}{p!q!} \frac{\partial^{p+q} f(a,b)}{\partial x^p \partial y^q} (x-a)^p (y-b)^q + R_n, \notag \\
+		& \quad R_n = \sum_{p+q=n}^{}	\frac{1}{p!q!} \frac{\partial^{p+q} f( \xi , \eta)}{\partial x^p \partial y^q}
+					(x-a)^p  (y-b)^q, \notag \\
+		&	\quad	\xi = a + \theta ( x-a ) \quad	, \eta = b + \theta ( y -b) , \quad 0 < \theta < 1 ,
+\end{align*}
+の剰余項$R_n$が$n \to \infty$とき$0$に収束するならば，
+$W$において(\ref{eq6x31})の公式:
+\[
+	f(x,y) - f(a,b) + \sum_{n=1}^{\infty}	\sum_{p+q=n}^{}	\frac{1}{p!q!} 
+\frac{\partial^{p+q} f(a,b)}{\partial x^p \partial y^q} (x-a)^p (y-b)^q
+\]
+が成り立つ．この右辺を$x-a,y-b$の巾級数として
+\[
+	\sum_{m,n=0}^{\infty}
+	\frac{1}{m!n!}	\frac{\partial^{m+n} f(a,b)}{\partial x^m \partial y^n}	(x-a)^m	(y-b)^n
+\]
+と書き，その収束域が空集合ではないとしてそれを$G$とすれば，
+（\ref{eq6x31}）と（\ref{eq6x25}）により，点$(a,b)$の近傍
+\footnote{平面上の点$A$を含む開集合を$A$の\textbf{近傍}という．
+このことについては\S \ref{sec1x6x3}で述べた．
+}
+$W \cap G$において$f(x,y)$は$x-a,y-b$の絶対収束する巾級数の和として
+\begin{equation}
+	f(x,y)	=	\sum_{m,n=0}^{\infty}
+\frac{1}{m!n!}	\frac{\partial ^{m+n} f(a,b)}{\partial x^m \partial y^n}	(x-a)^m(y-b)^n
+\label{eq6x39}
+\end{equation}
+と表わされる．この右辺の巾級数を点$(a,b)$を中心とする Taylor 級数あるい
+は$f(x,y)$の$(a,b)$を中心とする\textbf{Taylor展開}といい，$f(x,y)$を(\ref{eq6x39})の
+形に表.すことを$f(x,y)$を$(a,b)$を中心とする\textbf{Taylor級数に展開する}という
+\footnote{
+$R_n \to 0 \:(n\to \infty)$だけでは，Taylor展開（級数）であっても，
+その定義域で絶対収束するとはかぎらない。}
+．
+
+\例{6.12}
+極めて簡単な例として領域$D = \{(x,y) \: | \: | x+y| <1 \}$で定義された
+$\mathcal{C}^\infty$級の関数:
+\[
+	f(x,y) = \frac{1}{1-x-y}
+\]
+の原点$O = (0,0)$を中心とするTaylor展開を考察する．
+\[
+	\frac{\partial ^{m+n} f(x,y)}{\partial x^m \partial y^n}
+=
+\frac{(m+n)!}{(1-x-y)^{m+n+1}}
+\]
+であるから，$(0,0)$を中心とする$f(x,y)$のTaylor 展開は
+\begin{equation}
+	\sum_{m,n=0}^{\infty}	\frac{(m+n)!}{m!n!} x^my^n.
+\label{eq6x40}
+\end{equation}
+これを(\ref{eq6x40})の右辺の形の級数に書き直せば，2項定理により，
+\[
+	1	+	\sum_{n=1}^{\infty}	\sum_{p+q=n}^{}	\frac{n!}{p!q!} x^py^q = 1 + \sum_{n=1}^{\infty}	(x+y)^n
+\]
+となる．明らかに$	|x+y|	<	1$のとき
+この級数$\displaystyle 1 + \sum_{n=1}^{\infty}	(x+y)^n$
+は絶対収束してその和は
+$	1/(1-x-y)	=	f(x,y)$に等しい．この$f(x,y)$については，すなわち，
+定義域$D$のすべての点において(\ref{eq6x31})が成立し，
+したがって Taylorの公式（\ref{eq6x30}）の剰余項$R_n$は
+$n	\to \infty$のとき$0$に収束する．しかし$|x+y|<1$のとき
+Taylor級数 （\ref{eq6x40}）は必ずしも絶対収束しない．
+(\ref{eq6x40})が絶対収束したとすれば，（\ref{eq6x35}）により，
+\begin{align*}
+	\sum_{n=0}^{\infty}	(|x|	+	|y|)^n
+&=	\sum_{n=0}^{\infty}	\sum_{p+q=n}^{}
+\frac{(p+q)!}{p!q!}	|x|^p|y|^q	\\
+&=	\sum_{m,n=0}^{\infty}	
+\frac{(m+n)!}{m!n!} |x|^n |y|^n < + \infty
+\end{align*}
+となるから，$|x| + |y| <1$でなければならない．
+逆に$ |x| + | y| < 1$ならば
+\[
+	\sum_{p=0}^{m}
+	\sum_{q=0}^{n}
+	\frac{(p+q)!}{p!q!} |x|^p |y|^q
+\leqq	\sum_{n=0}^{\infty}	(|x|	+	|y|)^n	< + \infty
+\]
+であるから（\ref{eq6x40}）は絶対収束する．故にTaylor級数
+（\ref{eq6x40}）の収束域は$G~=	\{	(x,y) \: | \: |x|+|y|<1 \}$
+であって（和の順序を変えても値が変わらない集合），Taylor 展開
+\[
+	\frac{1}{1-x-y}
+=	\sum_{m,n=0}^{\infty}	\frac{(m+n)!}{m!n!}x^my^n
+\]
+は$G$においてだけ成り立つ ――
+
+領域$D$で定義された$	\mathscr{C}^\infty$級の関数
+$ f(x,y)$が $D$の各点$ (a,b)$の或る近傍で$ (a,b)$を中心とするTaylor級数に展開されるとき，
+$ f(x,y)$を2変数$ x,y$の\textbf{実解析関数}とよぶ．

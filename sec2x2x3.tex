@@ -1,0 +1,52 @@
+\subsection{単調関数，逆関数}
+\label{sec2x2x3}
+
+$f(x)$の定義域に属する任意の$x,y$について，$x<y$ならば
+$f(x)<f(y)$となるとき，$f(x)$は\textbf{単調増加}(monotone	increasing)
+であるといい，$x<y$ならば$f(x)>f(y)$となるとき，$f(x)$は\textbf{単調減少}(monotone	decreasing)
+であるとう．
+単調増加または単調減少な関数を\textbf{単調関数}とよぶ．
+
+一般に$D	\subset	\R$を定義域とする関数$f$の値域$f(D)$に属するおのおのの実数$y$に対して
+$f(x)=y$なる実数$x	\in	D$がただ一つしかないとき，$y$にこの$x$の対応させる対応を
+$f$の\textbf{逆関数}といい，$f^{-1}$で表わす．$f^{-1}$の定義域は$f$の値域$f(D)$，
+$f^{-1}$の値域は$f$の定義域$D$である．単調関数が逆関数をもつことは明らかであろう．
+
+\定理{2.7}
+区間で定義された連続な単調増加（減少）関数の逆関数は，区間で定義された連続な単調増加（減少）
+関数である．
+
+\証明
+
+$f$を区間$I$で定義された連続な単調増加関数とする．$f$の逆関数$f^{-1}$の
+定義域$\Delta=f(I)$は，定理2.6により一つの区間である．2点$x,a	\in	I$を
+任意に選んで$y=f(x),b=f(a)$とおいたとき，$f$が単調増加であるから，
+$x	\leqq	a$ならば$y	\leqq	b	\quad	(y	\geqq	b)$である．故に$y	<	b$ならば
+$x	=	f^{-1}(y)	<	a	=	f^{-1}(b)	\quad	(x	=	f^{-1}(y)	>	a	=	f^{-1}(b))$，すなわち
+$f^{-1}$は単調増加(減少)関数である．
+
+$f^{-1}$が連続であることを証明するために，
+仮に$f^{-1}$が1点$b	\in \Delta$で連続でなかったとしてみる．
+そうすれば或る正の実数$\varepsilon $に対しては，どんな自然数$n$をとっても
+\[
+	\exists	\varepsilon >	0	,\forall	n	\in	\N,\quad	|y_n	-	b|	<	\frac{1}{n},\quad	|f^{-1}(y_n)	-	f^{-1}(b)|	\geqq	\varepsilon
+\]
+となる$y_n	\in	\Delta$が存在する．$x_n=f^{-1}(y_n)$，$a=f^{-1}(b)$とおけば
+$|x_n-a|	\geqq	\varepsilon $，すなわち
+\[
+	\exists	\varepsilon >	0	,\forall	n	\in	\N,\quad	x_n	\leqq	a-\varepsilon \quad	\text{または}	\quad	x_n	\geqq	a	+	\varepsilon
+\]
+である．$f$が単調増加であるから
+\[
+	\exists	\varepsilon >	0	,\forall	n	\in	\N,\quad	y_n=f(x_n)	\leqq	f(a	-	\varepsilon )	\quad\text{または}\quad	y_n=f(x_n)	\geqq	f(a+\varepsilon )
+\]
+である．$f(a)=b$であるから，したがって
+\[
+	\exists	\varepsilon >	0	,\forall	n	\in	\N,\quad	y_n	\leqq	f(a-\varepsilon )	<	b	\quad\text{または}\quad	y_n	\geqq	f(a+\varepsilon )	>b
+\]
+上の各場合に対して$f(a+\varepsilon)-b	=\varepsilon'$または$b-f(a-\varepsilon)=\varepsilon'$とおくと，
+\[
+	\exists	\varepsilon' >	0	,\forall	n	\in	\N,\quad	y_n	\leqq	b-\varepsilon' \quad\text{または}\quad	b+\varepsilon'	\leqq	y_n
+\]
+これは$\displaystyle	\lim_{n	\rightarrow	\infty}	y_n	=	b$に矛盾する．
+\■

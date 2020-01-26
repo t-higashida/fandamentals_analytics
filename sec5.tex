@@ -1,0 +1,379 @@
+\chapter{無限級数}
+\section{絶対収束，条件収束}
+\label{sec5x1x1}
+
+級数$\displaystyle	\sum_{n=1}^{\infty}	a_n	$が与えられたとき，その項の順序を
+変更することによって新たらしい級数$\displaystyle	\sum_{n=1}^{\infty}	a_n'$が得られる．たとえば
+\[
+	1	+	\frac{1}{3}	-	\frac{1}{2}	+	\frac{1}{5}	+	\frac{1}{7}	-\frac{1}{4}+	\frac{1}{9}	+	\frac{1}{11}	-	\frac{1}{6}	+	\cdots
+\]
+は交代級数
+\[
+		1	-	\frac{1}{2}	+	\frac{1}{3}	-	\frac{1}{4}	+	\frac{1}{5}	-	\frac{1}{6}	+	\frac{1}{7}	-	\frac{1}{8}	+	\frac{1}{9}	-	\cdots	-	\cdots
+\]
+からその項の順序を変更して得られた級数である．新しい級数$\displaystyle	\sum_{n=1}^{\infty}	a_n'$の
+$n$番目の項$a_n'$がもとの級数$\displaystyle	\sum_{n=1}^{\infty}	a_n$の$\gamma	(n)$番目の項
+$a_{\gamma(n)}$であったとすれば，
+新しい級数$\displaystyle	\sum_{n=1}^{\infty}	a_n'$は$\displaystyle	\sum_{n=1}^{\infty}	a_{\gamma(n)}$と書かれる．
+$\N$を自然数全体の集合とすれば，$\gamma	:	n	\to	m	=	\gamma(n)$は$\N$から$\N$全体への1対1の対応を与える．
+たとえば対応$\gamma$を$\gamma(1)=1$，任意の自然数$k$に対して$\gamma(3k)	=2k,	\gamma(3k-1)	=	4k-1,	\gamma(3k+1)=4k+1$と
+定義すれば
+\[
+	\sum_{n=1}^{\infty}	a_{\gamma(n)}
+=	a_1	+	a_3	+	a_2	+	a_5	+	a_7	+	a_4	+	a_9	+	a_{11}+	a_6	+	\cdots.
+\]
+以下本節では$\gamma$で$\N$から$\N$全体への1対1の対応を表わすことにし，
+$\displaystyle	\sum_{n=1}^{\infty}	a_n$からその項の順序を変更して得られる級数を
+$\displaystyle	\sum_{n=1}^\infty	a_{\gamma	(n)}$と書く．
+
+絶対収束する級数と条件収束する級数はその項の順序の変更に関して
+全く異なる性質をもつ．すなわち
+
+\定理{5.1}
+\begin{list}{}{}
+	\item	$(1^\circ)$ 級数$\displaystyle	\sum_{n=1}^{\infty}	a_n$が絶対収束しているとき，その和$\displaystyle	s=	\sum_{n=1}^{\infty}	a_n$は
+その項の順序を変更しても変わらない．
+	\item $(2^\circ)$ 級数$\displaystyle	\sum_{n=1}^{\infty}	a_n$が条件収束しているときには，任意に与えられた実数$\xi$に対して
+\[
+	\sum_{n=1}^{\infty}	a_{\gamma	(n)}=\xi
+\]
+となるように$\displaystyle	\sum_{n=1}^{\infty}	a_n$の項の順序を変更することができる．また，
+$\sum_{n=1}^{\infty}	a_{\gamma	(n)}$が$+\infty$あるいは$-\infty$に発散するように項の順序を変更することもできる．
+\end{list}
+
+\証明 級数$\displaystyle	\sum_{n=1}^{\infty}	a_n,	\:	a_n	\ne	0$，が与えられたとして，
+まず級数$\displaystyle	\sum_{n=1}^{\infty}	|a_n|$を考察する．
+$\displaystyle	\sum_{n=1}^{\infty}	|a_n|$は収束するか$+	\infty$に発散するかいずれかであって，
+$\displaystyle	\sum_{n=1}^{\infty}	|a_n	|	<	+	\infty$は$	\displaystyle	\sum_{n=1}^{\infty}	|a_n|$が
+収束することを意味する．$\displaystyle	\sum_{n=1}^{\infty}	a_{\gamma	(n)}$を
+$\displaystyle	\sum_{n=1}^{\infty}	a_n$の項の順序を変更して得た級数とする．自然数$m$に対して
+自然数$\gamma	(1),	\gamma(2),	\cdots	,	\gamma	(m)$の最大なものを$l$とすれば
+\footnote{
+	右辺は$l$個の（正の数の）項の和であるが，左辺は$l$個以下の項の和である，すなわち
+		$ \{ \:	a_{\gamma(n)}	\:	\}_{n=1}^m	\subseteq	\{ \: a_n \: \}_{n=1}^l$
+}
+\[
+	\sum_{n=1}^{m}	|	a_{\gamma	(n)}	|	\leqq	\sum_{n=1}^{l}	|	a_n	|.
+\]
+故に，$\displaystyle	\sum_{n=1}^{\infty}	|a_n	|	<	+	\infty$ならば
+\[
+	\sum_{n=1}^{m}	|	a_{\gamma	(n)}	|	\leqq	\sum_{n=1}^{\infty}	|a_n|,
+\]
+したがって
+\[
+	\sum_{n=1}^{\infty}	|a_{\gamma	(n)	}	|	\leqq	\sum_{n=1}^{\infty}	|a_n|	,
+\]
+$\displaystyle	\sum_{n=1}^{\infty}	|a_n|	=	+	\infty$なる場合にはこの不等式は自明である．
+
+$\displaystyle	\sum_{n=1}^{\infty}	a_n$と$\displaystyle	\sum_{n=1}^{\infty}	a_{\gamma	(n)}$を
+入れ替えれて考えれば
+\[
+	\sum_{n=1}^{\infty}	|a_n|	\leqq	\sum_{n=1}^{\infty}	|	\alpha_{\gamma(n)}	|
+\]
+を得るから，
+\begin{equation}
+	\sum_{n=1}^{\infty}	|a_n	|	=	\sum_{n=1}^{\infty}	|a_{\gamma	(n)}	|.
+\label{eq5x1}
+\end{equation}
+すなわち，級数$\displaystyle	\sum_{n=1}^{\infty}	|a_n|$が収束すれば，
+その項の順序を変更した級数$\displaystyle	\sum_{n=1}^{\infty}	|a_{\gamma	(n)}	|$も
+収束して等式（\ref{eq5x1}）が成り立つ．$\displaystyle	\sum_{n=1}^{\infty}	|a_n|$が
+発散すれば$\displaystyle	\sum_{n=1}^{\infty}	|	a_{\gamma	(n)}	|$も発散する．
+
+この結果から，収束する級数$\displaystyle	\sum_{n=1}^{\infty}	a_n	,	a_n	\ne	0$，
+のおいて負の項$a_n$が高々有限個しか無い場合には，その$\displaystyle	s=	\sum_{n=1}^{\infty}	a_n$
+はその項の順序を変更しても変わらないことがわかる．なぜなら，その高々有限個の負の項を除けば，
+$\displaystyle	a_n	=	|a_n|$であるからである．この場合級数
+$\displaystyle	\sum_{n=1}^{\infty}	a_n$は絶対収束する．正の項が高々有限個しかない場合は，
+$\displaystyle	\sum_{n=1}^{\infty}	(-a_n)$を考えれば，負の項が有限個しかない場合に帰着する．
+
+そこで$\displaystyle	\sum_{n=1}^{\infty}	a_n	,	\:	a_n	\ne	0$を正の項も負の項も無数にある級数として，
+$\displaystyle	\sum_{n=1}^{\infty}	a_n$から正の項だけを取り出して同じ順序に並べた級数を
+$\displaystyle	\sum_{n=1}^{\infty}	p_n$，負の項だけを取り出して同じ順序に並べた級数を
+$\displaystyle	\sum_{n=1}^{\infty}	(-q_n)$とする．部分和$\displaystyle	\sum_{n=1}^{m}	a_n$
+に現れる正の項の個数を$\lambda	(m)$，負の項の個数を$\nu	(m)$とすれば
+\begin{align}
+	\sum_{n=1}^{m}	a_n			&=	\sum_{n=1}^{\lambda(m)}	p_n	-	\sum_{n=1}^{\nu (m)}	q_n,	\quad	\lambda(m)	+	\nu	(m)	=	m,
+\label{eq5x2}	\\
+	\sum_{n=1}^{m}	|	a_n	|	&=	\sum_{n=1}^{\lambda(m)}	p_m	+	\sum_{n=1}^{\nu(m)}	q_n,	\quad	p_n	>	0	,	q_n	>	0.	
+\label{eq5x3}
+\end{align}
+もちろん$m	\to	\infty$のとき$\lambda	(m)	\to	+	\infty,	\nu	(m)	\to	+	\infty$である．
+
+$(1^\circ)$ $\displaystyle	\sum_{n=1}^{\infty}	a_n$が絶対収束しているとき，（\ref{eq5x3})によって
+$	\displaystyle	\sum_{n=1}^{\infty}	p_n$も$\displaystyle	\sum_{n=1}^{\infty}	q_n$も収束するから，
+（\ref{eq5x2}）により
+\begin{equation}
+	\sum_{n=1}^{\infty}	a_n	=	\sum_{n=1}^{\infty}	p_n	-	\sum_{n=1}^{\infty}	q_n.
+\label{eq5x4}
+\end{equation}
+
+上に述べたように，和$\displaystyle	P=	\sum_{n=1}^{\infty}	p_n,	Q=	\sum_{n=1}^{\infty}	q_n$は項の順序を変更しても変わらない．
+故に和$\displaystyle	s	=	\sum_{n=1}^{\infty}	a_n$も項の順序を変更しても変わらない．
+\footnote{
+正項$p_n$同士，負項$q_n$同士のの順序を変更した場合は証明されているが，
+正項と負項の順序を変更した場合の証明が不明．
+}
+
+$(2^\circ)$ $\displaystyle	\sum_{n=1}^{\infty}	a_n$が収束していると仮定する．このとき
+$\displaystyle	\sum_{n=1}^{\infty}	q_n$が収束すれば，
+（\ref{eq5x2})によって，$\displaystyle	\sum_{n=1}^{\infty}	p_n$も収束するから，（\ref{eq5x3}）によって，
+$\displaystyle	\sum_{n=1}^{\infty}	|a_n	|	<	+	\infty$となって仮定に反する．故に
+$\displaystyle	\sum_{n=1}^{\infty}	q_n$は発散する．同様に$\displaystyle	\sum_{n=1}^{\infty}	p_n$も発散する．
+すなわち，
+$\displaystyle	\sum_{n=1}^{\infty}	=	+	\infty$，$\displaystyle	\sum_{n=1}^{\infty}	q_n	=	+	\infty$．故に
+\[
+	P_m	=	\sum_{n=1}^{m}	p_m,	\quad	Q_m	=	\sum_{n=1}^{m}	q_m
+\]
+とおけば，数列$\{P_m	\},	\{Q_m\}$は共に単調増加で，$m	\to	\infty$のとき
+$P_m	\to	+	\infty,	Q_m	\to	\infty$となる．したがって，実数$\xi$が与えられたとき，各自然数$m$に対して
+\begin{equation}
+	P_{k(m)-1}	<	\xi	+	Q_m	\leqq	P_{k(m)}
+\label{eq5x5}
+\end{equation}
+なる自然数$k(m)$が定まる
+\footnote{このような$k(m)$のうち，最小のものを選ぶ．
+}
+．ただし，$\xi	+	Q_m	\leqq	p_1$である場合には，$k(m)	=1$として
+（\ref{eq5x5}）を
+\[
+	\xi	+	Q_m	\leqq	P_1	,	\quad	P_1	=	p_1,
+\]
+で置き換える．明らかに
+\[
+	k(m-1)	\leqq	k(m)	,	\quad	m	\to	\infty	\:\text{のとき}	\:	k(m)	\to	+	\infty,
+\]
+である．
+\footnote{
+	なぜならば，$k(m-1)	>	k(m)$とすると，$P_m$は単調増加であるから，
+	\[
+		\xi	+	Q_m	\leq	P_{k(m)}	<	P_{k(m-1)}	<	\cdots	<	P_{k(1)}
+	\]
+	となるが$Q_m$が単調増加かつ$Q_m	\to	\infty$となること，に矛盾してしまう．
+}
+（\ref{eq5x5}）はすなわち
+\begin{equation}
+	P_{k(m)}	-	Q_m	-	p_{k(m)}	<	\xi	\leqq	P_{k(m)}	-	Q_m
+\label{eq5x6}
+\end{equation}
+であるが，$\displaystyle	\sum_{n=1}^{\infty}	a_n$は収束しているから，$n	\to	\infty$のとき$a_m	\to	0$，
+したがって$m	\to	\infty$のとき$p_{k(m)}	\to	0$となる．故に
+\begin{equation}
+	\xi	=	\lim_{m\rightarrow\infty}	(P_{k(m)}	-	Q_{m}).
+\label{eq5x7}
+\end{equation}
+そこで\begin{align*}
+	\varDelta_1	&=	P_{k(1)}	-	Q_1,	\\
+	\varDelta_m	&=	P_{k(m)}	-	Q_m	-	(P_{k(m-1)}	-	Q_{m-1}),	\quad	m	=	2,	3,	4,	5,	\cdots,
+\end{align*}
+とおく．
+\[
+	P_{k(m)}	-	Q_m	=	\varDelta_1	+	\varDelta_2	+	\cdots	+	\varDelta_m
+\]
+であるから，（\ref{eq5x7}）により
+\begin{equation}
+	\xi	=	\sum_{m=1}^{\infty}	\varDelta_m	=	\varDelta_1	+	\varDelta_2	+	\cdots	+	\varDelta_m	+	\cdots.
+\label{eq5x8}
+\end{equation}
+$k(m-1)	<	k(m)$ならば
+\[
+	\varDelta_m	=	p_{k(m-1)+1}	+	p_{k(m-1)+2}	+	\cdots	+	p_{k(m)}	-	q_m,
+\]
+$k(m-1)	=	k(m)$ならば
+\[
+	\varDelta_m	=	-q_m
+\]
+であって，（\ref{eq5x8}）の右辺は
+\[
+	a_{\gamma(1)}	+	a_{\gamma(2)}	+	a_{\gamma(3)}	+	\cdots	+	a_{\gamma(n)}	+	\cdots
+\]
+と書かれる．このようにして得られた級数$\displaystyle	\sum_{n=1}^{\infty}	a_{\gamma(n)}	$は
+$\displaystyle	\sum_{n=1}^{\infty}	a_n$の項の順序を変更したものであって，その部分和は
+\begin{align*}
+	\sum_{n=1}^{l}	a_{\gamma(n)}	=	\varDelta_1	+	\varDelta_2	+	\cdots	+	\varDelta_m	+	p_{k(m)+1}	+	\cdots	+	p_{k(m)+j},	\\
+	k(m)	+	j	\leqq	k(m+1),
+\end{align*}
+となるか（部分項の$-q_m$まで含まないか），または
+\[
+	\sum_{n=1}^{l}	a_{\gamma(n)}	=	\varDelta_1	+	\varDelta_2	+	\cdots	+	\varDelta_m
+\]
+（部分項の$-q_m$まで含む）となる．ここで，
+\[
+	\varDelta_{m+1}	+	q_{m+1}	=	P_{k(m+1)}	-	Q_{m+1}	-	(\varDelta_1	+	\varDelta_2	+	\cdots	+	\varDelta_m)
+\]
+であるが，（\ref{eq5x7}），（\ref{eq5x8}）により$m	\to	\infty$のとき，
+\[
+	\lim_{m\rightarrow\infty}	(\varDelta_{m+1}	+	q_{m+1})
+	=
+	\lim_{m\rightarrow\infty}	(P_{k(m+1)}	-	Q_{m+1}	)	-	\lim_{m\rightarrow\infty}	\sum_{n=1}^{m}	\varDelta_n
+	=	\xi	-	\xi	=0
+\]
+であるから
+\[
+	p_{k(m)+1}	+	\cdots	+	p_{k(m+1)}	=	P_{k(m+1)}	-	P_{k(m)}	=	\varDelta_{m+1}		+	q_{m+1}	\to	0	\quad	(m	\to	\infty).
+\]
+故に，（\ref{eq5x8}）により，
+\[
+	\sum_{n=1}^{\infty}	a_{\gamma(n)}	=	\sum_{m=1}^{\infty}	\varDelta_m	=	\xi
+\]
+
+級数$\displaystyle	\sum_{n=1}^{\infty}	a_n	$が条件収束しているとき，$\sum_{n=1}^{\infty}	a_{\gamma(n)}$
+が$+\infty$に発散するように項の順序を変更できることを示すには，上記の証明において不等式（\ref{eq5x5}）を
+\[
+	P_{k(m)-1}	<	m	+	Q_m	\leqq	P_{k(m)}
+\]
+で置き換えればよい．さらに$\displaystyle	\sum_{n=1}^{\infty}	a_{\gamma(n)}$が$-\infty$に発散するようにするには，
+$\displaystyle	\sum_{n=1}^{\infty}	(	-	a_{\gamma(n)})$が$+\infty$に発散するように項の順序を変更すればよい．
+\■
+
+絶対収束する級数の和$\displaystyle	s=	\sum_{n=1}^{\infty}	a_n$を求めるには，
+（\ref{eq5x4}）により，正の項の和$\displaystyle	\sum_{n=1}^{\infty}	p_n$と負の項の和$\displaystyle	\sum_{n=1}^{\infty}	(-q_n)$を
+別々に求めて加えればよい：$s	=	\displaystyle	\sum_{n=1}^{\infty}	p_n	-	\sum_{n=1}^{\infty}	q_n$.
+このことは和$s$が無数の実数$a_n$の‘総計’であることを示ししている．条件収束する級数の和
+$\displaystyle	s	=	\sum_{n=1}^{\infty}	a_n$は，項の順序を変更すればかわるのであるから，
+$a_n$の総計とは考えられない．
+
+\underline{絶対収束する二つの級数の和の積に関しては分配法則が成り立つ}．
+\underline{すなわち}，$\displaystyle\sum_{n=1}^{\infty}	a_n	,	\sum_{n=1}^{\infty}	b_n$
+\underline{が共に絶対収 } 
+\underline{束しているとき}，$\displaystyle	s=	\sum_{n=1}^{\infty}	a_n,	t	=	\sum_{n=1}^{\infty}	b_n$
+\underline{とおけば}．
+\begin{equation}
+	s	\cdot	t	=	a_1	b_1	+	a_2	b_1	+	a_1	b_2	+	a_3	b_1	+	a_2	b_2	+	a_1	b_3	+	a_4	b_1	+	a_3	b_2	+	\cdots
+\label{eq5x9}
+\end{equation}
+\underline{であって}．\underline{右辺の級数は絶対収束する}のである．
+\証明 $\displaystyle	\sigma_m	=	\sum_{n=1}^{m}	|	a_n|	,	\:	\tau_m	=	\sum_{n=1}^{m}	|b_n|,
+\sigma	=	\sum_{n=1}^{\infty}	|a_n|	,	\tau	=	\sum_{n=1}^{\infty}	|b_n|$，また
+\[
+	\rho_n	=	|a_n|	|b_1|	+	|	a_{n-1}	||b_2|	+	|a_{n-2}	|	|b_3|	+	\cdots	+	|a_1|	|b_n|
+\]
+とおく．$\displaystyle	\sum_{n=1}^{m}	\rho_n$は（\ref{eq5x9}）の右辺の
+級数の第$m(m+1)/2$項までの項の絶対値の和であるが，
+\[
+	\sum_{n=1}^{m}	\rho_n	\leqq	\sigma_m	\tau_m	\leqq	\sigma\tau.
+\]
+故に（\ref{eq5x9}）の右辺の級数は絶対収束する．さらに$\displaystyle	\sum_{n=1}^{\infty}	\rho_n	\leqq	\sigma\tau$を得るが，
+\[
+	\sigma_m	\tau_m	\leqq	\sum_{n=1}^{2m-1}	\rho_n	
+\]
+であるから
+\footnote{
+左辺の項の個数は$m^2$，右辺の項の個数は，$(2m-1)m/2	=	2m^2	-	m$であり，両辺の項の個数の差を見ると，
+$2m^2	-	m	-	m-2	=	m(m-1)$となり，いま$m	\geqq	1$であるから，$m(m-1)	\geqq	0$	左辺の方が右辺より
+項の個数が多い．
+}
+\[
+	\sigma\tau	=	\lim_{m\rightarrow\infty}	\sigma_m	\tau_m	=	\sum_{n=1}^\infty	\rho_n.
+\]
+したがって
+\[
+	\lim_{m\rightarrow\infty}	\left(	\sigma_m	\tau_m	-	\sum_{n=1}^m	\rho_n	\right)	=	0
+\]
+であるが，$\displaystyle	s_m	=	\sum_{n=1}^{m}	a_n	,	t_m	=	\sum_{n=1}^{m}	b_n$とおけば
+\begin{align*}
+	&	s_m	t_m	-	\sum_{n=1}^{m}	(a_nb_1	+	a_{n-1}b_2	+	\cdots	+	a_1b_n	)\\
+					&	\begin{matrix}
+								=	
+								&a_1b_1			&+&	a_1b_2			&+&	a_1b_3	&+	\cdots	+	&a_1b_{m-2}	+&a_1b_{m-1}	+&a_1b_m	+		\\
+								&a_2b_1			&+&	a_2b_2			&+&	a_2b_3	&+	\cdots	+	&a_2b_{m-2}	+&a_2b_{m-1}	+&a_2b_m	+		\\
+								&a_3b_1			&+&	a_3b_2			&+&	a_3b_3	&+	\cdots	+	&a_3b_{m-2}	+&a_3b_{m-1}	+&a_3b_m	+		\\
+								&	\cdots	\\
+								&a_{m-2}b_1	&+&	a_{m-2}b_2	&+&	a_{m-2}b_3	&+	\cdots	+	&a_{m-2}b_{m-2}	+&a_{m-2}b_{m-1}	+&a_{m-2}b_m	+		\\
+								&a_{m-1}b_1	&+&	a_{m-1}b_2	&+&	a_{m-1}b_3	&+	\cdots	+	&a_{m-1}b_{m-2}	+&a_{m-1}b_{m-1}	+&a_{m-1}b_m	+		\\
+								&a_mb_1			&+&	a_m	b_2			&+&	a_mb_3			&+	\cdots	+	&a_mb_{m-2}			+&a_mb_{m-1}			+&a_mb_m	+		\\
+						\end{matrix}	\\
+					&	\\
+					&	\begin{matrix}
+								-	(
+								&a_1b_1			&+&	a_1	b_2			&+&	a_1	b_3	&+\cdots	+	&a_1b_{m-2}	+&a_1b_{m-1}	+&	a_1b_m	+	\\
+								&a_2b_1			&+&	a_2	b_2			&+&	a_2	b_3	&+\cdots	+	&a_2b_{m-2}	+&a_2b_{m-1}	+&	\\
+								&a_3b_1			&+&	a_3	b_2			&+&	a_3	b_3	&+\cdots	+	&a_3b_{m-2}	+	\\
+								&	\cdots	\\
+								&a_{m-2}b_1	&+&	a_{m-2}	b_2	&+&	a_{m-2}	b_3+	\\
+								&a_{m-1}b_1	&+&	a_{m-1}	b_2	&+&	\\
+								&a_m	b_1	)
+						\end{matrix}	\\
+					&	\\
+					&	\begin{matrix}
+								=
+								&							&	&							&							&							&	&	a_2b_m	&+&	\\
+								&							&	&							&							&	a_3b_{m-1}	&+&	a_3b_m	&+&	\\	
+								&							&	&							&							&	\cdots			&	&					&	&	\\
+								&							&+&	a_{m-1}b_3	&+	\cdots	+	&a_{m-1}b_{m-1}	&+&	a_{m-1}b_m	&+&	\\
+								&	a_mb_2			&+&	a_mb_3			&+	\cdots	+	&a_mb_{m-1}			&+&	a_mb_m			&+&
+						\end{matrix}
+\end{align*}
+であり,
+\[
+	\left|	s_m	t_m	-	\sum_{n=1}^{m}	(a_n	b_1	+	a_{n-1}b_2	+	\cdots	+	a_1b_n)
+	\right|
+	\leqq	\sigma_m	\tau_m	-	\sum_{n=1}^{m}	p_n.
+\]
+故に
+\[
+	st=	\lim_{m\rightarrow\infty}	s_m	t_m	=	\sum_{n=1}^{\infty}	(a_n	b_1	+	a_{n-1}b_2	+	\cdots	+	a_1	b_2).
+\]
+すなわち，（\ref{eq5x9}）が成り立つ．
+\■
+
+\underline{条件収束する級数については分配}（\ref{eq5x9}）\underline{は必ずしも成立しない}．
+たとえば$a_n	=	b_n	=	(-1)^{n-1}	/	\sqrt{n}$とおけば，
+\S	\ref{sec1x5x3}，定理1.23により，交代級数$\displaystyle	\sum_{n=1}^{\infty}	a_n	,	\sum_{n=1}^{\infty}	b_n$は
+収束するが，$(n-k+1)k	\leqq	(n+1)^2	/4$であるから，
+\footnote{
+$k=1$のとき$(n-k+1)/k	=	n$であり
+\begin{align*}
+	0	\leq	n^2	-	2n	+1	=	(n-1)^2	
+&	\Leftrightarrow	4n	\leq	n^2	+	2n	+	1		\\
+&	\Leftrightarrow	n	\leq	(n	+	1)^2		\\
+\end{align*}
+
+$k=l$のときの$\displaystyle	\frac{n-(l-1)}{l}$と，$k=l-1$のときの$\displaystyle	\frac{n-l+2}{l-1}$
+を比較すると，
+\begin{align*}
+	\frac{n-l+2}{l-1}	-	\frac{n-(l-1)}{l}
+&	=	\frac{l(n-l+2)	-	n(l-1)	+	(l-1)^2	}{l(l-1)}	\\
+&	=	\frac{nl	-	l^2	+2l	-	nl	+	n	+	l^2		-	2l	+	1}{l(l-1)}	\\
+&	=	\frac{n+1}{l(l-1)}	\geq	0
+\end{align*}
+よって$\displaystyle	
+	\frac{	n	-	l	+1}{l}	\leq	\frac{n-(l-1)+1}{(l-1)}	\leq	\frac{(n+1)^2}{4}
+$
+}
+\begin{align*}
+&	|a_n	b_1	+	a_{n-1}	b_2	+	\cdots	+	a_1b_n	|	\\
+&=	\left|	\frac{(-1)^{n-1}}{\sqrt{n}}\frac{(-1)^0}{\sqrt{1}}
+					+	\frac{(-1)^{n-2}}{\sqrt{n-1}}\frac{(-1)^1}{\sqrt{2}}
+					+	\cdots
+					+	\frac{(-1)^{n-1-(k-1)}}{\sqrt{n-(k-1)}}\frac{(-1)^{k-1}}{\sqrt{k}}
+					+	\cdots
+					+	\frac{(-1)^0}{\sqrt{1}}\frac{(-1)^{n-1}}{\sqrt{n}}
+		\right|	\\
+&=	\left|	\frac{(-1)^{n-1}}{\sqrt{n}\sqrt{1}}
+					+	\frac{(-1)^{n-1}}{\sqrt{n-1}\sqrt{2}}
+					+	\cdots
+					+	\frac{(-1)^{n-1}}{\sqrt{n-(k-1)}\sqrt{k}}
+					+	\cdots
+					+	\frac{(-1)^{n-1}}{\sqrt{1}\sqrt{n}}
+		\right|	\\
+&=	\sum_{k=1}^{n}	\frac{1}{\sqrt{n-k+1}	\sqrt{k}}	\geqq	\frac{2n}{n+1}	\geqq	1	
+\end{align*}
+\footnote{
+$\displaystyle	\frac{2n+2}{n+1}	-	\frac{2}{n+1}	=	2	-	\frac{2}{n+1}$
+}
+となって，（\ref{eq5x9}）の右辺の級数は収束しない．
+
+上記の級数の絶対収束に関する結果は複素数の級数
+$\displaystyle	\sum_{n=1}^{\infty}	w_n,	\:	w_n	=	a_n	+	i	b_n	,	\:	a_n	,	b_n$は
+実数，についても成り立つ．すなわち，
+$\displaystyle	\sum_{n=1}^{\infty}	|w_n|	<	+	\infty$ならば
+和$s=	\sum_{n=1}^{\infty}	w_n$は項の順序を変更しても変わらない．
+なぜなら，このとき$\displaystyle	\sum_{n=1}^{\infty}	a_n	,	\sum_{n=1}^{\infty}	b_n$は
+共に絶対収束して$	s	=	\sum_{n=1}^{\infty}	a_n	+	i	\sum_{n=1}^{\infty}	b_n$であるからである．
+また，分配法則（\ref{eq5x9}）が成り立つ，すなわち
+\[
+	\sum_{n=1}^\infty	w_n	\sum_{n=1}^\infty	z_n
+	=
+	\sum_{n=1}^\infty	\sum_{m=1}^n	w_m	z_{n-(m-1)}
+\]

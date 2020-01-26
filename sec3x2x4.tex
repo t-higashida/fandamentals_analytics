@@ -1,0 +1,226 @@
+\subsection{初等関数の導関数}
+\label{sec3x2x4}
+
+\subsubsection{$(1^\circ)$ 多項式と有理式}
+\label{sec3x2x4x1}
+
+
+$x$の関数$x^n$，$n$は自然数，の導関数が$n x^{n-1}$であることは
+高校数学で学んだが，このことは$n$に関数帰納法によって
+直ぐに確かめられる．すなわち，$n=1$のときは$dx /dx =1$，$n \geqq 2$のとき
+$(d /dx ) x^{n-1} = (n-1) \cdot x^{n-2}$と仮定すれば，積の微分法により，
+$(d /dx) x^n = (d/dx) (x \cdot x^{n-1}) = 1 \cdot x^{n-1} + x (n-1)x^{n-2} = nx^{n-1}$.
+故に，帰納法により，
+\[
+	\frac{d}{dx } x^n = n x^{n-1}.
+\]
+したがって多項式：
+\[
+	f(x) = a_0 x^n + a_1 x^{n-1} + \cdots + a_{n-1} x + a_n
+\]
+の導関数は
+\[
+	f'(x) = n a_0 x^{n-1} + (n-1) a_1 x^{n-2} + \cdots + a_{n-1}.
+\]
+有理式$f(x) / g(x), f(x) , g(x)$は多項式，の導関数を求めるにはまず
+$f'(x),g'(x)$を求め，つぎに章の微分を適用すればよい．
+
+\subsubsection{$(2^\circ)$ 対数関数}
+$a$を$1$でない正の実数として，対数関数$\log_a x$を考察する．
+$x$の変域は$\R^+ = (0, + \infty)$である．
+(\ref{eq2x8}),(\ref{eq2x9})により
+\[
+	e = \lim_{t\rightarrow + \infty} \left( 1 + \frac{1}{t}
+                                   \right)^t
+    = \lim_{t\rightarrow - \infty} \left( 1 + \frac{1}{t}
+                                   \right)^t
+\]
+したがって$s = 1 /t $とおけば
+\begin{equation}
+	e = \lim_{s\rightarrow0} (1+s)^{1/s},
+\label{eq3x17}
+\end{equation}
+さて
+\[
+	\frac{1}{h} ( \log_a (x+ h) - \log_a x) 
+= \frac{1}{h} \log_a \left( \frac{x+h}{x}
+                     \right)
+= \log_a \left( 1 + \frac{h}{x}
+         \right)^{1/h}
+\]
+であるから，$s= h/x$とおけば
+\[
+	\frac{1}{h} ( \log_a (x+ h) - \log_a x) 
+= \log_a ( 1+s)^{1/sx} = \frac{1}{x} \log_a ( 1 + s) ^{1/s}.
+\]
+故に，(\ref{eq3x17})と$\log_a x$の連続性により，
+\[
+	\lim_{h\rightarrow0} \frac{1}{h} (\log_a (x+h) - \log_a x) 
+= \frac{1}{x} \lim_{s\rightarrow 0} \log_a (1+s)^{1/s} = \frac{1}{x} \log_a e.
+\]
+すなわち
+\begin{equation}
+	\frac{d }{d x} \log_a x = (\log_a e) \frac{1}{x},
+\label{eq3x18}
+\end{equation}
+特に，$a=e$とおけば
+\begin{equation}
+	\frac{d }{d x} \log x = \frac{1}{x}.
+\label{eq3x19}
+\end{equation}
+対数関数の底$e$をとるのが自然である理由は等式(\ref{eq3x19})にある．
+
+\subsubsection{$(3^\circ)$ 指数関数，巾関数}
+$1$でない正の実数$a$を底とする指数関数$y=a^x$は数直線$\R$上で
+定義された連続な単調関数であって，その逆関数は対数関数：
+$x = \log_a y$である．(\ref{eq3x18})により$dx / dy = \log_a e \cdot 1/y$，
+また(\ref{eq2x12})により，$\log_a e \cdot \log_e a=1$であるから
+$\log_a e = 1/ \log_e a$，
+逆関数の微分法により
+\[
+	\frac{dy}{dx} = 1 \bigg/ \left( \frac{dx}{dy}
+                           \right) 
+                = 1 \bigg/ (\log_a e \cdot 1/y)
+                = (\log a ) y,
+\]
+すなわち
+\begin{equation}
+	\frac{d }{d x} a^x = (\log a) a^x,
+\label{eq3x20}
+\end{equation}
+特に
+\begin{equation}
+	\frac{d }{d x} e^x = e^x.
+\label{eq3x21}
+\end{equation}
+以上対数関数の導関数を用いて指数関数の導関数を求めたが，
+$e^x$の巾級数表示(\ref{eq2x10})を用いれば，(\ref{eq3x21})を
+次のようにして直接照明することができる．
+\[
+	\frac{e^{x+h} - e^x}{h} = e^x \cdot \frac{e^h -1}{h}
+\]
+であるから，(\ref{eq3x21})を証明するには$\displaystyle \lim_{h\rightarrow0} (e^h -1)/h =1$
+であることをいえばよい．
+(\ref{eq2x10})により
+\[
+	e^h = 1 + h + \sum_{n=2}^\infty \frac{h^n}{n!},
+\]
+したがって
+\[
+	\frac{e^h -1}{h} = 1 + \sum_{n=2}^\infty \frac{h^{n-1}}{n!}
+\]
+であるが，$|h| < 1$のとき
+\[
+	\left| \sum_{n=2}^\infty \frac{h^{n-1}}{n!}
+  \right|
+  \leqq \sum_{n=1}^\infty |h|^n = \frac{|h|}{1-|h|}.
+\]
+故に
+\[
+	\lim_{h\rightarrow 0} \frac{e^h - 1}{h} =1.
+\]
+これで(\ref{eq3x21})が証明された．つぎに，
+$a^x = (e^{\log a} )^x = e^{x \log a}$であるから，
+$y=x \cdot \log a $とおけば$a^x = e^y$，
+したがって合成関数の微分法により，
+\[
+	\frac{d }{d x} a^x = \frac{d y}{d x} \frac{d }{d y} e^y = \log a \cdot e^y = \log a \cdot a^x.
+\]
+これで(\ref{eq3x20})が証明された．
+
+任意に与えられた実数$\alpha$に対して，巾関数$x^\alpha$，$x$の変域は
+$\R^+ = ( 0, + \infty)$，は$x^\alpha = e^{\alpha \log x}$と表される．
+$y = \alpha \log x$とおけば，$x^\alpha = e^y$，したがって，(\ref{eq3x19})，
+(\ref{eq3x21})により
+\[
+	\frac{d x^\alpha}{d x} = \frac{d e^y}{d y} \cdot \frac{d y}{d x} = e^y \alpha x^\alpha x^{-1} = \alpha x^{\alpha -1},
+\]
+すなわち
+\begin{equation}
+	\frac{d }{d x} x^\alpha = \alpha x^{\alpha-1}
+\label{eq3x22}
+\end{equation}
+
+\subsubsection{$(4^\circ)$ 三角関数}
+加法定理(\ref{eq2.23})により
+\[
+	\sin (x+h) = \sin h \cos x + \cos h \sin  x
+\]
+であるから\[
+	\frac{ \sin (x + h) - \sin x}{h} = \frac{\sin h }{h} + \frac{\cos x + \cos h -1}{h} \sin x.
+\]
+したがって$\sin x$の導関数を求めるには$h \rightarrow 0$のときの$ \sin h /h$と
+$\cos h -1 /h$の極限を求めればよい．(\ref{eq2x25})により
+\[
+	\frac{	\sin	h	}{h}	=	1	-	\frac{h^2}{3!}	+	\frac{h^4}{5!}	-	\frac{h^6}{7!}	+	\cdots	.
+\]
+$0	<	|h|	<	1$のとき，この右辺の交代級数の項の絶対値の成す数列
+$	\{	h^{2n}	/	(2n+1)!	\}$は単調減少で$0$に収束する．故に，定理1.23により，
+\[
+	1	-	\frac{h^2}{6}	<	\frac{	\sin	h}{h}	<	1,	\quad	0	<	|h|	<	1,
+\]
+したがって
+\begin{equation}
+	\lim_{h\rightarrow	0}	\frac{	\sin	h	}{h}	=	1.
+\label{eq3x23}
+\end{equation}
+$\sin^2	h	=	1	-	\cos^2	h	=	(1+\cos	h)	(1-	\cos	h)	$であるから
+\[
+	\frac{1	-	\cos	h}{h}	=	\frac{\sin	h}{	1	+	\cos	h}	\cdot	\frac{\sin	h}{h}.
+\]
+したがって，$h	\rightarrow	0$のとき$\cos	h	\rightarrow	1$，$\sin	h	\rightarrow	0$であるから，
+(\ref{eq3x23})により，
+\begin{equation}
+	\lim_{h\rightarrow	0}	\frac{1-	\cos	h}{h}	=	0.
+\label{eq3x24}
+\end{equation}
+故に
+\begin{align*}
+	\lim_{h\rightarrow	0}	\frac{	\sin	(x+h)	-	\sin	x}{h}	
+&	=	\lim_{h\rightarrow	0}	\frac{	\sin	x	\cos	h	+	\cos	x	\sin	h	-	\sin	x}{h}
+	=	\lim_{h\rightarrow	0}	\frac{	\sin	x	\cos	h	+	\cos	x	\sin	h	-	\sin	x}{h}	\\
+&=	\lim_{h\rightarrow	0}	\frac{	\sin	x	(\cos	h	-1)	+	\cos	x	\sin	h}{h}
+	=	\cos	x,	
+\end{align*}
+すなわち
+\begin{equation}
+	\frac{d }{d x}	\sin	x	=	\cos	x.
+\label{eq3x25}
+\end{equation}
+加法定理(\ref{eq2x23})により
+\[
+	\frac{	\cos	(x+h)	-	\cos	x}{h}	
+=	\frac{	\cos	x	\cos	h	-	\sin	x	\sin	h	-	\cos	x}{h}
+=	\frac{	\cos	h	-	1}{h}	\cos	x	-	\frac{	\sin	h}{h}	\sin	x
+\]
+であるから，同様に
+\begin{equation}
+	\frac{d}{dx}	\cos	x	=	-	\sin	x.
+\label{eq3x26}
+\end{equation}
+商の微分法を用いれば，(\ref{eq3x25}),(\ref{eq3x26})から直ちに
+\begin{equation}
+	\frac{d }{d x}	\tan	x	=	\frac{1}{\cos^2	x},	\quad	x	\ne	\frac{\pi}{2}	\pm	m	\pi	,	\quad	\text{$m$は整数},
+\label{eq3x27}
+\end{equation}
+を得る．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,222 @@
+\subsection{初等関数で表される原始関数}
+\label{sec4x2x2}
+
+\begin{table}[h]
+\begin{center}
+
+\begin{tabular}{	c|c	}
+\hline
+																																											\\
+$f(x) = F'(x)$ &	$F(x)$																															\\	
+																																											\\	\hline
+																																											\\
+$x^\alpha	\quad	(\alpha	\ne	-1)$	&	$\displaystyle	\frac{x^{\alpha	+	1}}{\alpha+1}$	\\	
+																																											\\
+$\displaystyle	\frac{1}{x}	\quad	(x	\ne	0)$	&	$\log	|x|	$														\\
+																																											\\
+$\displaystyle	\frac{1}{1-x^2}	\quad	(x	\ne	\pm	1)$	&	$\displaystyle	\frac{1}{2}	\log	\left|\frac{1	+	x}{1-x	}	\right|	$	\\
+																																													\\
+																																													\\
+$\displaystyle	\frac{1}{\sqrt{x^2	-1}}	\quad	(|x|	>	1)$	&	$\log	|	x+	\sqrt{x^2-1}	|$	\\
+																																											\\
+$\displaystyle	\frac{1}{\sqrt{x^2	+1}}	$	&	$\log	|	x+	\sqrt{x^2+1}	|$						\\
+																																											\\
+$e^x$																				&	$e^x$																		\\
+																																											\\
+$a^x	\quad	(a	>	0	,	a	\ne	1)	$						&	$\displaystyle	\frac{a^x}{\log	a}$			\\
+																																											\\
+$\sin	x	$						&	$-\cos	x$																											\\
+																																											\\
+$\cos	x	$						&	$	\sin	x$																											\\
+																																											\\
+$\displaystyle	\frac{1}{\sin^2	x}	$	&	$	\displaystyle	-\frac{1}{\tan	x}$						\\
+																																											\\
+$\displaystyle	\frac{1}{\cos^2	x}	$	&	$	\tan	x$																		\\
+																																											\\
+$	\tan	x							$	&	$	-\log	|	\cos	x|$																					\\
+																																											\\	\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+上記例4.2で見たように，$\displaystyle	\int_a^b	f(x)	dx$を定積分の定義から
+直接求めることは一般に難しいが，$f(x)$の原始関数$F(x)$が知られている場合には，
+基本公式(\ref{eq4x15})から直ちに定積分$\displaystyle	\int_a^b	f(x)	dx$が
+求められる．初等関数で表される原始関数の基本的なものを上の表を掲げた．
+
+この表の右側の関数を微分してみればすぐにわかる．例えば，2行目の
+$\log	|x|$を微分すれば，$x	>	0$のときは，(\ref{eq3x19})により，
+$(d	/	dx)	\log	x	=	1/x$，$x	<	0$のときには，$y=|x|	=	-x$とおけば，
+\[
+	\frac{d}{dx}	\log	|x|	=	\frac{dy}{dx}	\frac{d}{dy}	\log	y	=	-	\frac{1}{y}	=	\frac{1}{x},
+\]
+すなわち，$x	\ne	0$のとき，
+\[
+	\frac{d}{dx}	\log	|x|	=	\frac{1}{x}.
+\]
+
+任意の微分可能な関数$f(x)$に対して，$y=f(x)$とおけば，$y	\ne	0$のとき，
+この結果により
+\[
+	\frac{d}{dx}	\log	|	f(x)|	=	\frac{dy}{dx}	\frac{d}{dy}	\log	|y|	
+=	\frac{dy}{dx}	\frac{1}{y}	=	\frac{f'(x)}{f(x)}
+\]
+を得る．すなわち
+\begin{equation}
+	\frac{d}{dx}	\log	|f(x)	|	=	\frac{f'(x)}{f(x)}	,	\quad	f(x)	\ne	0.
+\label{eq4x16}
+\end{equation}
+右側の$\log	$を含んだ関数の導関数は，この公式(\ref{eq4x16})を用いれば
+直ぐに求められる．たとえば，$\log	|	x	+	\sqrt{x^2	-1}	|$については，
+$y	=	x^2	-1$とおけば
+\[
+	\frac{d}{dx}	\sqrt{x^2	-1}	=	\frac{dy}{dx}\frac{d}{dy}	y^{1/2}
+=	2x	\cdot	\frac{1}{2}	y^{-1/2}	=	\frac{x}{\sqrt{x^2-1}}	,
+\]
+したがって
+\[
+	\frac{d}{dx}	(	x	+	\sqrt{x^2-1})	=	1	+	\frac{x}{\sqrt{x^2	-1}}	=	\frac{x+\sqrt{x^2-1}}{\sqrt{x^2-1}},
+\]
+故に
+\[
+	\frac{d}{dx}	\log	|	x+	\sqrt{x^2-1}|	=	\frac{1}{\sqrt{x^2-1}}
+\]
+右側の$\log$を含まない関数の導関数が対応する左側の関数になることは明らかであろう．
+
+原始関数に関連して，\textbf{逆三角関数}，すなわち三角関数の逆関数についてここで述べる．
+まず
+\[
+	\sin	
+	\left(
+		x	-	\frac{\pi}{2}
+	\right)
+	=
+	-	\cos	x
+\]
+であって，\S \ref{sec2x4x1}で述べたように，$\cos	x$は区間
+$[	0,	\pi	]$で単調減少であるから，
+$\sin	x$は区間$[	-\pi	/2	,	\pi	/	2]$で単調増加である．
+したがって，区間$	[	-\pi	/2	,	\pi	/	2]$において関数$f(x)$を
+$f(x)	=	\sin	x$と定義すれば，
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=12cm,height=5cm]{p166.bmp}
+\end{figure}
+$f(-\pi/2)	=	-1	,	f(\pi/2)=1$であるから，\S \ref{sec2x2x3},
+定理2.7により，$y=f(x)$の逆関数$f^{-1}(y)$は区間$[-1,1]$で定義された
+連続な単調増加関数であって，その値域は$[-\pi/2	,	\pi	/2]$である．
+この逆関数$f^{-1}(y)$を$\Arcsin	y$で表わす．
+
+実数$y,	-1	\leqq	y	\leqq	1$，が任意に与えられたとき，方程式$\sin	x	=	y$を満たす
+実数$x$を$x	=	\arcsin	y$と表わす．$\sin	x$は周期$	2	\pi$の周期関数で
+$	\sin	(x	+	\pi)	=	-	\sin	x$であるから，任煮の整数$m$に対して
+\[
+	\sin	x	=	(-1)^m		\sin	(x-m	\pi)
+\]
+となる．$\sin	x	=	y,	\:	-\pi	/	2	+	m	\pi	\leqq	x	\leqq	\pi	/	2	+	m	\pi$，
+とすれば，したがって$\sin	(x-m	\pi	)	=	(-1)^m	y,	-	\pi	/	2	\leqq	x	-	m	\pi	\leqq	\pi	/	2$，
+となるから，
+\[
+	x	=	\Arcsin	((-1)^m	y	)	+	m\pi.
+\]
+$	\sin	x	=	y	$ならば$	\sin	(-x)	=	-y$	であるから，$\Arcsin	(-y)	=	-	\Arcsin	y$．
+故に上の式は
+\[
+	x	=	(-1)^m	\Arcsin	y	+	m	\pi
+\]
+と書かれる．このように，条件$	-	\pi	/	2	+	m	\pi	\leqq	x	\leqq	\pi	/	2	+	m	\pi$のもとでは
+$x	=	\arcsin	y$は関数$(-1)^m	\Arcsin	y	+	m	\pi$となるが，条件がなければ
+\[
+	\arcsin	y	=	(-1)^m	\Arcsin	y	+	m	\pi,	\quad	m	=	0	,	\pm	1	,	\pm	2	,	\pm	3,	\cdots	.
+\]
+すなわち，$\arcsin	y$は各実数$y	,	-1	\leqq	y	\leqq	1$，に無数の実数
+$x_m	=	(-1)^m	\Arcsin	y	+	m	\pi,	m=0,	\pm	1	,	\pm	2,	\cdots	$,を対応させる1対多の対応を
+与える．$\arcsin	y$は\S	\ref{sec2x1}で定義した意味の関数ではないが，各実数$y,	-1	\leqq	y	\leqq	1$，
+において無数の値$x_0	,	x_1,	x_{-1},	x_2	,	x_{-2}	,	\cdots	,	x_m	,	x_{-m},	\cdots	$をとる
+一種の関数と見なして，$\arcsin	y$は$y$の\textbf{多価関数}(many - valued function)であるという．
+そして，$\Arcsin	y	$を$\arcsin	y	$の\textbf{主値}(principal value)とよぶ．
+$\arcsin	y	$を$\sin^{-1}	y	$とも書く．
+
+$\cos	x$の逆関数についても同様なことが成り立つ．すなわち，区間$[	0	,	\pi	]$における
+$x$の関数$y	=	\cos	x$の逆関数を$\Arccos	y$で表わす．$\Arccos	y$は$[-1	,	1]$で
+定義された単調減少な連続関数で，その値域は$[0,	\pi]$である．
+実数$y,	-1	\leqq	y	\leqq	1$，に対して方程式$\cos	x	=	y$を満たす$x$を$x	=	\arccos	y$と
+表わす．そうすれば
+\[
+	\arccos	y	=(-1)^m	\Arccos	y	+	m	\pi	(1	-	(-1)^m)	\pi	/	2,
+\quad	m	=	0	,\pm	1	,	\pm	2,	\cdots,
+\]
+$\Arccos	y	$を$\arccos	y$の主値という．
+
+つぎに，$\tan x	=	\sin	x	/	\cos	x$は，(\ref{eq3x27})により，
+開区間$(	-	\pi	/	2	,	\pi	/	2)$で微分可能で
+\[
+	\frac{d }{d x}	\tan	x	=	\frac{1}{\cos^2	x}	>	0.
+\]
+したがって，\S	\ref{sec3x3},	定理3.6により，$\tan x$は
+$(	-	\pi	/2	,	\pi	/2)$で単調増加である．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=6cm,height=5cm]{p168.bmp}
+\end{figure}
+また，$\displaystyle	\lim_{x\rightarrow	\pi	/2 + 0}	\tan	x	=	-	\infty$，
+$\displaystyle	\lim_{x\rightarrow \pi/2 - 0}	\tan	x	=	+	\infty$．
+故に，開区間$(	-	\pi	/	2	,	\pi	/2)$における$x$の関数$	y	=	\tan	x$の
+逆関数を$\Arctan y$で表わせば，定理2.7により，$\Arctan y $は数直線
+$\R	=	(	-	\infty	,	+	\infty)$上で定義された連続な単調増加関数であって，
+その値域は$(	-	\pi	/	2	,	\pi	/	2)$である．任意の実数$y$に対して
+方程式$ \tan x = y$を満たす$x$を$x	=	\arctan y$で表わす．任意の整数$m$に対して
+\[
+	\tan x	=	\tan (x-	m	\pi)
+\]
+であるから
+\[
+	\arctan	y	=	\Arctan y + m \pi , \quad m = 0 , \pm 1 , \pm 2 , \pm 3, \cdots.
+\]
+すなわち，$\arctan y $は各開区間$(-	\pi	/	2	+	m	\pi	,	\pi	/2	+	m	\pi)$内に一つずつ
+値をもつ多価関数である．
+
+さて，$y	=	\sin	x$とおけば，開区間$(	-	\pi	/	2,	\pi	/	2)$において
+$dy	/	dx	=	\cos	x	>0$である．故に，逆関数の微分法(\S	\ref{sec3x2x3},	定理3.4)により，
+$x	=	\Arcsin	y$は開区間$(-1	,	-1)$で$y$について微分可能であって，
+\[
+	\frac{d }{d y}	\Arcsin	y	=	\frac{d x}{d y}	=	\frac{1}{	\displaystyle	\left(	\frac{dy}{dx}	\right)}
+=	\frac{1}{\cos	x}
+=	\frac{1}{\sqrt{1	-	\sin^2	x	}}
+=	\frac{1}{\sqrt{1-y^2}}.
+\]
+$y$を$x$と書き換えれば
+\begin{equation}
+	\frac{d }{d x}	\Arcsin	x	=	\frac{1}{\sqrt{1-x^2}},	\quad		-1	<	x	<	1.
+\label{eq4x17}
+\end{equation}
+$x	=	-1$および$x=1$においては$\Arcsin	x$は微分可能でない（極限が存在しない）．
+(\ref{eq4x17})から直ちに
+\begin{equation}
+	\int	\frac{dx}{\sqrt{1-x^2}}	=	\Arcsin	x	,	\quad	|x|	<	1,
+\label{eq4x18}
+\end{equation}
+を得る．
+
+つぎに，$y	=	\tan	x$とおけば，$\displaystyle	\frac{dy}{dx}	=	1	/	\cos^2	x$であるから，
+\[
+	\frac{d}{dy}	\Arctan	y	=	\frac{dx}{dy}	=	
+\frac{1}{	\displaystyle	\left(	\frac{d y}{d x}
+												\right)	}
+=	\cos^2	x	=	\frac{1}{\tan^2	x	+1}	=	\frac{1}{y^2+1}.
+\]
+$y$と$x$を書き直せば
+\begin{equation}
+	\frac{d }{d x}	\Arctan	x	=	\frac{1}{x^2	+	1}
+\label{eq4x19}
+\end{equation}
+故に
+\begin{equation}
+	\int	\frac{dx}{x^2+1}	=	\Arctan	x.
+\label{eq4x20}
+\end{equation}
+
+
+
+

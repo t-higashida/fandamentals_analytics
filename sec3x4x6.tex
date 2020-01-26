@@ -1,0 +1,619 @@
+\subsection{関数の級}
+\label{sec3x4x6}
+或る区間$I$で定義された関数$f(x)$が$n$回微分可能でその$n$次導関数$f^{(n)}(x)$が連続であるとき，
+$f(x)$は$I$で$n$回\textbf{連続微分可能}($n$-times continuously differentiable)であるといい，
+$f(x)$を$\mathcal{C}^n$\textbf{級}の関数(function of class $\mathcal{C}^n$)とよぶ．
+$\mathcal{C}^1$級の関数はすなわち滑らかな関数である．$f(x)$が何回でも微分可能であるとき，
+$f(x)$は\textbf{無限回微分可能}(infinitely differentiable)であるといい，$f(x)$を
+$\mathcal{C}^\infty$\textbf{級}の関数(function of class $\mathcal{C}^\infty$),
+あるいわ$\mathcal{C}^\infty$\textbf{関数}とよぶ．
+
+現代の数学では$n$回微分可能な関数よりも$n$回連続微分可能な関数を扱うことが多い．
+$n$次導関数の存在を仮定する以上はその連続性まで仮定するほうが自然であると考えられるからであろう．
+$\mathcal{C}^\infty$級の関数は多様体論等で広く応用される．
+
+上記の定理3.11，3.12，3.13は‘$n$回微分可能’を‘$n$回連続微分可能’で置き換えてもそのまま成り立つ．
+すなわち
+
+\定理{3.18}
+\begin{list}{}{}
+	\item	$(1^\circ)$ $f(x),g(x)$が$\mathcal{C}^n$級の関数ならば，その1次結合$c_1 f(x) + c_2 g(x)$および
+その積$f(x)g(x)$は$\mathcal{C}^\infty$級の関数である．さらにつねに$g(x) \ne 0$ならば，商$f(x)/g(x)$も
+$\mathcal{C}^n$級の関数である．
+	\item $(2^\circ)$ $f(x)$が$x$の$\mathcal{C}^n$級の関数，$g(y)$が$y$の$\mathcal{C}^n$級の関数ならば，
+合成関数$g(f(x))$は$x$の$\mathcal{C}^n$級の関数である．
+	\item $(3^\circ)$ $y=f(x)$が$x$の$\mathcal{C}^n$級の単調関数でつねに$f'(x) \ne 0$ならば，
+逆関数$x=f^{-1}(y)$は$y$の$\mathcal{C}^n$級の単調関数である．
+\end{list}
+ここで$f,g$の定義域について定理3.11，3.12，3.13におけると同様な仮定をしていることはいうまでも
+ない．
+
+\証明
+$(1^\circ)$ 定理3.11と(\ref{eq3x32})により$c_1f(x) + c_2 g(x), f(x)g(x),f(x)/g(x)$は
+$n$回微分可能でその$n$次導関数は$f(x),f'(x), \cdots , f^{(n)}(x),g(x),g'(x), \cdots,
+g^{(n)}(x)$の多項式または$(g(x))^{n+1}$を分母とする有理式である．故にそれは連続関数である．
+
+$(2^\circ)$ $g(f(x))$は，定理3.12により，$n$回微分可能で$(d^n / dx^n) g(f(x))$は$f'(x), \cdots , 
+f^{(n)}(x), g'(f(x)), \cdots , g^{(n)}(f(x))$の多項式である．仮定により$f'(x), \cdots ,
+f^{(n)}(x), g'(y), \cdots , g^{(n)}(y)$は連続関数であるから，
+\begin{align*}
+		\frac{d^n}{dx^n} g(f(x))
+	&=
+		\begin{cases}
+			\:	g'(f(x))	f'(x)											&\quad	\text{($n=1$のとき)}	\\
+			\:	g''(f(x))f'(x)^2	+	g'(f(x))f''(x)	&\quad	\text{($n=2$のとき)}	\\
+			\:	g'''(f(x))f'(x)^3	+	3g''(f(x))f'(x)f''(x)	+	g'(f(x))f'''(x)	&\quad	\text{($n=3$のとき)}	\\
+			\:	\cdots
+		\end{cases}
+\end{align*}
+など$(d^n / dx^n) g(f(x))$も連続関数である．
+
+$(3^\circ)$ $x=f^{-1}(y)$は，定理3.13により，$y$について$n$回微分可能であって
+\[
+	\frac{d ^n x}{d y^n}	=	\frac{	\varPhi_n	(f'(x),	\cdots	,	f^{(n)}(x))	}{(f'(x))^{2n-1}},	\quad	x	=	f^{-1}(y),
+\]
+である．仮定により$f'(x),	\cdots	,	f^{(n)}(x)$は$x$の連続関数，$f'(x)	\ne	0,	\:	x=f^{-1}(y)$は
+$y$の連続関数であるから，$d^n	x	/	dy^n$は$y$の連続関数である．
+\■
+
+すべての自然数$n$について$\mathcal{C}^n$級である関数がすなわち$\mathcal{C}^\infty$級の関数であるから，
+この\underline{定理3.18 は‘$\mathcal{C}^n$級’を }
+ \underline{$\mathcal{C}^\infty$級’で置き換えてもそのまま成り立つ．}
+
+数直線$\R$上の点$a$に対して，$a$を含む開区間$U=(\alpha	,	\beta),	\:	\alpha	<	a	<	\beta$，
+を$a$の\textbf{近傍}という．$a$の$\varepsilon$近傍$U_\varepsilon (a) = (a-\varepsilon , a+ \varepsilon)$は
+$a$の一つの近傍である．
+
+$f(x)$を或る開区間$I$で定義された$\mathcal{C}^\infty$級の関数とする．$f(x)$が$I$に属する
+おのおのの点$a$を中心として$a$の或る近傍でTaylor級数展開されるとき，$f(x)$を
+\textbf{実解析関数}(real analytic function)とよぶ．また，このとき$f(x)$は$I$で
+\textbf{実解析的}(real analytic)であるという．
+
+\例{3.9}
+\S \ref{sec3x4x3}，例3.6で$e^x$を$0$を中心とするTaylor級数に展開したが，
+同様にして$e^x$を任意の点$a$を中心とするTaylor級数に展開することができる．
+すなわち，$f(x)=e^x$とおけば，$f^{(n)}(x)=e^x$であるから，Taylorの公式(\ref{eq3x39})により，
+\[
+	e^x	=	e^a	+	\frac{e^a}{1!}(x-a)	+	\cdots	+	\frac{e^a}{(n-1)!}(x-a)^{n-1}	+	\frac{e^\xi}{n!}(x-a)^n
+\]
+であって，$\xi$は$a$と$x$の間にあるから，$x	>	a$のときは$e^\xi	<	e^x$,	$x	\leqq	a$のときには
+$e^\xi	\leqq	e^a$，いずれにしても$\displaystyle	\lim_{n\rightarrow\infty}	\frac{e^\xi}{n!}	(x-a)^n=0$
+となる．
+\footnote{\small
+\S \ref{sec1x5x4},例1.3 より$\displaystyle	\sum_{n=0}^{\infty}	\frac{x^n}{n!}$は絶対収束するので，
+$\displaystyle	\lim_{n\rightarrow\infty} \frac{x^n}{n!} = 0$である.
+例1.3において$x$は任意の実数であったので$x$を改めて$x-a$に置き換えて，
+\begin{align*}
+	\lim_{n\rightarrow\infty} e^\xi \frac{(x-a)^n}{n!}	
+&<	\lim_{n\rightarrow\infty}	e^x	\frac{(x-a)^n}{n!}	\quad
+	\left(	\lim_{n\rightarrow\infty}	e^a	\frac{(x-a)^n}{n!}	\right)	\\
+&=	e^x	\lim_{n\rightarrow\infty}	\frac{(x-a)^n}{n!}	\quad
+	\left(	e^a	\lim_{n\rightarrow\infty}	\frac{(x-a)^n}{n!}	\right)	\\
+&=0
+\end{align*}
+}
+故に
+\[
+	e^x	=	e^a	+	\frac{e^a}{1!}(x-a)	+	\frac{e^a}{2!}(x-a)^2	+	\cdots	+	\frac{e^a}{n!}(x-a)^n	+	\cdots	.
+\]
+したがって$e^x$は数直線$R$上で定義された実解析関数である．――
+
+同様に$\sin	x,	\cos	x$も$\R$上の実解析関数である．
+
+$\log	x$は，例3.7で述べたように，任意の点$a	\in	\R^+	=	(0,	+	\infty)$を中心として
+$a$の近傍$(a,2a)$でTaylor級数に展開される．すなわち，$\log	x$は$\R^+$で定義された実解析関数である．
+
+\例{3.10}
+数直線$\R$上で関数$\psi (x)$を次のように定義する：
+\[
+	\begin{cases}
+		\:	x	\leqq	0	\quad	\text{のとき}	\quad	\psi	(x)	=	0,	\\
+		\:	x	>	0			\quad	\text{のとき}	\quad	\psi	(x)	=	e^{-1/x}.
+	\end{cases}
+\]
+この関数$\psi(x)$は$\mathcal{C}^\infty$級の関数である．
+\証明
+$\displaystyle	\lim_{x\rightarrow +0}	e^{-1/x}	=0$であるから，
+$\psi(x)$は数直線$\R$上で連続な関数である．定理3.18$(2^\circ)$により，
+$\psi(x)=e^{-1/x}$は区間$(0,	+	\infty)$で$\mathcal{C}^\infty$級の関数である．
+区間$(-\infty	,	0]$では$\psi(x)$はもちろん$\mathcal{C}^\infty$級の関数であって，
+すべての自然数$n$に対して$\psi^{(n)}(x)=0$である．$x>0$のとき
+\begin{align*}
+	\psi'(x)		&=	\frac{1}{x^2}	e^{-1/x}	\\
+	\psi''(x)		&=	\frac{\displaystyle	\frac{1}{x^2}	e^{-1/x}	x^2		-	2e^{-1/x}	x}{x^4}
+								=	\frac{e^{-1/x}	-	2	e^{-1/x}	x}{x^4}
+								=	\frac{1-2x}{x^4}	e^{-1/x}
+\end{align*}
+\begin{align*}
+	\psi^{(3)}(x)
+							&=	\left(
+										\frac{(1-2x)e^{-1/x}}{x^4}
+									\right)'
+								=	\frac{\displaystyle	-2	\cdot	e^{-1/x}	x^4	+	(1-2x)	\frac{1}{x^2}e^{-1/x}	x^4	-	(1-2x)e^{-1/x}	4x^3}{x^8}	\\
+							&=	\frac{\displaystyle	-2	\cdot	e^{-1/x}	x^2	+	(1-2x)	e^{-1/x}	-	(1-2x)4xe^{-1/x}}{x^6}	\\
+							&=	\frac{\displaystyle	(-2x^2	+	1-2x	+	8x^2	-	4x)e^{-1/x}}{x^6}
+								=	\frac{(6x^2	-6x	+	1)e^{-1/x}}{x^6}
+\end{align*}
+一般に
+\begin{equation}
+	\psi^{(n)}(x)	=	\frac{\varPsi_n(x)}{x^{2n}}	e^{-1/x},	\quad	\text{$\varPsi_n(x)$は$x$の多項式}
+	\label{eq3x50}
+\end{equation}
+このことは$n$に関する帰納法によって容易に確かめられる．すなわち(\ref{eq3x50})を$n-1$の場合に成り立つ
+と仮定すれば，
+\begin{align*}
+	\psi^{(n)}(x)	=	\frac{d }{d x}
+		\left(	\frac{\varPsi_{n-1}(x)}{x^{2n-2}}e^{-1/x}
+		\right)
+	&=
+		\frac{\displaystyle	\left(	\varPsi'_{n-1}	e^{-1/x}	+	\varPsi_{n-1}\frac{1}{x^2}	e^{-1/x}	\right)x^{2n-2}	-	\varPsi_{n-1}e^{-1/x}(2n-2)x^{2n-3}}{(x^{2n-2})^2}	\\
+	&=
+		\frac{\displaystyle	\varPsi'_{n-1}	e^{-1/x}x^{2n-2}	+\varPsi_{n-1}	e^{-1/x}	x^{2n-4}	-	\varPsi_{n-1}x^{-1/x}	x^{2n-3}(2n-2)
+				}{x^{4n-4}
+				}	\\
+	&=
+		\frac{\displaystyle	\varPsi_{n-1}'e^{-1/x}x^2	+	\varPsi_{n-1}e^{-1/x}	-	\varPsi_{n-1}e^{-1/x}	x	(2n-2)
+				}{x^{2n}
+				}
+		\\
+	&=\frac{	[	\:	1-(2n-2)x	\:	]	\:	\varPsi_{n-1}(x)	+	x^2	\varPsi_{n-1}'(x)}{x^{2n}}	\cdot	e^{-1/x}	
+\end{align*}
+を得る．故に
+\begin{align}
+	\varPsi_n(x) = [ \: 1 - (2n-2) x \: ] \varPsi_{n-1}(x)	+	x^2	\varPsi_{n-1}'(x)
+	\label{eq3X51}
+\end{align}
+とおけば(\ref{eq3x50})が成り立つ．
+\begin{align*}
+	\varPsi_1	(x)	&	=	1,	\qquad	\varPsi_2(x)	=	-2x	+1,\\
+	\varPsi_3(x)	&	=	(1-(2	\cdot	3	-2)x)(1-2x)	+	x^2	(-2)	=	(1-4x)(1-2x)	-2x^2	\\
+								&=	1	-6x	+	8x^2	-2x^2	=	6x^2	-	6x	+	1
+\end{align*}
+一般に，$\varPsi_n(x)$は
+\begin{equation}
+	\varPsi_n	(x)	=	(-1)^{n-1}	n!	x^{n-1}	+	\cdots	+1
+\label{eq3x52}
+\end{equation}
+なる形の$x$の$n-1$次の多項式である．なぜなら，(\ref{eq3x52})を$n-1$のときに成り立つと仮定すれば，
+\begin{align*}
+	\varPsi_n(x)	
+		&=	[	\:	1-	(2n-2)x	\:	]	\:	[	\:(-1)^n(n-1)!x^{n-2}	+	\cdots	+	1	\:]
+				+	x^2	((-1)^n	(n-1)!	(n-2)	x^{n-3}	+	\cdots	)	\\
+		&=	[	\:	(-1)^n	(n-1)!x^{n-2}	+	\cdots	+	1	\:	]
+				+	(2n-2)(-1)^{n-1}(n-1)!x^{n-1}	+	\cdots	+	(-1)(2n-2)x	\\
+			&	\quad	+	(-1)^n(n-1)!(n-2)x^{n-1}	+	\cdots	\\
+		&=	[	\:	(-1)^n	(n-1)!x^{n-2}	+	\cdots	+1	\:	]	+	
+				(2n-2)(-1)^{n-1}	(n-1)!	x^{n-1}	\\
+			&\quad	-	(-1)^{n-1}(n-1)!(n-2)x^{n-1}	+	\cdots	+	(-1)(2n-2)x	\\
+		&=	[	\:(-1)^n(n-1)!x^{n-2}	+	\cdots	+	1	+	n(-1)^{n-1}(n-1)!x^{n-1}	+	\cdots	+	(-1)^n	(2n-2)x	\\
+		&=	(-1)^{n-1}n!	x^{n-1}	+	\cdots	+	1
+\end{align*}
+となるからである．
+
+$x	>	0$のとき$\psi'(x)	>	0$であるから，$\psi(x)$は区間$(0,	+	\infty)$で単調増加で，
+明らかに$\displaystyle	\lim_{x\rightarrow	+\infty}	e^{-1/x}	=1$である．
+また，$0	<	x	<	1/2$のとき$\psi''(x)	>	0$，$x	>	1/2$のとき$\psi''(x)	<0$であるから，
+$\psi(x)$は$(0,	1/2	\:]$で狭義に凸で，$[\:	1/2	,	+	\infty)$で狭義に凸である．
+
+$t	=	1/x$とおけば，\S	\ref{sec2x3x2}の(\ref{eq2x6})により，任意の自然数$m$に対して
+\[
+	\lim_{x\rightarrow +0}	\frac{1}{x^m}	e^{-1/x}	=	\lim_{t\rightarrow +\infty}	\frac{t^m}{e^t}	=0.
+\]
+故に，(\ref{eq3x50})，(\ref{eq3x52})により，
+\begin{align*}
+	\lim_{x\rightarrow +0}	\psi^{(n)}(x)
+	&=	\lim_{x\rightarrow +0}	\frac{(-1)^{n-1}n!	x^{n-1}	+	\cdots	+1}{x^{2n}}	e^{-1/x}
+\end{align*}
+となるが，$x	\leqq	0$のときには$\psi^{(n)}(x)=0$であるから，
+\[
+	\lim_{x\rightarrow 0} \psi^{(n)}(x)=0.
+\]
+この結果を用いれば$\psi(x)$が$\mathcal{C}^\infty$級の関数であることは次のようにして確かめられる．
+まず，$\psi(x)$は$\R$上で連続，$x=0$を除いて連続微分可能で，
+$\displaystyle \lim_{x\rightarrow 0} \psi'(x)=0$であるから，\S \ref{sec3x3}，定理3.10の系により，
+$\displaystyle \psi'(0) = \lim_{x\rightarrow 0} \psi'(x) = 0$である．すなわち$\psi(x)$は
+$\R$上で$\mathcal{C}^1$級の関数である．次に$\psi(x)$は$\R$上で$\mathcal{C}^{n-1}$級の
+関数であることがすでに証明されたと仮定する．そうすれば$\psi^{(n-1)}(x)$は$\R$上で連続，
+$x=0$を除けば連続微分可能で，$x=0$を除けば連続微分可能である．故に再び定理3.10の系により，
+$\psi^{(n-1)}(x)$は$x=0$においても微分可能で，$\displaystyle	\psi^{(n)}(0) =	\lim_{x\rightarrow}	\psi^{(n)}(x)=0$.
+すなわち，$\psi (x)$は$\R$上で$\mathcal{C}^n$級の関数である．故に，$n$に関する帰納法により，
+$\psi (x)$は$\mathcal{C}^\infty$級の関数であることがわかる．
+\■
+
+このように$\psi (x)$は$\mathcal{C}^\infty$関数であるが，
+\underline{$0$の如何なる近傍$(-\infty , \infty), \varepsilon > 0$，においても
+$\psi(x)$を$0$を中心とする } \underline{Taylor級数に展開することはできない.}
+なぜなら，$(-\varepsilon , \varepsilon)$で$0$を中心とするTaylor級数：
+\[
+	\psi(x)	=	\psi(0)	+	\frac{\psi'(0)}{1!}x	+	\cdots	+	\frac{\psi^{(n)}(0)}{n!}x^n	+	\cdots	
+\]
+に展開できたと仮定すれば，$\psi(0),\psi'(0),	\cdots	,	\psi^{(n)}(0),	\cdots$はすべて$0$であるから，
+$-\varepsilon	<	x	<	\varepsilon$のとき$\psi(x)=0$となって，$x>0$のとき$\psi(x)=e^{-1/x}	>	0$であることに
+矛盾するからである．故に$\psi(x)$は\underline{実解析関数でない.}
+もちろんTaylorの公式：
+\[
+	\psi(x)	=	\frac{\psi^{(n)}(\xi)}{n!}x^n,	\quad	\xi=\theta	x,	\quad	0	<	\theta	<1,
+\]
+は成立しているが，$n	\rightarrow	\infty$のとき
+$(\psi^{(n)}(\xi)/n!)x^n	\rightarrow0$とならないのである．
+
+\定理{3.19}
+数直線$\R$上の任意の2点$a,b	,	a<b,$に対して，次の条件を満たす$\R$上の$\mathcal{C}^\infty$関数
+$\rho	(x)$が存在する：
+\begin{equation}
+	\begin{cases}
+		\:	\text{$x	\leqq	a$のとき}	&	\rho(x)	=	0	\\
+		\:	\text{$a	<	x	<	b$のとき}	&	0	<	\rho(x)	<1	\\
+		\:	\text{$b	\leqq	x$のとき}	&	\rho	(x)	=1.
+	\end{cases}
+	\label{eq3x53}
+\end{equation}
+
+\証明
+
+上記例3.10の関数$\psi (x)$を用いて
+\[
+	\rho(x)	=	\frac{\psi(x-a)}{\psi(x-a)	+	\psi(b-x)}
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=8cm,height=5cm]{p148.bmp}
+\end{figure}
+とおく．$x	>	a$ならば$\psi	(x-a)	>0,	x<	b$ならば$\psi(b-x)	>0$，つねに
+$\psi(x-a)	\geqq	0	,	\psi(b-x)	\geqq	0$であるから，任意の$x$に対して
+$\psi(x-a)	+	\psi(b-x)	>	0$，故に，定理3.18 $(1^\circ)$により，$\rho	(x)$は$\R$上の
+$\mathcal{C}^\infty$関数である．$\rho(x)$が条件(\ref{eq3x53})を満たすことは明らかであろう．
+\■
+
+\系
+$\R$上の任意の2点$a,b,	\:	a	<	b$，と任意の正の実数$\varepsilon$に対して，
+次の条件を満たす$\R$上の$\mathcal{C}^\infty$関数$\rho(x)$が存在する：つねに$	0	\leqq	\rho	(x)	\leqq	1$
+であって
+\[
+	\begin{cases}
+		\:	x	\leqq	a-\varepsilon	\quad	\text{のとき}	\quad	&\rho(x)	=0,	\\
+		\:	a	\leqq	x	\leqq	b			\quad	\text{のとき}	\quad	&\rho(x)	=1,	\\
+		\:	b+\varepsilon	\leqq	x	\quad	\text{のとき}	\quad	&\rho(x)	=0.
+	\end{cases}
+\]
+\証明　
+まず，$\rho_1(x)$をつねに$0	\leqq	\rho_1(x)	\leqq	1$で$x	\leqq	a	-	\varepsilon$のとき
+$\rho_1(x)=0$,$a	\leqq	x$のとき$\rho_1(x)=1$なる$\mathcal{C}^\infty$関数とする．
+このような関数の構成方法は定理3.19 によって示されている．
+
+つぎに，$\rho_2(x)$をつねに$	0	\leqq	\rho_2(x)	\leqq	1$で$x	\leqq	b$のとき$\rho_2(x)	=	0$，
+$b	+	\varepsilon	\leqq	x	$のとき$\rho_2(x)	=1$なる$\mathcal{C}^\infty$関数とする
+（構成方法は$\rho_1(x)$と同様に定理3.19による）．
+\[
+	\rho(x)	=	\rho_1(x)	(1-	\rho_2(x))
+\]
+とおけばよい，定理3.18$(1^\circ)$により，$\rho(x)$は$\mathcal{C}^\infty$関数である．
+\■
+
+$\R$上の関数$\mathcal{C}^\infty$関数$f(x),g(x)$が任意に与えられたとき，
+上記の系の条件を満たす関数$\rho(x)$を一つ選んで
+\[
+	h(x)	=	(1-\rho(x)) f(x) + \rho(x) g(x)
+\]
+とおけば，$h(x)$も$\R$上の$\mathcal{C}^\infty$関数であって，
+\[
+	\begin{cases}
+		\:	x	\leqq	a-\varepsilon	\quad	\text{のとき}		&h(x)	=f(x),	\\
+		\:	a	\leqq	x	\leqq	b			\quad	\text{のとき}		&h(x)	=g(x),	\\
+		\:	b	+	\varepsilon	\leqq	x	\quad	\text{のとき}	&h(x)	=f(x)
+	\end{cases}
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=12cm,height=6.5cm]{p149.bmp}
+\end{figure}
+このように，$\mathcal{C}^\infty$級の関数については，与えられた$\mathcal{C}^\infty$関数$f(x)$を
+区間$(a-\\varepsilon	,	b	+	\varepsilon)$の上にある部分だけ‘変形’して新しい
+$\mathcal{C}^\infty$関数$h(x)$を作り，区間$[a,b]$上においては$h(x)$があらかじめ与えられた
+$\mathcal{C}^\infty$関数$g(x)$と一致するようにできる．
+すなわち，\underline{$\mathcal{C}^\infty$関数は自由に変形することができ }
+\underline{るのである．}
+
+\underline{実解析関数をこのように変形することはできない.}すなわち
+
+\定理{3.20}
+$f(x),g(x)$を共に或る開区間$I$で定義された実解析関数とする．$I$に属する
+一つの点$a$の\underline{一つの近傍において}$f(x)$と$g(x)$が一致するならば，
+\underline{区間$I$全体で}$f(x)$と$g(x)$は一致する．
+
+\証明
+$I=(b,c),	\:	b	<	a	<	c,$として，まず区間$[a,c)$で$f(x)$と$g(x)$が一致することを証明する．
+仮定により正の実数$\varepsilon$が存在して
+\[
+	a	\leqq	x	<	a	+	\varepsilon	\quad	\text{ならば}	f(x)	=	g(x)
+\]
+となる．そこで
+\[
+	a	\leqq	x	<	t	\quad	\text{ならば}	\quad	f(x)	=	g(x)
+\]
+となる$t	,	a	<	t	\leqq	c,$の全体の集合を$T$とし，$T$の上限を$s$とする：
+$\displaystyle	s	=	\sup_{t	\in	T}	t$．明らかに$a	+	\varepsilon	\leqq	s	\leqq	c$であって，
+$a	\leqq	x	<	s$ならば，$x	<	t	<	s$なる$t	\in	T$が存在するから，$f(x)	=	g(x)$となる．
+すなわち区間$[a,s)$で$f(x)$と$g(x)$は一致する．$s=c$であることを示すために，
+$s	<	c$と仮定してみる．そうすれば，仮定により，$f(x),g(x)$は$s$の或る近傍
+$(	s	-	\delta	,	s	+	\delta)$,	$\delta	>	0$，で$s$を中心とするTaylor級数に展開される：
+\begin{align*}
+	f(x)	&=	f(s)	+	\frac{f'(s)}{1!}(x-s)	+	\cdots	+	\frac{f^{(n)}}{n!}(x-s)^n	+	\cdots	,	\\
+	g(x)	&=	g(s)	+	\frac{g'(s)}{1!}(x-s)	+	\cdots	+	\frac{g^{(n)}}{n!}(x-s)^n	+	\cdots	.
+\end{align*}
+$a	\leqq	x	<	s$のとき$f(x)	=g(x)$であるから，すべての自然$n$について，
+$a	\leqq	x	<	s$のとき$f^{(n)}(x)	=g^{(n)}(x)$，したがって，$f(x),g(x),f^{(n)}(x)	,g^{(n)}(x)$の
+連続性により$f(s)	=g(s),	f^{(n)}(s)=g^{(n)}(s)$となる．すなわち上記の$f(x)$の Taylor 級数と
+$g(x)$の Taylor級数は一致する．故に$a	\leqq	x	<	s+\delta$のとき$f(x)	=g(x)$となるが，
+これは$s$が$T$の上限であることに矛盾する（$s$より少し大きい$s+\delta$で一致しているから）．
+故に$s=c$，すなわち区間$[a,c)$で
+$f(x)$と$g(x)$は一致する．同様に区間$(b,a]$で$f(x)$と$g(x)$が一致するから，
+$I=(b,c)$で$f(x)$と$g(x)$は一致する．
+
+以上$I$は幅が有限な開区間であるとしたが，$I=(b	,	+\infty)$である場合には，
+任意の$c	,	a	<	c	<	+\infty$，に対して区間$(b,c)$で$f(x)$と$g(x)$が一致するから，
+$I$で$f(x)$と$g(x)$は一致する．$I=(	-	\infty	,	c)$，あるいは$I=(	-	\infty	,	+	\infty)$
+である場合についても同様にして$I$で$f(x)$と$g(x)$が一致することが分かる．
+\■
+
+\系
+$f(x),g(x)$が開区間$I$で定義された実解析関数，$a$を$I$に属する点とする．
+このとき$f(a)=g(a)$で，すべての自然数$n$について$f^{(n)}(a)=g^{(n)}(a)$ならば，
+$I$全体で$f(x)$と$g(x)$は一致する．
+
+\証明
+仮定により，$f(x)$と$g(x)$の$a$を中心とするTaylor展開は一致するから，$a$の
+或る近傍で$f(x)$と$g(x)$は一致する．故に$I$全体で$f(x)$と$g(x)$は一致する．
+
+\subsubsection{問題}
+
+\textbf{21.}
+$x$の関数$x^n$，$n$は自然数，の導関数が$nx^{n-1}$であること
+（\S \ref{sec3x2x4x1} ）
+を直接極限$\displaystyle	\lim_{h\rightarrow 0}	\frac{(x+h)^n	-	x^n}{h}$を計算して証明せよ．
+
+\証明
+\begin{align*}
+	\frac{(x+h)^n	-	x^n}{h}
+&=	\frac{\displaystyle	x^n	+	nx^{n-1}h	+	\binom{n}{2}	x^{n-2}h^2	+	\cdots	-	x^n}{h}	\\
+&=	nx^{n-1}	+	\binom{n}{2}x^{n-2}h	+	\cdots	+	h^{n-1}	\longrightarrow	nx^{n-1}.
+\end{align*}
+
+\textbf{22.}
+関数$f(x)$が区間$[a,+\infty)$において微分可能で$\displaystyle	\lim_{x\rightarrow +\infty} f(x)=f(a)$ならば
+$f'(\xi)	=0$，$a	<	\xi	<	+	\infty$，なる$\xi$が存在する（Rolle の定理の拡張)．このことを証明せよ．
+
+\証明
+(0) いたるところ$f(x)=f(a)$なら$\xi$として例えば$a+1$とすればよい．
+
+(1) $f(x_0)	>	f(a)$となる$x_0$が存在する場合を考察する．
+$\displaystyle	\lim_{x	\rightarrow +\infty}	f(x)=f(a)$であるから，
+$\varepsilon	=	f(x_0)	-	f(a)$を$\varepsilon$にとるとき，
+$x	>	M$ならば$|f(x)	-	f(a)|	<	\varepsilon$，
+したがって$f(x)	-	f(a)	<	f(x_0)	-	f(a)$となるように実数$M$が存在する．
+$x	>	M$ならば$f(x)	<	f(x_0)$となることは，$[a,M]$に$f(x)$の最大値が存在することを意味するから，
+後は補題3.1と同じ議論をすればよい．
+
+この最大値を$\beta$，最大値を取る点を$\beta=f(\xi)$とする．$\beta	=	f(\xi)	>	f(a)$ならば，
+$a	<	\xi	<	\infty$，したがって仮定より，
+\[
+	f'(\xi)	=	\lim_{h\rightarrow 0}	\frac{	f(\xi	+	h)	-	f(\xi)}{h}
+\]
+が存在する．$f(\xi	+	h)	-	f(\xi)	\leqq	0$であるから，$h	>	0$か$h	<	0$かにしたがって
+$\displaystyle	\frac{f(\xi	+	h)	-	f(\xi)}{h}	\leqq	0$か$\geqq	0$かとなる．したがって
+\begin{align*}
+	f'(\xi)	=	\lim_{h\rightarrow +0}	\frac{f(\xi	+	h)	-	f(\xi)}{h}	\leqq	0, \quad 
+	f'(\xi)	=	\lim_{h\rightarrow -0}	\frac{f(\xi	+	h)	-	f(\xi)}{h}	\geqq	0,
+\end{align*}
+故に$f'(\xi)=0$である．
+
+(2) $f(x_0) < f(a)$となる$x_0$が存在する場合，同様にある実数$M$が存在して$[a,M]$に$f(x)$の最小値が
+存在することが示され，この最小値$\alpha	=	f(\xi)$を取る点で$f'(\xi)	=	0$となる．
+\■
+
+\textbf{23.}
+$f(x),g(x)$は区間$[a,b)$で連続で$f(a)	=	g(a)	=0$，$(a,b)$では微分可能で$g'(x)	\ne	0$であるとする．
+このとき極限$l	=	\displaystyle	\lim_{x\rightarrow a+0} \frac{f'(x)}{g'(x)}$が存在すれば，
+$\displaystyle	\lim_{x\rightarrow a+0} \frac{f(x)}{g(x)} = l$となることを証明せよ．
+
+\証明
+定理3.9により
+\[
+	\frac{f(x)}{g(x)}	=	\frac{f(x)-f(a)}{g(x)-g(a)}	=	\frac{f'(c)}{g'(c)}
+\]
+となる$a	<	c	<	x$がある．$x	\rightarrow	a+0$なら$c	\rightarrow	a+0$であるから
+\[
+	\lim_{x \rightarrow a+0} \frac{f(x)}{g(x)}	=	\lim_{c\rightarrow a+0}	\frac{f'(c)}{g'(c)}=l.
+\]
+\■
+
+\textbf{24.}
+$a	>	0,	b>0$なるとき極限
+$	\displaystyle	
+	\lim_{x\rightarrow +0}	\left(	\frac{a^x	+	b^x}{2}
+													\right)^{1/x}
+$を求めよ．
+
+\解
+$\displaystyle	y	=	\left(	\frac{(a^x	+	b^x)}{2}	\right)^{1/x}$は正であるから
+両辺の対数をとって
+$\displaystyle	\log	y	=	\left(	\frac{1}{x}	\right)	\log	\left(	\frac{a^x	+	b^x}{2}	\right)$とおける．
+これに問題23を適用（分母分子を微分）する．
+\[
+	\lim_{x\rightarrow +0}	\log	y	=	\lim_{x\rightarrow +0}
+	\frac{\displaystyle	\log	\left(	\frac{a^x	+	b^x}{2}
+														\right)}{x}
+\]
+であるが，分母分子を微分を微分して，
+\[
+	\lim_{x\rightarrow +0}
+		\frac{	\displaystyle	\frac{1}{2}	(a^x	\log	a	+	b^x	\log	b)}{	
+						\displaystyle	\frac{a^x	+	b^x}{2}}
+	=	\frac{	\log	a	+	\log	b}{2}	=	\log	\sqrt{ab}
+\]
+であるから，
+\[
+	\lim_{x\rightarrow +0}	y	=	\sqrt{ab}
+\]
+となる．
+\■
+
+\textbf{25.}
+方程式$	x	-	\cos	x	=0$はただ一つの解をもつことを証明せよ．
+
+\証明
+$f(x)	=	x	-	\cos	x$とおくと$f'(x)	=	1	-	\sin	x	\geqq	0$，また$f'(x)	=	0$となるのは
+$x_n	=	\pi	/2	+	2n\pi$，$n$は整数，のときであるが，これらの点は実数内で稠密では
+ないから$f(x)$は単調増加であることがわかる．また$f(0)	=	-1	<	0$，$f(\pi/2)	=	\pi/2	>0$
+であるから$f(x)=0$はただ一つの零点をもつ．
+\■
+
+\textbf{26.}
+$\displaystyle	\frac{d^n}{dx^n}	e^{-x^2}	=	(-1)^n	H_n(x)	e^{-x^2}$とおけば
+$H_1(x)=2x	,	H_2(x)	=	4x^2	-2$，一般に$H_n(x)$は$x$の$n$次の多項式であることを
+示し，代数方程式$H_n(x)=0$は$n$個の相異なる実根をもつことを証明せよ
+（Rolle の定理とその拡張（問題22）を応用せよ）．$H_n(x)$を\textbf{Hermite多項式}
+という．
+
+\証明
+$n$に関する帰納法による．$n=1$のときは明らかであるから$n \geqq	2$とする．
+$n=1$のときは明らかであから，$n	\geqq	2$とする．
+\begin{align*}
+	\frac{d^n}{dx^n}	e^{-x^2}	
+&=	\frac{d }{d x}	\left\{
+											\frac{d ^{n-1}}{d x^{n-1}}	e^{-x^2}
+										\right\}	\\
+&=	\frac{d}{d x}	\{
+										(-1)^{n-1}H_{n-1}(x)e^{-x^2}
+									\}	\\
+&=	(-1)^n	\{	2x	H_{n-1}(x)	-	H'_{n-1}(x)	\}	e^{-x^2}
+\end{align*}
+より
+\[
+	H_n(x)	=	2x	H_{n-1}(x)-H'_{n-1}(x)
+\]
+がわかる．ゆえに$H_n(x)$は$x$の$n$次の多項式である．いま$H_{n-1}(x)=0$の
+$n-1$個の根を
+\[
+	x_1	<	x_2	<	\cdots	<	x_{n-1}
+\]
+とすると$\displaystyle	\frac{d ^{n-1}}{d x^{n-1}}e^{-x^2}	=	(-1)^{n-1}H_{n-1}(x)e^{-x^2}$が$x_1,	x_2,	\cdots	,	x_{n-1}$で
+$0$となる（Roleの定理の仮定部分を満たす）．また$\displaystyle	\lim_{x	\rightarrow \pm\infty}	\frac{d^{n-1}}{dx^{n-1}}	e^{-x^2}=0$
+（問題22の仮定部分）より，と$H_n(x)$は$(-\infty	,	x_1),$ $(x_1,x_2),	\cdots	,	(x_{n-1},\infty)$の各区間に少なくとも一つずつ
+実根をもち，また全部で高々$n$個の実根をもつ．したがって$H_n(x)$はちょうど$n$個の相異なる実根をもつ．
+\■
+
+\textbf{27.}
+$f(x)$は或る区間で定義された2回微分可能な関数でその区間においてつねに$f''(x) \ne 0$であるとする．
+このとき平均値の定理：
+\[
+	f(x+h)	=	f(x)+f'(x+	\theta	h)	h,	\quad	0<	\theta	<1,
+\]
+における$\theta$は$x$と$h$によってただ一通りに定まり，$x$を固定して考えれば
+$\displaystyle	\lim_{h\rightarrow 0}	\theta	=	\frac{1}{2}$となることを証明せよ．
+
+\証明
+もし
+\[
+	f'(x	+	\theta	h)	=	f'(x	+	\theta_1	h)	,	\quad	\theta	\ne	\theta_1
+\]
+とすると平均値の定理から
+\[
+	f'(x	+	\theta	h)	-	f'(x	+	\theta_1	h)=	(\theta	-	\theta_1)	h	f''(x	+	\theta	h	+	\theta_2	(	\theta	-	\theta_1)h)=0
+\]
+となる$0	<	\theta_2$が存在するが，これは$f''	\ne	0$と矛盾．したがって$\theta	=	\theta_1$でなければならない．
+また
+\begin{align*}
+	f(	x+h	)
+&=	f(x)	+	f'(x+	\theta	h)h	\\
+&=	f(x)	+	\{	f'(x)	+	f''(x)	\theta	h	+	o(\theta	h)\}h	\quad \text{((\ref{eq3x5})より)}\\
+&=	f(x)	+	f'(x)	h	+	f''(x)	\theta	h^2	+	o(h^2)
+\end{align*}
+とTaylorの公式
+\[
+	f(x	+	h)	=	f(x)	+	f'(x)	h	+	f''(x)	\frac{h^2}{2}	+	o(h^2)
+\]
+を比較すると
+\[
+	\theta	\longrightarrow	\frac{1}{2}
+\]
+がわかる．
+\■
+
+\textbf{28.}
+区間$[a,b]$において関数$f(x)$は2回微分可能で$f''(x)	>	0$，$f(a)	<	0$，$f(b)	>	0$であるとする．
+
+このとき$\displaystyle	b_1	=	b	-	\frac{f(b)}{f'(b)}$，$\displaystyle	b_2	=	b_1	-	\frac{f(b_1)}{f'(b_1)}$，
+一般に
+\[
+	b_n	=	b_{n-1}	-	\frac{f(b_{n-1})}{f'(b_{n-1})},	\quad	n=3,4,5,	\cdots	,
+\]
+とおけば数列$\{	b_n	\}$は方程式$f(x)	=	0$の$a$と$b$の間に或るただ一つの解に収束することを証明せよ．
+（関数$f(x)$のグラフを描いて考察せよ）．$f(x)=0$の解の近似値$b_n$を求める方法を
+\textbf{Newtonの近似法}という．
+
+\証明
+下のグラフを参考にする．$f(x)$は連続関数であるから，中間値の定理より
+$a	<	\beta	<	b	,	f(\beta)=0$となる$\beta$が存在する．
+
+仮定により数列$\{b_n\}$は$a	<	b_n	<	b_{n-1}$を満たす．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=4cm,height=4cm]{p494.bmp}
+\end{figure}
+すなわちこれは下に有界な単調減少数列で収束することがわかる．
+いま$\displaystyle	\lim b_n = \beta$とおき
+\[
+	b_n	=	b_{n-1}	-	\frac{f(b_{n-1})}{f'(b_{n-1})}
+\]
+の両辺の極限をとると
+\[
+	\beta	=	\beta	-	\frac{f(\beta)}{f'(\beta)}
+\]
+となり$f(\beta)=0$であることが従う．
+
+\textbf{29.}
+区間$[a,b]$において関数$f(x)$は2回微分連続可能で$f''(x)	>0$であるとする．
+このとき任意の$x_k,	\:	a	\leqq	x_k	\leqq	b,	\:	k=1,2,3,	\cdots	,	n$，に対して
+不等式：
+\[
+	f	\left(
+			\frac{x_1	+	x_2	+	\cdots	+	x_n}{n}
+		\right)
+	\leqq
+	\frac{f(x_1)	+	f(x_2)	+	\cdots	+	f(x_m)}{n}
+\]
+が成り立つ．そして等号$=$が成り立つのは$x_1	=	x_2	=	x_3	=	\cdots	=	x_n$なる場合に限る．
+このことを証明せよ．
+
+\証明
+$\xi	=	(1/n)	(	x_1	+	\cdots	+	x_n)$とおくと
+\[
+	f(x_i)	=	f(\xi)	+	(x_i	-	\xi)	f'(\xi)	+	\frac{1}{2}	(x_i	-	\xi)^2	f''(\xi+	\theta_i(x_i	-	\xi)),	\quad
+	0	<	\theta_i	<	1
+\]
+となるから
+\[
+	f(x_i)	\geqq	f(\xi)	+	(x_i	-	\xi)	f'(\xi)
+\]
+となり
+\[
+	\sum_{i=1}^{n}	f(x_i)	\geqq	n	f(\xi)	+	f'(\xi)	\sum_{i=1}^{n}	(x_i	-	\xi)	=	nf(\xi)
+\]
+となって求める不等式が得られる．等号は$x_i	=	\xi	\:	(i=1,	\cdots	,	n)$のときに限る．
+\■
+
+\textbf{30.}
+正の実数$a_1	,	a_2,	\cdots	,	a_n$の相乗平均$(a_1	a_2	a_3	\cdots	a_n)^{1/n}$は
+相加平均$\displaystyle	\frac{a_1	+	a_2	+	\cdots	+	a_n}{n}$を越さないことを証明せよ
+（全問29の不等式の$f(x)$に$-\log	x$を代入せよ）．
+
+\証明
+
+（保留）
+
+
+
+
+
+

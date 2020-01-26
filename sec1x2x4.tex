@@ -1,0 +1,97 @@
+\subsection{実数の連続性}
+
+{\small
+$\alpha=	\langle	A,A'	\rangle$が無理数のとき，$A$と$A'$の境目をなす有理数は存在しない．
+有理直線$\Q$には$A$と$A'$の境目の所に‘隙間’があるわけである．有理直線$\Q$は到る所隙間だらけで
+あって，$\Q$の隙間をすべて無理数で埋めたものが数直線$\R$であると考えられる．数直線$\R$にはもう
+このような隙間はない．これがいわゆる実数の連続性である．$\R$には隙間がないということを厳密
+にいうために，実数の切断を考える．
+}
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(1,3.5)
+
+	\thicklines	\qbezier[100](-4,2)(0,2)(4,2)
+	\allinethickness{0.2mm}	
+		\path(0,2)(-0.1,2.2)(-2.0,2.2)(-2.05,2,3)(-2.1,	2,2)(-4.0,2.2)
+		\path(0,2)(	0.1,2.2)(	2.0,2.2)(	2.05,2,3)(2.1,	2,2)(4.0,2.2)
+	\put(-2.2,2.4){$A$}
+	\put(1.9,2.4){$A'$}
+	\put(-0.1,1.6){$\Q$}
+
+\end{picture}
+\end{center}
+
+数直線$\R$を次の条件を満たす空集合でない二つの部分集合
+	$\textsf{A}$と$\textsf{A}'$に分割したとき，
+$\textsf{A}$と$\textsf{A}'$の組$\langle	\textsf{A},\textsf{A}'	\rangle$
+を\textbf{実数の切断}とよぶ：
+
+\[
+	\rho	\in	\textsf{A},	\sigma	\in	\textsf{A}'	\quad	\text{ならば}	\quad	\rho	<	\sigma.
+\]
+{\small
+	「実数の切断」の定義には「有理数の切断」の定義のように
+$\textsf{A}$に属する最大元不在の条件がない．
+}
+
+$\langle	\textsf{A},\textsf{A}'	\rangle$が実数の切断のとき，
+$\rho	\in	\textsf{A}$ならば$\tau	<	\rho$なる実数
+$\tau$はすべて$\textsf{A}$に属する．これは明らかであろう．
+同様に，$\sigma	\in	\textsf{A}'$ならば$\sigma	<	\tau	$なる実数
+$\tau$はすべて$\textsf{A}'$に属する．
+
+\end{figure}
+
+\定理{1.6}
+$\langle	\textsf{A},\textsf{A}'	\rangle$が実数の切断のとき，
+$\textsf{A}$の属する最大の実数が存在するか，
+または$\textsf{A}'$に属する最小の実数が存在する．
+
+\証明
+$A=\textsf{A}	\cap	\Q$，$A'=\textsf{A}'	\cap	\Q$とおく．
+もしも$A$に属する最大の有理数$a$が存在する場合，
+$a$は$\textsf{A}$に属する最大の実数である．何となれば，
+$a	<	\rho	,	\rho	\in	\textsf{A}$なる実数$\rho$があったと仮定すると，
+$a	<	r	<	\rho$なる有理数$r$	
+――このような有理数$r$が存在することは$\Q$が$\R$上到る所稠密である（定理1.4）ことによって明らかである――をとれば，$r	\in	\textsf{A}$，したがって$r	\in	A$でなければならないが，これは
+$a$が$A$の最大数であることに矛盾する．よって$a$は$\textsf{A}$に属する最大の実数である．
+
+次に$A$に属する最大の有理数が存在しない場合，
+このとき，$\langle	A,A'	\rangle$は明らかに有理数の切断であって，
+$\langle	A,	A'	\rangle=\alpha$は実数，したがって$\alpha	\in	\textsf{A}$か，
+または$\alpha	\in	\textsf{A}'$である．
+
+$\alpha	\in	\textsf{A}$ならば$\alpha$は$\textsf{A}$の最大数である．何となれば，
+$\alpha	<	\rho$，$\rho	\in	\textsf{A}$なる実数$\rho$が存在すると仮定すると，
+$\alpha	<	r	<	\rho$なる有理数$r$をとれば，$r	\in	\textsf{A}$，
+したがって$r	\in	A$でなければならないが，一方$\alpha	<	r$であるから定理1.3によれば，
+$r	\in	A'$．これは矛盾である．
+
+次に，$\alpha	\in	\textsf{A}'$ならば$\alpha$は$\textsf{A}'$の最小数である．何となれば，
+$\rho	<	\alpha$，$\rho	\in	\textsf{A}$なる実数$\rho$が存在すると仮定すると
+$\rho	<	r	<	\alpha$なる有理数$r$をとれば，$r	\in	\textsf{A}'$．
+したがって$r	\in	A'$でなければならないが，一方$r	<	\alpha$であるから定理1.3によれば，
+$r	\in	A$．これは矛盾である．
+\■
+
+この定理1.6によれば，実数の切断$\langle	\textsf{A},\textsf{A}'	\rangle$については必ず
+$\textsf{A}$と$\textsf{A}'$の境目をなす実数，すなわち条件：
+\[
+	\rho	\in	\textsf{A},	\sigma	\textsf{A}'	\text{　ならば　}
+	\rho	\leqq	\alpha	\leqq	\sigma
+\]
+を満たす実数$\alpha$が存在する．これが\underline{実数の連続性}である．数直線$\R$には隙間が
+ないのである．
+
+\注意{}
+有理数の切断の条件（ⅱ）は叙述を感銘にするために導入された便宜上のものおで，
+原理的には不要である．条件（ⅱ）を落とせば，有理数の切断$\langle	A,A'	\rangle$
+にはⅠ型，Ⅱ型以外に$A$に最大数がある第Ⅲの型が現れる．
+$\langle	A,A'	\rangle$がⅢ型のとき$A$に属する最大の有理数を$a$とすれば，
+$\langle	A,A'	\rangle$は$a$に等しい：$\langle	A,A'	\rangle	=	a$と考えるほかない．
+このために一つの有理数がⅡ型とⅢ型の二つの切断に対応することになって叙述が混乱する．
+これを避けるために条件（ⅱ）を導入してⅢ型の切断を除外したのである．実数の切断については
+条件（ⅱ）を導入しない方が応用上便利である．

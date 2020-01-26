@@ -1,0 +1,145 @@
+\section{実数}
+
+本節では有理数とその大小，加減乗除は既知として，それに基づいて実数の明確な定義を述べる．数学を理解するには
+その論証を厳密に追跡していかなければならないことはいうまでもないが，それだけでは不十分であって，その数学的
+現象を感覚的に把握しなければならない．”こういうことか，成る程，わかった！”と
+思うのはその現象を感覚的に把握し得たときであって，そこに到ってはじめて論理を自由に駆使し得るのである．
+以下実数の厳密な理論を述べるに当って，随所に感覚的理解を助けるための説明を挿入した．小さい活字で
+印刷した部分がそれである．
+
+\subsection{実数の定義}
+
+有理数全体の集合を$\Q$で表わし，$\Q$の要素，すなわち有理数を$a,b,c,r,s,$等の文字で表わす．$\Q$は
+加減乗除の演算に関して\textbf{体(field)}をなしているから，$\Q$を\textbf{有理数体}
+とよぶ
+$\Q$の要素の間には大小の関係が定義されている．これを記号$<,>$で表わすことはすでに高校数学で学んだ．
+有理数が大きさの順序にしたがって直線状に一列に並んでいると想像して，$\Q$をまた
+\textbf{有理直線}とよぶ．二つの相異なる有理数$a,b,a<b$が任意に与えられたとき，$a<r<b$なる
+有理数$r$は無数に存在する．このことを有理数の\textbf{稠密性}という．
+
+
+{\small
+　
+
+高校数学に戻って数直線$l$を考えれば，有理直線$Q$は$l$上の有理点，すなわちその座標が有理数である点
+全体の集合である．いま一つの無理数$\alpha$が与えられたとすれば，$\Q$は次の図において，
+点$\alpha$の左側にある部分$A$と右側にある部分$A'$に分割する．
+
+}
+
+\begin{figure}[hp]
+	\vspace*{2cm}
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,0.2)
+				\thicklines	\path(-3,0)(7,0)					\put(7.2,0){\small	$l$}
+				\thinlines	\path(-2,0.1)(-2,-0.1)		\put(-2.2,-0.3){\small	$-1$}
+				\thinlines	\path( 0,0.1)( 0,-0.1)		\put(-0.1,-0.3){\small	$0$}
+				\thinlines	\path(0.63,0.2)(0.63,-0.2)\put(0.57,0.3){\small	$\alpha$}
+				\thinlines	\path( 2,0.1)( 2,-0.1)		\put(	2	 ,-0.3){\small	$1$}
+				\thinlines	\path( 4,0.1)( 4,-0.1)		\put(	4	 ,-0.3){\small	$2$}
+				\thinlines	\path( 6,0.1)( 6,-0.1)		\put(	6	 ,-0.3){\small	$3$}
+				\thicklines	\put(6,0){\oval(11,0.5)[tl]}
+				\thicklines	\put(-3,0){\oval(7,0.5)[tr]}
+				\thicklines	\put(-2,0.5){$A$}
+				\thicklines	\put( 4,0.5){$A'$}
+		\end{picture}
+\end{center}
+\end{figure}
+
+$A$は$\alpha$より小さい有理数の集合，$A'$は$\alpha$より大きい有理数の集合，記号で書けば
+\[
+	A=\{r	\in	\Q	\,	|	\,	r<\alpha	\},	\quad	A'=\{r	\in	\Q	\,	|	r	>	\alpha\}
+\]
+であって，
+\[
+	\Q=A	\cup	A',	\quad	A	\cap	A'=\varnothing
+\]
+明らかに$A$に属する有理数はつねに$A'$に属する有理数より小さい：
+\begin{equation}
+	r	\in	A,	s	\in	A'	\quad	\text{ならば}	\quad	r	<	s.
+\end{equation}
+$A$と$A'$の定義により
+\begin{equation}
+	r	\in	A,	s	\in	A'	\quad	\text{ならば}	\quad	r	<	\alpha	<	s.
+\end{equation}
+である．すなわち$\alpha$は$A$と$A'$の境目である．\S 1.1のはじめに述べたように，有理数の
+集合$\Q$は数直線上到る所稠密である．このことから，$\alpha$は$A$と$A'$によって
+条件(1.6)を満たすただ一つの実数として一意的に定まることがわかる．いま
+仮に(1.6)を満たす$\alpha$以外の実数$\beta$が存在したとして，たとえば$\beta>\alpha$
+とすれば，$\alpha	<	t	<	\beta$なる有理数$t$が存在する．
+(1.6)によって$t$は$A$にも$A'$にも含まれないことになるが，これは$A	\cup	A'A=\Q$
+に反する．
+
+本節の目的は有理数については既知としてそれに基づいて実数の明確な定義を与える
+ことであった．いま一つの無理数$\alpha$gが与えられたとしれば，上に述べたように，
+$\alpha$は$\Q$を条件(1.5)を満たす二つの部分$A$，$A'$に分割し，逆に
+$\alpha$は$A$と$A'$に分割し，逆に$\alpha$は$A$と$A'$によってその境目として
+一意に定まる．そこで，有理数に基づいて無理数も含めて実数を定義するには
+この操作を逆にして実数を定義すればよいであろうと想像される．これが
+Dedekindによう切断の考えである．
+
+以下，Dedekindにしたがって実数の定義を述べる．
+
+有理直線$\Q$を次の条件を満たすように空集合でない二つの部分集合$A$と$A'$に分割したとき
+$A$と$A'$の組を\textbf{有理数の切断}(cut，Schnitt)とよび，記号$\langle	A,A'	\rangle$で表わす：
+\begin{list}{}{}
+	\item	(ⅰ)	$r	\in	A,	s	\in	A'$ならば$r	<	s$，
+	\item	(ⅱ)	$A$に属する最大の有理数はない．すなわち，$r	\in	A$ならば，$t	>	r$なる有理数$t	\in	A$が存在する．
+\end{list}
+もちろん$\Q$を$A$と$A'$に分割したというのは，$\Q=A	\cup	A'$，$A	\cap	A'=\varnothing$であることを意味する．
+
+切断$\langle	A,A'	\rangle$において$A'$は$A$の$\Q$における補集合，すなわち$\Q$から$A$に属する
+有理数をすべて除いた残りの集合であるから，切断$\langle	A,A'	\rangle$は$A$によって一意的に定まる．
+"$s	\in	A'$ならば$r	<	s$"という命題はその対偶"$	s	\leqq	r$ならば
+$s	\in	A$と同値であるから，切断の条件(ⅰ)は$A$だけに関するつぎの条件と同値である：
+
+\begin{list}{}{}
+	\item	(ⅲ)	$r	\in	A$のとき，$s	\leqq	r$，$s	\in	\Q$ならば$s	\in	A$．
+\end{list}
+また同様に，(ⅰ)は$A'$だけに関するつぎの条件とも同値である：
+\begin{list}{}{}
+	\item	(ⅲ)'	$r	\in	A'$のとき，$s	\geqq	r$，$s	\in	\Q$ならば$s	\in	A'$．
+\end{list}
+
+\定義{1.1}
+有理数の切断を\textbf{実数}(real number)とよぶ．
+
+実数を$\alpha$，$\beta$，等のギリシア文字で表わす．実数$\langle	A,A'	\rangle$を$\alpha$で表わしたとき，
+$\alpha=\langle	A,A'	\rangle$と書く．
+二つの実数$\alpha=\langle	A,A'	\rangle$と$\beta=\langle	B,B'	\rangle$が等しい：
+$\alpha=\beta$ということは，$\langle	A,A'	\rangle$と$\beta=\langle	B,B'	\rangle$が同じ切断であること，すなわち，
+$A$と$B$が同じ集合であることを意味する．
+
+{\small
+実数論が完成した暁には$\alpha=\langle	A,A'	\rangle$は$A$と$A'$の境目，すなわち，すべての$r	\in	A$，
+$s	\in	A'$に対し不等式：$r	<	\alpha	\leqq	s$を満すただ一つの実数，ということになるが，
+この段階では不等式：$r	<	\alpha	\leqq	s$には未だ意味がないから，形式的に切断そのものを
+実数と定義したのである．
+
+}
+
+切断$\langle	A,A'	\rangle$には次の二つの型が考えられる：
+
+\begin{list}{}{}
+	\item	(Ⅰ)	$A'$に属する最小の有理数はない．
+	\item	(Ⅱ)	$A'$に属する最小の有理数がある．
+\end{list}
+$\langle	A,A'	\rangle$がⅡ型のときには，$A'$に属する最小の有理数$a$とすれば，
+\begin{equation}
+	A=\{r	\in	\Q	\,|\,	r<	a\},\quad	A'=\{r	\in	\Q	\,|\,	r	\geqq	a\}	\label{eq:1.7}
+\end{equation}
+このとき実数$\langle	A,A'	\rangle$は有理数$a$に\underline{等しい}といい，
+\[
+	\langle	A,A'	\rangle=a
+\]
+と書く．有理数$a$が任意に与えられたとき，（\ref{eq:1.7}）によって切断$\langle	A,A'	\rangle$を定義すれば，
+もちろん実数$\langle	A,A'	\rangle$は$a$に等しい（すなわち実数の定義1.1を満たす）．
+われわれはこのとき\underline{実数}$\langle	A,A'	\rangle$と
+\underline{有理数}$a$は\underline{は同じものであると見なす}．したがって
+有理数はすべて実数であるということになる．実数$\langle	A,A'	\rangle$は有理数の無限集合の組であって，
+1個の有理数とはレベルの異なる概念である．この二つを敢えて同じものと見なすことによって
+実数の概念を有理数の概念の拡張と考えるのである．
+
+$\langle	A,A'	\rangle$がⅠ型のときには実数$\alpha=\langle	A,A'	\rangle$はどの有理数とも異なる．このとき
+$\alpha=\langle	A,A'	\rangle$を\textbf{無理数}(irrational number)という．

@@ -1,0 +1,118 @@
+\subsection{区間}
+
+高校数学で学んだように、二つの実数$a,b,a<b$に対して，集合：
+\begin{align*}
+	(a,b)	&=	\{r\in	\R	\:|\:	a	<			r	<			b	|\},	\\
+	[a,b]	&=	\{r\in	\R	\:|\:	a	\leqq	r	\leqq	b	|\},	\\
+	[a,b)	&=	\{r\in	\R	\:|\:	a	\leqq	r	<			b	|\},	\\
+	(a,b]	&=	\{r\in	\R	\:|\:	a	<			r	\leqq	b	|\},	\\
+\end{align*}
+を\textbf{区間}(inverval)という．ここで，たとえば，
+$\{r	\in	\R	\:|\:	a	<	r	<	b	\}$は不等式$a<r<b$を満たす
+実数$r$全体から成る集合を表わすことはいうまでもない．
+
+\begin{figure}[hp]
+	\vspace*{2cm}
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,1)
+				\thicklines	\path(-3,1)(6,1)
+				\thicklines \put(-2,1){$|$}
+				\thicklines \put(0,1){$|$}
+				\thicklines \put(2,1){$|$}
+				\thicklines \put(-2,0.5){$a$}
+				\thicklines \put(0,1.5){$r$}
+				\thicklines \put(2,0.5){$b$}
+				\thicklines \put(6.2,1.0){$\R$}
+		\end{picture}
+\end{center}
+\end{figure}
+
+$(a,b)$は数直線$\R$上で“$a$と$b$の間にある点$r$”全体の集合であって，
+$[a,b)$は$(a,b)$に‘左端の’点$a$を付け加えたもの，$[a,b]$は
+$(a,b)$にその‘両端’$a$，$b$を付け加えたものである．
+$(a,b)$を\textbf{開区間}(open interval），$[a,b]$を
+\textbf{閉区間}（closed interval）ということも高校数学で学んだ．
+開区間と閉区間の区別は重要である．$b-a$を区間
+$(a,b)$，$[a,b]$，$[a,b)$，$(a,b]$の\textbf{幅}または\textbf{長さ}
+という．
+
+この他に集合：
+\begin{align*}
+	(a,+\infty)				&=\{r	\in	\R	\:	|	\:	a	<r	\}	\\
+	[a,+\infty)				&=\{r	\in	\R	\:	|	\:	a	\leqq	r	\}	\\
+	(+\infty,b)				&=\{r	\in	\R	\:	|	\:	r	<	b	\}	\\
+	(-\infty,b]				&=\{r	\in	\R	\:	|	\:	r	\leqq	b	\}	\\
+	(-\infty,+\infty)	&=\R	\\
+\end{align*}
+も区間とよばれる．このうち$(a,\infty)$，$(-\infty,b)$，
+$(-\infty,+\infty)$を開区間とよぶ．
+
+\pagebreak
+
+\textbf{区間縮小法}
+
+\定理{1.24}
+閉区間$I_n	=	[a_n,b_n]$の列：$I_1,I_2,\cdots,I_n,\cdots$
+が次の二つの条件（ⅰ）（ⅱ）
+
+\begin{list}{}{}
+	\item	（ⅰ）$I_1	\supset	I_2	\supset	I_3	\supset	\cdots	\supset	I_n	\supset	\cdots$,
+	\item	（ⅱ）$\displaystyle	\lim_{n\rightarrow\infty}	(b_n-a_n)=0$.
+\end{list}
+
+を満たすならば，この閉区間$I_n$のすべてに属する実数$c$が
+ただ一つ存在する：
+$\displaystyle
+	\bigcap_{n=1}^\infty	I_n	=	\{c\}
+$
+
+\証明
+条件（ⅰ）により
+\[
+	a_1	\leqq	a_2	\leqq	\cdots	\leqq	a_n	\leqq	\cdots	\leqq	b_n	\leqq	\cdots	\leqq	b_2	\leqq	b_1.
+\]
+したがって数列$\{a_n\}$は単調非減少，$\{b_n\}$は単調非増加で，共に有界である。
+故に，定理1.20により，$\{a_n\}$はその上限$a$に，$\{b_n\}$はその下限$b$に収束する．
+$a_n	<	b_n$で
+$\displaystyle
+	a=\lim_{n\rightarrow\infty}a_n$，
+$\displaystyle
+	b=\lim_{n\rightarrow\infty}b_n$だから，定理1.14により、$a	\leqq	b$，または$a$は
+$\{a_n\}$の上限，$b$は$\{b_n\}$の下限だから、$a_n	\leqq	a$，$b	\leqq	b_n$．
+ところで任意の$m,n$に関して$a_m	\leqq	b_n$であるから，
+$n$を固定して$m	\rightarrow	\infty$のとき，$a	\leqq	b_n$，
+ついで$n	\rarrow	\infty$のとき$a	\leqq	b$が成立する．
+すなわち
+\[
+	a_n	\leqq	a	\leqq	b	\leqq	b_n.
+\]
+したがって
+\[
+	0	\leqq	b-a	\leqq	b_n	-	a_n
+\]
+となるが，条件（ⅱ）により
+$\displaystyle
+	\lim_{n\rightarrow\infty}(b_n-a_n)=0$であるから、
+$\displaystyle
+	b-a=\lim_{n\rightarrow\infty}b_n-\lim_{n\rightarrow\infty}a_n=0$，
+すなわち$a=b$である．$c=a=b$とおけば
+\[
+	a_n	\leqq	c	\leqq	b_n,
+\]
+すなわち$c$は$I_n$のすべてに属する．
+すべての$I_n$に属する実数が$c$以外にあったとしてそれを$c'$とすれば，
+すべての$n$について
+\[
+	a_n	\leqq	c'	\leqq	b_n
+\]
+であるから，
+\[
+	a	\leqq	c'	\leqq	b
+\]
+でなければならない．すなわち$c'=a=b=c$．
+\■
+
+この定理1.24を用いて実数$c$の存在を示すことを区間縮小法（またはカントルの共通点定理）
+という。定理1.24において$I_n$\underline{が閉区間であることが本質的である}．
+たとえば$I_n$として開区間：$I_n=(0,1/n)$をとれば，すべての$I_n$に属する実数は存在しない．

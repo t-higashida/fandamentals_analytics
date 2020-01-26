@@ -1,0 +1,15 @@
+mktexpk --mfmode / --bdpi 600 --mag 1+0/600 --dpi 600 cmbx10
+mktexpk --mfmode / --bdpi 600 --mag 2+180/600 --dpi 1380 gbm
+MakeTeXTFM AuriocusKalligraphicus 
+MakeTeXTFM AuriocusKalligraphicus 
+MakeTeXTFM AuriocusKalligraphicus 
+mktexpk --mfmode / --bdpi 600 --mag 1+359/600 --dpi 959 rml
+mktexpk --mfmode / --bdpi 600 --mag 1+359/600 --dpi 959 rml
+mktexpk --mfmode / --bdpi 600 --mag 1+359/600 --dpi 959 rml
+mktexpk --mfmode / --bdpi 600 --mag 1+359/600 --dpi 959 rml
+mktexpk --mfmode / --bdpi 600 --mag 1+359/600 --dpi 959 rml
+mktexpk --mfmode / --bdpi 600 --mag 1+359/600 --dpi 959 rml
+mktexpk --mfmode / --bdpi 600 --mag 1+359/600 --dpi 959 rml
+mktexpk --mfmode / --bdpi 600 --mag 1+359/600 --dpi 959 rml
+mktexpk --mfmode / --bdpi 600 --mag 1+359/600 --dpi 959 rml
+mktexpk --mfmode / --bdpi 600 --mag 1+359/600 --dpi 959 rml

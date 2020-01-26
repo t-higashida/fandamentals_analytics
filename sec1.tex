@@ -1,0 +1,385 @@
+\chapter{実数}\label{chap1}
+
+
+\section{序節}\label{sec1x1}
+
+	高校数学を学んだ人は実数とはどんなものか一応知っているわけである．しかし高校数学の実数論は
+現代数学の立場から見れば，厳密性にかける点があって，本選書の基礎としては不十分である．
+本章の目的は，有理数については既知として，それに基づいて論理的に厳密な実数論を述べることであるが，
+まず，本節では，実数について高校数学で学んできたことを復習しながら，その厳密性に欠ける点を指摘する．
+
+一つの直線$l$の上に相異なる２点$O$，$E$をとり，$l$上の任意の点$A$に対して，
+線分$OE$を長さの単位として測った$A$と$O$の距離を$OA$で表わす．
+\begin{figure}[hp]
+	\vspace*{2cm}
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,1)
+				\thicklines	\path(-3,1)(6,1)
+				\thicklines \put(-2,1){\circle{0.08}}
+				\thicklines \put(0,1){\circle{0.08}}
+				\thicklines \put(2,1){\circle{0.08}}
+				\thicklines \put(-2,0.5){$O$}
+				\thicklines \put(0,0.5){$E$}
+				\thicklines \put(2,0.5){$A$}
+				\thicklines \put(6.2,1.0){$l$}
+		\end{picture}
+\end{center}
+\end{figure}
+$OA$は，$O$と$A$が一致する場合を除けば，正の実数である．さらに
+\begin{list}{}{}
+	\item	$O$から見て$A$が$E$と同じ側にあるとき，$\alpha=OA$，
+	\item	$O$から見て$A$が$E$と反対側にあるとき，$\alpha=OA$，
+	\item	$A$と$O$と一致したとき，$\alpha=0$
+\end{list}
+とおいて，直線$l$上の各点$A$にそれぞれ一つの実数$\alpha$を対応させれば，$l$上の
+すべての点とすべての実数は1対1に対応する．このとき$l$を\textbf{数直線}，$O$を
+その原点，$E$を単位点といい，$A$に対応する実数$\alpha$を$A$の\textbf{座標}と
+よぶ．また，$A$の座標が$\alpha$であるとき$A(\alpha)$と書き，点$A$を点$\alpha$，あるいは単に$\alpha$という．
+すなわち，実数を対応する点と同一視して,実数が数直線上に並んでいると考えるのである．
+
+整数が数直線上に等間隔に並んでいることはいうまでもない：
+\begin{figure}[thp]
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,1)
+				\thicklines	\path(-6,0)(6,0)
+				\thinlines	\path(-5,0.1)(-5,-0.1)	\put(-5.25,-0.5){$-4$}
+				\thinlines	\path(-4,0.1)(-4,-0.1)	\put(-4.25,-0.5){$-3$}
+				\thinlines	\path(-3,0.1)(-3,-0.1)	\put(-3.25,-0.5){$-2$}
+				\thinlines	\path(-2,0.1)(-2,-0.1)	\put(-2.25,-0.5){$-1$}
+				\thinlines	\path(-1,0.1)(-1,-0.1)	\put(-1,-0.5){$0$}
+				\thinlines	\path(0,0.1)(0,-0.1)		\put(-0,-0.5){$1$}
+				\thinlines	\path(4,0.1)(4,-0.1)		\put(1,-0.5){$2$}
+				\thinlines	\path(3,0.1)(3,-0.1)		\put(2,-0.5){$3$}
+				\thinlines	\path(2,0.1)(2,-0.1)		\put(2.7,-0.5){$\cdots$}
+				\thinlines	\path(1,0.1)(1,-0.1)		\put(3.7,-0.5){$m$}	
+				\thinlines	\path(5,0.1)(5,-0.1)		\put(4.7,-0.5){$m+1$}
+				\thicklines \put(6.2,0){$l$}
+		\end{picture}
+\end{center}
+\end{figure}
+相隣る二つの整数$m$と$m+1$の間隔はもちろん$1$である．
+
+自然数$n$を一つ定めたとき，$m/n$，$m$は整数，なる形の有理数は数直線上に
+$1/n$の間隔で並んでいる．たとえば，下の図は$m/5$の形の有理数を示す：
+\begin{figure}[thp]
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,1)
+				\thicklines	\path(-6,0)(6,0)
+
+				\thinlines	\path(-5.5,0.1)(-5.5,-0.1)	
+				\thinlines	\path(-5,0.1)(-5,-0.1)			\put(-5.25,0.5){\small	$-1$}	\put(-5.25,-0.5){$-\frac{5}{5}$}
+				\thinlines	\path(-4.5,0.1)(-4.5,-0.1)	
+				\thinlines	\path(-4,0.1)(-4,-0.1)			\put(-4.25,-0.5){$\cdots$}
+				\thinlines	\path(-3.5,0.1)(-3.5,-0.1)	
+				\thinlines	\path(-3,0.1)(-3,-0.1)																		\put(-3.25,-0.5){$-\frac{1}{5}$}
+				\thinlines	\path(-2.5,0.1)(-2.5,-0.1)	\put(-2.60, 0.5){\small	$0$}	\put(-2.60,-0.5){$ \frac{0}{5}$}
+				\thinlines	\path(-2,0.1)(-2,-0.1)																		\put(-2.10,-0.5){$\frac{1}{5}$}
+				\thinlines	\path(-1.5,0.1)(-1.5,-0.1)																\put(-1.60,-0.5){$\frac{2}{5}$}
+				\thinlines	\path(-1,0.1)(-1,-0.1)			
+				\thinlines	\path(-0.5,0.1)(-0.5,-0.1)																\put(-0.75,-0.5){$\cdots$}
+				\thinlines	\path(0,0.1)(0,-0.1)
+				\thinlines	\path(0.5,0.1)(0.5,-0.1)		\put(-0.1,0.5){\small	$1$}		\put(-0.1,-0.5){$\frac{5}{5}$}
+				\thinlines	\path(1,0.1)(1,-0.1)																			\put(	0.4,-0.5){$\frac{6}{5}$}
+				\thinlines	\path(1.5,0.1)(1.5,-0.1)		
+				\thinlines	\path(2,0.1)(2,-0.1)																			\put(1.5,-0.5){$\cdots$}
+				\thinlines	\path(2.5,0.1)(2.5,-0.1)		
+				\thinlines	\path(3,0.1)(3,-0.1)				\put(2.9,0.5){\small	$2$}		\put(	2.8,-0.5){$\frac{10}{5}$}
+				\thinlines	\path(3.5,0.1)(3.5,-0.1)
+				\thinlines	\path(4,0.1)(4,-0.1)
+				\thinlines	\path(4.5,0.1)(4.5,-0.1)
+				\thinlines	\path(5,0.1)(5,-0.1)
+				\thicklines \put(6.2,0){$l$}
+		\end{picture}
+\end{center}
+\end{figure}
+$n$を大きくすることによって間隔$1/n$をいくらでも小さくすることができる．したがって，数直線上に
+どんなに短い線分$PQ$をとっても，$P$と$Q$が一致しない限り，$P$と$Q$の間に有理数が無数に存在する．
+このことを，\underline{有理数の集合は数直線上至る所\textbf{稠密}である}，といい表わす．
+
+たとえば$\sqrt{2}$は有理数でない．
+{\small
+
+\証明
+仮に$\sqrt{2}$が有理数であるとすれば，それはある既約分数$m/n$，$n,m$は自然数，に等しい：
+\[
+	\sqrt{2}=\frac{m}{n}.
+\]
+したがって，
+\[
+	2n^2=m^2
+\]
+$m$が奇数ならば$m^2$も奇数となるが，これは$2n^2$が偶数であることに反する．故に$m$は偶数，すなわち
+$m=2k$，$k$は自然数，しがって，
+\[
+	n^2=2k^2.
+\]
+故に$n$も偶数であることになるが，これは$m/n$が既約であることに矛盾する．故に$\sqrt{2}$は有理数であり得ない．
+\■
+}
+
+ 有理数でない実数を\textbf{無理数}という．$\sqrt{2}$が無理数であるから，$r$が有理数ならば$r+\sqrt{2}$でもある．
+$r+\sqrt{2}$の形の無理数の集合が数直線上到る所稠密であることは明らかである．したがって\underline{無理数全体の集合は}
+　\underline{もちろん数直線上到る所稠密である．}
+
+$10$進法を用いれば，実数はすべて整数または小数の形に表される．小数は有限小数と無限小数に分けられる．
+有限小数の意味は明らかであろう．たとえば
+\[
+	0.0625=\frac{625}{10000}=\frac{1}{16}.
+\]
+無限小数のうち，たとえば
+\[
+	1.1216216216	\cdots
+\]
+のように，ある位から先同じ数字の配列が無限に繰り返されるものを\textbf{循環小数}という．
+\begin{align*}
+	1.1216216216	\cdots	&=1.1+0.0216+	0.0000216	+	\cdots	\\
+												&=1.1+0.0216\times	\left(1+\frac{1}{10^3}+\frac{1}{10^6}+\frac{1}{10^9}+\cdots	\right)
+\end{align*}
+であるが，有限小数$1.1$を除けば,残りは0.0216を初項とし$1/10^3$を公比とする無限等比級数である．したがって
+\[
+	1.1216216	\cdots	=1.1+\frac{0.0215}{\displaystyle	1-\frac{1}{10^3}}
+										=1.1+\frac{21.6}{10^3-1}
+										=\frac{11}{10}+\frac{216}{9990}
+										=\frac{11205}{9990}
+										=\frac{83}{74}
+\]
+また,たとえば,循環小数
+\[
+	3.56097	\:	56097	\:	56097	\cdots
+\]
+については
+\begin{align*}
+		3.56097	\:	56097	\cdots	
+&=3	+	0.56097	\times	\left(1+\frac{1}{10^5}+\frac{1}{10^{10}}+\cdots	\right)	\\
+&=3+0.56097		\times	\frac{1}{\displaystyle	1-\frac{1}{10^5}}=3+\frac{56097}{99999}	\\
+&=3+\frac{23}{41}=\frac{146}{41}.
+\end{align*}
+
+一般に，ある位以下$n$この数字からなる同じ配列が無限に繰返される循環小数は有限小数と有限小数を
+初項とし$1/10^n$を公比とする無限等比級数の和である．
+\begin{align*}
+	&	1+\frac{1}{10^n}+\frac{1}{10^{2n}}+\frac{1}{10^{3n}}+\cdots	\\
+	&	=\frac{1}{\displaystyle	1-\frac{1}{10^n}}
+		=\frac{10^n}{10^n-1}
+\end{align*}
+は有理数であるから，したがって，\underline{循環小数はすべて有理数を表わす．}
+
+逆に,\underline{整数でも有限小数でもない有理数は必ず循環小数で表わされる．}
+このことは割算を実行して分数を小数で表わす操作をよく観察すればすぐにわかる．
+たとえば，$89$を$13$で割って見れば
+
+\renewcommand{\arraystretch}{0.7}
+\begin{tabular}{rlll}
+		&																			&	\kern-13pt	\:	6.846153	\,84$\cdots$	&	\\	\cline{2-3}
+13	&	\kern-7pt	\raisebox{4.0pt}{\Large)}	&	\kern-13pt	89													&	\\					
+		&																			&	\kern-13pt	\underline{78}							&	\\				
+		&																			&	\kern-13pt	110													&	$\cdots$①\\
+		&																			&	\kern-13pt	\underline{104}							&	\\
+		&																			&	\kern-13pt	\quad	60										&	$\cdots$②\\
+		&																			&	\kern-13pt	\quad	\underline{52}				&	\\
+		&																			&	\kern-13pt	\quad\:	80									&	$\cdots$③\\
+		&																			&	\kern-13pt	\quad\:\:\,\underline{78}		&	\\
+		&																			&	\kern-13pt	\qquad	20									&	$\cdots$④\\
+		&																			&	\kern-13pt	\qquad	\underline{13}			&	\\
+		&																			&	\kern-13pt	\qquad\:	70								&	$\cdots$⑤\\
+		&																			&	\kern-13pt	\qquad\:	\underline{65}		&	\\
+		&																			&	\kern-13pt	\qquad\quad	50							&	$\cdots$⑥\\
+		&																			&	\kern-13pt	\qquad\quad	\underline{39}	&	\\
+		&																			&	\kern-13pt	\qquad\quad	110							&	$\cdots$⑦\\
+		&																			&	\kern-13pt	\qquad\quad	\underline{104}	&	\\
+		&																			&	\kern-13pt	\qquad\quad\quad	60				&	$\cdots$⑧\\
+		&																			&	\kern-13pt	\qquad\quad\quad	\underline{52}\\
+		&																			&	\kern-13pt	\qquad\quad\quad\:80\\
+\end{tabular}
+のようになるから，
+\[
+	\frac{89}{13}=6.846153\:846153\:846153\cdots.
+\]
+この無限小数の７位以下に６位までの846153と同じ数字の配列が繰り返し並ぶことは割算の⑦段目の余りが①
+段目のあまりと同じ11であることから明らかである．
+小数点以下の数字84615$\cdots$を定める割算の操作は次のようになっている：まず89を13で和って余り11を
+求める．つぎにこのあまり11を10倍110を13で割って商8と余り6を求める．この余り6の10倍60を13で割って
+商4と余り8を求める．この余り8を10倍80を13で割って商6と余り2を求める．$\cdots\cdots$．この
+ようにして求めた商を順次に並べたものが84615$\cdots\cdots$である．
+
+任意の整数でも有限小数でもない分数$q/p$，$p,q$は自然数，を無限小数で表わす割算の操作もまったく同様である．
+すなわち，まず$q$を$p$で割って商$k$と余り$r_1$を求める．つぎに$10r_1$を$p$で割って商$k_1$と余り$r_2$を求め，
+$10r_2$を$p$で割って商$k_2$と余り$r_3$を求め，$\cdots\cdots$，$10r_n$を$p$で割って商$k_n$と余り
+$r_{n+1}$を求め，$\cdots\cdots$．このようにして求まった商$k_1,k_2,\cdots,k_n,\cdots$はそれぞれ
+$0,1,2,\cdots,9$のいずれかであって，分数$q/p$は無限小数：
+\[
+	k.k_1k_2k_3	\cdots	k_n	\cdots=k+\frac{k_1}{10}+\frac{k_2}{10^2}+\cdots+\frac{k_n}{10^n}+\cdots
+\]
+で表わされる．もちろんここで整数$k$も10進法で表わしておくのである．
+
+この無限小数が循環小数であることはつぎのようにして確かめられる：ある$n$に対して$r_n=0$ならば
+$k_n,k_{n+1},k_{n+2},\cdots$はすべて$0$となり，
+\[
+	\frac{q}{p}=k.k_1k_2\cdots	k_{n-1}
+\]
+は有限小数となって，仮定に反する．故に余り$r_n$はすべて$p-1$以下の正整数であって，したがって$p$個
+の余り$r_1,r_2,\cdots,r_p$が全部互いに相異なることはありえない．いい換えれば，この$p$個の余りのうち
+少なくとも2個は一致する：
+\[
+	r_m=r_n,\quad	1	\leqq	m	<	n	\leqq	p.
+\]
+このとき，$n$位以下の数字$k_n,k_{n+1},k_{n+2},\cdots$を定める割算は$m$位以下の数字$k_m,k_{m+1},k_{m+2},\cdots$
+を定める割算と一致し，したがって
+\[
+	k_n=k_m,\quad	k_{n+1}=k_{m+1},\quad	k_{n+2}=k_{m+2},\cdots
+\]
+すなわち，$p/q$は$m$位以下に$k_mk_{m+1}\cdots	k_{n-1}$なる数字の配列が無限に繰り返される
+循環小数となる．
+
+無理数は循環しない無限小数で表わされる．たとえば
+\begin{equation}
+	\sqrt{2}=1.41421356\cdots.
+\end{equation}
+この無限小数表示はつぎのようにして得られる．まず$\sqrt{2}$は$1$と$2$の間にある：
+\begin{figure}[thp]
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,0.3)
+				\thicklines	\path(-4,0)(4,0)
+				\thinlines	\path(-3,0.1)(-3,-0.1)	\put(-3,-0.5){$0$}
+				\thinlines	\path(-1,0.1)(-1,-0.1)	\put(-1,-0.5){$1$}
+				\thinlines	\path(0,0.1)(0,-0.1)		\put(-0.2,0.3){$\sqrt{2}$}
+				\thinlines	\path(1,0.1)(1,-0.1)		\put(1,-0.5){$2$}	
+				\thinlines	\path(3,0.1)(3,-0.1)		\put(3,-0.5){$3$}
+		\end{picture}
+\end{center}
+\end{figure}
+\[
+	1	<	\sqrt{2}	<	2.	\quad
+\]
+1と2の間を10等分して見れば，$\sqrt{2}$は相隣る等分点1.4と1.5の間に入る：
+\begin{figure}[thp]
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,0.3)
+				\thicklines	\path(-4,0)(4,0)
+				\thinlines	\path(-3,0.1)(-3,-0.1)			\put(-3,-0.5){$1$}
+				\thinlines	\path(-2.5,0.1)(-2.5,-0.1)	
+				\thinlines	\path(-2,0.1)(-2,-0.1)
+				\thinlines	\path(-1.5,0.1)(-1.5,-0.1)	
+				\thinlines	\path(-1,0.1)(-1,-0.1)			\put(-1.2,-0.5){\small	$1.4$}
+				\thinlines	\path(-0.9,0.25)(-0.9,-0.1)	\put(-1.2,0.3){$\sqrt{2}$}
+				\thinlines	\path(-0.5,0.1)(-0.5,-0.1)	\put(-0.6,-0.5){\small	$1.5$}
+				\thinlines	\path(0.0,0.1)(0.0,-0.1)
+				\thinlines	\path(0.5,0.1)(0.5,-0.1)
+				\thinlines	\path(1,0.1)(1,-0.1)
+				\thinlines	\path(1.5,0.1)(1.5,-0.1)
+				\thinlines	\path(2,0.1)(2,-0.1)	\put(2,-0.5){$2$}
+		\end{picture}
+\end{center}
+\end{figure}
+\[
+	1.4	<	\sqrt{2}	<	1.5.	\quad
+\]
+1.4と1.5の間を10等分して見れば，$\sqrt{2}$は相隣る等分点1.41と1.42の間に入る：
+\begin{figure}[thp]
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,0.3)
+				\thicklines	\path(-4,0)(4,0)
+				\thinlines	\path(-3,0.1)(-3,-0.1)			\put(-3.3,-0.5){$1.4$}
+				\thinlines	\path(-2.5,0.1)(-2.5,-0.1)	\put(-2.7,-0.3){\tiny$1.41$}
+				\thinlines	\path(-2.4,0.25)(-2.4,-0.1)	\put(-2.6,0.3){$\sqrt{2}$}
+				\thinlines	\path(-2,0.1)(-2,-0.1)			\put(-2.2,-0.3){\tiny$1.42$}
+				\thinlines	\path(-1.5,0.1)(-1.5,-0.1)	
+				\thinlines	\path(-1,0.1)(-1,-0.1)			
+				\thinlines	\path(-0.5,0.1)(-0.5,-0.1)	
+				\thinlines	\path(0.0,0.1)(0.0,-0.1)
+				\thinlines	\path(0.5,0.1)(0.5,-0.1)
+				\thinlines	\path(1,0.1)(1,-0.1)
+				\thinlines	\path(1.5,0.1)(1.5,-0.1)
+				\thinlines	\path(2,0.1)(2,-0.1)	\put(1.9,-0.5){$1.5$}
+		\end{picture}
+\end{center}
+\end{figure}
+\[
+	1.41	<	\sqrt{2}	<	1.42.	\quad
+\]
+さらに1.41と1.42の間を10等分してみれば，$\sqrt{2}$は1.414と1.415の間に入る：
+\[
+	1.414	<	\sqrt{2}	<	1.415.
+\]
+この操作を繰り返すことによって無限小数表示(1.1)を得るのである．
+
+任意に実数$\alpha$の無限小数表示も，$\alpha$が整数または有限小数である場合を除けば，
+まったく同様にして得られる．すなわち，まず
+\[
+	k	<	\alpha	<	k+1
+\]
+なる整数$k$を定め，つぎに
+\begin{align*}
+		k+\frac{k_1}{10}																		&<	\alpha	<	k+\frac{k_1+1}{10},	\\
+		k+\frac{k_1}{10}+\frac{k_2}{10^2}										&<	\alpha	<	k+\frac{k_1}{10}+\frac{k_2}{10^2},	\\
+		k+\frac{k_1}{10}+\frac{k_2}{10^2}+\frac{k_3}{10^3}	&<	\alpha	<	k+\frac{k_1}{10}+\frac{k_2}{10^2}+\frac{k_3+1}{10^3},	\\
+	&\cdots\cdots	\\
+	&\cdots\cdots	\\
+\end{align*}
+となるように数字$k_1,k_2,k_3,	\cdots$を順次に定めていくこと無限小数表示：
+\begin{equation}
+	\alpha=k.k_1k_2k_3k_4\cdots
+\end{equation}
+を得る．$\alpha$が整数または有限小数の場合も含めるには，上の一連の不等式をつぎの一連の不等式で置き換えればよい：
+\begin{align*}
+		k	\leqq	\alpha	&\leqq	k+1,	\\
+		k+\frac{k_1}{10}																		&\leqq	\alpha	<	k+\frac{k_1+1}{10},	\\
+		k+\frac{k_1}{10}+\frac{k_2}{10^2}										&\leqq	\alpha	<	k+\frac{k_1}{10}+\frac{k_2}{10^2},	\\
+		k+\frac{k_1}{10}+\frac{k_2}{10^2}+\frac{k_3}{10^3}	&\leqq	\alpha	<	k+\frac{k_1}{10}+\frac{k_2}{10^2}+\frac{k_3+1}{10^3},	\\
+	&\cdots\cdots	\\
+	&\cdots\cdots	\\
+\end{align*}
+$\alpha$が負のときには，(1.2)において$kh$は負の整数である．このとき，$h_n=9-k_n$とおけば，
+\[
+	0.k_1k_2k_3k_4\cdots	=	+0.h_1h_2h_3h_4\cdots=0.9999\cdots=1
+\]
+であるから
+\begin{equation}
+	\alpha=k-0.h_1h_2h_3h_4\cdots	.
+\end{equation}
+したがって，$h=-k-1$とおけば，$h$は$0$または正の整数であって
+\begin{equation}
+	k.k_1k_2k_3k_4k_5\cdots
+\end{equation}
+を，たとえば
+\[
+	1.0101101110111101111101\cdots
+\]
+なる実数$\alpha$が存在することを当然のこととして認めてきた．すなわち，(1.4)の小数$n+1$位以下を
+切り捨てて得られる有限小数を
+\[
+	a_nk.k_1k_2k_3	\cdots	k_n
+\]
+とすれば，不等式：
+\[
+	a_n	<	\alpha	<	a_n	+	\frac{1}{10^n},	\cdots	n=1,2,3,4,\cdots,
+\]
+がすべて成り立つような実数$\alpha$が存在する事を認めてきたのである．数直線上で考えれば，このことは，
+すべえの$n=1,2,3,4,\cdots$について，
+
+\begin{figure}[thp]
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,0.3)
+				\thicklines	\path(-4,0)(4,0)
+
+				\thinlines	\path(-4,0.1)(-4,-0.1)
+				\thinlines	\path(-2,0.1)(-2,-0.1)		\put(-2.1,-0.3){$a_n$}
+				\thinlines	\path(0,0.1)(0,-0.1)			\put(-0.1,0.3){$\alpha$}
+				\thinlines	\path(2.0,0.1)(2.0,-0.1)	\put(1.7,-0.3){\small	$a_n+1/10^n$}
+				\thinlines	\path(4,0.1)(4,-0.1)
+		\end{picture}
+\end{center}
+\end{figure}
+
+点$a_n$と$a_n+1/10^n$の間に入る点$\alpha$が存在することを意味する．
+実数は線分$OE$の長さを単位として測った数直線上の2点$O$，$A$の距離に$\pm$の符号をつけたものと考えてきたから，
+実数$\alpha$の存在を示すためには，数直線上にこのうような点$\alpha$が存在することを証明しなければならない．
+このためには直線とは如何なるものかが明らかでなければならない．ここに到ってわれわれは高校数学が
+直線の明確な定義に，したがってまた実数の明確な定義に欠けていたことに気がつくのである．

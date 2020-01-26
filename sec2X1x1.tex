@@ -1,0 +1,311 @@
+\chapter{関数}
+
+\section{関数}
+\label{sec2x1}
+$D	\subset	\R$を実数の集合としたとき，$D$に属するおのおのの実数$\xi$にそれぞれ一つの
+実数$\eta$を対応させる対応を$D$で定義された\textbf{関数}(function)という．$f$を$D$で
+定義された関数としたとき，$f$によって$\eta	\in	D$に対応する実数$\eta$を$\xi$における
+$f$の\textbf{値}(value)とよび，$f(\xi)$で表わす：
+\[
+	f(\xi)	=	\eta.
+\]
+$D$を関数$f$の\textbf{定義域}(domain)，$f$の値$f(\xi)$の全体の集合：
+\[
+	\{	f(\xi)	\:	|	\:	\xi	\in	D	\}
+\]
+を$f$の\textbf{値域}(range)という．$D$の任意の部分集合$S$に対して，$S$に属する実数$\xi$
+における$f$の値$f(\xi)$の全体の集合で表わす：
+\[
+	f(S)	=	\{f(\xi)	\:	|	\:	\xi	\in	S	\}.
+\]
+この記法を用いれば，$f$の値域は$f(D)$で表わされる．
+
+関数$f$を$f(x)$で表わし，$x$を\textbf{変数}(variable)，$D$を$x$の変域，
+$f(x)$を\textbf{$x$の関数}という．$D$を変域とする変数$x$は$D$に属する実数を
+代表する記号であって，$x$を$D$に属する特定の実数$\xi$で置き換えたとき$f(\xi)$は
+$\xi$における関数$f(x)$の値を表わす．あるいは，変数$x$は$D$に属する
+任意の実数$\xi$を代入すべき場所を示す記号，すなわち，関数$f$を
+$f(\:\:)$と書いたときの$(\:\:)$を表わす記号と考えてよい．一般の習慣に従って，
+以下，簡単のため，$D$\underline{に属する実数を変数と同じ文字}$x$\underline{で表わす}.
+
+$y=f(x)$とおいて$y$は$x$の関数であるといい，$x$を\textbf{独立変数}(independent	variable)，
+$y$を\textbf{従属変数}(dependent	variable)ということがある．この‘独立変数’，‘従属変数’
+という術語は，かつて量$x$が変動するのに伴って変動する量$y$を$x$の‘函数’と定義した時代の
+名残であって，そのニュアンスを現代式に割切って明確に説明することは難しい．強いていえば，
+$x$は$f$の定義域$D$に属する任意の実数$\xi$を代入すべき場所を示す記号，$y$は$x$に
+$\xi$を代入したとき$f(\xi)$を代入すべき場所を示す記号である，とでも考えるのであろう．
+しかし“$y$は$x$の関数である”というとき，“$y$は$x$が変動するのに伴って変動する量である”
+という考えがその背景をなしているのであって，$D$に属する実数と変数を同じ文字$x$で表わす習慣も
+“$x$は変動する量である”という考えが背景にあることの表われである．$f(x)$と書いたとき
+$x$が変数であるか$f$の定義域に属する一つの実数であるかは普通その文脈によって明らかであって
+混乱を生じる恐れはない．
+
+\例{2.1}
+数列$\{a_n\}$が与えられたとき，$f(n)=a_n$とおけば，自然数全体の集合$\N$で定義された
+関数$f$を得る．数列はすなわち$\N$を定義域とする関数に他ならない．
+
+\例{2.2}
+$0	<	x	<	1$なる実数$x$について，$x$が無理数のときは$f(x)=0$，$x$が有理数のときは
+$x$を既約分数：$x=q/p$，$p,q$は互いに素な自然数，の形に表わして$f(x)=1/p$とおけば，
+開区間$(0,1)$で定義された関数$f$を得る．$f$の値域は
+$\{0,1/2,1/3,1/4,\cdots,	1/n	,	\cdots\}$である．
+
+\例{2.3}
+$D$を$0	<	x	<	1$なる有理数$x$全体の集合として$x	\in	D$に対して，例2.2と同様に，
+$x$を既約分数：$x=q/p$で表わして$f(x)=1/p$とおけば，$D=\Q	\cap	(0,1)$を定義域とする
+関数$f$が定まる．$f$の値域$\{1/2,1/3,1/4,\cdots\}$である．――
+
+本章では，主として，区間または区間から有限個の点を除いて得られる集合で定義された関数を
+考察する．関数$f$が，たとえば，区間$I$から1点$a$を除いた集合：$I-\{a\}$で定義されている
+とき，$f$を$I$で$a$を除いて定義された関数という．さらに，$f$が$I$または$I-\{a\}$で
+定義されているとき，$f$を$I$で高々$a$を除いて定義された関数ということにする．
+
+\subsubsection{関数の極限}　
+数列の極限の明確な定義は定義1.4で述べた．関数の極限についても高校数学で学んだのであるが，
+その明確な定義を定義1.4と同様な方式で述べれば，それはつぎのようになる：
+
+\定義{2.1}
+区間$I$で高々点$a	\in	I$を除いて定義された関数$f(x)$が与えられたとし，$\alpha$を実数とする．
+任意の正の実数$\varepsilon$に対応して正の実数$\delta(\varepsilon)$が定まって
+\begin{equation}
+	0<|x-a|<\delta(\varepsilon)	\quad	\text{なるとき}	\quad
+	|f(x)-\alpha|	<	\varepsilon
+\end{equation}
+となるならば，$x	\rightarrow	a$のとき$f(x)$は$\alpha$に収束する，$\alpha$は
+$x	\rightarrow	a$のときの$f(x)$の極限値であるといい，
+\[
+	\lim_{x\rightarrow	a}f(x)	=	\alpha,
+\]
+あるいは
+\[
+	x	\rightarrow	a	\quad	\text{のとき}	\quad	f(x)	\rightarrow	\alpha
+\]
+と書く．
+“$x	\rightarrow	a$のとき$f(x)	\rightarrow	\alpha$”を
+“$f(x)	\rightarrow	\alpha(x	\rightarrow	a)$”と略記することもある．
+“$x	\rightarrow	a$のとき”は“$x$が$a$に近づくとき”と読むのであろう．厳密にいえば(2.1)は
+\[
+	0	<	|x-a|	<	\delta(\varepsilon),	\quad	x	\in	I	\quad	\text{なるとき}
+	|f(x)-\alpha|	<	\varepsilon
+\]
+と書くべきであるが，$x	\not\in$のときには$f(x)$が定義されていないため
+(2.1)は無意味である．(2.1)が意味をもつためには$x	\in	I$でなければならないから
+‘$x	\in	I$’を省略したのである．以下，同様に，$x	\not\in	I$
+\underline{のとき無意味な場合には条件}：$x	\in	I$\underline{を省略することにする}．
+――
+
+関数の極限と数列の極限の間には密接な関係がある．まず：
+
+$x\rightarrow	a$ \underline{のとき}$f(x)$\underline{が}$\alpha$\underline{に収束するならば，}
+ $a$ \underline{に収束するすべての数列} $\{x_n\}$，$x_n	\ne	a$，\underline{に対して数列 }
+ $\{f(x_n)\}$
+\underline{は}$\alpha$\underline{に収束する}．
+\証明
+$\{x_n\}$が$a$に収束しているから，任意の正の実数$\delta$に対応して$n_0(\delta)$が定まって
+\[	
+	n	>	n_0(\delta)	\quad	\text{のとき}	\quad	|x_n-a|	<	\delta
+\]
+となる．故に，(2.1)により，任意の正の実数$\varepsilon$に対して
+\[
+	n	>	n_0(\delta(\varepsilon))	\quad	\text{のとき}	\quad
+	|f(x_n)-\alpha|	<	\varepsilon.
+\]
+すなわち，$\{f(x_n)\}$は$\alpha$に収束する．
+\■
+
+$a$\underline{に収束するすべての数列}$\{x_n\}$，$x_n	\ne	a$，\underline{に対して数列}
+$\{f(x_n)\}$\underline{が収束するならば}，$x\rightarrow	a$
+\underline{のとき}$f(x)$　\underline{は収束する}．
+\証明
+仮定により，$a$に収束するおのおのの数列$\{x_n\}$，$x_n	\ne	a$，対して
+$\displaystyle	\alpha=\lim_{n\rightarrow\infty}	f(x_n)$が定まるが，
+この極限$\alpha$は実は数列$\{x_n\}$によらない．なぜかといえば，$\{x_n\}$，
+$x_n	\ne	a$，$\{y_n\},	\:	y_n	\ne	a$，が共に$a$に収束するならば，
+$x_n$と$y_n$を交互に並べた数列：$x_1,y_1,x_2,y_2,x_3,y_3,\cdots,x_n,y_n	\cdots$
+も$a$に収束する
+\footnote{
+ $\forall \varepsilon >0$に対して$\exists n_1, \exists n_2$が存在して，
+$ n > n_1 \Rightarrow | x_n - a | < \varepsilon , n > n_2 \Rightarrow | y_n - a | < \varepsilon$
+である．$n_1,n_2$の大きい方を$n_0$と定めれば，$z_n$が$x_n$であろうと$y_n$であろうと
+$n > n_0 \Rightarrow | z_n -a | < \varepsilon$．
+}
+．この数列を$\{z_n\}$で表わせば，
+\[
+	\lim_{n\rightarrow\infty}f(y_n)	=\lim_{n\rightarrow\infty}f(z_n)
+																	=\lim_{n\rightarrow\infty}f(x_n)
+																	=	\alpha.
+\]
+\footnote{
+収束する数列（$f(z_n)$）の部分列（$f(y_n),f(x_n)$）は同じ値に収束する．
+（\S \ref{sec1x4x3}）．
+}
+すなわち，$\displaystyle	\alpha=\lim_{n\rightarrow\infty}f(x_n)$は$\{x_n\}$によらない．
+
+$x	\rightarrow	a$のとき$f(x)$が$\alpha$に収束することを証明するために，$x\rightarrow	a$の
+とき$f(x)$が$\alpha$に収束しなかったと仮定してみよう．そうすれば，或る正の実数
+$\varepsilon_0$に対してはどんな正の実数$\delta$をとっても
+\[
+	0	<	|	x-a|	<	\delta	\quad	\text{ならば}	\quad	|f(x)-\alpha|	<	\varepsilon_0
+\]
+とはならない，すなわち
+\[
+	0	<	|	x-a|	<	\delta	\quad	\text{でかつ}	\quad	|f(x)-\alpha|	\geqq	\varepsilon_0
+\]
+なる点$x$が存在する．$\delta	=	1/n$，$n$は自然数，とおけば，
+\[
+	0	<	|	x_n-a|	<	\frac{1}{n},	\quad	|f(x_n)-\alpha|	\geqq	\varepsilon_0
+\]
+なる点$x_n$が存在することになる．このようにして得られた数列$\{x_n\}$，
+$x_n	\ne	a$，は$a$に収束するから
+$\displaystyle	\lim_{n\rightarrow\infty}f(x_n)	=	\alpha$であるが，
+これは$|f(x_n)-\alpha|	\geqq	\varepsilon_0$に矛盾する．
+\■
+
+\subsubsection{Cauchyの判定法}
+　関数の収束についても，数列の場合と同様なCauchyの判定法がある：
+
+\定理{2.1}(Cauchyの判定法)　
+$f(x)$を区間$I$で高々点$a	\in	I$を除いて定義された関数とする．
+$x\rightarrow	a$のとき$f(x)$が収束するための必要かつ十分な条件は，
+任意の正の実数$\varepsilon$に対応して正の実数$\delta(\varepsilon)$が定まって
+\begin{equation}
+	0	<	|x-a|	<	\delta(\varepsilon),	\quad
+	0	<	|y-a|	<	\delta(\varepsilon),	\quad	\text{ならば}	\quad
+	|f(x)-f(y)|	<	\varepsilon
+\end{equation}
+となることである．
+
+\証明
+
+必要性：
+$\displaystyle	\lim_{n\rightarrow\infty}f(x)=\alpha$とする．
+定義より任意の正の実数$\varepsilon	>	0$に対応する$\varepsilon/2$に対しても，
+ある正の実数$\delta(\varepsilon	/2)	>0$が存在して，
+\begin{align*}
+	0	<	|x-a|	<	\delta\left(\frac{\varepsilon}{2}\right)	\Rightarrow	|f(x)-\alpha|<\frac{\varepsilon}{2}	\\
+	0	<	|y-a|	<	\delta\left(\frac{\varepsilon}{2}\right)	\Rightarrow	|f(y)-\alpha|<\frac{\varepsilon}{2}	\\
+\end{align*}
+すなわち
+\[
+	|f(x)-f(y)|	=				|f(x)-\alpha	+	\alpha	-	f(y)|
+							\leqq		|f(x)-\alpha|	+	|\alpha	-	f(y)|
+							<				\frac{\varepsilon}{2}	+	\frac{\varepsilon}{2}	=	\varepsilon.
+\]
+十分性：
+十分なことを証明するために，この条件が満たされていると仮定して，
+$a$に収束する任意の数列$\{x_n\}$，$x_n	\ne	a$，をとる．
+任意の正の実数$\varepsilon	>	0$に対して仮定(2.2)より$\delta	>	0$が存在するから，
+$a$に収束する$\{x_n\}$においても$\delta	>	0$，$\delta$に対して自然数$n_0(\delta)$が定まって
+\[
+	n	>	n_0(\delta)	\quad	\text{ならば}	\quad	|x_n-a|	<	\delta
+\]
+となっているから，(2.2)により，任意の正の実数$\varepsilon$に対して
+\[
+	m,n	>	n_0(\delta(\varepsilon))	\quad	\text{ならば}\quad	
+	|f(x_m)	-	f(x_n)|	<	\varepsilon
+\]
+となる．故に，数列の収束に関するCauhyの判定法により，数列$\{f(x_n)\}$は収束する．
+したがって，上述の結果により，$x	\rightarrow	a$のとき$f(x)$は収束する．
+\■
+
+関数の極限についても数列の極限の場合と同じ演算方法が成り立つ：
+$x	\rightarrow	a$\underline{のとき}	$f(x),g(x)$\underline{が共に収束する}\underline{}
+\underline{ならば，その1次結合}$\:	c_1	f(x)	+	c_2	g(x)$，$c_1,c_2$
+\underline{は定数，および積}$\:	f(x)g(x)	\:$\underline{も収束し，}
+\begin{align*}
+	\lim_{n\rightarrow\infty}(c_1	f(x)+c_2	g(x))
+		&=	c_1	\lim_{n\rightarrow\infty}	f(x)+c_2	\lim_{n\rightarrow\infty}g(x),	\\
+	\lim_{n\rightarrow\infty}(f(x)g(x))
+		&=	\lim_{n\rightarrow\infty}	f(x)	\cdot	\lim_{n\rightarrow\infty}g(x).\\
+\end{align*}
+\underline{さらに}
+$\displaystyle	\lim_{x	\rightarrow	a}g(x)	\ne	0$
+\underline{ならば，商}$f(x)/g(x)$\underline{も収束し，}
+\[
+	\lim_{x	\rightarrow	a}	\left(\frac{f(x)}{g(x)}\right)
+	=
+	\frac{\displaystyle	\lim_{x	\rightarrow	a}	f(x)}{
+				\displaystyle	\lim_{x	\rightarrow	a}	g(x)}.
+\]
+これらの演算の法則を証明するには上記の関数の極限と数列の極限の関連をもちいて
+数列の極限の演算の法則に帰着させればよい．――
+
+上の定義2.1において，たとえば$I=[a,b)$なるときには，
+$x	\in	I$と考えているから，(2.1)
+\[
+	0<|x-a|	<	\delta(\varepsilon)	\quad	\text{なるとき}	\quad	|f(x)-\alpha|	<	\varepsilon
+	\quad	\text{(2.1)}
+\]
+は
+\[
+	0	<	x-a	<	\delta(\varepsilon )	\quad	\text{のとき}
+	|f(x)-\alpha|	<	\varepsilon
+\]
+と同値であって，したがって$\displaystyle	\alpha =\lim_{x	\rightarrow	a}f(x)$は，
+$x$が右から$a$に近づくときの$f(x)$の極限値である．
+\begin{figure}[htb]
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,2)
+
+				\thicklines	\path(-4,1)(6,1)
+
+				\thicklines \put(-3.0,0.9){$[$}
+				\thicklines \put(-3.0,0.5){$a$}
+				
+				\thicklines \put(-1.0,0.9){$|$}
+				\thicklines \put(-1,1.25){$x$}
+				
+				\thicklines \put(3,0.4){$b$}
+				\thicklines \put(3,0.9){$)$}
+				
+
+		\end{picture}
+\end{center}
+\end{figure}
+$f(x)$の極限値がある．$a$が$I$のない点であるときにも，$x$が右から，あるいは
+左から$a$に近づくときの極限値を考察することがある．すなわち，任意の正の実数
+$\varepsilon$に対応して正の実数$\delta(\varepsilon)$が定まって
+\[
+	0	<	x-a	<	\delta(\varepsilon)	\quad	\text{のとき}	\quad	|f(x)-\alpha|	<	\varepsilon
+	\quad\quad	\text{(2.1)}^{+}
+\]
+となるならば，$\alpha$は$x$が右側から近づくときの$f(x)$の極限値であるといい，
+\begin{equation}
+	\alpha=\lim_{x	\rightarrow	a+0}	f(x)
+\end{equation}
+と書く．$x$が左から$a$に近づくときの$f(x)$の極限値
+\[
+	\beta	=	\lim_{x	\rightarrow	a-0}	f(x)
+\]
+も同様に定義する．
+関数の極限値として$\pm	\infty$の意味も数列の場合と同様である．例えば，任意の実数$\mu$
+の実数に対応して正の実数$\delta(\mu)$が定まって
+\[
+	|x-a|	<	\delta(\mu)	\quad	\text{ならば}	\quad	f(x)	>	\mu
+\]
+となるとき，関数$f(x)$は$x	\rightarrow	a$のとき$+	\infty$に発散するといい，
+\[
+	\lim_{x	\rightarrow	a}	f(x)	=	+	\infty
+\]
+と書く．また，任意の正の実数$\varepsilon $に対応して実数$\nu (\varepsilon )$が定まって
+\[
+	x	>	\nu (\varepsilon )	\quad	\text{ならば}	\quad	|f(x)	-	\alpha|	<	\varepsilon 
+\]
+となるとき，$f(x)$は$x	\rightarrow	+	\infty$のとき$\alpha $に収束するといい，
+\[
+	\lim_{x	\rightarrow	+\infty}	f(x)	=	\alpha 
+\]
+と書く．
+
+\textbf{関数のグラフ}
+
+一般に実数の場合$D	\subset	\R$で定義された関数$f$に対して，$x	\in	D$と
+$x$における$f$の値$f(x)$の対：$(x,f(x)$の全体から成る$\R	\times	\R	=	\R^2$
+の部分集合を関数$f$の\textbf{グラフ}(graph)といい，$G_f$で表わす：
+\[
+	G_f	=	\{\:	(x,f(x)	\in	\R^2	\:	|	\:	x	\in	D	\:\}.
+\]
+高校数学で学んだグラフは曲線かまたはいくつかの曲線を継ぎ合わせたものであったが，
+例えば上記例2.3の関数$f(x)$のグラフ$G_f$はばらばらな点の集合であって$G_f$の図は
+描き切れない．

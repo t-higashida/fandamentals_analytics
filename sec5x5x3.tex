@@ -1,0 +1,131 @@
+\subsection{指数関数}
+
+$D	\subset	\C$を複素平面上の点集合とする.
+$D$に属する各点$z$にそれぞれ一つの複素数$w$を対応させる対応
+$f$を$D$で定義された関数といい，$f$によって$z$に対応する
+$z$を$f(z)$で表わす．
+\S	\ref{sec2x1}で述べた$D	\subset	\R$なる揚合と同様に，
+$z$を$D$に属する点を代表する変数と考え，
+関数$f$を$f(z)$と書く．
+そして$f(z)$を複素変数$z$の関数という．
+また$D$を$f(z)$の定義域，
+$f(D)	=	\{	f(z)	\:	|	\:	z	\in	D	\}$を
+$f	(z)	$の値域という．――
+　
+
+複素数$c_n$を係数とる$z$の巾級数$\displaystyle	\sum_{n=0}^{\infty}	c_n	z^n$が与えられたとし，
+その収束半径$r$が$0	<	r	\leqq	+	\infty$であるとすれば，
+定理5.15により，$|z|	<	r$のとき
+$\displaystyle	\sum_{n=0}^{\infty}	c_n	z^n$は絶対収束する．
+故に
+\[
+	f(z)	=	\sum_{n=0}^{\infty}	c_n	z^n
+\]
+とおけば，$f(z)$は$D=\{	z	\in	\C	\:	|	\:	|z|	<	r	\:	\}$
+で定義された複素変数$z$の関数となる
+\footnote{
+絶対収束しなければ関数とはならない．
+}．
+$r	=	+	\infty$である揚合には
+$D	=	\C,	r	<	+	\infty$なる場合には$D$は
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	c_n	z^n$の収束
+円の内部である．
+
+\S\ref{sec2x3x2},（\ref{eq2x11}）で‘$e$の$z$乗’を
+\[
+	e^z	=	\lim_{n\rightarrow\infty}
+\left(	1+	\frac{z}{n}
+\right)^n
+=	\sum_{n=0}^{\infty}	\frac{z^n}{n!}
+\]
+と定義したが，\S	\ref{sec1x6x6}で証明したように，この右辺の巾級数は複素平面上のす
+べての点$z$において絶対収束する
+\footnote{（\ref{eq1x23}のあたり)}．
+故にその収束半径$r$は$+\infty$である．$\C$上で
+定義された複素変数$z$の関数
+$\displaystyle	e^z	=	\sum_{n=0}^{\infty}	z^n	/	n!$
+を指数関数という．
+実変数の指数関数$e^x$は定義域を実軸$\R$に制限したものである．
+
+任意の複素数$z,w$に対して等式：
+\begin{equation}
+	e^z	e^w	=	e^{z+w}	
+\label{eq5x51}
+\end{equation}
+が成り立つ.	\証明
+$\displaystyle	e^z	=	\sum_{n=0}^{\infty}	z^n	/	n!,	
+e^w	=	\sum_{n=0}^{\infty}	w^n	/	n!$
+であるから，
+\S	\ref{sec5x1x1}で証明した
+分配法則（\ref{eq5x9}）により
+\begin{align*}
+	e^z	e^w
+=	\sum_{n=0}^{\infty}
+\left(	\frac{z^n}{n!}
+		+	\frac{z^{n-1}w}{(n-1)!1!}
+		+	\cdots
+		+	\frac{z^{n-k}w^k}{(n-k)!k!}
+		+	\cdots
+		+	\frac{w^n}{n!}
+\right)
+\end{align*}
+故に，2項定理により
+\[
+	e^z	e^w	
+=	\sum_{n=0}^{\infty}	\frac{1}{n!}	(z+w)^n	=	e^{z+w}
+\]
+\■
+$e(\theta)	=	e^{i	\theta}$に関する等式
+（\ref{eq2x15}）：
+$e(\theta)	e(\varphi)	=	e(\theta	+	\varphi)$
+はこの等式（\ref{eq5x51}）の特別な揚合である，
+
+任意の複素数$z$は
+\begin{equation}
+	z=re^{i	\theta},	\quad	
+	r=|z|,	\quad
+	e^{i\theta}	=	\cos	\theta	+	i	\sin	\theta,	\quad
+	\text{$\theta$は実数},
+\label{eq5x52}
+\end{equation}
+と表わされる．\証明
+$z=0$なる揚合には（\ref{eq5x52}）は明らかであるから,
+$z	\ne	0	$として
+$r	=	|z|$とおく．
+$|z	/	r	|	=1$であるから，
+\S	\ref{sec2x4}により，
+$	z	/	r	=	e	(	\theta)	=	e^{i\theta}$なる実数
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=60mm,height=45mm]{p244.bmp}
+	\label{p244}
+\end{figure}
+$\theta$が存在する
+\footnote{	\small
+\S	\ref{sec2x4x1}（\ref{eq2x15}）あたりの記述では
+「逆に，\underline{$\R$を定義域}，単位円周：$\{e	\in	\C	|	|e|=1\}$を値域とする連続関数$e(\theta)$」
+が存在することを証明した．
+よって任意の単位円周上の点$e^{i\theta}$に対して，ある実数上の点$\theta	\in	\R$が存在する．
+}．
+故に$z	=	r	e^{i	\theta}$．\■
+
+$\theta$を複素数$z=	r	e^{i	\theta}	,	z	\ne	0$，の\textbf{偏角}
+（argument,arnplitude）という．
+
+$z	=	x	+	i	y$，$x,y$は実数，とおけば，（\ref{eq5x51}）により，
+\[
+	e^z	=	e^x	e^{i	y}	=	e^x	(\cos	y	+	i	\sin	y).
+\]
+故に$	|	e^z	|	=	e^x	>	0$，したがって$e^z	\ne	0$．逆に任意の複素数
+$w	,	w	\ne	0$，は$w	=	e^z$と表わされる．
+なぜなら，（\ref{eq5x52}）により$w	=	|	w|	e^{i	\theta},	\theta$は実数，
+したがって，$z	=	\log	|w||	+	i	\theta$とおけば
+\footnote{
+具体的な手順を示している．
+}
+\[
+	e^z	=		e^{\log	|	w|}	e^{i	\theta}	=	|w|	e^{i	\theta}	=	w
+\]
+となるからである．すなわち
+\underline{指数関数$e^z$の値域は複素平面$\C$から原点$0$を除い
+たもの：$\C^*	=	\C	-	\{0	\}$}である．

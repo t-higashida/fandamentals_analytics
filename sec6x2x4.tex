@@ -1,0 +1,70 @@
+\subsection{関数の級}
+\label{sec6x2x4}
+$f(x,y)$を或る\underline{領域}$D$で定義された$2$変数$x,y$の関数とする．
+$f(x,y)$が連続微分可能でその偏導関数$f_x(x,y), f_y(x,y)$も連続微分可能ならば（微分可能で導関数が連続，滑らかならば）
+$f(x,y)$は2回連続微分可能であるという．
+$f(x,y)$が2回連続微分可能でその2次偏導関数
+$f_{xx}(x,y) , f_{xy}(x,y) , f_{yx} (x,y) , f_{yy}(x,y)$
+がすべて連続微分可能ならば $f(x,y)$は3回連続微分可能であるという.
+一般に$f(x,y)$が$n-1$回連続微分可能でその$n-1$次偏導関数がすべて連続微分可能ならば
+$f(x,y)$は$n$回連続微分可能であるという．$f(x,y)$が$n$回連続微分可能であるということは，
+すなわち，$f(x,y)$の$n$次までの偏導関数がすべて存在して，それらすべてが連続であることに他ならない.
+$n$回連続微分可能な関数を$\mathcal{C}^n$級の関数とよぶ．
+
+同様に，$f(x,y)$が微分可能でその偏導関数$f_x(x,y) , f_y(x,y)$も微分可能ならば
+$f(x,y)$は2回微分可能であるといい，$\cdots\cdots$，一般に$f(x,y)$が$n-1$回微分
+可能でその$n-1$次偏導関数がすべて微分可能ならば$f(x,y)$は$n$回微分可能であるという．
+微分可能な関数は連続であるから，$n$回微分可能な関数は$n-1$回連続微分可能であって，
+\underline{$n$回連続微分可能な関数との違いは$n$次偏導関数が必ずしもすべて連続であるとは限らない点}だけである．
+\S \ref{sec3x4x6}で1変数の関数について述べたように，現代の数学では$n$回微分可能な関数よりも
+$n$回連続微分可能な関数を扱うことが多い．$n$次までの偏導関数の存在を仮定する以上はその連続性まで
+仮定する方が自然であると考えられるからである．
+
+$f(x,y)$が何回でも連続微分可能であるとき$f(x,y)$は無限回微分可能であるといい，
+$f(x,y)$を$\mathcal{C}^\infty$級の関数，あるいは$\mathcal{C}^\infty$関数とよぶ.
+何回でも微分可能な関数は何回でも連続微分可能であるから，無限何微分可能といっても
+無限回連続微分可能といっても同じことである．
+
+以上$f(x,y)$の定義域が領域$D$であるとしたが，領域$D$が$f(x,y)$の定義域の部分集合である揚合，
+$f(x,y)$の$D$への制限$f_D(x,y)$が$n$回微分可能，
+$n$回連続微分可能，$\mathcal{C}^\infty$級の関数，等であるとき$f(x,y)$は$D$で
+$n$回微分可能，$D$で$n$回連続微分可能，$D$で$\mathcal{C}^\infty$級の関数，等であるということはいうまでもない．
+
+或る領域で定義された2変数$x,y$の関数$z=f(x,y)$が$2$回連続微分可能，
+あるいは$2$回微分可能ならば，定理 6.7，あるいは定理6.8 により，$f_{yx}(x,y) = f_{xy}(x,y)$，
+すなわち
+\[
+	\frac{\partial ^2 z}{\partial y \partial x} = \frac{\partial ^2 z}{\partial x \partial y}
+\]
+である．故に$z	=	f(x,y)$の2次偏導関数は
+\[
+	\frac{\partial ^2 z}{\partial x^2}	=	f_{xx} (x,y), \quad
+  \frac{\partial ^2 z}{\partial x \partial y}	=	f_{xy} (x,y), \quad
+	\frac{\partial ^2 z}{\partial y^2}	=	f_{yy}(x,y)
+\]
+の三つとなる．
+$z=f(x,y)$が3回連続微分可能，あるいは3回微分可能ならば
+\begin{align*}
+	\frac{\partial }{\partial y}	\frac{\partial ^2 z}{\partial x^2}
+=	\frac{\partial }{\partial y}	\frac{\partial }{\partial x}	\frac{\partial z}{\partial x}
+=	\frac{\partial }{\partial x}	\frac{\partial }{\partial y}	\frac{\partial z}{\partial x}
+=	\frac{\partial }{\partial x}	\frac{\partial }{\partial x}	\frac{\partial z}{\partial y},	\\
+	\frac{\partial }{\partial y}	\frac{\partial ^2 z}{\partial y \partial x}
+=	\frac{\partial }{\partial y}	\frac{\partial^2	z }{\partial x \partial y}	
+=	\frac{\partial }{\partial y}	\frac{\partial }{\partial x}	\frac{\partial z}{\partial y}
+=	\frac{\partial }{\partial x}	\frac{\partial }{\partial y}	\frac{\partial z}{\partial y}
+\end{align*}
+であるから，$z	=	f(x,y)$の3次偏導関数は
+\[
+	\frac{\partial ^3 z}{\partial  x^3},	\quad
+	\frac{\partial ^3 z}{\partial  x^2 \partial y}, \quad
+	\frac{\partial ^3 z}{\partial  x \partial y^2}, \quad
+	\frac{\partial ^3 z}{\partial  y^3}
+\]
+の四つとなる．一般に$z	=	f(x,y)$が$n$回連続微分可能あるいは$n$回微分可能な
+らば，その$n$次以下の偏導関数は，$\partial / \partial y$と$\partial / \partial x$の順序を換えても変わらないから，
+すべて
+\[
+	\frac{\partial ^{p+q} z}{\partial x^p \partial y ^q}, \quad	p+q \leqq n,
+\]
+と書かれる．

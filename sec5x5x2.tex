@@ -1,0 +1,731 @@
+\subsection{巾級数の微分，積分}
+
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$の収束半径を
+$r$とし，$0	<	r	\leqq	+	\infty$として，開区間$(-r,r)$においてその和
+\[
+	f(x)	=	\sum_{n=0}^{\infty}	a_n	x^n
+\]
+を考察する．定理5.14により，$|x|	<	r$とき巾級数
+$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$は絶対収束するが，
+その収束は区間$(-r,r)$において必ずしも一様ではない．
+たとえば，$|x|	<	1$のとき
+\[
+	\frac{1}{1-x}	=	\sum_{n=0}^{\infty}	x^n
+\]
+であるが，この右辺の等比級数の収束は$(-1,1)$において一様でない．
+なぜなら，収束が一様であったとすれば，任意の正の実数
+$\varepsilon$に対して自然数$m_0	(	\varepsilon)$が定まって，
+$m	>	m_0(\varepsilon)$ならば$-1	<	x	<	1$のときつねに
+\[
+	\left|	\frac{1}{1-x}	-	\sum_{n=0}^{m}x^n
+	\right|
+	<	\varepsilon
+\]
+となる筈であるが，これは$\displaystyle	\lim_{x\rightarrow1-0}	1	/	(1-x)
+=	+	\infty$であることに矛盾する．
+しかし，つぎの定理が成り立つ：
+
+
+\定理{5.16}
+$0<	\rho	<	r$なる任意の実数$\rho$に対して，
+巾級数$	\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$は閉区間
+$	[	-	\rho	,	\rho	]$で\underline{一様に絶対収束する}．
+
+\証明
+$	\rho	<	\sigma	<	r$なる実数$\sigma$を一つ定めれば，
+$\displaystyle	\sum_{n=0}^{\infty}	a_n	\sigma^n$が収束するから，
+$|	a_n	\sigma^n|	<	M$，すなわち
+\begin{equation}
+	|	a_n	|	\leqq	\frac{M}{\sigma^n}
+\label{eq5x42}
+\end{equation}
+なる定数$M$が存在する．
+故に，$	-	\rho	\leqq	x	\leqq	\rho$のとき
+\[
+	|	a_n	x^n	|	\leqq	|	a_n	|	\rho^n	\leqq	M	\left(	\frac{\rho}{\sigma}	\right)^n
+\]
+となるが，$	\rho	/	\sigma	<	1$であるから
+$	\displaystyle	\sum_{n=0}^{\infty}	M	(	\rho	/	\sigma)^n	<	+	\infty$．
+故に，\S	\ref{sec5x3x2}，定理 5.6,	$(1^\circ)$
+により，
+\footnote{\small
+\定理{5.6}	級数$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$を($f_n(x)	=	a_nx^n$)収束する正項級数
+$\displaystyle	\sum_{n=1}^{\infty}	a_n$と比較したとき($a_n	=	M	(\rho	/\sigma	)^n	$)
+，区間$I	(=	[	-	\rho,	\rho	]	)$でつねに$|f_n(x)	|	\leqq	a_n$
+であったとする$(|	a_n	x^n	|	\leqq	M	(\rho	/	\sigma)^n	)$．このとき
+\begin{list}{}{}
+	\item	($1^\circ$)	級数$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)	$は区間$I$で\underline{一様に絶対収束する}．
+\end{list}
+}
+$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n	$は区間$[-\rho,\rho]$で一様に絶対収束する．
+\■
+
+故に，各項$a_n	x^n$はもちちん数直線$\R$上で連続な$x$の関数であるから，
+定理5.5，$(2^\circ)$
+\footnote{	\small
+\定理{5.5}
+関数$f_n	(x)	,	n	=1,	2,	3,	\cdots,$はすべて区間$I$で連続であるとする．
+このとき，
+\begin{list}{}{}
+	\item	$(2^\circ)$	級数$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)$が$I$で一様に収束すれば，
+その和：$\displaystyle	s	(x)	=	\sum_{n=1}^{\infty}	f_n	(x)$も$I$で連続である．
+\end{list}
+}
+により，$\displaystyle	f(x)	=	\sum_{n=0}^{\infty}	a_n	x^n$は区間$[-\rho,\rho]$で\underline{連続な
+$x$の関数である}が，$\rho$は$0	<	\rho	<	r$なる任意の実数であった．
+したがって$\displaystyle	f(x)	=	\sum_{n=0}^{\infty}	a_n	x^n	$は開区間
+$(	-	r	,	r)$で\underline{連続な$x$の関数である}．
+
+つぎに，$f(x)$が$(-r,r)$で連続微分可能であることを証明するために，
+$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$を項別に微分して得られる巾級数
+\[
+	\sum_{n=1}^{\infty}	n	a_n	x^{n-1}
+\]
+を考察する．$\displaystyle \sum_{n=1}^{\infty}	n	a_n	x^{n-1}$と
+巾級数$\displaystyle	\sum_{n=1}^{\infty}	n	a_n	x^n$の収束半径は$na_n$の上極限によって決まり，
+両者の収束半径は等しい，つまり同時に収束し同時に発散する（同じ点$x$で収束し同じ点$y$で発散する）
+\footnote{
+	$\displaystyle	\limsup_{n\rightarrow\infty}	|na_n	|^{1/n}	=	\limsup_{ n+1 \rightarrow\infty}	|n	a_n	|^{1/n}$
+}．
+（\ref{eq5x41}）により$\displaystyle	\lim_{n\rightarrow\infty}	n^{1/n}	=	1$であるから，
+任意の正の実数$\varepsilon$に対応して自然数$	n_0	(\varepsilon)$が定まって，
+$	n	>	n_0	(	\varepsilon)$ならば
+\[
+	1	<	n^{1/n}	<	1	+	\varepsilon.
+\]
+したがって
+\[
+	|	a_n	|^{1/n}	\leqq	|	n	a_n	|^{1/n}	\leqq	(1	+	\varepsilon)	|a_n|^{1/n}
+\]
+となる．故に
+\[
+	\limsup_{n\rightarrow\infty}	|	a_n	|^{1/n}
+	\leqq
+	\limsup_{n\rightarrow\infty}	|	n	a_n	|^{1/n}
+	\leqq
+	(1	+	\varepsilon)	\limsup_{n\rightarrow\infty}	|	a_n	|^{1/n},
+\]
+したがって
+\[
+	\limsup_{n\rightarrow\infty}	|	n	a_n	|^{1/n}
+	=
+	\limsup_{n\rightarrow\infty}	|	a_n	|^{1/n}	=	\frac{1}{r}.
+\]
+すなわち巾級数$\displaystyle	\sum_{n=1}^{\infty}	n	a_n	x^n$の収束半径は$r$，
+したがって$\displaystyle	\sum_{n=1}^{\infty}	n	a_n	x^{n-1}$
+の収束半径も$r$である.
+
+故に定理5.16により，$	0	<	\rho	<	r$なる任意の実数
+$\rho$に対して巾級数$\displaystyle	\sum_{n=1}^{\infty}	n	a_n	x^{n-1}$
+は区間$[	-\rho	,	\rho]$で一様に絶対収束する．
+したがって，定理5.9,$(2^\circ)$
+\footnote{	\small
+定理5.9
+関数$f_n(x)$はすべて区間$I$で連続であるとする．
+\begin{list}{}{}
+	\item	$(2^\circ)$ 各関数$f_n(x)$が$I$で連続微分可能，$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$が
+$I$で収束し，さらに$\displaystyle	\sum_{n=1}^{\infty}	f_n'(x)$が一様に収束するならば，
+和$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)$も$I$で連続微分可能で
+\[
+	\frac{d}{dx}	\sum_{n=1}^{\infty}	f_n(x)	=	\sum_{n=1}^{\infty} f_n'(x).
+\]
+\end{list}
+}
+により，
+$\displaystyle	f(x)	=	\sum_{n=0}^{\infty}	a_n	x^n$は区間
+$[-	\rho	,	\rho	]	$で連続微分可能で
+\[
+	f'(x)	=	\sum_{n=1}^{\infty}	n	a_n	x^{n-1},
+	\quad	|x|	<	r.	
+\]
+同じ論法により，$f'(x)$も区間$(	-r	,r)$で連続微分可能で
+\[
+	f''(x)	=	\sum_{n=2}^{\infty}	n(n-1)	a_n	x^{n-2}
+\]
+であることが証明される．以下同様に，
+$f(x)$は区間$(-r,r)$で何回でも連続微分可能で，
+その$m$次導関数は
+\begin{equation}
+	f^{(m)}	(x)	=	\sum_{n=m}^{\infty}	n(n-1)(n-2)	\cdots	(n	-	m	+1)	a_n	x^{n-m}
+	\label{eq5x43}
+\end{equation}
+で与えられる．
+ここで$x	=	0$とおけば$f^{(m)}(0)	=	m!	a_m$，すなわち
+\[
+	a_m	=	\frac{f^{(m)}(0)}{m!}
+\]
+を得る．故に巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n	$は，
+区間$(-r	,	r)$において，$f(x)$の原点$0$を中心とするTaylor級数：
+\[
+	\sum_{n=0}^{\infty}	\frac{f^{(n)}(0)	}{n!}	x^n
+\]
+と一致する．
+
+区間$(-r,	r)$内の任意の点$c$に対して$f(x)$は$c$の\underline{或る近傍で}$c$を中心とする
+Taylor級数に展開される(1)．
+\証明
+Taylorの公式（\ref{eq3x39}）により
+\begin{align*}
+	f(x)	=	f(c)	+	\frac{f'(c)}{1!}(x-c)
+								+	\frac{f''(c)}{2!}(x-c)
+								+	\cdots
+								+	\frac{f^{(m-1)}(c)}{(m-1)!}	(x-c)^{m-1}	+	R_m,	\\
+			R_m	=	\frac{f^{(m)}	(	\xi	)}{	m!}	(x-c)^m,	\quad
+			\xi	=	c	+	\theta	(	x	-c)	,	\quad	0	<	\theta	<	1.
+\end{align*}
+$c$の或る近傍において$m	\to	\infty$のとき$R_m	\to	0$となることを証明するために，
+$	|c|	<	\sigma	<	r$なる実数$	\sigma$を一つ定めれば，
+（\ref{eq5x42}）により,定数$M$が存在して，
+\[
+	|	a_n	|	\leqq	\frac{M}{\sigma^n},
+\]
+したがって，（\ref{eq5x43}）により，$	|x|	<	\sigma$のとき
+\begin{align*}
+	|f^{(m)}	(x)	|	\leqq	M	\sum_{n=m}^{\infty}	n(n-1)(n-2)	\cdots	(n-m+1)	\frac{|x|^{n-m}}{\sigma^n}
+\end{align*}
+となる．
+この右辺の巾級数の和はつぎのようにして容易に求められる：
+$	|x|	<	\sigma$のとき
+\[
+	\sum_{n=0}^{\infty}	\frac{x^n}{\sigma^n}
+	=
+	\frac{1}{1	-	x/	\sigma}	=	\frac{\sigma}{\sigma	-	x}.
+\]
+
+この両辺を$|x|$について$m$回微分すれば，（\ref{eq5x43}）により，
+\[
+	\sum_{n=m}^{\infty}	n(n-1)(n-2)	\cdots	(n-m+1)	\frac{x^{n-m}}{\sigma^n}	=	\frac{d^m}{dx^m}	\left(	\frac{\sigma}{\sigma	-	x}	\right)
+\]
+
+を得るが，たとえば$m$に関する帰納法によって容易に確かめられるように
+\[
+	\frac{d^m}{dx^m}	\left(	\frac{	\sigma}{	\sigma	-	x}	\right)
+	=
+	\frac{d}{dx}	\left(	\frac{(m-1)!\sigma}{(\sigma	-	x)^m}	\right)'
+	=
+	\left	(	(-1)	\cdot	\frac{(m-1)!	(-m)	\sigma}{(\sigma	-	x	)^{m+1}}	\right)
+	=
+	\frac{m!	\sigma}{(\sigma	-	x)^{m+1}}
+\]
+である．故に，
+\[
+	\sum_{n=m}^{\infty}	n	(n-1)(n-2)	\cdots	(n-m+1)\frac{|x|^{n-m}}{\sigma^n}	=	\frac{m!	\sigma}{(\sigma	-	|	x	|)^{m+1}},
+\]
+
+したがって
+\begin{equation}
+	|	f^{(m)}	(x)	|	\leqq	\frac{M	m!	\sigma}{(\sigma	-	|x|)^{m+1}},	\quad	|x|	<	\sigma.
+\label{eq5x44}
+\end{equation}
+故に
+\[
+	|	R_m	|
+	=
+	\left|
+		\frac{f^{(m)}(	\xi	)	(x-c)^m}{m!}	
+	\right|
+	\leqq	
+		\frac{M	\sigma	|x-c|^m}{|\sigma	-	|\xi|	|^{m+1}}	
+	=	\frac{M	\sigma}{\sigma	-	|	\xi	|}	\left(	\frac{|x-c|}{	\sigma	-	|\xi	|	}	\right)^m,	
+	\quad	|x|	<	\sigma.
+\]
+したがって$	|x	-c	|	<	\sigma	-	|	\xi	|$ならば
+$m	\to	\infty$のとき$R_m	\to	0$となる．
+そこで$	\sigma	-	|	c|	=	2	\delta$とおく．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=10cm,height=2cm]{p237.bmp}
+	\label{p237}
+\end{figure}
+そうすれば，$\xi$は$x$と$c$の間にあるから，
+$|	x	-	c|	<	\delta$のとき$|c|	-	|	\xi	|	<	\delta	\Rightarrow -	|	\xi	|	>	|c|	-	\delta$となり，
+\[
+	\sigma	-	|	\xi	|	>	\sigma	-	|c|	-	\delta		=	\delta
+\]
+
+したがって$|x	-	c|	<	\sigma	-	|	\xi	|$となるから，
+$m	\to	\infty$のとき$R_m	\to	0$となる．
+故に，開区間$(	c	-	\delta	,	c	+	\delta)$で
+$	f(x)	$は$c$を中心とするTaylor級数
+\begin{equation}
+	f(x)	=	f(c)	+	\frac{f'(c)}{1!}(x-c)
+								+	\frac{f''(c)}{2!}(x-c)^2
+								+	\cdots
+								+	\frac{f^{(n)}(c)}{n!}(x-c)^n
+								+	\cdots
+\label{eq5x45}
+\end{equation}
+に展開される．
+\■
+
+
+$c$は区間$(-r,r)$内の任意の点であったから，
+\S	\ref{sec3x4x6}で述べた定義によれば，
+$f(x)$は開区間$(-r,r)$においての実解析関数である．
+
+Taylor展開（\ref{eq5x45}）の右辺の巾級数の収束半径を
+$r_c$とすれば，
+（\ref{eq5x44}）により
+\[
+	\frac{1}{r_c}	
+=	\limsup_{n\rightarrow\infty}
+	\left|	\frac{f^{(n)}(c)}{n!}
+	\right|^{1/n}
+	\leqq
+=	\limsup_{n\rightarrow\infty}
+	\left(	\frac{M\sigma	}{\sigma	-	|c|}
+	\right)^{1/n}
+	\cdot
+	\frac{1}{\sigma	-	|	c|	}
+=	\frac{1}{\sigma	-	|c|},
+\]
+\footnote{
+（\ref{eq2x5}）により，
+$\small	\displaystyle	\lim_{n\rightarrow\infty}	\left(	M\sigma	/	\sigma	-	|c|	\right)^{1/n}	\to	1$
+}
+すなわち
+\[
+	r_c	\geqq	\sigma	-	|	c|	
+\]
+であるが，$\sigma	$は$|c|	<	\sigma	<	r$なる任意の実数であった．
+故に
+\begin{equation}
+	r_c	\geqq	r	-	|c|.
+\label{eq5x46}
+\end{equation}
+\footnote{
+中心$c$と$r$との距離は，収束半径$r_c$と同じか小さい．
+}
+
+したがって，（\ref{eq5x45}）の右辺の巾級数の和を
+\[
+	f_c(x)
+=	f(c)
++	\frac{f'(c)}{1!}(x-c)
++	\frac{f''(c)}{2!}(x-c)^2
++	\cdots
++	\frac{f^{(n)}(c)}{n!}(x-c)^n
++	\cdots
+\]
+とおけば，
+$f_c(x)$は区間$(c-r_c,c+r_c)$で定義された実解析関数である．
+\footnote{
+$f(x)$は$r$で定義された関数であり，$f_c(x)$は$r_c$で定義された関数．
+定義域が異なれば，仮初では別の関数．しかし定義域の共通部分に限定して，
+両者を比較すると,・・・}
+$I=	(-r	,	r)	\cap	(c-r_c	,	c+r_c)$とおけば,
+$f(x)$も$f_c(x)$も$I$において$x$の実解析関数であって，
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=100mm,height=20mm]{p238.bmp}
+	\label{p238}
+\end{figure}
+（\ref{eq5x45}）により，点$c	\in	I$の近傍
+$(c	-\delta,	c+	\delta)$で$f(x)$と$f_c(x)$はー致する．
+故に，\S	\ref{sec3x4x6}，定理3.20により区間$I$で
+$f(x)$と$f_c(x)$は一致する．$r_c	\geqq	r	-	|c|$であるから，
+この結果は，$f(x)$のTaylor展開（\ref{eq5x45}）が$|x-c|	<	|r|	-	|c|$
+のとき成立することを示す(2)．
+以上の結果を要約すれば，つぎの定理を得る：
+
+\定理{5.17}
+\begin{list}{}{}
+	\item	(1) 巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n	$の収束半径を$r$とすれば，
+						$0	<	r	\leqq	+	\infty$なるとき，その和
+						\[
+								f(x)	=	\sum_{n=0}^{\infty}	a_n	x^n
+						\]
+						は開区間$	(	-r	,	r)$で$x$の実解析関数である．
+	\item	(\ref{eq5x43}) $f(x)$の$m$次導関数は
+				\[
+					f^{(m)}(x)	=	\sum_{n=m}^{\infty}	n	(n-1)	(n-2)	\cdots	(n-m+1)	a_n	x^{n-m}
+				\]
+				で与えられる．
+	\item (2) 区間$(-r	,	r)$内の任意の点$c$に対して，区間$(-r,	r)$内の任意の点$c$に対して，
+				$f(x)$は区間$(c-r	+	|c|,	c+	r	-	|c|)$でTaylor級数：
+				\[
+						f(x)	=	f(c)	+	\frac{f'(c)}{1!}	(x-c)
+								+	\frac{f''(c)}{2!}	(x-c)^2
+								+	\cdots
+								+	\frac{f^{(n)}(c)}{n!}	(x-c)^n	+	\cdots
+				\]
+				に展開される．
+\end{list}
+
+\例{5.10}
+$\log	x$は，\S	\ref{sec3x4x3} 例3.7 （\ref{eq3x45}），で示したように，
+任意の$c,	\:	c>0$，に対して，
+区間$(0,2c]$で$c$を中心とするTaylor級数に展開される：
+\begin{equation}
+	\log	x	=	\log	c	+	\sum_{n=1}^{\infty}	\frac{(-1)^{n-1}}{nc^n}	(x-c)^n,
+	\quad
+	0	<	x	\leqq	2c.
+\label{eq5x47}
+\end{equation}
+$\displaystyle	\lim_{n\rightarrow\infty}	(nc^n)^{1/n}	=c$
+であるから，この右辺の巾級数の収束半径は$c$である．
+特に$c=1$とおき$x$を$x+1$で置き換えれば
+\begin{equation}
+	\log	(1+x)	=	\sum_{n=1}^{\infty}	\frac{(-1)^{n-1}}{n}	x^n
+							=	x	-	\frac{x^2}{2}	+	\frac{x^3}{3}	-	\cdots,	\quad	-1	<	x	\leqq	1.
+\label{eq5x48}
+\end{equation}
+この右辺の巾級数の収束半径はもちろん\underline{$r=1$}である
+\footnote{
+	$\displaystyle	\lim_{n\rightarrow\infty}	|	(-1)^{n+1}	n	|^{1/n}	=	1.$
+}
+．
+$0<c<1$として（\ref{eq5x47}）をそれぞれ$1+x,1+c$で置き換えれば
+\[
+	\log	(1+x)	=	\log	(1+c)	+	\sum_{n=1}^{\infty}	\frac{(-1)^{n-1}}{n(1+c)^n}	(x-c)^n.
+\]
+この右辺の巾級数の収束半径は，\underline{$r_c	=	1	+ c$}である
+\footnote{	\small
+	$a_n	=	\displaystyle	\frac{(-1)^{n-1}}{n(1+c)^n}$,
+	$\displaystyle	r_c	=	\frac{1}{\displaystyle	\limsup_{n\rightarrow\infty}		\left|	\frac{(-1)^{n-1}}{n(1+c)^n	}	\right|^{1/n}	}$
+}．
+$\log	(1+x)$の Talor 級数（\ref{eq5x48}）は，すなわち，
+（\ref{eq5x46}）において不等式$1+c	=	r_c	>	r	-	|c|=1-|c|$が成り立つ例を与える．
+
+\例{5.11}
+$\mu$を任意の実数としたとき
+\begin{equation}
+	(1+	x)^\mu	=	1	+	\sum_{n=1}^\infty	\frac{\mu	(	\mu	-1)(\mu	-	2)	\cdots	(\mu	-	n	+	1)}{n!}	x^n,
+	\quad	|x|	<1.
+\label{eq5x49}
+\end{equation}
+$\mu$が正整数である揚合には（\ref{eq5x49}）は2項定理：
+\[
+	(1+x)^\mu	=	1	+	\sum_{n=1}^\mu	\binom{\mu}{n}	x^n
+\]
+に帰着する．（\ref{eq5x49}）の右辺を\textbf{2項級数}という．
+（\ref{eq5x49}）をTaylorの公式（\ref{eq3x39}）を用いて証明しよう．
+
+\証明
+（\ref{eq3x35}）より
+\[
+	\frac{d^k}{dx^k}	(1+	x)^\mu	=	\mu	(\mu-1)	(\mu-2)	\cdots	(	\mu	-	k	+1)(1+x)^{\mu-k}
+\]
+であるから，（\ref{eq3x39}）において$a=0$を代入して，
+\[
+	(1+x)^\mu	=	1+	\sum_{k=1}^{n-1}	\frac{\mu	(\mu-1)(\mu	-2)	\cdots	(	\mu	-	k	+1)}{k!}x^k	+	R_n
+\]
+であって，Cauchyの剰余項の公式（\ref{eq3x43}）により，
+\begin{align*}
+	R_n	
+	&=	\frac{f^{(n)}(\xi)}{(n-1)!}(1-\theta)^{n-1}	(x-a)^n	\\
+	&=	\frac{\mu	(\mu-1)	(\mu-2)	\cdots	(\mu	-	n+1)}{(n-1)!}	(1	+	\xi)^{\mu	-	n}	(1-\theta)^{n-1}	x^n	\\
+	&=	\frac{	\mu	(\mu	-1)	(\mu-2)	\cdots	(\mu	-	n	+1)}{(n-1)!}	(1	+	\theta	x)^{\mu	-n}(1	-	\theta)^{n-1}	x^n,
+		\quad	0	<	\theta	<1,	
+\end{align*}
+すなわち
+\[
+	R_n	=	\mu	\prod_{k=1}^{n-1}	\left(	\frac{\mu	-	k}{k}
+															\right)
+															\cdot
+															(1	+	\theta	x)^{\mu	-1}
+															\left(
+																\frac{1	-	\theta}{1	+	\theta	x}
+															\right)^{n-1}	x^n.
+\]
+$\mu$が正整数あるいは$0$である揚合には$	n	-1 \geqq	\mu$のとき$R_n	=0$となるから，
+この揚合を除いて考える．$|x|	<	1$と仮定しているから
+\[
+	1	+	\theta	x	\geqq	1	-	|x|	\theta	\geqq	1	-	\theta,
+\]
+したがって
+\[
+	\left|
+		\frac{	1	-	\theta}{	1	+	\theta	x}
+	\right|	\leqq	1.
+\]
+また，$0	<	\theta	<	1$であるから，$1	-	|x|	\leqq	1	+	\theta	x	\leqq	1+|x|$，
+したがって$	\mu	-1	>	0$ならば
+$	(	1	+	\theta	x)^{\mu	-	1}	\leqq	(1+	|	x|)^{\mu	-	1}$，$\mu	-	1	<	0$ならば
+$	(	1	+	\theta	x)^{\mu-1}	\leqq	(1-|x|)^{\mu	-1}$．
+\[
+	\alpha	(x)	=	(1	+	|x|	)^{\mu	-	1}	+	(	1	-	|x|	)^{\mu	-1}
+\]
+とおけば，いずれにしても$(1	+	\theta	x)^{\mu	-1}	<	\alpha	(x)$である．
+故に
+\[
+	|	R_n	|	\leqq
+	|	\mu	x|	\alpha	(x)	\prod_{k=1}^{n-1}	\left|	\left(	1	+	\frac{|\mu|}{k}
+																					\right)	x	\right|.
+\]
+\footnote{
+$\displaystyle	\frac{k+	|	\mu	|	}{k}	-	\frac{\mu	-	k	}{k}	=	\frac{2k	+	|\mu|		-	\mu}{k}	=	2	+	\frac{|\mu|	-	\mu}{k}	> 0$
+}.
+$|	x	|	<	1$であるから，$x$に対応して$|(1+	|	\mu	|	/	m	)x|	<	1$なる自然数$m$が定まる．
+\footnote{
+$|x|$と$1$の間に照準を定めるように，ほんの少し（$|(1	+	|	\mu	|	/m	)x|$倍）だけ$|x|$を膨らませる．
+}
+$\beta	=	|	(	1+	|	\mu	|	/	m)	x|$とおけば
+\[
+	|	R_n	|	\leqq	|	\mu	x	|	\alpha	(x)	\prod_{k=1}^{m-1}	
+\left|
+	\left(	1	+	\frac{|\mu|}{k}
+	\right)	x
+\right|	\cdot	\beta^{n-m},	\quad		0	\leqq	\beta	<	1.
+\]
+\footnote{
+$m$は定まっているのだから、$n > m$となるような十分に大きな$n$について剰余$R_n$を考えておく．
+}
+故に$	n	\to	\infty$とき$m$は固定されていて，$\beta^{n-m}	\to	0$となり$R_n	\to	0$，したがって（\ref{eq5x49}）が成り立つ．
+\■
+　
+\定理{5.18}
+巾級数$	\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$の収束半径を$r$とし，
+$	0	<	r	<	+	\infty$とする．
+このとき，$\displaystyle	\sum_{n=0}^{\infty}	a_n	r^n$が収束するならば
+$x$の関数$f	(x)	=	\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$は区間
+$	(	-r	,r	]$で連続である．
+$\displaystyle	\sum_{n=0}^{\infty}	a_n	(-r)^n$が収束するならば
+$x$の関数$f(x)	=	\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$
+は区間$(-r	,	r]$で連続である．
+
+\証明
+$\displaystyle	\sum_{n=0}^{\infty}	a_n	r^n$が収束する場合を考察する
+\footnote{
+収束半径上では必ずしも収束するわけではなかった．
+}
+．
+$\displaystyle	f(x)	=	\sum_{n=0}^{\infty}	a_n	x^n$は開区間$(	-	r	,	r)$
+では連続であるから
+\footnote{ 定理 5.16，定理 5.5 $(2^\circ)$
+}
+，$f(x)$が区間$(0,r]$で連続であることを証明すればよい．
+このためには，\S	\ref{sec5x3x2}，定理5.5，$(2^\circ)$により，
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$が区間$(0,r]$で一様
+に収束することを示せばよい．
+仮定により$	\displaystyle	\sum_{n=0}^{\infty}	a_n	r^n$が収束しているから
+\[
+	s_{m,k}	=	\sum_{n=k}^{m}	a_n	r^n
+\]
+とおけば，任意の正の実数$\varepsilon$に対応して自然数
+$m_0	(\varepsilon)$が定まって
+\[
+	m	>	k	>	m_0	(\varepsilon)	\quad	\text{ならば}	\quad	|	s_{m,k}|	<	\varepsilon
+\]
+となる．区間$(0,r]$に属する任意の点$x$をとって$x=rt,	\:	0	<	t	\leqq	1$，とおけば，
+\begin{align*}
+	\sum_{n=k}^{m}	a_n	x^n
+&	=	\sum_{n=k}^{m}	a_n	r^n	t^n
+	=	s_{k,k}	t^k	+	\sum_{n=k+1}^m	a_nr^nt^n	\\
+&=	s_{k,k}	t^k	+	\sum_{n=k+1}^{m}	(	s_{n,k}	-	s_{n-1,k})	t^n	
+\end{align*}
+であるから，\S	\ref{sec5x2x3}で述べたAbelの級数変形の公式（\ref{eq5x18}）により，
+\begin{align*}
+	\sum_{n=k}^{m}	a_n	x^n	
+&=	s_{k,k}t^k	+	[	s_{m,k}	t^m	-	s_{k,k}t^k	]	-	\sum_{n=k+1}^{m-1}	s_{n,k}(t^{n+1}	-	t^n	)	\\
+&=	s_{m,k}	t^m	+	\sum_{n=k}^{m-1}	s_{n,k}	(t^n	-	t^{n+1})	
+\end{align*}
+を得る．
+したがって，$|s_{n,k}|	<	\varepsilon$，$t^n	-	t^{n+1}	>	0	,	t^m	>	0$であるから
+\[
+	\left|	\sum_{n=k}^{m}	a_n	x^n
+	\right|
+	<
+	\varepsilon	t^m	+	\sum_{n=k}^{m-1}	\varepsilon(t^n	-	t^{n+1})	=	\varepsilon	t^k	\leq	\varepsilon
+\]
+すなわち，区間$(0,r]$に属するすべての点$x$において，
+\[
+	m	>	k	>	m_0(\varepsilon)	\quad	\text{ならば}	\quad	
+\left|
+	\sum_{n=k}^{m}	a_n	x^n
+\right|
+<	\varepsilon
+\]
+となる．
+故に巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$は区間$(0,r]$で一様に収束する．
+よって定理5.5 $(2^\circ)$により$\displaystyle	f(x)	=	\sum_{n=0}^{\infty}	a_n	r^n$は区間$(0,r]$で連続である．
+
+次に$\displaystyle	\sum_{n=0}^{\infty}	a_n	(-r)^n$が収束する場合を前の場合と同様に考察する．
+$\displaystyle	f(x)	=	\sum_{n=0}^{\infty}	a_nx^n$は開区間$(-r,r)$で連続であるから，$f(x)$が区間
+$[-r,0)$で連続であることを証明すればよい．このためには，\S \ref{sec5x3x2}，定理5.5 $(2^\circ)$により，
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$が区間$[-r,0)$で一様収束することを示せばよい．
+仮定により$\displaystyle	\sum_{n=0}^{\infty}	a_n	(-r)^n$が収束しているから，
+\[
+	s_{m,k}	=	\sum_{n=k}^{m}	a_n	(-r)^n
+\]
+とおけば，任意の正の実数$\varepsilon	$に対応して自然数$m_0(\varepsilon)$が定まって
+\[
+	m	>	k	>	m_0(\varepsilon)	\quad	\text{ならば}	\quad	
+\left|	s_{m,k}	\right|	<	\varepsilon
+\]
+区間	$[	-r,0)$に属する任意の点$x$をとって$x=-rt,	0	<	t	\leqq	1$，とおけば，
+\[
+	\sum_{n=k}^{m}	a_n	x^n	=	\sum_{n=k}^{m}	a_n	(-r)^n	t^n	=	s_{k,k}	t^k	+	\sum_{n=k+1}^{m}	(	s_{n,k}	-	s_{n-1,k}	)t^n	
+\]
+であるから，Abelの級数変形の公式により，
+\[
+	\sum_{n=k}^{m} a_n	x^n	=	s_{m,k}	t^m	+	\sum_{n=k}^{m-1}	s_{n,k}	(t^n	-	t^{n+1})
+\]
+を得る．したがって，$|	s_{n,k}	|	<	\varepsilon,	t^n	-	t^{n+1}	>	0,	t^m	>	0$であるから
+\[
+	\left|	\sum_{n=k}^{m}	a_n	x^n
+	\right|
+	<	\varepsilon	t^m	+	\sum_{n=k}^{m-1}	\varepsilon	(	t^n	-	t^{n+1})	=	\varepsilon	t^k	\leqq	\varepsilon
+\]
+すなわち，区間$[-r,0)$に属するすべての点$x$において，
+\[
+	m	>	k	>	m_0	(\varepsilon)	\quad	\text{ならば}	\quad	\left|	\sum_{n=k}^{m}	a_n	x^n	\right|	<	\varepsilon
+\]
+となる．故に巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$は区間$[-r	,0)$で一様に収束する．
+よって定理5.5 $2^\circ)$により$\displaystyle	f(x)	=	\sum_{n=0}^{\infty}	a_n	r^n$は
+区間$[-r,0)$で連続である．
+\■
+
+巾級数の積分についてはつぎの定理が成り立つ：
+
+
+\定理{5.19}
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$の収束半径を$r$とすれば，
+$0	<	r	\leqq	+	\infty$のとき
+\begin{equation}
+	\int_0^x	\left(	\sum_{n=0}^{\infty}	a_n	x^n	
+						\right)	dx
+=	\sum_{n=0}^{\infty}	\frac{a_n}{n+1}	x^{n+1},	\quad	|x|	<	r.
+\label{eq5x50}
+\end{equation}
+
+\証明
+$0	<	\rho	<	r$なる実数$\rho	$に対して，
+巾級数$\displaystyle	\sum_{n=0}^{\infty}	a_n	x^n$は，
+定理5.16により，区間$[-	\rho	,	\rho]$で一様に絶対収束するから，
+\S	\ref{sec5x4x1}，定理5.9，
+$(1^\circ)$により，$|x|	\leqq	\rho$のとき
+\[
+	\int_0^x
+\left(	\sum_{n=0}^{\infty}	a_n	x^n
+\right)	dx
+=	
+\sum_{n=0}^{\infty}	\int_0^x	a_n	x^n	dx
+=	\sum_{n=0}^{\infty}	a_n	\frac{x^{n+1}}{n+1}
+\]
+であるが，$\rho$は$0	<	\rho	<	r$なる限り任意に選んでよい．
+故に（\ref{eq5x50}）を得る．
+\■
+
+\例{5.12}
+\[
+	\frac{1}{1+x}	=	1	-	x	+	x^2	-	x^3	+	x^4	-	\cdots,	\quad	|x|	<1,
+\]
+であるから
+\footnote{
+等比$-x$の無限等比級数.
+}
+\[
+	\log	(1+x)	=	\int_0^x	\frac{dx}{1+x}
+=	x	-	\frac{x^2}{2}
+		+	\frac{x^3}{3}
+		-	\frac{x^4}{4}
+		+	\cdots,
+		\quad	-1	<	x	<	1.
+\]
+\footnote{
+	\S	\ref{sec4x2x2}の初頭関数で表される原始関数の表を参照
+}
+この右辺の巾級数は，$x=1$のときも収束する
+\footnote{
+定理 1.23を参照
+}
+から，定理5.18により，区間$(-1,1]$
+で連続，$\log	(1+x)$は$(-1,+\infty)$で連続であるから，
+この等式は区間$(-1,1]$で成り立つ
+\footnote{
+“2つの関数が等しい（$=$）”とは集合論では“定義域も等しく”なけらばならなかった．
+}
+．
+これで（\ref{eq5x48}）の別証が得られた.
+
+\例{5.13}
+\[
+	\frac{1}{1+x^2}	=	1	-	x^2	+	x^4	-	x^6	+	\cdots	,	\quad	|x|	<1,
+\]
+から，\S	\ref{sec4x2x2}，(\ref{eq4x20}）により，
+\[
+	\Arctan	x	
+=	\int_0^x	\frac{dx}{1+x^2}	
+=	x	-	\frac{x^3}{3}
+		+	\frac{x^5}{5}
+		-	\frac{x^7}{7}
+		+	\cdots,
+	\quad	-1	<	x	<	1.
+\]
+この右辺の巾級数も$x=1$のとき収束する
+\footnote{
+定理 1.23を参照
+}
+から，
+定理5.18により，区間$(-1,1]$で連続である．
+故に，$x=1$とおけば，
+\[
+	\frac{\pi}{4}	=	\Arctan	1	=	1	-	\frac{1}{3}	+	\frac{1}{5}-	\frac{1}{7}	+	\cdots	.
+\]
+
+
+\例{5.14}
+（\ref{eq4x18}）により，$|x|	<	1$のとき
+\[
+	\Arcsin	x	=	\int_0^x	\frac{dx}{\sqrt{1	-	x^2}}.
+\]
+これを$x$の巾級数に展開するために，
+（\ref{eq5x49}）において$\mu	=	-	1	/	2$とおけば
+\[
+	\frac{1}{\sqrt{1+x}}	=	1	+	\sum_{n=1}^{\infty}	\frac{(-1)^n	\cdot	3	\cdot	5	\cdot	7	\cdots	\cdot	(2n-1)}{n!2^n}	x^2,
+	\quad	|x|	<	1.
+\]
+$x$を$-x^2$で置き換えれば
+\[
+	\frac{1}{\sqrt{1-x^2}}
+=	1	+	\sum_{n=1}^{\infty}	\frac{3	\cdot	5	\cdot	7	\cdot	\cdots	\cdot	(2n-1)}{n!2^n}	x^{2n},
+	\quad	|x|	<1.
+\]
+故に，$|x|	<	1	$のとき
+\begin{align*}
+	\Arcsin	x
+&	=	\int_0^x	\frac{dx}{\sqrt{1-x^2}}
+	=	x	+	\sum_{n=1}^{\infty}	\frac{3	\cdot	5	\cdot	7	\cdot	\cdots	\cdot	(2n-1)}{n!2^n}	\frac{x^{2n+1}}{2n+1}	\\
+&	=	x	+	\frac{1}{2}	\cdot	\frac{x^3}{3}
+		+	\frac{1}{2}	\cdot	\frac{3}{4}	\cdot	\frac{x^5}{5}
+		+	\frac{1}{2}	\frac{3}{4}	\frac{5}{6}	\frac{x^7}{7}
+		+	\cdots	.
+\end{align*}
+この巾級数を
+\[
+	x	+	\sum_{n=1}^{\infty}	a_n	x^{2n+1},
+	\quad
+	a_n	=	\frac{1	\cdot	3	\cdot	5	\cdot	\cdots	\cdot	(2n-1)}{2	\cdot	4	\cdot	6	\cdot	\cdots	\cdot	2n	\cdot	(2n+1)},
+\]
+と書けば，
+\begin{align*}
+	\frac{a_n}{a_{n+1}}
+&=	\frac{	\displaystyle
+			\frac{1	\cdot	3	\cdot	5	\cdots	(2n-1)}{2	\cdot	4	\cdot	6	\cdots	2n	\cdot	(2n+1)}
+		}{	\displaystyle
+			\frac{1	\cdot	3	\cdot	5	\cdots	(2n-1)	\cdot	(2n+1)}{2	\cdot	4	\cdot	6	\cdots	2n	\cdot	(2n+2)	\cdot	(2n+3)
+			}
+		}
+	=	\frac{(2n+2)(2n+3)}{(2n+1)^2}	\\
+&	=	1	+	\frac{6n+5}{4n^2	+	4n	+1}
+	=	1	+	\frac{6n+6+3/2n}{4n^2	+	4n+	1}	-	\frac{1	+	3/2n}{4n^2	+	4n	+	1}	\\
+	=	1	+	\frac{3}{2n}	+O\left(	\frac{1}{n^2}	\right)	
+\end{align*}
+となるから，\S	\ref{sec5x2x2}で述べたGaussの判定法により，正項級数
+$\displaystyle	\sum_{n=1}^{\infty}	a_n$は収束する．
+故に巾級数
+$\displaystyle	x+	\sum_{n=1}^{\infty}	a_n	x^{2n+1}$は
+$|x|=1$のときにも収束し，したがって，
+定理5.18により，その和は$	-1	\leqq	x	\leqq	1$で連続な$x$の関数となる．
+故に上記の$\Arcsin	x$の巾級数展開は
+$-1	\leqq	x	\leqq	1$のとき成立する．
+特に$x=1$とおけば
+\[
+	\frac{\pi}{2}	
+=	\Arcsin	1	
+=	1	+	\frac{1}{2	\cdot	3}
+		+	\frac{1	\cdot	3}{2	\cdot	4	\cdot	5}
+		+	\frac{1	\cdot	3	\cdot	5}{2	\cdot	4	\cdot	6	\cdot	7}
+		+	\cdot	.
+\]

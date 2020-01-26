@@ -1,0 +1,220 @@
+\subsection{収束の判定法}
+\label{sec5x2x2}
+
+正項級数$\displaystyle	\sum_{n=1}^{\infty}	a_n$を標準的な正項級数
+$\displaystyle	\sum_{n=k}^{\infty}	r_n$と比較するとき，
+（\ref{eq5x10}），（\ref{eq5x11}）によって直接比較するよりも
+相異なる2項の比：$a_n	/	a_{n+1}$と$r_n	/	r_{n+1}$を比較する方が
+応用上便利なことがある．本稿では，相隣る2項の比：$a_n	/	a_{n+1}$を
+$\displaystyle	\sum_{n=1}^{\infty}	r^n$，$\sum_{n=1}^{\infty}	1	/	n^s$，
+等の対応する2項の比と比較することによって得られる判定法について述べる．
+
+\定理{5.3}
+正項級数$\displaystyle	\sum_{n=1}^{\infty}	u_n$，$\displaystyle	\sum_{n=1}^{\infty}	v_n$に対して，
+自然数$n_0$が存在して
+\begin{equation}
+	n	\geqq	n_0	\quad	\text{ならば}	\quad	\frac{u_n}{u_{n+1}}	\geqq	\frac{v_n}{v_{n+1}}
+\label{eq5x16}
+\end{equation}
+とする．このとき
+\begin{list}{}{}
+	\item	$(1^\circ)$	$\displaystyle	\sum_{n=1}^{\infty}	v_n$が収束すれば$\displaystyle	\sum_{n=1}^{\infty}	u_n$も収束する．
+	\item	$(2^\circ)$	$\displaystyle	\sum_{n=1}^{\infty}	u_n$が発散すれば$\displaystyle	\sum_{n=1}^{\infty}	v_n$も発散する．
+\end{list}
+\証明
+（\ref{eq5x16}）は
+\[
+	n	\geqq	n_0	\quad	\text{ならば}	\quad	\frac{u_n}{v_n}	\geqq	\frac{u_{n+1}}{v_{n+1}},
+\]
+すなわち，$n	\geqq	n_0$のとき数列$\{	u_n	/	v_n	\}$が単調非増加であることを意味する．
+故に
+\[
+	n	\geqq	n_0	\quad	\text{ならば}	\quad	\frac{u_n}{v_n}	\leqq	\frac{u_{n_0}}{v_{n_0}}
+\]
+$A	=	u_{n_0}	/	v_{n_0}$とおけば，したがって
+\[
+	n	\geqq	n_0	\quad	\text{ならば}	\quad	u_n	\leqq	A	v_n
+\]
+となる．故に，$\displaystyle	\sum_{n=1}^{\infty}	v_n$が収束すれば$\displaystyle	\sum_{n=1}^{\infty}	u_n$
+も収束し，したがって，$\displaystyle	\sum_{n=1}^{\infty}	u_n$が発散すれば
+$\sum_{n=1}^{\infty}	v_n$も発散する．
+\■
+
+この定理を用いて正項級数$\displaystyle	\sum_{n=1}^{\infty}	a_n$を等比級数と
+比較することによって，つぎの\textbf{Cauchyの判定法}が得られる：
+
+$(1^\circ)$正項級数$\displaystyle	\sum_{n=1}^{\infty}	a_n$において極限
+$\rho	=	\displaystyle	\lim_{n\rightarrow\infty}	(a_{n+1}	/	a_n	)$が存在するとき，
+$\rho	<	1$ならば$\displaystyle	\sum_{n=1}^{\infty}	a_n$は収束し，
+$	\rho	>	1$ならば$\displaystyle	\sum_{n=1}^{\infty}	a_n$は発散する．
+
+\証明
+$	\rho	<	1$のとき$\rho	<	r	<	1$なる実数$r$を一つ定めて$n_0$を十分大きくとれば，
+\[
+	n	\geqq	n_0	\quad	\text{のとき}	\quad	\frac{a_n}{a_{n+1}}	>	\frac{1}{r}	=	\frac{r^n}{r^{n+1}}
+\]
+となるが，無限等比級数$\displaystyle	\sum_{n=1}^{\infty}	r^n$は収束する
+\footnote{\small
+$\displaystyle
+	\sum_{n=0}^{\infty}	r^n	=	\frac{1}{1-r}	\quad	|r|	<	1
+$，例えば『オイラーの贈り物』吉田武著	\S	1.6.2を参照．
+}．
+故に，定理5.3により$\displaystyle	\sum_{n=1}^{\infty}	a_n$も収束する．$\rho	>	1$のとき
+$1	<	r	<	\rho$なる実数$r$を一つ定めて，$n_0$を十分に大きくとれば，
+\[
+	n	\geqq	n_0	\quad	\text{のとき}	\quad \frac{a_n}{a_{n+1}}	<	\frac{1}{r}	=	\frac{r^n}{r^{n+1}}
+\]
+であるが$\displaystyle	\sum_{n=0}^{\infty}	r^n$は発散し，定理5.3 $(2^\circ)$より，
+$\displaystyle	\sum_{n=0}^{\infty}	a_n$は発散する．
+\■
+
+一般に$\displaystyle	\lim_{n\rightarrow\infty}	\alpha_n	=	0$であるとき，
+$\alpha_n$を無限小といい，$\varepsilon_n	,	\alpha_n$が無限小であるとき，
+無限小$\varepsilon_n	\alpha_n$を記号$o(\alpha_n)$で表す．すなわち，
+\S	\ref{sec3x1}で述べた関数の場合の無限小に関する記号$o$を数列の場合に
+援用するのである．さらに，$\alpha_n$が無限小であるとき，
+$\gamma_n	\alpha_n,	\:	|\gamma_n	|	\leqq	\mu$，$\mu$は定数，
+なる形の無限小を記号$O(\alpha_n)$で表す．小文字の$o$で無限小，
+すなわち$0$に収束する数列$\{\varepsilon_n\}$を代表したのに対して，
+大文字の$O$で有界数列$\{\gamma_n	\}$を代表するのである．
+
+さて，極限$\rho	=	\displaystyle	\lim_{n\rightarrow\infty}	(	a_{n+1}	/	a_n)$が$1$に等しい場合には，
+等比級数と比較したのでは$\displaystyle	\sum_{n=1}^{\infty}	a_n$の収束，発散を判定することはできない．
+このとき，$\displaystyle	\sum_{n=1}^{\infty}	a_n$を
+$\displaystyle	\sum_{n=1}^{\infty}	1/n^s$および$\displaystyle	\sum_{n=1}^{\infty}	1/(n	\log	n)$と
+比較して，つぎの\textbf{Gaussの判定法}を得る：
+
+$(2^\circ)$ 正項級数$\displaystyle	\sum_{n=1}^{\infty}	a_n$において
+\begin{equation}
+	\frac{a_n}{a_{n+1}}	=	1	+	\frac{\sigma}{n}	+	O\left(	\frac{1}{n^{1+\delta}}	\right),	\quad	\delta	>	0,
+\label{eq5x17}
+\end{equation}
+とする．このとき，$\sigma	>	1$ならば$\displaystyle	\sum_{n=1}^{\infty}	a_n$は収束し，
+$\sigma	\leqq	1$ならば$\displaystyle	\sum_{n=1}^{\infty}	a_n$は発散する．
+
+\証明
+$\sigma	>	1$のとき，$\sigma	>	s	>	1$なる次数$s$を一つ定めれば，Taylorの公式
+（\ref{eq3x39}）により
+\[
+	\frac{(n+1)^s}{n^s}	=	\left(
+													1	+	\frac{1}{n}
+												\right)^s
+											=	1	+	\frac{s}{n}	+	O\left(	\frac{1}{n^2}	\right)
+\]
+\footnote{	\small	
+$f(x)	=(1+x)^s$とおくと，
+$f^{(k)}	(x)	=	s	(s-1)	\cdots	(s-k+1)(1+x)^{s-k}	\quad	(k=1,2,	\cdots	,	n)$
+（（\ref{eq3x35}）を参照）であるから，（\ref{eq3x39}）で$a=0$として，
+\[	(1+x)^s	=	f(0)	+	f'(0)	x	+	\frac{f''(\theta	x)}{2!}	x^2
+						=	1	+	s	x	+	\frac{s(s-1)	(1+	\theta	x)	^{s-2}}{2!}	x^2.
+\]
+$\displaystyle	x=	\frac{1}{n}$を代入すると，
+\[	
+		\left(	1+\frac{1}{n}	\right)^s	
+	=	1	+		\frac{s}{n}	+	\frac{\displaystyle		s(s-1)	\left(1+	\frac{\theta}{n}	\right)	^{s-2}}{2!}	\left(	\frac{1}{n^2}	\right)
+	=	1	+		\frac{s}{n}	+	O\left(\frac{1}{n^2}	\right)
+\]
+}．
+故に，仮定（\ref{eq5x17}）により
+\[
+	\frac{a_n}{a_{n+1}}	-	\frac{(n+1)^s}{n^s}
+=	\frac{\sigma	-	s}{n}	+	O\left(	\frac{1}{n^{1+\sigma}}	\right)	-	O\left(	\frac{1}{n^2}	\right)
+\]
+であって，$\sigma	-s	>	0$であるから，$n_0$を十分大きくとれば
+\[
+	n	\geqq	n_0	\quad	\text{のとき}\quad	\frac{a_n}{a_{n+1}}>	\frac{(n+1)^s}{n^2}	=	\frac{n^{-s}}{(n+1)^{-s}}
+\]
+となるが，$s>1$であるから$\displaystyle	\sum_{n=1}^{\infty}	n^{-s}$は収束する（定理5.2の直後の考察の結果）．
+故に$\displaystyle	\sum_{n=1}^{\infty}	a_n$も収束する（定理5.3$(1^\circ)$より）．
+
+$\sigma	<	1$のとき，
+\[
+	\frac{n+1}{n}	-	\frac{a_n}{a_{n+1}}	
+=	\frac{n+1}{n}	-	\frac{n	+	\sigma}{n}	+	O	\left(	\frac{1}{n^{1+\delta}}	\right)
+=	\frac{1-\sigma}{n}	+	O	\left(	\frac{1}{n^{1+\sigma}}	\right)
+\]
+であるから，$n_0$を十分大きくとれば
+\[
+	n	\geqq	n_0	\quad	\text{のとき}	\quad	\frac{n+1}{n}	-	\frac{a_n}{a_{n+1}}	=
+	\frac{\displaystyle	\frac{1}{n}}{\displaystyle	\frac{1}{n+1}}	-	\frac{a_n}{a_{n+1}}	
+>	0.
+\]
+故に，$\displaystyle	\sum_{n=1}^{\infty}	1/n$が発散するから，$\displaystyle	\sum_{n=1}^{\infty}	a_n$も発散する．
+
+$\sigma	=1$のときには$\displaystyle	\sum_{n=1}^{\infty}	a_n$を発散する級数
+$\displaystyle	\sum_{n=2}^{\infty}	r_n$，$r_n=1/(n	\log	n)$，と比較する．
+
+$d	(x	\log	x)/	dx	=	\log	x	+	1$であるから，平均値の定理により
+\[
+	\frac{(n+1)	\log	(n+1) -	n	\log	n}{(n+1)	-	n}	=	\log	(n	+	\theta)	+1	>	\log	n	+1,	\quad	0	<	\theta	<1,
+\]
+したがって
+\[
+	\frac{r_n}{r_{n+1}}	
+=	1	+	\frac{(n+1)	\log	(n+1)	-	n	\log	n}{n	\log	n}	
+=	1	+	\frac{\log	n	+	1}{n	\log	n}
+>	1	+	\frac{1}{n}	+	\frac{1}{n	\log	n}.
+\]
+故に
+\begin{align*}
+	\frac{r_n}{r_{n+1}}	-	\frac{a_n}{a_{n+1}}	
+	&>	1+	\frac{1}{n}	+	\frac{1}{n\log	n}	-	\left(	1	+	\frac{\sigma}{n}	+	O\left(\frac{1}{n^{1+\delta}}	\right)	\right)	
+		=	\frac{1}{n	\log	n}	-	O	\left(
+																\frac{1}{n^{1+\delta}}
+															\right)	\\
+	&=	\frac{1}{n	\log	n}	\left(	1	-	n	\log	n	O\left(	\frac{1}{n^{1+\delta}}	\right)	\right)	\\
+	&=	\frac{1}{n	\log	n}	\left(	1	-	n	\log	n	R_n \frac{1}{n^{1+\delta}}	\right)		\quad	\text{(ただし	$R_n	<	\mu	\:$	(有界数列))}	\\
+	&=	\frac{1}{n	\log	n}	\left(
+														1	-	R_n
+																		\frac{\log	n}{n^\delta}
+													\right),	
+\end{align*}
+ここで，\S	\ref{sec2x3x3}，例2.9により
+$\displaystyle	\lim_{n\rightarrow\infty}	\log	n	/	n^\delta
+	=		\lim_{n\rightarrow\infty}	\frac{1}{\delta}	\log	n^{\delta}	/	n^\delta
+	=	0
+$であるから，$n_0$を十分大きくとれば
+\[
+	n	\geqq	n_0	\quad	\text{のとき}	\quad	\frac{r_n}{r_{n+1}}	>	\frac{a_n}{a_{n+1}}
+\]
+となる．故に$\displaystyle	\sum_{n=1}^{\infty}	a_n$は発散する．
+\■
+
+\例{5.2}
+級数
+\[
+	\sum_{n=1}^{\infty}	
+		\frac{\alpha	(	\alpha+1)	\cdots	(	\alpha	+	n-1)\beta	(	\beta+1)	\cdots	(\beta	+	n	-1)}{
+			\gamma	(\gamma	+1)	\cdots	(	\gamma	+	n-1)	n!
+		}
+\]
+の第$n$項を$a_n$とすれば
+\begin{align*}
+	\frac{a_n}{a_{n+1}}
+	&=	\frac{	\displaystyle	
+				\frac{	\alpha	(		\alpha+1)	\cdots	(\alpha	+	n	-1)	\beta	(\beta	+	1)	\cdots	+	(\beta	+	n	-1)
+							}{\gamma	(	\gamma	+1)	\cdots	(	\gamma	+	n	-	1)	n!}}{	\displaystyle
+				\frac{\alpha	(		\alpha+1)	\cdots	(\alpha	+	n	-1)(	\alpha	+	n)	\beta	(\beta	+	1)	\cdots	+	(\beta	+	n	-1)(	\beta	+n	)}{
+					\gamma	(	\gamma	+1)	\cdots	(	\gamma	+	n	-	1)	(	\gamma	+	n)	(n+1)!	}
+			}	\\
+	&=	\frac{(n+1)	(n+\gamma)	}{(n+	\alpha	)	(n+\beta)	}	\\
+	&=	\frac{n^2	+	(\alpha	+	\beta)	n	+	\alpha	\beta	-	n^2	-	(\alpha	+	\beta)	n	-	\alpha	\beta	+	n^2	+	(1+\gamma	)	n	+	\gamma}{
+		(n+	\alpha	)	(n+\beta)}	\\
+	&=	1	+	\frac{(1	+	\gamma	-	\alpha	-	\beta)n	+	\gamma	-	\alpha	\beta}{(n+	\alpha	)	(n+\beta)}	\\
+	&=	1	+	\frac{\gamma	+	1	-	\alpha	-	\beta}{n}	-	\frac{\gamma	+	1	-	\alpha	-\beta}{n}	
+					+ \frac{(1	+	\gamma	-	\alpha	-	\beta)n	+	\gamma	-	\alpha	\beta}{(n+	\alpha	)	(n+\beta)}\\
+	&=	1	+	\frac{\gamma	+	1	-	\alpha	-	\beta}{n}	
+					+	\frac{-(\gamma	+	1	-	\alpha	-	\beta)(n	+	\alpha)(n+	\beta)
+									+(1	+	\gamma	-	\alpha	-	\beta)n^2	+	(\gamma	-	\alpha	\beta)n
+					}{n(n	+	\alpha)(n+	\beta)}	\\
+	&=	1	+	\frac{\gamma	+	1	-	\alpha	-	\beta}{n}	
+					+	\frac{-(\gamma	+	1	-	\alpha	-	\beta)(\alpha	+	\beta)n	-	(\gamma	+1	-	\alpha	-	\beta)\alpha\beta	+	(\gamma	-	\alpha	\beta)n
+					}{n(n	+	\alpha)(n+	\beta)}	\\
+	&=	1	+	\frac{\gamma	+	1	-	\alpha	-	\beta}{n}	
+					+	\frac{-(\gamma	+	1	-	\alpha	-	\beta)(\alpha	+	\beta)	-	(\gamma	+1	-	\alpha	-	\beta)\alpha\beta/n	+	(\gamma	-	\alpha	\beta)
+					}{(1	+	\alpha/n)(1+	\beta/n)}	\cdot \frac{1}{n^2}\\
+	&=	1	+	\frac{\gamma	+	1	-	\alpha	-	\beta}{n}	+	O	\left(	\frac{1}{n^2}	\right).
+\end{align*}
+故に，上記の判定法$(2^\circ)$により，この級数は$\gamma	+1	-	\alpha	-	\beta	>1$のとき
+収束し，$\gamma	+1	-	\alpha	-	\beta	\leqq	1$のとき発散する．
+ただしここで$\gamma$は$0$でも負の整数でもない（$a_n$の分母の部分が$0$となることを避ける）とする．

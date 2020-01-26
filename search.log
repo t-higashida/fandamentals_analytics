@@ -1,0 +1,1031 @@
+This is pTeX, Version p2.1.5.beta12, based on TeX, Version 3.14159 (SJIS) (Web2c 7.0) (format=platex 5.8.11)  29 APR 2007 19:48
+**search
+(search.tex
+pLaTeX2e <1997/07/02>+2 (based on LaTeX2e <1997/06/01> patch level 0)
+(c:/usr/local/share/texmf/tex/platex/local/myjbook.cls
+Document Class: myjbook 1997/08/14 v1.3 Okumura's Classes
+LaTeX Info: Redefining \sffamily on input line 28.
+LaTeX Info: Redefining \ttfamily on input line 31.
+(c:/usr/local/share/texmf/tex/platex/local/myjbk10.clo
+File: myjbk10.clo 1997/08/14 v1.3 Okumura's Classes
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 29.
+)
+\c@part=\count81
+\c@chapter=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\@lnumwidth=\dimen118
+\bibindent=\dimen119
+)
+(c:/usr/local/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 1997/03/24 v2.2c
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 133.
+)
+(c:/usr/local/share/texmf/tex/latex/amslatex/amsmath.sty
+Package: amsmath 1997/03/20 v1.2d AMS math features
+\@mathmargin=\skip43
+
+(c:/usr/local/share/texmf/tex/latex/amslatex/amstext.sty
+Package: amstext 1996/10/28 v1.2b
+
+(c:/usr/local/share/texmf/tex/latex/amslatex/amsgen.sty
+File: amsgen 1996/10/29 v1.2b
+\@emptytoks=\toks16
+\ex@=\dimen120
+))
+(c:/usr/local/share/texmf/tex/latex/amslatex/amsbsy.sty
+Package: amsbsy 1996/10/28 v1.2b
+\pmbraise@=\dimen121
+)
+(c:/usr/local/share/texmf/tex/latex/amslatex/amsopn.sty
+Package: amsopn 1996/10/28 v1.2b operator names
+)
+LaTeX Info: Redefining \frac on input line 188.
+\uproot@=\count90
+\leftroot@=\count91
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \dots on input line 335.
+LaTeX Info: Redefining \ldots on input line 418.
+LaTeX Info: Redefining \cdots on input line 422.
+\Mathstrutbox@=\box41
+\strutbox@=\box42
+\big@size=\dimen122
+LaTeX Font Info:    Redeclaring font encoding OML on input line 500.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 501.
+\skewcharcount@=\count94
+\familycount@=\count95
+\pointcount@=\count96
+\accentdimen@=\dimen123
+\accentmu@=\count97
+\minaw@=\dimen124
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks17
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks18
+\eqnshift@=\dimen125
+\alignsep@=\dimen126
+\tagshift@=\dimen127
+\tagwidth@=\dimen128
+\totwidth@=\dimen129
+\lineht@=\dimen130
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+)
+(c:/usr/local/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 1996/11/03 v2.2b
+)
+(c:/usr/local/share/texmf/tex/latex/aurical/aurical.sty
+Package: aurical 2006/01/01 aurical - a set of three decorative fonts with acce
+nts
+)
+(c:/usr/local/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1997/06/09 v1.0d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/usr/local/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1995/09/21 v1.09 key=value parser (DPC)
+)
+(c:/usr/local/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 1997/06/07 v1.0d Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/usr/local/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1994/10/16 v1.08 sin cos tan (DPC)
+)
+(c:/usr/local/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: dviout.def on input line 84.
+
+(c:/usr/local/share/texmf/tex/latex/graphics/dviout.def
+File: dviout.def 1997/6/29 Driver file of `dviout' for LaTeXe
+))
+\Gin@req@height=\dimen131
+\Gin@req@width=\dimen132
+)
+(c:/usr/local/share/texmf/tex/latex/amsfonts/eucal.sty
+Package: eucal 1995/01/06 v2.2 Euler Script fonts
+LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
+(Font)                  U/eus/m/n --> U/eus/b/n on input line 47.
+)
+(c:/usr/local/share/texmf/tex/latex/base/latexsym.sty
+Package: latexsym 1996/11/20 v2.2d Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 85.
+)
+(c:/usr/local/share/texmf/tex/latex/misc/epic.sty
+Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
+\@@multicnt=\count104
+\d@lta=\count105
+\@delta=\dimen133
+\@@delta=\dimen134
+\@gridcnt=\count106
+\@joinkind=\count107
+\@dotgap=\dimen135
+\@ddotgap=\dimen136
+\@x@diff=\count108
+\@y@diff=\count109
+\x@diff=\dimen137
+\y@diff=\dimen138
+\@dotbox=\box43
+\num@segments=\count110
+\num@segmentsi=\count111
+\@datafile=\read1
+) (c:/usr/local/share/texmf/tex/latex/misc/eepic.sty
+Extension to Epic and LaTeX. Version 1.1b - Released Febrary 7, 1988
+\@gphlinewidth=\count112
+\@eepictcnt=\count113
+\@tempdimc=\dimen139
+\maxovaldiam=\dimen140
+\@filltype=\box44
+) (c:/usr/local/share/texmf/tex/platex/base/ascmac.sty
+(c:/usr/local/share/texmf/tex/platex/base/tascmac.sty
+\@savetbaselineshift=\dimen141
+\@saveybaselineshift=\dimen142
+\scb@x=\box45
+\scscb@x=\box46
+\@bw=\dimen143
+\@nbox=\box47
+\@nbody=\box48
+\@scw=\dimen144
+\@itemh=\dimen145
+\@iboxstr=\toks20
+\@iboxpos=\toks21
+\@bwsp=\box49
+\@@bwsp=\box50
+\@bcal=\count114
+\shaderule=\dimen146
+)) (search.aux (sec0.aux)
+(sec1.aux) (sec1x2.aux) (sec1x2x2.aux) (sec1x2x3.aux) (sec1x2x4.aux)
+(sec1x3.aux) (sec1x4.aux) (sec1x4x2.aux) (sec1x4x3.aux) (sec1x4x4.aux)
+(sec1x4x5.aux) (sec1x4x6.aux) (sec1x5.aux) (sec1x5x2.aux) (sec1x5x3.aux)
+(sec1x5x4.aux) (sec1x5x5.aux) (sec1x5x6.aux) (sec1x5x7.aux) (sec1x6.aux)
+(sec1x6x2.aux) (sec1x6x3.aux) (sec1x6x4.aux) (sec1x6x5.aux) (sec1x6x6.aux)
+(sec1x6x7.aux) (sec2X1x1.aux) (sec2X2.aux) (sec2X2x2.aux) (sec2X2x3.aux)
+(sec2X2x4.aux) (sec2X3.aux) (sec2X3x2.aux) (sec2X3x3.aux) (sec2x4.aux)
+(sec3.aux) (sec3x2.aux) (sec3x2x2.aux) (sec3x2x3.aux) (sec3x2x4.aux)
+(sec3x3.aux) (sec3x4.aux) (sec3x4x3.aux) (sec3x4x4.aux) (sec3x4x5.aux)
+(sec3x4x6.aux) (sec4.aux) (sec4x1x2.aux) (sec4x2.aux) (sec4x2x2.aux)
+(sec4x2x3.aux) (sec4x2x4.aux) (sec4x3.aux) (sec4x3x2.aux) (sec4x3x3.aux)
+(sec4x3x4.aux) (sec4x4.aux) (sec5.aux) (sec5x2.aux) (sec5x2x2.aux)
+(sec5x2x3.aux) (sec5x3.aux) (sec5x3x2.aux) (sec5x4.aux) (sec5x5.aux)
+(sec5x6.aux) (sec6.aux) (sec7.aux) (sec8.aux))
+\openout1 = `search.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+\openout2 = `sec0.aux'.
+
+ (sec0.tex
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 3.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 3.
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+
+(c:/usr/local/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 1995/01/05 v2.2e AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+
+(c:/usr/local/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 1995/01/05 v2.2e AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 3.
+
+(c:/usr/local/share/texmf/tex/latex/base/ulasy.fd
+File: ulasy.fd 1996/11/20 v2.2dLaTeX symbol font definitions
+) [1
+
+
+
+
+] [2
+
+]
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 4.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 4.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 16.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 16.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 16.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 31.
+
+(c:/usr/local/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1997/06/16 v2.5e Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 43.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 43.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 43.
+ [3]) [4] (search.toc
+[5
+
+
+] [6])
+\tf@toc=\write3
+\openout3 = `search.toc'.
+
+ [7] [8]
+\openout2 = `sec1.aux'.
+
+ (sec1.tex
+第1章
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 1.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 1.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 4.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 4.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 73.
+[1
+
+
+
+]
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 105.
+ [2] [3]
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 289.
+ [4] [5]) [6]
+\openout2 = `sec1x2.aux'.
+
+ (sec1x2.tex
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 10.
+ [7
+
+
+]) [8] [9]
+\openout2 = `sec1x2x2.aux'.
+
+ (sec1x2x2.tex [10
+
+
+] [11])
+[12]
+\openout2 = `sec1x2x3.aux'.
+
+ (sec1x2x3.tex [13
+
+
+] [14]) [15]
+\openout2 = `sec1x2x4.aux'.
+
+ (sec1x2x4.tex [16
+
+
+]) [17]
+\openout2 = `sec1x3.aux'.
+
+ (sec1x3.tex
+[18
+
+
+] [19] [20] [21]) [22]
+\openout2 = `sec1x4.aux'.
+
+ (sec1x4.tex [23
+
+
+]) [24]
+\openout2 = `sec1x4x2.aux'.
+
+ (sec1x4x2.tex [25
+
+
+]) [26]
+\openout2 = `sec1x4x3.aux'.
+
+
+(sec1x4x3.tex [27
+
+
+]) [28]
+\openout2 = `sec1x4x4.aux'.
+
+ (sec1x4x4.tex [29
+
+
+] [30] [31] [32]) [33]
+\openout2 = `sec1x4x5.aux'.
+
+ (sec1x4x5.tex
+[34
+
+
+]) [35]
+\openout2 = `sec1x4x6.aux'.
+
+ (sec1x4x6.tex [36
+
+
+]) [37]
+\openout2 = `sec1x5.aux'.
+
+ (sec1x5.tex) [38
+
+
+] [39]
+\openout2 = `sec1x5x2.aux'.
+
+ (sec1x5x2.tex)
+[40
+
+
+]
+\openout2 = `sec1x5x3.aux'.
+
+ (sec1x5x3.tex
+Overfull \hbox (16.65857pt too wide) in paragraph at lines 89--99
+[]\JY1/mc/m/n/10 このように ， $[]$$[] \OML/cmm/m/it/10 a[]$ $[]$$[] a[]$ $[]$\
+JY1/mc/m/n/10 ． $[] \OML/cmm/m/it/10 a[] \U/msa/m/n/10 5
+ []
+
+[41
+
+
+] [42] [43]) [44]
+\openout2 = `sec1x5x4.aux'.
+
+ (sec1x5x4.tex [45
+
+
+] [46]
+Overfull \hbox (28.03766pt too wide) in paragraph at lines 206--206
+[] 
+ []
+
+
+Overfull \hbox (5.71523pt too wide) in paragraph at lines 266--266
+[] 
+ []
+
+[47] [48] [49] [50]) [51]
+\openout2 = `sec1x5x5.aux'.
+
+ (sec1x5x5.tex [52
+
+
+]) [53]
+\openout2 = `sec1x5x6.aux'.
+
+ (sec1x5x6.tex [54
+
+
+] [55]
+[56] [57]) [58]
+\openout2 = `sec1x5x7.aux'.
+
+ (sec1x5x7.tex) [59
+
+
+]
+\openout2 = `sec1x6.aux'.
+
+ (sec1x6.tex [60
+
+
+] [61]) [62]
+\openout2 = `sec1x6x2.aux'.
+
+ (sec1x6x2.tex
+[63
+
+
+] [64]) [65]
+\openout2 = `sec1x6x3.aux'.
+
+ (sec1x6x3.tex [66
+
+
+]
+LaTeX Font Info:    Try loading font information for U+eus on input line 108.
+
+(c:/usr/local/share/texmf/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 1995/01/05 v2.2e AMS font definitions
+)) [67]
+\openout2 = `sec1x6x4.aux'.
+
+ (sec1x6x4.tex)
+[68
+
+
+]
+\openout2 = `sec1x6x5.aux'.
+
+ (sec1x6x5.tex [69
+
+
+]
+File: p63x1.bmp Graphic file (type bmp)
+ <p63x1.bmp 224bp x 175bp>
+File: p63x2.bmp Graphic file (type bmp)
+ <p63x2.bmp 172bp x 174bp>
+[70] [71]) [72]
+\openout2 = `sec1x6x6.aux'.
+
+ (sec1x6x6.tex [73
+
+
+] [74] [75] [76] [77] [78]) [79]
+\openout2 = `sec1x6x7.aux'.
+
+ (sec1x6x7.tex [80
+
+
+] [81] [82]
+Overfull \hbox (11.68382pt too wide) in paragraph at lines 259--273
+[]\OT1/cmr/bx/n/10 9 \JY1/gt/m/n/10 　\JY1/mc/m/n/10 与えられた実数 $\OML/cmm/m
+/it/10 a$\JY1/mc/m/n/10 ， $\OML/cmm/m/it/10 a > \OT1/cmr/m/n/10 0$\JY1/mc/m/n/
+10 ， に対して $\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 = [] []$\JY1/mc/m/n/10 ， 
+$\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 = [] []$\JY1/mc/m/n/10 ， $[]  \OML/cmm/m
+/it/10 ;$ $a[] \OT1/cmr/m/n/10 = [] []$\JY1/mc/m/n/10 ，
+ []
+
+) [83]
+\openout2 = `sec2X1x1.aux'.
+
+ (sec2X1x1.tex [84
+
+
+
+]
+第2章
+[85] [86] [87] [88]) [89]
+\openout2 = `sec2X2.aux'.
+
+ (sec2X2.tex
+Overfull \hbox (12.5725pt too wide) in paragraph at lines 57--65
+[]$\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/c
+mm/m/it/10 ; g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$$[]$$ \OML/c
+mm/m/it/10 I $$[]$$\OT1/cmr/m/n/10 : \OML/cmm/m/it/10 c[]f\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 x\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 c[]g\OT1/cmr/m/n/10 (\OML/cm
+m/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; c[]; c[] $$[]$\OT1/cmr/m/n/10 , 
+$[]$$ :
+ []
+
+
+Overfull \hbox (3.3668pt too wide) in paragraph at lines 57--65
+\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/
+m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) $$[]$$ \OML/cmm/m
+/it/10 I $$[]$\JY1/mc/m/n/10 ． さらに $\OML/cmm/m/it/10 I $ $[]$$ x $$[]$$g\OT
+1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 6\OT1/cmr/m/
+n/10 = 0$$[]$$ \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/
+n/10 )\OML/cmm/m/it/10 =g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) $
+$[]$$ \OML/cmm/m/it/10 I $$[]$$[]$
+ []
+
+[90
+
+
+]) [91]
+\openout2 = `sec2X2x2.aux'.
+
+ (sec2X2x2.tex [92
+
+
+] [93] [94] [95]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 544.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 545.
+
+) [96]
+\openout2 = `sec2X2x3.aux'.
+
+ (sec2X2x3.tex) [97
+
+
+]
+\openout2 = `sec2X2x4.aux'.
+
+ (sec2X2x4.tex) [98
+
+
+]
+\openout2 = `sec2X3.aux'.
+
+ (sec2X3.tex [99
+
+
+]) [100]
+\openout2 = `sec2X3x2.aux'.
+
+
+(sec2X3x2.tex [101
+
+
+]
+Overfull \hbox (5.15186pt too wide) in paragraph at lines 138--140
+$[]$
+ []
+
+[102] [103]) [104]
+\openout2 = `sec2X3x3.aux'.
+
+ (sec2X3x3.tex) [105
+
+
+]
+\openout2 = `sec2x4.aux'.
+
+ (sec2x4.tex [106
+
+
+] [107] [108]
+File: p098.bmp Graphic file (type bmp)
+
+<p098.bmp 226bp x 113bp> [109] [110] [111]
+File: p101.bmp Graphic file (type bmp)
+ <p101.bmp 226bp x 170bp> [112]
+File: p103.bmp Graphic file (type bmp)
+
+<p103.bmp 212bp x 127bp> [113] [114]
+File: p104.bmp Graphic file (type bmp)
+ <p104.bmp 113bp x 113bp> [115] [116]
+[117] [118] [119]) [120]
+\openout2 = `sec3.aux'.
+
+ (sec3.tex
+第3章
+[121
+
+
+
+]
+File: p108.bmp Graphic file (type bmp)
+ <p108.bmp 255bp x 170bp> [122] [123]
+Overfull \hbox (0.49963pt too wide) in paragraph at lines 202--206
+[]\JY1/mc/m/n/10 無理点 $\OML/cmm/m/it/10 ^^K$ \JY1/mc/m/n/10 は明らかに区間 $\
+OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1)$ \JY1/mc/m/n/10 で到る所
+稠密に分布している ． ゆえに $[]$
+ []
+
+) [124] [125]
+\openout2 = `sec3x2.aux'.
+
+ (sec3x2.tex [126
+
+
+]) [127]
+\openout2 = `sec3x2x2.aux'.
+
+ (sec3x2x2.tex [128
+
+
+]) [129]
+\openout2 = `sec3x2x3.aux'.
+
+ (sec3x2x3.tex
+File: p115.bmp Graphic file (type bmp)
+<p115.bmp 170bp x 170bp>) [130
+
+
+]
+\openout2 = `sec3x2x4.aux'.
+
+ (sec3x2x4.tex [131
+
+
+]
+
+LaTeX Warning: Reference `eq2.23' on page 132 undefined on input line 145.
+
+[132]) [133]
+\openout2 = `sec3x3.aux'.
+
+ (sec3x3.tex
+File: p120.bmp Graphic file (type bmp)
+ <p120.bmp 170bp x 127bp>
+File: p120x2.bmp Graphic file (type bmp)
+ <p120x2.bmp 170bp x 141bp>
+[134
+
+
+] [135] [136]
+File: p124.bmp Graphic file (type bmp)
+ <p124.bmp 226bp x 90bp> [137] [138]
+File: p126.bmp Graphic file (type bmp)
+ <p126.bmp 340bp x 99bp>)
+[139]
+\openout2 = `sec3x4.aux'.
+
+ (sec3x4.tex
+Overfull \hbox (4.18456pt too wide) in paragraph at lines 19--21
+[]$\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 x\OT1/cmr/m/n/10 )$ \JY1/mc/m/n/10 の $\OML/cmm/m/it/10 n$ \JY1/mc
+/m/n/10 次導関数を表わす記号は ， $\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cm
+m/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/1
+0 d[]=dx[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
+x\OT1/cmr/m/n/10 )$ \JY1/mc/m/n/10 の他に $\OML/cmm/m/it/10 d[]y=dx[]$\OT1/cmr/
+m/n/10 , $\OML/cmm/m/it/10 y[]; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d=dx\OT1/cmr/
+m/n/10 )[]\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 
+)\OML/cmm/m/it/10 ; D[]f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
+[140
+
+
+]
+Overfull \hbox (5.78433pt too wide) in paragraph at lines 114--118
+\JY1/mc/m/n/10 この右辺の $\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
+d=dx\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z; z
+[]; []  ; z[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 mz[]P[]\OT
+1/cmr/m/n/10 (\OML/cmm/m/it/10 z; z[]; []  ; z \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/
+m/n/10 )$ \JY1/mc/m/n/10 は明らかに $\OML/cmm/m/it/10 z; z[]; z[]; []  ; z[]$
+ []
+
+[141] [142] [143]
+Overfull \hbox (5.25807pt too wide) in paragraph at lines 289--292
+$\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d=dx\OT1/cmr/m/n/10 ) [] \OML/cmm/m/it/10 x 
+\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 x[]$ \JY1/mc/m/n/10 であるから ， 対数関数 $
+[] \OML/cmm/m/it/10 x$ \JY1/mc/m/n/10 も何回でも微分可能である ． \OT1/cmr/m/n/
+10 (3.35) \JY1/mc/m/n/10 により ， $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d[]=dx[]\
+OT1/cmr/m/n/10 )\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 =
+ []
+
+) [144]
+\openout2 = `sec3x4x3.aux'.
+
+ (sec3x4x3.tex [145
+
+
+] [146] [147] [148] [149]) [150]
+\openout2 = `sec3x4x4.aux'.
+
+ (sec3x4x4.tex
+File: p138.bmp Graphic file (type bmp)
+
+<p138.bmp 141bp x 113bp> [151
+
+
+]) [152]
+\openout2 = `sec3x4x5.aux'.
+
+ (sec3x4x5.tex
+File: p141.bmp Graphic file (type bmp)
+ <p141.bmp 340bp x 141bp>
+[153
+
+
+] [154]
+File: p143.bmp Graphic file (type bmp)
+ <p143.bmp 340bp x 226bp>) [155] [156]
+\openout2 = `sec3x4x6.aux'.
+
+ (sec3x4x6.tex
+Overfull \hbox (32.74208pt too wide) in paragraph at lines 36--39
+[]$\OT1/cmr/m/n/10 (2[])$ $\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
+f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ))$ \JY1/mc/m/n/10 は ， 定
+理 \OT1/cmr/m/n/10 3.12 \JY1/mc/m/n/10 により ， $\OML/cmm/m/it/10 n$ \JY1/mc/m
+/n/10 回微分可能で $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 d[]=dx[]\OT1/cmr/m/n/10 )
+\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/
+m/it/10 x\OT1/cmr/m/n/10 ))$ \JY1/mc/m/n/10 は $\OML/cmm/m/it/10 f[]\OT1/cmr/m/
+n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; []  ; f[]\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; g[]\OT1/cmr/m/n/10
+ (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ))\OML/c
+mm/m/it/10 ; []  ; g[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/
+cmm/m/it/10 x\OT1/cmr/m/n/10 ))$
+ []
+
+
+Overfull \hbox (8.1709pt too wide) in paragraph at lines 59--62
+[]\JY1/mc/m/n/10 すべての自然数 $\OML/cmm/m/it/10 n$ \JY1/mc/m/n/10 について $\
+OMS/cmsy/m/n/10 C[]$ \JY1/mc/m/n/10 級である関数がすなわち $\OMS/cmsy/m/n/10 C[
+]$ \JY1/mc/m/n/10 級の関数であるから ， この $[]$
+ []
+
+[157
+
+
+]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 83.
+ [158] [159]
+Overfull \hbox (16.54158pt too wide) in paragraph at lines 223--227
+[]\JY1/mc/m/n/10 このように $\OML/cmm/m/it/10  \OT1/cmr/m/n/10 (\OML/cmm/m/it/1
+0 x\OT1/cmr/m/n/10 )$ \JY1/mc/m/n/10 は $\OMS/cmsy/m/n/10 C[]$ \JY1/mc/m/n/10 
+関数であるが ， $[]$
+ []
+
+File: p148.bmp Graphic file (type bmp)
+<p148.bmp 226bp x 141bp> [160]
+File: p149.bmp Graphic file (type bmp)
+ <p149.bmp 340bp x 184bp>
+Overfull \hbox (5.2864pt too wide) in paragraph at lines 305--316
+\JY1/mc/m/n/10 あらかじめ与えられた $\OMS/cmsy/m/n/10 C[]$ \JY1/mc/m/n/10 関数 
+$\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$ \JY1/m
+c/m/n/10 と一致するようにできる ． すなわち ， $[]$
+ []
+
+[161] [162] [163] [164] [165]
+File: p494.bmp Graphic file (type bmp)
+ <p494.bmp 113bp x 113bp> [166]) [167]
+\openout2 = `sec4.aux'.
+
+ (sec4.tex
+[168
+
+
+
+]
+第4章
+File: p153.bmp Graphic file (type bmp)
+<p153.bmp 340bp x 170bp> [169]
+File: p154.bmp Graphic file (type bmp)
+ <p154.bmp 340bp x 46bp> [170] [171]
+File: p157.bmp Graphic file (type bmp)
+
+<p157.bmp 255bp x 141bp> [172] [173]) [174]
+\openout2 = `sec4x1x2.aux'.
+
+ (sec4x1x2.tex [175
+
+
+] [176]) [177]
+\openout2 = `sec4x2.aux'.
+
+
+(sec4x2.tex [178
+
+
+] [179]) [180]
+\openout2 = `sec4x2x2.aux'.
+
+ (sec4x2x2.tex [181
+
+
+]
+File: p166.bmp Graphic file (type bmp)
+ <p166.bmp 340bp x 141bp>
+[182]
+File: p168.bmp Graphic file (type bmp)
+ <p168.bmp 170bp x 141bp> [183]) [184]
+\openout2 = `sec4x2x3.aux'.
+
+ (sec4x2x3.tex [185
+
+
+] [186]) [187]
+\openout2 = `sec4x2x4.aux'.
+
+
+(sec4x2x4.tex [188
+
+
+] [189]) [190]
+\openout2 = `sec4x3.aux'.
+
+ (sec4x3.tex
+File: p175.bmp Graphic file (type bmp)
+ <p175.bmp 85bp x 170bp> [191
+
+
+]
+[192]
+File: p178.bmp Graphic file (type bmp)
+ <p178.bmp 283bp x 113bp> [193]) [194]
+\openout2 = `sec4x3x2.aux'.
+
+ (sec4x3x2.tex
+Overfull \hbox (1.44028pt too wide) in paragraph at lines 60--60
+[] 
+ []
+
+[195
+
+
+] [196] [197] [198]
+File: p183.bmp Graphic file (type bmp)
+ <p183.bmp 284bp x 84bp> [199]) [200]
+\openout2 = `sec4x3x3.aux'.
+
+ (sec4x3x3.tex
+
+LaTeX Warning: Reference `sec2' on page 201 undefined on input line 7.
+
+
+Overfull \hbox (3.0055pt too wide) in paragraph at lines 12--18
+\JY1/mc/m/n/10 となることである ． $\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 t\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 F\OT1/cmr/m/n
+/10 (\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ) = [][] \OML/cmm/m/it/10 f\OT1/cmr/m/n/
+10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 dx$ \JY1/mc/m/n/10 であ
+るから ， したが って ， $[]$
+ []
+
+[201
+
+
+]
+Overfull \hbox (11.9076pt too wide) in paragraph at lines 176--176
+[] 
+ []
+
+[202] [203] [204]) [205]
+\openout2 = `sec4x3x4.aux'.
+
+ (sec4x3x4.tex [206
+
+
+]) [207]
+\openout2 = `sec4x4.aux'.
+
+ (sec4x4.tex [208
+
+
+] [209]
+[210] [211] [212] [213] [214] [215] [216] [217] [218]) [219]
+\openout2 = `sec5.aux'.
+
+ (sec5.tex [220
+
+
+
+]
+第5章
+[221] [222] [223] [224]
+Overfull \hbox (3.82947pt too wide) in paragraph at lines 236--241
+[]$[]$\JY1/mc/m/n/10 ． $[]$， $[] \OML/cmm/m/it/10 a[]; [] b[]$ $[]$
+ []
+
+[225] [226]) [227]
+\openout2 = `sec5x2.aux'.
+
+ (sec5x2.tex
+File: p207.bmp Graphic file (type bmp)
+ <p207.bmp 311bp x 180bp> [228
+
+
+]
+File: p208.bmp Graphic file (type bmp)
+
+<p208.bmp 262bp x 142bp> [229] [230] [231]) [232]
+\openout2 = `sec5x2x2.aux'.
+
+ (sec5x2x2.tex [233
+
+
+] [234]
+[235]) [236]
+\openout2 = `sec5x2x3.aux'.
+
+ (sec5x2x3.tex [237
+
+
+]) [238]
+\openout2 = `sec5x3.aux'.
+
+ (sec5x3.tex
+File: p216.bmp Graphic file (type bmp)
+ <p216.bmp 226bp x 193bp>
+[239
+
+
+] [240]
+Overfull \hbox (67.06824pt too wide) in paragraph at lines 185--185
+ [] 
+ []
+
+[241]) [242]
+\openout2 = `sec5x3x2.aux'.
+
+ (sec5x3x2.tex
+File: p219.bmp Graphic file (type bmp)
+ <p219.bmp 210bp x 113bp> [243
+
+
+] [244] [245] [246]
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 268.
+)
+[247]
+\openout2 = `sec5x4.aux'.
+
+ (sec5x4.tex [248
+
+
+]) [249]
+\openout2 = `sec5x4x2.aux'.
+
+ (sec5x4x2.tex) [250
+
+
+]
+\openout2 = `sec5x5.aux'.
+
+ (sec5x5.tex [251
+
+
+]) [252]
+\openout2 = `sec5x6.aux'.
+
+
+(sec5x6.tex) [253
+
+
+] [254]
+\openout2 = `sec6.aux'.
+
+ (sec6.tex
+第6章
+) [255
+
+
+
+]
+\openout2 = `sec7.aux'.
+
+ (sec7.tex [256
+
+
+
+]
+第7章
+) [257]
+\openout2 = `sec8.aux'.
+
+ (sec8.tex [258
+
+
+
+]
+第8章
+) [259] (search.aux (sec0.aux) (sec1.aux) (sec1x2.aux) (sec1x2x2.aux)
+(sec1x2x3.aux) (sec1x2x4.aux) (sec1x3.aux) (sec1x4.aux) (sec1x4x2.aux)
+(sec1x4x3.aux) (sec1x4x4.aux) (sec1x4x5.aux) (sec1x4x6.aux) (sec1x5.aux)
+(sec1x5x2.aux) (sec1x5x3.aux) (sec1x5x4.aux) (sec1x5x5.aux) (sec1x5x6.aux)
+(sec1x5x7.aux) (sec1x6.aux) (sec1x6x2.aux) (sec1x6x3.aux) (sec1x6x4.aux)
+(sec1x6x5.aux) (sec1x6x6.aux) (sec1x6x7.aux) (sec2X1x1.aux) (sec2X2.aux)
+(sec2X2x2.aux) (sec2X2x3.aux) (sec2X2x4.aux) (sec2X3.aux) (sec2X3x2.aux)
+(sec2X3x3.aux) (sec2x4.aux) (sec3.aux) (sec3x2.aux) (sec3x2x2.aux)
+(sec3x2x3.aux) (sec3x2x4.aux) (sec3x3.aux) (sec3x4.aux) (sec3x4x3.aux)
+(sec3x4x4.aux) (sec3x4x5.aux) (sec3x4x6.aux) (sec4.aux) (sec4x1x2.aux)
+(sec4x2.aux) (sec4x2x2.aux) (sec4x2x3.aux) (sec4x2x4.aux) (sec4x3.aux)
+(sec4x3x2.aux) (sec4x3x3.aux) (sec4x3x4.aux) (sec4x4.aux) (sec5.aux)
+(sec5x2.aux) (sec5x2x2.aux) (sec5x2x3.aux) (sec5x3.aux) (sec5x3x2.aux)
+(sec5x4.aux) (sec5x4x2.aux) (sec5x5.aux) (sec5x6.aux) (sec6.aux) (sec7.aux)
+(sec8.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(\end occurred inside a group at level 1) 
+Here is how much of TeX's memory you used:
+ 2329 strings out of 10649
+ 23921 string characters out of 69356
+ 103295 words of memory out of 250001
+ 5117 multiletter control sequences out of 10000+0
+ 27212 words of font info for 129 fonts, out of 100000 for 500
+ 14 hyphenation exceptions out of 1000
+ 30i,18n,23p,271b,425s stack positions out of 300i,100n,500p,3000b,4000s
+
+Output written on search.dvi (267 pages, 1133884 bytes).

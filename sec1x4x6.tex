@@ -1,0 +1,104 @@
+\subsection{実数の10進小数表示}
+\label{sec1x4x6}
+
+与えられた10進小数
+\[
+	k.k_1k_2k_3	\cdots	k_n	\cdots
+\]
+に対して
+\[
+	a_n	=	k.k_1k_2\cdots	k_n	=	k	+	\frac{k_1}{10}
+															+	\frac{k_2}{10^2}
+															+	\cdots
+															+	\frac{k_n}{10^n}
+\]
+とおけば，$m>n$のとき
+\[
+	0	\leqq	a_m	-	a_n	=			0.	\overbrace{00\cdots	0}^{n}	k_{n+1}	\cdots	k_m
+										\leqq	0.	\overbrace{00\cdots	1}^{n}
+										=	\frac{1}{10^n},
+\]
+したがって
+\[
+	|a_m	-	a_n|	\leqq	\frac{1}{10^n}.
+\]
+任意の正の実数$\varepsilon$に対応して自然数
+$n_0(\varepsilon)$を
+$\displaystyle
+10^{n_0(\varepsilon)}	>	\frac{1}{\varepsilon}$
+なるように定めれば，$n	>	n_0(\varepsilon)$のとき
+\[
+	\frac{1}{10^n}	<	\frac{1}{10^{n_0(\varepsilon)}}	<	\varepsilon
+\]
+となる．故に数列$\{a_n\}$は収束する．その極限を$\alpha$とすれば，すなわち
+\begin{equation}
+	\alpha	=	\lim_{n	\rightarrow	\infty}	a_n,	\quad
+	a_n	=	k+\frac{k_1}{10}+\frac{k_2}{10^2}+	\cdots
+					\frac{k_n}{10^n}.
+\end{equation}
+このとき
+\[
+	\alpha	=	k.k_1k_2k_3	\cdots	k_n	\cdots	\label{eq:1.14}
+\]
+と書く．10進小数はすべて(1.14)の意味で実数を表わすのである．
+
+逆に実数はすべて10進数で表わされる．このことをは，\S 1.1で，高校数学の
+立場から説明したが，それは有理数の切断として厳密に定義された実数について
+そのまま適用される．すなわち，与えられた実数$\alpha$に対して，
+\begin{equation}
+	k	+	\frac{k_1}{10}	+	\frac{k_2}{10^2}
+											+	\cdots
+											+	\frac{k_n}{10^n}
+	\leqq	\alpha
+	<
+	k	+	\frac{k_1}{10}	+	\frac{k_2}{10^2}
+											+	\cdots
+											+	\frac{k_n+1}{10^n}
+\end{equation}
+なるように整数$k$と数字$k_1,k_2,\cdots,k_n,\cdots$を順次定めていけば，
+\[
+	|a_n	-	\alpha|	<	\frac{1}{10^n},	\quad
+	a_n=k	+	\frac{k_1}{10}	+	\frac{k_2}{10^2}
+											+	\cdots
+											+	\frac{k_n}{10^n}
+\]
+となるから，(1.14)が成り立つ．
+
+周知のように
+\[
+	1=0.9999\cdots	9	\cdots
+\]
+であるから，$\alpha$が有限小数$k.k_1k_2\cdots	k_n,	k_n	\geqq	1,$
+に等しい場合には，$\alpha$は二通りの
+$10$進数表示：
+\begin{align*}
+	\alpha&=k.k_1k_2	\cdots	k_{n-1}k_n	000	\cdots	0	\cdots,	\\
+	\alpha&=k.k_1k_2	\cdots	k_{n-1}l_n	999	\cdots	9	\cdots,	\quad	l_n=k_n-1,
+\end{align*}
+をもつ．\underline{この場合を除けば，実数$\alpha$の10進数表示はただ一通りに定まる．}
+このことを確かめるために，$\alpha$が二通りの10進小数表示：
+\begin{align*}
+	\alpha	&=	k.k_1k_2\cdots	k_{n-1}k_nk_{n+1}\cdots	k_m	\cdots	\\
+					&=	k.k_1k_2\cdots	k_{n-1}k_n'k_{n+1}'\cdots	k_m'	\cdots	\\
+\end{align*}	
+をもつと仮定し，$k_n'	<	k_n$とする．$\alpha$から$k.k_1k_2\cdots	k_{n-1}$を引いて
+$10^n$を掛ければ，
+\[
+	k_n.k_{n+1}k_{n+2}\cdots	k_m	\cdots	=	k_n'.k_{n_1}k_{n+2}'\cdots	k_m'	\cdots	
+\]
+を得る．したがって，$d_m=k_m'-k_m$とおけば，
+\[
+	1	\leqq	k_n-k_n'	=	\frac{d_{n+1}}{10}	+	\frac{d_{n+2}}{10^2}
+																					+	\cdots
+																					+	\frac{d_{n+m}}{10^m}
+																					+	\cdots.
+\]
+$k_m,k_m'$はそれぞれ$0$から$9$までの数字のいずれか一つであるから，
+$d_m	\leqq	9$であって，$d_m=9$となるのは$k_m=0$，$k_m'=9$なるときに限る．
+故に，上の不等式を等式：
+\[
+	\frac{9}{10}+\frac{9}{10^2}+\cdots	+	\frac{9}{10^m}	+	\cdots	=	0.999	\cdots	9	\cdots	=	1
+\]
+と比べれば，すべての自然数$m$について$d_{n+m}=9$，したがって
+$k_{n+m}=0$でなければならないこと，すなわち，$\alpha$は有限小数$k.k_1k_2	\cdots	k_n$に等しいことが
+わかる．

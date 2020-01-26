@@ -1,0 +1,74 @@
+\subsection{点列の極限}
+
+$P_1,P_2,P_3,\cdots,P_n	\cdots$のように点$P_n	\in	\R^2$を並べたものを
+\textbf{点列}といい$\{P_n\}$で表わす．そして各点$P_n$を点列$\{P_n\}$の項という．
+
+点$A$があって
+\[
+	\lim_{n\rightarrow	\infty}	|P_nA|=0
+\]
+であるとき，点列$\{P_n\}$は$A$に収束する．$A$は点列$\{P_n\}$の極限であるといい，
+\[
+	\lim_{n\rightarrow	\infty}P_n	=	A
+\]
+と書く．また$\{P_n\}$が或る一つの点に収束するとき，点列$\{P_n\}$は収束するという．
+
+$P_n=(x_n,y_n)$，$A=(a,b)$とすれば，
+\[
+	|P_nA|=\sqrt{(x_n-a)^2+(y_n-b)^2}
+\]
+であるから，
+$\displaystyle	\lim_{n\rightarrow	\infty}|P_nA|=0$は
+$\displaystyle	\lim_{n\rightarrow	\infty}=\lim_{n\rightarrow	\infty}	|y_n-b|=0$と同値，
+したがって，$\displaystyle\lim_{n\rightarrow	\infty}P_n	=A$は
+$\displaystyle\lim_{n\rightarrow	\infty}x_n=a_n$
+かつ$\displaystyle\lim_{n\rightarrow	\infty}y_n=b$なることと同値である．また，
+点列$\{P_n\}$が点$A$に収束するための必要かつ十分な条件は，正の実数$\varepsilon$が任意に与えられたとき，
+有限個の$n$を除いて$P_n	\in	U_\varepsilon(A)$となることである．したがって，
+収束する点列$\{P_n\}$の各項$P_n$が$S$に属するならば，
+$\forall	\varepsilon>0	\quad	U_\varepsilon(A)	\cap	S	\ne	\varnothing$，
+その極限：
+$\displaystyle\lim_{n\rightarrow\infty}P_n$は$S$の閉包$[S]$に含まれる（$A	\in	[S]$）．
+
+\定理{1.25}(Cauchyの判定法)
+点列$\{P_n\}$が収束するための必要かつ十分な条件は，任意の正の実数$\varepsilon$に
+対応して一つの自然数$n_0(\varepsilon)$が定まって
+\[
+	n	>	n_0(\varepsilon),\;	m>n_0(\varepsilon)	\quad	\text{ならば}	\quad	|P_nP_m|<\varepsilon
+\]
+となることである．
+
+\証明
+$P_n=(x_n,y_n)$とすれば，上に述べたように，点列$\{P_n\}$が収束することは
+数列$\{x_n\}$，$\{y_n\}$が共に収束することと同値である．一方，
+\[
+	|P_nP_m|=\sqrt{(x_n-x_m)^2+(y_n-y_m)^2}
+\]
+であるから，
+\[
+	|P_nP_m|<\varepsilon	\quad	\text{ならば}	\quad	|x_n-x_m|<\varepsilon,	\:
+																											|y_n-y_m|<\varepsilon,
+\]
+また
+\[
+	|x_n-x_m|<\varepsilon,	\:	|y_n-y_m|<\varepsilon	\quad	\text{ならば}	\quad
+	|P_nP_m|<\sqrt{2}\varepsilon.
+\]
+故に数列に関するCauchyの判定法(定理1.13)によってこの定理1.25が成り立つことがわかる．
+\■
+
+$P$が$S$の集積点であるための必要かつ十分な条件は，$P_n	\in	S$，
+$P_n	\ne	P$，$\displaystyle\lim_{n\rightarrow\infty}P_n=P$なる点列$\{P_n\}$が存在することである．
+このことを示すために，まず$P$が$S$の集積点であるとしよう．
+そうすれば各自然数$n$について，$U_{1/n}(P)\cap	S$は無限集合であるから，
+$P_n\in	U_{1/n}(P)	\cap	S$，$P_n	\ne	P$なる点$P_n$を一つ選ぶことができる．
+明らかに$\displaystyle\lim_{n\rightarrow\infty}P_n=P$．逆に
+$P_n	\in	S$，$P_n	\ne	P$，
+$\displaystyle\lim_{n\rightarrow\infty}P_n=P$なる点列
+$\{P_n\}$が存在したとすれば，任意に与えられた正の実数$\varepsilon$に対して，
+有限個の$n$を除いて$P_n	\in	U_\varepsilon(P)$となるが，$P_n\ne	P$，
+$\displaystyle\lim_{n\rightarrow\infty}P_n=P$だから，
+これらの$P_n$の中には互いに異なるものが
+無数にある($P_n	\in	U_\varepsilon(P)	\cap	S$)．
+故に$U_\varepsilon(P)\cap	S$は無限集合であって，したがって$P$は
+$S$の集積点である．

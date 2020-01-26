@@ -1,0 +1,497 @@
+\subsection{合成関数}
+
+$D$を平面$\R^2$上の領域，$\varphi	(t),	\psi(t)$を或る区間$I$で定義された関数とし，
+$t	\in	I$ならばつねに$(	\varphi	(t)	,	\psi	(t))	\in	D$であるとする．
+$2$変数$x,y$の関数$f(x,y)$の定義域が$D$をその部分集合として含むとき合成関数
+$f(\varphi	(t),	\psi	(t))$は$I$で定義された$t$の関数となる．
+このとき，$\varphi	(t)	,	\psi	(t)$ \underline{が連続，
+$f(x,y)$が$D$で連続ならば合成関数 }
+\underline{$	f(\varphi(t)	,	\psi	(t))$は連続である}．
+\証明
+点$\alpha	\in	I$を任意に選んで$	a	=	\varphi(\alpha)	,	b	=	\psi	(	\alpha)	$ととおけば，
+$(a,b)	\in	D$であるから，仮定により，任意の正の実数$\varepsilon$に対応して正の実数
+$\delta_1	(	\varepsilon)$が定まって
+\[
+	|x	-	a|	<	\delta_1	(	\varepsilon)	,	\quad
+	|y	-	b|	<	\delta_1	(	\varepsilon) \quad \text{ならば}	\quad
+	|	f(x,y)	-	f(a,b)|	<	\varepsilon
+\]
+となる（定義6.2）．また，$\varepsilon$に対応して正の実数$\delta_2(\varepsilon)$が定まって
+\[
+	|t	-	\alpha	|	<	\delta_2	(\varepsilon)	\quad \text{ならば} \quad
+	|	\varphi(t)	-	\varphi	(	\alpha)	|	<	\varepsilon,	\quad
+	|	\psi(t)	-	\psi	(	\alpha)	|	<	\varepsilon
+\]
+となる．故に$\delta	(	\varepsilon)	=	\delta_2	(\delta_1(\varepsilon))$とおけば
+\[
+	|	t	-	\alpha	|	<	\delta	(	\varepsilon	)	\quad	\text{のとき}	\quad
+	|	f	(	\varphi	(t)	,	\psi	(t))	-	f(\varphi	(	\alpha	)	,	\psi	(\alpha))	|	<	\varepsilon.
+\]
+すなわち$	f(\varphi	(t)	,	\psi	(t))$は$I$に属する任意の点$\alpha	$で連続である．
+\■
+
+\定理{6.10} $\varphi	(t)	,	\psi	(t)$が$t$について微分可能，
+$f(x,y)$が$D$で2変数$x,y$について微分可能ならば合成関数
+$f(\varphi(t),	\psi(t))$は$t$について微分可能であって
+\begin{equation}
+	\frac{d}{dt}	f(	\varphi	(t),	\psi	(t)	)	
+	=
+	f_x	(	\varphi	(t),	\psi	(t))	\varphi'	(t)	+	f_y	(	\varphi	(t),	\psi	(t))	\psi'(t).
+\label{eq6x18}
+\end{equation}
+\証明
+$x	=	\varphi	(t),	y	=	\psi	(t),	z	=	f(x,y)	=	f	(	\varphi	(t),	\psi	(t))$とおいて，
+$t$の増分$\varDelta	t$	に対応する$x,y,z$の増分を
+\begin{align*}
+	\varDelta	x	&=	\varphi	(t	+	\varDelta	t)	-	\varphi	(t),	\\
+	\varDelta	y	&=	\psi	(t	+	\varDelta	t)	-	\psi	(t)	,		\\
+	\varDelta	z	&=	f(x	+	\varDelta	x	,	y	+	\varDelta	y)	-	f(x,y)
+\end{align*}
+とすれば，（\ref{eq3x4}）（の一つ前の式）により
+\begin{align*}
+	\varDelta	x	&=	\varphi	'	(t)	\varDelta	t	+	o	(	\varDelta	t)
+								=	\varphi	'	(t)	\varDelta	t	+	\varepsilon_1( \varDelta t ,t ) \varDelta t,	\quad  \lim_{ \varDelta t \to 0 } \varepsilon_1 ( \varDelta t, t ) = 0  \\
+	\varDelta	y	&=	\psi	'	(t)	\varDelta	t	+	o	(	\varDelta	t)
+								=	\psi	'	(t)	\varDelta	t	+	\varepsilon_2( \varDelta t ,t ) \varDelta t	,	\quad  \lim_{ \varDelta t \to 0 } \varepsilon_2 ( \varDelta t, t ) = 0
+\end{align*}
+したがって，（\ref{eq6x10}）により，
+\begin{align*}
+	\varDelta	z	&=	f_x(	x,y)	\varDelta	x	+	f_y	(x,y)	\varDelta	y	+	o	\left(	\sqrt{	(	\varDelta	x	)^2	+	(	\varDelta	y	)^2} \right)	\\
+							&=	f_x(x,y) (\varphi' (t) \varDelta t + o ( \varDelta t)) + f_y(x,y) (\psi '(t) + o ( \varDelta t)) + o\left(	\sqrt{ (\varDelta x ) ^2 + ( \varDelta y)^2	} \right)	\\
+							&=	f_x(x,y) (\varphi' (t) \varDelta t + \varepsilon_1 \varDelta t )	+ f_y(x,y) (\psi '(t) + \varepsilon_2 \varDelta t ) + o\left(	\sqrt{ (\varDelta x ) ^2 + ( \varDelta y)^2	} \right)	\\
+							&=	f_x	(x,y)	\varphi'(t)	\varDelta	t +	f_y	(x,y)	\psi'(t) \varDelta	t	+ f_x(x,y)  \varepsilon_1 \varDelta t + f_y(x,y) \varepsilon_2 \varDelta t + o\left(	\sqrt{ (\varDelta x ) ^2 + ( \varDelta y)^2	} \right)
+\end{align*}
+故に
+\[
+	\lim_{\Delta t\rightarrow 0}	\frac{\varDelta	z	}{\varDelta	t}	
+=	f_x	(x,y)	\varphi'	(t)	+	f_y	(x,y)	\psi'(t)	+	\lim_{\Delta t\rightarrow 0} \frac{1}{\varDelta t } o\left(	\sqrt{ (\varDelta x ) ^2 + ( \varDelta y)^2	} \right),
+\]
+ここで$ (\varDelta x , \varDelta y) \to (0,0)  \: ( \varDelta t \to 0)$であるから，
+\begin{align*}
+			\lim_{\Delta t\rightarrow 0} \frac{1}{\varDelta t } o\left(	\sqrt{ (\varDelta x ) ^2 + ( \varDelta y)^2	} \right)	\\
+	&=	\lim_{\Delta t\rightarrow 0} \frac{1}{\varDelta t } \varepsilon_3(\varDelta x, \varDelta y)  \sqrt{ (\varDelta x ) ^2 + ( \varDelta y)^2	}	\\
+	&=	\lim_{\Delta t\rightarrow 0} \varepsilon_3(\varDelta x, \varDelta y)  \sqrt{ \left(	\frac{\varDelta x}{\varDelta t} \right) ^2 + \left( \frac{ \varDelta y}{ \varDelta t} \right)^2	}	\\
+	&=	\lim_{\Delta t\rightarrow 0} \varepsilon_3(\varDelta x, \varDelta y)  \sqrt{ \left(	\varphi'(t) + \varepsilon_1 \right)^2 + \left( \psi'(t) + \varepsilon_2 \right)^2	}	\\
+	&=	0 \cdot   \sqrt{ (	\varphi'(t) )^2 + ( \psi'(t) )^2	}	\\
+	&=	0
+\end{align*}
+であるが，
+すなわち$z	=	f(	\varphi(t),	\psi	(t))$は$t$について微分可能で（\ref{eq6x18}）が成り立つ．
+\■
+
+\系
+$	\varphi	(t)	,	\psi	(t)$が$t$について連続微分可能，
+$f	(x,y)$が$D$で$x,y$について連続微分可能ならば
+$f	(	\varphi	(t)	,	\psi	(t))$は連続微分可能な$t$の関数である．
+
+\証明
+仮定により$	\varphi'(t),	\psi'(t)$が$I$で連続，$f_x(x,y),	f_y	(x,y)$が$D$で連続で
+あるから，（\ref{eq6x18}）により，$d	f(	\varphi	(t),	\psi	(t))	/	dt$は
+$I$で連続である．
+\■
+
+$x	=	\varphi	(t),	y	=	\psi(t),	z	=	f	(x,y)$とおいて（\ref{eq6x18}）を
+\begin{equation}
+	\frac{dz}{dt}	=	\frac{\partial z}{\partial x}	\frac{dx}{dt}	+	\frac{\partial z}{\partial y}	\frac{dy}{dt}
+\label{eq6x19}
+\end{equation}
+と書けば見易くなる．微分の記号を用いれば
+\begin{equation}
+	dz	=	f_x	(x,y)	\varphi'(t)	dt	+	f_y	(x,y)	\psi'(t)	dt.
+\label{eq6x20}
+\end{equation}
+
+\定理{6.l1}
+$\varphi	(t)	,	\psi	(t)$が$t$について$n$回連続微分可能，$f(x,y)$が$D$で$x,y$，
+について$n$回連続微分可能ならば$f(\varphi	(t)	,	\psi	(t))$は$n$回連続微分可能な$t$の関数
+である．
+
+\証明
+$n$に関する帰納法で証明する．$n=1$のときは既に前定理の系で証明したから
+$n	=	m	-1	,	m	\geq	2,$のときこの定理6.11が証明されたと仮定して$n=m$の場合を考察する．
+$f	(	\varphi	(t),	\psi	(t))$は前定理6.10により微分可能で
+\[
+	\frac{d}{dt}	f(	\varphi	(t)	,	\psi	(t))
+=	f_x	(	\varphi	(t),	\psi	(t))	\varphi'(t)	+	f_y	(	\varphi	(t),	\psi	(t))	\varphi'(t).
+\]
+$f(x,y)$は$m$回連続微分可能であるから$f_x(	x,y)	,	f_y	(x,y)$は$m-1$回連続微分
+可能，故に，婦納法の仮定により，$f_x(	\varphi	(t)	,	\psi	(t))	,	\varphi_y(	\varphi	(t),	\psi	(t))$
+$t$について$m-1$回連続微分可能である．
+$	\varphi	'(t),	\psi'(t)$は$m-1$回連続微分可能であるから，
+したがって，定理3.18，($1^\circ$)により$	df	(	\varphi	(t),	\psi	(t))	/	dt$は
+$t$について$m-1$回連続微分可能，故に$f	(	\varphi	(t),	\psi	(t))$は
+$m$回連続微分可能な$t$の関数である．
+\■
+\[
+	\frac{dz}{dt}
+=	\frac{\partial z}{\partial x}	\frac{dx}{dt}
++	\frac{\partial z}{\partial y}	\frac{dy}{dt}
+\]
+したがって
+\begin{align*}
+	\frac{d^2	z}{dt^2}
+&	=	\frac{d}{dt}	\left(\frac{\partial z}{\partial x}	\right)	\frac{dx}{dt}
+		+	\frac{d}{dt}	\left(\frac{\partial z}{\partial y}	\right)	\frac{dy}{dt}
+		+	\frac{\partial z}{\partial x}	\frac{d^2	x}{dt^2}	+	\frac{\partial z}{\partial y}	\frac{d^2	y	}{dt^2}	\\
+&=	\frac{\partial ^2 z}{\partial x^2}	\left(\frac{dx}{dt}	\right)
+		+	2	\frac{\partial ^2 z}{\partial x \partial y}	\frac{dx}{dt}	\frac{dy}{dt}
+		+	\frac{\partial ^2 z}{\partial y^2}	\left(\frac{dy}{dt}\right)^2
+		+	\frac{\partial z}{\partial x}	\frac{d^2	x}{dt^2}
+		+	\frac{\partial z}{\partial y}	\frac{d^2 y }{dt^2}.
+\end{align*}
+一般に，$n$に関する帰納法によって容易に確かめられるように，
+\[
+	\frac{d^n z}{dt^2}
+	=	\sum_{p+q	\leq	n}	\frac{\partial ^p+q z}{\partial \partial x^p \partial y^q}	\varPhi_{pq}
+	\left(	\frac{dx}{dt},	\cdots,	\frac{d^n x }{dt^n}, \frac{dy}{dt}, \cdots,	\frac{d^n y }{dt^n} \right),
+\]
+$\displaystyle	\varPhi_{pq}	\left(	\frac{dx}{dt},	\cdots,	\frac{d^n x }{dt^n}, \frac{dy}{dt}, \cdots,	\frac{d^n y }{dt^n} \right)$は，
+$	\displaystyle	\frac{dx}{dt},	\frac{d^2 x}{dt^2}	,	\cdots,	\frac{d^n x }{dt^n}, \frac{dy}{dt}, 	\frac{d^2y}{dt^2}	,	\cdots,	\frac{d^n y }{dt^n}$
+の多項式，である．
+
+つぎに$	\varphi	(s,t),	\psi	(s,t)$を或る領域$E$で定義された2変数$s,t$の関数，
+$(s,t)	\in	 E$のときつねに$(	\varphi	(s,t),	\psi	(s,t))	\in D$とし，
+2変数$x,y$の関数$f(x,y)$の定義域は領域$D$をその部分集合として含むとして合成関数
+$f(	\varphi(s,t),	\psi	(s,t))$を考察する．
+$\varphi	(s,t)	,	\psi	(s,t)$が連続，$f(x,y)$\underline{が}
+$D$で連続ならば$f(	\varphi(s,t)	,	\psi	(s,t))$\underline{は連続である}（257ページ）．
+
+\定理{6.12}
+$\varphi	(s,t)	,	\psi	(s,t)$が$s,t$について連続微分可能，
+$f	(x,y)$が$D$で$x,y$について連続微分可能ならば合成関数
+$f	(	\psi	(s,t),	\psi	(s,t))$は$s,t$について連続微分
+可能である．
+
+\証明 定理6.10により
+$f	(	\varphi	(s,t)	,	\psi	(s,t))$は$s$についても$t$について偏微分可能で，
+$	\varphi	=	\varphi	(s,t),	\psi	=	\psi	(s,t)$と略記すれば，（\ref{eq6x18}）により
+\[
+	\frac{\partial }{\partial s}	f(	\varphi	,	\psi)
+=	f_x(	\varphi	,	\psi	)	\varphi_s	(s,t)	
++	f_y(	\varphi	,	\psi	)	\psi_s(s,t),
+\]
+\[
+	\frac{\partial }{\partial t}	f(\varphi	,	\psi)	
+=	f_x	(	\varphi	,	\psi	)	\varphi_t	(s,t)	+	f_y	(	\varphi	,	\psi)	\psi_t	(s,t).
+\]
+仮定により$	f_x	(x,y)	,	f_y(x,y)$は2変数$x,	y$の連続関数であるから，
+$f_x	(	\varphi	(s,t),	\psi	(s,t)),	\varphi_y	(	\psi	(s,t))$
+は2変数$s,t$の連続関数，また$\varphi_s(s,t)	,		\psi_s(s,t),	\varphi_t	(s,t),	\psi_t(s,t)$も
+$s,t$の連続関数である．故に$	\partial f( \varphi	,	\psi	)	/	\partial s , \partial f ( \varphi	,	\psi)	/	\partial t$
+は2変数$s,t$について連続，すなわち$f	(	\varphi	,	\psi)	=	f(	\varphi	(	s,t)	,	\psi	(s,t))$
+は連続微分可能である．
+\■
+
+\定理{6.13}
+$\varphi	(s,t)	,	\psi	(s,t)$が2変数$s,t$について微分可能，
+$f	(x,y)$が$D$で2変数$x,y$について微分可能ならば合成関数
+$f	(	\varphi	(s,t),	\psi	(s,t)$は$s,t$について微分可能である．
+
+\証明
+
+$x	=	\varphi	(s,t)	,	y	=	\psi	(s,t)	,	z	=	f	(x,y)$とおいて$s,t$の増分
+$\varDelta	s	,	\varDelta	t$に対応する$x,y,z$の増分を$\varDelta	x	,	\varDelta	y	,	\varDelta	z$
+とすれば，（\ref{eq6x10}）により
+\begin{align}
+	\varDelta	x	&=	\frac{\partial x}{\partial s}	\varDelta	s	+	\frac{\partial x}{\partial t}	\varDelta	t	+	o	(	\sqrt{(\varDelta	s)^2	+	(	\varDelta	t)^2}),
+							\label{eq6x21} \\
+	\varDelta	y	&=	\frac{\partial y}{\partial s}	\varDelta	s	+	\frac{\partial y}{\partial t}	\varDelta	t	+	o	(	\sqrt{(\varDelta	s)^2	+	(	\varDelta	t)^2}),
+							\label{eq6x22} \\
+	\varDelta	z	&=	\frac{\partial z}{\partial x}	\varDelta	x	+	\frac{\partial z}{\partial y}	\varDelta	y	+	o	(	\sqrt{(\varDelta	x)^2	+	(	\varDelta	y)^2}),
+							\label{eq6x23}
+\end{align}
+故に，（\ref{eq6x23}）の右辺の$\varDelta	x	,	\varDelta	y$に（\ref{eq6x21}），（\ref{eq6x22}）の右辺を代入して
+\[
+	\varDelta	z	=
+\left(	\frac{\partial z}{\partial x}	\frac{\partial x}{\partial s}	
+			+	\frac{\partial z}{\partial y}	\frac{\partial y}{\partial s}	
+\right)	\varDelta	s
++
+\left(	\frac{\partial z}{\partial x}	\frac{\partial x}{\partial t}	
+			+	\frac{\partial z}{\partial y}	\frac{\partial y}{\partial t}	
+\right)	\varDelta	t
++	o	(	\sqrt{(\varDelta	x)^2	+	(	\varDelta	y)^2})
+\]
+を得る．最後の無限小の項$o	(	\sqrt{(\varDelta	x)^2	+	(	\varDelta	y)^2})$について，
+\begin{align*}
+	o	(	\sqrt{(\varDelta	x)^2	+	(	\varDelta	y)^2})	\\
+	&=	\varepsilon_3(\varDelta x, \varDelta y) \sqrt{( \varDelta x)^2 + (\varDelta y)^2},	\quad	\lim_{(\varDelta x , \varDelta y)\rightarrow (0,0)} \varepsilon ( \varDelta x , \varDelta y) = \varepsilon ( 0 , 0) = 0	\\
+	&=	\varepsilon_3(\varDelta x, \varDelta y) \frac{\sqrt{( \varDelta x)^2 + (\varDelta y)^2}}{\sqrt{( \varDelta s)^2 + (\varDelta t)^2}}	\sqrt{( \varDelta s)^2 + (\varDelta t)^2}
+\end{align*}
+であるが，$ (\varDelta s ,\varDelta t) \to ( 0 , 0)$のとき，$ (\varDelta x ,\varDelta y) \to ( 0 , 0)$であるので，結局
+\[
+	\lim_{(\varDelta s , \varDelta t)\rightarrow (0,0)}	\varepsilon ( \varDelta x, \varDelta y ) =0
+\]
+である。つぎに，
+\[
+	\frac{\sqrt{( \varDelta x)^2 + (\varDelta y)^2}}{\sqrt{( \varDelta s)^2 + (\varDelta t)^2}}
+\]
+が有界であることを証明する．まず，任意の2実数$u,v$に対して
+\[
+	\max \{ | u | , | v | \} \leqq \sqrt{u^2 + v^2} \leqq | u | + | v|
+\]
+が成り立つことに注意して，これと三角不等式を使うと，
+\begin{align*}
+	\frac{ \sqrt{ ( \varDelta x)^2 + ( \varDelta y)^2 } 
+  }{  \sqrt{ ( \varDelta s)^2 + ( \varDelta t)^2 }
+	}
+&\leqq
+	\frac{ | \varDelta x |  + | \varDelta y|
+	}{  \sqrt{ ( \varDelta s)^2 + ( \varDelta t)^2 }
+	}	\\
+&\leqq
+	\frac{ | x_s \varDelta s | +  | x_t \varDelta t| + |o(\sqrt{(\varDelta s)^2 + (\varDelta t)^2})|
+	}{  \sqrt{ ( \varDelta s)^2 + ( \varDelta t)^2 }
+	}
+	+
+	\frac{ | y_s \varDelta s | +  | y_t \varDelta t| + |o(\sqrt{(\varDelta s)^2 + (\varDelta t)^2})|
+	}{  \sqrt{ ( \varDelta s)^2 + ( \varDelta t)^2 }
+	}	\\
+&\leqq
+	\frac{ | x_s \varDelta s | +  | x_t \varDelta t|
+	}{  \sqrt{ ( \varDelta s)^2 + ( \varDelta t)^2 }
+	}	+ \varepsilon_1( \varDelta s , \varDelta t)
+	+
+	\frac{ | y_s \varDelta s | +  | y_t \varDelta t|
+	}{  \sqrt{ ( \varDelta s)^2 + ( \varDelta t)^2 }
+	}	+ \varepsilon_2( \varDelta s , \varDelta t) \\
+&	\quad	\lim_{(\varDelta s , \varDelta t)\rightarrow (0,0)}	\varepsilon_1( \varDelta s , \varDelta t) = \varepsilon_1 (0,0) = 0,
+        \lim_{(\varDelta s , \varDelta t)\rightarrow (0,0)}	\varepsilon_2( \varDelta s , \varDelta t) = \varepsilon_2 (0,0) = 0	\\
+&\leqq
+	\frac{ | x_s \varDelta s |}{| \varDelta s|} +  \frac{ | x_t \varDelta t| }{ | \varDelta t| } + \varepsilon_1( \varDelta s , \varDelta t)
+	+
+	\frac{ | y_s \varDelta s |}{| \varDelta s|}  + \frac{ | y_t \varDelta t| }{ | \varDelta t| }
+	+ \varepsilon_2( \varDelta s , \varDelta t) \\
+\end{align*}
+となる。よって$ ( \varDelta s , \varDelta t) \to ( 0, 0)$のとき，収束しないにしても絶対値が
+$ | x_s|  + |x_t| + | y_s | + | y_t |$を超えないので有界となる。
+
+
+すなわち$z	=	f(	\varphi	(s,t)	,	\psi(s,t))$は2変数$s,t$の微分可能な関数である．
+\■
+
+$x	=	\varphi	(s,t),	y	=	\psi	(s,t)$が2変数$s,t$の微分可能な関数，
+$z	=	f(x,y)$2変数$x,y$の微分可能な関数ならば，上記の証明により，
+\begin{equation}
+	\begin{cases}
+	\displaystyle
+		\frac{\partial z}{\partial s}	=	
+				\frac{\partial z}{\partial x}	\frac{\partial x}{\partial s}
+			+	\frac{\partial z}{\partial y}	\frac{\partial y}{\partial s}	\\
+	\\
+	\displaystyle
+		\frac{\partial z}{\partial t}	=
+				\frac{\partial z}{\partial x}	\frac{\partial x}{\partial t}
+			+	\frac{\partial z}{\partial y}	\frac{\partial y}{\partial t}
+	\end{cases}	
+\label{eq6x24}
+\end{equation}
+この公式（\ref{eq6x24}）は，また，変数$s,t$のおのおのに（\ref{eq6x19}）を適用しても得られる．
+
+\定理{6.14}
+$\varphi	(s,t),	\psi(s,t)$が$s,t$について$n$回連続微分可能，
+$f(x,y)$が$D$で$x,y$ついて$n$回連続微分可能ならば，
+合成関数$f(	\varphi	(s,t),	\psi	(s,t))$は$s,t$について$n$回連続微分可能である．
+
+\証明$n$に関する帰納法による．$n=1$の場合にはこの定理は定理6.12
+に帰着するから，$n=m-1,	m	\geqq 2$，の場合にこの定理6.14が証明されたと仮定して
+$n=m$の場合を考察する．
+\[
+	F(s,t)	=	f(\varphi	(s,t),	\psi	(s,t))
+\]
+とおけば，$s,t$の関数$F(s,t)$の$m$次偏導関数は1次偏導関数$F_s(s,t)$または
+$F_t(s,t)$の$m-1$次偏導関数であるから，$F(s,t)$が$m$回連続微分可能であること
+を証明するためには$F_s(s,t)$および$F_t(s,t)$が$m-1$回連続微分可能であること
+をいえばよい．
+
+上記の（\ref{eq6x18}）により
+\begin{equation}
+	F_s(s,t) 	= f_x ( \varphi	(s,t),	\psi	(s,t)) \varphi_s	(s,t)	
+						+	f_y	(	\varphi	(s,t)	,	\psi	(s,t))	\psi_s(s,t).
+\label{eq6x25}
+\end{equation}
+$f_x(x,y)$は$x,y$について$m-1$回連続微分可能であるから，
+帰納法の仮定により，$f_x	(	\varphi(s,t) , \psi(s,t))	$は$s,t$について$m-1$回連続微分可能であって，
+また，$\varphi_s	(	s,t)$も$s,t$について$m-1$回連続微分可能である．
+$p(x,y)	=	xy$とおけば$p	(x,y)$はもちろん$x,y$について$m-1$回連続微分可能であるから，
+したがって，帰納法の仮定により，
+\[
+	f_x	(	\varphi	(s,t)	,	\psi	(	s,t))	\varphi_s	(s,t)	
+=	p(	f_x	(	\varphi(s,t)	,	\psi	(s,t))	,	\varphi_s	(s,t))
+\]
+は$s,t$について$m-1$回連続微分可能となる．
+同様に$f_y	(	\varphi(s,t)	,	\psi	(s,t))	\psi_s(s,t)$も
+$s,t$について$m-1$回連続微分可能である.
+故に，（\ref{eq6x25}）により，$F_s(s,t)$は
+$s,t$について$m-1$回連続微分可能，$F_t(s,t)$も同様に$s,t$について
+$m-1$回連続微分可能である．
+\■
+
+\系
+$\varphi	(s,t)	,	\psi	(s,t)$が$s,t$の$\mathcal{C}^\infty$級関数，
+$f	(x,y)$が$D$において$x,y$の$\mathcal{C}^\infty$級関数ならば合成関数
+$f(\varphi	(s,t)	,	\psi(s,t))$は$s,t$の$\mathcal{C}^\infty$級関数である．
+
+\例{6.8}
+平面$	\R^2$上で原点$O$から点$P	=	(x,y)$に到る距離を$r$，線分$OP$と$x$軸の正の方向のなす角を
+$\theta$とすれば，\S\ref{sec2x4x3}で述べた$\sin \theta	,	\cos \theta$の定義により，
+\[
+	x	=	r	\cos	\theta	, y	=	r	\sin	\theta
+\]
+である．$	(r,	\theta)$を点$P=(x,y)$の極座標という．
+$x	=	r	 \cos \theta	,	y	=	r	\sin	\theta$は2変数
+$r,\theta$の$\mathcal{C}^\infty$級関数であるから，
+$f	(x,y)$が$\R^2$上で$x,y$について2回連続微分可能ならば合成関数
+$z	=	f(x,y)=	f(r	\cos	\theta	,	r\sin \theta)$は
+$r,	\theta$について2回連続微分可能である．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=60mm,height=50mm]{p283.bmp}
+	\label{p283}
+\end{figure}
+\[
+	\frac{\partial x}{\partial r}	=	\cos	\theta,	\quad
+	\frac{\partial y}{\partial r}	=	\sin	\theta,	\quad
+	\frac{\partial x}{\partial \theta}	=	-r \sin	\theta,	\quad
+	\frac{\partial y}{\partial \theta}	=	r \cos	\theta
+\]
+であるから，（\ref{eq6x24}）により，
+\[
+	\frac{\partial z}{\partial r}
+	=
+	\frac{\partial z}{\partial x}	\cos	\theta
+	+
+	\frac{\partial z}{\partial y}	\sin	\theta,	\quad
+	\frac{\partial z}{\partial \theta}
+	=
+	-	\frac{\partial z}{\partial x}r	\sin	\theta
+	+
+	\frac{\partial z}{\partial y}	r	\cos	\theta.
+\]
+したがって
+\begin{align*}
+	\frac{\partial ^2 z}{\partial r^2}
+	&=
+			\frac{\partial^2 z}{\partial x^2} \frac{\partial x}{\partial r} \cos \theta + \frac{\partial^2 z}{\partial x \partial y} \frac{\partial y}{\partial r} \cos \theta
+	+		\frac{\partial^2 z}{\partial y \partial x} \frac{\partial x}{\partial r} \sin \theta + \frac{\partial^2 z}{\partial y^2}	\frac{\partial y}{\partial r} \sin \theta	\\
+	&=	
+			\frac{\partial^2 z}{\partial x^2} \cos\theta \cos \theta + \frac{\partial^2 z}{\partial x \partial y} \sin \theta \cos \theta
+	+		\frac{\partial^2 z}{\partial y \partial x} \cos \theta \sin \theta + \frac{\partial^2 z}{\partial y^2} \sin \theta \sin \theta	\\
+	&=
+	\frac{\partial ^2 z}{\partial x^2} \cos^2 \theta
+	+
+	2	\frac{\partial^2 z}{\partial x \partial y}	\cos	\theta	\sin	\theta
+	+
+	\frac{\partial ^2 z}{\partial y^2}	\sin^2	\theta,		\\
+\frac{\partial ^2 z}{\partial \theta^2}
+	&=
+	\frac{\partial}{\partial \theta ^2}
+	\left( -
+		\frac{\partial z}{\partial x} r \sin \theta + \frac{\partial z}{\partial y} r \cos \theta
+	\right) \\
+  &=
+  \left(
+		\frac{\partial^2}{\partial x^2}\frac{\partial x}{\partial \theta} +
+		\frac{\partial^2}{\partial x \partial y }\frac{\partial y}{\partial \theta}
+	\right) r \sin \theta
+  + \frac{\partial z}{\partial x} r \cos \theta
+  +
+  \left(
+		\frac{\partial^2}{\partial x \partial y} \frac{\partial x}{\partial \theta} +
+		\frac{\partial^2}{\partial y^2} \frac{\partial y}{\partial \theta}
+	\right) r \cos \theta
+  - \frac{\partial z}{\partial y} r \sin \theta \\
+  &=
+  \left(
+		\frac{\partial^2}{\partial x^2} (-r \sin \theta ) +
+		\frac{\partial^2}{\partial x \partial y } (r \cos \theta )
+  \right) (-r \sin \theta )
+  - \frac{\partial z}{\partial x} r \cos \theta \\
+  & \quad
+  + 
+  \left(
+		\frac{\partial^2}{\partial x \partial y} ( -r \sin \theta ) +
+		\frac{\partial^2}{\partial y^2} ( r \cos \theta )
+	\right) r \cos \theta
+  - \frac{\partial z}{\partial y} r \sin \theta \\
+	&=
+	\frac{\partial ^2 z}{\partial x^2} r^2 \sin^2 \theta
+	-
+	2	\frac{\partial ^2 z}{\partial x \partial y}	r^2 \sin	\theta	\cos	\theta
+	+
+	\frac{\partial ^2 z}{\partial y^2}	r^2 \cos^2	\theta
+	-	\frac{\partial z}{\partial x} r \cos \theta - \frac{\partial z }{\partial y}r \sin \theta, \\
+\frac{\partial ^2 z}{\partial r \partial \theta}
+	&=
+   \left(
+			\frac{\partial^2 z}{\partial x^2} \frac{\partial x}{\partial r}
+    + \frac{\partial^2 z}{\partial x \partial y} \frac{\partial y}{\partial r}
+	 \right) (-r \sin \theta )
+   - \frac{\partial z}{\partial x} \sin \theta \\
+  &\quad
+  +
+  \left(
+		\frac{\partial^2 z}{\partial y \partial x} \frac{\partial x}{\partial r}
+  + \frac{\partial^2 z}{\partial y^2} \frac{\partial y}{\partial r}
+	\right) r \cos t \theta
+  + \frac{ \partial z}{\partial y} \cos \theta \\
+  &=
+   \left(
+			\frac{\partial^2 z}{\partial x^2} \cos \theta
+    + \frac{\partial^2 z}{\partial x \partial y} \sin \theta
+	 \right) (-r \sin \theta )
+   - \frac{\partial z}{\partial x} \sin \theta \\
+  &\quad
+  +
+  \left(
+		\frac{\partial^2 z}{\partial y \partial x} \cos \theta
+  + \frac{\partial^2 z}{\partial y^2} \sin \theta
+	\right) r \cos \theta
+  + \frac{ \partial z}{\partial y} \cos \theta \\
+  &=
+	\left(	\frac{\partial^2 z}{\partial y^2} - \frac{\partial ^2 z}{\partial x^2} \right)	r \sin \theta \cos \theta
+  +
+  \frac{\partial^2 z }{\partial x \partial y} r ( \cos^2 \theta - \sin^2 \theta)
+  -
+  \frac{\partial z}{\partial x}\sin \theta + \frac{\partial z}{\partial y} \cos \theta.
+\end{align*}
+この結果から
+\begin{equation}
+	\frac{\partial ^2 z}{\partial r^2}	+	\frac{1}{r^2}	\frac{\partial ^2 z}{\partial \theta^2}	+	\frac{1}{r} \frac{\partial z}{\partial r}
+	=
+	\frac{\partial ^2 z}{\partial x^2}	+	\frac{\partial ^2 z}{\partial  y^2},	\quad	 r > 0,
+\label{eq6x26}
+\end{equation}
+を得る．たとえば，$	z	=	\log	\sqrt{x^2	+	y^2}$とおけば，
+$z	=	\log r$であるから$	\partial z / \partial r = 1 / r$，
+$	\partial^2 z / \partial r^2 = -1 / r^2$，したがって，（\ref{eq6x26}）により，
+\[
+	\left(	\frac{\partial ^2}{\partial x^2}	+	\frac{\partial ^2}{\partial y^2}
+	\right)
+	\log \sqrt{x^2+y^2} = 0 , \quad (x,y) \ne (0,0),
+\]
+となる．――
+
+$f(x,y)$を$x$と$y$の多項式とすれば$f(x,y)$は$x$および$y$について偏微分可能で，
+その偏導関数$f_x(x,y),f_y(x,y)$も多項式である.故に$x,y$の多項式は$x,y$について何回でも微分可能，
+すなわち$x,y$の$\mathcal{C}^\infty$級関数である．したがって
+$\varphi (s,t), \psi(s,t)$が或る領域$E$で$n$回連続微分可能ならば，
+上記の定理6.14により，$\varphi(s,t), \psi(s,t)$の多項式
+$f	(\varphi	(s,t)	,	\psi	(s,t))$も$E$で$n$回連続微分可能である．
+
+$x,y$の有理式 $	q(x,y)=f(x,y) / g(x,y),f(x,y), g(x,y)$は$x,y$の多項式，
+は領域$D$でつねに$g	(x,y)	\ne 0$ならば$x,y$について偏微分可能でその偏導関数
+$q_x (x,y) , q_y(x,y)$は$(g(x,y))^2$を分母とする有理式となる．
+故に$q	(x,y)$は$D$で$x,y$の$\mathcal{C}^\infty$級の関数である．
+したがって$\varphi(s,t),	\psi(s,t)$が$E$で$n$回連続微分可能で
+$g	(	\varphi	(s,t),	\psi	(s,t))	\ne	0$ならば$q(\varphi(s,t),	\psi(s,t)$も$E$で$n$回連続微分可能
+である．すなわち，つぎの定理が得られる．
+
+\定理{6.15}或る領域で定義された関数$f	(x,y),	g(x,y)$が$\mathcal{C}^\infty$級の関数ならば
+$f(x,y)	,	g(x,y)$の多項式は$\mathcal{C}^\infty$級の関数，
+$f(x,y)	,	g(x,y)$の有理式はその分母が$0$にならない限り
+$\mathcal{C}^\infty$級の関数である．
+さらに$	f(x,y)	,	g(x,y)$が$\mathcal{C}^\infty$級の関数ならば
+$	f(x,y)	,	g(x,y)$の多項式は$\mathcal{C}^\infty$級の関数，∫
+$	f(x,y)	,	g(x,y)$の有理式はその分母が$0$にならない限り
+$\mathcal{C}^\infty$級の関数である.

@@ -1,0 +1,32 @@
+\subsection{対角線論法}
+
+たとえば区間$(0,1)$が非可算集合であることを普通は次のように証明する．$(0,1)$が可算集合である，すなわち，
+\[
+	(0,1)	=	\{\:	\rho_1,	\rho_2,	\rho_3,	\cdots,	\rho_n,	\cdots	\:	\}
+\]
+であると仮定して，$\rho_1,\rho_2,\rho_3,	\cdots	,	\rho_n	,	\cdots	$の10進小数表示を
+\begin{align*}
+	\rho_1	&=	0.k_{11}k_{12}k_{13}	\cdots		k_{1m}	\cdots	\\
+	\rho_2	&=	0.k_{21}k_{22}k_{23}	\cdots		k_{2m}	\cdots	\\
+	\rho_3	&=	0.k_{31}k_{32}k_{33}	\cdots		k_{3m}	\cdots	\\
+					&	\cdots	\\
+					&	\cdots	\\
+	\rho_n	&=	0.k_{n1}k_{n2}k_{n3}	\cdots		k_{nm}	\cdots	\\
+					&	\cdots	\\
+\end{align*}
+とする．ここに現れた数字$k_{nm}$のうち，‘対角線上に並んでいる’数字$k_{11},k_{22},k_{33},\cdots	,	k_{nn},	\cdots
+$に着目して，各$n$について
+\[
+	k_n	\ne	k_{nn},	\quad	1\leqq	k_n	\leqq	8,
+\]
+なる数字$k_n$を任意に一つ選んで，
+\[
+	\rho	=	0.k_1	k_2	k_3	\cdots	k_n	\cdots
+\]
+とおく．$1	\leqq	k_n	\leqq	8$だから，実数$\rho$の10進小数表示はただ一通りに定まる．$\rho$は
+区間$(0,1)$に属するから$\rho_n$のいずれか一つと一致する筈であるが，$\rho=\rho_n$とすれば
+$k_n=k_{nn}$でなければならないことになって，$k_n	\ne	k_{nn}$と矛盾する．ゆえに
+$(0,1)$は可算でない．
+\■
+
+この証明の論法をCantorの\textbf{対角線論法}という．対角線論法は集合において基本的である．

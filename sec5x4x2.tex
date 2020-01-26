@@ -1,0 +1,350 @@
+\subsection{一様に有界な関数列}
+
+定理5.8は関数列$\{	f_n	(x)	\}$の収束の一様性の代りに$\{	f_n	(x)	\}$が
+\textbf{一様に有界}であることを仮定するだけで成り立つ．すなわち
+
+\定理{5.10}
+(\textbf{Arzel\`{a}の定理})
+
+閉区間$[a,b]$において関数$f_n(x),	n=1,2,3,\cdots$は連続で，一様に有界，
+すなわち$n$に無関係な定数$M$が存在して$[a,b]$でつねに
+$|f_n	(x)	|	\leqq	M$であるとする．このとき，関数列$\{	f_n	(x)	\}$が
+収束してその極限$\displaystyle	f(x)	=	\lim_{n\rightarrow\infty}	f_n(x)$が
+$[a,b]$で連続ならば
+\[
+	\int_a^b	f(x)	dx	=	\lim_{n\rightarrow\infty}	\int_a^b	f_n(	x)	dx,
+	\quad
+	f(x)	=	\lim_{n\rightarrow\infty}	f_n	(x).
+\]
+
+この定理はLebesgue 積分論におけるLebesgue の項別積分定理
+\footnote{
+本選書，“現代解析入門”後篇“測度と積分”，\S	4.4参照．
+}
+の特別な場合であるが，“解析入門”においても応用上便利な定理あるから，
+本項でそのHausdorffによる初等的証明
+\footnote{
+	F.Hausdorff“Beweis eines Satzes von Arzel\`{a}”，
+	Math.	Zeit. 26(1927)，PP.135-137.藤原松三郎“微分積分額Ⅰ”，pp.365-370参照．
+}
+を述べる．
+
+\証明
+\[
+	\left|	\int_a^b	f_n	(x)	dx	-	\int_a^b	f(x)	dx
+	\right|
+	\leqq
+	\int_a^b	|	f_n	(x)		-	f(x)	|	dx
+\]
+であるから
+\footnote{
+定理4.1$(5^\circ)$
+}
+，$g_n	(x)	=	|	f_n	(x)	-	f(x)	|	$とおいて
+\[
+	\lim_{n\rightarrow\infty}	\int_a^b	g_n	(x)	dx	=	0
+\]
+となることを証明すればよいのであるが
+\footnote{	\small
+$\displaystyle	\lim_{n\rightarrow\infty}	
+	\left|	\int_a^b	f_n	(x)	dx	-	\int_a^b	f(x)	dx
+	\right|
+	\leqq	0$
+であるから，
+
+$\displaystyle	\lim_{n\rightarrow\infty}	
+	\left(	\int_a^b	f_n	(x)		-	\int_a^b	f(x)
+	\right)	\leqq	0$かつ
+$\displaystyle	\lim_{n\rightarrow\infty}
+	\left(
+		\int_a^b	f	(x)		-	\int_a^b	f_n(x)
+	\right)	\leqq	0$と，定理1.15より確かめられそう．
+}
+，$f_n(x)	,	f(x)$に関する
+仮定により，区間$[a,b]$で$g_n(x)$は連続，つねに
+$0	\leqq	g_n	(x)	\leqq	2M$で
+\footnote{	\small
+	$-M	\leqq	f_n,	-f(x)	\leqq	M$であるから，
+$-2M	\leqq	f_n	+	(-f(x))	\leqq	2M$．よって$	0	\leqq	|	f_n(x)	-	f(x)	|	\leqq	2M$となり，
+$0	\leqq	g_n	(x)	\leqq	2M$．
+}
+$\displaystyle
+	\lim_{n\rightarrow\infty}	g_n	(x)	=	0$である．
+故に，はじめから$[a,b]$で$f_n	(x)$は連続でつねに
+$0	\leqq	f_n(	x)	\leqq	M,	\displaystyle	\lim_{n\rightarrow\infty}	f_n(x)	=	0$
+と仮定して
+\begin{equation}
+	\lim_{n\rightarrow\infty}	\int_a^b	f_n(x)	dx	=	0
+\label{eq5x28}
+\end{equation}
+となることを証明すればよい．
+
+各点$x,	a	\leqq	x	\leqq	b$，において数列$f_n(x)	,	f_{n+1}	(x),	f_{n+2}	(x),	\cdots	,	f_m	(x),	\cdots$の
+上限を$s_n(x)$とする：
+\[
+	s_n	(x)	=	\sup_{m	\geq	n}	f_m	(x).
+\]
+\footnote{これから上極限をとるための，準備．
+}
+明らかに
+\begin{equation}
+	M	\geqq	s_1(x)	\geqq	s_2	(x)	\geqq	\cdots	\geqq	s_n(x)	\geqq	\cdots,
+	\quad	a	\leqq	x	\leqq	b,
+\label{eq5x29}
+\end{equation}
+であって，$\displaystyle	\lim_{n\rightarrow\infty}	f_n(x)	=	0$であるから
+\begin{equation}
+	\lim_{n\rightarrow\infty}	s_n	(x)	=	\limsup_{n\rightarrow\infty}	f_n(x)	=	0.
+\label{eq5x30}
+\end{equation}
+\footnote{
+	\S	\ref{sec1x5x3}で，極限が存在すれば上極限と下極限はその極限と一致する
+ことを証明した．
+}．
+一般の場合には$s_n(x)$は連続とは限らないが，
+特別な場合として関数$s_n	(x)$がすべて区間$[a,b]$で連続である場合には，
+Diniの定理（定理5.7）により，関数列$\{	s_n	(x)	\}$は
+$[a,b]$で一様に$0$に収束し，したがって，定理5.8により，
+\[
+	\lim_{n\rightarrow\infty}	\int_a^b	s_n	(x)	dx	=	0,
+\]
+故に，$\displaystyle	0	\leqq	f_n(x)	\leqq	s_n(x)$であるから，
+（\ref{eq5x28}）を得る．しかしこの場合には関数列
+$\{f_n	(x)	\}$も$[a,b]$で一様に$0$に収束するから，
+定理5.10は定理5.8に帰着する．
+
+一般の場合には$s_n(x)$は連続とは限らないから積分
+$\displaystyle	\int_a^b	s_n(x)	dx$は必ずしも定義されない．
+そこで$\displaystyle	\int_a^b	s_n(x)	dx$に代るものとして
+$S_n$を次のように定義する：
+区間$[a,b]$で定義された連続関数$g(x)$でつねに$g(x)	\leqq	s_n	(x)$なるものを
+すべて考え
+\footnote{
+このような条件を満たす関数の集合が$\varnothing$でないことの証明が必要？
+}
+，その積分$\displaystyle	\int_a^b	g(x)	dx$の上限を$S_n$とする：
+\begin{equation}
+	S_n	=	\sup_{g	\leq	s_n}	\int_a^b	g(x)	dx.
+\label{eq5x31}
+\end{equation}
+ここで，$g	\leqq	s_n$はつねに$g(x)	\leqq	s_n	(x)$であることを意味する．
+$g	\leqq	s_n$ならば，（\ref{eq5x29}）によりつねに$g(x)	\leqq	M$であるから，
+$	\displaystyle	\int_a^b	g(x)	dx	\leqq	M(b-a)$．また$g	\leqq	s_n	$ならば
+$g	\leqq	s_{n-1}$であるから$S_n	\leqq	S_{n-1}$．すなわち
+\[
+	M(b-a)	\geqq	S_1	\geqq	S_2	\geqq	S_3	\geqq	\cdots	\geqq	S_n	\geqq	\cdots.
+\]
+$0	\leqq	f_n(x)	\leqq	s_n(x)$であるから
+\footnote{
+$	f_n	\in	 \{ g : \text{連続}	\: | \: g \leq s_n	\}$
+}
+，
+（\ref{eq5x31}）により
+\[
+	0	\leqq	\int_a^b	f_n	(x)	dx	\leqq	S_n.
+\]
+故に$n	\to	\infty$のとき$S_n	\to	0$となることを証明すれば$\displaystyle	\int_a^b	f_n(x)	dx	\to	0$が示せる．
+このために正の実数$\varepsilon	$を任意に定めて$\varepsilon_n		=	\varepsilon/2^n$とおけば，
+（\ref{eq5x31}）により，$[a,b]$で連続な関数$g_n	(x)$で
+\begin{equation}
+	\int_a^b	g_n	(x)	dx	>	S_n	-	\varepsilon_n,
+	\quad
+	g_n	(x)	\leqq	s_n	(x),
+	\quad
+	a	\leqq	x	\leqq	b,
+\label{eq5x32}
+\end{equation}
+なるものが存在する
+\footnote{
+上限$S_n$として定義したことの意義がここに表れる．
+}
+．各点$x,	a	\leqq	x	\leqq	b$，において
+$g_1	(x)	,	g_2	(x)	,	\cdots	,	g_n(x)$の最小値を
+$h_n	(x)$とする：
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=100mm,height=50mm]{p226.bmp}
+	\label{p226}
+\end{figure}
+\[
+	h_n	(x)	=	\min	\{	g_1	(x)	,	g_2	(x)	,	\cdots	,	g_n	(x)	\}.
+\]
+$h_n(x)$が$[a,b]$で連続であることは上のグラフをみれば一目瞭然であるが，
+このことを計算によって確かめるにはつぎのようにすればよい．実数$\xi	,	\eta$に対して，
+$\xi	+	\eta	-	|	\xi	-	\eta|$は$\xi	\geqq	\eta$ならば$2	\eta$に等しく，
+$\xi	\leqq	\eta$ならば$2	\xi$に等しい．すなわち
+\begin{equation}
+	\min	\{	\xi	,	\eta	\}
+	=
+	\frac{1}{2}	(	\xi	+	\eta	-	|	\xi	-	\eta	|	).
+\label{eq5x33}
+\end{equation}
+したがって，一般に，$\varphi	(x)	,	\psi	(x)$が区間$I$で連続な$x$の関数ならば
+\[
+	\min	\{	\varphi	(x)	,	\psi	(x)	\}
+	=
+	\frac{1}{2}
+	(	\varphi	(x)	+	\psi	(x)	-	|	\varphi	(x)	-	\psi	(x)	|	)
+\]
+も$I$で連続な$x$の関数である．故に，$h_1	(x)	=	g_1	(x)	,	n	\geqq	2$のとき
+\[
+	h_n	(x)	=	\min	\{	h_{n-1}	(x)	,	g_n(x)	\}
+\]
+であるから，$n$に関する帰納法により，$h_n	(x)	$は区間$[a,b]$で連続である．
+明らかに
+\begin{equation}
+	h_1	(x)	\geqq	h_2(x)	\geqq	\cdots	\geq	h_n	(x)	\geqq	\cdots,
+	h_n(x)	\leqq	g_n	(x)	\leqq	s_n(x).
+\label{eq5x34}
+\end{equation}
+この連続関数$h_n(x)$について不等式：
+\begin{equation}
+	\int_a^b	h_n(x)	dx	>	S_n	-	\varepsilon_1	-	\varepsilon_2	-	\cdots	-	\varepsilon_n
+\label{eq5x35}
+\end{equation}
+が成り立つことを$n$に関する帰納法によって証明するために，
+$\mu_n	(x)$を$h_{n-1}	(x)$，$g_n(x)$の大きい方（厳密にいえば小さくない方）とする：
+\[
+	\mu_n	(x)	=	\max	\{	h_{n-1}	(x)	,	g_n(x)	\}.
+\]
+（\ref{eq5x33}）と同様に
+\[
+	\max	\{	\xi	,	\eta	\}
+	=
+	\frac{1}{2}	(	\xi	+	\eta	+	|	\xi	-	\eta	|	)
+\]
+であるから，
+\[
+	\mu_n	(x)
+	=	
+	\frac{1}{2}	(	h_{n-1}	(x)	+	g_n	(x)	+	|	h_{n-1}	(x)	-	g_n	(x)	|	),
+\]
+したがって$\mu_n	(x)$も区間$[a,b]$で連続であって，
+\[
+	\max	\{	\xi	,	\eta	\}	+	\min	\{	\xi	,	\eta	\}	=	\xi	+	\eta
+\]
+であるから，
+\[
+	h_n	(x)	+	\mu_n	(x)	=	h_{n-1}	+	g_n(x).
+\]
+故に
+\[
+	\int_a^b	h_n(x)	dx
+	=
+	\int_a^b	h_{n-1}	(x)	dx
+	+
+	\int_a^b	g_n(x)	dx
+	-
+	\int_a^b	\mu_n	(x)	dx.
+\]
+この式の右辺の第3項を評価したい，$h_{n-1}	(x)	\leqq	s_{n-1}	(x),	g_n(x)	\leqq	s_n(x)	\leqq	s_{n-1}	(x)$であるから，
+$\mu_n	(x)	\leqq	s_{n-1}	(x)$，したがって，（\ref{eq5x31}）により，
+$\displaystyle	\int_a^b	\mu_n	(x)	dx	\leqq	S_{n-1}$．故に，
+（\ref{eq5x32}）により，
+\[
+	\int_a^b	h_n	(x)	dx	>	\int_a^b	h_{n-1}	(x)	dx	+	S_n	-	\varepsilon_n	-	S_{n-1}.
+\]
+したがって（\ref{eq5x35}）を（$k=n-1$の場合に）仮定すれば，
+この式の右辺$\int_a^b	h_{n-1}	(x)	dx$に（$k=n-1$）に仮定を適用して，
+再び（$k=n$の場合に）（\ref{eq5x35}）が成り立つ．（\ref{eq5x35}）の$k=1$の場合は
+$h_1	(x	)		=	g_1(x)$であるから，（\ref{eq5x32}）によって明らかである．
+故に，$n$に関する帰納法により，すべての自然数$n$について（\ref{eq5x35}）が成り立つ．
+$\displaystyle	\sum_{n=1}^{\infty}	\varepsilon_n	=	\varepsilon$であるから，
+したがって
+\begin{equation}
+	\int_a^b	h_n	(x)	dx	>	S_n	-	\sum_{k=1}^{n}	\varepsilon_n	>	S_n	-	\sum_{n=1}^{\infty}	\varepsilon_n
+=	S_n	-	\varepsilon.
+\label{eq5x36}
+\end{equation}
+閉区間$[a,b]$で$h_n	(x)$は連続，（\ref{eq5x34}）により，関数列
+$\{	h_n	(x)	\}$は単調非増加であって，$0	\leqq	h_n	(x)	\leqq	s_n	(x)$，
+したがって（\ref{eq5x30}）により
+$\displaystyle	\lim_{n\rightarrow\infty}	h_n	(x)	=	0$．故に，
+Dini の定理（定理5.7）により，$\{	h_n	(x)	\}$は$[a,b]$で一様に$0$に収束するから
+定理5.8により，
+\[
+	\lim_{n\rightarrow\infty}	\int_a^b	h_n(x)	dx
+=	
+	\int_a^b	\lim_{n\rightarrow\infty}	h_n(x)	dx
+=	\int_a^b	0	\:	dx
+=	0.
+\]
+したがって，（\ref{eq5x36}）により
+\[
+	\lim_{n\rightarrow\infty}	\int_a^b	h_n(x)	dx	>	\lim_{n\rightarrow\infty}	S_n	-	\varepsilon
+\Rightarrow
+	\lim_{n\rightarrow\infty}	S_n	\leqq	\varepsilon
+\]
+となるが，$\varepsilon$は任意の実数であった．故に
+\[
+	\lim_{n\rightarrow\infty}	S_n	=	0.
+\]
+\■
+上記の定理5.10は閉区間$[a,b]$を開区間$(a,b)$で置き換えても成り立つ．
+すなわち，
+
+\定理{5.11}
+開区間$(a,b)$において関数$f_n	(x)	,	n=1,2,3,	\cdots	$，は連続で
+一様に有界であるとする．このとき関数列$\{	f_n	(x)	\}$が収束して
+その極限$\displaystyle	f(x)	=	\lim_{n\rightarrow\infty}	f_n	(x)$が
+$(a,b)$で連続ならば
+\[
+	\int_a^b	f(x)	dx	=	\lim_{n\rightarrow\infty}	\int_a^b	f_n	(x)	dx	,	
+	\quad
+	f(x)	=	\lim_{n\rightarrow\infty}	f_n	(x)	.
+\]
+\証明
+$\displaystyle	\lim_{n\rightarrow\infty}	f_n	(x)	=	0$のとき
+$\displaystyle	\lim_{n\rightarrow\infty}	\int_a^b	f_n	(x)	dx	=	0$となることを証明すればよい．
+仮定により$(a,b)$でつねに$|	f_n	(x)	|	\leqq	M$，$M$は$n$に無関係な定数，である．
+任意に与えられた正の実数$\varepsilon$に対して正の実数$\delta$を$4	M	\delta	<	\varepsilon$，
+$2	\delta	<	b-a$，なるように定めれば，
+\[
+	\int_a^b	f_n	(x)	dx	=	\int_a^{a+\delta}	f_n	(x)	dx	
+												+	\int_{a+\delta}^{b-\delta}	f_n(x)	dx
+												+	\int_{b-\delta}^b	f_n	(x)	dx
+\]
+であって,
+\[
+	\left|	\int_a^{a+	\delta}	f_n	(x)	dx	
+	\right|
+	\leqq	M	\delta,
+	\quad
+	\left|	\int_{b-\delta}^b	f_n	(x)	dx
+	\right|
+	\leqq	M	\delta
+\]
+であるから，
+\[
+	\left|	\int_a^b	f_n	(x)	dx
+	\right|
+	\leqq
+	\left|	\int_{a+\delta}^{b-\delta}	f_n	(x)	dx
+	\right|
+	+	2	M	\delta.
+\]
+閉区間$[	a+	\delta	,	b-\delta]$において$f_n	(x)	$は連続で一様に有界，
+そして$\displaystyle	\lim_{n\rightarrow\infty}	f_n	(x)	=0$であるから，
+定理5.10により
+\[
+	\lim_{n\rightarrow\infty}	\int_{a+\delta}^{b-\delta}	f_n	(x)	dx	=	0.
+\]
+したがって$\varepsilon$に対応して自然数$n_0(\varepsilon)$が定まって
+\[
+	n	>	n_0	(\varepsilon	)	\quad	\text{ならば}	\quad	
+	\left|	\int_{a+	\varepsilon}^{b	-	\delta}	f_n	(x)	dx
+	\right|
+	<	\frac{\varepsilon}{2}
+\]
+となる．故に
+\[
+	n	>	n_0	(	\varepsilon	)	\quad	\text{ならば}	\quad	
+	\left|	\int_a^b	f_n	(x)	dx
+	\right|
+	<	2	M	\delta	+	\frac{\varepsilon}{2}	<	\varepsilon.
+\]
+すなわち
+\[
+	\lim_{n\rightarrow\infty}	\int_a^b	f_n	(x)	dx	=	0.
+\]
+\■

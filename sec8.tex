@@ -1,0 +1,35 @@
+\chapter{積分法（つづき）}
+
+
+\section{陰伏関数}
+積分法に入る前に陰伏関数について考察する．
+
+\subsection{陰伏関数}
+たとえば，円周の方程式$x^2	+	y^2	=	r^2	,	r	>	0$を$y$について解けば
+$y	=	\pm	\sqrt{r^2	-	x^2}$を得る．$y=	\sqrt{r^2	-	x^2}$	および
+$y=	-	\sqrt{r^2	-	x^2}$はそれぞれ閉区間$[-r	,	r	]$で定義された$x$の
+連続関数で開区間$(-r	,	r)$においては連続微分可能である．
+方程式$x^2	+	y^2	=	r^2$の解$y$を$x$の関数と考えれば$y	=	\pm	\sqrt{r^2	-	x^2}$は
+各$x,	\:	-r	<	x	<	r$，におて二つの値をとる2価関数であるが，1点$x_0$，
+$-r	<	x_0	<	r$における$y$の値の一つ，たとえば$y_0	=	\sqrt{r^2	-	x_0^2}$を選んで
+$y$の変域を$y_0$の十分小さい近傍：$|y	-	y_0|	<	\varepsilon,	\varepsilon>0$に
+限れば，$x_0$の十分小さい近傍：$|x	-	x_0	|	<	\delta,	\delta	>	0$，
+においては方程式$x^2	+	y^2	=	r^2$はただ一つの解$y	=	\sqrt{r^2	-	x^2}$をもち，
+それは$x$の連続微分可能な関数である．一般に：
+
+\定理{8.1}
+$(x,y)$平面上の領域$D$において連続微分可能な関数$\varphi (y,x)$が与えられたとし，
+点$(x_0,	y_0) \in D$において$\varphi_y	(y_0,	x_0)	\ne	0$であるとして
+$u_0	=	\varphi(y_0	,	x_0)$とおく．このとき，十分小さい$\varepsilon	>0$に対して
+$\delta	(	\varepsilon)	>0$が存在して，$y$の変域を$y_0$の$\varepsilon$近傍：
+$|	y-y_0	|	<	\varepsilon$に限れば$|x	-	x_0	|	<	\delta(\varepsilon)$なる各$x$に対して
+方程式$\varphi	(y,x)	=	u_0$はただ一つの解$y	=	f(x)$をもつ．$y	=	f(x)$は$x$の連続
+微分可能な関数であってその導関数は，
+\begin{equation}
+	f'(x)	=	-	\frac{\varphi_x	(y,x)}{\varphi_y	(y,x)},	\quad	y=f(x)
+\label{eq8x1}
+\end{equation}
+で与えられる．$\varphi(y,x)$が$\mathcal{C}^m$級の関数ならば$f(x)$も$\mathcal{C}^m$級の関数，
+$\varphi	(y,x)$が$\mathcal{C}^\infty$級の関数ならば$f(x)$も$\mathcal{C}^\infty$級の関数である．
+
+

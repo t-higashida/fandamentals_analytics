@@ -1,0 +1,1000 @@
+\section{三角関数}
+
+高校数学で学んだように，平面$\R^2$上に原点$O=(0,0)$を中心とする半径$1$の円周$C_1$を描き，
+$C_1$上に1点$P=(c,s)$をとったとき，半径$OP$と$x$軸の正の方向をなす角が$\theta$ならば，
+$P$の座標$c,s$をそれぞれ$c=\cos	\theta$，$s=\sin	\theta$と表わし，
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(8,6)
+
+	%座標軸
+	\thicklines\put(1,3){\vector(1,0){6}}
+	\put(7.1,3){$x$}
+	\thicklines\put(4,0){\vector(0,1){6}}
+	\put(4,6.1){$y$}
+
+	%C_1,
+		\thicklines	\put(4,3){\circle{0.09}}
+		\thicklines \put(4,3){\circle{4}}
+		\put(2.5,4.8){$C_1$}
+
+	%O,r_1,r_2
+	\put(3.6,2.6){$O$}
+	\put(6.0,2.7){\small$(1,0)$}
+
+	%半径
+	\thinlines	\path(4,3)(5.4142,4.4142)
+
+	%P
+		\thicklines	\put(5.41421,4.41421){\circle{0.03}}
+		\thinlines	\put(5.41421,4.41421){\small$P=(c,s)$}
+
+	%theta
+	\thinlines	\put(4,3){\arc{0.9}{-0.78540}{0}}
+	\thinlines	\put(4.5,3.2){$\theta$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+$\sin\theta$を$\theta$の正弦(sine)，$\cos\theta$を$\theta$の余弦(cosine)という．
+この$\sin\theta$，$\cos\theta$の定義を正確に述べようと試みるとき，最大の困難となるのが角の定義である．
+高校数学における角の概念は小学校以来自然に体得されたものであって,これを分析して明確に述べるのは
+容易でない（角の厳密な取り扱いについては，弥永昌吉“幾何学序説”参照）．本節では角$\theta$は平面の
+回転の量を表わす実数であると考える立場から$\sin\theta$，$\cos\theta$の厳密な定義を述べる．
+
+\subsubsection{予備的考察}
+高校数学で学んだように，行列
+$\begin{bmatrix}
+		\cos\theta	&	-\sin\theta	\\
+		\sin\theta	&	\cos\theta	\\
+\end{bmatrix}$
+の定める１次変換：
+\begin{equation}
+	\begin{bmatrix}
+		x	\\	y\\
+	\end{bmatrix}
+		\longrightarrow	
+	\begin{bmatrix}
+		x'	\\	y'	\\
+	\end{bmatrix}
+		=
+	\begin{bmatrix}
+		\cos\theta	&	-\sin\theta	\\
+		\sin\theta	&	\cos\theta	\\
+	\end{bmatrix}
+	\begin{bmatrix}
+		x	\\	y	\\
+	\end{bmatrix}	
+\end{equation}
+は平面$\R^2$の原点$O$を中心とする角$\theta$の回転である．
+$1=\begin{bmatrix}
+		1	&	0	\\
+		0	&	1	\\
+		\end{bmatrix}$,
+$\iota=\begin{bmatrix}
+		0	&	-1	\\
+		1	&	0		\\
+				\end{bmatrix}$
+とおけば，
+\[
+	\begin{bmatrix}
+		\cos\theta	&	-\sin\theta	\\
+		\sin\theta	&	\cos\theta	\\
+	\end{bmatrix}
+	=	\cos\theta+\iota\sin\theta	
+\]
+であるが，
+\[
+	\iota^2=
+	\begin{bmatrix}
+		0	&	-1	\\
+		1	&	0		\\
+	\end{bmatrix}
+	\begin{bmatrix}
+		0	&	-1	\\
+		1	&	0		\\
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		-1	&	0		\\
+		0		&	-1	\\
+	\end{bmatrix}
+	=-1
+\]
+となるから,代数的には$\iota=i=\sqrt{-1}$と考えてよい．これに対応して$\R^2$を複素平面$\C$と考え，
+$e(\theta)=\cos\theta+i\sin\theta$，$z=x+iy$，$z'=x'+iy'$とおけば，(2.13)を展開して
+\begin{eqnarray*}
+	&x	'	=	\cos\theta\cdot	x	-	\sin	\theta	\cdot	y	&,	\\
+	&y	'	=	\sin\theta\cdot	x	+	\cos	\theta	\cdot	y		\\
+\end{eqnarray*}
+であるから，
+
+\begin{align*}
+	z'	&=x'+iy'	\\
+			&=\cos\theta\cdot	x	-\sin	\theta	\cdot	y+i(\sin\theta\cdot	x	+	\cos	\theta	\cdot	y)	\\
+			&=(\cos\theta+i\sin\theta)\cdot	x+	i(\cos\theta+i\sin\theta)\cdot	y\\
+			&=e(\theta)\cdot	x	+	i	e(\theta)	\cdot	y	\\
+			&=e(\theta)(x+iy)	\\
+			&=e(\theta)	\cdot	z,	\\
+\end{align*}
+すなわち，回転(2,13)は
+\[
+	z	\longrightarrow	z'	=	e(\theta)	\cdot	z
+\]
+と表される．
+ここで
+$|e(\theta)|^2=	(\cos	\theta	+	i	\sin	\theta)(\cos	\theta	-	i	\sin	\theta)	=\cos^2	\theta+	\sin^2	\theta=1$である．
+
+\subsection{平面の回転}
+\label{sec2x4x1}
+
+以上$\sin	\theta$，$\cos\theta$について既知として回転が$z	\rightarrow	z'=e(\theta)\cdot	z$と表される
+ことを見たのであるが，目的は$\sin\theta$，$\cos\theta$を新しく厳密に定義することであるから，
+$\sin\theta$，$\cos\theta$を忘れて，まず回転を以下のように定義し直す．
+
+$0$を中心とする複素平面$\C$の回転とは，
+絶対値が$1$に等しい任意の複素数$e=c+is$，$|e|^2=c^2+s^2=1$，
+に対して，$\C$を$\C$に写す変換：
+\begin{eqnarray}
+	R_e	:	z	\longrightarrow	z'	=	e	\cdot	z
+\end{eqnarray}
+のことである．
+
+変換$R_e$が実際に‘回転’の性質をもっていることは容易に確かめられる．
+
+\textbf{回転の性質：}
+\begin{list}{}{}
+	\item	（１）変換$R_e$は原点$0$を動かさない．
+	\item	（２）変換$R_e$は$\C$上の２点の距離を変えない
+	\item	（３）$C$を$0$を中心とする任意の円周としたとき，$R_e$は$C$上の点$z$を$C$上の点$z'$に移す．
+	\item	（４）（３）においてすなわち$z'$と$z$の距離は$C$だけによって定まり，$C$上の点$z$の位置によらない．
+\end{list}
+
+（１）の証：$0=e	\cdot	0$．
+
+（２）の証：$z'=e	\cdot	z$，$w'=e	\cdot	w$とすれば，$|z'-w'|=|e	\cdot	z	-	e\cdot	w|=|e||z-w|=|z-w|$．
+
+（３）の証：$z'=e	\cdot	z$ならば，$|z'|=	|ez|	=	|e||z|	=		|z|$．
+
+（４）の証：$C$の半径を$r$とすれば，$|z'-z|=|e	\cdot	z-z|=|e-1||z|=|e-1|r$．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(8,5.5)
+
+	%r
+	\thinlines\put(4,3){\vector(1,0){2}}
+	\put(5,3.1){$r$}
+
+	%C
+		\thicklines	\put(4,3){\circle{0.07}}
+		\thicklines \put(4,3){\circle{4}}
+		\put(2.5,4.8){$C$}
+
+	%O
+	\put(3.6,2.6){$O$}
+
+	%z'
+	\put(3.8,5.1){$z'$}
+	\put(4,5){\circle{0.09}}
+	
+	%z
+		\thicklines	\put(5.41421,4.41421){\circle{0.09}}
+		\thinlines	\put(5.5,4.5){$z$}
+
+	%z-z'
+		\path(4,5)(5.41421,4.41421)
+
+\end{picture}
+\end{center}
+\end{figure}
+\■
+
+二つの回転$R_e$と$R_f$を合成すれば，
+\[
+	R_f	\circ	R_e	=	R_{fe}
+\]
+となることは，$z'=e	\cdot	z$，$z''=f	\cdot	z'$ならば，$z''=fe	\cdot	z$となることから明らかである．
+
+“回転の量がその角と呼ばれる実数で表わされ，任意の実数$\theta$に対応して角$\theta$の
+回転$R_{e(\theta)}:z	\longrightarrow	z'	=	e(\theta)\cdot	z$が定まっている”ためには，
+まず，数直線$\R$上で定義された絶対値$1$の複素数値をとる$\theta$の関数$e(\theta)$が存在しなければ
+ならないが，
+“$\theta$が回転$R_{e(\theta)}$の量を表わしている”というならば，二つの実数$\theta$，$\varphi$の
+和$\theta+\varphi$に対応する回転$R_{e(\theta+\varphi)}$は，$R_{e(\theta)}$と，
+$R_{e(\varphi)}$の合成，$R_{e(\theta)}	\circ	R_{e(\varphi)}$でなければならない．
+すなわち，
+\[
+	R_{e(\theta+\varphi)}=R_{e(\theta)}	\circ	R_{e(\varphi)}
+\]
+でなければならない．
+関数$e(\theta)$についていえば，$R_{e(\theta)}	\circ	R_{e(\varphi)}	=	R_{e(\theta)e(\varphi)}$
+であるから，
+\[
+	e(\theta+\varphi)=e(\theta)e(\varphi)
+\]
+でなければならない．また，任意の回転$R_e$は‘その角’を$\theta$とすれば$R_e=R_{e(\theta)}$と
+表わされる筈であるから，関数$e(\theta)$の値域は\textbf{単位円周}:$\{e	\in	\C	|	|e|=1\}$でなければ
+ならない．さらに$e(\theta)$は当然$\theta$の連続関数でなければならない．
+
+逆に，\underline{$\R$を定義域}，単位円周：$\{e	\in	\C	|	|e|=1\}$を値域とする連続関数$e(\theta)$で条件：
+\begin{equation}
+	e(\theta+\varphi)=e(\theta)\cdot	e(\varphi),	\quad	\theta	\in	\R,	\varphi	\in	\R
+	\label{eq2x15}
+\end{equation}
+を満たすものが存在すれば，$R_{e(\theta)}:z	\longrightarrow	z'=e(\theta)	\cdot	z$を
+角$\theta$の回転と定義することができる．
+
+さて，このような関数が存在したとして，$e(\theta)$がどんな形の関数になると想像されるかを考えてみよう．
+まず，(2.15)において$\varphi=0$とおけば，$e(\theta)=e(\theta)\cdot	e(0)$，ゆえに
+\[
+	e(0)=1
+\]
+また$\varphi=-\theta$とおけば$1=e(0)=e(\theta)\cdot	e(-\theta)$，故に
+\begin{equation}
+	e(-\theta)
+	=
+	\frac{1}{e(\theta)}
+	=
+	\frac{\overline{e(\theta)}}{e(\theta)\overline{e(\theta)}}
+	=
+	\frac{\overline{e(\theta)}}{|e(\theta)|^2}
+	=
+	\overline{e(\theta)}
+	\quad	
+		(\because\text{\S 1.6.6複素平面の逆数の定義より})
+  \label{eq2x16}
+\end{equation}
+次に，任意の自然数$n$について，(2.15)により，$e(n\theta)=e(\theta)e((n-1)\theta)$となるから，
+\begin{equation}
+	e(n\theta)=\underbrace{e(\theta)	\cdots	e(\theta )}_{n\text{個}}=
+	e(\theta)^n
+\end{equation}
+したがって
+\[
+	e(\theta)=e\left(\frac{\theta}{n}\right)^n.
+\]
+$e(\theta)$が$\theta$の連続関数で$e(0)=1$であるから，実数$\theta$，$\theta	\ne	0$を
+一つ定めれば，
+$\displaystyle	\lim_{n\rightarrow	\infty}e(\theta/n)=1$，
+したがって，
+\[
+	e\left(\frac{\theta}{n}\right)=1+\sigma_n
+\]
+とおけば，
+\[
+	e(\theta)		=	\lim_{n\rightarrow	\infty}	e(\theta)
+							=	\lim_{n\rightarrow	\infty}	e\left(	\frac{\theta }{n}	\right)^n
+							=	\lim_{n\rightarrow	\infty}	(1+\sigma_n)^n,	\quad	\lim_{n\rightarrow\infty}\sigma_n=0.
+\]
+今十分に大きな自然数$n$に対して微小な回転$R_{e(\theta/n)}$の回転量$\theta/n$を
+‘円弧$1e(\theta /n)$の長さ’
+%円弧の記号保留
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=8cm,height=4cm]{p098.bmp}
+\end{figure}
+で計ることにすれば，‘円弧の長さ’は未だ定義されていないが，
+$\sigma_n$はほぼ$i	\theta /n$に等しい，すなわち
+\[
+	\sigma_n	=	\frac{1}{n}	(i	\theta +	\tau _n),	\quad	\lim_{n\rightarrow	\infty}	\tau _n	=	0
+\]
+と考え，したがって
+\[
+	e(\theta )	=	\lim_{n\rightarrow	\infty}\left(1+\frac{i\theta }{n}	+	\frac{\tau _n}{n}	\right)^n
+\]としてよいであろうことは容易に想像がつく．
+
+\補題{2.1}複素数列$\{z_n\}$について，
+\[
+	\lim_{n\rightarrow	\infty}	z_n	=	0	\text{ならば}	\lim_{n\rightarrow	\infty}	\left(1+\frac{z_n}{n}	\right)^n=1.
+\]
+\証明
+\begin{align*}
+	\binom{n}{k}	\frac{1}{n^k}	&=	\frac{n!}{k!(n-k)!n^k}	\\
+															&=	\frac{1}{k!}	\frac{n(n-1)	\cdots	(n-k+1)}{n^k}	\\
+															&=	\frac{1}{k!}	\left(1-\frac{1}{n}	\right)	
+																								\left(1-\frac{2}{n}	\right)
+																								\cdots
+																								\left(1-\frac{k-1}{n}	\right)
+								\leqq	\frac{1}{k!}
+\end{align*}
+であるから，2項定理により
+\begin{align*}
+	\left|
+		\left(
+			1+\frac{z_n}{n}
+		\right)^n	-1
+	\right|
+	=
+		\left|
+			\sum_{k=1}^n		\binom{n}{k}	\frac{z_n^k}{n^k}
+		\right|
+	\leqq
+		\sum_{k=1}^n	\frac{|z_n|^k}{k!}
+	\leqq	\sum_{k=0}^\infty	\frac{|z_n|^k}{k!}	-1
+	\leqq	e^{|z_n|}	-1.
+\end{align*}
+仮定により$\displaystyle	\lim_{n\rightarrow	\infty}	|z_n|	=	0$であるから，
+$\displaystyle	\lim_{n\rightarrow	\infty}	(e^{z_n}-1)	=0$，したがって
+$\displaystyle	\lim_{n\rightarrow	\infty}	(1+z_n/n)^n)	=	1.$
+\■
+\[
+	1+\frac{i\theta }{n}	+	\frac{\tau _n}{n}
+	=
+	\left(	1+\frac{i	\theta }{n}\right)
+	\left(	1+\frac{z_n}{n}	\right)
+	=
+	1	+	\frac{i\theta }{n}	+\frac{z_n}{n}	+	\frac{i\theta z_n}{n^2}
+\]
+とおくと
+$\displaystyle	
+	\frac{\tau	_n}{n}	=	\frac{z_n}{n}	\left(1+\frac{i\theta }{n}	\right)
+$，よって
+$\displaystyle
+	z_n=\frac{\tau _n}{\displaystyle	1	+	\frac{i	\theta }{n}}
+$である．
+$\displaystyle	\lim_{n\rightarrow	\infty}	\tau _n	=	0$であるから，
+$\displaystyle	\lim_{n\rightarrow	\infty}	z_n	=	0$，したがって，
+補題2.1により，
+\[
+	e(\theta )	=	\lim_{n\rightarrow	\infty}
+								\left(1+\frac{i\theta }{n}	\right)^n
+								\left(1+\frac{z_n}{n}	\right)^n
+							=	\lim_{n\rightarrow	\infty}
+								\left(1+\frac{i\theta }{n}	\right)^n
+\]
+このようにして関数$e(\theta )$の形は
+\[
+	e(\theta )	=	\lim_{n\rightarrow	\infty}	\left(1+\frac{i\theta }{n}	\right)^n
+\]
+であろうと想像されるのである．
+
+そこで，この想像に基づいて，$e	(\theta )$\underline{を改めて}
+\begin{equation}
+	e(\theta )	=	\lim_{n\rightarrow	\infty}	\left(1+\frac{i\theta }{n}	\right)^n
+	\label{eq2x18}
+\end{equation}
+\underline{と定義して，この$e(\theta )$が絶対値$1$の複素数値をとる$\theta $の
+連続関数であって条件(\ref{eq2x15})を満たす}ことを証明しよう．
+(\ref{eq2x18})の右辺の極限が存在することは(\ref{eq1x23})で証明した．
+まず，補題2.1において
+$\displaystyle	z_n=\frac{\theta ^2}{n}	\rightarrow	0	\quad	(n	\rightarrow	\infty)$とおくと
+\begin{align*}
+	|e(\theta )|^2	&=	\lim_{n\rightarrow	\infty}	\left|1+\frac{i\theta }{n}	\right|^{2n}
+									=	\lim_{n\rightarrow	\infty}	\left\{	\left(1+\frac{i\theta }{n}\right)	
+																												\left(1-\frac{i\theta }{n}\right)
+																								\right\}^n	\\
+									&=	\lim_{n\rightarrow	\infty}	\left(1+\frac{\theta ^2}{n^2}	\right)^n
+									=	\lim_{n\rightarrow	\infty}	\left(1+\frac{1}{n}	\frac{\theta ^2}{n}	\right)^n
+									=	1
+\end{align*}
+つぎに
+\[
+	e(\theta )e(\varphi)	=	\lim_{n\rightarrow	\infty}	\left(1+	\frac{i\theta }{n}\right)^n
+																								\left(1+	\frac{i\varphi  }{n}\right)^n
+\]
+であるが，$\psi	=	\theta	+	\varphi$とおけば， 
+\begin{align*}
+	\left(1+\frac{i	\theta }{n}	\right)
+	\left(1+\frac{i	\varphi }{n}	\right)
+	&	=	1	+	\frac{i	\theta  }{n}	+	\frac{i	\varphi   }{n}	-	\frac{\theta \varphi }{n^2}
+		=	1	+	\frac{i	\psi }{n}	-	\frac{\theta \varphi }{n^2}	\\
+	&	=	\left(1+\frac{i\psi}{n}		\right)
+			\left(1	-	\frac{\theta \varphi }{n^2}	\frac{1}{1+	\frac{i\varphi }{n}}\right)
+		=	\left(1+\frac{i\psi}{n}		\right)
+			\left(1+\frac{1}{n}
+				\left(
+					\frac{-\theta \varphi }{n	\left(1+	\frac{i\varphi }{n}\right)}
+				\right)
+			\right)	\\
+	&	=	\left(1+\frac{i\psi }{n}	\right)
+								\left(1+\frac{z_n}{n}	\right).
+\end{align*}
+ただし，$\displaystyle	z_n	=	\frac{-\theta \varphi }{\displaystyle	n	\left(1+	\frac{i\varphi }{n}\right)}$.
+ここで補題2.1の仮定
+$z_n	\rightarrow	0	\quad	(n	\rightarrow	\infty)$
+を満たすことを確認し，
+$\displaystyle	\lim_{n\rightarrow	\infty}	(1+z_n/n)^n	=	1$であるから
+\[
+\]
+を念頭において，
+\begin{align*}
+	e(\theta )e(\varphi )
+&	=
+	\lim_{n\rightarrow	\infty}
+		\left(1+\frac{i\theta }{n}	\right)^n
+	\lim_{n\rightarrow	\infty}
+		\left(1+\frac{i\varphi }{n}	\right)^n
+	=
+	\lim_{n\rightarrow	\infty}
+		\left(1+\frac{i\varphi }{n}	\right)^n
+	\lim_{n\rightarrow	\infty}
+		\left(1+\frac{z_n }{n}	\right)^n	\\
+&	=
+	\lim_{n\rightarrow	\infty}
+		\left(1+\frac{i\varphi }{n}	\right)^n
+	\cdot	1
+	=
+	\lim_{n\rightarrow	\infty}
+		\left(1+\frac{i\varphi }{n}	\right)^n
+	=	e(\varphi)
+	=	e(\theta	+	\varphi)
+\end{align*}
+すなわち関数$e(\theta )$は条件(\ref{eq2x15})を満たす．$e(\theta )$が$\theta $の連続関数であることを
+証明するためには，(\ref{eq2x15})により，
+\[
+	|e(\theta)	-	e(\varphi )|=
+	|e(\varphi )(e(\theta -\varphi )-1)|=
+	|e(\theta -\varphi )-1|
+\]
+であるから，
+\[
+	\lim_{\theta\rightarrow	0}|e(\theta )-1|=0
+\]
+なることを言えばよい．(\ref{eq1x23})により
+\begin{equation}
+	e(\theta )	=	1+\sum_{n=1}^\infty	\frac{(i\theta )^n}{n!}
+							=	1	+	\frac{i	\theta 	}{1!}
+									-	\frac{	\theta ^2}{2!}
+									-	\frac{i\theta^3 }{3!}
+									+	\frac{i\theta^4 }{4!}
+									+	\cdots
+	\label{eq2x19}
+\end{equation}
+であるから，$|\theta|<1$とすれば，
+\[
+	|e(\theta)-1|	\leqq	\sum_{n=1}^\infty	\frac{|\theta|^n}{n!}
+								\leqq	\sum_{n=1}^\infty	|\theta|^n
+								=			\frac{|\theta |}{1-|\theta |}.
+\]
+故に，$\displaystyle	\lim_{\theta \rightarrow	0}	|e(\theta )-1|=0$,
+したがって$e(\theta )$は$\theta $の連続関数である．
+
+$e(\theta )$の実数部を$c(\theta )$，虚数部を$s(\theta )$で表して
+\[
+	e(\theta )	=	c(\theta )	+	i	s(\theta )
+\]
+と書く．$c(\theta )$,$s(\theta )$は$\theta $の連続関数で，
+$c(\theta )^2	+	s(\theta )^2	=1$，$c(0)=1$,$s(0)=0$である．
+(\ref{eq2x15})は
+\begin{align*}
+	c(\theta +	\varphi )	+	is(\theta +	\varphi )
+	&=
+		(c(\theta)	+	is(\theta))(	c(\varphi )	+	is(\varphi ))	\\
+	&=c(\theta)c(\varphi )-s(\theta)s(\varphi )+i(c(\theta)s(\varphi )+s(\theta)c(\varphi ))
+\end{align*}
+\begin{equation}
+	\begin{cases}
+		c(\theta +	\varphi )	=	c(\theta )c(\varphi )	-	s(\theta )s(\varphi ),	\\
+		\\
+		s(\theta +	\varphi )	=	c(\theta )s(\varphi )	+	s(\theta )c(\varphi )\\
+	\end{cases}	\quad	\text{(加法定理)}
+	\label{eq2x20}
+\end{equation}
+となる．(\ref{eq2x19})により
+\begin{equation}
+	\begin{cases}
+			\displaystyle	
+			c(\theta )	=	1	-	\frac{\theta^2}{2!}
+											+	\frac{\theta^4}{4!}
+											-	\frac{\theta^6}{6!}
+											+	\cdots	\\
+			\\
+			\displaystyle
+			s(\theta )	=	\theta	-	\frac{\theta^3}{3!}
+														+	\frac{\theta^5}{5!}
+														-	\frac{\theta^7}{7!}
+														+	\cdots.
+	\end{cases}
+\end{equation}
+$0	<	\theta \leqq	1$のとき，$\{\theta^{2n}/(2n)! \}$は$0$に収束する単調減少数列であるから，
+定理1.23により，
+\[
+	c(\theta )	\geqq	1	-	\frac{\theta ^2}{2!}	\geqq	\frac{1}{2}.
+\]
+同様に,$0	<	\theta \leqq	1$のとき
+\[
+	s(\theta )	\geqq	\theta	-	\frac{\theta ^3}{3!}	
+							=	\theta \left(1	-	\frac{\theta ^2}{6}	\right)
+							\geqq	\frac{5}{6}\theta .
+\]
+$0	\leqq	\varphi <	\psi \leqq	1$のとき，$\theta =\psi -\varphi $とおけば，
+$s(\theta )	\geqq	5\theta /6	>	0$，$c(\theta )=	\sqrt{1-s(\theta )^2}	<1$，
+$c(\varphi )	\geqq	1/2$，$s(\varphi )	\geqq	0$であるから，
+加法定理(\ref{eq2x20})により
+\begin{align*}
+		c(\varphi )-c(\psi )	&=	c(\varphi )-c(\theta +	\varphi )	\\
+													&=	c(\varphi )-c(\theta)c(\varphi)	+s(\theta )s(\varphi )	\\
+													&>	c(\varphi )-c(\varphi)\cdot	1		+s(\varphi )\frac{5\theta }{6}	\\
+													&>	0
+\end{align*}
+したがって$c(\varphi )	>	c(\psi )$，すなわち，閉区間$[0,1]$で$c(\theta )$は
+$\theta $の単調減少関数，したがって$s(\theta )=	\sqrt{1-c(\theta )^2}$は
+単調増加関数である．
+
+以後で，円周率$\pi$を定義しよう．$((1+i)/\sqrt{2})^2=i$であるから，
+\[
+	\sqrt{i}=\frac{1+i}{\sqrt{2}}
+\]
+とおく．$0=s(0)	<1/\sqrt{2}	<	5/6	<	s(1)$であるから，
+中間値の定理（定理2.2）により$s(\gamma )	=	1/\sqrt{2}$なる実数$\gamma$，$0	<	\gamma	<1$が
+唯一つ存在する．この実数$\gamma $の$4$倍を$\pi$で表す：
+$\pi=4\gamma$．\underline{これがわれわれの立場における} \underline{$\pi$の定義である}．
+ $2\pi$が半径$1$の円周の長さに等しいことは後で証明する．	$\gamma=\pi/4$であるから，
+$s(\pi/4)=1/\sqrt{2}$，したがって$c(\pi/4)=1/\sqrt{2}$，
+\[
+	e\left(\frac{\pi}{4}	\right)	=	\sqrt{i}
+\]
+となる．閉区間$[0,\pi/4]$で$s(\theta )$は単調増加，$c(\theta )$は単調減少で，
+$s(0)=0$，$s(\pi/4)=1/\sqrt{2}$，$c(0)=1$，$c(\pi/4)=1/\sqrt{2}$である．
+
+$\pi/4	\leqq	\theta	\leqq	\pi/2$のとき$\varphi =\theta -\pi /4$とおけば，
+(\ref{eq2x20})により，
+\[
+	c(\theta )=c(\varphi + \pi/4 )=\frac{1}{\sqrt{2}}(c(\varphi )	-s(\varphi )),
+	\quad
+	s(\theta )=s(\varphi + \pi/4 )=\frac{1}{\sqrt{2}}(c(\varphi )	+s(\varphi )).
+\]
+したがって閉区間$[\pi/4,\pi/2]$で$c(\theta )$は単調減少で$c(\pi/2)=0$，
+$s(\theta )=\sqrt{1-c(\theta )^2}$は単調増加で$s(\pi/2)=1$である．故に，
+閉区間$[0,\pi/2]$で$c(\theta )$は単調減少で$c(0)=1$，$c(\pi/2)=0$，
+$s(\theta )$は単調増加で$s(0)=0$，$s(\pi/2)=1$ということになる．
+$\pi/2	\leqq	\theta	\leqq	\pi$のとき，(\ref{eq2x20})により，
+\[
+	c(\theta ) =c\left(\frac{\pi}{2} + \theta -\frac{\pi}{2} \right)
+             = -s\left(\theta -\frac{\pi}{2}	\right),
+	\quad
+	s(\theta ) =s\left(\frac{\pi}{2} + \theta -\frac{\pi}{2}  \right) 
+             = c\left(\theta -\frac{\pi}{2}	\right),
+\]
+であるから，閉区間$[ \pi/2 , \pi ]$で$c(\theta)$も$s ( \theta)$も単調減少で，$c(\pi) = -1,
+s(\pi) =0$となる．
+
+結局閉区間$[ 0, \pi ]$で$c(\theta)$は単調減少で$c(0)=1,c(\pi) = -1$，開区間$(0, \pi)$で
+$s(\theta) > 0$である．したがって，点$\theta$が閉区間$[ 0 , \pi ]$上を
+$0$から$\pi$まで右に進むにとき，
+\[
+	e(\theta) = c(\theta) + i s ( \theta)
+\]
+は単位円周$C = \{ e \in \C \: | \: | e | = 1 \: \}$の上半分を
+時計の針と反対の向きに$1$から$-1$まで進む．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=8cm,height=6cm]{p101.bmp}
+\end{figure}
+閉区間$[ \pi , 2 \pi ]$では，
+\[
+	e(\theta) = e(\pi)e(\theta - \pi) = -e (\theta - \pi)
+\]
+であるから，点$\theta$が$\pi$から$2\pi$まで右に進むとき，$e(\theta)$は
+$C$の下半分を$-1$から$1$まで進む．故に対応：$\theta \rightarrow e ( \theta)$は
+区間$[ 0, 2 \pi )$と$C$の間の1対1の対応を与え，したがって関数$e ( \theta )$の値域は，
+$C$，また，$e ( \theta )=1$となる最小の正の実数$\theta$が$2 \pi$である．
+任意の整数$m$に対して，$e ( 2m \pi) = e (2 \pi)^m =1$であるから，
+\[
+	e ( \theta + 2 m \pi ) = e(\theta). 
+\]
+すなわち$e ( \theta )$，したがて$c ( \theta ) , s(\theta)$は$2 \pi$を周期とする
+$\theta$の周期関数である．
+
+\subsection{円弧の長さ}
+
+$0 < \psi \leqq 2\pi$なる実数$\psi$が与えられたとき，閉区間$ [ 0 ,\psi]$に対応する
+$C$の部分集合：
+\[
+	1e(\psi) = \{ e ( \theta ) \: | \: 0 \leqq \theta \leqq \psi \}
+\]
+を\textbf{円弧}とよぶ．ここで$\psi$は円弧$1e(\psi)$の‘長さ’に等しいことを証明しよう．
+このためにはまず\textbf{円弧の長さ}を定義しなければならない．区間$[ 0 ,\psi]$内に
+\[
+	0 = \theta_0 < \theta_1 < \cdots < \theta_{k-1} < \theta_k < \cdots < \theta_m = \psi
+\]
+なる多数の点$\theta_0, \theta_1, \cdots , \theta_k, \cdots \theta_m$をとり，
+円周$C$上の点$e ( \theta_k)$と$e ( \theta_{k-1})$を結ぶ線分を$L_k$,
+$L_k$の長さを$l_k$とする．そして$L_1,L_2, \cdots , L_k , \cdots , L_m$を継ぎ合わせて
+つくった折線を$L$とすれば，$L$の長さは$l= \sum_{k=1}^m l_k$である．
+折線$L$，したがってその長さ$l$は$\varDelta = \{ \theta_0 , \theta_1, \cdots , \theta_m \}$
+によって定まるから，$l$を$l_\varDelta$と書くことにする．
+$\varDelta \subsetneq \varDelta '$ならば$l_\varDelta < l_{\varDelta'}$なることは
+明らかであろう．円弧$1 e ( \psi )$の長さをあらゆる$\varDelta$の選び方に対する
+$l_\varDelta$の上限と定義する：
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=7.5cm,height=4.5cm]{p103.bmp}
+	\caption{}
+	\label{p103}
+\end{figure}
+\[
+	1e(\psi)\text{の長さ} = \sup_{\varDelta} l_\varDelta.
+\]
+この定義において変数$\theta$は円弧$1 e ( \psi)$の上の\textbf{点の順序}を
+指定するためだけに用いられている．
+
+$\displaystyle \psi = \sup_{\varDelta } l_\varDelta$を証明するためには，任意の正の実数$\varepsilon$，$\varepsilon < 1$，
+に対応して一つの正の実数$\delta( \varepsilon)$が存在して，
+\begin{equation}
+	| \theta_k - \theta_{k-1} | < \delta ( \varepsilon ) , \quad k=1 ,2, \cdots , m,
+\label{eq2x22}
+\end{equation}
+ならば
+\[
+	|l_\varDelta - \psi | < \varepsilon
+\]
+となることを言えばよい．なぜなら，$\varDelta \subset \varDelta'$ならば
+$l_\varDelta \leqq l_{\varDelta'}$であるから，$\varDelta$を条件(\ref{eq2x22})を
+満たすものに限っても$\displaystyle \sup_{\varDelta} l_\varDelta$は変わらない，
+したがって
+\[
+	| \sup_{\varDelta} l_\varDelta - \psi | \leqq \varepsilon
+\]
+となり，$\varepsilon$が任意の正の実数であるから，
+$\displaystyle \sup_{\varDelta} l_\varDelta = \psi$となる
+（$\displaystyle \sup_{\varDelta} l_\varDelta$と$\psi$をいくらでも近くできる，$\theta$の並びが存在する）からである．
+
+さて，$e(\theta_k) - e(\theta_{k-1}) = e(\theta_{k-1}) (e ( \theta_k - \theta_{k-1}) -1)$であるから
+\[
+	l_k= | e(\theta_k) - e(\theta_{k-1}) | = | e ( \theta_k - \theta_{k-1}) -1 |.
+\]
+そこで，$0 <  \theta < \delta < 1$として$|e ( \theta) -1 |$を評価する．
+(\ref{eq2x19})により
+\[
+	e( \theta ) -1 = i \theta + \sum_{n=2}^\infty \frac{(i \theta)^n}{n!}
+\]
+であるから，
+\[
+	e(\theta ) -1 = i \theta ( 1 + \rho )
+\]
+とおけば
+\[
+	e( \theta) -1 = i \theta \left( 1 + \sum_{n=2}^\infty \frac{(i\theta)^{n-1}}{n!}
+                           \right)
+                =  i \theta \left( 1 + \sum_{n=1}^\infty \frac{(i\theta)^{n}}{(n+1)!}
+                           \right)
+\]
+と比較して，
+\[
+	|\rho | = \left| \sum_{n=1}^{\infty} \frac{ ( i \theta)^n}{ (n+1)!} 
+            \right|
+  <
+  \sum_{n=1}^\infty \left( \frac{\theta}{2}
+                    \right)^n 
+                   = \frac{ \displaystyle \frac{\theta}{2} }{ \displaystyle 1 - \frac{ \theta}{2}}
+                   = \frac{\theta}{2 - \theta}
+\]
+$ \theta < 1$であるから$2 - \theta > 1$，よって$\displaystyle \frac{1}{2-\theta} < 1$，
+\[
+ \frac{\theta}{2 - \theta } < \frac{\delta}{1} = \delta.
+\]
+故に
+\[
+	\theta ( 1 - \delta) < | e ( \theta) - 1 | < \theta ( 1 + \delta),
+\]
+したがって，$| \theta_k - \theta_{k-1}| < \delta , k=1,2, \cdots , m,$ならば
+\[
+	( \theta_k - \theta_{k-1} )(1 - \delta) < l_k < ( \theta_k - \theta_{k-1})(1+ \delta).
+\]
+$\displaystyle l_\varDelta = \sum_{k=1}^{m} l_k, 
+ \psi = \sum_{k=1}^m ( \theta_k - \theta_{k-1})$であるから
+\[
+	\psi ( 1 - \delta ) < l_\varDelta < \psi ( 1+ \delta),
+\]
+したがって
+\[
+	|l_\varDelta - \psi| < \psi \delta \leqq 2 \pi \delta.
+\]
+故に，$\delta( \varepsilon) = \varepsilon / 2\pi$とおけば，
+$\varDelta$が条件(\ref{eq2x22})を満たすとき
+\[
+	| l_\varDelta - \psi | < \varepsilon
+\]
+となる．これで$\psi$が円弧$1 e(\psi)$の長さに等しいことが証明された．
+特に$2\pi$\underline{は半径$1$の円周$C$の長さに等しい}ことが証明されたのである．
+
+\subsection{三角関数}
+\label{sec2x4x3}
+以上の結果に基づいて，任意の実数$\theta$に対して，変換
+\[
+	R_{e(\theta)} : z \rightarrow z' = e(\theta) z
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=4cm,height=4cm]{p104.bmp}
+\end{figure}
+を（複素）平面の原点$0$を中心とする\textbf{角$\theta$の回転}と定義し，
+$\theta$を線分$0z'$と$0z$とをなす角とよぶ．$s(\theta)$を$\theta$の\textbf{正弦},
+$c ( \theta)$を$\theta$の\textbf{余弦}といい，それぞれ$\sin \theta$，
+$\cos \theta$で表わす：
+\[
+	\sin \theta = s ( \theta) , \cos \theta = c( \theta).
+\]
+これで三角関数$\sin \theta, \cos \theta$が厳密に定義されたのである．
+$\sin \theta, \cos \theta$の主な性質は上の定義の仮定で既に証明されてている．すなわち，
+$\sin \theta, \cos \theta$は数直線$\R$上で定義された$\theta$の連続関数で，
+$2 \pi$を周期とする周期関数である．
+\[
+	\cos^2 \theta + \sin^2 \theta = 1.
+\]
+また，(\ref{eq2x16})により，$e( -\theta) = \overline{e ( \theta)}$であるから，
+\[
+	\cos ( - \theta) = \cos \theta, \quad \sin (- \theta) = - \sin \theta.
+\]
+(\ref{eq2x20})はすなわち加法定理：
+\begin{equation}
+	\begin{cases}
+		\cos ( \theta + \varphi) = \cos \theta \cos \varphi - \sin \theta \sin \varphi, \\
+    \sin ( \theta + \varphi) = \sin \theta \cos \varphi + \cos \theta \sin \varphi
+	\end{cases}
+\label{eq2x23}
+\end{equation}
+である．(\ref{eq2x11})の記法を用いれば
+\[
+	c(\theta) + i s(\theta) = e( \theta) = e^{i \theta}
+\]
+であるから
+\[
+	\cos \theta + i \sin \theta = e^{i \theta}.
+\]
+さらに
+\begin{align}
+	\: \cos \theta &= 1- \frac{\theta^2 }{2!} + \frac{\theta^4}{4!} - \frac{\theta^6}{6!} + \cdots , 
+  \label{eq2x24} \\
+	\: \sin \theta &= \theta- \frac{\theta^3 }{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \cdots , 
+  \label{eq2x25}
+\end{align}
+$0 , \pi/2, -\pi /2 , \pi$における$e (\theta)$の値はそれぞれ$1$，$i$，$-i$，$-1$，
+$\sin \theta$の値は$0,1,-1,0$，$\cos \theta$の値は$1,0,0,-1$である．
+高校数学で学んだ$\sin (\pi / 2- \theta) = \cos \theta$，
+$\cos (\pi - \pi)= -\cos \theta$，のような公式は加法定理から直ちに導かれる．
+
+$\tan \theta = \sin \theta / \cos \theta$，$\cot \theta = \cos \theta / \sin \theta$と定義して，
+$\tan \theta, \cot \theta$をそれぞれ$\theta$の正接（tangent）,余接（cotangent）ということも高校
+で学んだ．$\tan \theta$は数直線$\R$上で$\cos \theta = 0$となる点$\theta$，すなわち
+$\pi / 2 + m \pi$，$m$は整数，を除いて定義された連続関数であり，
+$\cot \theta$は$m \pi$，$m$は整数，を除いて定義された連続関数である．
+
+\subsubsection{問題}
+
+\textbf{11.}
+$x$の関数$\displaystyle \sin \frac{1}{x}$は区間$(0,+ \infty)$において連続ではあるが
+一様連続でないことを示せ．
+
+\証明
+合成関数の性質から連続であることは明らかである．
+いま$\displaystyle x_n = \frac{1}{(n+1/2)\pi}$，$\displaystyle y_n = \frac{1}{n \pi}$とおくと
+$|x_n - y_n | \rightarrow 0$であるのに
+\begin{align*}
+    \left| \: \sin \frac{1}{x_n} - \sin \frac{1}{y_n}  \:\right| 
+  &= \left| \: 2 \cos \frac{1/x_n + 1/y_n}{2} \sin \frac{ 1/x_n - 1/y_n}{2}  \:\right| \\
+  &= \left| \: 2 \cos \left( n + \frac{1}{4} \right) \pi \cdot \sin \frac{1}{4} \pi  \:\right| \quad \text{(和積の公式)}	\\
+  &= \left| \: \pm 2 \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}  \:\right|
+   = 1
+\end{align*}
+となっているから，
+勝手な正の数$\varepsilon $を与えたとき$\delta > 0$をどう選んでも
+\[
+  0 < x , 0 < x', \: | x-x'| < \delta \quad \text{ならば} \quad 
+  \left| \: \sin \frac{1}{x} - \sin \frac{1}{x'} \: \right| < \varepsilon
+\]
+が成り立つようにはできない．したがって$\displaystyle \sin \frac{1}{x}$は一様連続でない．
+\■
+
+\textbf{12.}
+有界数列が収束する部分列をもつこと（定理1.30）から閉区間で定義された連続関数は
+最大値と最小値をもつこと（定理2.4）を導け．
+
+\証明
+最大値がないと仮定する．各$n$毎にこの閉区間から$f(a_n) \geqq n \: (f(a_n) \leqq -n) $となる数$a_n$を
+選ぶことができる．定理1.30より数列$ \{ a_n \}$は収束する部分列$\{a_{n_j} \}$をもつ．
+$ \lim a_{n_j} = \alpha $とおくと$f(x)$の連続性により
+$\lim f(a_{n_j}) = f(\alpha) $であるが，一方$f(a_{n_j}) \geqq n_j \: (f(a_{n_j} ) \leqq -n_j)$であるから
+$\lim f(a_{n_j}) = + \infty \: (\lim f(a_{n_j}) = - \infty )$となって矛盾する．
+
+\■
+
+\textbf{13.}
+有界数列が収束する部分列をもつことから閉区間で定義された連続関数は一様連続であること
+（定理2.3）を導け．
+
+\証明
+
+一様連続でないとすると，ある正の数$\varepsilon > 0$に対してどんな$\delta > 0$を選んでも
+$|x -y | < \delta$，かつ$|f(x) - f(y) | \geqq \varepsilon$となるような$x$と$y$が存在する．
+いま$\delta = 1/n$に対して$a_n - b_n < 1/n$かつ$|f(a_n) -f(b_n) | \geqq \varepsilon$となる
+ような数$a_n$と$b_n$を選ぶ．数列$\{a_n\}$は収束する部分列をもつからはじめから
+$\{ a_n \} $が$\alpha$に収束するとしてよい．このとき
+\begin{align*}
+	|b_n - \alpha | &\leqq | b_n - a_n | + |a_n - \alpha| \\
+                  &<     \frac{1}{n} + | a_n - \alpha | \rightarrow 0
+\end{align*}
+により$\{ b_n \}$も$\alpha$に収束する．したがって$f(a_n ) - f(b_n) \rightarrow f(\alpha ) - f(\alpha ) =0$
+となって仮定に矛盾する．
+\■
+
+\textbf{14.}
+$x$の関数$f(x)$が区間$ [ a, \infty )$において連続で
+$\displaystyle \lim_{x\rightarrow+\infty} | f(x+1) - f(x) | = l$ならば
+$\displaystyle \lim_{x\rightarrow+\infty} \frac{f(x)}{x} = l$となることを証明せよ．
+
+\証明
+$f(x)$の代わりに$f(x) - l_x$を考えれば，はじめから$l=0$としてよいことがわかる．
+さらに$f(x)$の代わりに$|f(x)|$を考えると$f(x) \geqq 0$としてよいこともわかる．
+仮定により任意の$\varepsilon > 0$に対して$x_0$があって
+\[
+	x \geqq x_0 \quad \text{ならば} \quad | f(x+1) - f(x) | < \varepsilon
+\]
+となる．連続関数$f(x)$は各閉区間$[n , n+1]$，$n$は自然数，$n \geqq a$，において最大値を
+もつ．それを$f(x_n), n \leqq x_n \leqq n+1$，とする．$n \geqq x_0 + 1$のとき
+\[
+	f(x_n) - f(x_n -1 ) = f(x_n -1 + 1) - f(x_n - 1) < \varepsilon
+\]
+となるが，$x_n - 1$は区間$[n-1 , n]$に属するから$f(x_n - 1) \leqq f(x_{n-1} )$，
+ゆえに
+\[
+	f(x_n) - f(x_{n-1}) < \varepsilon.
+\]
+$ m \geqq x_0$，$m$は自然数，とすると$n=m+1 , m+2 , \cdots , n$についてこの不等式が
+成り立つ．その和をとれば
+\[
+	f(x_n ) -f(x_m) < (n-m) \varepsilon,
+\]
+したがって
+\[
+  \frac{f(x_n)}{n} < \frac{f(x_m)}{n} + \varepsilon.
+\]
+$\varepsilon > 0$は任意であったから
+\[
+	\frac{f(x_n)}{n} \rightarrow 0 \quad ( n \rightarrow + \infty).
+\]
+任意の$x$はある区間$[ n , n + 1] $に属し，したがって$f(x) \leqq f(x_n) , \: x \geqq n$であるから
+\[
+	\frac{f(x)}{x} \leqq \frac{f(x_n)}{n} \rightarrow 0 \: (x \rightarrow + \infty).
+\]
+\■
+
+\textbf{15.}
+$f(x)$は区間$ [ a,b ]$で連続な$x$の関数であるとする．任意の$x,y$，
+$a \leqq x \leqq b$，$a \leqq y \leqq b$，に対してつねに等式
+\[
+	f \left( \frac{x + y}{2}
+    \right)
+  =
+  \frac{1}{2} (f(x) + f(y))
+\]
+が成り立つならば$f(x)$は$x$の1次式であることを証明せよ（$x$の1次式$g(x) = Ax + B$
+を$g(a) = f(a), g(b) = f(b)$となるように定めて，まず$[a,b]$のいたる所稠密な
+或る部分集合において$f(x)$と$g(x)$が一致することを示せ）．
+
+\証明
+$f(x)$と$g(x)$は$x=a$と$x=b$で一致し
+\begin{align*}
+	g \left(  \frac{x+y}{2}
+    \right) 
+    &= \frac{1}{2} \{ g(x) + g(y) \} \\
+	f \left(  \frac{x+y}{2}
+    \right) 
+    &= \frac{1}{2} \{ f(x) + f(y) \}
+\end{align*}
+より$f(x)$と$g(x)$は$ [ a,b ]$を$2^n$等分するすべての点でも一致する．
+（理解保留）
+\■
+
+\textbf{16.}
+$P_0 (x) , P_1(x), \cdots , P_n(x)$は$x$の多項式であるとする．
+すべての実数$x$に対して
+\[
+	P_0(x) e^{nx} + P_1 (x) e^{(n-1)x} + \cdots + P_{n-1}(x) e^x + P_n (x) =0
+\]
+となるのは恒等的に$P_0(x) = P_1(x) = \cdots = P_n (x)=0$である場合に限ることを証明せよ
+（92ページの(2.6)を応用せよ）．
+
+\証明
+\[
+	P_0(x) e^{nx} + P_1 (x) e^{(n-1)x} + \cdots + P_{n-1} (x)  e^x + P_n (x) =0
+\]
+の両辺を$e^{nx}$で割ると
+\[
+	P_0(x) + P_1(x) \frac{1}{e^x} + \cdots + P_{n-1}(x) \frac{1}{e^{(n-1)x}} + P_n(x) \frac{1}{e^{nx}} =0
+\]
+となる．もし$P_0(x)=0$でなければ$x \rightarrow + \infty$とすると
+$\displaystyle \lim_{x\rightarrow +\infty} x^k / e^x =0$により第2項以下は
+$0$になるのに$|P_0(x)|$は無限大へ発散するので矛盾する．したがって$P_0(x)=0$．
+これを繰り返せば$P_0(x) = P_1(x) = \cdots = P_n(x) = 0$となることがわかる．
+（理解の深化が欲しい，数学的帰納法 ?）
+\■
+
+\textbf{17.}
+数列$ \{ a_n \} , \: a_n > 0$，について
+$\displaystyle \lim_{n\rightarrow\infty} a_n = \alpha, \: \alpha >0$，ならば
+$\displaystyle \lim_{n\rightarrow\infty} (a_1 a_2 a_3 \cdots a_n)^{1/n} = \alpha$
+なることを証明せよ．
+
+\証明
+$b_n = \log a_n$とおくと$b_n \rightarrow \log \alpha$となる．
+$\log \{ (a_1 a_2 \cdots a_n)^{1/n} \} = (1/n) (b_1 + \cdots + b_n)$と書けるから
+問題3 によりこの数列も$\log \alpha$に収束する．したがって$\lim (a_1 a_2 \cdots a_n)^{1/n} = \alpha$.
+\■
+
+
+\textbf{18.}
+極限$\displaystyle \lim_{n\rightarrow\infty} \frac{(n!)^{1/n}}{n}$の値を求めよ
+（前門17の$a_n$に$\displaystyle \left( 1+ \frac{1}{n} \right)^n$を代入せよ）．
+
+\証明
+$a_n = (1 + 1/n)^n$とおくと$a_n \rightarrow e$である．このとき問題17により
+\begin{align*}
+			(a_1 a_2 \cdots a_n)^{1/n}
+	&=	\left\{	
+					\left(	1	+	\frac{1}{1}	\right)^1
+					\left(	1	+	\frac{1}{2}	\right)^2
+					\cdots
+					\left(	1	+	\frac{1}{n}	\right)^n
+			\right\}^{1/n}	\\
+	&=	\left\{	
+					\left(	\frac{2}{1}	\right)^1
+					\left(	\frac{3}{2}	\right)^2
+					\left(	\frac{4}{3}	\right)^3
+					\cdots
+					\left(	\frac{n+1}{n}	\right)^n
+			\right\}^{1/n}	\\
+	&=	\left\{
+				\frac{1}{2}
+				\frac{1}{3}
+				\frac{1}{3}
+				\cdots
+				\frac{1}{n}
+				(n+1)
+			\right\}^{1/n}	\\
+	&=	\frac{1}{(n!)^{1/n}} (n+1)
+\end{align*}
+も$e$に収束するから
+\[
+	\frac{(n!)^{1/n}}{n} = \frac{(n!)^{1/n}}{n+1} \frac{n+1}{n} \rightarrow e^{-1}.
+\]
+\■
+
+\textbf{19.}
+$a >0$なるとき$\displaystyle \lim_{n\rightarrow\infty} n(a^{1/n} -1) = \log a$なることを証明せよ
+（藤原松三郎“微分積分学Ⅰ”，p.120，例題1）．
+
+\証明
+$a=1$なら自明であるから$a \ne 1$であるとする．
+\[
+	y_n = \frac{\log a}{n}
+\]
+とおけば$\displaystyle	\lim_{n\rightarrow	+\infty}	y_n	=	0$となる．
+また$y_n	\rightarrow	0$のとき
+\[
+	\frac{e^{y_n}	-1}{y_n}	\rightarrow	1
+\]
+となるから
+\[
+		n	(\sqrt[n]{a}	-1	)	=	\frac{n	(	\sqrt[n]{a}	-	1)}{\log	a}	\log	a
+													=	\frac{e^{y_n}-1}{y_n}	\log	a	\rightarrow	a.
+\]
+\■
+
+\textbf{20.}
+$\cos (nx) , \sin (nx)$，$n$は自然数，を$\cos x,	\sin	x$の多項式として
+表わす公式を求めよ．
+
+\証明
+$e^{ix} 	=	\cos	x	+	i	\sin	x$の両辺を$n$乗すると
+\begin{align*}
+	\text{左辺}	&=	e^{inx}	=	\cos	nx	+	i	\sin	nx	\\	
+	\text{右辺}	&=	(	\cos	x	+	i	\sin	x)^n	=	\cos^n	x	+	ni	\cos^{n-1}	x	\sin	x	\\
+							&-	\frac{n(n-1)}{2}	\cos^{n-2}x	\sin^2	x	-	i\frac{n(n-1)(n-2)}{6}	\cos^{n-3}	\sin^3	x	\\
+							&	\quad	+	\cdots	+	i^n	\sin^n	x	\\
+\end{align*}
+両辺の実部と虚部を比較することにより次の式を得る．
+\begin{align*}
+	\cos	nx	&	=	\cos^n	x	-	\frac{n(n-1)}{2}	\cos^{n-2}x	\sin^2	x	+	\cdots	\\
+						&	\quad	+	(-1)^{k-1}	\binom{n}{2k}	\cos^{n-2k}x	\sin^{2k}	x	+	\cdots	\\
+	\sin	nx	&=	n	\cos^{n-1}x	\sin	x	-	\frac{n(n-1)(n-2)}{6}	\cos^{n-3}	\sin^3	x	+	\cdots	\\
+						&	\quad	+	(-1)^{k-1}	\binom{n}{2k-1}	\cos^{n-2k+1}x	\sin^{2k-1}	x	+	\cdots	.
+\end{align*}
+\■
+

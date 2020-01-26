@@ -1,0 +1,215 @@
+\subsection{有界な集合}
+\label{sec1x6x5}
+
+$S$に属する点$P$と原点$O=(0,0)$の距離$|PQ|$が上に有界，すなわち一定の正の実数
+$\mu$を越さないとき，$S$は\textbf{有界}(bounded)であるという．
+$S$が有界な場合，$S$に属する2点$P$，$Q$の距離$|PQ|$も上に有界であるから，
+$|PQ|$の上限が定まる．
+この上限を$S$の\textbf{直径}(diameter)とよび，$\delta(S)$で表わす：
+\[
+	\delta(S)=\sup_{P,Q	\in	S}|PQ|.
+\]
+つぎの定理は区間縮小法の基礎をなす定理1.24の拡張である：
+
+\定理{1.26}
+空でない有界な閉集合の列：$S_1,S_2,\cdots,S_n,\cdots$がつぎの二つの条件を満たすならば，
+これらの閉集合$S_n$のすべてに属する点$P$がただ一つ存在する：
+\begin{list}{}{}
+	\item	(ⅰ)	$S_1	\supset	S_2	\supset	S_3	\supset	\cdots	\supset	S_n	\supset	\cdots,$
+	\item	(ⅱ)	$\displaystyle	\lim_{n\rightarrow\infty}\delta(S_n)=0$.
+\end{list}
+\証明
+各$n$について$S_n$に属する点$P_n$を一つ選べば，点列$\{P_n\}$は収束する．
+なぜなら，(ⅱ)により，任意の正の実数$\varepsilon$に対応して自然数$n_0(\varepsilon)$が定まって，
+\[
+	n>n_0(\varepsilon)	\quad	\text{ならば}	\quad	\delta(S_n)	<	\varepsilon
+\]
+となっている．$n,m	>	n_0(\varepsilon)$のとき，$m	\geqq	n$ならば(ⅰ)により
+$P_m	\in	S_m	\subset	S_n$であるから，
+\[
+	|P_mP_n|	<	\delta(S_n)	<	\varepsilon
+\]
+故に，Cauchyの判定法により，$\{P_n\}$は収束する．
+そこで$\displaystyle	P=\lim_{n\rightarrow\infty}P_n$とおく．
+各$n$について，$m\geqq	n$ならば$P_m$は$S_n$に属しているから，
+$\displaystyle	P=\lim_{m\rightarrow\infty}P_m$は$[S_n]$に含まれる
+（定理1.25前の記述）が，
+仮定により$[S_n]=S_n$．故に$P$はすべての$S_n$に属する．
+\■
+
+\textbf{コンパクトな集合}
+
+一般に集合を要素とする集合$\mathscr{U}$に対して$\mathscr{U}$に属するすべての集合の合併集合を
+記号：$\bigcup_{U\in	\mathscr{U}}U$で表わす．$S$を点集合，$\mathscr{U}$を点集合を
+要素とする集合とする．このとき
+\[
+	S	\subset	\bigcup_{U\in	\mathscr{U}}U
+\]
+ならば，$S$は$\mathscr{U}$に属する集合で覆われるといい，$\mathscr{U}$を$S$の
+\textbf{被覆}(covering)とよぶ．
+とくに被覆$\mathscr{U}$の各要素が開集合であるとき，$\mathscr{U}$を$S$の\textbf{開被覆}
+(open	covering)という．また$S$の被覆$\mathscr{U}$が有限集合，
+すなわち有限個の点集合からなる集合ととき，$\mathscr{U}$を$S$の\textbf{有限被覆}
+(finite	coverint)という．$S$の被覆$\mathscr{V}$が被覆$\mathscr{U}$の部分集合であるとき，
+$\mathscr{V}$を$\mathscr{U}$の\textbf{部分被覆}とよぶ．
+
+\定義{1.7}
+$S$の任意の開被覆が有限部分被覆をもつとき，$S$は\textbf{コンパクト}(compact)であるとう．
+
+　
+
+$S$がコンパクトであるというのは，すなわち，$S$がつぎの性質をもつことを意味する：
+開集合を要素とする集合$\mathscr{U}$があって$S$が$\mathscr{U}$に属する集合で覆われて
+いるならば，$S$は$\mathscr{U}$に属する有限個の開集合で覆われる．
+
+\pagebreak
+\定理{1.27}
+コンパクトな集合$S$は有界な閉集合である．
+
+\証明
+まず各点$Q	\in	S$に対してその$\varepsilon$近傍の一つを$U(Q)$とすれば，
+$\mathscr{U}=\{U(Q)	\:	|	\:	Q	\in	S\}$は明らかに$S$の開被覆であり，$S$はコンパクトであるから
+$S$は有限個の$U(Q_1),U(Q_2),\cdots,U(Q_n)$で覆われる．各$U(Q_i)$は有界であるから，
+$U(Q_1)	\cup	U(Q_2)	\cup	\cdots	\cup	U(Q_n)$は有界，
+故に$S$は有界である．つぎに$S$が閉集合であることを
+いうために，$S$に属さない点$P$をとって各点$Q	\in	S$に対して$U_Q	=	U_{\varepsilon_Q}(Q)$，
+$\displaystyle\varepsilon_Q=\frac{1}{3}|QP|$，とおけば$\{U_Q	\:	|	\:	Q\in	S\}$
+は$S$の開被覆である．故に$S$は有限個の$U_Q$で覆われる：
+\[
+	S	\subset	U_{Q_1}	\cup	U_{Q_2}	\cup	\cdots	\cup	U_{Q_k}	\cup	\cdots	\cup	U_{Q_m}.
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=79.3mm,height=62.0mm]{p63x1.bmp}
+	\label{p63x1}
+\end{figure}
+
+正の実数$\varepsilon_{Q_k},k=1,2,\cdots,m,$の最小値を$\varepsilon$とすれば，
+$U_{Q_k}	\cap	U_\varepsilon(P)	=	\varnothing$であるから，
+$S	\cap	U_\varepsilon(P)=\varnothing$．すなわち$P$は$S$の境界点でない．
+このように，$S$に属さない点$P$は$S$の境界点でない．故に$S$の境界点はすべて$S$に属する．
+すなわち$S$は閉集合である．
+\■
+
+\定理{1.28}（Heine-Borelの被覆定理）有界な閉集合はコンパクトである．
+
+\証明
+$S$を有界な閉集合，$\mathscr{U}$を$S$の開被覆とする．$S$が$\mathscr{U}$に属する有限個の
+開集合で覆われることを証明するために，$S$は$\mathscr{U}$に属する有限個の開集合で覆うことは
+出来ないと仮定しよう．$S$は有界であるから，閉区間$I=[a,b]$を適当に選べば，
+$S$は正方形$\Delta	=I	\times	I$に含まれる：
+\[
+	S	\subset	\Delta	=	I	\times	I
+		=	\{(x,y)	\in	\R^2	\:	|	\:	a	\leqq	x	\leqq	b,a	\leqq	y	\leqq	b	\}
+\]
+$\delta$の直径は$\delta=\sqrt{2}(b-a)$である．$I$をその中点$c=(a+b)/2$によって二つの
+閉区間$I'=[a,c]$，$I"=[c,b]$に分割すれば，$\Delta$は四つの直径
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=60.8mm,height=61.7mm]{p63x2.bmp}
+	\label{p63x2}
+\end{figure}
+
+
+$\delta/2$の正方形
+$\Delta'		=I'		\times	I'$，
+$\Delta''		=I''	\times	I'$，
+$\Delta'''	=I'		\times	I''$，
+$\Delta''''	=I''	\times	I''$，
+に分割される：
+\[
+	\Delta=\Delta'		\cup
+				\Delta''	\cup
+				\Delta'''	\cup
+				\Delta''''.
+\]
+これに応じて，$S$は四つの閉集合
+$
+	S'		=S	\cap	\Delta',
+	S''		=S	\cap	\Delta'',
+	S'''	=S	\cap	\Delta''',
+	S''''	=S	\cap	\Delta''''
+$に分割される：
+\[
+	S=	S'	\cup	S''	\cup	S'''	\cup	S''''.
+\]
+この四つの閉集合がいずれも$\mathscr{U}$に属する有限個の開集合で
+覆われるならば，$S$も$\mathscr{U}$に属する有限個の開集合で覆われることになるが，
+これは仮定に反する．
+故に$S',S'',S''',S''''$の少なくとも一つは$\mathscr{U}$に属する有限個の開集合では
+覆われない．それを$S_1$とすれば
+\[
+	S_1	\subset	S,	\quad	\delta(S_1)	\leqq	\frac{\delta}{2}.
+\]
+同じ論法を$S_1$に適用すれば，$\mathscr{U}$に属する有限個の開集合では
+覆われない閉集合$S_2$で
+\[
+	S_2	\subset	S_1,	\quad	\delta(S_2)	\leqq	\frac{\delta}{2^2}
+\]
+なるものを得る．この操作を繰り返せば，$\mathscr{U}$に属する有限個の開集合では覆われない
+閉集合$S_n$の列：$S_1,S_2,\cdots,S_n,\cdots$で
+\[
+	S	\supset	S_1	\supset	S_2	\supset	\cdots	\supset	S_n	\supset	\cdots,
+	\quad	\delta(S_n)	\leqq	\frac{\delta}{2^n},
+\]
+なるものを得る．定理1.26により，すべての$S_n$に属する点$P$が存在する．
+$P	\in	S$で，$S$は$\mathscr{U}$に属する開集合で覆われているから，
+$P$は$\mathscr{U}$に属する開集合の一つ$U$に含まれている：$P	\in	U.$
+$U_\varepsilon(P)	\subset	U$なる正の実数$\varepsilon$をとって
+$\delta/2^n	<	\varepsilon$なる自然数$n$を定めれば，
+$P	\in	S_n$で$\delta(S_n)	\leqq	\delta/2^2	<	\varepsilon$であるから，
+$S_n	\subset	U$となるが，これは$S_n$が$\mathscr{U}$に属する有限個の開集合で覆われない
+ことに矛盾する．ゆえに$S$は$\mathscr{U}$に属する有限個の開集合で覆われる．
+すなわち，$S$はコンパクトである．
+\■
+コンパクトという概念は現代の数学において最も重要な概念の一つである．
+
+\定理{1.29}（Weierstrassの定理）
+有界な無限集合は集積点をもつ．
+
+\証明
+集積点を持たない有界な集合$S$は有限集合であることを証明すればよい．
+$S$を集積点を持たない集合とする．
+\underline{$S$に属さない}$S$の境界点があれば（$P	\not\in	S,P	\in	\partial	S$）それは$S$の集積点であるから，
+($\Rightarrow	(P	\in	\partial	S	\Rightarrow	P	\in	S)$，
+$S$の境界点はすべて$S$に属する($\partial	S	\subset	S$)．すなわち，$S$は閉集合である．
+$S$に属する点$P$は$S$の集積点でない，すなわち$U_\varepsilon(P)	\cap	S$
+が有限集合となる$\varepsilon$近傍：$U_p=U_\varepsilon(P)$をもつ．
+$S$は$U_p$，$P	\in	S$，で覆われているが，一方$S$は有界閉集合であるから，
+定理1.28により，$S$はコンパクト，したがって$S$は$U_P$の有限個で覆われる(
+$S	=	\bigcup_{i=1}^m	(U_{P_i}	\cap	S)$)，各$U_{P_i}	\cap	S$は有限集合であるから，
+$S$は有限集合である．
+\■
+
+点列$\{P_n\}$から無数の項を選んで$\{P_n\}$における順序と同じ順序に並べて
+得られる点列：$P_{n_1},P_{n_2},P_{n_3},\cdots$を
+$\{P_n\}$の\textbf{部分列}という．ここで$n_1,n_2,n_3,\cdots$は単調に
+増大する自然数列である．また，$P_n$と$O=(0,0)$の距離$|P_nO|$が$n$によらない
+一定の実数を越さないとき，点列$\{P_n\}$は有界であるという．
+
+\定理{1.30}\textbf{(Borzano-Weierstrass)}
+有界な点列は収束する部分列をもつ．
+\footnote{
+証明の骨子は$n$次元の場合も同様であり，$n$次元の場合は\S \label{sec6x4}で必要になる）
+}
+
+\証明
+$\{P_n\}$を有界な点列として，$\{P_n\}$の項として現れる点全体の集合を
+$S$とする．$P_n=P$なる項$P_n$が無数にあるような点$P	\in	S$が存在するときは，
+このような$n$に対して定まる$P_n$を集めて得られる部分列
+$\{P_{m_k}	\:	|	\:	P_{m_k}=P	\}$は$\lim_{k\rightarrow\infty}P_{m_k}	=	P$となり，
+定理をみたす．
+
+次に各々の$P	\in	S$に対して$P_n	=	P$なる項$P_n$は有限個しかないとする．そうすれば$S$は有界な
+無限集合となるから，定理1.29により，$S$は集積点をもつ．その集積点の一つを
+$Q$とすれば，任意の正の実数$\varepsilon$に対して，
+$U_\varepsilon(Q)	\cap	S$は無限集合であって，したがって$P_n	\in	U_\varepsilon(Q)$
+なる項$P_n$が無数に存在する．そこでまず$P_n	\in	U_1(Q)$なる項$P_n$の一つを
+$P_{n_1}$とし，つぎに$P_n	\in	U_{1/2}(Q)$なる項$P_n,	\:	n	>	n_1$，の一つを
+$P_{n_2}$とし，$P_n	\in	U_{1/3}(Q)$なる$P_n,	n	>	n_2$，の一つを$P_{n_3}$とし，
+以下同様にして$P_{n_4},P_{n_5},\cdots$を定めていけば，
+$\{P_n\}$の部分列：$P_{n_1},P_{n_2},P_{n_3},\cdots,	P_{n_m},\cdots$で$P_{n_m}	\in	U_{1/m}(Q)$
+なるものが得られる．いうまでもなく，この部分列は$Q$に収束する．
+\■
+
+	

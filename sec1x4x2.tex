@@ -1,0 +1,114 @@
+\subsection{収束の条件}
+\label{sec1x4x2}
+
+数列が収束するか否かを判定するためのCauchyの判定法は基本的である．
+
+\定理{1.13}（Cauchyの判定法）
+　数列$\{a_n\}$が収束するための必要かつ十分な条件は，
+任意の正の実数$\varepsilon$に対応して一つの自然数$n_0(\varepsilon)$が
+定まって
+\[
+	n	>	n_0(\varepsilon),	\:	m	>	n_0(\varepsilon)	\:	\text{ならば}	|\alpha_n	-	\alpha_m|	<	\varepsilon
+\]
+となることである．
+
+\証明
+条件が必要なことを示すために$\{\alpha_n\}$が収束すると仮定して
+$\displaystyle	\alpha=\lim_{n	\rightarrow	\infty}	\alpha_n$
+とおく．任意に与えられた
+正の実数$\varepsilon$に対して$0	<	a	<	\varepsilon$なる有理数$a$
+を一つ選ぶ．$0	<	a	<	\varepsilon$なる有理数$a$が存在することは有理数の
+稠密性によって明らかである．仮定により，$a/2$に対応して
+\[
+	n	>	n_0	\:	\text{ならば}	\:	|\alpha_n	-	\alpha	|	<	\frac{a}{2}
+\]
+なる自然数$n_0$が定まる．
+（$\varepsilon$が無理数の時には未だ$\varepsilon/2$が
+定義されていないことに留意されたい．）$n	>	n_0	,	m	>	n_0$ならば，したがって
+\[
+	|	\alpha_n	-	\alpha_m	|	=	|	\alpha_n	-	\alpha	+	\alpha	-	\alpha_m	|
+														\leqq	|\alpha_n	-	\alpha|	+	|\alpha_m	-	\alpha|
+														<		\frac{a}{2}		+	\frac{a}{2}
+														<	a
+														<	\varepsilon
+\]
+故に，$n_0(\varepsilon)=n_0$とおけば，
+\[
+	n,m	>	n_0(\varepsilon)	\:	\text{のとき}	\:	|	\alpha_n	-	\alpha_m|	<	\varepsilon
+\]
+となる．
+
+このように，条件が必要なことは収束の定義1.4からの直接の帰結である．
+
+Cauchyの判定法の核心は条件が十分なることにあるのであって，十分なることの証明には
+実数の連続性が不可欠である．
+いま$\{\alpha_n\}$が$\alpha	=	\langle	\textsf{A},\textsf{A}'	\rangle$に収束すると仮定すれば，
+定理1.12により，$\rho	<	\alpha$のときには$\alpha_n	\leqq	\rho$なる$n$は
+高々有限個しかなく，$\rho	>	\alpha$のときには$\alpha_n	\leqq	\rho$なる$n$は
+無数にある．このことに着目して，条件が十分なことをつぎにのようにして証明する．
+
+
+任意の正の実数$\varepsilon$に対応して一つの自然数$n_0(\varepsilon)$が定まって
+\[
+	n	>	n_0(\varepsilon),	\:	m>n_0(\varepsilon)	\quad	\text{ならば}
+				\quad	|	\alpha_n	-	\alpha_m	|	<	\varepsilon
+\]
+となる，と仮定する．$\textsf{A}$を$\alpha_n	\leqq	\rho$なる$n$が高々有限個しかないような
+実数$\rho$全体の集合とし，$\textsf{A}'$を$\R$における$\textsf{A}$の補集合とする．
+$\textsf{A}'$は，すなわち，$\alpha_n	\leqq	\sigma$なる$n$が無数にあるように実数$\sigma$
+全体の集合である．したがって，$\rho	\in	\textsf{A},	\:	\sigma	\in	\textsf{A}'$
+ならば，
+$\alpha_n	\leqq	\sigma$となる$n$は無数にあり，かつ，これらの$n$のうちさらに
+$\alpha_n	\leqq	\rho$なる$n$は有限個である．
+よって，$\rho	<	\alpha_n	<	\sigma$となる$n$は無数にある．
+ある$n_0$が存在して，$\rho	<	a_{n_0}	<	\sigma$，よって
+$\rho	<	\sigma$．
+
+また，$\varepsilon=1$として$l	>	n_0(1)$なる自然数$l$を一つ選び，
+$\beta=\alpha_l$
+とおけば，
+\begin{align*}
+		n	>	n_0(1)	&\quad	\Longrightarrow	|\alpha_n-\alpha_l	|=|\alpha_n	-	\beta	|	<	1	\\
+								&\quad	\Longrightarrow	\beta-1	<	\alpha_n	<	\beta+1
+\end{align*}
+となる．
+$a_n<\beta-1$なる$a_n$は$l-1$個（有限個），$l$より大きい無数の自然数に対して
+$a_n<\beta+1$であり，
+したがって$\beta-1	\in	\textsf{A},\:\beta+1	\in	\textsf{A}'$，
+すなわち$\textsf{A}$と$\textsf{A}'$は空集合でない．故に
+$\langle	\textsf{A},\textsf{A}'	\rangle$は実数の切断をなしている．
+したがって，定理	1.6（実数の連続性）により，$\textsf{A}$に最大数があるか，
+さもなければ$\textsf{A}'$に最小数がある．この最大数または最小数を
+$\alpha$とする．数列$\{\alpha_n\}$が$\alpha$に収束することを示すには，
+定理1.12によれば，$\rho	<	\alpha	<	\sigma$なる実数$\rho,\sigma$が任意に与えられたとき，
+不等式
+\[
+	\rho	<	\alpha_n	<\sigma
+\]
+が有限個の$n$を除いて成立することをいえばよい．
+
+まず$\rho	<	\alpha$だから$\rho	\in	\textsf{A}$，したがって
+$\alpha_n	\leqq	\rho$なる$n$高々有限個しかない．すなわち，
+有限個の$n$を除いて$\rho	<	\alpha_n$が成り立つ．
+
+つぎに，$\alpha	<	\sigma$だから，有理数の稠密性により，$\alpha	<	r	<	\sigma$なる
+有理数$r$が存在する．$\alpha	<	r	<	\sigma$なる$r$を一つ選んで$\varepsilon=	\sigma	-r	>	0$
+とおけば，仮定によりある$n_0(\varepsilon)$が存在して
+\[
+	n,m	>	n_0(\varepsilon)	\:	\Longrightarrow	\:
+													|	\alpha_n	-	\alpha_m	|	<	\varepsilon=\sigma-r
+\]
+また$\alpha	<	r$であるから$r	\in	A'$，すなわち$\alpha_m	\leqq	r$を満たす
+$m$は無数にある．このような$m$を一つ定めれば，
+\begin{align*}
+		n	>	n_0(\varepsilon)	&	\Longrightarrow	|\alpha_n	-	\alpha_m	|	<	\varepsilon	=\sigma	-r	\\
+													&	\Longrightarrow	\alpha_n	-	\alpha_m	<	\sigma	-r	\\
+													&	\Longrightarrow	\alpha_n	<	\sigma	-	r	+	\alpha_m	\leqq	\sigma	-	r	+	r	=	\sigma	\\
+													&	\Longrightarrow	\alpha_n	<	\sigma	\\
+\end{align*}
+すなわち有限個の$n$を除いて不等式$\alpha_n	<	\sigma$が成り立つ．
+
+繰り返しになるが，有限個の$n$を除いて，
+$\rho	<	\alpha_n	<	\sigma$が成り立つ．
+よって，定理1.12より$\displaystyle	\lim_{n	\rightarrow	\infty}	\alpha_n	=	\alpha	$
+\■

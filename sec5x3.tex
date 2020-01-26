@@ -1,0 +1,225 @@
+\section{一様収束}
+\label{sec5x3}
+\subsection{関数列の極限}
+
+$f_1(x)	,	f_2(x),	f_3(x)	,	\cdots	,	f_n(x),	\cdots$のように関数を一列に並べたものを
+\textbf{関数列}という．関数列を$\{	f_n	(x)	\}$で表わし，
+おのおのの関数$f_n(x)$をその項ということは数列の場合と同様である．
+関数列$\{	f_n(x)	\}$の項$f_n(x)$の定義域は必ずしもすべて同じである必要はないが，
+本節では，まず，ある一つの区間$I$で定義された関数
+$f_n(x)$から成る関数列$\{f_n(x)\}$を考察する．関数列$\{f_n(x)\}$の
+項$f_n(x)$がすべて区間$I$で定義された関数であるとき，$\{f_n(x)\}$を$I$で定義された
+関数列とよぶ．
+
+区間$I$で定義された関数列$\{f_n(x)\}$が与えられたとき，$I$に属する点$\xi$を
+一つ定めれば$\{f_n(\xi)\}$は一つの数列となるが，この数列
+$\{f_n(\xi)\}$が収束するとき関数列$\{f_n(x)\}$は$\xi$で収束するという．
+$\{f_n(x)\}$が$I$に属するすべての点$\xi$で収束するとき，
+$\displaystyle	f(\xi)	=	\lim_{n\rightarrow\infty}	f_n	(\xi)$とおけば，
+$I$で定義された関数$f(x)$が定まる．この関数$f(x)$を
+\underline{関数列}	$\{f_n(x)\}$	\underline{の極限}といい，
+$\displaystyle	f(x)	=	\lim_{n\rightarrow\infty}	f_n	(x)$と書く．
+そして\underline{関数列}	$\{f_n(x)\}$	\underline{は関数}	$f(x)$	\underline{に収束する}
+という．$I$に属する実数$\xi$を変数と同じ文字$x$で表す習慣に従えば，
+この関数列の極限の定義はつぎのように言い表される：$I$に属する各点$x$で
+数列$\{f_n(x)	\}$が収束するとき，関数$\displaystyle	f(x)	=	\lim_{n\rightarrow\infty}	f_n(x)$
+を関数列$\{f_n(x)\}$の極限といい，関数列$\{f_n(x)\}$は関数$f(x)$に収束するという．
+
+$\{f_n(x)\}$が$f(x)$に収束するとき，数列の極限の定義により，
+各点$x	\in	I$において，任意の正の実数$\varepsilon$に対応して自然数$n_0(\varepsilon,	x)$が定まって
+\[
+	n	>	n_0(\varepsilon,	x)	\quad	\text{ならば}	\quad	|	f_n(x)	-	f(x)|	<	\varepsilon
+\]
+となるが，一般には$n_0(\varepsilon,x)$は$\varepsilon$だけでなく点$x$にも関係する．もしここで
+$n_0(\varepsilon,x)$を点$x	\in	I$に無関係に定めることができるならば，関数列$\{f_n(x)\}$は$f(x)$に一様収束するという．
+すなわち
+
+\定義{5.1}
+$f(x),f_n(x),	n=1,2,3,\cdots	,	$を区間$I$で定義された関数とする．
+任意の正の実数$\varepsilon$に対応して自然数$n_0(\varepsilon)$が定まって，
+すべての点$x	\in	I$において
+\begin{equation}
+	n	>	n_0(\varepsilon)	\quad	\text{ならば}	\quad	|	f_n(x)	-	f(x)	|	<	\varepsilon
+\label{eq5x19}
+\end{equation}
+となるとき，関数列$\{f_n(x)\}$は関数$f(x)$に\textbf{一様に収束する}
+（converge uniformly）という．
+
+\textbf{一様収束}（uniform convergenve）の意味は収束はするけれども一様に
+収束しない関数列の例をみればよくわかる．
+
+\例{5.4}
+区間$I	=	[0,1]$において$f_n(x)	=	x^n$と定義する．関数列$\{f_n(x)\}$は収束して
+極限：$\displaystyle	f(x)=\lim_{n\rightarrow\infty}	f_n(x)$は$f(1)=1,	
+0	\leqq	x	<	1$のとき$f(x)=0$なる関数であるが，この収束は一様でない．
+\証明
+（\ref{eq5x19}）が成り立つためには，$n	>	n_0(\varepsilon)$ならば
+$0	\leqq	x	<1$のときつねに$|x^n	-	0	|	<	\varepsilon$とならなければならないが，
+$\displaystyle	\lim_{x\rightarrow	1-0}x^n	=	1$であるから，
+$\varepsilon	\geqq	1$でない限り，これは不可能である．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=79.9mm,height=68.3mm]{p216.bmp}
+\end{figure}
+
+\begin{tabular}{l|l|l|l|l|l|l}  
+\hline
+	$x$	&	$x^2$	&	$x^3$	&	$x^4$	&	$x^5$	&	$x^{10}$	&	$x^{20}$	\\ 
+\hline
+	0.1	&	0.01	&	0.001	&				&				&						&						\\
+	0.2	&	0.04	&	0.008	&	0.002	&				&						&						\\
+	0.3	&	0.09	&	0.027	&	0.008	&	0.002	&						&						\\
+	0.4	&	0.16	&	0.064	&	0.026	&	0.010	&						&						\\
+	0.5	&	0.25	&	0.125	&	0.063	&	0.031	&	0.001			&						\\
+	0.6	&	0.36	&	0.216	&	0.130	&	0.078	&	0.006			&						\\
+	0.7	&	0.49	&	0.343	&	0.240	&	0.168	&	0.028			&	0.001			\\
+	0.75	&	0.563	&	0.422	&	0.316	&	0.237	&	0.056		&	0.003			\\
+	0.8		&	0.64	&	0.512	&	0.410	&	0.328	&	0.107		&	0.012			\\
+	0.85	&	0.723	&	0.614	&	0.522	&	0.444	&	0.197		&	0.039			\\
+	0.9		&	0.81	&	0.729	&	0.656	&	0.590	&	0.349		&	0.122			\\
+	0.95	&	0.903	&	0.857	&	0.815	&	0.774	&	0.599		&	0.358			\\
+	0.97	&	-			&	-			&	-			&		-		&	0.737		&	0.544			\\
+	0.98	&	-			&	-			&	-			&	-			&	0.817		&	0.668			\\
+	0.99	&	-			&	-			&	-			&	-			&	0.904		&	0.818			\\
+\hline
+\end{tabular}
+\■
+
+\定理{5.4}（Cauchyの判定法）
+区間$I$で定義された関数列$\{f_n(x)\}$が
+一様に収束するための必要かつ十分な条件は，任意の正の実数$\varepsilon$に
+対応して一つの自然数$n_0(\varepsilon)$が定まって，すべての点$x	\in	I$において
+\begin{equation}
+	n	>	n_0(\varepsilon)	,	m	>	n_0(\varepsilon)	\quad	\text{ならば}	\quad	
+|f_n(x)	-f_m(x)	|	<	\varepsilon
+\label{eq5x20}
+\end{equation}
+となることである．
+
+\証明
+例によって$\{f_n(x)\}$が一様に収束すれば条件が成り立つことは明らかである
+\footnote{
+\[
+	|f_n	(x)		-	f_m	(x)	|	<	|	f_n	(	x)	-	f(x)	|	+	|	f_m	(	x)	-	f(x)	|	
+									<	\frac{\varepsilon}{2}	+	\frac{\varepsilon}{2}
+									=	\varepsilon.
+\]
+}
+そこで，逆に条件が成り立っていると仮定する．そうすれば，数列に関する
+Cauchyの判定法により，各点$x	\in	I$において$\{	f_n(x)	\}$は収束するから，
+極限$\displaystyle	f(x)	=	\lim_{m\rightarrow\infty}	f_m(x)$が存在する．
+$m	\to	\infty$のときの（\ref{eq5x20}）の極限をとれば，
+\[
+	n	>	n_0(\varepsilon)	\quad	\text{のとき}	\quad	|	f_n	(x)	-	f(x)	|	\leqq	\varepsilon,
+\]
+したがって，すべての点$x	\in	I$において
+\[
+	n	>	n_0(	\varepsilon/2)	\quad	\text{ならば}	\quad	|	f_n(x)	-	f(x)	|	<	\frac{\varepsilon	}{2}	<	\varepsilon.
+\]
+故に関数列$\{f_n(x)	\}$は$f(x)$に一様収束する．
+\■
+
+或る区間$I$で定義された関数$f_n(x)$を項とする級数
+$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)	$に対してその部分和を
+\[
+	s_m	(x)	=	\sum_{n=1}^{m}	f_n(x)
+\]
+としたとき，関数列$\{s_m(x)	\}$が関数$s(x)$に収束するならば
+級数$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)$は$s(x)$に収束する，
+または級数$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$の和は$s(x)$であるといい
+\[
+	s(x)	=	\sum_{n=1}^{\infty}	f_n(x)
+\]
+と書く．このとき$\{s_m	(x)	\}$が$s(x)$に一様収束するならば
+級数$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$は$s(x)$に
+\textbf{一様に収束する}という．
+さらに，級数$\displaystyle	\sum_{n=1}^{\infty}	|f_n(x)|$が
+収束するとき$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$は絶対収束するという．
+また，$\displaystyle	\sum_{n=1}^{\infty}	|	f_n(x)|$が一様に収束するとき，級数は
+\textbf{一様に絶対収束}するという．
+
+絶対収束する級数は収束する．これは明らかであろう．
+\[
+	s_{n,m}(x)=	s_m(x)	-	s_n(x)	
+	=
+	f_{n+1}	(x)	+	f_{n+2}(x)	+	\cdots	+	f_m(x)
+\]
+とおけば，定理5.4により，$I$で定義された級数$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)$が
+一様に収束するための必要かつ十分な条件は，任意の正の実数$\varepsilon$に対応して
+自然数$n_0(\varepsilon)$が定まって，すべての点$x	\in	I$において
+\begin{equation}
+	m	>	n	>	n_0(\varepsilon)	\quad	\text{ならば}	\quad	|	s_{n,m}	(x)	|	<	\varepsilon
+\label{eq5x21}
+\end{equation}
+となることである．
+\begin{equation}
+	\sigma_{n,m}(x)	=	|	f_{n+1}	(x)	|	+	|	f_{n+2}	(x)	|	+	\cdots	+	|f_{m}(x)|
+\label{eq5x22}
+\end{equation}
+とおけば，
+\[
+	|s_{n,m}(x)	|	\leqq	\sigma_{n,m}(x)
+\]
+であるから，$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$が一様に絶対収束すればそれは一様に収束する
+
+
+たとえば，$(-\infty	,	+	\infty)$で定義された級数
+$\displaystyle	\sum_{n=1}^{\infty}	x^n	/	n	$は$-1	\leqq	x	<	1$のとき収束し，
+$x	<	-1$あるいは$x	\geqq	1$のとき発散する
+\footnote{	\small
+$S_n	=	1	+	x	+	\cdots	+	x^n,	S_0=1$とおいて，Abelの変形を施すと，
+\begin{align*}
+	\sum_{n=1}^{N}	\frac{x^n}{n}	
+&	=	\sum_{n=1}^{N}	\frac{1}{n}	(	S_n	-	S_{n-1})	\\
+&	=		\left(	\frac{1}{1}S_1	-	\frac{1}{1}	S_0	\right)
+		+	\left(	\frac{1}{2}S_2	-	\frac{1}{2}	S_1	\right)
+		+	\left(	\frac{1}{3}S_3	-	\frac{1}{3}	S_2	\right)
+		+	\cdots	
+		+	\left(	\frac{1}{N-1}S_{N-1}	-	\frac{1}{N-1}	S_{N-2}	\right)
+		+	\left(	\frac{1}{N}S_{N}			-	\frac{1}{N}	S_{N-1}	\right)	\\
+&	=		\left(	\frac{1}{1}	-	\frac{1}{2}\right)S_1
+		+	\left(	\frac{1}{2}	-	\frac{1}{3}	\right)S_2
+		+	\left(	\frac{1}{3}	-	\frac{1}{4}	\right)S_3	+	\cdots
+		+	\left(	\frac{1}{N-1}	-	\frac{1}{N}	\right)	S_{N-1}	+	\frac{1}{N}	S_N	-	1	\\
+&=	\sum_{n=1}^{N-1}	\left(	\frac{1}{n}	-	\frac{1}{n+1}	\right)S_n	+	\frac{1}{N}	S_N	-1.
+\end{align*}
+$\displaystyle	\frac{1}{n(n+1)}$は単調減少数列で
+$\displaystyle	\lim_{n\rightarrow\infty}	\frac{1}{n(n+1)}	=	0$であり，
+$	-1	\leqq	x	<	1$のとき，部分和$S_n$のなす数列は有界（収束までいえる）であるから，
+$(2^\circ)$に従い収束する．
+}
+．このとき区間$I	=	[-1	,	1)$において
+$f_n(x)	=	x^n	/	n$と定義すれば，$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$は
+収束する級数である．\S	\ref{sec2x2x1}で述べたように，
+区間$I$が関数$f(x)$の定義域に含まれているとき，$f(x)$の$I$への制限，
+すなわち$f(x)$の定義域を$I$に制限して得られる関数を$f_I(x)$あるいは
+$(f	|	I)	(x)$で表す．
+この記号を用いれば，すなわち，級数$\displaystyle	\sum_{n=1}^{\infty}	(x^n	/	n)	|	I$は
+収束するということになる．しかし，この場合，関数$x^n	/	x$の自然な定義は
+$(	-	\infty	,	+	\infty)$であるから，級数
+$\displaystyle	\sum_{n=1}^{\infty}	(x^n	/	n	)	|	I$は収束するというよりも，
+級数$\displaystyle	\sum_{n=1}^{\infty}	x^n	/	n$は$I$で収束するという方が
+自然であろう．
+
+一般に，区間$I$が$f_n	(x),	n=1,2,3,\cdots,$の定義域のすべてに含まれているとき，
+級数$\displaystyle	\sum_{n=1}^{\infty}	(f_n	|	I	)	(x)$が収束すれば級数
+$\displaystyle	\sum_{n=1}^{\infty}	f_n	(	x)	$は$I$で収束するといい，
+$\displaystyle	\sum_{n=1}^{\infty}	(f_n	|	I)	(x)$が一様収束すれば
+$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)$は$I$で一様収束するという．
+また関数列$	\{	(	f_n	|	I	)	(x)	\}$が収束すれば関数列$\{f_n(x)	\}$は$I$で収束するといい，
+$\{	(f_n	|	I	)	(x)	\}$が一様収束すれば$\{f_n(x)	\}$は$I$で一様収束するという．
+さらに$\displaystyle	\sum_{n=1}^{\infty}	|	(f_n	|	I	)	(x)	|$が収束すれば
+$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)$は$I$で絶対収束するといい，
+$\displaystyle	\sum_{n=1}^{\infty}	|	(f_n	|	I)	(x)	|$が一様収束すれば
+$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)$は$I$で一様に絶対収束するという．
+
+一様収束の定義5.1から明らかなように，関数列$\{	f_n	(x)	\}$が関数$f(x)$に区間$I$で
+一様に収束するということは，$n	\to	\infty$	\underline{のとき}	$|f_n	(x)	-	f(x)	|	$
+\underline{の}	$I$	\underline{における上限が}	$0$	\underline{に収束すること:}
+\[
+	\lim_{n\rightarrow\infty}	\sup_{x	\in	I	}	|	f_n	(x)	-	f(x)	|	=	0
+\]
+\underline{に他ならない.}
+\footnote{
+上限は集合$I$によって定まり，各点$x$に拠らない．
+}

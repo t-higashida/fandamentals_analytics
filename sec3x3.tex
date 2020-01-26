@@ -1,0 +1,343 @@
+\section{導関数の性質}
+\label{sec3x3}
+
+\定理{3.5}
+（平均値の定理）
+$f(x)$が閉区間$[a,b]$で連続，開区間$(a,b)$で微分可能ならば
+\begin{equation}
+	f'(\xi)	=	\frac{f(b) -	f(a)}{b-a},	\quad	a	<	\xi	<	b,
+\label{eq3x28}
+\end{equation}
+なる点$\xi$が存在する．
+
+関数$f$のグラフ$G_f$についていえば，(\ref{eq3x28})は$G_f$の点$(\xi	,	f(\xi))$における
+接線が$G_f$の両端$(a,f(a))$と$(b,f(b))$を通る直線$l$に平行であることを意味する．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=6cm,height=4.5cm]{p120.bmp}
+\end{figure}
+まずこの定理の特別な場合を補題として証明する．
+
+\補題{3.1} ( Rolle の定理 )
+$f(x)$が$[a,b]$で連続，$(a,b)$で微分可能で$f(a)=f(b)$ならば，$f'(\xi)	= 0,	a	<	\xi	<	b$，なる点
+$\xi$が存在する．
+
+\証明
+$	\gamma	=	f(a)	=	f(b)$とおく．$[a,b]$で$f(x)$が常に$ \gamma $に等しい場合には
+すべての$ \xi , a	<	\xi < b$，について$f'(\xi) = 0$であるから，この場合を除いて
+考える．定理2.4により，閉区間$[a,b]$で定義された連続関数$f(x)$は最大値$ \beta = f(\xi)
+, q \leqq \xi	\leqq	b$，と最小値$ \alpha = f( \eta) , a \leqq \eta \leqq b$，
+をもつ．$\beta = \alpha = \gamma$なる場合は除いているから，
+（ⅰ）$ \beta > \gamma $，または
+（ⅱ）$ \alpha < \gamma$である．
+
+（ⅰ）$ \beta = f(\xi) > \gamma$（$\gamma$が最大値でない）ならば，$a < \xi < b$
+したがって仮定（微分可能）により
+\[
+	f'(\xi)	=	\lim_{h\rightarrow 0}	\frac{ f(\xi + h ) - f(\xi)}{h}
+\]
+が存在する．$f( \xi + h) - f( \xi) \leqq 0$（最大値）であるから，$h > 0$か$h < 0$かにしたがって，
+$ (f( \xi + h) - f( \xi))/h \leqq $か$ \geqq 0$かとなる．したがって
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=6cm,height=5cm]{p120x2.bmp}
+\end{figure}
+\begin{align*}
+	f'(\xi)	&=	\lim_{h\rightarrow +0}	\frac{ f( \xi + h) - f( \xi)}{h} \leqq 0, \\
+	f'(\xi)	&=	\lim_{h\rightarrow -0}	\frac{ f( \xi + h) - f( \xi)}{h} \geqq 0.
+\end{align*}
+故に$f'(\xi) = 0$である．
+
+$\alpha = f( \eta ) < \gamma$（$\gamma$が最小値でない）ならば$ a < \eta < b$であって，
+同様にして$f' ( \eta ) =0$であることが証明される．
+\■
+
+\textbf{定理3.5の証明}
+\[
+	q = \frac{ f(b) - f(a)}{b-a}
+\]
+とおけば，$f$のグラフ$G_f$の両端$(a,f(a)),(b,f(b))$を通る直線$l$の方程式は
+\[
+	y=f(a) + q(x-a)
+\]
+である．$f(x)$とこの方程式の右辺の差を
+\[
+	g(x) = f(x) - f(a) -q(x-a)
+\]
+とおく．$g(x)$は$[a,b]$で連続，$(a,b)$で微分可能で，$g(a) = g(b)=0$である．
+故に，補題3.1により，$g'(\xi) = 0 , a < \xi < b$，なる$\xi $が存在する．
+$g'(x) = f'(x) - q$であるから，$f'( \xi ) = q$.
+\■
+
+\定理{3.6}
+$f(x)$を或る区間$I$で定義された微分可能な関数とする．
+このとき$I$で常に$f'(x) > 0$ならば$f(x)$は単調増加であり，
+常に$f'(x) < 0$ならば$f(x)$は単調減少である．また，$I$でつねに
+$f'(x)=0$ならば$f(x)$は定数である．
+
+\証明
+$I$に属する2点$s,t, \: s<t,$が任意に与えられたとき，平均値の定理により
+\[
+	f(t) - f(s) = f'( \xi ) (t-s), \quad s < \xi < t,
+\]
+なる$ \xi $が存在するから，$I$で常に$f'(x) > 0$ならば$f(s) < f(t)$，
+常に$f'(x) < 0$ならば$f(s) > f(t)$，また
+$f'(x) = 0$ならば$f(s) = f(t)$である．
+\■
+
+区間$I$で$f(x)$が微分可能で単調増加であっても，必ずしも$I$で常に
+$f'(x) > 0$とは限らない．たとえば，$f(x) = x^3$は$\R$で単調増加
+であるが$f'(0)=0$となる．すなわち，つねに$f'(x) > 0$であることは
+単調増加であるための十分条件であるが必要条件ではない．
+
+\定理{3.7}
+$f(x)$を区間$I$で定義された微分可能な関数とする．$f(x)$が単調非減少
+であるための必要かつ十分な条件は$I$で常に$f'(x) \geqq 0$なることである．
+$f(x)$が単調非増加であるための必要かつ十分な条件は$I$でつねに
+$f'(x) \leqq 0$なることである．
+
+\証明
+$y = f(x)$が単調非減少ならば$\varDelta x >0$のとき
+$\varDelta y \geqq 0, \varDelta x < 0$のとき$\varDelta y \leqq 0$であるから，
+\[
+	f'(x) = \lim_{\varDelta x\rightarrow0} \frac{ \varDelta y }{ \varDelta x} \geqq 0.
+\]
+逆に，$I$で常に$f'(x) \geqq 0$ならば，$I$に属する任意の2点
+$s,t, \: s < t$,に対して，平均値の定理により
+\[
+	f(t) - f(s) = f'( \xi ) (t-s), \quad s < \xi < t,
+\]
+なる$\xi$が存在するから，$f(t) \geqq f(s)$，すなわち$f(x)$は単調非減少である．
+単調非増加であるための条件についても証明は同様である．
+\■
+
+\定理{3.8}
+区間$I$で定義された微分可能な関数$f(x)$が単調増加であるための必要かつ十分な条件は，
+$I$で常に$f'(x) \geqq 0$で，$f'(x) > 0$なる点$x$の集合が$I$で稠密であることである．
+
+\証明
+$f(x)$が単調増加であるとすれば，定理3.7により$I$で常に$f'(x) \geqq 0$であるが，
+$f'(x) > 0$なる点$x$の集合（この集合$S$とする）が$I$で稠密でなかったと仮定すれば，
+$[S] \not\supset I$である．このとき或る点$u \in I$で$u \not\in [S]$であるから，
+$u \not\in S$かつ$u \not\in \partial S$，すなわち$f'(u)=0$かつ
+$u$を含む或る区間（近傍）$U(u,\varepsilon)$では，$S \cap U(u,\varepsilon) = \varnothing$または$S^C \cap U(u,\varepsilon) = \varnothing$．
+$S^C \cap U(u,\varepsilon) = \varnothing$とすると，$U(u,\varepsilon) \subset S$となって
+$u \in S$となり矛盾，したがって$S \cap U(u,\varepsilon) = \varnothing$，すなわち$U(u,\varepsilon) \subset S^C$．
+この近傍に含まれる閉区間$[s,t] , \: s < t$は，$f'(x) > 0$なる点$x$を一つも含まない．
+すなわち$s < x < t$ならば$f'(x)=0$．したがって，定理3.6により，$f(s) = f(t)$となって
+$f(x)$が単調増加であることに矛盾する．故に$f'(x) > 0$なる点$x$の集合は$I$で稠密である．
+
+逆に，$I$でつねに$f'(x) \geqq 0$で$f'(x) > 0$なる点$x$の集合（この集合を$S$とする）が$I$で稠密であると仮定すれば，
+まず定理3.7により$f(x)$は単調非減少である．つぎに$f(x)$が単調増加でなかったとすれば，
+$I$に属する或る2点$s,t, \: s < t$,について$f(s) = f(t)$，$f(x)$は単調非減少であるから，
+したがって$ s < x < t$のとき，$f(x) = f(s)$，故に区間$[s,t]$で$f'(x)=0$となり
+$[S] \not\supset I$は，$S$が$I$で稠密であることと矛盾する．
+故に$f(x)$は$I$で単調増加である．
+\■
+
+単調減少であるための条件についても同様な定理が成り立つことは言うまでもない．
+
+\例{3.2}
+$f(x) = \log x / x$とおけば$f'(x) = (1 - \log x ) / x^2$．したがって$x < e$のとき
+$f'(x) > 0$，$x > e$のとき$f'(x) < 0$，故に$\log x /x$は区間$(0,e]$で単調増加，
+$[e , + \infty)$で単調減少である．\S 2.3.3，例2.9により，
+$\displaystyle \lim_{x\rightarrow +\infty} \log x / x =0$,
+$t = 1/x$とおけば$x \rightarrow + 0$のとき$t \rightarrow \infty$となるから，
+$\displaystyle \lim_{x\rightarrow +0} \log x /x = - \lim_{t\rightarrow +\infty} t \log t = - \infty$.
+$(0 , + \infty)$で定義された関数$\log x /x$は$e = e$で最大値$1/e$をとる．――
+
+次の定理は平均値の定理の拡張である：
+
+\定理{3.9}
+$f(x) , g(x)$は閉区間$[a,b]$で連続，開区間$(a,b)$で微分可能で，
+$(a,b)$内のどの点$x$においても$f'(x), g'(x)$が同時に$0$になることはないとする．
+このとき，$g(a) \ne g(b)$ならば
+\begin{equation}
+	\frac{f'( \xi )}{g'(\xi)}  = \frac{f(b) - f(a)}{g(b) - g(a)}, \quad a < \xi < b,
+\label{eq3x29}
+\end{equation}
+なる点$\xi$が存在する．
+
+\証明
+$\lambda = f(b) - f(a) , \mu = g(b) - g(a)$とおいて，関数：
+\[
+	\varphi (x) = \mu ( f(x) - f(a)) - \lambda ( g(x) - g(a))
+\]
+を考察する．$\varphi ( x)$は$[a,b]$で連続，
+$(a,b)$で微分可能であって，明らかに$\varphi (a) = \varphi(b) =0$である．
+故に，補題3.1により，$\varphi'(\xi) = 0 , a < \xi < b$，なる$\xi$が存在する．
+$\varphi ' (x) = \mu f'(x) - \lambda g'(x)$であるから$\mu f'( \xi ) = \lambda g'(\xi)$，
+すなわち
+\[
+	(g(b) - g(a) ) f'(\xi ) = (f(b) - f(a)) g'(\xi).
+\]
+もしもここで$g'(\xi)=0$とすれば，仮定より$g(b) - g(a) \ne 0$であるから，$f'(\xi) = 0$となって
+仮定に反する．故に$g'( \xi ) \ne 0$，したがって
+\[
+	\frac{f'(\xi)}{g'(\xi)} = \frac{f(b) - f(a)}{g(b) - g(a)}.
+\]
+\■
+
+以下で，微分可能性と連続性の関係について二，三の注意を述べる．ある区間で
+微分可能な関数はその区間で連続である（定理3.1の系）．しかし連続な関数は必ずしも
+微分可能ではない．
+
+\例{3.3}
+関数$f(x)$を，$x \ne 0$のとき$f(x) = x \sin (1/x), \: x =0$のとき$f(0)=0$と定義すれば，
+$x \ne 0$のとき$f(x)$は明らかにん連続，また$|f(x) - f(0) | \leqq |x - 0|$であるから
+（$\varepsilon = \delta$とおいて$\varepsilon$-$\delta$論法より）$f(x)$は$x=0$でも連続である．
+しかし
+\[
+	\lim_{h\rightarrow 0} \frac{f(h) - f(0)}{h} = \lim_{h\rightarrow 0} \sin \frac{1}{h}
+\]
+は存在しないから，$f(x)$は$x=0$では微分可能ではない．$x \ne 0$のとき
+$f(x)$は微分可能で
+\[
+	f'(x) = \sin \frac{1}{x} - \frac{1}{x} \cos \frac{1}{x}.
+\]
+
+\例{3.4}
+\[
+	f(x) = \sum_{n=1}^{\infty} \frac{1}{2^n} | \sin ( \pi n ! x) |
+\]
+とおく．任意の実数$x$に対してこの等式の右辺の級数が絶対収束することは明らかである．
+$f(x)$は数直線$\R$上で定義された$x$の連続関数であるが，各有理点$r$において
+微分可能でない．
+
+\証明
+$f(x)$が連続関数であることは第5章で証明する（\S 5.3.2，例 5.6）．
+$|\sin (\pi x)|$は連続関数であって，数直線$\R$上整数を除いて微分可能，
+各整数$k$においては左および右に微分可能で
+\[
+	D^+ | \sin (\pi k) | = \pi,\quad D^- | \sin (\pi k) | = - \pi.
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=8cm,height=3.2cm]{p124.bmp}
+\end{figure}
+$f(x)$が或る一つの有理点$r$で微分可能であったと仮定して，
+$n!r$が整数となる自然数$n$の最小なものを$m$とする．そうすれば
+$n!r$は整数でないから，$|\sin ( \pi n! x)|$は$x = r$において微分可能，したがって
+$f(x)$は微分可能で，$\displaystyle \sum_{n=0}^{m-1} \frac{1}{2^n} | \sin (\pi n! x)|$
+も微分可能であるから，残りの部分
+\[
+	f_m(x) = \sum_{n=m}^{\infty} \frac{1}{2^n} | \sin ( \pi n! x)|
+\]
+も$x=r$において微分可能でなければならない．一方$ \sigma_m (x) = | \sin ( \pi m! x) | /2 ^m$
+とおけば
+\[
+	f_m(x) \geqq \sigma ( x), \quad f_m(r) = \sigma_m (r) = 0
+\]
+となるから，$x \rightarrow r + 0$のときは$x - r > 0$，$x \rightarrow r-0$のときは
+$x - r < 0$なることに留意すれば，合成関数の微分と，
+\[
+	D^+ | \sin (\pi k) | = \pi,\quad D^- | \sin (\pi k) | = - \pi.
+\]
+を組み合わせて，
+\begin{align*}
+	f'_m(r) &= \lim_{x\rightarrow r+0} \frac{f_m(x)}{x-r} 
+					\geqq \lim_{x\rightarrow r+0} \frac{\sigma_m (x)}{x-r} 
+					=			\lim_{x\rightarrow r+0} \frac{\sigma_m (x) - \sigma_m(r)}{x-r}
+					= D^+ \sigma_m (r) = \frac{m!\pi}{2^m}, \\
+	f'_m(r) &= \lim_{x\rightarrow r-0} \frac{f_m(x)}{x-r} 
+					\leqq \lim_{x\rightarrow r-0} \frac{\sigma_m (x)}{x-r} 
+					=			\lim_{x\rightarrow r-0} \frac{\sigma_m (x) - \sigma_m(r)}{x-r}
+					= D^- \sigma_m (r) = -\frac{m!\pi}{2^m}.
+\end{align*}
+これは矛盾である，$f_m(r)$が微分可能であることと矛盾する．
+\■
+
+Weierstrass は，たとえば
+\[
+	f(x) = \sum_{n=1}^{\infty} \frac{1}{2^n} \cos (k^n \pi x), \quad \text{$k$は奇数，$k \geqq 13$},
+\]
+で定義された連続関数$f(x)$は数直線$\R$上の各点$x$で微分可能でないことを示した．
+\footnote{
+藤原松三郎“微分積分学Ⅰ”，pp.160-164参照．
+}
+
+或る区間で微分可能，したがって連続かな導関数は必ずしもその区間で連続でない．
+
+\例{3.5}
+関数$f(x)$を，$ x \ne 0$のとき$f(x) = x^2 \sin (1/x)$，$x = 0$のとき$f(0)=0$
+と定義する．
+\[
+	f'(0) = \lim_{h\rightarrow 0} \frac{f(h) - f(0) }{h} = \lim_{h\rightarrow 0} h \sin \frac{1}{h} = 0,
+\]
+$x \ne 0$のときには
+\[
+	f'(x) = 2 x \sin \frac{1}{x} - \cos \frac{1}{x}.
+\]
+すなわち$f(x)$は$\R$上の各点$x$で微分可能である．しかし，$h_n = 1 / n \pi,n$は自然数，
+とおけば，$n \rightarrow \infty$のとき$h_n \rightarrow 0$であるが，一方で$f'(h_n) = (-1)^{n+1}$であるから，
+したがって$f'(x)$は$x=0$で連続でない．
+さらに，$\displaystyle \lim_{x\rightarrow +0} f'(x)$は存在しない．
+$\displaystyle \lim_{x\rightarrow -0} f'(x)$も存在しない．
+
+\定理{3.10}
+区間$[c,b)$で定義された連続関数$f(x)$が，$(c,b)$で微分可能で
+$\displaystyle \lim_{x\rightarrow c+0} f'(x)$が存在するならば，$f(x)$は$c$において微分可能で
+\[
+	f'(c) = \lim_{x\rightarrow c+0} f'(x).
+\]
+\証明
+$c < x< b$とすれば，平均値の定理により，
+\[
+	\frac{f(x) - f(c)}{x-c} = f'(\xi) , \quad c < \xi < x,
+\]
+なる$\xi$が存在する．$\xi$はもちろんただ一つとは限らないが，おのおのの$x$に対応して
+$\xi_x$を一つ選んでおけば，$x \rightarrow c + 0$のとき$\xi_x \rightarrow c +0$であるから，
+\[
+	\lim_{x \rightarrow c + 0} \frac{f(x) - f(c)}{x-c} = \lim_{\xi_x \rightarrow c+0} f'(\xi).
+\]
+すなわち$f(x)$は$c$において微分可能で$\displaystyle f'(c) = \lim_{x\rightarrow c+0} f'(x)$.
+\■
+
+同様に，$(a,c]$で定義された連続関数$f(x)$が$(a,c)$で微分可能で
+$\displaystyle \lim_{x\rightarrow c-0} f'(x)$が存在すれば，$f(x)$は$c$においても
+微分可能で$\displaystyle f'(c) = \lim_{x\rightarrow c-0} f'(x)$である．
+
+\系
+$f(x)$が区間$(a,b)$で連続でその区間内の1点$c$を除いて微分可能であるとする．
+このとき$\displaystyle \lim_{x \rightarrow c} f'(x)$が存在するならば，$f(x)$は
+$c$においても微分可能であって，$\displaystyle f'(c) = \lim_{x\rightarrow c} f'(x)$.
+――
+
+
+$f(x)$は$(a,b)$で微分可能，$a < c < b$とする．このとき$\displaystyle \lim_{x\rightarrow c+0} f'(x)$，
+$\displaystyle \lim_{x\rightarrow c-0} f'(x)$が共に存在すれば，
+$\displaystyle \lim_{x\rightarrow c+0} f'(x) = f'(c)$，
+$\displaystyle \lim_{x\rightarrow c-0} f'(x) = f'(c)$，
+すなわち$f'(x)$は$c$において連続である．
+導関数$f'(x)$は
+$\displaystyle \lim_{x\rightarrow c+0} f'(x),\lim_{x\rightarrow c-0} f'(x)$
+が共に存在して
+$\displaystyle \lim_{x\rightarrow c+0} f'(x) \ne \lim_{x\rightarrow c-0} f'(x)$
+であるというような単純な不連続点を持たないのである．
+
+\subsubsection{滑らかな関数}
+関数$f(x)$が或る区間$I$で微分可能でその導関数$f'(x)$が$I$で連続であるとき，
+$f(x)$は$I$で\textbf{滑らか（smooth）}である，あるいは\textbf{連続微分可能}
+であるという．
+
+有限の幅をもつ区間$I$で連続な関数$f(x)$が次の条件を満たすとき，
+$f(x)$は$I$で\textbf{区分的に滑らか（piecewise smooth）}であるという：
+$f(x)$は$I$で有限個の点$a_1 , a_2 , \cdots , a_k , \cdots , a_m$を除いて
+滑らかで，各$a_k$では左右へ微分可能で
+\[
+	\lim_{x \rightarrow a_k + 0} f'(x) = D^+ f( a_k ) , \quad
+	\lim_{x \rightarrow a_k - 0} f'(x) = D^- f( a_k ).
+\]
+
+このとき，たとえば$I= ( \: a,b \: ]$とし，$a_1 < \cdots < a_{k-1} < a_k < \cdots < a_m$とすれば，
+$I$は$m+1$個の部分区間：$I_1 = (a,a_1], \: \cdots , I_k = [ a_{k-1} , a_k ], \cdots , I_{m+1} = [a_m , b]$
+に分割され，各部分区間$I_k$で$f(x)$は滑らかである．区分的に滑らかというゆえんである．
+応用上は，単に微分可能な関数よりも滑らかな関数，あるいは区分的に滑らかな関数を扱うことが多い．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=12cm,height=3.5cm]{p126.bmp}
+\end{figure}
+無限の幅をもつ区間，たとえば$[0, + \infty)$で連続な関数$f(x)$については，
+$[0, + \infty)$に含まれる有限の幅をもつ如何なる区間$I$に対しても$f(x)$が$I$で
+区分的に滑らかであるとき，$f(x)$は$[0, + \infty)$で区分的に滑らかであるということにする．
+たとえば$| \sin x |$は$( - \infty , + \infty)$で区分的に滑らかである．

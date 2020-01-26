@@ -1,0 +1,394 @@
+\subsection{Taylorの公式}
+\label{sec3x4x3}
+
+\定理{3.14}
+\underline{$f(x)$を区間$I$で$n$回微分可能な関数とし}，
+\footnote{
+ 後出 \S \ref{sec4x2x4}の積分を使った証明の仮定と比較せよ．
+}
+$a$を$I$に属する点とする．
+このとき，$I$に属する任意の点$x$に対して，
+\[
+	f(x)	=	f(a)	+	\sum_{k=1}^{n-1}	\frac{f^{(k)}(a)}{k!}	(x-a)^k	+	\frac{f^{(n)}(\xi)}{n!}	(x-a)^n
+\]
+となる点$\xi$が$x$と$a$の間に存在する．――
+
+この式を\textbf{Taylorの公式}という．
+この公式の最後の項$ \displaystyle \frac{f^{(n)}(\xi)}{n!}(x-a)^n$を
+\textbf{剰余項}(remainder)といい，$R_n$で表わす．$\xi$が$x$と$a$の間にあることを，
+$\xi	=	a	+	\theta(x-a),	\:\:	0	<	\theta	<	1,$と書いて表わす習慣がある．
+これを従えばTaylorの公式は
+\begin{align}
+	f(x)	&=	f(a)	+	\frac{f'(a)}{1!}	(x-a)	+	\frac{f''(a)}{2!}	(x-a)^2	+\cdots	+	\frac{f^{(n-1)}(a)}{(n-1)!}	(x-a)^{n-1}	+	R_n,	\notag	\\
+				&	R_n	=	\frac{f^{(n)}(\xi)}{n!}	(x-a)^n,	\quad	\xi=a+	\theta(x-a),	\quad	0	<	\theta	<	1,
+	\label{eq3x39}
+\end{align}
+と書かれる．$n=1$なる場合には(\ref{eq3x39})は平均値の定理(\ref{eq3x28})に帰着する．
+Taylorの公式は平均値の定理の拡張と考えられる．
+
+\定理{3.14の証明}
+\[
+	F(x)	=	R_n	=	f(x)	-f(a)	-	\sum_{k=1}^{n-1}	\frac{f^{(k)}(a)}{k!}	(x-a)^k
+\]
+とおいて，$F(x)$を$x$の関数として考察する．$F(x)$は$I$で$n$回微分可能である
+(定数項と$\sum$内の項は$n$回微分で消滅する）．
+\[
+	\frac{d ^m}{d x^m}	\left(	\frac{(x-a)^k}{k!}
+											\right)
+										=	\begin{cases}
+				\displaystyle	\:\frac{(x-a)^{k-m}}{(k-m)!}	&\quad 	\text{($m	\leqq	k$のとき)}	\\
+																																												\\
+											\:	0														&\quad		\text{($k < m$のとき)}
+
+											\end{cases}
+\]
+であるから，$m	\leqq	n-1$のとき（$k \geqq m$のとき$0$でなく）
+\begin{align*}
+	F^{(m)}(x)	&=	f^{(m)}(x)	-	f^{(m)}(a)	-	\frac{f^{(m+1)}(a)}{1!}(x-a)	-	\cdots	\\
+							&\quad	\cdots	-	\frac{f^{(n-1-m)}(a)}{(n-1-m)!}(x-a)^{n-1-m}.
+\end{align*}
+故に
+\[
+	F(a)	=	F'(a)	=	F''(a)	=	\cdots	=	F^{(n-1)}(a)	=	0.
+\]
+$F(x)$はすなわち剰余類$R_n$であるから，$F(x)/(x-a)^n$が$f^{(n)}(\xi)/n!$と
+表わされること
+\[
+	\frac{F(x)}{(x-a)^n}	=	\frac{f^{(n)}(\xi)}{n!}
+\]
+を証明すればよい（$x=a$のとき不定形とするために，$F(a)=0$を確認した）．
+このために$G(x)=(x-a)^n$とおけば，
+$m \leqq n-1$のとき
+\[
+	G^{(m)}(x)	=	n(n-1)\cdots	(n-m+1)(x-a)^{n-m}
+\]
+$m=n$のときには$G^{(n)}=n!$である．故に
+\[
+	G(a)	=	G'(a)	=	G''(a)=	\cdots	=	G^{(n-1)}(a)	=	0,
+\]
+（$x=a$のとき不定形とするときに$F'(a)	=	F''(a)	=	\cdots	=	F^{(n-1)}(a)	=	0$を確認した）．
+また，$x	\ne	a$ならば
+\[
+	G(x)	\ne	0,	\quad	G'(x)	\ne	0,	\cdots	,	G^{(n-1)}(x)	\ne	0.
+\]
+さて，$a<x$と$x	<	a$の二つの場合があるが，どちらの場合も証明は同じであるから，
+$a	<	x$なる場合を考える．$F(a)	=	G(a)	=0	.	\:	x	\ne	a$のとき
+$G'(x)	\ne	0$であるから，\S 3.3，定理3.9（の仮定を満たし）により
+\[
+	\frac{F(x)}{G(x)}	=	\frac{F(x)	-	F(a)}{G(x)-G(a)}	=	\frac{F'(\xi_1)}{G'(\xi_1)},	
+	\quad	a	<	\xi_1	<	x,
+\]
+なる$\xi_1$が存在する．再び定理3.9により，
+\[
+	\frac{F'(\xi_1)}{G'(\xi_1)}	=	\frac{F'(\xi_1)	-	F'(a)}{G'(\xi_1)	-	G'(a)}
+															=	\frac{F''(\xi_2)}{G''(\xi_2)},	\quad	a<	\xi_2	<	\xi_1,
+\]
+なる$\xi_2$が存在する．同様に，$m=3,4,5,	\cdots	,n-1$に対して，
+\[
+	\frac{F^{(m-1)}(\xi_{m-1})}{G^{(m-1)}(\xi_{m-1})}	=	\frac{F^{(m)}(\xi_m)}{G^{(m)}(\xi_m)},
+	\quad	a	<	\xi_m	<	\xi_{m-1},
+\]
+なる$\xi_m$が存在する．故に，
+\[
+	\frac{F(x)}{G(x)}	=	\frac{F^{(n-1)}(\xi_{n-1})}{G^{(n-1)}(\xi_{n-1})},
+	\quad	a	<	\xi_{n-1}	<	x.
+\]
+$F^{(n-1)}(x)	=	f^{(n-1)}(x)	-	f^{(n-1)}(a),	\:\:	G^{(n-1)}(x)	=	n!(x-a)$であるから，
+平均値の定理$(*)$により
+\begin{align*}
+	\frac{F^{(n-1)}(\xi_{n-1})}{G^{(n-1)}(\xi_{n-1})}
+	=
+	\frac{f^{(n-1)}(\xi_{n-1})	-	f^{(n-1)}(a)}{n!(\xi_{n-1}-a)}
+	\stackrel{(*)}{=}
+	\frac{f^{(n)}(\xi)}{G^{(n)}(\xi)}
+	=
+	\frac{f^{(n)}(\xi)}{n!},\quad	a	<	\xi	<	\xi_{n-1},	
+\end{align*}
+なる$\xi$が存在する．故に
+\[
+	\frac{F(x)}{(x-a)^n}	=	\frac{F(x)}{G(x)}	=	\frac{f^{(n)}(\xi)}{n!},
+	a	<	\xi	<	x.
+\]
+\■
+上記の証明の最終段で平均値の定理を用いたが，その代わりに(\ref{eq3x3}),(\ref{eq3x6})を用いれば
+\begin{align*}
+	& \frac{f^{(n-1)}(\xi_{n-1})	-	f^{(n-1)}(a)}{\xi_{n-1}-a}
+		=
+		f^{(n)}(a)	+	\varepsilon	(	\xi_{n-1}	-	a),	\\
+	& \Longrightarrow
+		\frac{f^{(n-1)}(\xi_{n-1})	-	f^{(n-1)}(a)}{n!(\xi_{n-1}-a)}
+		=
+		\frac{f^{(n)}(a)}{n!}	+	\frac{\varepsilon	(	\xi_{n-1}	-	a)}{n!}
+\end{align*}
+ただし$\varepsilon(h)$は$\displaystyle	\lim_{h\rightarrow	0}	=	\varepsilon(0)=0$なる
+関数を表わす．$\xi_{n-1}$は$x$と$a$の間にあるから
+$x	\rightarrow a$のとき$\xi_{n-1} \rightarrow a$，したがって
+$\displaystyle \frac{1}{n!}	\varepsilon(\xi_{n-1}	-	a)(x-a)^n$は無限小であり，これを$o((x-a)^n)$とおくと，
+\begin{align*}
+	\frac{F(x)}{(x-a)^n}	&	=	\frac{f^{(n-1)}(x)	-f^{(n-1)}(a)}{n!(x-a)}	+	\frac{\varepsilon(\xi_{n-1}	-a)}{n!}		\\
+												&	=	\frac{f^{(n)}(a)}{n!}	+	\frac{o((x-a)^n)}{(x-a)^n}.	\\
+	\Longrightarrow 
+									F(x)	&=	\frac{f^{(n)}(a)}{n!}	(x-a)^n	+ o((x-a)^n).
+\end{align*}
+したがって
+\begin{equation}
+	f(x)	=	f(a)	+	\frac{f'(a)}{1!}(x-a)	+	\cdots	+	\frac{f^{(n)}(a)}{n!}	(	x-a)^n	+	o((x-a)^n).
+\label{eq3x40}
+\end{equation}
+
+この式の証明に用いた(\ref{eq3x6})は，
+\underline{$f^{(n-1)}(x)$が点$a$で微分可能ならば（すなわち$a$において$f^{(n)}(a)$が存在 }
+ \underline{すれば）}成り立つから，公式(\ref{eq3x40})は
+\underline{$f(x)$が$I$で$n-1$回微分可能で，かつ$f^{(n-1)}(x)$が点$a$で微分可能な }
+\underline{らば成立する}．(\ref{eq3x40})は(\ref{eq3x6})の拡張である．
+
+$f(x)$が区間$I$で微分可能で$f'(x)$が$I$の一つの内点$a$で微分可能ならば，
+$a+h,a-h$が共に$I$に属するとき，(\ref{eq3x40})に$x=a+h,x=a-h$を代入して
+\begin{align*}
+	f(a+h)	&=	f(a)	+	f'(a)h	+	\frac{f''(a)}{2}h^2	+	o(h^2),	\\
+	f(a-h)	&=	f(a)	-	f'(a)h	+	\frac{f''(a)}{2}h^2	+	o(h^2),	\\
+\end{align*}
+したがって
+\[
+	f(a+h)	+	f(a-h)	-2f(a)	=	f''(a)	h^2	+	2o(h^2).
+\]
+故に
+\begin{equation}
+	f''(a)	=	\lim_{h\rightarrow 0}	\frac{f(a+h)	+	f(a-h)	-2f(a)}{h^2}.
+\label{eq3x41}
+\end{equation}
+となることがわかる．
+\■
+
+Taylorの公式(\ref{eq3x39})の剰余項$R_n$は，また，$0	\leqq	q	\leqq	n-1$なる整数$q$を
+一つ定めたとき，
+\begin{equation}
+	R_n	=	\frac{f^{(n)}(\xi)(1-\theta)^q}{(n-1)!	(n-q)}(x-a)^n,
+	\quad	
+	\xi	=	a	+	\theta (x-a),
+	\quad
+	0	<	\theta	<	1,
+\label{eq3x42}
+\end{equation}
+と表わされる．\証明
+点$x$を定めて
+\[
+	R_n	=	f(x)	-	f(a)	-	\frac{f'(a)}{1!}(x-a)	-	\cdots	-	\frac{f^{(n-1)}(a)}{(n-1)!}(x-a)^{n-1}
+\]
+を$a$の関数として考察するのであるが，見やすくするために$x$と$a$を入れ替えて
+\begin{align*}
+	F(x)	&=	f(a)	-	f(x)	-	\frac{f'(x)}{1!}(a-x)	-	\cdots	-	\frac{f^{(n-1)}(x)}{(n-1)!}(a-x)^{n-1}	\\
+				&=	f(a)	-	f(x)	-	\sum_{k=1}^{n-1}	\frac{f^{(k)}(x)}{k!}(a-x)^k
+\end{align*}
+とおく．仮定より$f(x)$は区間$I$で$n$回微分可能であるから，$F(x)$は$I$で微分可能な$x$の関数である
+\underline{（$F(a)$は$I$で微分可能な$a$の関数である）}．
+このとき関数の積の微分を用いて，
+\[
+	-\left(
+		\frac{f^{(k)}(x)}{k!}(a-x)^k
+	\right)'
+	=
+	-\frac{f^{(k+1)}(x)}{k!}(a-x)^k	+	\frac{f^{(k)}(x)}{(k-1)!}(a-x)^{k-1}
+\]
+であるから，
+\[
+	F'(x)	=	-f'(x)	+	\frac{f'(x)}{1!}	-	\frac{f''(x)}{1!}(a-x)	+	\frac{f''(x)}{1!}(a-x)
+	-	\frac{f'''(x)}{2!}	(a-x)^2	+	\cdots
+\]
+となり，
+\[
+	F'(x)	=	-	\frac{f^{(n)}(x)}{(n-1)!}	(a-x)^{n-1}.
+\]
+つぎに，$G(x)=(a-x)^{n-q}$とおけば，$F(a)	=	0$であることと\S 3.3,
+定理3.9を用いて，$x$と$a$の間に
+\[
+	\frac{F(x)}{(a-x)^{n-q}}	=	\frac{F(x)	-	F(a)}{G(x)	-	G(a)}	=	\frac{F'(\xi)}{G'(\xi)}
+\]
+なる点$\xi$が存在する．$G'(\xi)	=	-(n-q)(a-\xi)^{n-q-1}$であるから，
+\begin{align*}
+	F(x)	&	=	\frac{F'(\xi)}{G'(\xi)}(a-x)^{n-q}
+					=	-\frac{f^{(n)}(\xi)}{(n-1)!}(a-\xi)^{n-1}\frac{(a-x)^{n-q}}{-(n-q)(a-\xi)^{n-q-1}}	\\
+				&	=	\frac{f^{(n)}(\xi)}{(n-1)!}	\frac{(a-\xi)^q}{(a-q)}(a-x)^{n-q}.	
+\end{align*}
+故に，再び$x$と$a$を入れ替えて元に戻せば
+\[
+	R_n	=	\frac{f^{(n)}(\xi)}{(n-1)!}	\frac{(x-\xi)^q}{(a-q)}	(x-a)^{n-q}.
+\]
+ここで$\xi	=	a+	\theta	(x-a),:	0	<	\theta	<1$と置けば，
+\[	
+	x	-	\xi	=	x-a	-\theta(x-a)	
+					=	x	-	\theta	x	-	a	+	\theta	a	
+					=	(1-\theta)x	-	a	(1	-	\theta)
+					=	(1-\theta)(x-a)
+\]
+となるから
+\[
+	R_n	=	\frac{f^{(n)}(\xi)}{(n-1)!}	\frac{(1-\theta)^q}{(a-q)}	(x-a)^n
+\]
+を得る．
+\■
+(\ref{eq3x42})の右辺を\textbf{schl\"{o}michの剰余項}という．
+$q=n-1$とおけば，(\ref{eq3x42})は
+\begin{equation}
+	R_n	=	\frac{f^{(n)}(\xi)}{(n-1)!}(1-\theta)^{n-1}(x-a)^n,
+	\quad
+	\xi	=	a	+	\theta	(x-a),
+	\quad
+	0	<	\theta	<	1,
+\label{eq3x43}
+\end{equation}
+となる．この式の右辺を\textbf{Cauchyの剰余項}という．$q=0$なる場合には，
+(\ref{eq3x42})は
+\[
+	R_n	=	\frac{f^{(n)}(\xi)}{n!}	(	x	-	a)^n,	\quad	\xi=a+	\theta	(	x-a)	,	\quad	0	<	\theta	<1,
+\]
+となる，この右辺を\textbf{Lagrangeの剰余項}という．Taylorの公式(\ref{eq3x39})の剰余項は，
+すなわちLagrangeの剰余項であって，$q=0$なる場合，(\ref{eq3x42})の上記の証明は
+Taylorの公式の(\ref{eq3x39})の別証を与える．
+しかしこの方法では$f^{(n-1)}(x)$が1点$a$で微分可能であるという仮定((\ref{eq3x3}),(\ref{eq3x6})を用いた別証)のもとで(\ref{eq3x40})を証明することはできない
+（(\ref{eq3x42})の証明中で，$F(a)$は$I$全体で微分可能は$a$の関数であることを確認して示した）
+―――．
+
+$f(x)$を区間$I$で何回でも微分可能な関数とすれば任意の自然数$n$に対して
+Taylorの公式：
+\[
+	f(x) = f(a) + \frac{f'(a)}{1!}(x-a) + \cdots + \frac{f^{(n-1)}(a)}{(n-1)!}(x-a)^{n-1} + R_n
+\]
+が成り立つ．このとき\underline{$I$の各点$x$において}
+\[
+	\lim_{n\rightarrow\infty} R_n = 0
+\]
+ならば，$f(x)$は$I$において$x-a$の巾級数の和として
+\begin{equation}
+	f(x)	=	f(a) + \frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots +
+					\frac{f^{(n)}(a)}{n!}(x-a)^n + \cdots
+\label{eq3x44}
+\end{equation}
+と表される．
+\footnote{
+関数$f(x)$が無限回微分可能であっても、テイラー級数が元の関数$f(x)$とすべての
+点$x$で一致するとは限らない，一致するかどうかは，定理 3.14（Taylorの公式）における
+剰余項$R_n$が$0$に収束するかどうかによって判定できる．
+}
+この巾級数を$a$を中心とする\textbf{Taylor級数}，あるいは$f(x)$の$a$を
+中心とする\textbf{Taylor展開}(Taylor expansion)という．また，$f(x)$を(\ref{eq3x44})の
+形に表すことを区間$I$において$f(x)$を$a$を中心とするTaylor級数に\textbf{展開する}という．
+
+\例{3.6}
+$e^x$を$a=0$を中心とするTaylor級数に展開して見る．$f(x)=e^x$とおけば，
+$f^{(n)}(x)=e^x$であるから，$f^{(n)}(0)=1$，したがって$R_n = (e^\xi / n!)x^n$となる．
+$\xi$は$x$と$0$の間にあるから，$|\xi| < |x|$，したがって
+\[
+	|R_n| < e^{|x|} \frac{|x|^n}{n!} \longrightarrow 0 \quad (n	\rightarrow \infty).
+\]
+故に$e^x$は数直線$R$上で$0$を中心とするTaylor級数：
+\[
+	e^x	=	1	+	x	+	\frac{x^2}{2!}	+	\cdots	+	\frac{x^n}{n!}	+	\cdots
+\]
+に展開される．これはすなわち，すでに\S \ref{sec2x3x2}で得た$e^x$の巾級数表示(\ref{eq2x10})に他ならない．――
+
+同様に，$\cos x , \sin x$の$0$を中心とするTaylor展開は，すなわち，その巾級数表示
+(\ref{eq2x24})，(\ref{eq2x25})である．
+
+\例{3.7}
+$\log x$のTaylor展開．$f(x) =\log x$とおけば，(\ref{eq3x36})により，
+$\displaystyle f^{(n)}(x) = \frac{(-1)^{n-1}(n-1)!}{x^n}$，
+したがって
+$\displaystyle 
+	\frac{f^{(n)}(a)}{ n!}
+= \frac{(-1)^{n-1}}{ na^n}$，
+$\displaystyle
+	R_n = \frac{(-1)^{n-1}}{n} \cdot \left(	\frac{(x-a)}{\xi}	\right)^n$．
+である．$\log x$の定義域は$\R^+ = (0 , + \infty)$であるから，$x > 0, a > 0$であるが，
+(1-1) $a < x$のときは$a < \xi < x$，したがって$x \leqq 2a$ならば
+\[
+	\frac{x-a}{\xi} < \frac{x-a}{a} \leqq 1,
+\]
+(1-2) $x < a$のときは，$x < \xi < a$であるから，$\displaystyle  x \geqq \frac{a}{2}$ならば
+\[
+	\left|	\frac{x-a}{\xi}
+	\right|
+	=
+	\frac{a-x}{\xi}
+	<
+	\frac{a-x}{x}	\leqq	1.
+\]
+(1)すなわち，$\displaystyle \frac{a}{2}	\leqq	x	\leqq	2a$ならば
+$\displaystyle	\left|	\frac{x-a}{\xi}	
+								\right|	\leqq	1$，したがって
+\begin{align*}
+	|	R_n	|	=	\frac{1}{n}	\left|	\frac{x-a}{\xi}
+												\right|^n	\longrightarrow	0	\quad	(n\rightarrow	\infty).
+\end{align*}
+(2) $\displaystyle 0 < x < \frac{a}{2}$なる場合にも$R_n \rightarrow 0 \: ( n \rightarrow \infty)$となることを
+示すために，Cauchyの剰余項(\ref{eq3x43})を用いれば，
+\begin{align*}
+	R_n	&\stackrel{(\ref{eq3x43})}{=}	
+				\frac{f^{(n)}(\xi)}{(n-1)!}	(1-\theta)^{n-1}	(x-a)^n
+			=	\frac{(-1)^{n-1}(n-1)!}{\xi^n}	\cdot	\frac{1}{(n-1)!}	(1-\theta)^{n-1}	(x-a)^n	\\
+			&=
+				\frac{(-1)^{n-1}}{\xi^n}	(1-\theta)^{n-1}(x-a)^n,	\quad	\xi	=	a	+	\theta (x-a),	\quad	0	<	\theta	<1.	
+\end{align*}
+$0	<	x	<	a$として$\displaystyle	r	=	\frac{(a-x)}{a}$とおけば，$0	<	r	<	1$であって，
+\[
+	\left|	\frac{x-a}{\xi}	
+	\right|
+	=	\frac{a-x}{a	+	\theta	(x	-	a)}
+	=	\frac{ar}{a-\theta	ar}
+	=	\frac{r}{1	-	\theta	r}
+	\leqq	\frac{r}{1	-	\theta},
+\]
+したがって
+\begin{align*}
+	|R_n|		&=	
+					\left|	
+						\frac{(-1)^{n-1}}{\xi^n}	(1-\theta)^{n-1}(x-a)^n
+					\right|
+					=
+						\left|
+							\frac{x-a}{\xi}(1-\theta)^{n-1}	\frac{(x-a)^{n-1}}{\xi^{n-1}}
+						\right|	\\
+					&\leqq
+						\left|
+							\frac{x-a}{\xi}	(1-\theta)^{n-1}	\frac{r^{n-1}}{(1-\theta)^{n-1}}
+						\right|
+					=
+						\left|	\frac{x-a}{\xi}	r^{n-1}
+						\right|
+					=	
+						\left(	\frac{a-x}{\xi}
+						\right)	r^{n-1}	\\
+					&\leqq
+						\left(	\frac{a-x}{x}
+						\right)	r^{n-1}	\longrightarrow	0	\quad	(n	\rightarrow	\infty).	
+\end{align*}
+故に区間$(0	,	2a]$において$\log	x$は$a$を中心とするTaylor級数：
+\begin{align}
+	\log	x	&=	f(a)	+	\sum_{n=1}^\infty	\frac{f^{(n)}(a)}{n!}(x-a)^n	\notag
+					=		f(a)	+	\sum_{n=1}^\infty	\frac{(-1)^{n-1}(n-1)!}{a^n	n!}	(x-a)^n	\\
+					&=	\log	a	+	\sum_{n=1}^\infty	(-1)^{n-1}	\frac{1}{n}	\left(	\frac{x-a}{a}
+																																\right)^n	
+\label{eq3x45}
+\end{align}
+に展開される．
+
+(3)	$x	>	2a$ならば$\displaystyle	\frac{(x-a)}{a}	>	1$，したがって$n	\rightarrow	\infty$のとき
+$\displaystyle	\left(
+									\frac{1}{n}
+								\right)
+								\left(
+									\frac{x-a}{\xi}
+								\right)^n
+								>
+								\left(	\frac{1}{n}
+								\right)
+								\left(	\frac{x-a}{a}
+								\right)^n	\rightarrow	+	\infty$
+となるから，Taylor 展開(\ref{eq3x45})は成り立たない．すなわち
+$x	>	2a$ならば$n	\rightarrow	\infty$のとき$R_n	\rightarrow	0$とならないのである．
+
+(\ref{eq3x45})において$a=1,	x	=	2$とおけば
+\begin{align}
+	\log	2	&	=	\log	1	+	\sum_{n=1}^\infty	(-1)^{n-1}	\frac{1}{n}	\left(	\frac{2-1}{1}	\right)^n	\notag	\\
+					&	=	1	-	\frac{1}{2}	+	\frac{1}{3}	-	\frac{1}{4}	+	\frac{1}{5}	-	\frac{1}{6}	+	\cdots	\label{eq3x46}
+\end{align}

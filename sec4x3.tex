@@ -1,0 +1,163 @@
+\section{広義積分}
+\label{sec4x3}
+
+関数$f(x)$が区間$[a,b]$で連続な場合に\S \ref{sec4x1}で定積分$\displaystyle	\int_a^b	f(x)	dx$を
+定義したが，本節では，この定義を$f(x)$が$[a,b]$で有限個の不連続点を持つ場合，さらに例えば，
+$[a,	\infty)$のような\textbf{無限区間}の場合に拡張する．無限区間というのは有界でない区間のことである．
+これに対して有界な区間を\textbf{有限区間}という．
+
+\subsection{積分の定義の拡張}
+\label{sec4x3x1}
+まず区間$[a,b)$で連続で$[a,b]$では必ずしも連続でない関数$f(x)$の積分
+$\displaystyle	\int_a^b	f(x)	dx$の定義から始める．
+
+\例{4.5}
+$x$の関数$1/\sqrt{1-x^2}$は区間$[0,1)$で連続で$\displaystyle	\lim_{x\rightarrow1-0}	(1/\sqrt{1-x^2})
+=	+	\infty$となる，
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{	c|cccccccccccccc	}
+																																			\hline	\\
+$x$																			&	0		&	0.1		&	0.2		&	0.3		&	0.4		&	0.5		&	0.6		&	0.7		&	0.75	&	0.8		&	0.85	&	0.9		&	0.95	\\
+																																																																							\\
+$\displaystyle	\frac{1}{\sqrt{1-x^2}}$	&	1		&	1.01	&	1.02	&	1.05	&	1.09	&	1.15	&	1.25	&	1.40	&	1.51	&	1.67	&	1.90	&	2.29	&	3.20	\\
+\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=3cm,height=6cm]{p175.bmp}
+\end{figure}
+この関数については，上図を見れば
+\[
+	\int_0^1	\frac{dx}{\sqrt{1-x^2}}	=	\lim_{t\rightarrow1-0}	\int_0^t	\frac{dx}{\sqrt{1-x^2}}
+\]
+と定義すべきであることは明らかであろう．\underline{そうすれば}，(\ref{eq4x18})により，
+\[
+	\int_0^1	\frac{dx}{\sqrt{1-x^2}}	=	\lim_{t\rightarrow1-0}	\Arcsin	t	=	\Arcsin	1	=	\frac{\pi}{2}.
+\]
+――．
+
+一般に区間$[a,b)$で連続関数$f(x)$に対して極限$\displaystyle	\lim_{t\rightarrow b-0}	\int_a^t	f(x)	dx$が
+\underline{存在するならば}
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\lim_{t\rightarrow	b-0}	\int_a^t	f(x)	dx
+\label{eq4x33}
+\end{equation}
+と定義する．同様に，区間$(a,b]$で連続な関数$f(x)$に対して$\displaystyle	\lim_{s\rightarrow a+0}	\int_s^b f(x) dx$
+が存在するならば
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\lim_{s\rightarrow a+0}\int_s^b	f(x)	dx,
+\label{eq4x34}
+\end{equation}
+区間$(a,b)$で連続な関数$f(x)$に対して
+$\displaystyle	\lim_{\substack{t	\rightarrow b-0	\\ s\rightarrow a+0}}	\int_s^t	f(x)	dx$が存在するならば
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\lim_{\substack{t\rightarrow b-0	\\ s \rightarrow a+0}}	\int_s^t	f(x)	dx
+\label{eq4x35}
+\end{equation}
+と定義する．ここで(\ref{eq4x35})は任意の正の実数$\varepsilon$に対応して一つの正の実数$\delta(\varepsilon)$
+が定まって，$a	<	s	<	a	+	\delta	( \varepsilon ),	\:	b	-	\delta ( \varepsilon) < t < b$ならば
+\[
+	\left|
+		\int_a^b	f(x)	dx	-	\int_s^t	f(x)	dx
+	\right|	<	\varepsilon
+\]
+となることを意味するが，\underline{任意の点}$c	,	a	<	c	<	b$，を一つ定めれば
+\[
+	\int_s^t	f(x)	dx	=	\int_s^c	f(x)	dx	+	\int_c^t	f(x)	dx
+\]
+であるから
+\[
+		\lim_{\substack{t\rightarrow b-0 \\ s \rightarrow a+0}}	\int_s^t	f(x)	dx
+	=	\lim_{s\rightarrow a+0}	\int_s^c	f(x)	dx	+	\lim_{t\rightarrow b-0} \int_c^t	f(x)	dx,
+\]
+したがって(\ref{eq4x35})は
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\lim_{s\rightarrow a+0}	\int_s^c	f(x)	dx	+	\lim_{t\rightarrow b-0}	\int_c^t	f(x)	dx
+\label{eq4x36}
+\end{equation}
+とも書かれる．(\ref{eq4x33}),(\ref{eq4x34}),(\ref{eq4x35})で定義された積分
+$\displaystyle	\int_a^b	f(x)	dx$を，\textbf{広義積分}(improper integral)という．
+広義積分$\displaystyle	\int_a^b	f(x)	dx$が存在するとき，すなわち，
+(\ref{eq4x33}),(\ref{eq4x34})あるいは(\ref{eq4x35})の右辺の極限が存在するとき，
+広義積分$\displaystyle	\int_a^b	f(x)	dx$は\textbf{収束する}という．
+広義積分$\displaystyle	\int_a^b	f(x)	dx$が存在しないときには，広義積分$\displaystyle	\int_a^b	f(x)	dx$は
+\textbf{発散する}という．存在しないものが発散するというのは論理的にはおかしいが，これは
+無限級数が発散するという言い方の類似であって，このとき広義積分というのは$\displaystyle	\int_a^b	f(x)	dx$なる
+形の式のことで，この式$\displaystyle	\int_a^b	f(x)	dx$の値が存在しないと考えるのであろう．
+
+$f(x)$が閉区間$[a,b]$で連続である場合には，すでに定積分$\displaystyle	\int_a^b	f(x)	dx$が定義されているから，
+広義積分$\displaystyle	\int_a^b	f(x)	dx$が定積分$\displaystyle	\int_a^b	f(x)	dx$と一致することを
+確かめておかなければならない．このために$a	<	c	<	b$なる点$c$を一つ定めて$\displaystyle	F(t)	=	\int_c^t	f(x)	dx$とおけば，
+$F(t)$は$[a,b]$で連続な$t$の関数であるから，たとえば(\ref{eq4x33})の右辺は
+\[
+	\lim_{t\rightarrow b-0}\int_a^t	f(x)	dx	=	\lim_{t\rightarrow b-0}	(F(t)	-F(a))	=F(b)	-	F(a)
+\]
+となって，定積分$\displaystyle	\int_a^b	f(x)	dx	=	F(b)	-	F(a)$と一致する．
+
+同様に，たとえば$f(x)$が$[a,b)$で連続である場合，広義積分$\displaystyle	\int_a^b	f(x)	dx$の
+2通りの定義：(\ref{eq4x33})と(\ref{eq4x35})は一致する．
+
+$f(x)$が区間$(a,b)$で有限個の点$c_1,	c_2	,	\cdots	,	c_m,	a<	c_1	<	c_2	<	\cdots	<	c_m	<	b$，
+を除いて連続であるとき，広義積分$\displaystyle	\int_a^{c_1}	f(x)	dx,	\:	\int_{c_1}^{c_2}	f(x)	dx,
+	\cdots	,	\int_{c_m}^b	f(x)	dx$がすべて収束するならば，広義積分$\displaystyle	\int_a^b	f(x)	dx$を
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\int_a^{c_1}	f(x)	dx	+	\int_{c_1}^{c_2}	f(x)	dx	+	\cdots	+	\int_{c_m}^b	f(x)	dx
+\label{eq4x37}
+\end{equation}
+と\underline{定義し},広義積分$\displaystyle	\int_a^b	f(x)	dx$は収束するという．
+このとき$f(x)$は$c_1	,	c_2	,	\cdots	,	c_m$で定義されていなくてもよい．また$f(x)$が
+$c_1,	c_2	,	\cdots	,	c_m$で定義されていても，
+広義積分$\displaystyle	\int_a^b	f(x)	dx$は$c_1,	c_2	,	\cdots	,	c_m$における
+$f(x)$の値$f(c_1)	,	f(c_2)	,	\cdots	,	f(c_m)$に無関係である．
+$f(x)$が$c_1,	c_2,	\cdots	,	c_m$で定義されていない場合，実数$\alpha_1	,	\alpha_2	,	\cdots	,	\alpha_m$
+を任意に選び，$f(c_1)	=	\alpha_1,	f(c_2)	=	\alpha_2	,	\cdots	,	f(c_m)	=	\alpha_m$と定義して
+$f(x)$の定義域に$	c_1,	c_2	,	\cdots	,	c_m$を追加しても広義積分$\displaystyle	\int_a^b	f(x)	dx$は
+変わらない．以下区間$(a,b)$で有限個の点$c_1,	c_2,	\cdots	,	c_m$を除いて連続な関数$f(x)$の広義積分
+$\displaystyle	\int_a^b	f(x)	dx$を考察するときには，$f(x)$は$c_1,	c_2,	\cdots	,	c_m$で定義されて
+いなくともよいとする．
+
+さらに，関数$f(x)$がすべての点$t	,	t>a,$に対して$(a,t)$で高々有限個の点を除いて連続で
+広義積分$\displaystyle	\int_a^t	f(x)	dx$が収束しているとき，
+極限$\displaystyle	\lim_{t\rightarrow +\infty} \int_a^t	f(x)	dx$が存在するならば，広義積分
+$\displaystyle	\int_a^{+\infty}	f(x)	dx$を
+\begin{equation}
+	\int_a^{+\infty}	f(x)	dx	=	\lim_{t\rightarrow +\infty}	\int_a^t	f(x)	dx
+\label{eq4x38}
+\end{equation}
+と定義し，広義積分$\displaystyle	\int_a^{+\infty}	f(x)dx$は収束するという．広義積分：
+\begin{align}
+	\int_{-\infty}^b	f(x)	dx	=	\lim_{s\rightarrow -\infty}	\int_s^b	f(x)	dx,	\label{eq4x39}\\
+	\int_{-\infty}^{+\infty}	f(x)	dx	=	\lim_{\substack{t\rightarrow +\infty \\ s\rightarrow -\infty}}	\int_s^t	f(x)	dx	\label{eq4x40}
+\end{align}
+も同様に定義する．特に，たとえば，$[a,	+	\infty)$で$f(x)$が連続である場合には，
+(\ref{eq4x38})の右辺の積分$\displaystyle	\int_a^t	f(x)	dx$は定義4.1の意味の定積分である．
+
+\例{4.6}
+$1/(x^2	+1)$は，$(-\infty	,	+	\infty)$で連続な$x$の関数である．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=10cm,height=4cm]{p178.bmp}
+\end{figure}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{	c|cccccccccccccc	}
+																																			\hline	\\
+$x$																			&	0		&	0.25		&	0.5		&	1		&	1.25		&	1.5		&	1.75		&	2		&	2.5	&	3		&	4		\\
+																																																																							\\
+$\displaystyle	\frac{1}{\sqrt{1+x^2}}$	&	1		&	0.94	&	0.8	&	0.5	&	0.39	&	0.31	&	0.25	&	0.2	&	0.14	&	0.1	&	0.06	\\
+\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+(\ref{eq4x20})により
+$\displaystyle	\int	\frac{dx}{x^2+1}	=	\Arctan x$であるから，
+\[
+	\int_0^{+	\infty}	\frac{dx}{x^2+1}	=	\lim_{t\rightarrow +\infty}	\int_0^t	\frac{dx}{x^2+1}	
+=	\lim_{t\rightarrow +\infty}	\Arctan t = \frac{\pi}{2}.
+\]

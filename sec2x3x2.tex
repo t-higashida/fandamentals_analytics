@@ -1,0 +1,288 @@
+\subsection{指数関数}
+\label{sec2x3x2}
+
+$a>1$なる正の実数$a$を一つ定めて，$a^r$を$\Q$で定義された$r$の関数と考える．
+$x^{1/n}$は$x$の単調増加関数であるから，分数$r=q/n$が正ならば$x^r=(x^q)^{1/n}$も
+$x$の単調増加関数である．したがって，$r>0$ならば$a^r	>	1^r	=	1$，故に，
+$r	>	s$ならば
+\[
+	a^r-a^s	=	a^s	(	a^{r-s}	-1	)	>0.
+\]
+すなわち，$a^r$は$r$の単調増加関数である．数列$\{a^{1/n}\}$は，
+したがって，単調減少であって，$a^{1/n}>1$であるから，下に有界である．
+故に，定理1.20の(2$^\circ$)により，$\{a^{1/n}	\}$はその下限$\alpha $に収束する．
+$\alpha \geqq	1$であるが，すべての$n$について，$a^{1/n}	>	\alpha $であるから
+$a	>	\alpha^n$．$	\alpha >	1$とすれば
+$\displaystyle	\lim_{x	\rightarrow	\infty}	\alpha^n	=	+\infty$
+となるから矛盾を生じる．$\displaystyle	\lim_{n	\rightarrow	\infty}	\alpha^n	=	+\infty$
+となることは，たとえば，2項定理により，
+\[
+	\alpha^n	=	(1+(\alpha-1))^n	=	1+\binom{n}{1}(\alpha	-1)+	\cdots	\geqq	1+n(\alpha-1)
+\]
+であることから明らかである．故に$\alpha=1$である．すなわち
+\begin{equation}
+	\lim_{n\rightarrow\infty}	a^{1/n}=1.	\label{eq2x5}
+\end{equation}
+$\Q	\subset	\R$で定義された$r$の単調増加関数$a^r$を$\R$全体で定義された関数に拡張するために，
+無理数$\xi $に対して$a^\xi$を上に有界な集合$\{a^r	\:	|	\:	r	<	\xi,	r	\in	\Q	\}$の上限と定義する：
+\[
+	a^{\xi }	=	\sup_{r	<	\xi,	r	\in	\Q}	a^r	=	\sup	\{	a^r	\:	|	\:	r	<	\xi	,	r	\in	\Q	\}.
+\]
+このようにして$\R$全体で定義された$x$\underline{の関数}$a^x$\underline{は連続で単調増加である．}
+このことを確かめるために，$x,y$で実数を，$r,s$で有理数を，
+$\xi ,	\eta$で無理数を表わすことにする．
+$r	<	\xi$ならば，$r	<	s	<	\xi$なる$s$があるから$a^r	<	a	^s	\leqq	a^\xi$，
+したがって$a^r	<	a^\xi$．
+$\xi	<	r$ならば，$\xi	<	s	<	r$なる$s$があるから$a^\xi	<	a^s	<	a^r$，
+したがって$a^\xi	<	a^r$．
+$\xi	<	\eta$ならば，$\xi	<	r	<	\eta$なる$r$があるから$a^\xi	<	a^r	<	a^\eta$，
+したがって$a^\xi	<	a^\eta$．
+これで$a^x$が$x$の単調増加関数であることが
+分った．
+
+実数$\beta$を一つ定めたとき，$s	<	r	<	\beta$ならば
+\[
+	a^r	-	a^s	=	a^s(a^{r-s}-1)	<	a^\beta(a^{r-s}-1)
+\]
+である．正の実数$\varepsilon $が任意に与えられたとき，(\ref{eq2x5})により，
+$\alpha^\beta	(a^{1/n}-1)	<	\varepsilon $なる自然数$n$が存在する．その一つを
+$n(\varepsilon)$とし，$\delta(\varepsilon)=1/n(\varepsilon)$とおけば，
+$s	<	r	<	\beta$，$r-s	<	\delta(\varepsilon)$なるとき
+\[
+	a^r-a^s	<	a^\beta(a^{r-s}	-1)	<	a^\beta(a^{\delta(\varepsilon)}	-1)	<	\varepsilon.
+\]
+$y	<	x	<	\beta$，$x-y	<	\delta(\varepsilon)$ならば，$s	<	y	<	x	<	r	<	\beta$，
+$r-s	<	\delta(\varepsilon)$なる$r,s$が存在するから，
+\[
+	a^x-a^y	<	a^r-a^s	<	\varepsilon.
+\]
+すなわち，
+\[
+	|x-y|	<	\delta(\varepsilon),	\quad	x	<	\beta,	\quad	y	<	\beta	\quad	\text{ならば}	\quad	|a^x	-	a^y|	<	\varepsilon.
+\]
+これは$x$の関数$a^x$が区間$(-\infty,\beta)$で一様連続なことを示しているが，
+$\beta$は任意の実数であった．故に$a^x$は$\R=(-\infty,+\infty)$で連続である．
+
+これで，$a>1$のとき，任意の実数$x$に対して$a^x$が定義されたのであるが，
+$a=1$のときには$1^x=1$，$0	<	a	<	1$なるときには$a^x=(1/a)^{-x}$と定義する．
+$x$が有理数$r$に等しいとき，$(1/a)^{-r}=(a^{-1})^{-r}=a^r$であるから，
+ここで新しく定義した$a^x$はもとの$a^r$と一致する．$a$が$1$に等しくない正の実数のとき，
+$a^x$を$a$を\textbf{底}(base)とする\textbf{指数関数}(exponential	funciton)とよぶ．
+
+上で証明したように，$a	>	1$のときには指数関数$a^x$は$\R$で定義された$x$の連続な単調増加関数であって，
+$\displaystyle	\lim_{n\rightarrow\infty}	a^n	=	+	\infty$，
+$\displaystyle	\lim_{n\rightarrow\infty}	a^{-n}	=	0$であるから
+$\displaystyle	\lim_{x\rightarrow	+\infty}	a^x	=	+	\infty$，
+$\displaystyle	\lim_{x\rightarrow	-\infty}	a^x	=	0$．したがって，定理2.6により，$a^x$
+\underline{の連続な単調減少関数であって，その値域は$\R^+	=	(0,+\infty)$である}．
+$0	<	a	<	1$なるときには，$a^x	=	(1/a)^{-x}$は$\R$で定義された
+$x$\underline{の連続な単調減少関数であって，その値域は$\R=(0,+\infty)$}である．
+
+任意の実数$x,y$に対して，$\{r_m\},\{s_n\}$をそれぞれ$x,y$に収束する有理数列とすれば，
+\[
+	(a^{r_m})^{s_n}	=	(a^{r_ms_n}).
+\]
+故に，$a^x$が$x$の連続関数であるから，
+\begin{align*}
+	(a^x)^{s_n}	&	=	\lim_{m\rightarrow\infty}(a^{r_m})^{s_n}
+								=	\lim_{m\rightarrow\infty}	a^{r_m	s_n}
+								=	a^{x	s_n}	\\
+	(a^x)^y			&	=	\lim_{n\rightarrow\infty}(a^x)^{s_n}
+								=	\lim_{n\rightarrow\infty}	a^{x	s_n}
+								=	a^{xy}	\\
+\end{align*}
+すなわち
+\[
+	(a^x)^y	=	(a^y)^x	=	a^{xy}.
+\]
+同様にして
+\begin{align*}
+	a^{x+y}	=	a^x	a^y,	\\
+	(ab)^x	=	a^xb^x
+\end{align*}
+であることが確かめられる．したがって，$a^x	=	(a/b)^x	b^x$であるから，
+\[
+	\left(\frac{a}{b}	\right)^x	=	\frac{a^x}{b^x}.
+\]
+
+\underline{正の実数$\alpha$を定めたとき，$x^\alpha$は$\R^+	=	(0,+\infty)$で定義された
+$x$の連続な単調増加関数であって，}　　　
+\underline{$\displaystyle	\lim_{x\rightarrow+\infty}	x^\alpha	=	+	\infty,$} 
+\underline{$\displaystyle	\lim_{x\rightarrow	0}	x^\alpha	=	0$.}
+\証明
+$r,s$を$r	<	\alpha	<s$なる有理数とすれば，$x	>	1$のとき$x^r	<	x^\alpha	<	x^s$，
+$x	<	1$のとき$x	^r	>	x^\alpha	>	x^s$であって
+$x^r,x^s$は$x$の連続関数であるから，
+$\displaystyle	\lim_{x\rightarrow	1}	x^r	=	1$，
+$\displaystyle	\lim_{x\rightarrow	1}	x^s	=	1$．故に
+\[
+	\lim_{x\rightarrow	1}	x^\alpha	=1
+\]
+である．したがって，任意の$a	\in	\R^+$について，
+\[
+	\lim_{x\rightarrow	a}	x^\alpha
+	=
+	\lim_{x\rightarrow	a}	a^\alpha	\lim_{x\rightarrow\alpha}\left(\frac{x}{a}\right)^\alpha
+	=
+	a^\alpha,
+\]
+すなわち，関数$x^\alpha$は$\R^+$の各点$a$で連続，したがって$x^\alpha$は$\R^+$で$x$の連続関数である．
+
+$x	>	1$ならば$x^\alpha	>	x^0=1$であるから，
+$x	<	y$ならば$y^\alpha	/	x^\alpha	=	(y/x)^\alpha	>1$，
+したがって$x^\alpha	y^\alpha$．ずなわち$x^\alpha$は$x$の単調増加関数である．
+一方，任意の$\xi	\in	\R^+$に対して$x=\xi^{1/\alpha}$とおけば，
+$x^\alpha	=	\xi$となるから，関数$x^\alpha$の値域は$\R^+	=	(0,+\infty)$である．
+故に$\displaystyle	\lim_{x	\rightarrow	+\infty}	=	+	\infty$，
+$\displaystyle\lim_{x\rightarrow	0}	x^\alpha	=0$でなければならない．
+\■
+\underline{$\alpha$を負の実数としたときには，$x^\alpha	=	1/x^{-\alpha}$は$\R^+$で定義された
+$x$の単調減少関数であって，$\displaystyle	\lim_{x\rightarrow	+\infty}	x^\alpha	=0,$}
+ \underline{$\displaystyle	\lim_{x\rightarrow	0}	x^\alpha	=	+\infty$である．}
+
+$x$の関数$x^\alpha$を\textbf{巾関数}という．
+
+\例{2.8}
+$a,k$を$a	>	1$，$k>0$なる実数としたとき，
+\begin{eqnarray}
+	\lim_{x\rightarrow	+\infty}	\frac{a^x}{x^k}	=	+	\infty.
+	\label{eq2x6}
+\end{eqnarray}
+これは\S\ref{sec1x5x3},	例1.2の拡張である．
+\証明
+$b=a^{1/k}$とおけば，$b>1$で$a^x	/	x^k	=	(b^x/x)^k$である．
+故に$\displaystyle	\lim_{x\rightarrow	+\infty}	b^x	/x	=	+	\infty$を証明すればよい．
+$x$に対して$n$を$n	\leqq	x	<	n+1$なる自然数とすれば，
+$b^{x-n}	\geqq	b^0	=1$であるから
+\[
+	\frac{b^x}{x}=\frac{b^n}{n}\cdot	\frac{nb^{x-n}}{x}	\geqq	\frac{b^n}{n}	\cdot	\frac{n}{n+1}.
+\]
+故に，$x	\rightarrow	+\infty$のとき$n	\rightarrow	+	\infty$で，
+\S 1.5,c),例1.2により$\displaystyle	\lim_{n\rightarrow	\infty}b^n/n	=	+	\infty$であるから，
+$\displaystyle	\lim_{x\rightarrow	+	\infty}	b^x	/x	=	+	\infty$．
+\■
+$\displaystyle	e	=	\sum_{n=0}^\infty	1/n!$を底とする指数関数$e^x$は重要である．
+底を指定せずに指数関数といえば，普通それは$e$を底とする指数関数$e^x$
+を意味する．$e^x$は
+\begin{equation}
+	e^x	=	\lim_{n\rightarrow\infty}	\left(	1	+	\frac{x}{n}	\right)^n
+	\label{eq2x7}
+\end{equation}
+と表される．これを証明するために，まず
+\begin{equation}
+	e=\lim_{t\rightarrow	+\infty}\left(	1+\frac{1}{t}	\right)^t
+  \label{eq2x8}
+\end{equation}
+なることを示す．(\ref{eq1x17})により
+\[
+	e	=	\lim_{n	\rightarrow	\infty}
+		\left(	1+\frac{1}{n}
+		\right)^n
+\]
+$t$に対して$n$を$n	\leqq	t	<	n+1$なる自然数とすれば
+\[
+	\left(
+		1+\frac{1}{n+1}
+	\right)^n
+	<
+	\left(
+		1+\frac{1}{t}
+	\right)^t
+	<
+	\left(
+		1+\frac{1}{n}
+	\right)^{n+1}
+\]
+であるが，$t	\rightarrow	+	\infty$のとき$n	\rightarrow	+	\infty$となり，
+\[
+	\lim_{n	\rightarrow	\infty}
+		\left(	1+\frac{1}{n}	\right)^{n+1}
+	=
+	\lim_{n	\rightarrow	\infty}
+	\left(	1+\frac{1}{n}
+	\right)^n
+	\left(
+		1+\frac{1}{n}
+	\right)
+	=	e,
+\]
+また$\displaystyle	\frac{1}{\left(\displaystyle	1+	\frac{1}{n+1}	\right)}=\frac{n+1}{n+2}$
+であるから
+\begin{align*}
+		\lim_{n	\rightarrow	\infty}	\left(1+\frac{1}{n+1}	\right)^n	
+	&=
+	\lim_{n	\rightarrow	\infty}	\left(1+\frac{1}{n+1}	\right)^{n+1}	
+									\cdot				\frac{1}{\displaystyle	\left(	1	+	\frac{1}{n+1}	\right)}	\\
+	&=
+	\lim_{n\rightarrow	\infty}	\left(1+\frac{1}{n+1}	\right)^{n+1}
+									\cdot				\frac{n+1}{n+2}	\\
+	&=e.
+\end{align*}
+故に
+$\displaystyle	\lim_{\varepsilon 	\rightarrow	+\infty}	(1+1/t)^t=e$.つぎに
+\begin{equation}
+	e	=	\lim_{t	\rightarrow	+\infty}	\left(1	-	\frac{1}{t}	\right)^{-t}
+	\label{eq2x9}
+\end{equation}
+なることをいう．
+\begin{align*}
+	\left(1-\frac{1}{t}	\right)^{-t}
+	&=
+	\left(\frac{t-1}{t}	\right)^{-t}
+	=
+	\left(\frac{t-1+1}{t-1}	\right)^{t}
+	=
+	\left(1+	\frac{1}{t-1}	\right)^{t}	\quad{\text{($t-1=s$とおく)}}	\\
+	&=
+	\left(1+\frac{1}{s}	\right)^{s+1}
+\end{align*}
+$t	\rightarrow	+	\infty$のとき$s	\rightarrow	+	\infty$で，したがって
+\[
+	\lim_{t	\rightarrow	+\infty}
+		\left(1-\frac{1}{t}	\right)^{-t}
+	=
+	\lim_{s	\rightarrow	+\infty}
+		\left(1+\frac{1}{s}	\right)^{s+1}
+	\lim_{s	\rightarrow	+\infty}
+		\left(1+\frac{1}{s}	\right)^s	\cdot	\left(1+\frac{1}{s}	\right)
+	=	e.
+\]
+さて，$x>0$のときには，$s=tx$とおけば，指数関数$u^x$は$u$の連続関数であるから，
+\[
+	e	=	\lim_{t	\rightarrow	+\infty}
+			\left(1+\frac{1}{t}	\right)^{tx}
+		=	\lim_{s	\rightarrow	+\infty}
+			\left(1+\frac{x}{s}	\right)^s
+		=	\lim_{n	\rightarrow	\infty}
+			\left(1+\frac{x}{n}	\right)^n.
+\]
+$x	<	0$のときには，$x=-y$，$s=ty$のおけば，$1/t=y/s$となるから，
+\[
+	e^x	=	\lim_{t	\rightarrow	+\infty}
+				\left(1-\frac{1}{t}	\right)^{-tx}
+			=	\lim_{s	\rightarrow	+\infty}
+				\left(1-\frac{y}{s}	\right)^s
+			=	\lim_{s	\rightarrow	+\infty}
+				\left(1+\frac{x}{s}	\right)^s			
+			=	\lim_{n	\rightarrow	\infty}
+				\left(1+\frac{x}{n}	\right)^n.
+\]
+これで(\ref{eq2x7})が証明された．
+
+(\ref{eq2x7})と(\ref{eq1x23})により指数関数の巾級数表示：
+\begin{equation}
+	e^x	=	\sum_{n=0}^\infty	\frac{x^n}{n!}
+	\label{eq2x10}
+\end{equation}
+を得る．これを拡張して，任意の複素数$z$に対して，等式(\ref{eq1x23})を用いて
+‘$e$の$z$乗を
+\begin{equation}
+	e^z	=	\lim_{n	\rightarrow	\infty}	\left(1+\frac{z}{n}	\right)^n
+			=	\sum_{n=0}^\infty	\frac{z^n}{n!}
+\label{eq2x11}
+\end{equation}
+と定義する．
+
+
+
+

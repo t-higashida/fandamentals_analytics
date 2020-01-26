@@ -1,0 +1,115 @@
+\section{指数関数，対数関数}
+\label{sec2x3x1}
+
+本節では高校数学で学んだ指数関数と対数関数を厳密に扱う．
+
+\subsection{$n$乗根，有理指数の累乗}
+正の実数全体の集合を$\R^+$で表わす：$\R^+=(0,+\infty)$．$n$を自然数としたとき，
+$f(x)=x^n$は区間$\R^+$で定義された連続な単調増加関数である．
+$f$の値域$f(\R^+)$は，定理2.6により，一つの区間であるが，明らかに
+\[
+	f(\R^+)	\subset	\R^+	\quad(\because	x	>	0	\Rightarrow	x^n	>	0)	\quad	\cdots\text{①}
+\]，
+また，$x<1$ならば$x^n	\leqq	x$，$x	>	1$ならば$x^n	\geqq	x$
+であるから
+\[
+	\displaystyle	\lim_{x	\rightarrow	+0}f(x)=0,\quad	\lim_{x	\rightarrow	+\infty}	f(x)=	+\infty
+	\quad		\cdots	\text{☆}\label{☆}
+\]
+故に$f(\R^+)	=	\R^+$である．
+
+\証明
+$y	\in	\R^+$とする．\text{☆}により$\exists	a	>	0,	\:	\exists	b	>	0$に対して
+$f(a)	<	y	<	f(b)$である．したがって，中間値の定理によって
+$a	<	\exists	c	<	b$に対して$f(c)	=	y$となる．
+$c	\in	R^+$であるから，$y	\in	f(R^+)$（②)
+
+①，②より$f(\R^+)=\R^+$.
+\■
+
+$f$の逆関数$f^{-1}$は，したがって，
+定理2.7により，$\R^+$で定義された連続な単調増加関数である．実数$x	\in	\R^+$に対して
+$f^{-1}(x)$を$x$の\textbf{$n$乗根}とよび$x^{1/n}$あるいは
+$\sqrt[n]{x}$で表わす．$f^{-1}(\R^+)=\R^+$であるから，
+$\displaystyle	\lim_{x	\rightarrow	+0}x^{1/n}=0$，
+$\displaystyle	\lim_{x	\rightarrow	+\infty}x^{1/n}=+\infty$である．．
+
+これで正の実数$x$の$n$乗根$\sqrt[n]{x}$の存在が確立された．
+これに基づいて，有理数$r=q/n$，$n$は自然数，$q$は整数，に対して，$x$の$r$乗を
+\[
+	x^r	=	(x^q)^{1/n}
+\]
+と定義する．$x^r$をまた$x$の\textbf{累乗}という．$x^r$が$r$の分数表示$q/n=2q/2n=\cdots$の選び方によらない，
+このことを証明する．$p/m=q/n$，$m$は自然数，$p$は整数としたとき（すなわち$np=mq$），
+\[
+	((x^p)^{1/m})^{mn}=x^{pn}=x^{qm}=(x^q)^{1/n})^{mn}
+\]
+となり，累乗$f(x)=f^{mn}$は1対1対応（とくに単射）であるから，$(x^p)^{1/m}=(x^q)^{1/n}$．
+
+また，連続関数の合成関数は連続関数であるから，
+$\displaystyle	r=\frac{q}{n}$とおくと$f(y)=y^{1/n},g(x)=x^q$とおくと，
+$f(y),g(x)$の合成関数$f(g(x))=x^r$は$\R^+$で定義された$x$の連続関数である．
+
+任意の二つの分数$r=p/m$，$s=q/n$に対して，
+$\displaystyle r + s = \frac{np + qm}{mn}$であるが，このことを
+利用して，指数法則を考察する．まず定義より
+\[
+	x^{r + s} = ( x^{np+mq} )^{1/mn}
+\]
+である．両辺を$mn$乗して，
+\[
+  (x^{r+s})^{mn}=
+	((x^{np+mq})^{1/mn})^{mn}=x^{np+mq}=x^{np}x^{mq}=((x^p)^{1/m}(x^q)^{1/n})^{mn}
+  =\{ x^s \cdot x^r \}^{mn}
+\]
+$f(x) = x^{mn}$は単射であるから$(x^{r+s})^{mn}=(x^rx^s)^{mn}$，故に
+\[
+	x^{r+s}=x^rx^s.
+\]
+積について
+\[
+	(x^r)^s=(((x^p)^{1/m})^q)^{1/n}=(((x^p)^q)^{1/m})^{1/n}=(x^{pq})^{1/mn}=x^{rs}
+\]
+も同様にして次のようにしてを得られる．
+まず$(x^p)^{1/n} = (x^{1/n})^p$が成立する．なぜならば，まず$p=0$の場合は，
+$(x^0)^{1/n} = 1^{1/n}$，$(x^{1/n})^0 = 1$で成立する．次に$p > 0$のとき
+\begin{align*}
+	(x^{1/m})^p &= \overbrace{x^{1/m}x^{1/m} \cdots x^{1/m}}^{p\text{個}} \\
+              &= x^{1/m + 1/m + \cdots + 1/m} \\
+              &= x^{p/m} = (x^p)^{1/m}
+\end{align*}
+そこで，$0 < q \in \Z, \: m \in \N$として，
+$\displaystyle \frac{1}{x^{q/m}} = \left( \frac{1}{x} \right)^{q/m}$で示す．
+\[
+ 	               \left( \frac{1}{x^{q/m}} \right)^m 
+  = \underbrace{ \left( \frac{1}{x^{q/m}} \right) \cdots 
+                 \left( \frac{1}{x^{q/m}} \right)}_{m\text{個}}
+  = \frac{1}{\displaystyle x^{q/m} \cdots x^{q/m}} = \frac{1}{x^{m \cdot q/m}}
+  = \left( \frac{1}{x}
+    \right)^q 
+  = \left[ \left\{ \left( \frac{1}{x} \right)^q
+            \right\}^{1/m}
+    \right]^m
+\]
+したがって$\displaystyle \frac{1}{x^{q/m}} = \left( \frac{1}{x} \right)^{q/m}$.
+最後に$p < 0$のとき，$p=-q$とおくと，$q > 0$．
+\begin{align*}
+	(x^{1/m})^p &= ( x^{1/m})^{-q} = \frac{1}{(x^{1/m})^q} = \left( \frac{1}{x} \right)^{q/m} \\
+              &= \left(
+                   \left( \frac{1}{x}
+                   \right)^q
+                 \right)^{1/m}
+               = \left(
+                    \frac{1}{x^q}
+                 \right)^{1/m}
+               = \left(
+                  x^{-q}
+                 \right)^{1/m} = (x^p)^{1/m}
+\end{align*}
+
+
+また，二つの正の実数$x,y$に対して
+\[
+	(xy)^r=x^ry^r
+\]
+なることも同様にして確かめられる．

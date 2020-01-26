@@ -1,0 +1,295 @@
+\subsection{一様収束と連続性}
+\label{sec5x3x2}
+
+\定理{5.5}
+関数$f_n	(x)	,	n	=1,	2,	3,	\cdots,$はすべて区間$I$で連続であるとする．
+このとき，
+\begin{list}{}{}
+	\item	$(1^\circ)$	関数列$\{f_n(x)	\}$が$I$で一様に収束すれば，
+その極限$\displaystyle	f(x)	=	\lim_{n\rightarrow\infty}	f_n	(x)$も$I$で連続である．
+	\item	$(2^\circ)$	級数$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)$が$I$で一様に収束すれば，
+その和：$\displaystyle	s	(x)	=	\sum_{n=1}^{\infty}	f_n	(x)$も$I$で連続である．
+\end{list}
+\証明
+$(2^\circ)$は$(1^\circ)$の系であるから$(1^\circ)$を証明すればよい．
+このためには$I$に属する各点$a$において$f(x)$が連続であることをいえばよいから，
+点$a	\in	I$を一つ定めて考える．任意の正の実数$\varepsilon$に対応して，仮定により，
+自然数$n_0(	\varepsilon	)$が定まって，すべての点$x	\in	I$において
+\[
+	n	>	n_0(	\varepsilon)	\quad	\text{ならば}	\quad	|	f_n(x)	-	f(x)	|	<	\varepsilon
+\]
+となる．また，$f_n	(	x)$は$a$で連続であるから，正の実数$\delta_n	(\varepsilon)$が定まって
+\[
+	|	x-a	|	<	\delta_n	(	\varepsilon	)	\quad	\text{ならば}	\quad	|f_n	(x)	-	f_n(a)	|	<	\varepsilon
+\]
+となる．そこで，まず	$n	>	n_0	(\varepsilon)$なる自然数$n$を一つ定め，つぎに$\delta	(	\varepsilon)	=	\delta_n	(	\varepsilon)$
+とおく．
+\[
+	|	f(x)	-	f(a)	|	\leqq	|	f(x)	-	f_n	(x)	|	+	|	f_n(x)	-	f_n	(a)	|	+	|	f_n	(a)	-	f(a)	|
+\]
+であるから
+\[
+	|	f(x)	-	f(a)	|	<	2	\varepsilon	+	|	f_n(x)	-	f_n(a)	|.
+\]
+故に
+\[
+	|x	-	a|	<	\delta(\varepsilon	)	\quad	\text{ならば}	\quad	|f(x)	-	f(a)	|	<	3\varepsilon
+\]
+となるが，$\varepsilon$は任意の正の実数であった．故に$f(x)	$は$a$で連続である．
+\■
+
+各項$f_n(x)$が区間$I$で連続な関数列$\{f_n(x)	\}$が$I$で収束するけれども一様に収束しない場合には，
+上記の例5.4が示すように，極限$f(x)	\displaystyle	=	\lim_{n\rightarrow\infty}	f_n(x)$は必ずしも
+$I$で連続でない．
+
+\例{5.5}
+各自然数$n$に対し区間$[0,3]$で連続な関数$f_n(x)$を次のように定義する：
+\[
+	\begin{cases}
+		\displaystyle	\:	0						\leqq	x	\leqq	\frac{1}{n}	\quad	\text{のとき}	\quad	f_n(x)	=	nx,	\\
+		\:	\\
+		\displaystyle	\:	\frac{1}{n}	\leqq	x	\leqq	\frac{2}{n}	\quad	\text{のとき}	\quad	f_n(x)	=	2	-	nx,	\\
+		\:	\\
+		\displaystyle	\:	\frac{2}{n}	\leqq	x	\leqq	3						\quad	\text{のとき}	\quad	f_n(x)	=	0.
+	\end{cases}
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=74.4mm,height=40.1mm]{p219.bmp}
+\end{figure}
+まず$f_n	(0)	=	0$である．また$x$，$0	<	x	\leqq	3$，を任意に与えたとき，$\displaystyle	n	>	2/x$ならば
+$f_n(x)	=	0$であるから，$\displaystyle	\lim_{n\rightarrow\infty}	f_n(x)	=	0$．
+故に区間$[0,3]$で関数列$\{f_n(x)\}$は収束し，
+極限$\displaystyle	0	=	\lim_{n\rightarrow\infty}	f_n(x)$は連続である．
+しかし，$f_n(1/n)=1$であるから，$\varepsilon	<	1$の場合は，$	|f_n(1/n)	-	f(1/n)|	>	\varepsilon$となってしまい，
+収束は$[0,3]$で一様でない．
+
+\定理{5.6}	級数$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$を収束する正項級数
+$\displaystyle	\sum_{n=1}^{\infty}	a_n$と比較したとき，区間$I$でつねに$|f_n(x)	|	\leqq	a_n$
+であったとする．このとき
+\begin{list}{}{}
+	\item	($1^\circ$)	級数$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)	$は区間$I$で\underline{一様に絶対収束する}．
+	\item	($2^\circ$)	各項$f_n	(x)$が区間$I$で連続ならば，和$\displaystyle	s(x)	=	\sum_{n=1}^{\infty}	f_n	(x)$も区間
+$I$で連続である．
+\end{list}
+\証明
+\[
+	\sigma_{n,m}	(x)	=	|	f_{n+1}	(x)	|	+	|	f_{n+2}(x)	|	+	\cdots	+	|	f_m	(x)	|
+\]
+とおけば，区間$I$で常に
+\[
+	\sigma_{n,m}	(x)	\leqq	a_{n+1}	+	a_{n+2}	+	\cdots	+	a_m
+\]
+であるから，Cauchyの判定法（定理 5.4）により，$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)	$は
+$I$で一様に絶対収束する．したがって$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)	$は$I$で
+一様に収束するから，各項$f_n(x)$が$I$で連続ならば，
+定理5.5，$(2^\circ)$により，$s(x)	=	\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$も区間$I$で連続である．
+\■
+
+\例{5.6}
+\S \ref{sec3x3}，例3.4で関数
+\[
+	f(x)	=	\sum_{n=1}^{\infty}	\frac{1}{2^n}	|	\sin	(	\pi	n!	x)	|
+\]
+が数直線$\R$上で連続であることを第5章で証明すると約束したが，$\R$上でつねに
+\[
+	0	\leqq	\frac{1}{2^n}	|	\sin	(\pi	n!	x)	|	\leqq	\frac{1}{2^n}
+\]
+であることに留意すれば，証明は上記の定理5.6によって明らかである．
+
+\例{5.7}
+\S \ref{sec1x5x6}で述べたように，有理数全体の集合$\Q$は可算であって，
+$\Q	=	\{	r_1,	r_2,	r_3,	\cdots	,	r_m	,	\cdots	\}$と表される．
+\begin{equation}
+	f_n(x)	=	\sum_{m=1}^{\infty}	\frac{1}{	2^m	(1	+	n^2	(	x-	r_m)^2	)}
+\label{eq5x23}
+\end{equation}
+とおく．定理5.6により，（\ref{eq5x23}）の右辺の級数は
+$(-	\infty	,	+	\infty)$で一様に絶対収束し
+\footnote{	\small	
+$\displaystyle		\frac{1}{2^m	(1+n^2(x-_m)^2)}	<	\frac{1}{2^m}$で，
+$\sum_{m=1}^{\infty}	\frac{1}{2^m}$は絶対収束する正項級数である，そして
+定理5.6.
+}
+，$f_n(x)	$は$(-\infty,	+	\infty)$で連続な
+$x$の関数である．$n$が増加するとき（\ref{eq5x23}）の右辺の級数の各項は，
+$r_m	=	x$なる高々一つの項を除いて，単調に減少するから，
+各点$x$において$\{	f_n	(x)	\}_{n=1}^\infty$は単調減少数列であって，明らかに$f_n(x)	>	0$である．
+故に極限：$\displaystyle	f(x)	=	\lim_{n\rightarrow\infty}	f_n(x)$が定まる
+\footnote{定理1.20 $(2^\circ)$
+}
+．関数$f(x)$は次の性質をもつ：
+無理点$x$では$f(x)	=	0$，有理点$r_m$では$f(r_m)	=	1/2^m$．
+\証明（\ref{eq5x23}）により，
+\[
+	\left|	f_n(x)	-	\sum_{m=1}^k	\frac{1}{2^m	(1+	n^2(x-r_m)^2)}
+	\right|
+	\leqq
+	\sum_{m=k+1}^{\infty}	\frac{1}{2^m}	=	\frac{1}{2^k}.
+\]
+$r_m	\ne	x$ならば$\displaystyle	\lim_{n\rightarrow\infty}	\frac{1}{(1+	n^2	(x-r_m)^2)}	=	0$
+であるから，この不等式の$n	\to	\infty$のときの極限をとれば，$x$が無理数のときは
+\[
+	|f(x)	|	\leqq	\frac{1}{2^k},
+\]
+$x	=	r_m,	m	\leqq	k$，のときには
+\footnote{
+	$m$	番目で$x=	r_m$となり，$n$がキャンセルされて，$\frac{1}{2^m}$の部分だけ残る．
+}
+\[
+	\left|	f(x)	-	\frac{1}{2^m}
+	\right|
+	\leqq	\frac{1}{2^k}
+\]
+となる．ここで$k	\to	\infty$とすれば，無理点$x$では
+$f(x)	=	0$，有理点$r_m$では$\displaystyle	f(	r_m	)	=	\frac{1}{2^m}$であることがわかる．
+\■
+
+$f(x)	=	\displaystyle	\lim_{n\rightarrow\infty}	f_n(x)$は，\S	\ref{sec2x2x1}，
+例2.4の関数と同様に，各有理点$r_m$で不連続，各無理点で連続な関数である．
+\[
+	g_n	(	x)	=	f_n(	x-	1/\sqrt{n})
+\]
+とおけば
+\[
+	\left|	g_n(x)	-	\sum_{m=1}^{k}	\frac{1}{2^m	(1+n^2	(x-r_m	-	1	/	\sqrt{n})^2)}	
+	\right|
+	\leqq	\frac{1}{2^k}	\Rightarrow	(*)
+\]
+今度は$x	=	r_m$なる場合も含めて各点$x$において，この不等式の$n	\to	\infty$のときの極限をとれば，
+$\displaystyle	\lim_{n\rightarrow\infty}	\frac{1}{(1+n^2	(x-r_m	-	1	/\sqrt{n})^2)}=0$であるから，
+任意の$\varepsilon	>0$（特に$\displaystyle	\varepsilon	=1/(2^k-1)$）に対応して自然数$n_0(k,x)$が定まって，
+\begin{align*}
+	n	>	n_0	(k,x)	\quad	&\text{ならば}	\quad		\frac{1}{1	+	n^2	(x	-	r_m	-	1/\sqrt{n})^2}	<	\varepsilon	\\
+											&	\Rightarrow	\frac{1}{2^m(1	+	n^2	(x	-	r_m	-	1/\sqrt{n})^2)}	<	\frac{\varepsilon}{2^m}	\\
+											&	\Rightarrow	\sum_{m=1}^{k}	\frac{1}{2^m(1	+	n^2	(x	-	r_m	-	1/\sqrt{n})^2)}	<	\sum_{m=1}^{k}	\frac{\varepsilon}{2^m}	\\
+											&	\Rightarrow	\sum_{m=1}^{k}	\frac{1}{2^m(1	+	n^2	(x	-	r_m	-	1/\sqrt{n})^2)}	<	\varepsilon	\left(	1	-	\frac{1}{2^k}	\right)	=	\frac{1}{2^k-1}	\left(\frac{2^k	-	1}{2^k}	\right)	=	\frac{1}{2^k}
+\end{align*}
+\begin{align*}
+	(*)	
+	&\Rightarrow
+	|	g_n(x)|	-	\left|\sum_{m=1}^{k}	\frac{1}{2^m	(1+n^2	(x-r_m	-	1	/	\sqrt{n})^2)}	\right|
+	\leqq	\frac{1}{2^k}	\\
+	&\Rightarrow
+	|	g_n(x)|	-	\left|	\frac{1}{2^{k}}	\right|
+	\leqq	\frac{1}{2^k}
+\end{align*}
+つまり，$k$に対応して自然数$n_0(k,x)$が定まって
+\[
+	n	>	n_0	(k,x)	\quad	\text{ならば}	\quad	|g_n(x)|	\leqq	\frac{1}{2^{k-1}}
+\]
+となる．故に$\displaystyle	\lim_{n\rightarrow\infty}	g_n(x)	=	0$，すなわち，
+関数列$\{	g_n	(x)	\}$は区間$(-\infty	,	+	\infty)$で$0$に収束する．
+しかし，$\{g_n(x)	\}$の収束は如何なる区間$(a,	a+	\varepsilon),	\varepsilon	>0$，
+においても\underline{一様でない}．なぜなら，$(a	,	a+	\varepsilon)$に属する有理点の一つを
+$r_m$とすれば
+\footnote{
+	$\varepsilon$は任意の正数．
+}，
+\[
+	\lim_{n\rightarrow\infty}	g_n	(	r_m	+	1/	\sqrt{n}	)	
+	=
+	\lim_{n\rightarrow\infty}	f_n	(	r_m	+	1/	\sqrt{n}	-	1	/	\sqrt{n})	
+	=
+	\lim_{n\rightarrow\infty}	f_n(r_m)	=	f(r_m)	=	1/2^m,
+\]
+\footnote{$r_m$のまわりでは，$1/2^m$に収束していて有界，したがって上限を持つ（Weierstrass）
+（\S \ref{sec1x5x1}）．
+}
+したがって$\displaystyle	l	>	n_0	,	\alpha_l	=	\sup_{a	<		x	<	a	+	\varepsilon}	g_{l+n}	(x)$とおくと，
+
+\[
+	\liminf_{n\rightarrow\infty}	(	\sup_{a	<	x	<	a	+	\varepsilon}	g_n(	x)	)	\geqq	1/2^m	>0
+\]
+となるからである．
+
+（保留）
+
+$f_n	(x)	=	g_n	(x	+	1/\sqrt{n})$であるから，関数$y	=	f_n(x)$のグラフ$G_{f_n}$は
+$y	=	g_n(x)$のグラフ$G_{g_n}$を“$x$軸に平行に$1/\sqrt{n}$だけ左に移動”したものである．
+各項のグラフの端なる平行移動によって$0$に収束する関数列$\{g_n(x)\}$からすべての有理点で
+不連続な関数$f(x)$に収束する関数列$\{f_n(x)\}$が得られるのである．
+
+単調な連続関数列の収束に関してはつぎの定理が成り立つ：
+
+\定理{5.7}（Dini の定理）
+閉区間$[a,b]$で\underline{連続な}関数$f_n(x)$を項とする単調非増加な関数列，すなわち
+\[
+	f_1	(x)	\geqq	f_2	(x)	\geqq	f_3(x)	\geqq	\cdots
+					\geqq	\cdots
+					\geqq	f_n(x)	\geqq	\cdots,	\quad	a	\leqq	x	\leqq	b,
+\]
+なる関数列$\{f_n(x)\}$が$[a,b]$で\underline{連続な}関数$f	(x)$に収束するならば，
+$\{f_n(x)\}$は$[a,b]$で\underline{一様に}$f(x)$に収束する．
+
+\証明
+$g_n	(x)	=	f_n(x)	-	f(x)$とおいて関数列$\{g_n(x)\}$が
+$[a,b]$で一様に$0$に収束することを証明すればよい．仮定により，
+区間$[a,b]$で$g_n(x)$は連続，関数列$\{g_n	(x)	\}$は単調非増加で（各点で）$0$に
+収束する．この収束が$[a,b]$で一様でなかったとすれば，或る正の実数
+$\varepsilon_0$に対しては，どんな自然数$n$をとっても，$m	>	n$のとき
+$[a,b]$でつねに$g_m	(	x)	<	\varepsilon_0$とはならない．すなわち，各自然数
+$n$に対して$g_m(c_n)	\geqq	\varepsilon_0$なる自然数$m,m	>	n$，と点$c_n	,	a	\leqq	c_n	\leqq	b$，
+が存在する．
+\footnote{
+各$g_n$に対応して少なくとも，ある1点$c_n$で突き抜けている．
+}
+このとき仮定より，$g_n	(c_n)	\geqq	g_m	(c_n)$であるから，
+\begin{equation}
+	g_n(c_n)	\geqq	\varepsilon_0.
+\label{eq5x24}
+\end{equation}
+この$c_n$のなす点列$\{	c_n	\}$は，\S	\ref{sec1x6x5}，定理1.30により，
+収束する部分列$c_{n_1},	c_{n_2},	c_{n_2},	\cdots	,	c_{n_j},	\cdots$をもつ
+その極限を$	c	=\displaystyle	\lim_{j\rightarrow\infty}	c_{n_j}$とすれば，
+$g_n	(x)	$は$x$について連続であるから，
+\[
+	g_n	(c)	=	\lim_{j\rightarrow\infty}	g_n	(c_{n_j})
+\]
+であるが，$n_j	>	n$ならば，（\ref{eq5x24}）と仮定により，
+\[
+	g_n	(c_{n_j})	\geqq	g_{n_j}	(c_{n_j})	\geqq	\varepsilon_0,
+\]
+\footnote{
+	$c_{n_j}		\in	\{	c_n	\}$は（\ref{eq5x24}）の性質を持つ集合の１つの元であった．
+}
+したがって
+\[
+	g_n	(c)	\geqq	\varepsilon_0	>	0.
+\]
+これは関数列$\{	g_n	(x)	\}$が（各点で）$0$に収束することに矛盾する．故に
+$\{g_n	(x)	\}$は$[a,b]$で一様に$0$に収束する．
+\■
+
+単調非減少な関数列についてもこの定理5.7と同様な定理が成り立つことは
+言うまでもない．
+\footnote{
+つまり，
+\系{}
+閉区間$[a,b]$で連続で関数$f_n(x)$を項とする単調非減少な関数列，すなわち
+\[
+	f_1	(x)	\leq	f_2(x)	\leq	f_3(x)	\leq	\cdots	\leq	f_n(x)	\leq	\cdots,	
+	\quad	a	\leq	x	\leq	b,
+\]
+なる関数列$\{	f_n(x)	\}$が$[	a,b]$で連続な関数$f(x)$に収束するならば，
+$\{	f_n	(x)	\}$は$[a,b]$で一様に$f(x)$に収束する．
+}
+
+上記例5.7の$\{	f_n(x)	\}$は単調減少で収束はするが如何なる区間
+$[a,b]	,	a	<	b$においても一様収束しない連続関数列の例を与える．
+$\{	f_n	(x)	\}$が$[a,b]$で一様収束しないことは$\displaystyle	f(x)	=	\lim_{n\rightarrow\infty}	f_n(x)$
+がすべて有理点で不連続であることから定理5.5，$(1^\circ)$によって明らかである
+\footnote{
+対偶をとる．
+}．
+
+
+
+
+
+
+
+
+
+
+

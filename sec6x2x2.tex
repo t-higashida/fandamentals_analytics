@@ -1,0 +1,319 @@
+ \subsection{微分可能性，全微分}
+
+\S \ref{sec3x1}で述べた$1$変数の関数の揚合と同様に，
+$\displaystyle	\lim_{(x,y)\rightarrow(0,0)}	\alpha(x,y)	=	\alpha(0,0)=0$なる関数
+$\alpha	(x,y)$を無限小といい，$\varepsilon(x,y),	\alpha(x,y)$が無限小であるとき，
+これらの積の無限小$\varepsilon(x,y)\alpha(x,y)$を記号$o (\alpha(x,y))$で表わす．
+たとえば
+\[
+	o(\sqrt{x^2	+	y^2})	=	\varepsilon(x,y)\sqrt{x^2+y^2},
+	\quad
+	\lim_{(x,y)\rightarrow(0,0)}	\varepsilon	(x,y)	=	\varepsilon	(0,0)	=0.
+\]
+$1$変数の関数$f(x)$が$a$で微分可能であるとき，（\ref{eq3x6}），すなわち
+\[
+	f(x)	=f(a)	+	f'(a)(x-a)	+	o(x-a)
+\]
+が成り立つ．これを拡張して$2$変数の関数の微分可能性を次のように定義する:
+
+\定義{6.4}
+$f(x,y)$を或る領域$D$で定義された$2$変数$x,y$の関数，
+$(a,b)$を$D$に属する一つの点とする．このとき，
+このとき，定数$A,B$が存在して
+\begin{equation}
+	f(x,y)	=	f(a,b)	+	A(x-a)	+	B(y-b)	+	o	\left(	\sqrt{(x-a)^2	+	(y-b)^2}	\right)
+\label{eq6x8}
+\end{equation}
+が成り立つならば，関数$f(x,y)$は点$(a,b)$で微分可能であるという（$A$，$B$については後述）．
+
+$f(x,y)$を領域$D$で定義された関数，$(a,b)$を$D$に属する点とする．
+$f(x,y)$\underline{が}$(a,b)$\underline{で微分可能ならば}$f(x,y)$で連続である．
+なぜなら（\ref{eq6x8}）により
+\[
+	\lim_{(x,y)\rightarrow(a,b)}	f(x,y)	=	f(a,b)
+\]
+となるからである．$f(x,y)$\underline{が}$(a,b)$\underline{で微分可能ならば}
+$f(x,y)$\underline{は}$(a,b)$\underline{で}$x$\underline{についてもについても偏微分可能であって}
+，（\ref{eq6x8}）の右辺の定数$A,B$\underline{は偏微分係数}$f_x(a,b),	f_y(a,b)$\underline{に等しい}．
+なぜなら，（\ref{eq6x8}）において$y=b$とおけば
+\footnote{
+（\ref{eq6x5}）を参照．
+}
+，
+\[
+	f(x,b)	=	f(a,b)	+	A(x-a)	+	o	(x-a)
+\]
+を得るから，
+\[
+	\lim_{x\rightarrow	a}	\frac{f(x,b)	-	f(a,b)}{x-a}	=	A,
+\]
+同様に
+\[
+	\lim_{y\rightarrow	b}	\frac{f(a,y)	-	f(a,b)}{y-b}	=	B
+\]
+となるからである．故に$f(x,y)$が点$(a,b)$で微分可能ならぱ
+\[
+	f(x,y)	=	f(a,b)	+	f_x(a,b)	(x-a)	+	f_y(a,b)	(y-b)	+	o	\left(	\sqrt{(x-a)^2	+	(y-b)^2	}	\right).
+\]
+$a,b$を$x,y$で，$x,y$を$x+h,y+k$で置き換えれば，この式は
+\begin{equation}
+	f(x+h,	y+k)	=	f(x,y)	+	f_x(x,y)	h	+	f_y(x,y)k	+	o\left(	\sqrt{h^2+k^2}	\right)
+\label{eq6x9}
+\end{equation}
+と書かれる.すなわち，\underline{関数}$f(x,y)$\underline{が点}$(x,y)$\underline{で微分可能であるとき，上の式
+（\ref{eq6x9}）が成り立つ}のである．このとき，関数$f(x,y)$を$z=f(x,y)$と表わし，
+$\varDelta	x	=h,	\varDelta	y	=	k,	\varDelta	z	=	f(x	+\varDelta	x,	y	+	\varDelta	y)	-	f(x,y)$とおけば
+\begin{equation}
+	\varDelta	z	=	\frac{\partial z}{\partial x}	\varDelta	x
+							+	\frac{\partial z}{\partial y}	\varDelta	y
+							+	o	\left(	\sqrt{(\varDelta	x)^2	+	(	\varDelta	y	)^2	}\right).
+\label{eq6x10}
+\end{equation}
+$\varDelta	x	,	\varDelta	y	,	\varDelta	z$
+をそれぞれ$x,y,z$の増分ということは$1$変数の関数の揚合と同様である．
+（\ref{eq3x8}）で$1$変数$x$の関数$y	=	f(x)$の微分を
+\[
+	dy	=	df(x)	=	f'(x)	\varDelta	x
+\]
+と定義した．これにならって$2$変数$x,y$の関数$z	=	f(x,y)$め\textbf{全微分}
+（total	differentia1）を
+\begin{equation}
+	dz	=	df(x,y)	=	f_x	(x,y)	\varDelta	x	+	f_y	(x,y)	\varDelta	y	,
+\label{eq6x11}
+\end{equation}
+あるいは
+\begin{equation}
+	dz	=	\frac{\partial z}{\partial x}	\varDelta	x	+	\frac{\partial z}{\partial y}	\varDelta	y
+\label{eq6x12}
+\end{equation}
+と定義する．全微分$dz$は，すなわち，増分$	\varDelta	z$の‘主要部’である．
+単に‘微分’といわずに‘全微分’というのは‘偏微分’とはっきり区別するためであろう．
+$x$を$2$変数$x,y$の関数と考えれば，$	\partial x / \partial x = 1,	\partial x / \partial y	=0$
+であるから，その全微分は$dx	=\varDelta	x$，同様に$dy	=	\varDelta	y$である．
+したがって（\ref{eq6x11}），（\ref{eq6x12}）は
+\begin{align}
+	df(x,y)	&=		f_x(x,y)	dx	+	f_y	(x,y)	dy,	\label{eq6x13}	\\
+			dz	&=	\frac{\partial z}{\partial x}	dx	+	\frac{\partial z}{\partial y}	dy	\label{eq6x14}
+\end{align}
+とも書かれる．
+
+$f(x,y)$がその定義域$D$のすべての点$(x,y)$で微分可能であるとき，
+関数$f(x,y)$は微分可能である，あるいは$2$変数$x,y$について微分可能である，
+といい，$f(x,y)$を微分可能な関数とよぶ．\underline{微分可能な関数}
+$f(x,y)$\underline{は連続で}，$x$\underline{についても}$y$\underline{についても偏微分可能である}．
+――
+
+一般に関数$f(x,y)$の定義域の部分集合$D$が与えられたとき，$f(x,y)$からその定義域を$D$に縮小して
+得られる関数を$f(x,y)$の$D$への制限といい，$f_D(x,y)$あるいは$(flD)(x,y)$で表わす.
+$f_D(x,y)$は，すなわち，$D$で定義された関数で，$(x,y)	\in	 D$のとき
+$f_D(x,y)	=	f(x,y)$である．$D$\underline{が領域である場合，} $f_D	(x,y)$
+\underline{が連続関数ならば} $f(x,y)$は$D$\underline{で連続であるといい}，
+$f_D(x,y)$\underline{が微分可能な関数ならば} $f(x,y)$\underline{は}
+$D$\underline{で微分可} \underline{能な関数あるという．}
+さらに関数に関する或る性質$\mathcal{A}$に対して，
+$f_D(x,y)$\underline{が}$\mathcal{A}$\underline{であるとき}$f(x,y)$\underline{は}$D$
+\underline{で}$\mathcal{A}$\underline{であ} \underline{るという}．
+たとえば$f_D(x,y)$が$x$について偏微分可能ならば，$f(x,y)$は$D$で$x$について偏微分可
+能であるという．$D$は領域であると仮定しているから，$f(x,y)$が$D$で連続である，
+微分可能である，$x$あるいは$y$について偏微分可能であることに他ならない．
+$f(x,y)$が$D$で，たとえば，$x$について偏微分可能であることを$D$\underline{で偏導関数}$f_x(x,y)$
+\underline{が存在する}といい表わす.
+
+$f(x,y)$の定義域の部分集合$D$\underline{が閉領域である場合にも}$f_D(x,y)$\underline{が}$\mathcal{A}$\underline{であるとき}
+$f(x,y)$\underline{は}$D$\underline{で}$\mathcal{A}$\underline{であるとい} \underline{う}．
+この場合，たとえぱ，$f(x,y)$\underline{が}$D$\underline{で連続であっても必ずしも}
+$f(x,y)$\underline{が}$D$\underline{に属するすべての点で連続である} \underline{とは限らない}．
+たとえば$\R^2$上で$x^2	+	y^2	\leqq	1$のとき$f(x,y)=x^2	+	y^2	,	x^2	+	y^2	>	1$のとき
+$f(x,y)=0$と定義すれば，$f(x,y)$は閉領域$D=\{(x,y)	\: | \: x^2 + y^2 \leqq 1 \}$で連続であ
+るが，$f(x,y)$は$D$の境界点$(x,y)$，$x^2	+	y^2	=1$，では連続でない．
+
+閉区間$[a,b]$で定義された$1$変数の関数$f(x)$については，$[a,b]$の境界点$a$あるいは
+$b$における$f(x)$の微分係数$f'(a),	f'(b)$を考察したが，閉領域$D=[U]$，$U$は領域，で定義された
+$2$変数の関数$f(x,y)$については，一般には$D$の境界点$(a,b)$における偏微分係数は考えない．
+一般に閉領域の境界は複雑であって，$(a,b)$が$D$の境界点である揚合，
+たとえば$f(x,b)$の定義域$\{ x \: | \: (x,b) \in D \}$はし
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=90mm,height=67mm]{p269.bmp}
+	\label{p269}
+\end{figure}
+ぱしば$a$を含む如何なる区間も含まない集合となり，$f(x,b)$の$x=a$における
+微分係数が定義できないからである．たとえば，$D$が単位円板:$D=\{(x,y)	\:	|	\:
+x^2	+	y^2	\leqq	1 \}$ならば$f(x,1)$の定義域はただ一つの点から成る集合$\{	0	\}$となり，
+$D	=	\{	\:	(x,y)	\:	|	\:	y	\leqq	x	\leqq	2y,	0	\leqq	y	\leqq	1	\}$ならば
+$f(x,0)$も$f(0,y)$もただ一つの点から成る集合$\{	0	\}$で定義された関数となる．
+
+\例{6.4}
+比較的複雑な境界をもつ閉区域の一例として
+\[
+	D	=	[	U	],
+	\quad,
+	U	=	\left\{
+				(x,y)	\:	\bigg|
+							\:	-	\sin	\frac{3\pi}{x}	<	y	<	2,	0	<	x	<	3
+			\right\}
+\]
+を考察する．$D$の境界は$x$の関数$y	=	-	\sin	(3	\pi	/	x),	0	<	x	<	3$，グラフ$G$と三
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=75mm,height=75mm]{p270.bmp}
+\end{figure}
+つの線分の合併集合:
+\[
+	G	\cup	\{	(0,y)	\:	|	\:	-1	\leqq	y	\leqq	2	\:	\}
+		\cup	\{	(x,2)	\:	|	\:	0	\leqq	x	\leqq	3		\:	\}
+		\cup	\{	(3,y)	\:	|	\:	0	\leqq	y	\leqq	2		\:	\}
+\]
+である．たとえば原点$(0,0)$は$D$の境界点であるが，$\{(	x	,	0)	\:	|	\:	(x,0)	\in	D	\:	\}$は
+$x$軸上の互いに共通点をもたない無数の閉区間$[3/3,3/2]	\:	,	\:	[3/5,3/4]	\:,	\:[3/7,3/6],	\cdots	$
+と2点から成る集合$	\{	3,0	\}$の合併集合であって，$0$を含む如何なる区間も含まない．――
+
+$f(x,y)$の定義域の部分集合$D$が閉領域である揚合には，上に述べたように，一般には$D$の境界点では
+$f_D(x,y)$の偏鐡分係数を考えないのであるから，
+$f(x,y)$が$D$で$x$について偏微分可能である，などとはいわない．ただし，例外として，
+$D$が$D=\{	\:	(x,y)	\:	|	\:	a	\leqq	x	\leqq	b	,	c	\leqq	y	\leqq	d \:	\}$のような閉矩形である揚合，
+たとえば，各$y,	\:	c	\leqq	y	\leqq	d,$についての$x$の関数$f(x,y)$が閉区間$[a,b]$で微分可能ならば
+$f(x,y)$は$D$で$x$について偏微分可能である，あるいは，$D$で偏導関数$fx(x,y)$が存在するという．
+
+\定理{6.6}
+或る領域$D$で関数$f(x,y)$の偏導関数$f_x(x,y),	f_y(x,y)$が存在して連続ならば
+$f(x,y)$は$D$で微分可能である．
+
+\証明
+$D$に属する任意の点$(x,y)$において
+\begin{equation}
+	f(x+h	,	y+k)	=	f(x,y)	+	f_x	(x,y)	h	+	f_y	(x,y)	k	+	o	\left(	\sqrt{h^2	+	k^2}	\right)
+\label{eq6x15}
+\end{equation}
+
+であることを証明すればよい（定義6.4を確認する）．
+\[
+	f(x+h,y+k)	-	f(x,y)	=	f(x+h,	y+k)	-	f(x,y+k)	+	f(x,y+k)	-	f(x,y)
+\]
+であるが，$f(x+h,y+k)$は$h$の微分可能な関数であるから，平均値の定理（定理3.5）により，
+\[
+	f(x+h,y+k)	-	f(x,y+k)	=	f_x	(x+	\theta	h	,	y+	k)h	,\quad	0	<	\theta_1	<	1.
+\]
+仮定により$f_x(x,y)$は$D$で連続であるから
+\[
+	f_x	(x	+	\theta	h	,	y+k)=	f_x(x,y)	+	\varepsilon_1	(	h,k),
+\]
+とおくと，
+\[
+	\lim_{(h,k)\rightarrow(0,0)}	\varepsilon_1	(	h,k)	=	\varepsilon_1(0,0)	=	0.
+\]
+また$f(x,y+k)$は$k$について微分可能であるから
+\[
+	f(x,y+k) - f(x,y) = f_y(x, y+ \theta_2 k) k ,\quad 0 < \theta_2 < 1.
+\]
+仮定により$f_y(x,y)$は$D$で連続であるから
+\[
+	f_y ( x, y+ \theta_2 k) = f_y ( x,y) + \varepsilon_2 ( h,k),
+	\quad
+	\lim_{(h,k)\rightarrow(0,0)}	\varepsilon_2	(	h,k)	=	\varepsilon_2(0,0)	=	0,
+\]
+故に
+\[
+	f(x+h,y+k)	-f(x,y)	=	f_x(x,y)h	+	f_y(x,y)	k	+	\varepsilon_1(h,k) h	+	\varepsilon_2	(h,k) k.
+\]
+つぎに，$\varepsilon_1(h,k) h	+	\varepsilon_2	(h,k) k = o(\sqrt{h^2+k^2})$を示す．
+Schwarts の不等式より，
+\begin{align*}
+	( \varepsilon_1(h,k) h + \varepsilon_2 (h,k) k )^2 
+\leqq ( \varepsilon_1(h,k)^2 + \varepsilon_2 (h,k)^2 )  (h^2+k^2)	\\
+\Rightarrow
+	\frac{( \varepsilon_1(h,k) h + \varepsilon_2 (h,k) k )^2}{\sqrt{h^2+k^2}}
+\leqq ( \varepsilon_1(h,k)^2 + \varepsilon_2 (h,k)^2 )  \sqrt{h^2+k^2}	
+\end{align*}
+であるから，
+$(h,k) \to 0$のとき，$\text{(左辺)} \to 0$であるから，同時に$\text{(右辺)} \to 0$で，
+\[
+	( \varepsilon_1(h,k) h + \varepsilon_2 (h,k) k )^2)
+=	\frac{( \varepsilon_1(h,k) h + \varepsilon_2 (h,k) k )^2}{\sqrt{h^2+k^2}} \sqrt{h^2 + k^2}
+= o(\sqrt{h^2+k^2})
+\]
+である．
+以上より，（\ref{eq6x15}）が成り立つ．
+\■
+
+領域$D$で$f_x(x,y)	,	f_y	(x,y)$が存在しても連続でなければ$f(x,y)$は必ずしも
+$D$で微分可能であるとは限らない．たとえば$f(x,y)$を例6.2で導入した関数
+\[
+	f(x,y) = 	\begin{cases}
+							\quad	\displaystyle	\frac{2xy}{x^2+y^2}	\quad	&	(x,y)	\ne	(0,0)	\\
+							\quad	0										\quad	&	(x,y)	=	(0,0)
+						\end{cases}
+\]
+とすれば，$\R^2$で$f_x	(x,y),	f_y(x,y)$は存在する
+\footnote{
+例6.3
+}が，原点$(0,0)$で$f(x,y)$は連続でないから微分可能でない
+\footnote{
+「微分可能であれば連続である」（定義6.4の直下）の対偶．
+}
+．この揚合$y	\ne	0$のとき
+\[
+	f_x	(x,y)	=	\frac{2y^4	-	2x^2y}{(x^2	+	y^2)^2}
+\]
+\footnote{
+例6.3
+}
+であるから，$f_x	(0,y)=	2/y$となって$f_x(x,y)$は原点$(0,0)$で連続でない．
+
+領域$D$で$f_x	(x,y)	,	f_y	(x,y)$が存在して連続であるとき，$f(x,y)$は$D$で\underline{連続微分可能}である，
+あるいは$D$で滑らかであるという．$D$で連続微分可能な関数は，上記の定理6.6により，
+$D$で微分可能であって，したがって，連続である
+\footnote{
+定義6.4直下
+}
+．
+
+\例{6.5}
+\S 3.3，例3.5で$f(0)=0$,$x	\ne	0$のとき$f(x)	=	x^2	\sin	(1/x)$と定義された
+$x$の関数$f(x)$は数直線上の各点$x$で微分可能であるが，導関数$f'(x)$は$x=0$
+で連続でないことを示した．同様に，関数$f(x)$を
+\begin{align*}
+	&f(0,0)	=	0,	\\
+	&f(x,y)	=	(x^2	+	y^2)	\sin	\left(	\frac{1}{\sqrt{x^2+	y^2}}	\right)
+	\quad	\text{($(x,y)	\ne	(0,0)$のとき)}
+\end{align*}
+と定義すれば$f(x,y)$は平面$\R^2$上の各点で微分可能であるが，
+偏導関数$f_x(x,y)$，$f_y(x,y)$は原点$(0,0)$で連続でない．
+\証明
+$(x,y)	\ne	(0,0)$のとき，$f(x,y)$は$x$および$y$について偏微分可能で
+
+\begin{align*}
+	f_x(x,y)	&=	2x	\sin	\left(	\frac{1}{\sqrt{x^2+y^2}}	\right)		+	(x^2+y^2)\cos \left(	\frac{1}{\sqrt{x^2+y^2}}\right)	\left(	-	\frac{1}{2}(x^2+y^2)^{-3/2}	\cdot 2x	\right)	\\
+						&=	2x	\sin	\left(	\frac{1}{\sqrt{x^2+	y^2}}	\right)
+								-	\frac{x}{\sqrt{x^2+y^2}}	\cos	\left(	\frac{1}{\sqrt{x^2	+	y^2}}	\right),	\\
+	f_y(x,y)	&=	2y	\sin	\left(	\frac{1}{\sqrt{x^2+	y^2}}	\right)
+								-	\frac{y}{\sqrt{x^2+y^2}}	\cos	\left(	\frac{1}{\sqrt{x^2	+	y^2}}	\right),
+\end{align*}
+明らかに$f_x(x,y),	f_y	(x,y)$は$(x,y)	\ne	(0,0)$のとき連続であるから，
+定理6.6により，$f(x,y)$は$(x,y)	\ne	(0,0)$のとき微分可能である．
+また$|f(h,k)|	\leqq	h^2	+	k^2$であるがら
+\[
+	\frac{|f(x,y)|}{\sqrt{h^2+k^2}}	\leqq	\sqrt{h^2+k^2}
+\]
+となり，
+\[
+	\frac{|f(x,y)|}{\sqrt{h^2+k^2}}	\to	0	\quad	((h,k) \to (0,0))
+\]
+である。すなわち$	f(h,k)$は無限小であり，さらに
+\[
+	f(h,k)	=	\frac{f(h,k)\sqrt{h^2+k^2}}{\sqrt{h^2+k^2}}	=	o(\sqrt{h^2+k^2})
+\]
+であることと原点$(0,0)$においては，$f(0,0)	=	0$であることを合わせて
+\[
+	f(h,k)	=	f(0,0)	+	o	(	\sqrt{h^2	+	k^2}).
+\]
+すなわち$f(x,y)$は原点$(0,0)$においても微分可能である．
+しかし，$y=0$とおけば，
+$x	\ne	0$のとき
+\[
+	f_x	(x,0)	=	2x	\sin	\left(	\frac{1}{|x|}	\right)	\pm	\left(\frac{1}{|x|}	\right)
+\]
+となるから，極限，$\displaystyle	\lim_{(x,y)\rightarrow(0,0)}	f_x	(x,y)$は存在しない．
+したがって$f_x	(x,y)$は$(0,0)$で連続でない．
+同様に$f_y	(x,y)$も$(0,0)$で連続でない（定理6.6の逆は成立しない）．
+

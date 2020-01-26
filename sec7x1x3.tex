@@ -1,0 +1,186 @@
+\subsection{累次積分}
+
+2変数$x,y$の関数$f(x,y)$が矩形$ K = \{ (x,y) \: | \: a \leqq x \leqq b , c \leqq y \leqq d \: \}$
+ににおいて連続ならば，定理6.19，$(1^\circ)$により，$\displaystyle \int_a^b f(x,y) dx$
+は区間$[c,d]$において連続な$y$の関数であって，したがって定積分
+\[
+	\int_c^d dy \int_a^b f(x,y) dx 
+= \int_c^d
+		\left(
+			\int_a^b f(x,y) dx
+		\right) dy
+\]
+が定まる．
+
+\定理{7.3}
+\begin{equation}
+	\int_a^b \int_c^d f(x,y) dx dy
+=
+\int_c^d dy \int_a^b f (x,y) dx.
+\label{sec7x10}
+\end{equation}
+\証明
+
+矩形Kの任意の分割
+$\varDelta ( \{ x_0 , x_1 , \cdots , x_m \} , \{ y_0 , y_1 , \cdots , y_n \}) , a = x_0 < x_1 < \cdots < x_m = b,
+c=y_0 < y_1 < y_n = d,$を考える．
+\[
+	\int_c^d dy \int_a^b f(x,y ) dx = \sum_{k=1}^n \int_{y_{k-1}}^{y_k} dy \int_a^b f(x,y) dx
+\]
+であるが，$\displaystyle \int_a^b f(x,y) dx$は$y$の連続関数であるから，平均値の定理（定理4.2）
+により
+\[
+	\int_{y_{k-1}}^{y_k} \int_a^b f(x,y) dx
+= \int_a^b f(x , \eta_k ) dx \cdot ( y_k - y_{k-1}), \quad y_{k-1} < \eta_k < y_k,
+\]
+なる$ \eta_k$が存在する．故に
+\[
+	\int_c^d dy \int_a^b f(x,y) dx = \sum_{k=1}^{n} \int_a^b f(x, \eta_k) dx \cdot ( y_k - y_{k-1}).
+\]
+同様に，平均値の定理により
+\[
+	\int_{x_{j-1}}^{x_j} f(x, \eta_k ) dx 
+= f(\xi_{jk}, \eta_k) ( x-j - x_{j-1}), \quad x_{j-1} < \xi_{jk} < x_j,
+\]
+冷る$ \xi_{jk}$が存在するから
+\[
+	\int_a^b f(x, \eta_{k} ) dx
+= \sum_{j=1}^{m} f(\xi_{jk} , \eta_k ) (x_j - x_{j-1}).
+\]
+故に
+\[
+	\int_c^d dy \int_a^b f(x,y) dx = 
+\sum_{j=1}^{m}
+\sum_{k=1}^{n}	f( \xi_{jk}, \eta_k ) ( x_j - x_{j-1} ) ( y_k - y_{k-1}).
+\]
+この等式の$ \delta [ \varDelta ] \to 0$のときめ極限をとれば直ちに
+\[
+	\int_c^d dy \int_a^b f(x,y) dx = \int_a^b \int_c^d f(x,y) dx dy
+\]
+を得る．
+\■
+
+この定理7.3は2重積分が1変数の関数の定積分の反復に帰着することを示す．
+$ \displaystyle \int_c^d dy \int_a^b f(x,y) dx$なる形の積分を\textbf{累次積分}
+（repeated integral）という．$x$と$y$を入れ替えて考えれば
+\begin{equation}
+	\int_a^b \int_c^d f(x,y) dx dy
+= \int_a^b dx \int_c^d f(x,y) dy
+\label{sec7x11}
+\end{equation}
+を得る．したがって
+\[
+	\int_c^d dy \int_a^b f(x,y) dx = \int_a^b dx \int_c^d f(x,y) dy.
+\]
+これは（\ref{eq6x50}）の等式に他ならない．
+
+矩形$K = \{ (x,y) \: | \: a \leqq x \leqq b , c \leqq y \leqq d \}$で連続な蘭数$ f(x,y)$に対して
+\[
+	F(x,y) = \int_a^x \int_c^y f(x,y) dx dy , \quad a < x \leqq b , \quad c < y \leqq d,
+\]
+を$x,y$の関数として考察する．（\ref{eq7x10}）により
+\[
+	F(x,y) = \int_c^y dy \int_a^x f(x,y) dx.
+\]
+故に$F(x,y)$\underline{は$K$で定義された関数となり}，
+$F(a,y) = F(x,c) = 0$である．積分変数$x,y$を$t,u$と書き換えれば，
+\[
+	F(x,y) = \int_c^y du \int_a^x f(t,y) dt.
+\]
+定理6.20，$(1^\circ)$により
+\[
+	\varPhi (x,y) = \int_a^x f(t,y) dt
+\]
+は2変数$x,u$の連続kな数である．偏導関数$ \varPhi_x (x,u) = f (x,y)$は明らかに2変数
+$x,y$のの連続関数であるから，定理6.20，$(2^\circ)$により
+\[
+	F(x,y) = \int_c^y \varPhi (x,u) du
+\]
+は$x,y$の連続微分可能な関数であって
+\begin{align*}
+	F_y(x,y) &= \varPhi(x,y) = \int_a^x f(t,y) dt,	\\
+	F_x(x,y) = \int_c^y \varPhi_x (x,y) du = \int_c^y f(x,u) du,
+\end{align*}
+故に偏導関数$ F_{yx} (x,y) , F_{xy} (x,y)$が存在して
+\begin{equation}
+	F_{yx} (x,y) = F_{xy} (x,y) = f(x,y).
+\label{sec7x12}
+\end{equation}
+$F(x,y)$を1変数の連続関数$f(x)$の不定積分$ \displaystyle F(x) = \int_a^x f(x) dx$の類似と考えれば，
+この（\ref{eq7x12}）は$F' (x) = f(x)$の類似となる．1変数の場合には，逆に，$x$の
+関数$F(x)$が微分可能で$F'(x) = f(x)$ならば$ \displaystyle \int_a^b f(x) dx = F(b) - F(a)$であった
+（微分積分額の基本公式（\ref{eq4x15}）．このことを類似として次の定理が成り立つ：
+
+\定理{7.4}
+\footnote{
+亀谷俊司“解析学入門”，p303，例3
+}
+$ f(x,y)$を矩形$K= \{ (x,y) \: | \: a \leqq x \leqq b, c \leqq y \leqq d \: \}$において連続な関数とする．
+このとき$K$において$F(x,y)$の偏導関数$F_y (x,y) , F_{yx} (x,y)$が存在して連続で
+\begin{equation}
+	F_{yx} (x,y) = f(x,y)
+\label{sec7x13}
+\end{equation}
+ならば，
+\begin{equation}
+	\int_a^b \int_c^d f(x,y) dx dy = F(b,d) - F(a,d) - F(b,c) + F(a,c).
+\label{sec7x14}
+\end{equation}
+
+\証明
+\[
+	F_0 ( x,y ) = \int_a^x \int_c^y f(x,y) dx dy
+\]
+とおいて差
+\[
+	G(x,y) = F(x,y) - F_0 (x,y)
+\]
+をとれば，$K$において偏導関数$G_y (x,y) , G_{yx} (x,y)$が存在して連続で，
+（\ref{eq7x12}）と（\ref{eq7x13}）により
+\[
+	G_{yx} (x,y) = 0
+\]
+となる．故に$G_y(x,y)$は$x$によらない$y$だけの連続関数：$G_y (x,y) = \beta (y)$であって，
+したがって$\displaystyle B(y) = \int_c^y \beta (y) dy$とおけば
+\[
+	\frac{\partial }{\partial y} (G(x,y) - B(y)) = 0.
+\]
+故に$G(x,y) - B(y)$は$y$によらない$x$だけの関数$A(x)$である．すなわち
+\[
+	G(x,y) = A(x) + B(y),
+\]
+したがって
+\[
+	F(x,y) = F_0 (x,y) + A(x) + B(y).
+\]
+故に，$ F_0 (b,c) = F_0 (a,d) = F_0 (a,c) = 0$であるから
+\[
+	F(b,d) - F(a,d) - F(b,c) + F(a,c) = F_0(b,d).
+\]
+
+\注意{}
+
+この定理7.4は2変数の連続関数$ f(x,Y)$に対して（\ref{eq7x13}）の関数$F (x,y)$が1変数の連続関数
+$f(x)$に対する不定積分$F(x) = \displaystyle \int f(x) dx$の類似であることを示している．
+しかし$F(x,y)$を$f(x,y9$のの不定積分とはいわない．2変数の関数の不定積分は考えないのある．
+したがって$ \displaystyle \int_a-b \int_c-d f(x,y) dx dy$を特に定積分とよぶ必要もないことになる．
+$ \displaystyle \int_a^b \int_c^d f(x,y) dx dy$を単に積分と呼ぶ所以である．
+
+（\ref{eq7x14}）において$b,d$を$x,y$で置き換えれば，
+\begin{equation}
+	F(x,y) = \int_a^x \int_c^y f(x,y) dx dy + F(x,c) + F(a,y) - F(a,c)
+\label{sec7x15}
+\end{equation}
+を得る．上の定理7.4では偏導関数$F_x (x,y)$の存在は海底していないが，
+$F_x (x,y) $が存在すれば，Schwarz の定理（定理6.9）により，$F_x{xy} (x,y)$も存在して
+$F_x{xy} x,y ) = F_{yx} 8x,y)$．このことは（\ref{eq7x15}）からもただちに導かれる．
+実際，$\displaystyle F_0 (x,y) = \int_a^x \int_c^y f(x,y) dx dy$については，
+上記の結果により，$F_{0x} (x,y) , F_{0xy} (x,y)$が存在して，
+$F_{0xy} (x,y) = f(x,y)$であるから，
+\[
+	F_x (x,y) = F_{0x} (x,y) + F_x (x,c),
+\]
+しだがって
+\[
+	F_{xy} (x,y) = f(x,y) = F_{yx} (x,y).
+\]

@@ -1,0 +1,126 @@
+\subsection{積分の性質}
+
+つぎの定理は1変数の関数の定積分の性質に関する定理4.1の類似である．
+
+\定理{7.1}
+$ f(P) = f(x,y) , g(P) = g(x,y), P=(x,y)$，
+を矩形$ K= \{ (x,y)  \: | \:  a \leqq x \leqq b , c \leqq y \leqq d \}$において連続な関数とナる．
+\begin{list}{}{}
+	\item	$(1^\circ)$ $a = \alpha_0 < \alpha_1 < \cdots < \alpha_p = b , c= \gamma_1 < \cdots < \gamma_i < \cdots < \gamma_q = d$として
+$K$を$pq$個の矩形$K_{hi} = \{ (x,y) \: | \: \alpha_{h-1} \leqq x \leqq \alpha_h , \: \gamma_{i-1} \leqq y \leqq \gamma_i \}, \: h=1,2, \cdots , p , i=1,2, \cdots , q$，
+に分割すれば
+\begin{equation}
+	\int_K f(x,Y dx dy = \sum_{h=1}^{p}	\sum_{i=1}^{q}	\int_{K_{hi}} f(x,y) dx dy.
+\label{sec7x5}
+\end{equation}
+	\item $(2^\circ)$ $c_1 , c_2$を任意の定数としたとき
+\begin{equation}
+	\int_K ( c_1 f(P) + c_2 g(P) ) dw = c_1 \int_K f(P) dw + c_2 \int_K g(P) dw.
+\label{sec7x6}
+\end{equation}
+	\item $(3^\circ)$
+矩形$K$においてつねに$f(x,y) \geqq g(x,y)$ならば
+\[
+	\int_K f(x,y) dx dy \geqq \int_K g(x,y) dx dy
+\]
+であって，$K$で恒等的に$f(x,y) = g(x,y)$である場合を除けば
+\[
+	\int_K f(x,y) dx dy > \int_K g(x,y) dx dy.
+\]
+	\item $(4^\circ)$
+\begin{equation}
+	\left|
+		\int_K f(x,y ) dx dy
+	\right|
+	\leqq	\int_K | f(x,y) | dx dy.
+\label{sec7x7}
+\end{equation}
+\end{list}
+
+\証明
+
+$(1^\circ)$
+積分の定義7.1 において分割$\varDelta$を
+$ \alpha_h \in \{ x_0 , x_1 , \cdots , x_m \}, \gamma_i \in \{ y_0 , y_1 , \cdots , y_n \}$
+なるように選んで $ \alpha_h = x_j(h) , \gamma_k(i)$とすれば，（\ref{eq7x4}）の記法を用いて
+\[
+	\sum_{j=1}^{m}
+	\sum_{k=1}^{n}	f(P_{jk}) \omega_{jk}
+	=
+	\sum_{h=1}^{p}
+	\sum_{i=1}^{q}
+	\sum_{j=j(h-1)+1}^{j(h)}
+	\sum_{k=k(i-1)+1}^{k(i)}
+	f(P_{jk}) \omega_{jk}.
+\]
+この両辺の$ \delta [ \varDelta ] \to 0 $のときの極限をとれば直ちに
+（\ref{eq7x5}）を得る．
+$(2^\circ)$，$(3^\circ)$，$(4^\circ)$は定理4.1，$(2^\circ)$，$(3^\circ)$，$(4^\circ)$，$(5^\circ)$と同様にして証明される．
+
+\■
+
+（\ref{eq7x5}）はまた
+\[
+	\int_a^b \int_c^d f(x,y) dx dy = \sum_{h=1}^{p}\sum_{i=1}^{q} \int_{a_{h-1}}^{\alpha_h} \int_{\gamma_{i-1}}^{\gamma{i}} f(x,y) dx dy
+\]
+と書かれる．
+一般に点集合$ S \subset \R^n$に対してSの開核，すなわち$S$の内点全体の集合を
+$(S)$で表わす1).
+\footnote{
+開核を表わす定まった記号はないが，ここでは高木貞治“解析概論”に従って$()$を用いる．
+これは開区間を表わす記号$(a,b)$の類似であろう．
+}
+たとえば矩形$K = \{ ( x,y) \: | a \leqq x \leqq b , c \leqq y \leqq d \}$の開核は
+$(K)= \{ (x,y) | \; ( a < x < b , c < y < d \}$．矩形$K$をどの二つも内点を共有しない有限個の
+矩形$K_\lambda, \lambda = 1 ,2 , \cdots , \nu$，の合併集合として
+\[
+	K = k_1 \cup K_2 \cup \cdots \cup K_\lambda \cup \cdots \cup K_\nu , \quad (K_\lambda ) \cap ( K_\mu ) = \varnothing \quad ( \lambda \ne \rho),
+\]
+と表わすことを$K$を有限個の矩形$K_1, \cdots , K_\lambda , \cdots , K_\nu$に\textbf{分割する}という．
+上記の定理7.1，$(1^\circ)$において$K$を$pq$個の矩形$K_{hi}$に分割したのはその一例である．
+
+\定理{7.2}
+$f(x,y$が矩形$K= \{ (x,y) \: | \: a \leqq x \leqq b , c \leqq y \leqq d \}$において連続ならば，
+$K$を$ \nu $個の矩形$_1 , \cdots , K_2 , \cdots , K_\nu , \cdots , K_\mu$に分割したとき
+\begin{equation}
+	\int_K f ( x,y) dx dy = \sum_{\lambda = 1 }^\nu \int_{ K_\lambda } f(x,y ) dx dy.
+\label{sec7x8}
+\end{equation}
+
+\証明
+$K_\lambda = \{ (x,y) \: | \: a_\lambda \leqq x \leqq b_\lambda , c_\lambda \leqq d_\lambda \}$とし、
+実数の$a_1 , b_1 , a_2 , b_2 , \cdots , a_\lambda , b_\lambda \cdots , a_\nu , b_\nu$のうち
+互いに異なるものを大きさの順に並べて得られた有限数列を$ \alpha_0 , \alpha_1, \cdots , \alpha<h , \cdots , \alpha_p$
+実数$c_1 , d_1 , \cdots , c_\lambda ,d_\lambda , \cdots , c_\nu , d_\nu$の相異なるものを大きさの順に並べ
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=100mm,height=100mm]{p322.bmp}
+	\caption{}
+	\label{p322}
+\end{figure}
+た有限数列を$\gamma_0 , \gamma_1 , \cdots , \gamma_i, \cdots \gamma_q$とする．
+$ \alpha= \alpha_0 < 0 < \alpha 1 < \cdots < \alpha_p=b , c=\gamma_0 < \gamma_1 < \cdots < \gamma_q =d$なることは明らかであろう．
+\[
+	K_{hi} = \{ ( x,y ) \: | \: \alpha_{h-1} \leqq x \leqq \alpha_h , \: \gamma_{i-1} \leqq y \leqq \gamma_i \}
+\]
+とおく．$ a_\lambda = \alpha_k(\lambda ) , b_\lambda =\alpha_{h(\lambda)} , c_\lambda = \gamma_{j(\lambda} ) , d_\lambda = \gamma_{i(\lambda)}$とすれば，
+矩形$K_\lambda$は$(h ( \lambda ) - k( \lambda )) ( i ( \lambda ) - j (\lambda) )$個の小矩形
+$ K_{hi} , h= k(\lambda ) + 1 , \cdots , h( \lambda ) , i=j ( \lambda ) + 1 , \cdots , i (\lambda)$,
+に分割される．（上図について見れば，たとえば$K_2$は，$a_2 = \alpha_2 = \alpha2, b_2=\alpha_4, c_2 = \gamma_0,
+d_2 = \gamma_2$であるから，4個の矩形$K_{31}, K_{41}, K_{32} , K_{42}$に分割される．）故に，定理7.1，
+$(1^\circ)$により，
+\begin{equation}
+	\int_{K_\lambda} f(x,y) dx dy =
+  \sum_{h=k( \lambda ) + 1}^{h ( \lambda )} \sum_{i=j ( \lambda ) + 1}^{i( \lambda )} \int_{K_{hi}} f(x,y) dx dy.
+\label{sec7x9}
+\end{equation}
+$K$をまず$ \nu $個の矩形$ K_\lambda , \lambda = 1 , 2 , \cdots , \nu $，に分割し，つぎに各$K_\lambda$を小矩形$ K_{hi},
+h= k ( \lambda )  ;1 , \cdots , h ( \lambda ) , i = j ( \lambda ) + 1 , \cdots , i ( \lambda  9$，に分割すれば，
+$K$は結局$pq$個の小矩形$ K_{hi} , h = 1, 2 , \cdots , p , k=1,2, \cdots , q$，に分割される．故に，
+（\ref{eq7x9}）と（\ref{eq7x5}）により，
+\[
+	\sum_{\lambda=1}^{\nu} \int_K{K_\lambda} f(x,y) dx dy = \sum_{h=1}^{p} \sum_{i=1}^q \int_{K_{hi}}
+f(x,y) dx dy = \int_K f(x,y) dx dy.
+\]
+\■
+

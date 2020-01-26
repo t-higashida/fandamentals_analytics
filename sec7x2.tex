@@ -1,0 +1,209 @@
+\section{広義積分}
+
+\subsection{広義積分}
+
+1変数の関数の場合，開区間，たとえば$ ( a , + \infty)$において連続な関数$f(x)$の
+積分$ \displaystyle \int_a^{+\infty} f(x) dx$は広義積分として定義ｓた（\S \ref{sec4x3x1}）．
+2変数の場合も，同様に，平面上の領域$D$において連続な関数$f(x,y)$の積分$\displaystyle	\int_D f(x,y) dx dy$
+を広義積分として定義する．
+
+矩形塊$A_1, A_2, \cdots , A_m, \cdots$が次の二つの条件を満たすとき矩形塊列$\{ A_m \}$は
+\underline{内部から単調に$D$に収束する}ということにする：
+
+\begin{list}{}{}
+	\item	(ⅰ) $A_1 \subset A_2 \subset \cdots \subset A_{m+1} \subset \cdots , A_m \subset D$．
+	\item (ⅱ) $ \bigcup_{m=1}^\infty (A_m) = D$．
+\end{list}
+ここで$(A_m)$はもちろん$A_m$の開核を表わす．
+
+各自然数$m$に対して矩形塊$A_m$をつぎのように定めれば，内部から単調に$D$に収束する
+矩形塊列$\{ A_m \}$の典型的なものが得られる．各自然数$m$Zに対して
+$\delta_n = 1/2^m$とおいて平面$\R^2$全体を辺の長さが$\delta_m$に等しい無数の正方形
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=50mm,height=50mm]{p330.bmp}
+	\caption{}
+	\label{p330}
+\end{figure}
+\begin{equation}
+	Q_{hk}^m = \{ (x , y) \: | \; h\delta_m - \delta_m \leqq x \leqq h \delta_m , k \delta_m - \delta_m \leqq y \leqq k \delta_m \},	
+\label{eq7x22}
+\end{equation}
+に分割する．そして$D$が有界である場合には$A_m$を$Q_{hk}^m$のうち$D$に含まれるもの全部の合併集合とする：
+\[
+	A_m = \bigcup_{Q_{hk}^m \subset D} Q_{hk}^m.
+\]
+上図は$A_1$と$A_3$を示す．$D$が有界でない揚合には$A_m$を$D \cap \{ (x,y) \: | \: | x| < m, |y| < m \}$
+に含まれる$Q_{hk}^m$の合併集合とする：
+\[
+	A_m = \bigcup_{Q_hk}^m \subset D_m Q_{hk}^m , \quad \{ ( x,y ) \in D \: | \: |x| < m , \quad |y| < m \}.
+\]
+このようにして定めた矩形塊$A_m$の列$\{ A_m \}$が内部から単調に$D$に収束すること，すなわち上記の条件(i)，(ii)を満たすことは明らかであろう．――
+
+内部から単調に$D$に収束する矩形塊列$ \{ A_m \}$を一つ定めて
+\[
+	\sigma_m = \int_{A_m} | f(x,y) | dx dy , \quad s_m = \int_{A_m} f(x,y) dx dy
+\]
+とおく．$A_m \subset A_{m+1}$であるから，定理7.5，$(5^\circ)$により$ \sigma_m \leqq \sigma_{m+1}$，すなわち
+$ \{ \sigma_m \}$は単調非減少数列である．故に$ \{ \sigma_m \}$は収束するか$+\infty$に発散するかのいずれかである
+（\S \ref{sec1x5x2}）．
+
+$(1^\circ)$ $\{ \sigma_m \}$が収束する場合，(\ref{eq7x20})により
+\[
+	n > m \quad \text{のとき} | s_n - s_m | \leqq \sigma_n - \sigma_m.
+\]
+故に数列$ \{ s_m \}$も収束する，すなわち極限$ \displaystyle \lim_{m\rightarrow \infty} \int_{A_M} f(x,y) dx dy$が存在する．
+この極限を$f(P) = f(x,y), P~(x,y)$，の$D$上の籍部ｎといい，$\displaystyle \int_D f(x,y) dx dy$あるいは
+$ \displaystyle \int_D f(P) dw$で表わす：
+\begin{equation}
+	\int_D f(P) d w = \int_D f(x,y) dx dy= = \lim_{m\rightarrow \infty} \int_{A_m} f(x,y) dx dy.
+\label{eq7x23}
+\end{equation}
+この場合
+\[
+	\int_D | f(x,y) | dx dy = \lim_{m\rightarrow \infty} \int_{A_m} | f(x,y) | dx dy < + \infty
+\]
+であるから，\underline{広義積分} $ \displaystyle f(x,y) dx dy$は \underline{は絶対収束する}という．
+
+$(2^\circ)$
+$ \{ \sigma_m \}$が$+ \infty$に発散する場合，$\displaystyle \lim_{m\rightarrow \infty} \int_{A_m } | f(x,y) | dx dy = + \infty$であるから，
+広義積分$ \displaystyle \int_D | f(x,y) | dx dy$は$+ \infty$ \underline{に発散する}といい
+\[
+	\int_D | f(x,y) | dx dy = + \infty
+\]
+と書く．
+
+以上内部から単調に$D$に収束する一つの矩形塊列$ \{ A_m \}$にに基づいて$D$上の広翻を考察したが，
+\underline{広義積分} $ \displaystyle \int_D f(x,y) dx dy$ \underline{が絶対収束するか否か}，
+\underline{また絶対収束するときの積分} $\displaystyle \int_D f(x,y) dx dy$ \underline{の値は}，
+\underline{矩形塊列}$ \{ A_m \}$ \underline{の選び方に因らない．}
+
+\証明
+
+矩形塊 $A , A \subset D$，を任意にとったとき，$D = \subset_{m=1}^\infty ( A_m)$ であるから，
+$A$は開集合 $(A_1) , (A_2) , \cdots , (A_m), \cdots $で覆われている．$A$はもちろん有界閉集合
+であるから，Heine-Borelの被覆定理(定理1.28)により，$A$は$(A_1), \cdots , (A_m),$の有限個で覆われる，
+すなわち自然数$m$十分大きくとれば
+\[
+	A \subset (A_1) \cup (A_2) \cup \cdots \cup (A_m) = (A_m) \subset A_m
+\]
+となる．したがって（\ref{eq7x19}) により
+\[
+	\int_A | f(P) | dw \leqq \int_{A_m} | f(P) | dw.
+\]
+故に
+\[
+	\int_A |f(P) dw \leqq \int_D |f(P) | dw = \lim_{m\rightarrow \infty} \int_{A_m} |f(P) | dw.
+\]
+したがってすべての矩形塊$A, \; A \subset D$，を考えたとき，
+$ \displaystyle \left\{ \int_A | f(P) | dw \: \bigg| \: A \subset D \right\}$
+が上に有界ならば$ \displaystyle \int_D | f(P) dw < + \infty$，上に有界でないならば
+$ \displaystyle \int_D | f(P) | dw = + \infty$であって，上に有界である場合には
+\begin{equation}
+	\int_D | f(P) | dw = \sup_{A \subset D} \int_A | f(P) | dw.
+\label{eq7x24}
+\end{equation}
+すなわち$ \displaystyle \int_D | f(P) | dw = \lim_{m\rightarrow \infty} \int_{A_m} | f(P) | dw $は内部から
+単調に$D$に収束する矩形塊列$ \{ A_m \}$の選び方によらない．
+
+$ \displaystyle \lim_{m\rightarrow \infty} \int_{A_m} | f(P) | dw = \int_D | f(P) | dw < \infty $なる場合には，
+（\ref{eq7x20}）により，$A \subset A_m$なるとき
+\[
+	\left| \int_{A_m} f(P) dw - \int_A f(P) dw \right|
+\leqq 
+	\int_{A_m} | f(P) | dw - \int_A | f(P) | dw
+\]
+となるから，$ m \to \infty$のときの極限をとれば不等式
+\begin{equation}
+	\left| \int_D f(P) dw - \int_A f(P) dw \right|
+	\leqq
+	\int_D | f(P) | dw - \int_A | f(P) | dw
+\label{eq7x25}
+\end{equation}
+を得る．
+
+この不等式は五∫(P)4ω融ノ(P伽欄の選び方によらないことを示す.
+実際に$\{ B_m \}$を内部から単調に$D$に収束する任意の矩形塊列とすれば
+$ \displaystyle \lim_{m\rightarrow \infty} \int_{B_m} | f(P) | dw 
+= \int_D | f(P) | dw$であるから，（\ref{eq7x25}）により，
+$m \to \infty$のとき
+\[
+	\left|	\int_D f(P) dw - \int_{D_m} f(P) dw 
+	\right|
+	\leqq
+	\int_D | f(P) | dw - \int_{B_m} | f(P) | dw \to 0
+\]
+となる．
+\■
+
+たとえぱ区間$[a, + \infty)$で連続な関数$f(x)$の広義積分については絶対収束し
+ない場合にも極限$ \displaystyle \lim_{t\rightarrow \infty} \int_a^t f(x) dx$が存在すれば
+広義積分$ \displaystyle \int_a^{+\infty} f(x) dx$は条件秋霜ｋするといい，
+その値を
+\[
+	\int_a^{+\infty} f(x) dx = \lim_{t\rightarrow +\infty} \int_a^t f(x) dx
+\]
+と牢義した(§4.3)．この定義は全く自然であるが，これを2変数の関数の場合に自然に拡張することはできない．
+2変数の関数については条件収束する広義積分は考えないことにする．
+
+\定理{7.6}
+
+$ f(P) = f(x,y) = g(p) =g(x,y) , P = (x,y) $，を領域$D$において連続麟とし，
+$ \displaystyle	\int_D |f(P)| dw < + \infty$，$\displaystyle \int_D |g(P)| dw < + \infty$
+とする．このとき
+\begin{list}{}{}
+	\item	$(1^\circ)$ 任意の定数 $c_1 , c_2$に対して
+\[
+	\int_D (c_1 f(P) + c_2 g(P) ) dw = c_1 \int_D f(P) dw + c_2 \int_D g(P) dw.
+\]
+	\item $(2^\circ)$
+領域$D$においてつねに$f(P) \geqq g(P)$ならば
+\[
+	\int_D f(P) dw \geqq \int_D g(P) dw
+\]
+であって，$D$で恒等的に$f(P) = g(P)$である場合を除けば
+\[
+	\int_D f(P) dw > \int_D g(P) dw.
+\]
+	\item $(3^\circ)$
+\begin{equation}
+	\left|	\int_D f(P) dw 
+	\right|
+	\leqq
+	\int_d |f(P) | dw.
+\label{eq7x26}
+\end{equation}
+	\item $(4^\circ)$ $E$が$D$の部分領域：$E \subset D$ならば
+\begin{equation}
+	\left|	\int_D f(P) dw - \int_E f(P) dw | \leqq \int_D | f(P) | dw - \int_E |f(P) | dw.
+	\right|
+\label{eq7x27}
+\end{equation}
+\end{list}
+\証明
+
+$(1^\circ)$，$(2^\circ)$は広義積分の定義 (\ref{eq7x23})と定卑7.5 $(2^\circ)$，$(4^\circ)$によって明らかである.
+$(4^\circ)$を証明するために(\ref{eq7x22})の正方形$Q_{hk}^m$のうち$ D \cap \{ \: (x,y) \: | \: | x| < m , |y| < m \}$
+に含まれるものの合併集合を$A_m , E \cap \{ \: ( x,y ) \: | \: | x | < m , | y | < m \: \}$に含まれるものの合併集合を
+$B_m$とすれば，$ B_m \subset A_m$となるから，定理7.5，$(5^\circ)$により，
+\[
+	\left|	\int_{A_m} f(P) dw - \int_{B_m} f(P) dw 
+	\right|
+	\leqq
+	\int_{A_m} | f(P) | dw - \int_{B_m} | f(P) dw.
+\]
+この両辺の$m \to \infty$のときの極限をとれば，広義積分の定義により，$(\ref{eq7x27})$を得る．
+$(2^\circ)$を証明するために$ h(P) = f(P) - g(P) $とおけば，仮定により$D$においてつねに
+$h(P) = | h(P) | \leqq 0$である．ゆえに，$ n < m $ならば，$A_n \subset A_m$となるから
+(\ref{eq7x19})により$ \displaystyle \int_{A_n} h(P) dw \leqq \int_{A_m} h(P) dw$，すなわち
+$\displaystyle 	\left\{
+									\int_{A_m} h(P) dw
+								\right\}
+$は$ \displaystyle	\int h(P) dw $に収束する単調非減少数列である．
+故に，定理7.5 $(3^\circ)$により，
+$ \displaystyle \int_D h(P) dw \geqq 0$であって
+あって$D$で恒等的に$h (P) = f(P) -  g(P) = 0$である揚合を除けば
+\[
+	\int_D f(PI dw - \int_D g(P) dw = \int_D h(P) dw > 0
+\]
+\■

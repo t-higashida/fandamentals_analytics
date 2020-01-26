@@ -1,0 +1,87 @@
+\subsection{単調数列}
+\label{sec1x5x2}
+
+$a_1	<	a_2	<		a_3	<	\cdots	<	a_n	<	\cdots$なるとき数列$\{a_n\}$は単調に増加する．
+$\{a_n\}$は\textbf{単調増加}（monotone	increasing）である，などといい，
+$a_1	>	a_2	>	a_3	>	\cdots	>	a_n	>	\cdots	$
+なるとき$\{a_n\}$は単調に減少する，\textbf{単調減少}（monotone	decreasing）である，などという．
+
+また$a_1	\leqq	a_2	\leqq	\cdots	\leqq	a_n	\leqq	\cdots$なるとき
+数列$\{a_n\}$は\textbf{単調非減少}であるといい，
+$a_1	\geqq	a_2	\geqq	\cdots	\geqq	a_n	\geqq	\cdots$なるとき
+$\{a_n\}$は\textbf{単調非増加}であるという．
+
+\定理{1.20}
+\begin{list}{}{}
+	\item	(1$^\circ$)　上に有界な単調非減少数列はその上限に収束する．
+	\item	(2$^\circ$)　下に有界な単調非増加数列はその下限に収束する．
+\end{list}
+\証明
+$\{a_n\}$を上に有界な単調非減少数列とする．
+$\displaystyle
+	a=	\sup_n	a_n	\:	(a=\inf_n	a_n)
+$
+とおけば，すべての$n$について$a_n	\leqq	a	\:	(a_n	\geqq	a)$．また，正の実数$\varepsilon$
+が与えられたとき，$a-\varepsilon	<	a_n	\:	(a_n	<	a	+	\varepsilon)$なる$n$が存在するから，
+この$n$の一つを$n_0(\varepsilon)$とすれば，
+$n	>	n_0(\varepsilon)$のとき
+\[
+	a-\varepsilon	<	a_{n_0(\varepsilon)}	<	a_n	<	a,
+	\quad
+	(a	<	a_n	<	a_{n_0(\varepsilon)}	<	a+\varepsilon)
+\]
+したがって
+\[
+	|a_n	-	a|	<	\varepsilon
+\]
+すなわち
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_n	=	a.
+$
+これで(1$^\circ$)が証明された．(2$^\circ$)もまったく同様に証明される．
+\■	
+
+単調非減少数列$\{a_n\}$が上に有界でないときには，任意の実数$\mu$に対して
+$a_n	>	\mu$なる$n$が存在する．この$n$の一つを$n_0(\mu)$
+とすれば，$n	>	n_0(\mu)$のとき
+\[
+	a_n	\geqq	a_{n_0(\mu)}	>	\mu
+\]
+となる．一般に数列$\{a_n\}$について，任意の実数$\mu$に対応して
+自然数$n_0(\mu)$が定まって
+\[
+	n	>	n_0(\mu)	\quad	\text{ならば}	a_n	>	\mu
+\]
+となるとき，$\{a_n\}$は正の\textbf{無限大に発散}（diverge）するといい
+\[
+	\lim_{n	\rightarrow	\infty}	a_n	=	+	\infty
+\]
+と書く．上に有界でない単調非減少数列は，すなわち，正の無限大に発散するのである．
+
+同様に，任煮の$\mu$に対応して$n_0(\mu)$が定まって
+\[
+	n	>	n_0(\mu)	\quad	\text{ならば}	\quad	a_n	<	\mu
+\]
+となるとき，$\{a_n\}$は負の無限大に発散するといい，
+\[
+	\lim_{n	\rightarrow	\infty}a_n	=	-	\infty
+\]
+と書く．下に有界でない単調非増加数列は負の無限大に発散する．
+
+数列$\{a_n\}$が正または負の無限大に発散するとき，
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}=+\infty
+$または
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}=-\infty
+$
+と書くけれども，このとき極限
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_n
+$
+が\underline{存在するとはいわない．}
+極限
+$\displaystyle
+\lim_{n	\rightarrow	\infty}	a_n$
+が存在するといえば，それは数列$\{a_n\}$がその極限に
+\underline{収束}することを意味するのである．

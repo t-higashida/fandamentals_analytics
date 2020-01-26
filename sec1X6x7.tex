@@ -1,0 +1,280 @@
+\subsection{$n$次元空間}
+\label{sec1x6x7}
+
+二つの実数の対$(x,y)$の全体の集合を$\R^2$で表したのと同様に、$n$個の実数の組
+$(x_1,x_2,x_3,\cdots,x_n)$の全体の集合を$\R^n$で表す。そして$\R^n$を$n$次元空間とよび、$\R^n$の要素$x_1,x_2,\cdots,x_n)$を$n$次元空間$\R^n$の点という．$\R^1=\R$に数直線，$\R^2$は平面，$\R^3$は空間である。
+
+$\R^n$の2点$P=(x_1,x_2,\cdots,x_n)$，$Q=(y_1,y_2,\cdots,y_n)$に対して
+$	\sqrt{\sum_{k=1}^n	(x_k-y_k)^2}$を$P$と$Q$の距離といい、
+$|PQ|$で表す．
+\[
+	|PQ|=\sqrt{(x_1-y_1)^2+(x_2-y_2)+	\cdots	(x_n-y_n)^2}.
+\]
+$P$を$\R^2$の点，$\varepsilon$を正の実数としたとき，
+\[
+	U_\varepsilon(P)	=	\{Q	\in	\R^n	\:	|	\:	|QP|	<	\varepsilon	\}
+\]
+を$P$の$\varepsilon$近傍とよぶ．$U_\varepsilon(P)$は$\R^n$内の$P$を中心とする
+半径$\varepsilon$の球の内部である。$\R^n$の点の場合$S$が与えられたとき、
+$U_\varepsilon(P)	\subset	S$なる正の実数$\varepsilon$が存在するならば
+$P$を$S$の内点といい，すべての正の実数$\varepsilon$に対して
+$U_\varepsilon(P)	\not\subset	S$，$U_\varepsilon(P)	\cap	S	\ne	\varnothing$ならば
+$P$を$S$の境界点という．そして$S$の境界点全体の集合を$S$の境界とよぶ．
+$S$とその境界の合併集合を$S$の閉包といい，$[S]$で表わす．以下同様にして，
+平面上の点集合について本節で述べたことはそのまま$\R^n$の点集合に拡張される．
+
+私の見る所では，数学は，物理学が物理的現象を記述しているのと同様な意味で，
+数学的現象を記述しているのであって，数学を理解するにはその数学的現象を
+感覚的に把握することが大切である．このためにはその数学的現象が全貌を現わす
+いろいろな場合のうち，なるべく簡単な場合を考察するのが効率的である．
+その数学的現象の全貌を簡単な場合について把握しておけば，それを一般の場合に
+拡張することは極めて容易である．本節で述べた点の集合に関する現象は
+$\R^n$までいかなくても平面$\R^2$においてその全貌を現わす．しかも平面の場合，
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{7.5mm}
+\begin{picture}(8,5)
+
+	%[U_\varepsilon(P)]
+	\thicklines	\put(8,3){\circle{4}}
+	\thicklines	\put(8,3){\circle{0.04}}
+	\thinlines	\put(8,3){\vector(0,1){2}}
+	\thinlines	\put(8,0.25){$[U_\varepsilon(P)]$}
+	\thinlines	\put(8,2.5){$P$}
+							\put(7.7,4){$\varepsilon$}
+
+	%[U_\varepsilon(P)]
+	\thicklines	\put(0,3){\arc{4}{0}{0.125}}
+	\thicklines	\put(0,3){\arc{4}{0.25}{0.375}}
+	\thicklines	\put(0,3){\arc{4}{0.5}{0.625}}
+	\thicklines	\put(0,3){\arc{4}{0.75}{0.825}}
+	\thicklines	\put(0,3){\arc{4}{1.00}{1.125}}
+	\thicklines	\put(0,3){\arc{4}{1.25}{1.375}}
+	\thicklines	\put(0,3){\arc{4}{1.5}{1.625}}
+	\thicklines	\put(0,3){\arc{4}{1.75}{1.825}}
+	\thicklines	\put(0,3){\arc{4}{2.00}{2.125}}
+	\thicklines	\put(0,3){\arc{4}{2.25}{2.375}}
+	\thicklines	\put(0,3){\arc{4}{2.5}{2.625}}
+	\thicklines	\put(0,3){\arc{4}{2.75}{2.825}}
+	\thicklines	\put(0,3){\arc{4}{3.00}{3.125}}
+	\thicklines	\put(0,3){\arc{4}{3.25}{3.375}}
+	\thicklines	\put(0,3){\arc{4}{3.5}{3.625}}
+	\thicklines	\put(0,3){\arc{4}{3.75}{3.825}}
+	\thicklines	\put(0,3){\arc{4}{4.00}{4.125}}
+	\thicklines	\put(0,3){\arc{4}{4.25}{4.375}}
+	\thicklines	\put(0,3){\arc{4}{4.5}{4.625}}
+	\thicklines	\put(0,3){\arc{4}{4.75}{4.825}}
+	\thicklines	\put(0,3){\arc{4}{5.00}{5.125}}
+	\thicklines	\put(0,3){\arc{4}{5.25}{5.375}}
+	\thicklines	\put(0,3){\arc{4}{5.5}{5.625}}
+	\thicklines	\put(0,3){\arc{4}{5.75}{5.825}}
+	\thicklines	\put(0,3){\arc{4}{6.00}{6.125}}
+	\thinlines	\put(0,3){\vector(0,1){2}}
+	\thicklines	\put(0,3){\circle{0.04}}
+	\thinlines	\put(0,2.5){$P$}
+	\thinlines	\put(0,0.25){$U_\varepsilon(P)$}
+							\put(-0.3,4){$\varepsilon$}
+
+\end{picture}
+\end{center}
+\end{figure}
+紙の上に点集合の図を描いて現象を‘見る’ことができる．本節で平面上の点集合を
+扱った所以である．もちろん図を持って論証に代えてはならない．図は現象を
+symbolicに現わしているのであって現象そのものではない．例えば
+$U_\varepsilon(P)$もその閉包$[U_\varepsilon(P)]$も実際には図では区別できない
+筈であるが，上図はその区別をsymbolicに示している．
+
+￥textbf{数直線上の点集合}
+
+数直線$\R$上では，点$a	\in	\R$の$\varepsilon$近傍は開区間：
+$U_\varepsilon(a)=(a-\varepsilon,a+\varepsilon)$である．
+開区間$(a,b)$は開集合，閉区間$[a,b]$は閉集合であって，
+$(a,b)$，$[a,b]$の境界は共に2点$a,b$から成る集合$\{a,b\}$である．
+また$(a,b)$の閉包は$[a,b]$である．集合$S	\subset	\R$が上に有界なとき，
+$S$の上限は$S$の最大な境界点である．$S$が下に有界なときには，$S$の下限は$S$の最小な
+境界点である．
+
+閉区間$I=[a,b]$は，定理1.28により，コンパクトである．したがって，
+$I$が無数の開区間：$U_1,U_2,U_3,\cdots$で覆われているならば，$I$はそのうちの
+有限個：$U_1,U_2,\cdots,U_m$で覆われる．このことを\S 1.5.5で閉区間が非可算集合である
+ことの証明に用いた．
+
+開区間$(a,+\infty)$，$(-\infty,b)$，$(-\infty,+\infty)$も開集合である．
+区間$[a,+\infty)$，$(-\infty,b]$は閉集合であるが，これを閉区間とは言わない．
+閉区間はコンパクトな空間を意味するのである．
+
+$\{a_n\}$を有界な$n	\ne	m$のとｋ$a_n	\ne	a_m$となる数列とする．
+このとき\S 1.5.3でのべた$\{a_n\}$の下極限の性質によれば，下極限$\liminf_{n\rightarrow\infty}	a_n$
+は項$a_n$全体から成る集合$S$の最小の集積点である．
+同様に上極限$\limsup_{n\rightarrow\infty}a_n$は$S$の最大の集積点である．
+
+\subsubsection{問　題}
+
+\textbf{1　}
+循環しない無限小数はすべて無理数を表すことから，無理数が数直線上到るところ稠密に
+分布していることを導け
+
+\証明
+
+任意に与えられた二つの無理数$\beta$と$\gamma$をそれぞれ$\beta=b.b_1b_2b_3	\cdots$，
+$\gamma=c.c_1c_2c_3\cdots$と循環しない無限小数であらわしたとき
+$\beta	<	\gamma$なら最初に$b_n<c_n$となる$n$が存在する．
+このとき例えば$m>n$，$b_m	\leqq	8$，に対して$\beta$の小数第$m$位だけを$b_m$より
+大きい数字で置き換えた無限小数を$\gamma_m$とすると，これらは互いに相異なる循環しない
+無限小数，つまり無理数であって$\beta	<	\gamma_m	<	\gamma$である．
+このような$\gamma_m$は無数にあるから$\beta$と$\gamma$の間に相異なる無理数が無数に
+存在することがわかる．
+\■
+
+\textbf{別証}
+『現代数学レクチャーズＡ－１，集合と位相』p120，定理１４より
+
+\begin{align*}
+	X-\overline{(X-\Q)}	&=	\Int	(X-(X-\Q))	\\
+											&=	\Int	\Q	\\
+											&=	\varnothing
+\end{align*}
+よって$X=\overline{X-\Q}$となり，無理数全体の集合は$\R$において稠密である．
+\■
+
+\textbf{2　}
+任意の実数$\alpha,\beta$に対して$|\alpha	+	\beta|	\leqq	|\alpha|	+	|\beta|$
+であることを証明せよ．
+
+\証明
+$|a+b|	\geqq	0,	|a|+|b|	\geqq	0$だから
+$|a+b|^2	\leqq	(|a|+|b|)^2$を示せばよい．
+\begin{align*}
+	(|a|	+	|b|)^2	-	|a+b|^2	&=	|a|^2	+2|a||b|	+	|b|^2	-a^2	-2ab	-b^2	\\
+														&=	2|a||b|	-	2ab	\\
+														&=	(*)
+\end{align*}
+ここで$|a||b|	\geqq	ab$だから
+\[
+	(*)	\geqq	0
+\]
+よって$|a+b|^2	\leqq	(|a|	+	|b|)^2$．
+\■
+\textbf{3　}
+数列$\{a_n\}$が実数$\alpha$に収束しているとき，
+$\displaystyle
+	b_n	=	\frac{a_1	+	a_2	+	\cdots	+	a_n}{n}
+$とおけば，数列$\{b_n\}$も$\alpha$に収束することを証明せよ．
+
+\証明
+任意の正の実数$\varepsilon$が与えられたとき
+$\displaystyle	M=n_0\left(\frac{\varepsilon}{2}	\right)$
+を十分大きくとると$n	>	M$ならば
+$\displaystyle	|a_n	-	\alpha|	<	\frac{\varepsilon}{2}$である．
+また$n>M$ならば
+\begin{align*}
+	|b_n	-	\alpha|	&=			\frac{1}{n}|(a_1-\alpha)+	\cdots	+	(a_n	-	\alpha)|	\\
+									&\leqq	\frac{1}{n}\{	|a_1	-	\alpha|	+	\cdots	+	
+																				|a_M	-	\alpha|	+	|a_{M+1}-\alpha|	+	\cdots
+																				|a_n	-	\alpha|\}	\\
+									&<			\frac{1}{n}	\left\{
+																				|a_1	-	\alpha|	+	\cdots	+	
+																				|a_M	-	\alpha|	+	|n-M|\frac{\varepsilon}{2}
+																			\right\}	\\
+\end{align*}
+となる．いま$|a_1-\alpha|,\cdots,	|a_M-\alpha|$の最大値を$K$とおくと，
+上の最後の式
+\[
+	\leqq	\frac{1}{n}	\left(
+											MK+\frac{n-M}{2}\varepsilon
+										\right)
+	<			\frac{1}{n}	\left(
+											MK+\frac{n}{2}\varepsilon
+										\right)
+\]
+となる．ここで，$n>N$ならば$MK/n	<	\varepsilon/2$となるような十分大きな自然数
+$N$に対して$n>N$のとき
+\[
+	\frac{1}{n}\left(MK+\frac{n}{2}\varepsilon	\right)	<	\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+となるから，$b_n	\rightarrow	\alpha$である．
+\■
+
+\textbf{4　}
+$\displaystyle
+	\sum_{n=1}^\infty	\frac{1}{n^2}	<	2
+$なることを証明せよ．
+
+\証明
+$n	\geqq	2$のとき，
+$\displaystyle	\frac{1}{n^2}	<	\frac{1}{(n-1)n}	=	\frac{1}{n-1}-\frac{1}{n},$
+したがって
+\[
+	\sum_{n=3}^m	\frac{1}{n^2}	
+<	\sum_{n=3}^m
+		\left(	\frac{1}{n-1}-\frac{1}{n}	\right)
+=	\frac{1}{2}	-	\frac{1}{m},
+\]
+ゆえに
+\[
+	\sum_{n=3}^\infty	\frac{1}{n^2}	\leqq	\frac{1}{2},
+\]
+したがって
+\[
+	\sum_{n=3}^\infty	\frac{1}{n^2}	\leqq	\frac{1}{2}
+\leqq	1	+	\frac{1}{4}+\frac{1}{2}	<	2.
+\]
+\■
+
+\textbf{5　}
+上に有界な数列$\{a_n\}$はその上極限
+$\displaystyle	\limsup_{n\rightarrow\infty}a_n$に収束する部分列をもつことを証明せよ．
+
+\証明
+$\alpha =	\limsup	a_m$とおく．いま$\displaystyle	\varepsilon=\frac{1}{n}$に対して
+$\alpha +	\varepsilon >	a_m	>	\alpha -	\varepsilon$となる
+$a_m$が無数に存在するからそのうちの一つを選んで$a_{m(n)}$とする．このとき任意の
+$n$に対して$\displaystyle	|a_{m(n)}-\alpha|	<	\frac{1}{n}$であるから
+部分列$\{a_{m(n)}\}$は$\alpha$に収束する
+
+\textbf{6　}
+有界数列が収束する部分列をもつことから有界点列が収束する部分列をもつことを導け．
+
+\textbf{7　}
+$n$次元空間$\R^n$の3点$P,Q,R$に関する三角不等式：
+\[
+	|PR|	\leqq	|PQ|	+	|QR|
+\]
+の証明を述べよ．
+
+\textbf{8　}
+与えられた実数$a,b$，$a>b>0$，に対して
+$\displaystyle	
+	a_1=\frac{1}{2}(a+b)$
+$b_1	=	\sqrt{ab}$，
+$\displaystyle
+	a_2	=	\frac{1}{2}(a_1+b_1)$，
+$b_2	=	\sqrt{a_1b_1}$，
+$\cdots$，
+$\displaystyle	
+	a_n=\frac{1}{2}(a_{n-1}+b_{n-1})$，
+$b_n	=	\sqrt{a_{n-1}b_{n-1}}$，
+$cdots$とおけば数列$\{a_n\}$と$\{b_n\}$
+は同一の極限値に収束することを証明せよ（この極限値は$a$と$b$の\textbf{算術幾何平均}とよばれる）．
+
+\textbf{9　}
+与えられた実数$a$，$a>0$，に対して
+$\displaystyle
+	a_1=\frac{1}{2}\left(a+\frac{2}{a}\right)$，
+$\displaystyle
+	a_2=\frac{1}{2}\left(a_1+\frac{2}{a_1}\right)$，
+$\cdots	,$
+$\displaystyle
+	a_n=\frac{1}{2}\left(a_{n-1}+\frac{2}{a_{n-1}}\right)$，
+$\cdots	,$
+とおけば
+$\displaystyle
+	\lim_{n\rightarrow\infty}	a_n	=	\sqrt{2}$
+となることを証明せよ（藤原松三郎“微分積分学Ⅰ”，p.132，問4）．
+
+\textbf{10　}
+$\displaystyle
+	\lim_{n\rightarrow\infty}	n^{1/n}	=	1$なることを証明せよ
+（まず$n	\leqq	3$のとき$n^{1/n}	\geqq	(n+1)^{1/(n+1)}$
+なることを確かめよ）．
+

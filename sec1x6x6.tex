@@ -1,0 +1,393 @@
+\subsection{複素平面}
+\label{sec1x6x6}
+
+$z=x+iy$，$x,y$は実数，$i=\sqrt{-1}$，の形の数を複素数（complex	number)ということは
+高校数学で学んだ．
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{7.5mm}
+\begin{picture}(8,5)
+
+	%座標軸
+	\thicklines\put(1,1){\vector(1,0){6}}
+	\thicklines\put(4,0){\vector(0,1){4}}
+
+	%O
+	\put(3.6,0.6){$O$}
+
+	%半径
+	\thicklines	\path(4,1)(5.4142,2.4142)
+	\thicklines	\put(5.4142,2.4142){\circle{0.03}}
+	\thinlines	\put(5.6,2.4142){$z=x+iy=(x,y)$}
+
+\end{picture}
+\end{center}
+\end{figure}
+二つの複素数$z=x+iy$，$w=u+iv$の和，差，積は
+\begin{align*}
+		z+w	&=(x+u)		+	i(y+v),	\\
+		z-w	&=(x-u)		+	i(y-v),	\\
+		zw	&=(xu-yv)	+	i(xu+yu)	\\
+\end{align*}
+で与えられる．このように定義された複素数の加法，減法，乗法に関して結合法則，交換法則，分配法則が
+成り立つことは容易に確かめられる．
+
+数直線$\R$上の点$x$はすなわち実数$x$であった．これと同様に，平面$\R^2$上の点
+$(x,y)$はすなわち複素数$z=x+iy$であると考えたとき，$\R^2$を\textbf{複素平面}という．
+複素平面を$\C$で表わす．複素数$z=x+iy$の\textbf{絶対値}(absolute	value)を
+\[
+	|z|=\sqrt{x^2+y^2}
+\]
+と定義する．二つの複素数$z=x+iy$，$w=u+iv$に対して
+\[
+	|z-w|=\sqrt{(x-u)^2+(y-v)^2}
+\]
+は，すなわち，平面$\C$上における点$z$と点$w$の距離だる．特に$|z|$は$z$と点0の距離である．
+したがって，三角不等式(1.20)により，
+\[
+		|z+w|	\leqq	|z|+|w|.
+\]
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{7.5mm}
+\begin{picture}(12,5)
+
+	\thicklines	\path(3,0)(8,2)(9,5)(3,0)
+	\thicklines	\put(2.5,-0.3){$0$}
+	\thicklines	\put(8,1.7){$w$}
+	\thicklines	\put(9,5.2){$z+w$}
+	\thicklines	\qbezier[35](8,2)(9.5,3.5)(9,5)
+	\put(9.2,3.5){$|z|$}
+\end{picture}
+\end{center}
+\end{figure}
+
+$z=x+iy$に対して$x-iy$を$z$の\textbf{共役複素数}（conjugate)といい，$\overline{z}$で表わす：
+\[
+	\overline{z}=x-iy.
+\]
+明らかに
+\begin{align*}
+	&\overline{\overline{z}}=z,	\\
+	&\overline{z+w}=\overline{z}+\overline{w},	\\
+	&\overline{z-w}=\overline{z}-\overline{w},	\\
+	&\overline{z	\cdot	w}=\overline{z}	\cdot	\overline{w}.	\\
+\end{align*}
+また
+\[
+	|z|^2=|\overline{z}|^2	=	x^2	+	y^2	=	z	\cdot	\overline{z}.
+\]
+したがって
+\[
+	|zw|^2	=	zw\overline{zw}=z\overline{z}w\overline{w}	=	|z|^2	|w|^2,
+\]
+故に
+\[
+	|zw|=|z||w|
+\]
+$z\ne	0$ならば，$|z|	>	0$となるから，$z	\cdot	\overline{z}/|z|^2	=	1$．すなわち，$0$でない複素数$z$は
+逆数$1/z=\overline{z}/|z|^2$をもつ．複素数全体の集合$\C$は，したがって，体をなす．体$\C$を
+\textbf{複素数体}(the field of complex	numbers)と呼ぶ．
+
+$z=x+iy$に対して$x$を$z$の\textbf{実数部}(real part)といい$\text{Re}\:	z$で表わし，$y$を$z$の
+\textbf{虚数部}(imaginary	part)といい$\text{Im}\:	z$で表わす．明らかに
+\[
+	\text{Re}	\:	z	=\frac{z+\overline{z}}{2},	\quad	\text{Im}	\:	z	=	\frac{z-\overline{z}}{2i}
+\]
+である．$\text{Re}\:	z	\leqq	|z|$なることは明らかであが，このことを用いれば不等式：
+$|z+w|	\leqq	|z|	+	|w|$を次にように簡単に証明することができる．
+\begin{align*}
+	|z+w|^2	&=	(z+w)(\overline{z}+\overline{w})=z\overline{z}+z\overline{w}+w\overline{z}+w\overline{w}	\\
+					&=	|z|^2	+	2	\text{Re}\:	z\overline{w}	+	|w|^2	\leqq	|z|^2	+2|z\overline{w}|+|w|^2	\\
+					&=	|z|^2+2|z||w|+|w|^2	=	(|z|+|w|)^2,
+\end{align*}
+故に
+\[
+	|z+w|	\leqq	|z|+|w|.
+\]
+以上，複素数の加・減・乗・除に関する基本的な法則について述べた．こららの基本法則から容易に色々な
+公式が導き出される．まず$z	\ne	0$のとき，
+$\overline{w/z}\overline{z}=\overline{(w/z	\cdot	z)}=\overline{w}$であるから
+\[
+	\overline{\left(\frac{w}{z}\right)}	=	\frac{\overline{w}}{\overline{z}}.
+\]
+これと上記の和・差・積・共役に関する法則によって，有限個の複素数$z_1,z_2,\cdots,z_n$から有限回
+の加・減・乗・除の演算のよって共役複素数$\overline{w}$を得る．
+たとえば，$z_1	\ne	0$としたとき，
+\[
+						w		=	\sum_{k=1}^n	\frac{1}{k}\left(\frac{z_2}{z_1}\right)^k	\quad\text{ならば}\quad	
+	\overline{w}	=	\sum_{k=1}^n	\frac{1}{k}\left(\frac{\overline{z_2}}{\overline{z_1}}\right)^k
+\]
+公式$|zw|=|z||w|$を繰り返し用いれば，
+\[
+	|z_1z_2z_3	\cdots	z_n|=|z_1||z_2||z_3|\cdots	|z_n|.
+\]
+特に
+\[
+	|az^n|=|a||z|^n.
+\]
+また$|z|	\leqq	|z-w|+|w|$であるから$|z|-|w|	\leqq	|z-w|$，
+同様に$|w|-|z|	\leqq	|w-z|$．
+故に
+\[
+	||z|-|w||	\leqq	|z-w|.
+\]
+不等式$|z+w|	\leqq	|z|+|w|$により
+\[
+	|z_1+z_2+\cdots	+	z_n|	\leqq	|z_1|	+	|z_2|+\cdots	+	|z_n|.
+\]
+したがって
+\[
+	|a_0	+	a_1	z	+	\cdots	+	a_n	z^n	\leqq	|a_0||z|	+	\cdots	|a_n||z|^n,
+\]
+等々．
+
+複素数$\C$は平面$\R^2$，複素数$z=x+iy$は$\R^2$上の点$(x,y)$であるから，本節で平面上の
+点集合について述べたことはそのまま複素平面上の複素数の集合について成り立つ．
+たとえば，複素数列$\{z_n\}$はすなわち点列$\{z_n\}$であり，複素数列$\{z_n\}$が
+複素数$w$に収束する：$\displaystyle	\lim_{n\rightarrow\infty}z_n=w$ということは，
+点列$\{z_n\}$が点$w$に収束すること，すなわち，
+\[
+	\lim_{n\rightarrow\infty}|z_n-w|=0
+\]
+であることを意味する．点列の収束に関するCauchyの判定法（定理1.25）もそのまま複素数列について
+成り立つ．すなわち
+
+\定理{1.31}
+複素数列$\{z_n\}$が収束するための必要かつ十分な条件は，任意の正の実数$\varepsilon$に対応して
+一つの自然数$n_0(\varepsilon)$が定まって
+\[
+	n	>	n_0(\varepsilon),	\quad	m	>	n_0(\varepsilon)	\quad	\text{ならば}	\quad	|z_n-z_m|	<	\varepsilon
+\]
+となることである．
+\■
+
+複素数列$\{z_n\}$が収束するならば$\{|z_n|\}$も収束して
+\[
+	|\lim_{n\rightarrow\infty}	z_n	|=\lim_{n\rightarrow\infty}|z_n|.
+\]
+なぜなら，$||z_n|-|w||	\leqq	|z_n-w|	\:	(<	\varepsilon )	$によって
+$\displaystyle	\lim_{n\rightarrow\infty}z_n=w$ならば
+$\displaystyle	\lim_{n\rightarrow\infty}|z_n|=|w|$となるからである．
+
+実数の無限級数の場合と同様に，複素数$z_n$からなる無限級数$\displaystyle	\sum_{n=1}^\infty	z_n$，
+すなわち
+$z_1+z_2+z_3	+	\cdots	+	z_n	+	\cdots	$についても，その部分和
+\[
+	w_n=z_1+z_2+	\cdots	+	z_n
+\]
+の成す複素数列$\{w_n\}$が収束するとき$\displaystyle	\sum_{n=1}^\infty	z_n$は収束するといい，
+$\displaystyle	w	=	\lim_{n\rightarrow\infty}w_n$をこの無限級数の和とよび，
+\[
+	w=\sum_{n=1}^\infty	z_n	=	z_1+z_2+z_3+	\cdots	+	z_n	+	\cdots
+\]
+と書く．
+
+\定理{1.32}
+級数$\displaystyle	\sum_{n=1}^\infty	|z_n|$が収束するならば
+$\displaystyle	\sum_{n=1}^\infty	z_n$も収束する．
+
+\証明
+$w_n=z_1+z_2+	\cdots	+z_n$，$\sigma_n=|z_1|+|z_2|	+	\cdots	+|z_n|$とおけば，$m<n$のとき
+\[
+	|w_n	-	w_m|=\left|\sum_{k=m+1}^n	z_k	\right|	\leqq	\sum_{k=m+1}^n	|z_k|	=	|\sigma_n	-	\sigma_m|.
+\]
+故に，Cauchyの判定法(定理1.31)により，数列$\{\sigma_n\}$が収束すれば
+数列$\{w_n\}$も収束する．
+\■
+
+級数$\displaystyle	\sum_{n=1}^\infty	|z_n|$が収束するとき級数
+$\displaystyle	\sum_{n=1}^\infty	z_n$は\textbf{絶対収束}するという．
+
+\定理{1.33}
+収束する級数$\displaystyle	\sum_{n=1}^\infty	r_r,\quad	r_n	\geqq	0,$が与えられたとする．
+級数
+$\displaystyle	\sum_{n=1}^\infty	z_n$に対して自然数$\nu$を
+\[
+	n	>	\nu	\quad\text{のとき}	\quad		|z_n|	\leqq	r_n
+\]
+となるように定めることが出来るならば，$\displaystyle	\sum_{n=1}^\infty	z_n$は
+絶対収束する．
+
+\証明
+$n	>	\nu$とすれば
+\[
+	\sum_{k=1}^\nu	|z_n|	\leqq	\sum_{k=1}^{\nu}	|z_n|	+	\sum_{k=\nu+1}^n	r_n
+												\leqq	\sum_{k=1}^{\nu}	|z_n|	+	\sum_{k=\nu+1}^\infty	r_n
+												\leqq	\infty
+\]
+故に$\displaystyle	\sum_{n=1}^\infty	|a_n|	<	\infty$
+\■
+級数$\displaystyle	\sum_{n=1}^\infty	z_n$が絶対収束するとき
+\[
+	\left|	\sum_{n=1}^\infty	z_n	\right|	\leqq	\sum_{n=1}^\infty	|z_n|.
+\]
+この不等式の証明も容易である．すなわち，$\displaystyle	w_n=\sum_{k=1}^n	z_k$とおけば，
+$\displaystyle	|w_n|	\leqq	\sum_{k=1}^n	|z_k|$となるから，
+\[
+	\left|\sum_{n=1}^\infty	z_n	\right|	=			\left|	\lim_{n\rightarrow\infty}w_n	\right|
+																			\stackrel{\text{☆}}{=}			\lim_{n\rightarrow\infty}|w_n|	
+																			\leqq	\lim_{n\rightarrow\infty}\sum_{k=1}^n|z_n|
+																			=			\sum_{n=1}^\infty	|z_n|.
+\]
+（☆）については$\displaystyle	\lim_{n\rightarrow\infty}	w_n=z$とおくと，（定理1.31前の記述より）
+$\displaystyle	\lim_{n\rightarrow\infty}|w_n-z|=0$．よって
+$\displaystyle	\lim_{n\rightarrow\infty}(|w_|-|z|)	\leqq	\lim_{n\rightarrow\infty}|w_n-z|=0$
+であるから$\displaystyle	\lim_{n\rightarrow\infty}|w_n|	=	\lim_{n\rightarrow\infty}|z|$
+――．
+
+$z$を任意の複素数として級数$\displaystyle	\sum_{n=0}^\infty	\frac{z^n}{n!}$を考察する．
+\underline{この級数が絶対収束する}ことの証明は\S 1.5，例1.3で扱った，$z=x$が実数の場合の証明と
+同様である．すなわち，$\nu	\geqq	2|z|$なる自然数$\nu$を一つ定めれば，$n	>	\nu$のとき
+$\left(
+\displaystyle	1	>	\frac{2|x|}{\mu},\frac{2|x|}{\mu+1},\frac{2|x|}{\mu+2},\cdots
+\right)$，
+\begin{align*}
+	\frac{|z|^n}{n!}&=	\frac{|z|^\nu}{\nu!}
+											\frac{|z|}{\nu+1}
+											\frac{|z|}{\nu+2}
+											\cdots
+											\frac{|z|}{n}	\\
+									&=	\frac{2|z|^\nu}{\nu!}
+											\frac{2|z|}{\nu+1}
+											\frac{2|z|}{\nu+2}
+											\cdots
+											\frac{2|z|}{n}
+											\left(	\frac{1}{2}	\right)^n	\\
+									&<	\frac{2|z|^\nu}{\nu!}
+											\cdot		1	
+											\cdot		1		
+											\cdots	1	\cdot
+											\left(	\frac{1}{2}	\right)^n	\\
+									&=	\frac{|z|^\nu}{\nu	!}	\left(\frac{1}{2}	\right)^{n-\nu}
+										=	\frac{|2z|^\nu}{\nu	!}	\frac{1}{2^n}.
+\end{align*}
+$M_\nu	=	\nu^\nu/\nu!$とおけば，$|2z|^\nu	/	\nu	!	\leqq	M_\nu$であるから，$n	>	\nu$のとき
+\begin{equation}
+	\frac{|z|^n}{n!}	<	\frac{M_\nu}{2^n}
+\end{equation}
+となる．故に，$\displaystyle	\sum_{n=0}^\infty	M_\nu/2^n	=	2M_\nu$であるから，
+定理1.33により，$\displaystyle	\sum_{n=0}^\infty	z^n	/	n!$は絶対収束する．
+\[
+	w_m=\sum_{n=0}^m	\frac{z^n}{n!}
+\]
+とおけば，$m	\geqq	\nu$のとき
+\begin{equation}
+	\left|	\sum_{n=0}^\infty	\frac{z^n}{n!}	-	w_m	\right|
+	\leqq		\sum_{n=m+1}^\infty	\frac{|z|^n}{n!}
+	<				\sum_{n=m+1}^\infty	\frac{M_\nu}{2^n}
+	=				\frac{M_\nu}{2^m}
+\end{equation}
+つぎに等式
+\begin{equation}
+		\lim_{n\rightarrow\infty}	\left(	1	+	\frac{z}{n}	\right)^n
+	=	\sum_{n=0}^\infty	\frac{z^n}{n!}
+	\label{eq1x23}
+\end{equation}
+が成り立つことを証明しよう．$p_n=(1+z/n)^n$とおけば，2項定理により
+\[
+	p_n	=	1	+	\sum_{k=1}^n	a_{n,k}	z^k,	\quad	a_{n,k}=	\binom{n}{k}	\frac{1}{n^k}.
+\]
+$\displaystyle
+	a_{n,k}	=\frac{1}{k!}	\left(1-\frac{1}{n}\right)
+													\left(1-\frac{2}{n}\right)
+													\left(1-\frac{k-1}{n}\right)
+$であるから，
+\[
+	0	<	a_{n,k}	<	\frac{1}{k!},	\quad	\lim_{n\rightarrow\infty}	a_{n,k}	=	\frac{1}{k!}.
+\]
+したがって，$n	>	m	>	\mu$のとき，(1.21)により
+\[
+	\left|	\sum_{k=m+1}^n	a_{n,k}z^k	\right|
+		\leqq	\sum_{k=m+1}^n	\frac{|z|^k}{k!}
+		<			\sum_{k=m+1}^\infty	\frac{M_\mu}{2^k}
+		=			\frac{M_\nu}{2^m}.
+\]
+故に
+\[
+	p_{n,m}	=	1	+	\sum_{k=1}^m	a_{n,k}z^k
+\]
+とおけば，$n	>	m	>	\mu$のとき
+\[
+	|p_n-p_{n,m}|	=	\left|1+\sum_{k=1}^n	a_{n,k}	z^k	-	\left(1+\sum_{k=m}^n	a_{n,k}	z^k\right)\right|
+								=	\left|\sum_{k=m+1}^n	a_{n,k}	z^k	\right|
+								<	\left|\frac{M_\nu}{2^m}\right|.
+\]
+また，$\displaystyle	\lim_{n\rightarrow\infty}a_{n,k}=1/k!$であるから
+\[
+	\lim_{n\rightarrow\infty}p_{n,m}	=	1+\sum_{k=1}^m	\frac{z^k}{k!}	=	w_m.
+\]
+さて，正の実数$\varepsilon$が任意に与えられたとき，まず
+\[
+	\frac{M_\mu}{2^m}	<	\frac{\varepsilon}{4}
+\]
+なる自然数$m,	\:	m	>	\mu$を定め，つぎに
+\[
+	n	>	n_0(\varepsilon)	\quad	\text{ならば}	\quad	|p_{n,m}	-	w_m|	<	\frac{\varepsilon}{4}
+\]
+となるように自然数$n_0(\varepsilon),	n_0(\varepsilon)	>	m$，定める．すると，
+$n	>	n_0(\varepsilon)$のとき
+\[
+	|p_n-w_m|	\leqq	|p_n-p_{n,m}|+|p_{n,m}-w_m|	<	\frac{M_\nu}{2^m}	+	\frac{\varepsilon}{4}
+																							<	\frac{\varepsilon}{2}.
+\]
+したがって，
+\[
+	n,l	>	n_0(\varepsilon)	\quad	\text{ならば}	\quad	|p_n-p_l|	\leqq	|p_n-w_m|+|p_l-w_m|	<	\varepsilon
+\]
+となる．故に，Cauchyの判定法により，数列$\{p_n\}$は収束する．その極限を$p$とする：
+\[
+	p=\lim_{n\rightarrow\infty}	\left(1+\frac{z}{n}	\right)^n.
+\]
+$n	>	n_0(\varepsilon)$のとき$|p_n	-	w_m|	<	\varepsilon/2$であるから
+\[
+	|p-w_m|	\leqq	\frac{\varepsilon}{2}.
+\]
+また，(1.22)により
+\[
+	\left|\sum_{n=0}^\infty	\frac{z^n}{n!}	-	w_m	\right|	<	\frac{M_\mu}{2^m}	<	\frac{\varepsilon}{2}.
+\]
+したがって
+\[
+		\left	|	p-\sum_{n=0}^\infty	\frac{z^n}{n!}	\right|	
+	<	\			|	p-w_m|	+	\left|	\sum_{n=0}^\infty	\frac{z^n}{n!}	-w_m	\right|
+	<	\varepsilon
+\]
+を得るが，$\varepsilon$は任意の正の実数であった．故に
+\[
+	p=\sum_{n=0}^\infty	\frac{z^n}{n!}.
+\]
+これで(1.23)が証明された．
+
+\textbf{注意　}
+等式(1.23)の上記の証明は一寸面倒であるが，(1.23)を
+$\displaystyle	p_n	=	1	+	\sum_{k=1}^n	a_{n,k}z^k$に
+おいて$n\rightarrow\infty$のとき$a_{n,k}z^k	\rightarrow	z^k/k!$であるから
+$p_n	\rightarrow	1+\sum_{k=1}^\infty	z^k	/	k!$である，と証明するのは厳密でないだけでなく，
+論理的に誤りである．たとえば，
+\[
+	q_n	=	\sum_{k=1}^n	b_{n,k},	b_{n,k}	=	\frac{1}{2^k}	+	\frac{1}{2^{n-k}},
+\]
+とおけば，$n	\rightarrow	\infty$のとき$b_{n,k}	\rightarrow	1/2^k$であるが
+$q_n	\rightarrow	\sum_{k=1}^\infty	1/2^k=1$とはならない．
+\begin{align*}
+	q_n	&=	\sum_{k=1}^n	\left(	\frac{1}{2^k}+\frac{1}{2^{n-k}}	\right)	\\
+			&=		\left(\frac{1}{2^1}+\frac{1}{2^{n-1}}	\right)
+					+	\left(\frac{1}{2^2}+\frac{1}{2^{n-2}}	\right)
+					+	\cdots
+					+	\left(\frac{1}{2^{n-2}}+\frac{1}{2^2}	\right)
+					+	\left(\frac{1}{2^{n-1}}+\frac{1}{2^1}	\right)
+					+	\left(\frac{1}{2^n}+1	\right)	\\
+			&=		\frac{2^{n-1}+2^1}{2^n}
+					+	\frac{2^{n-2}+2^2}{2^n}
+					+	\cdots
+					+	\frac{2^2+2^{n-2}}{2^n}
+					+	\frac{2^1+2^{n-1}}{2^n}
+					+		\left(\frac{1}{2^n}+1	\right)	\\
+			&=	\frac{2}{2^n}(2^{n-1}+2^{n-2}+	\cdots	+	2^2+2^1)	+	\frac{2^1+2^{n-1}}{2^n}	\\
+			&=	\frac{2}{2^n}(2(2^{n-1}-1))	+	\left(\frac{1}{2^n}+1	\right)	\\
+			&=	3-\frac{3}{2^n}
+\end{align*}
+であるから
+$n	\rightarrow	\infty$のとき$q_n	\rightarrow	3$となる．

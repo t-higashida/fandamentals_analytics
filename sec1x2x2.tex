@@ -1,0 +1,180 @@
+\subsection{実数の大小}
+
+{\small
+実数論が完成した暁には，$\alpha=\langle	A,A'	\rangle$ならば$A=\{r	\in	\Q	\,|\,	r	<	\alpha\}$となる
+のだから，実数の大小を次のように定義するのは当然であろう．
+}
+
+\定義{1.2}
+二つの実数$\alpha=\langle	A,A'\rangle$，$\beta=\langle	B,B'	\rangle	$について，$A	\subseteq	B$ならば
+$\alpha$は$\beta$より小さい，また$\beta$は$\alpha$より大きいといい，
+$\alpha<\beta$，$\beta>\alpha$と書く．
+
+$\alpha=a$，$\beta=b$が共に有理数のとき，ここで定義した実数としての$\alpha$，
+$\beta$の大小は，$a$，$b$の有理数としての大小と一致する．このことは，
+$A=\{r	\in	\Q	\,|\,	r	<	a	\}$，$B=\{r	\in	\Q	\,|\,	r	<	b	\}$
+なることから明らかである．
+
+\定理{1.1}
+二つの実数$\alpha$，$\beta$の間には次に三つの関係のうちの一つ，そしてただ一つだけが成り立つ：
+\[
+	\alpha	<	\beta,\quad	\alpha	=	\beta,\quad	\alpha	>	\beta
+\]
+
+\証明
+$\alpha	<	\beta$，$\alpha	=	\beta$，$\alpha	>	\beta$はそれぞれ
+$A	\subsetneqq	B,	\quad	A=B,	\quad	A	\supsetneqq	B$と同値である．
+三つの関係：$A	\subset	B,	\quad	A=B,	\quad	A	\supset	B$のいずれの二つも
+両立しないことは明らかであるから，そのいずれか1つが必ず成り立つこと，
+すなわち，$A	\subset	B$\footnote{‘$A	\subset	B$’は，$A$と$B$が一致する場合も含めて，
+$A$が$B$の部分集合であることを表わす．}
+かまたは$A	\supset	B$であることを示せばよい．
+このために$A	\subset	B$でも$A	\supset B$でもなかったと仮定しよう．
+そうすれば$a	\in	A$，$a	\notin	B$なる有理数$a$と，
+$b	\in	B$，$b	\notin	A$なる有理数$b$が存在することになる．
+$a	\notin	B$はすなわち$a	\in	B'$であるから，切断の条件
+（ⅰ）により$b	<	a$，また同様に$a	<	b$を得るが，これは矛盾である．
+\■
+
+\定理{1.2}
+$\quad	\alpha	<	\beta,	\quad	\beta	<	\gamma$ならば$\alpha	<	\gamma$．
+
+\証明
+$\alpha=\langle	A	,	A'	\rangle$，$\beta=\langle	B,B'	\rangle$，$\gamma=\langle	C,C'	\rangle$とすれば，
+$A	\subsetneqq	B$，$B	\subsetneqq	C$である．故に$A	\subsetneqq	C$，すなわち$\alpha	<	\gamma$．
+\■
+
+\定理{1.3}
+任意の実数$\alpha	=	\langle	A,A'	\rangle	$について
+\begin{equation}
+	A	=	\{r	\in	\Q	\,|\,r	<	\alpha\},\quad	A'=\{r	\in	\Q	\,|\,	\alpha	\leqq	r\}.
+\end{equation}
+
+{\small
+実数$\alpha$が集合$A,A'$の組の切断として表わされたとき，$A$は$\alpha$より小さい
+有理数の集合であり，$A'$は$\alpha$より大きい有理数の集合である．
+この事実は実数の定義で直接明言されず，以下の証明によって明らかになるのである．
+}
+
+\証明
+有理数$r$と実数$\alpha$を比較するために，$r$を実数と考えて切断で表わす（切断の（Ⅱ）型）：
+\[
+	r	=	\langle	R,R'	\rangle,	\quad	R	=\{s	\in	\Q	\,|	\,s	<	r	\},
+															\quad	R'=\{s	\in	\Q	\,|	\,s	\geqq	r\}.
+\]
+（このとき$R,R'$が右辺の集合で表わされることの証明は(\ref{eq:1.7})の説明を参照）．
+
+切断（分割）の定義より$A	\cup	A'	=	\Q$，$A	\cap	A'	=	\varnothing$だから，(1.8)を証明するには，
+$r	\in	A$ならば（実数として）$r	<	\alpha$で，
+$r	\in	A'$ならば（実数として）$r	\geqq	\alpha$なることを示せばよい（実数の大小比較は定義1.2を参照）．
+
+（1$^{\circ}$）
+$r	\in	A$のとき：$s	\in	R$とする．すなわち$s	<	r$，$s	\in	\Q$となり，切断の条件(ⅲ)を$s$に適用すると$s	\in	A$である．したがって$R	\subset	A$．しかし$r	\notin	R$だから$R	\ne	A$．
+故に$r	<	\alpha$．
+すなわち$A	\subset	\{r	\in	\Q	\,|\,r	<	\alpha\}$．
+
+（2$^{\circ}$）
+$r	\in	A'$のとき：切断の条件(ⅲ)'により，$s	\geqq	r$，$s	\in	\Q$，ならば
+$s	\in	A'$であるから$R'	\subset	A'$．$R$，$A$はそれぞれ$\Q$における$R$，
+$A'$の補集合だから，したがって$A	\subseteq	R$，故に$r	\geqq	\alpha$である．
+すなわち$A'	\subset	\{r	\in	\Q	\,|\,r	\geqq	\alpha\}$．
+
+（3$^{\circ}$）
+$r	\in	\{r	\in	\Q	\,|\,r	<	\alpha\}$のとき：$r	\notin A$と仮定する．
+$A	\cup	A'=	\Q$，$A	\cap	A'	=	\varnothing$より，
+$r	\in	A'$，（2$^{\circ}$）より，$r	\geqq	\alpha$となり矛盾．
+したがって$r	\in	A$．
+すなわち$A	\supset	\{r	\in	\Q	\,|\,r	<	\alpha\}$．
+
+（4$^{\circ}$）
+$r	\in	\{r	\in	\Q	\,|\,r	\geqq	\alpha\}$のとき：$r	\notin	A'$と仮定する．	
+$A	\cup	A'=	\Q$，$A	\cap	A'	=	\varnothing$より，
+$r	\in	A$，（1$^{\circ}$）より．$r	<	\alpha$となり矛盾．したがって$r	\in	A'$．
+すなわち$A'	\supset	\{r	\in	\Q	\,|\,r	\geqq	\alpha\}$．
+
+（1$^{\circ}$），（3$^{\circ}$）より
+\begin{equation*}
+	A	=	\{r	\in	\Q	\,|\,r	<	\alpha\},
+\end{equation*}
+
+（2$^{\circ}$），（4$^{\circ}$）より
+\begin{equation*}
+	A'=\{r	\in	\Q	\,|\,	\alpha	\leqq	r\}.
+\end{equation*}
+\■
+
+この定理1.3は，実数$\alpha=\langle	A,	A'	\rangle$が，期待した通り，$A$と$A'$の
+境目になっていることを示している．
+
+\定理{1.4}
+任意の二つの実数$\alpha$，$\beta$，$\alpha	<	\beta$に対して，
+$\alpha	<	r	<	\beta$なる有理数$r$が無数に存在する．
+
+\証明
+$\alpha=\langle	A,A'	\rangle$，$\beta=\langle	B,B'	\rangle$とすれば，
+$\alpha	<	\beta$だから$A	\subsetneqq	B$．したがって$b	\in	B$，
+$b	\notin	A$なる有理数$b$が存在する．$b	\in	A'$だから，
+定理1.3により，$\alpha	\leqq	b$．切断の条件(ⅱ)により$B$に属する
+有理数がないから，$b	<	r$，$r	\in	B$なる有理数
+は無数に存在する．すなわち$\alpha	<	r$なる有理数$r$は無数に存在する．
+定理1.3により$r	\in	B$は$r	<	\beta$と同値であるから，
+これらの有理数$r$はすべて不等式：$\alpha	<	r	<	\beta$を満たす．
+\■
+
+実数全体の集合を$\R$で表わす．実数が大きさ（$<$）の順に一列に並んでいると想像して，
+$\R$を\textbf{数直線}とよぶ．
+{\small
+	これで高校数学ではその意味が曖昧であった数直線が明確に定義されたのである．
+}
+$\R$を数直線というとき，実数を$\R$上の点，有理数を\textbf{有理点}，
+無理数を\textbf{無理点}ということがある．
+
+有理数の集合$\Q$が数直線上いたる所稠密であることは\S 1.1で述べたが，定理1.4は
+このことが厳密に定義された数直線$\R$について成立していることを示す．
+
+\pagebreak
+\定理{1.5}
+自然数$m$が与えられたとする．このとき任意の実数$\alpha$に対して
+\[
+	a	<	\alpha	\leqq	a+\frac{1}{m}
+\]
+なる有理数$a$が存在する．
+
+\証明
+$\alpha	=	\langle	A,A'	\rangle$とする．$r_0	\in	A$を任意に一つ
+選んで自然数$n$に対して$	r_n=r_0+n/m$と数列を構成する．
+$s	\in	A'$とすれば，$n	\in	\N$を$n	>	m(s-r_0)$を満たすように選ぶと
+（このような$n$の存在はアルキメデスの原理によって保証される），
+$r_n=r_0+n/m	>	s$，したがって$r_n	\in	A'$となるから，
+すなわち$r_0	\in	A$かつ$r_n	\in	A'$．
+ここで$r_{k-1}	\in	A$，$r_k	\in	A'$なる自然数$k$が定まる．
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(1,3.5)
+
+	\thicklines\path(-4,2)(4,2)
+	\thicklines	\put(-0.25,2){\circle{0.065}}
+	\qbezier[40](-0.25,2)(-0.5,2.4)(-4,2.5)
+	\qbezier[40](-0.25,2)(0.0,2.4)(4,2.5)
+	\put(-2.5,2.5){$A$}
+	\put(2.5,2.5){$A'$}
+	\put(-0.32,1.71){$\alpha$}
+
+	\thinlines\path(-3,1.9)(-3,2.1)\put(-3,1.5){$r_0$}
+	\thinlines\path(-2,1.9)(-2,2.1)\put(-2,1.5){$r_1$}
+	\thinlines\path(-1,1.9)(-1,2.1)\put(-1,1.5){$r_{k-1}$}
+	\thinlines\path(0,1.9)(0,2.1)\put(0,1.5){$r_k$}
+	\thinlines\path(1,1.9)(1,2.1)\put(0.8,1.5){$\cdots$}
+	\thinlines\path(2,1.9)(2,2.1)\put(2,1.5){$r_n$}
+
+\end{picture}
+\end{center}
+\end{figure}
+そこで$a=r_{k-1}$とおけば$a+1/m=r_k$．
+$a	\in	A$であるから$a	<	\alpha$．また$a+1/m	\in	A'$であるから$\alpha	\leqq	a+1/m$．
+$a	<	\alpha	\leqq	a+1/m$．
+\■
+{\small
+	この定理は実数は有理数でいくらでも近似できることを示している．
+}

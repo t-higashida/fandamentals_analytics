@@ -1,0 +1,320 @@
+\section{$n$変数の関数}
+
+2変数の関数について \S \ref{sec6x1}，\S \ref{sec6x2}で述べたことはそのまま
+$n$変数の関数に拡張される．以下その要点を述べる．
+
+$n$次元空間$\R^n$は$n$個の実数の組$( x_1 , x_2 , \cdots , x_n )$の全体の集合であって$\R^n$の
+点はすなわち$n$個の実数の組$P= ( x_1 , x_2 , \cdots , x_n )$である(\S \ref{sec1x6x7})．
+点集合$D \subset \R^n$に属する各点$P$にそれぞれ一つの実数を対応させる対応$f$を$D$で定義された関数といい，
+$f$によって$P = (x_1 , x_2 , \cdots , x_n)$に対応する実数$z$を$P$における$f$の値とよび
+\[
+	z = f(P) = f(x_1 , x_2 , \cdots , x_n)
+\]
+と書く．
+関数$f$を$f ( x_1 , x_2 , \cdots , x_n )$で表わし，$ f(x_1 , x_2 , \cdots , x_n )$を
+$n$変数$ (x_1 , x_2 , \cdots , x_n ) $の関数という．
+関数の定義域，値域の意味は明らかであろう．\S \ref{sec6x1}で述べた平面上の点集合の揚合と同様に，
+開集合$U , U \subset \R^n$が共通点をもたない二つの空でない開集合の合併集合とならないとき$U$は\textbf{連結}
+\footnote{ \small
+位相空間$X$が\textbf{連結}であるとは，$X$が互いに素な2つの空でない開集合の和集合として表わされないとき，
+すなわち
+\[
+	X = A \cup B , A \cap B = \varnothing ( A,B \text{は} X \text{の開集合} ) \Rightarrow A = \varnothing \text{または} B = \varnothing
+\]
+が成り立つことをいう．
+}
+であるといい，
+連結開集合を領域，領域の閉包を閉領域という．
+
+\subsubsection{関数の極限と連続性}
+
+\S \ref{sec6x1}で述べた考察はそのまま$n$変数の関数に適用される，
+特に関数の収束に関するCauchyの判定法(定理6.1)，関数の一様連続性に
+関する定理6.2，連続関数の最大値と最小値に関する定理6.3，領域あるいは閉領域で定義された連続関数の値域に関する定理6.4，
+6.5は$n$変数の関数についてもそのまま成り立つ．
+
+以下，$n$変数の場合の定理6.1から定理6.5を書き下してみる．
+
+\定理{6.1}（Cauchy の判定法，$n$変数の場合）
+
+$f(p)$を$D$で定義された関数，$A$を$D$の集積点とする
+\footnote{
+集積点の定義を確認する．
+}
+
+$P \to A$のとき$f(p)$が収束するための必要かつ十分な条件は，任意の性の実数$\varepsilon$に対応して正の実数$\delta ( \varepsilon )$が
+定まって
+\begin{align*}
+	&0 < \sqrt{ ( x_1 - a_1)^2 + \cdots + ( x_n - a_n )^2 } < \delta ( \varepsilon ),	0 < \sqrt{ ( y_1 - a_1)^2 + \cdots + ( y_n - a_n )^2 } < \delta ( \varepsilon ),	\\
+	&\Rightarrow | f(P) - f(Q) | < \varepsilon
+\end{align*}
+となることである．
+
+\■
+
+\証明
+
+（保留）
+
+\定理{6.2}
+有界な閉集合$D \subset \R^n$で定義された連続関数は$D$で一様に連続である．
+
+\証明
+
+有界な関数$D$で定義された連続関数$f(P) = f(x_1 , x_2 , \cdots , x_n) , P=(x_1 , \cdots , x_n)$が$D$で一様に
+連続でなかったと仮定すれば，或る正の実数$\varepsilon$に対しては，いかなる正の実数$\delta$をとっても
+\[
+	|P-Q| < \delta, P \in D , Q \in D \quad \text{のとき} \quad
+| f(P) - f(Q) | < \varepsilon
+\]
+とならない．したがって各自然数$n$に対して
+\begin{equation*}
+	|P_n - Q_n | < \frac{1}{n} , P_n , Q_n \in D, |f(p_n) - f(Q_n) | \geqq \varepsilon
+\end{equation*}
+なる点$P_n , Q_n$が存在する点列$ \{ P_n \}$は有界であるから，定理1.30（$n$次元版を確認する）により
+収束する部分列：$P_{n_1} , P_{n_2} , \cdots , P_{n_j}, \cdots , n_1 < n_2 < \cdots < n_j < \cdots $をもつ．
+その極限を$A = \displaystyle \lim_{j\rightarrow \infty}	P_{n_j}$とすれば
+$D$が閉集合であるから$A \in D$
+\footnote{
+$A$は集積点であり$D$が閉集合であるから
+}
+また
+$|P_{n_j} - Q_{n_j} | < \frac{1}{n_j} \to 0 \quad ( j \to \infty)$であるから，
+$\displaystyle \lim_{j\rightarrow \infty} Q_{n_j} = \lim_{j\rightarrow \infty} P_{j_j} = A$である．
+仮定により$ f(P)$は$D$で連続であるから，したがって，
+$ \displaystyle \lim_{j\rightarrow \infty}	f(Q_{n_j}) = 
+\lim_{j\rightarrow \infty}	f( P_{n_j} ) = f(A)$となるが，
+こえｒは（\ref{6x4}）により，$| f(Q_{n_j}) - f(P_{n_j} | \geqq \varepsilon$であることに矛盾する．
+故に，$f(x_1 , \cdots , x_n)$は$D$で一様連続である．
+
+\■
+
+\定理{6.3}（連続関数の最大値と最小値に関する定理，$n$次元版）
+
+有界な閉集合$D$で定義された連続関数は最大値と最小値をもつ．
+
+
+
+
+\定理{6.4}
+
+保留．
+
+\定理{6.5}
+
+保留．
+
+\■
+
+造る
+
+また$f_1 (P), f_2(P), \cdots , f_m(P) , P=(x_1, x_2 , \cdots , x_n)$，が$ D \subset \R^n$で定義された連続関数，
+$ \varphi ( u_1, u_2 , \cdots , u_m)$が$E \subset \R^m$で定義された$u_1, u_2 , \cdots , u_m$の連続関数で，
+すべての$P \in D$について$( f_1 (P) , f_2 ( P) , \cdots , f_m (P)) \in E$
+ならば，合成関数$ \varphi ( f_1 (P) , f_2 (P) , \cdots , f_m(P))$
+は$D$で定義された$ P = (x_1 , x_2 , \cdots ,x_n)$の連続関数である．
+
+\subsubsection{偏微分}
+$z = f(x_1 , x_2 , \cdots , x_n)$を或る領域$ D \subset \R^n$で定義された
+$ x_1 , x_2 , \cdots , x_n$の関数とする．
+\S \ref{sec6x2x1}で述べた$2$変数の関数の場合と同様に，
+$x_1 , \cdots , x_{j-1} , x_{j+1} , \cdots , x_n$を固定して
+$ f(x_1 , \cdots , x_{j-1} , x_j , x_{j+1} , \cdots , x_n)$を$1$変数$x_j$の関数と考えたとき
+$f(x_1 , \cdots , x_j , \cdots , x_n)$が微分可能ならば$n$変数の関数
+$ f(x_1 , \cdots , x_j , \cdots , x_n)$は$x_j$について偏微分可能であるといい，
+$1$変数$x_j$の関数と考えたときの$f(x_1 , \cdots , x_j , \cdots , x_n)$の微分係数を
+$n$変数の関数$z = f(x_1 , \cdots , x_j , \cdots , x_n)$の$x_j$に関する偏微分係数とよび，
+$ \partial z / \partial x_j , \quad f_{x_j} (x_1 , \cdots, x_j , \cdots , x_n)$，
+等の記号で表わす．たとえば
+\[
+	\frac{\partial z}{\partial x_1} =
+f_{x_1} (x_1 , x_2 , \cdots , x_n )
+= \lim_{h\rightarrow 0} \frac{f(x_1 + h , x_2 , \cdots , x_n ) - f(x_1 , x_2 , \cdots , x_n)}{h}.
+\]
+$f(x_1 , \cdots , x_j , \cdots , x_n)$が$D$のすべての点で$x_j$に関して偏微分可能であるとき，
+$n$変数$x_1 , \cdots , x_j , \cdots , x_n$の関数$f_{x_j} (x_1 , \cdots , x_j , \cdots , x_n)$を
+$f (x_1 , \cdots , x_j , \cdots , x_n)$の$x_j$に関する偏導関数という．高次の偏導関数
+\begin{align*}
+		\frac{\partial ^2 z}{\partial x_j \partial x_k}
+= \frac{\partial }{\partial x_j}	\left(	\frac{\partial z}{\partial x_k}
+																	\right) 
+= f_{x_kx_j} ( x_1 , \cdots , x_j , \cdots , x_k , \cdots , x_n), 	\\
+\frac{\partial^3 z}{\partial x_i \partial x_j \partial x_k}
+= \frac{\partial}{\partial_i } 	\left(	\frac{\partial^2 z}{\partial x_j \partial x_k}
+																\right)
+=	f_{h_k x_j x_i} ( x_1 , x_2 , \cdots , x_n),
+\end{align*}
+\[
+\]
+等の意味も明らかであろう．
+
+\subsubsection{微分可能性}
+
+$z= f(x_1, x_2 , \cdots , x_n)$を或る領域$D \subset \R^n$で定義された$n$変数$x_1, x_2 , \cdots , x_n$
+の関数，$(a_1 , a_2 , \cdots , a_n)$を$D$に属する点とする．
+このとき定数$(A_1 , A_2 , \cdots , A_n)$が存在して
+\[
+	f(x_1 , \cdots , x_n) - f(a_1 , \cdots , a_n)
+= \sum_{j=1}^{n} A_j (x_j - a_j) + o \left(	\sqrt[]{  \mathstrut  \sum_{j=1}^{n} (x_j - a_j)^2 } \right)
+\]
+\footnote{
+2点間の距離に因る無限小
+}
+が成り立つならば関数$ f(x_1 , \cdots , x_n)$は点$(a_1 , \cdots , a_n)$で微分可能である，あるい
+は点$ (a_1 , \cdots , a_n)$で$x_1 , x_2 , \cdots , x_n$について微分可能であるという．
+$ f(x_1 , \cdots , x_n)$が$( a_1 , \cdots , a_n)$で微分可能ならば
+$f(x_1 , \cdots , x_n)$は$(a_1 , \cdots , a_n)$で各$x_j , j=1 , 2 , \cdots , n$について
+偏微分可能で
+\[
+	A_j = f_{x_j} (a_1 , \cdots , a_j , \cdots , a_n)
+\]
+である．$a_1 , \cdots , a_n $を$x_1 , \cdots , x_n$で$x_1 , \cdots , x_n$を
+$ x_1 + \varDelta x_1 , \cdots , x_n + \varDelta x_n$で置き換え，
+$ \varDelta z = f (x_1 + \varDelta x_1 , \cdots , x_n + \varDelta x_n) - f(x_1, \cdots , x_n)$とおけば上の式は
+\[
+	\varDelta = \sum_{j=1}^{n} \frac{\partial z}{\partial x_j} \varDelta x_j + \o \left(	\sqrt{\sum_{j=1}^{n} ( \varDelta x_j )^2 }\right)
+\]
+と書かれる．$ z = f(x_1 , \cdots , x_n )$を全微分を
+\[
+	dz = df ( x_1 , \cdots , x_n) = \sum_{j=1}^{n} f_{x_j} (x_1 , \cdots , x_n) \varDelta x_j
+\]
+と定義する．$x_j$の全微分は$dx_j = \varDelta x_j$となるから
+\begin{equation}
+	dz=\sum_{j=1}^{n} \frac{\partial z}{\partial x_j}dx_j.
+\label{eq6x60}
+\end{equation}
+関数$f( x_1, x_2, \cdots , x_n)$がその定義域$D$の各点で微分可能であるとき
+$f (x_1 , x_2 , \cdots , x_n)$は微分可能であるという．
+微分可能な関数$ f(x_1 , x_2 , \cdots , x_n)$は連続で各変数
+$x_j , j=1, 2, \cdots , n$，について偏微分可能である．
+
+
+以上領域$D$が関数$f (x_1 , x_2 , \cdots , x_n)$の定義域であると仮定したが，領域$D$が
+$ f(x_1 , x_2 , \cdots , x_n)$の定義域の部分集合である揚合，$ f(x_1 , x_2, \cdots , x_n)$が$D$において
+連続である，微分可能である，等というのは$f (x_1 , x_2 , \cdots , x_n)$の定義域を$D$に制限して得られる
+関数$ f_D(x_1,x_2 , \cdots , x_n)$が連続関数である，微分可能な関数である，等ということを意味する．
+
+2変数の関数$f(x,y)$については或る領域$D$において偏導関数$f_x (x,y), f_y(x,y)$が存在して連続ならば
+$f(x,y)$は$D$で微分可能であった（定理6.6）．
+
+\定理{6.22}
+領域$D, D \subset \R^n$において関数$ f(x_1, x_2 , \cdots , x_n)$の各偏導関数
+$f_{x_j} (x_1 , x_2, \cdots ,x_n), j=1,2,\cdots , n,$が存在して連続ならば
+$ f (x_1 , x_2 , \cdots , x_n)$は$D$において微分可能である．――
+
+証明は定理6.6の証明と同様である．
+
+
+領域$D$において各偏導関数$f_{x_j}(x_1 , x_2 , \cdots , x_n) , j=1,2,\cdots , n $が存在して連続
+であるとき$f (x_1 , x_2, \cdots , x_n)$は$D$において連続微分可能であるという．
+上記の定理6.22により連続微分可能な関数は微分可能である．
+
+\subsubsection{偏微分の順序}
+\定理{6.23}
+或る領域$D$において関数$f(x_1 , \cdots , x_n)$の偏導関数$ f{x_j} (x_1, \cdots , x_n)$，
+$ f_{x_k} (x_1 , \cdots , x_n)$，$ f_{x_jx_k}(x_1, \cdots , x_n)$ ，$ f_{x_kx_j} (x_1,\cdots, x_n)$が
+存在して連続ならば
+\[
+	f_{x_kx_j} (x_1, \cdots , x_j , \cdots , \cdots , x_n )
+= f_{x_jx_k} (x_1 ,\cdots , x_j , \cdots , x_k , \cdots , x_n).
+\]
+
+\証明
+
+$x_1 , \cdots , x_{j-1} , x_{j+1} , \cdots , x_{k-1} , x_{k+1} , \cdots , x_n$を
+を固定して$ f(x_1 , \cdots , x_n)$を$2$変数$x_j , x_k$の関数と考えれば
+この定理は定理6.7に帰着する
+\■
+
+\定理{6.24}
+
+領域$D$において$ f(x_1 , x_2 , \cdots , x_n)$が
+$x_j , x_k$について偏微分可能で
+偏導関数$ f_{x_j}(x_1 , \cdots , x_n), f_{x_k} (x_1, \cdots , x_n)$が微分可能ならば
+\[
+	f_{x_kx_j} (x_1, \cdots , x_j , \cdots , x_k , \cdots , x_n)
+= f_{x_jx_k} (x_1 , \cdots , x_j , \cdots , x_k , \cdots , x_n).
+\]
+この定理は Youngの定理（定理6.8）に帰着する．
+
+
+\subsubsection{関数の級}
+領域$D$において関数$ f(x_1 , x_2, \cdots, x_n)$が$m$回微分可能である，
+あ%るいは$m$回連続微分可能であるという意味は明らかであろう．
+領域$D$において定義された関数$ f(x_1 , x_2, \cdots , x_n)$が$D$で$m$回連続微分可能であるとき
+$ f(x_1 , x_2 , \cdots , x_n)$を$\mathcal{C}^m$級の関数といい，
+$ f(x_1 , x_2 , \cdots, x_n)$が$D$で何回でも連続微分可能であるとき
+$ f(x_1 , x_2 , \cdots , x_n)$を$\mathcal{C}^\infty$級の関数という．
+
+領域$D$で定義された関数$ z=f(x_1 , x_2 , \cdots , x_n)$が$m$回微分可能である揚合には
+その$m$次までの偏導関数
+\[
+	\frac{\partial ^q z}{\partial  x_i \partial x_j \cdots \partial x_k}
+ = 
+ \underbrace{ \displaystyle
+   \frac{\partial }{\partial x_i} \frac{\partial }{\partial x_j} \cdots \frac{\partial }{\partial x_k}
+ }_{q \text{個}}, \quad q \leqq m,
+\]
+は，上記の定理6.24により，偏微分$ \partial / \partial x_j , \partial/\partial x_j , \cdots , 
+\partial / \partial x_k$の順序によらない．
+故に$m$次までの偏導関数はすべて
+\[
+	\frac{\partial ^{q_1+q_2+ \cdots + q_n} z}{\partial x_1^{q_1} \partial x_2^{q_2} \cdots \partial x_n^{q_n}},
+\quad q_1 + q_2 + \cdots + q_n \leqq m,
+\]
+と書かれる．
+
+\subsubsection{合成関数}
+
+$ z=g(y_1, y_2 , \cdots , y_m)$を領域$E \subset \R^n$で定義された
+$ y_1 , y_2 ,\cdots , y_m$の関数，
+$ y_k =f_k (P) = f_k (x_1 , x_2 , \cdots , x_n) , k=1,2, \cdots , m$，
+を領域$D \subset \R^n$でで定義された$P= (x_1, x_2 , \cdots , x_n)$の関数，
+$ P \in D$のとき$ (f_1(P) , f_2(P) , \cdots , f_m(P)) \in D$として合成関数
+$z = g (f_1 (P) , f_2 (P) ,\cdots ,f_m(P))$を考察する．
+
+\定理{6.25}
+
+$z = g (y_1 , y_2 , \cdots , y_m)$が$y_1 , y_2 , \cdots , y_m$について微分可能，
+$ y_k = f_k (x_1, \cdots , x_n) , k=1 ,2 ,\cdots , m$，が$ x_1, \cdots , x_n$について
+微分可能ならば，合成関数$ z= g(f_1 (x_1, \cdots , x_n) , \cdots , f_m(x_1 , \cdots , x_n))$は
+$x_1 , x_2 , \cdots , x_n$
+瑚，∬2，…，躍πについて微分可能であつて
+%(α6・)獅鑑+絵+…濃驚.璽
+%証明は定理6.13の証明と同様である.
+%系9=g(Ψ、，雪2，…，脇)がΨ1，雪2，…，協について連続微分可能，彿=五@1，
+%§6.4%変数の関数313
+%…，臨)，々=1，2，…，勉，が鋤，…，晦について連続微分可能ならば合成関数2=
+%9(∫、@、，…，晦)，…，ん@・，…，晦))はω・，娩，…，$x$πの連続微分可能;な関数であ
+%る.
+%定理6.269=σ(雪1，雪2，●"，Ψ㎜)がΨ1，擁，…，阪についてッ回連続微分可能，
+%彿=海@1，…，$x$%)，々=1，2，…，物，が妨，ω2，…，∬πについてレ回連続微分可能な
+%らぱ合成関数9=g(∫1@1，・・6，晦)，…，ん(銑，…，∬π))は朗，…，の%のレ回連続微
+%分可能な関数である.
+%証明定理6.14の証明と同様にレに関する帰納法によって証明される.□
+%系9〒9(雪1，'"，Ψ鳴)が雪1，…，協の6。。級の関数，擁=姦($x$1，…，∬π)，々=1，2，
+%…，勉，が躍1，…，晦の6。。級の関数ならば;合成関数:9=g(五@1，…，晦)，…，
+%ん(銑，…，賜))は∬1，…，晦の6。。級の関数である.
+%Taylorの公式2変数の関数に関するTaylorの公式(6.30)もそのままη変
+%数の関数の場合に拡張される.∫@1，…，ω。)を領域D⊂Eπにおいて初回連続微
+%分可能な関数，且=(α1，"㍉α%)∈D，D遵={P∈Z)レ4P⊂D}とする.簡明のため
+%　れユ　　　　　キれれ
+%∫伽・・…職)($x$1，●'●，$x$π)=o!("、，…，∬。)
+%∂∬1糀1∂$x$2糀2…∂∬譜π
+%と書くことにすれば，@1，…，晦)∈D五なるとき
+%∫@・，…，$x$。);Σ6鵠、_㎜。@、一α、)m1…(灘π一α%)%+1～鵬，
+%ηL1十…十7ππ≦?π一ユ
+%∫(脇工・'"・鵬・)(α1，…，α%)
+%o㎜エ…鵬η=
+%R血㌦。一翰。糀吻、!、π、!_勉。!@一・1)物…@・一α・)勉
+%ξ1=α1一←θ($x$1一α1)，…，ξ%=α%十θ($x$%一απ)，0<θ<1.
+%これがTaylorの公式である.
+%∫(αア1，'●'，躍π)がDにおいて6。。級の関数である場合には，すべての自然数〃z
+%についてTaylorの公式が成立しているから，収束を問題にしなければ，`Taylor
+%級数':
+%の
+%Σ、%晦.%@一α、)彿1($x$2一α2)彿2…@。¶。)翫
+%魏1，・糀2，●○・，糀πコ0・
+%を書き下すことができる.%変数≠、，'2，…，ちの巾級数
+%mllrn2t...mnl'
+%∫(ηL1・…・η`η)(ξ1，。・・，ξπ)%

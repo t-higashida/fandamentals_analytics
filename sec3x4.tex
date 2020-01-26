@@ -1,0 +1,313 @@
+\section{高次微分法}
+
+\subsection{高次導関数}
+或る区間$I$で定義された微分可能な関数$f(x)$の導関数
+$f'(x)= (d/dx) f(x)$がまた$I$で微分可能であるとき，$f(x)$は$I$で2回微分であるといい，
+$f'(x)$の導関数$(d/dx) f'(x)$を$f(x)$の\textbf{2次導関数（second derivative）}とよぶ．
+$f(x)$の2次導関数を$f''(x)$あるいは$(d^2/dx^2)f(x)$で表わす．
+$(d^2/dx^2) f(x)$はもちろん$(d/dx) ((d/dx) f(x))$を意味する．
+さらに，$f''(x)$が$I$で微分可能ならば，$f(x)$は$I$で3回微分可能であるといい，
+$f''(x)$の導関数$(d / dx) f''(x)$を$f(x)$の\textbf{3次導関数（third derivative）}とよび，
+それを$f'''(x)$あるいは$(d^3/dx^3) f(x)$で表わす．以下同様に4次，5次，$\cdots$，$n$次，
+$\cdots$の導関数を定義する．すなわち，一般に，$f(x)$の$n-1$次導関数$f^{(n-1)} (x) = (d^{n-1}/dx^{n-1}) f(x)$
+が$I$で微分可能ならば，$f(x)$は$I$で$n$回微分可能であるといい，$f^{(n-1)} (x)$の導関数
+$ (d/dx ) f^{(n-1)} (x)$を$f(x)$の\textbf{$n$次導関数（$n$-th derivative, $n$-th derived function）}
+とよび，それを$f^{n}(x)$あるいは$(d^n/dx^n)f(x)$で表わす．$n$次導関数をまた\textbf{第$n$階}の
+導関数という．$I$に属する点$a$における$f^{(n)}(x)$の値$f^{(n)}(a)$を$f(x)$の
+$a$における\textbf{$n$次微分係数}とよぶ．
+
+$y=f(x)$の$n$次導関数を表わす記号は，$f^{(n)}(x), (d^n/dx^n)f(x)$の他に$d^ny/dx^n$,
+$y^{(n)},(d/dx)^nf(x),D^nf(x)$当がある．
+
+一般に，関数$f(x)$の定義域が区間$I$を含むとき，\S 2.2,a)で述べた規約に従って，
+$f(x)$の$I$への制限$f_I(x)$が$I$で$n$回微分可能であるとき，$f(x)$は$I$で
+$n$回微分可能である，あるいは$I$で$x$について$n$回微分可能であるという．
+
+\定理{3.11}
+関数$y=f(x),z=g(x)$が区間$I$で$n$回微分可能ならば，その1次結合
+$c_1 y + c_2 z= c_1 f(x) + c_2 g(x)$，$c_1,c_2$は定数，およびその積$yz=f(x)g(x)$も
+$I$で$n$回微分可能であって，
+\begin{align}
+	&\frac{d ^n}{d x^n}	(c_1 y+ c_2 z) = c_1 y^{(n)} + c_2 z^{(n)}	\label{eq3x30}	\\
+	&\frac{d ^n}{d x^n}	(yz)	=	y^{(n)}z 	+	\binom{n}{1}	y^{(n-1)}z' + \cdots
+																				+	\binom{n}{k}	y^{(n-k)}z^{(k)}	+	\cdots
+																				+	yz^{(n)}.	\label{eq3x31}
+\end{align}
+さらに区間$I$で$g(x)	\ne	0$ならば商$f(x)/g(x)$も$I$で$n$回微分可能である．
+
+\証明
+$c_1	y	+	c_2	z$が$n$回微分可能で(\ref{eq3x30})が成り立つことは明らかである．
+
+$yz$が$n$回微分可能で(\ref{eq3x21})が成り立つことは$n$に関する帰納法によって
+容易に証明される．すなわち，$yz$が$n-1$回微分可能で
+\[
+	\frac{d ^{n-1}}{d x^{n-1}}(yz)
+	=
+	\sum_{k=0}^{n-1}	\binom{n-1}{k}	y^{(n-1-k)}	z^{(k)}
+\]
+であることが証明されたと仮定する．ただしここで$y^{(0)}=y,z^{(0)}=z$とする．
+$y,z$は仮定により$n$回微分可能，したがってこの式の右辺の$y^{(n-1-k)},z^{(k)}$は
+すべて少なくとも1回微分可能であるから，$(d^{n-1}/dx^{n-1})(yz)$は微分可能，
+すなわち$yz$は$n$回微分可能である．
+\[
+	\frac{d}{dx}(y^{(n-1-k}z^{(k)})=y^{(n-k)}z^{(k)}	+	y^{(n-k-1)}z^{(k+1)}
+\]
+であるから，公式：$\displaystyle	\binom{n-1}{k}	+	\binom{n-1}{k-1}	=	\binom{n}{k}$を
+用いて，
+\footnote{
+	『オイラーの贈り物』吉田　武著，\S 1.2.2 二項定理
+}
+\begin{align*}
+		\frac{d^n}{dx^n}	(yz)
+&=	\sum_{k=0}^{n-1}	\binom{n-1}{k}y^{(n-k)}z^{(k)}	+	\sum_{k=0}^{n-1}	\binom{n-1}{k}	y^{(n-k-1)}z^{(k+1)}	\\
+&=	y^{(n)}z	+	\sum_{k=1}^{n-1}	\left[
+																		\binom{n-1}{k}	+	\binom{n-1}{k-1}
+																	\right]	y^{(n-k)}z^{(k)}	+	yz^{(n)}	\\
+&=	y^{(n)}z	+	\sum_{k=1}^{(n-1)}	\binom{n}{k}	y^{(n-k)}	z^{(k)}	+	yz^{(n)}
+\end{align*}
+を得る．すなわち(\ref{eq3x31})が成り立つ．
+
+$z=g(x)	\ne	0$のとき$y/z	=	f(x)	/	g(x)$が$n$回微分可能であることを証明するためには，
+$1/z$が$n$回微分可能なことをいえばよい．$(d/dx)(1/z)	=	-z'	/z^2$であるから
+\[
+	\frac{d^2}{dx^2}	\left(	\frac{1}{z}
+										\right)
+										=	-\frac{z''}{z^2}	+	\frac{2{z'}^2}{z^3}	=	\frac{-zz''	+	2{z'}^2}{z^3},
+\]
+同様に
+\begin{align*}
+	\frac{d^3}{dx^3}	\left(	\frac{1}{z}
+										\right)
+	&	=	\frac{d}{dx}	\frac{d^2}{dx^2}	\left(	\frac{1}{z}
+																			\right)
+		=	\frac{d}{dx}	\left(
+											\frac{-zz''	+	2{z'}^2}{z^3}
+										\right)	\\
+	&	=	\frac{-z'	z''	-	zz'''	+	2	z''	z'	+	2	z'z''}{z^3}
+			+	(	-z	z''	+	2	{z'}^2)	(-3)	\frac{z'}{z^4}	\\
+	&	=	\frac{6zz'z''	-	z^2	z'''	-	6{z'}^3}{z^4}.	
+\end{align*}
+ここまで計算してみれば，$m=4,5,6,	\cdots	,$に対して，$1/z$は$m$回微分可能でその$m$次導関数は，
+$z,z',z'',	\cdots	,	z^{(m)}$の或る多項式$P_m(z,z',	z''	,	\cdots	,	z^{(m)})$を用いて，
+\begin{equation}
+	\frac{d^m}{dx^m}	\left(	\frac{1}{z}
+										\right)
+										=	\frac{P_m(z	,	z'	,	z''	,	\cdots	,	z^{(m)})}{z^{m+1}}
+\label{eq3x32}
+\end{equation}
+と表わされることが予想されるが，このことは$m$に関数帰納法によって容易に
+確かめられる．すなわち$1/z$が$m-1$回微分可能で
+\[
+	\frac{d^{m-1}}{dx^{m-1}}	\left(	\frac{1}{z}
+														\right)
+										=	\frac{P_{m-1}	(	z,z'	,	\cdots	,	z^{(m-1)})}{z^m}
+\]
+であると仮定すれば，$z	\ne	0$，$m	\leqq	n$としているから，この式の右辺は微分可能，
+したがって$(d^{m-1}/dx^{m-1})(1/z)$も微分可能，すなわち$1/z$は$m$回微分可能であって
+\[
+	\frac{d^m}{dx^m}	\left(	\frac{1}{z}
+										\right)
+										=	\frac{d}{dx}	\left(	\frac{P_{m-1}(z,	z'	,	\cdots	,	z^{(m-1)})}{z^m}
+																		\right)
+										=	\frac{1}{z^{m+1}}	\left(	z	\frac{d}{dx}	P_{m-1}	-	mz'	P_{m-1}
+																				\right),
+\]
+この右辺の$z	(d/dx)P_{m-1}	(z,z',	\cdots	,	z^{(m-1)}	)	-	mz'	P_{m-1}(z,z',	\cdots	,	z-{(m-1)})$
+は明らかに$z,z',	z''	,	\cdots	,	z^{(m)}$の多項式となるから，
+それを$P_m(z,	z'	,	z''	,	\cdots	,	z^{(m)})$で表わせば直ちに(\ref{eq3x32})が得られる．
+\■
+積の高次導関数に関する公式(\ref{eq3x31})を\textbf{Leibnizの法則}という．
+多項式$P_m(z,z',	\cdots	,	z^{(m)})$を簡単な見やすい形に表わすことはできない．
+
+$f(x)$を区間$I$で定義された$x$の関数，$g(y)$を区間$J$で定義された$y$の関数
+とし，$f(I)$が$J$に含まれているとして合成関数$g(f(x))$を考察する．
+
+\定理{3.12}
+$f(x)$が$I$で$n$回微分可能，$g(y)$が$J$で$n$回微分可能ならば，合成関数
+$g(f(x))$は$I$で$n$回微分可能な$x$の関数であって，その$n$次導関数：
+$(d^n/dx^n)	g(f(x))$は$f'(x),f''(x),	\cdots	,	f^{(n)}(x)$，
+$g'(f(x))	,	g''(f(x)),	\cdots	,	g^{(n)}(f(x))$の多項式として表わされる．
+
+\証明
+$y=f(x)$とおけば，合成関数の微分法により，
+\[
+	\frac{d}{dx}	g(f(x))	=	g'(f(x))	f'(x)	=	g'(y)	y'.
+\]
+$(d/dx)g'(y) = g''(y)	y'$であるから，$(d/dx)g(f(x))$は微分可能で
+\[	\frac{d^2}{dx^2}	g(f(x))	
+	=	\frac{d}{dx}	\left\{	\frac{d}{dx}g(y)
+									\right\}
+	=	\frac{d}{dx}	\left\{	g'(y)y'
+									\right\}
+	=	\frac{d}{dx}	g'(y)y'	+	g'(y)	\frac{d}{dx}y'
+	=	g''(y)	{y'}^2	+	g'(y)y''
+\]
+同様に
+\begin{align*}
+	\frac{d ^3}{d x^3}	g(f(x))	
+&=	\frac{d}{dx}	\left\{
+									\frac{d^2}{dx^2}	(f(x))
+								\right\}
+	=	\frac{d}{dx}	\left(
+									g''(y){y'}^2	+	g'(y)y''
+								\right)	\\
+&=		g'''(y){y'}^3	+	g''(y)	\cdot	2	y'	y''	+	g''(y)	y'	y''	+	g'(y)	y'''	\\
+&=	g'''(y)	{y'}^3	+	3g''(y)	y'y''	+	g'(y)y'''.	
+\end{align*}
+以下，$m=4,5,6,\cdots,	n$に対して，$g(f(x))$が$m$回微分可能で，
+$m$次導関数$(d^m/dx^m)	g(f(x))$が$f'(x),	f''(x),	\cdots	f^{(m)}(x)$，
+$g'(f(x)),	\cdots	,	g^{(m)}(f(x))$の多項式として表わされることは
+$m$に関する帰納法によって示される，すなわち$m=k-1$のと成り立つと仮定すると，
+$\displaystyle	\frac{d ^{k-1}}{d x^{k-1}}	g(f(x))$が
+$f'(x),f''(x),	\cdots	,	f^{(k-1)}(x)$，$g'(f(x))	,	\cdots	,	g^{(k-1)}(f(x))$の多項式として
+表わされる：
+\[
+	\frac{d ^{k-1}}{d x^{k-1}}	g(f(x))
+=	\varPhi_{k-1}	\left(f'(x),	\cdots	,	f^{(k-1)}(x),	g'(f(x)),	\cdots	,	g^{(k-1)}(f(x))	\right)
+\]
+このとき$m=k$では，
+\begin{align*}
+	\frac{d ^k}{d x^k}	g(f(x))
+&=	\frac{d}{dx}	
+			\left\{
+				\varPhi_{k-1}	\left(f'(x),	\cdots	,	f^{(k-1)}(x),	g'(f(x)),	\cdots	,	g^{(k-1)}(f(x))	\right)
+			\right\}	\\
+&=	\frac{\partial \varPhi_{k-1}}{\partial y}y''	+	\cdots	+
+		\frac{\partial \varPhi_{k-1}}{\partial y^{(k-1)}}y^{(k)}	+
+		\frac{\partial \varPhi_{k-1}}{\partial g'(y)}g''(y)y'	+	\cdots	+
+		\frac{\partial \varPhi_{k-1}}{\partial g^{(k-1)}(y)}g^{(k)}(y)	y'
+\end{align*}
+この右辺は$f'(x),f''(x),	\cdots	,	f^{(n)}(x)$，
+$g'(f(x))	,	g''(f(x)),	\cdots	,	g^{(n)}(f(x))$の多項式である．
+\■
+
+$y=f(x)$を区間$I$で定義された$x$の微分可能な単調関数とし，$I$でつねに
+$f'(x)	\ne	0$とすれば，\S 2.2.3 定理2.7および\S 3.2.3 定理3.4により，
+逆関数$x=	f^{-1}(y)$は区間$f(I)$で定義された$y$の微分可能な単調関数である．
+このとき
+
+\定理{3.13}
+$y=f(x)$が$I$で$x$について$n$回微分可能ならば，$x=f^{-1}(y)$は$f(I)$で
+$n$回微分可能な$y$の関数であって，その$n$次導関数は，$f',	f''	,	\cdots	,	f^{(n)}$
+の或る多項式$\varPhi	(	f'	,	f''	,	\cdots	,	f^{(n)})$を用いて，
+\begin{equation}
+	\frac{d ^n	x}{d y^n}	
+	=
+	\frac{\varPhi_n	(	f'(x)	,	f''(x),	\cdots,	f^{(n)}(x))}{(f'(x))^{2n-1}},
+	\quad	x	=	f^{-1}(y),
+\label{eq3x33}
+\end{equation}
+と表わされる．
+
+\証明
+(\ref{eq3x16})により
+\[
+	\frac{d x}{d y}	=	\frac{1}{f'(x)},	\quad	x	=	f^{-1}(y),
+\]
+であるから，$f(x)$が2回以上微分可能ならば$1/f'(x)$は$x$について微分可能，
+したがって，$x=f^{-1}(y)$は$y$について微分可能だから，$dx/dy$は$y$について
+微分可能であって，
+\[
+	\frac{d ^2 x}{d y^2}
+	=
+	\frac{d }{d y}	\left(	\frac{1}{f'(x)}
+									\right)
+	=
+	\frac{dx}{dy}\frac{d}{dx}	\left(	\frac{1}{f'(x)}
+														\right)
+	=
+	\frac{1}{f'(x)}	\left(	\frac{-f''(x)}{f'(x))^2}
+									\right)
+	=
+	\frac{-f''(x)}{(f'(x))^3}.
+\]
+以下$n$に関する帰納法を用いて証明する．
+いま，$f(x)$が$n-1$回微分可能ならば$x=f^{-1}(y)$は$y$について$n-1$回微分可能で
+\begin{equation}
+	\frac{d ^{n-1}x}{d y^{n-1}}	=	\frac{\varPhi_{n-1}	(f'(x),	\cdots	,	f^{(n-1)}(x))}{(f'(x))^{2n-3}},
+	\quad	x=f^{-1}(y),
+	\label{eq3x34}
+\end{equation}
+であると仮定すれば，$f(x)$が$n$回微分可能であるとき，
+(\ref{eq3x34})の右辺は$x$について1回微分可能，$x=f^{-1}(y)$は$y$について微分可能だから
+(\ref{eq3x34})の左辺$d^{n-1} x /dy^{n-1}$は$y$について1回微分可能，すなわち$x=f^{-1}(y)$は$y$について
+$n$回微分可能である．そして
+\begin{align*}
+	\frac{d ^n	x}{d y^n}	&=
+	\frac{d}{dy}	\left(	\frac{\varPhi_{n-1}	
+									\left(	f'(x),	\cdots	,	f^{(n-1)}(x)
+									\right)}{	(f'(x))^{(2n-3)}}
+								\right)	\\
+	&=
+	\frac{d x}{d y}\frac{d }{d x}	\left(	\frac{\varPhi_{n-1}}{(f')^{2n-3}}
+																\right)	\\
+	&=
+		\frac{1}{f'(x)}	\left(
+											\frac{\displaystyle	\frac{d	\varPhi_{n-1}}{dx}(f'(x))^{2n-3}	-	\varPhi_{n-1}(2n-3)(f'(x))^{2n-4}	f''(x)}{(f'(x))^{4n-6}}
+										\right)	\quad \text{$(f')^{2n-4}$で約分}\\
+	&=	\frac{1}{{(f)'}^{2n-1}}	\left(	f'	\frac{d}{dx}	\varPhi_{n-1}	-	(2n-3)	f''	\varPhi_{n-1}
+														\right).	
+\end{align*}
+$\varPhi_{n-1}(f',	f'',	\cdots	,	f^{(n-1)})$は
+$f'	,	f'',	\cdots	,	f^{(n-1)}$の多項式であるから
+\[
+	f'(x) \frac{d}{dx}	\varPhi_{n-1}	(f'(x),	\cdots	,	f^{(n-1)}(x))	
+	-	(2n-3)	f''(x)	\varPhi_{n-1}	(f'(x),	\cdots	,	f^{(n-1)}(x))	
+\]
+は$f'(x),	\cdots	,	f^{(n-1)}(x),	f^{(n)}(x)$の多項式として表わされる．
+それを$\varPhi_n	(	f'(x),	f''(x)	,	\cdots	,	f^{(n)}(x))$と書けば
+直ちに(\ref{eq3x33})が得られる．
+\■
+
+多項式$\varPhi_n(f',f'', \cdots, f^{(n)})$を簡単な見易い形に表わすことはできない．
+
+\subsection{初等関数の高次導関数，多項式，有理式}
+$x$の巾$x^k$，$k$は自然数，については，$(d/dx)^k = kx^{k-1}$であるから，
+\begin{align*}
+	&n	\leqq k	\quad	\text{のとき}	\quad	\frac{d^n}{dx^n}x^k	=	k(k-1)(k-2)	\cdots	(k-n+1)x^{k-n},	\\
+	&n	> k	\quad	\text{のとき}	\quad	\frac{d^n}{dx^n}x^k	=	0.
+\end{align*}
+したがって$k$次の多項式$f(x)=a_0	+	a_1	x	+	a_2	x^2	+	\cdots	+	a_k	x^k$は
+数直線$\R$上で何回でも微分可能で，$n	>	k$のとき$(d^n	/	dx^n)	f(x)=0$である．
+定理3.11により，有理式$f(x)	/g(x)$，$f(x),g(x)$は多項式，は$\R$上での方程式
+$g(x)=0$の根を除いて何回でも微分可能である．
+
+\textbf{巾関数}
+
+任意の実数$\alpha$に対して，$\R^+	=	(0,	+	\infty)$で定義された巾関数$x^\alpha$は，
+$(d	/dx)x^\alpha	=	\alpha	x^{\alpha	-1}$であるから，何回でも微分可能であって
+\begin{equation}
+	\frac{d ^n}{d x^n}	x^\alpha	=	\alpha	(\alpha	-	1)(\alpha	-2)	\cdots	(\alpha	-n+1)	x^{\alpha-n}.
+\label{eq3x35}
+\end{equation}
+
+\textbf{指数関数，対数関数}
+
+$(d/dx)e^x	=	e^x$であるから，指数関数$e^x$は何回微分しても変わらない：
+\[
+	\frac{d ^n}{d x^n}	e^x	=	e^x.
+\]
+$(d/dx)	\log	x	=	x^{-1}$であるから，対数関数$\log	x$も何回でも微分可能である．
+(\ref{eq3x35})により，$(d^{n-1}	/ dx^{n-1})x^{-1}	=	(-1)^{n-1}	(n-1)!x^{-n}$であるから，
+\begin{align}
+	\frac{d ^n}{d x^n}	\log	x	&	=	\frac{d ^{n-1}}{d x^{n-1}}	x^{-1}
+																=	(-1)(-1-1)(-1-2)	\cdots	(-1-(n-1)+1)x^{-1-(n-1)}	\notag	\\	
+															&	=	(-1)(-2)(-3)	\cdots	(-(n-1))x^{-n}
+																=	\frac{(-1)^{n-1}	(n-1)!}{x^n}.
+\label{eq3x36}
+\end{align}
+
+\textbf{三角関数}
+
+$(d/dx)	\sin	x	=	\cos	x	,	\:	(d/dx)	\cos	x	=	-	\sin	x$であるから，
+$\sin	x$，$	\cos	x$は何回でも微分可能であって，
+\begin{align}
+	&	\frac{d ^{2n-1}}{d x^{2n-1}}	\sin	x		=	(-1)^{n-1}	\cos	x,	\:
+	&	\frac{d ^{2n}}{d x^{2n}}			\sin	x		=	(-1)^n			\sin	x,	\\
+	&	\frac{d ^{2n-1}}{d x^{2n-1}}	\cos	x		=	(-1)^{n}		\sin	x,	\:
+	&	\frac{d ^{2n}}{d x^{2n}}			\cos	x		=	(-1)^n			\cos	x
+\end{align}
+したがって，定理3.11により，$\tan	x	=	\sin	x	/	\cos	x$は$\cos	x=0$となる点$x$，
+すなわち$\pi	/	2	+	m	\pi$，$m$は整数，を除いて何回でも微分可能である．
+
+

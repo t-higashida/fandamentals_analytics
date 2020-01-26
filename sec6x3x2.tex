@@ -1,0 +1,822 @@
+\subsection{積分記号下での微分積分}
+
+\補題{6.1}
+$f(x,t)$を$\{ (x,t) \: | \: a \leqq x \leqq b, 0 < | t-c| < \rho \}$で定義された2変数$x,t$の
+\underline{有界な}関数とし，$t$を固定したとき$f(x,t)$は$x$について連続であるとする．
+このとき各$x$について極限$	\displaystyle	f(x) = \lim_{t\rightarrow c} f(x,t)$が存在して$f(x)$が$x$について
+連続ならば
+\begin{equation}
+\lim_{t\rightarrow c}	\int_a^b f(x,t) dx
+=	\int_a^b f(x) dx , \quad f(x) = \lim_{t\rightarrow c} f(x,t)
+\label{eq6x45}
+\end{equation}
+\証明
+（\ref{eq6x45}）が成立しないと仮定すれば，或る正の実数$\varepsilon$に対しては
+\begin{equation}
+	0	<	|	t_n -c | < \frac{1}{n},	\quad
+	\left|	\int_a^b f(x,t_n) dx - \int_a^b f(x) dx 
+	\right|
+	\geqq	\varepsilon
+\label{eq6x46}
+\end{equation}
+なる数列	$	\{	t_n	\}$が存在することになる．$f_n(x) = f(x,t_n)$とおけば，
+仮定より関数列$	\{	f_n	(x)	\}$は閉区間 $ [a,b] $で一様に有界で
+\footnote{
+$n$に無関係な定数$M$が存在して$[a,b]$でつねに$|f_n ( x ) | \leqq M$である
+}
+ $ \displaystyle	\lim_{n\rightarrow \infty}	f_n(x) = f(x)$．
+故に Arzel\'{a} の定理（\S \ref{sec5x4}），定理5.10）
+\footnote{ \small
+\定理{5.10}
+(\textbf{Arzel\`{a}の定理})
+閉区間$[a,b]$において関数$f_n(x),	n=1,2,3,\cdots$は連続で，一様に有界，すなわち$n$に無関係な定数$M$が存在して$[a,b]$でつねに
+$|f_n	(x)	|	\leqq	M$であるとする．このとき，関数列$\{	f_n	(x)	\}$が
+収束してその極限$\displaystyle	f(x)	=	\lim_{n\rightarrow\infty}	f_n(x)$が
+$[a,b]$で連続ならば
+\[
+	\int_a^b	f(x)	dx	=	\lim_{n\rightarrow\infty}	\int_a^b	f_n(	x)	dx,
+	\quad
+	f(x)	=	\lim_{n\rightarrow\infty}	f_n	(x).
+\]
+}
+により$ \displaystyle	\lim_{n\rightarrow \infty}	\int_a^b f_n(x) dx = \int_a^b f(x) dx$
+となるが，これは（\ref{eq6x46}）に矛盾する．
+\■
+
+この補題は$ f(x,t)$の定義域が$ \{ (x,t) \: | \: a \leqq x \leqq b , 0 < t-c < \rho \}$あるいは
+$\{ (x,t) \: | \: a \leqq x \leqq b , - \rho < t- c < 0 \}$なる場合にも成り立つ．
+
+\定理{6.19}
+$f(x,t)$は矩形$ K= \{ (x,t) \: | \: a \leqq x \leqq b , \alpha \leqq t \leqq \beta \}$で定義された
+\underline{有界な}関数で$t$を固定したとき$x$について連続，$x$を固定したとき$t$について連続である
+\footnote{
+すなわち$x$を固定したとき，極限が存在して一致する：$\displaystyle \lim_{t\rightarrow c} f(x,t) = f(x,c)$，
+補題6.1の仮定を参照。
+}
+とする
+．
+\begin{list}{}{}
+	\item ($1^\circ$ ) $ \displaystyle F(t) = \int_a^b f(x,t) dx $は閉区間 $ [ \alpha , \beta ] $において（被積分変数とは無関係の）$t$について連続関数である．
+	\item ($2^\circ$ ) $ f(x,t)$が$t$について偏微分可能，偏導関数$f_t(x,t)$が$K$において有界で$t$を固定したとき$x$ついて連続ならば
+\footnote{すなわち積分可能ならば
+}
+$F(t) = \displaystyle \int_a^b f(x,t) dx$は$t$の微分可能な関数であって，その導関数は
+		\begin{equation}
+			F'(t) = \int_a^b f_t(x,t) dx
+		\label{eq6x47}
+		\end{equation}
+		で与えられる.
+	\item ($3^\circ$ )
+\begin{equation}
+	\int_\alpha^\beta \left(	
+											\int_a^b f8x,t) dx
+										\right) dt
+=	
+	\int_a^b f(x,t)	\left(	
+											\int_\alpha^\beta dt
+										\right) dx
+\label{eq6x48}
+\end{equation}
+\end{list}このとき
+
+\証明
+（$1^\circ$）任意の点$c , \alpha \leqq c \leqq \beta$，に対して上記の補題6.1により
+\[
+	\lim_{t\rightarrow c} \int_a^b f(x,t) dx = \int_a^b \lim_{t\rightarrow c} f(x,t) dx = (*)
+\]
+$x$を固定したとき，
+\[
+\int_a^b f(x,c) dx,
+\]
+すなわち$ \displaystyle	\lim_{t\rightarrow c} F(t) = F(c)$．故に
+$F(t)$は$t , \alpha \leqq t \leqq \beta$，の連続関数である．
+
+（$2^\circ$）
+任意の点$ c , \alpha \leqq c \leqq \beta$，に対して関数$ F(t)$が$t=c$で微分可能であって
+$\displaystyle	F'(t) = \int_a^b f_t(x,c) dx$なること証明すればよい．
+
+このために
+\[
+	q(x,t) = \frac{f(x,t) - f(x,c)}{t-c} , \quad \alpha \leqq t \leqq \beta ,\: t \ne c,
+\]
+とおく．$t$を固定したとき，仮定より，$ q(x,t)$は$x$について連続である
+．平均値の定理（定理3.5）
+\footnote{
+\定理{3.5}（平均値の定理）
+$f(x)$が閉区間$[a,b]$で連続，開区間$(a,b)$で微分可能ならば，
+\[
+	f'	(	\xi	)	=	\frac{f(b) - f(a)}{a-b},	\quad	a < \xi < b	
+\]
+なる点$\xi$が存在する．
+}
+により
+\[
+	q(x,t) = f_t(x,c + \theta (t-c)) , \quad 0 < \theta < 1,
+\]
+で，仮定により，$ f_t(x,t)$は有界であるから$ q(x,t)$も有界である．さらに，仮定により，
+$ \displaystyle	\lim_{t\rightarrow c} q(x,t) = f_t(x,c)$は$x$について連続である．
+故に，上記の補題6.1により，
+\[
+	\lim_{t\rightarrow c} \frac{F (t) - F(c)}{t-c} 
+= \lim_{t\rightarrow c} \int_a^b q(x,t) dx = \int_a^b f_t (x,c) dx.
+\]
+すなわち$F(t)$は$t=c$で微分可能で$F' (c) = \int_a^b f_t (x,c) dx$である．
+
+$(3^\circ)$
+\[
+	g(x,t) = \int_\alpha^t f(x,u) du , \quad \alpha \leqq t \leqq \beta,
+\]
+とおいて，まず関数$ g(x,t)$が$(2^\circ)$の$f(x,t)$の条件を満たすこと，すなわち
+\begin{list}{}{}
+	\item	(3-1) $g(x,t)$が$t$について偏微分可能で，偏導関数$g_t(x,t)$が$K$において有界．
+	\item (3-2) $t$を固定したとき$x$について連続．
+\end{list}
+を確かめる．
+$f(x,t)$は$K$において有界，すなわち$ | f(x,t) | \leqq M$なる定数，$M$が存在するから
+$ | g(x,t) | \leqq M ( \beta - \alpha)$，すなわち$ | g (x,t) |$も$K$で有界である．
+$ (1^\circ) $により$t$を固定したとき$g (x,t)$は$x$について連続である．
+$x$を固定したとき明らかに$ g(x,t)$は$t$について連続微分可能で
+\footnote{\small
+\定理{4.4}
+$f(x)$を区間$I$で連続な関数，$a$を$I$に属する点とし，任意の$x	\in	I$に対して
+$\displaystyle
+	F(x)	=	\int_a^x	f(x)	dx
+$とおけば$	\displaystyle	\frac{d }{d x}	F(x)	=	f(x)$．
+}
+$ g_t(x,t) = f(x,t)$，
+したがって$g_t(x,t)$は$K$において有界で$x$について連続である．
+故に$(2^\circ)$により$ g(x,t)$について（\ref{eq6x47}）が成り立つ：
+\[
+	\frac{d}{dt}
+\int_a^b g(x,t) dx = \int_a^b g_t ( x,t ) dx = \int_a^b f(x,t) dx.
+\]
+この右辺は，$(1^\circ)$により，$t$の連続関数である．故に，この両辺を$t$について
+$ \alpha$から$\beta$まで積分すれば，$ g(x,\alpha ) = 0$であるから
+\[
+	\int_a^b g(x,\beta ) dx = \int_\alpha^\beta \left( \int_a^b f(x,t) dx \right) dt,
+\]
+すなわち
+
+\[
+	\int_a^b \left(
+						\int_\alpha^\beta f(x,t) dt
+           \right) dx
+= \int_\alpha^\beta
+			\left(
+				\int_a^b f(x,t) dx
+			\right) dt
+\]
+を得る．
+\■
+
+（\ref{eq6x47}）はすなわち
+\begin{equation}
+	\frac{d}{dt} \int_a^b f(x,t) dx
+	=
+	\int_a^b \frac{\partial}{\partial t} f(x,t) dx
+\label{eq6x49}
+\end{equation}
+である．たとえぱ
+$\displaystyle
+	\int_\alpha^\beta
+	\left(
+		\int_a^b f(x,t) dx
+	\right) dt
+$を
+$\displaystyle
+  \int_\alpha^\beta dt \int_a^b f(x,t) dx
+$
+と書くことがある．この記法を用いれば（\ref{eq6x48}）は
+\begin{equation}
+	\int_\alpha^\beta dt
+	\int_a^b f(x,t) dx
+	=
+	\int_a^b dx
+	\int_\alpha^\beta f(x,t) dt
+\label{eq6x50}
+\end{equation}
+と書かれる．（\ref{eq6x49}），（\ref{eq6x50}）は，或る条件の下
+\footnote{
+定理6.19の仮定：矩形$K$で定義された\underline{有界}な関数で
+$t$を固定したとき$x$について連続，$x$を固定したとき$t$について連続であるとき，
+}
+では，積分
+$ \displaystyle \int_a^b f(x,t) dx$を$t$について微分あるいは積分するにはその被積分関数
+$ f(x,t)$を$t$について微分あるいは積分すればよいこと示す．積分
+$ \displaystyle \int_a^b f(x,t) dx
+$の被積分関数$f(x,t)$を$t$について微分あるいは積分することを
+$ \displaystyle	\int_a^b f(x,t) dx
+$を
+\textbf{積分記号下で微分あるいは積分する}という．
+
+矩形$ K= \{ \: (x,t) \: | a \leqq x \leqq b , \alpha \leqq t \leqq \beta \: \}$で定義された関数
+$ f(x,t)$が2変数$x,t$の関数として$K$で連続ならば，\S \ref{sec6x1}，定理6.3により，
+$ f(x,t)$は$K$で有界である．しかし
+$ f(x,t)
+$が$t$を固定したとき$x$について連続，$x$を固定したとき$t$について連続であっても，
+$ f(x,t)$は必ずしも\underline{$K$で有界であるとは限らない．}
+次の例がそれである．
+
+\例{6.14}
+正方形$ \{ \: (x,t) \: | \: 0 \leqq x \leqq 1 , 0 \leqq t \leqq 1 \: \}$
+において$ f(0,0) = 0, (x,t) \ne (0,0)$のとき
+$ f(x,t) = 2xt / (x^2 + t^2)^2$と定義すれば，関数$f(x,t)$は$x$についても$t$についても連続であるが，
+$ f(t,t) = 1/2t^2$であるから$ f(x,t)$は有界でない．この揚合
+$ f(x,0) = 0$，したがって$F(0) = \displaystyle \int_0^1 f(x,0) dx =0$のとき
+\begin{align*}
+	F(t)	&= \int_0^1 f(x,t) dx = \int_0^1 \frac{2xt}{(x^2+ t^2)^2}	= \int_0^1 \frac{(x^2)' t }{(x^2+t^2)^2} dx	\\
+				&= \left[	-	\frac{t}{(x^2+t^2) }	\right]_0^1 = \frac{1}{t} - \frac{t}{(1+t^2)}	= \frac{1}{t(t^2 + 1)}	
+\end{align*}
+であって，$F(t)$は$t=0$において連続でない．――
+
+$f(x,t)$が2変数$x,t$の開数として$K$で連続ならば，
+\footnote{「$x$を固定したとき，$t$を固定したとき」という意味よりも強い条件．
+}
+$f(x,t)$は$K$で有界であるから，
+\footnote{
+定理6.5
+}
+$f(x,t)$について上記の定理6.19，$(1^\circ)$および$(3^\circ)$が成り立つ.
+さらに$K$において偏導関数$ f_t (x,t)$が存在して2変数$x$，$t$の関数として連続ならば
+$(2^\circ)$も成り立つ．$ f(x,t)$あるいは$ f_t (x,t)$が2変数
+$ x,t$の連続関数である揚合に制限すれば，前項 \S \ref{sec6x3x2}におけると同様な収束の一様性の考察によって
+\footnote{
+定理6.20以下でこのことが示される．
+}
+定理6.19をArzela\'{a}の定理を用いないで証明することができる．
+\footnote{
+高木貞治“解析概論”，\S 48 参照．
+}
+応用上は，しかし，定理6.19をこのような制限をしないで証明しておく方が便利である．
+与えられた関数$f(x,t)$あるいはその偏導関数$ f_t(x,t)$が実際には
+2変数$x,t$の関数として連続であってもそのことを確かめないで済むからである．
+
+
+$f(x,t)$を矩形$ K=\{ (x,t) \: | a \leqq x \leqq b , \alpha \leqq t \leqq \beta \: \}$において有界で$x$についても
+$t$についても連続な関数として積分
+\[
+	\varPhi (u,t) = \int_a^u f(x,t) dx , \quad a \leqq u \leqq b,
+\]
+を2変数$u,t$の関数として考察する．
+
+\定理{6.20}
+\begin{list}{}{}
+	\item	$(1^\circ)$ $\varPhi (u,t)$は2変数$u,t$の連続関数である．
+	\item $(2^\circ)$ 偏導関数$f_t(x,t)$が存在して$f(x,t),f_t(x,t)$が共に2変数$x,t$の連続関
+数ならば$\varPhi (u,t)$は2変数$u,t$について導続微分可能な関数であって，その偏導関数
+\[
+	\varPhi_u (u,t) = f(u,t) , \quad  \varPhi_t(u,t) = \int_a^u f_t(x,t) dx
+\]
+\end{list}
+で与えられる．
+
+\証明
+$(1^\circ)$ 仮定により$ | f(x,t) | \leqq M$ なる定数$M$が存在するから
+\[
+	| \varPhi (u,t) - \varPhi (c,t) |
+\leqq 
+\left|	\int_c^u f(x,t) dx
+\right|
+\leqq M | u - c|.
+\]
+故に$ \varPhi ( u,t)$は$t$に関して一様に\underline{$u$について連続である．}
+\footnote{ \small 
+\S \ref{sec6x3}の復習:
+任意の正の実数$\varepsilon$に対応して$x$に無関係な正の実数$\delta ( \varepsilon ) > 0 = \delta ( \varepsilon , b)$が
+定まって
+\[
+	| y - b | < \delta ( \varepsilon ) \quad \text{ならば} \quad | f(x,y) - f(x,b) | < \varepsilon
+\]
+となるとき，\underline{関数$f(x,y)$は$x$に関して一様に$y$について連続であるという．}
+}
+\footnote{
+すなわちこの場合の$\delta ( \varepsilon ) $は$ \delta ( \varepsilon ) = \varepsilon / M $である．
+}
+$ \varPhi (u,t)$が$t$について連続であることは定理6.19，$(1^\circ)$によって明らかであるから，
+したがって，前項 \S \ref{sec6x3} のはじめに述べた結果により，
+$ \varPhi_u (u,t)$は2変数$u,t$の連続関数である．
+\footnote{下線分部，すなわち
+$f(x,y)$が$x$について連続で$x$に関して$y$について連続ならば$f(x,y)$は
+2変数$x,y$の関数としても連続である．
+}
+
+
+$(2^\circ)$
+$ \varPhi_u (u,t) = f(u,t)$は明らか．
+\footnote{ \small
+定理4.4 $f(x)$を区間$I$で連続な関数，$a$を$I$に属する点として，任意の$x \in I$に対して
+\[
+	F(x) = \int_a^x f(x) dx
+\]
+とおけば，
+\[
+	\frac{d}{dx} F(x) = f(x)
+\]
+}
+したがって，仮定により$\varPhi_u(u,t)$は2変数
+$u,t$連続関数である．また，定理6.19，$(2^\circ)$により$ \displaystyle \varPhi_t (u,t) = 
+\int_a^u f_t (x,t) dx$．故に上記$(1^\circ)$により
+$ \varPhi_t (u,t)$も2変数$u,t$の連続関数である．
+\■
+\footnote{時間$t$に関して連続性などの都合の良い性質を保持したまま，$t$の方向に（積分で）膨らませたものが，
+また，元の$u$についても，膨らませた$t$の方向にも，連続性や微分可能性といった都合の良い性質を持っていて欲しいのであるが，
+それを担保しているのが「有界性」．
+}
+
+\例{6.15}
+積分$ \displaystyle \int_0^1 x^t dx $, $t > 0$ に定理6.19, $(2^\circ)$を応用するために
+$f(x,t) = x^t, 0 \leqq x \leqq 1$，$t > 0$，とおいて関数$f(x,t)$とその偏導関数
+$f_t(x,t)$の性質を調べる．
+巾関数$x^t$は$ \R^+ = ( 0 , + \infty)$で定義された$x$の関数である
+(\S \ref{sec2x3x2})が，
+\footnote{
+正の実数$\alpha$を定めたとき，$x^\alpha$は$\R^+ = ( 0 , + \infty)$で定義された$x$の連続関数であって，
+$ \displaystyle \lim_{x\rightarrow  + \infty} x^\alpha = + \infty , \lim_{x\rightarrow 0} x^\alpha = 0$．
+巾関数の定義の記述を参照．
+}
+$ f(0,t) = 0^t = \displaystyle \lim_{x\rightarrow  +0} x^t = 0$と定義すれば
+$ f(x,t)$は$x$について連続な関数となる．
+明らかに$f(x,t)$は$t$について連続で
+\footnote{ \small
+\S \ref{sec2x3x2}．
+\[ 
+	a^\xi = \sup_{r < \xi} a^r = \sup \{ a^r \: | \: r < \varepsilon , r \in \Q \}
+\]
+このように$\R$全体で定義された$x$の関数$a^x$は連続で単調増加である．
+}
+$ 0 \leqq f(x,t) \leqq 1$である．
+$ f_t(0,t) = (d 0 /dt ) = 0 , 0 < x \leqq 1$のとき，
+（\ref{eq3x20}）により，
+\[
+	f_t(x,t) = x^t \log x
+\]
+であるが，$y = 1 / x^t$とおけば，例 2.9により，
+\[
+	\lim_{x\rightarrow  +0} f_t(x,t) = - \frac{1}{t} \lim_{y\rightarrow  + \infty} \frac{ \log y}{y} = 0.
+\]
+\footnote{
+ $ y=1/x^t \Rightarrow 1/y = x^t \Rightarrow \log (1/y) = \log x^t \Rightarrow - \log y = t \log x - \Rightarrow (1/t) \log y = \log x$
+}
+故に$ f_t (x,t)$は$x$について連続，したがって$t$を固定すれば
+$f_t ( x,t)$は有界である：$ | f_t(x,t) \leqq M_t$．
+\footnote
+{定理 2.4 閉区間で定義された連続関数は最大値と最小値を持つ．
+}
+明らかに$ f_t (x,t)$は$t$について連続で，$ t \geqq \alpha > 0$のとき
+\[
+	|	f_t( x,t) = x^t | \log x | \leqq x^\alpha | \log  x | \leqq M_\alpha,
+	|
+\]
+すなわち任意の正の実数$\alpha $に対して$ t \geqq \alpha $のとき$f_t (x,t)$は有界である．
+故に定理6.19，$(2^\circ)$により
+\[
+	\frac{d}{dt} \int_0^1 x^t dx = \int_0^1 x^t \log x dx.
+\]
+$\displaystyle	\int_0^1 x^t dx = \frac{1}{t+1}$であるから，したがって
+\[
+	\int_0^1 x^t \log x dx = \frac{-1}{(t+1)^2}.
+\]
+この等式の両辺を$t$について微分すれば，
+\[
+	\frac{\partial }{\partial t} (x^t \log x ) = x^t ( \log x )^2
+\]
+$x$についても$t$についても連続で$ t \geqq \alpha > 0 $のとき有界であるから，
+\[
+	\int_0^1 x^t ( \log x )^2 dx = \frac{2}{(t+1)^3} , \quad t  > 0,
+\]
+を得る．以下同様にして一般に
+\[
+	\int_0^1 x^t ( \log x )^n dx = \frac{(-1)^n n!}{(t+1)^{n+1}}, \quad t> 0.
+\]
+――
+
+\S \ref{sec5x4x3}の定理5.12は，Arzel\'{a}の定理の広義積分の場合への拡張である．これ
+に対応してArzel\'{a}の定理から導かれた定理6.19も，広義積分の場合に拡張される．
+
+\補題{6.2}
+　$ \sigma ( x ) , \sigma ( x ) \geqq 0 $，は区間$(a , + \infty) $で連続な$x$の関数で
+$\displaystyle	\int_a^{+\infty} \sigma ( x ) dx < + \infty$，
+$f(x,t)$は$ \{ ( x,t ) \: | \: x > a, 0 < | t - c | < \rho \: \}$においてつねに
+不等式$ | f(x,t) | \leqq \sigma ( x ) $を満たす$x,t$関数で$t$を固定したとき$x$について連続であるとする．
+このとき極限$ f(x) = \displaystyle \lim_{t\rightarrow c} f(x,t) $が存在して
+$x$について連続ならば
+\begin{equation}
+	\lim_{t\rightarrow c} \int_a^{+\infty}
+f(x,t) = \int_a^{+\infty} f(x) dx.
+\label{eq6x51}
+\end{equation}
+\証明
+証明はArzel\'{a}の定理の代りに定理 5.12を用いる点が違うだけで後は
+補題6.1の証明と同じである．すなわち，（\ref{eq6x51}）が成立しないとすれば，
+或る正の実数$\varepsilon$に対して
+\[
+	0 < | t_n - c | < \frac{1}{n}, \quad
+  \left|	\int_a^{+\infty} f(x,t_n) dx 
+  - \int_0^{+\infty} f(x) dx
+	\right|
+	\geqq \varepsilon
+\]
+なる数列$ \{ t_n \}$が存在することとなり，$f_n(x) = f(x, t_n)$とおけば区間
+$(a, + \infty)$でつねに
+$ | f_n(x) | \leqq \sigma(x)$であって
+$\displaystyle \lim_{n\rightarrow \infty} f_n (x) = f(x)$であるから，定理5.12により
+$ \displaystyle \lim_{n\rightarrow \infty} \int_a^{+\infty} f_n( x) dx = \int_a^{+\infty} f(x) dx$
+となって矛盾を生じる．ここで（\ref{eq6x51}）の広義積分
+$\displaystyle \int_a^{+\infty} f(x,t) dx , \int_a^{+\infty} f(x) dx$が収束することは
+$ | f(x,t) | \leqq \sigma(x),
+$
+したがって$ | f(x) | \leqq \sigma (x)$
+であることから明らかであろう．
+\footnote{
+定理4.6 系
+}
+\■
+
+\定理{6.21}
+$ f(x,t)$は$ \{ (x,t) \: | \: x > a, \alpha \leqq t \leqq \beta \}$で定義された
+$x,t$の関数で$t$を固定したとき$x$について連続，$x$を固定したとき$t$について連続であって
+区間$(a, + \infty)$で連続な$x$の関数$ \sigma ( x) , \sigma (x ) \geqq 0$，で
+$ \displaystyle \int_a^{+\infty} \sigma (x) dx < + \infty$なるものがつねに不等式
+$ | f(x,t) | \leqq \sigma ( x)$が成り立つとする．このとき
+\begin{list}{}{}
+	\item	$(1^\circ)$ $F(x) = \displaystyle \int_a^{+\infty} f(x,t) dx $は$t$の連続関数である．
+	\item $(2^\circ)$ $f(x,t)$が$t$について偏微分可能，$\displaystyle	\int_a^{+\infty} \sigma_1 ( x) dx < + \infty$，
+$\sigma_1 (x) \geqq 0 $，なる$x$の連続関数$ \sigma_1 (x) $が存在してつねに
+$ | f_t( x,t) | \leqq \sigma_1 (x)$であって$t$を固定したとき$f_t(x,t)$が$x$について連続ならば
+$F(t) = \displaystyle \int_a^{+\infty} f(x,t) dx$は$t$について微分可能で
+\begin{equation}
+	\frac{d}{dt} \int_a^{+\infty} f(x,t) dx = \int_a^{+\infty} f_t(x,t) dx.
+\label{eq6x52}
+\end{equation}
+\item $(3^\circ)$ 
+\begin{equation}
+\int_\alpha^\beta dt \int_a^{+\infty} f(x,t) dx = \int_a^{+\infty} dx \int_\alpha^\beta f(x,t) dt.
+\label{eq6x53}
+\end{equation}
+\end{list}
+
+\証明
+
+$(1^\circ)$は補題6.2により任意の$c , \alpha \leqq c \leqq \beta$，に対して
+\[
+	\lim_{t\rightarrow c} \int_a^{+\infty} f(x,t) dx
+= \int_a^{+\infty} \lim_{t\rightarrow c} f(x,t) dx = \int_a^{+\infty} f(x,c) dx
+\]
+となることから明らかである．
+\footnote{
+補題6.2では$ \displaystyle \lim_{t\rightarrow c} f(x,t)$が$x$について連続であることを仮定しており，
+このことは，本定理において，$t$を固定したとき$x$について連続であること，という仮定で満たされている。
+}
+
+$(2^\circ)$ 点$c, \alpha \leqq c \leqq \beta$を任意にとって
+\[
+	q(x,t) = \frac{f(x,t) - f(x,c)}{t-c},\quad t \ne c,
+\]
+とおく．平均値の定理により
+\[
+	q(x,t)  = f_t(x,c+\theta (t-c)) , \quad 0 < \theta < 1,
+\]
+であるから
+\[
+	|	q(x,t)	|	= | f_t(x,c+\theta (t-c)) | \leqq \sigma_1(x).
+\]
+また$t$を固定したとき$q(x,t)$は$x$について連続で$\displaystyle	\lim_{t\rightarrow c} q(x,t ) = f_t(x,c)$である．
+故に，補題6.2により，
+\[
+	\lim_{t\rightarrow c}	\frac{F(t) - F(c)}{t-c}
+=	\lim_{t\rightarrow c}	\int_a^{+\infty} q(x,t) dx
+=	\int_a^{+\infty} f_t(x,c) dx.
+\]
+すなわち$F(t)$は$t=c$で微分可能で$F'(c) = \int_a^{+\infty} f_t(x,c) dx$．
+
+$(3^\circ)$
+\[
+	g(x,t)	=	\int_\alpha^t f(x,u) dx, \quad \alpha \leqq t \leqq \beta
+\]
+とおけば$ | f(x,t) | \leqq \sigma (x )$であるから
+$ | g(x,t) | \leqq ( \beta - \alpha ) \leqq ( \beta - \alpha ) \sigma ( x)$.
+
+$f(x,t)$は$t$を固定したとき$x$について連続であるから，任意の$\varepsilon > 0$に対応して
+特に$	\varepsilon / ( t - \alpha ) >0$に対しても，或る$\delta(\varepsilon) > 0$が存在して，
+\[
+	|x-c| < \delta ( \varepsilon ) \Rightarrow | f(x,t ) - f(c,t) | < \varepsilon / ( t- \alpha)
+\]
+このとき，
+\begin{align*}
+	\left|	\int_\alpha^t f(x,u) du - \int_\alpha^t f(c,t) du
+	\right|
+	&	=
+	\left|	\int_\alpha^t 
+		\left\{	f(x,u) - f(c,u)
+		\right\} du
+	\right|	\\
+	&\leqq
+	\int_\alpha^t
+	\left|	f(x,u) - f(c,u)
+	\right|	du	\\
+	&<	\varepsilon
+\end{align*}
+したがって$g(x,t)$は$t$を固定したとき，$x$について連続である．
+$g(x,t)$は$x$を固定したとき$t$について連続微分可能で$g_t(x,t)= f(x,t)$．
+したがって$g_t(x,t)$は$x$について連続で$|g_t(x,t) | \leqq \sigma(x)$．
+故に，$(2^\circ)$により，
+\[
+	\frac{d}{dt}
+	\int_a^{+\infty}
+	g(x,t) dx
+	=
+	\int_a^{+\infty}	g_t(x,t) dx
+	=
+	\int_a^{+\infty}	f(x,t)	dx.
+\]
+この両辺を$t$について$\alpha$から$\beta$まで積分すれば
+\[
+	\int_a^{+\infty} g(x,\beta) dx - \int_a^{+\infty} g(x,\alpha)
+	=
+	\int_a^{+\infty} g(x,\beta) dx - 0
+	=
+	\int_\alpha^\beta dt \int_a^{+\infty}	f(x,t) dx
+\]
+すなわち，
+\[
+	\int_a^{+\infty}	dx	\int_\alpha^\beta f(x,t) dt
+	=
+	\int_a^{+\infty}	\int_\alpha^\beta f(x,t) dt dx
+	=
+	\int_\alpha^\beta dt \int_a^{+\infty}	f(x,t) dx
+\]
+を得る．
+\■
+この定理6.21は区間$(a, + \infty)$を任意の区間$I$で置き換えても成り立つ．
+
+\例{6.16}
+例4.8で導入したガンマ関数
+\[
+	\varGamma (s ) = \int_0^{+\infty} e^{-x} x^{s-1} dx , \quad s > 0
+\]
+を考察する．この右辺の広義積分が収束することは例4.8で証明した．
+$x^s$は$0 < x < 1$のとき$s$の単調減少関数，$x > 1$のとき$s$の単調増加関数であるから，
+積分を二つに分けて
+\begin{align*}
+	\varGamma (s) &= F(s) + G(s),	\\
+	F(s) = \int_0^1 e^{-x} x^{s-1} dx ,\quad G(s) = \int_1^{+\infty} e^{-x} x^{s-1} dx
+\end{align*}
+と書く．実数$\alpha , \beta , 0 < \alpha < \beta$，を任意にとって$ \alpha \leqq s \leqq \beta$とすれば
+\begin{align*}
+	&x \geqq 1 \quad \text{のとき} \quad e^{-x} x^{s-1} \leqq e^{-x} x^{\beta -1 } , \\
+	&\int_1^{+\infty} e^{-x} x^{\beta - 1} dx <  \int_0^{1} e^{-x} x^{\beta - 1} dx + \int_1^{+\infty} e^{-x} x^{\beta - 1} dx = \varGamma(\beta)
+\end{align*}
+であるから，定理6.21，$(1^\circ)$により，$G(s)$は$s$の連続関数である．つぎに
+\[
+	\frac{\partial }{\partial s} e^{-x} x^{s-1} = e^{-x} x^{s-1} \log x = e^{-x} x^s \frac{ \log x }{x}
+\]
+において
+\begin{equation}
+	x \geqq 1 \quad \text{のとき} \quad \leqq \frac{\log x}{x} \leqq \frac{1}{x}
+\label{eq6x54}
+\end{equation}
+である．なぜなら，$\varphi(x) = \log x / x$とおけば，
+$\varphi (1) = 0$，$x > 1$のとき$ \varphi (x) > 0$
+で導関数$\varphi'(x) $は
+\begin{align*}
+  \varphi'(x) =	\frac{1}{x}\frac{1}{x} - \frac{\log x }{x^2}	= (1- \log x) / x^2
+\end{align*}
+は$1 < x < e $のとき正，
+$x > e$のとき負，したがって$\varphi (x) $は$x = e$で最大値$\varphi (e) = 1/ e$をとるからである．
+故に，$x \geqq 1$のとき
+\begin{align*}
+	&\left|	\frac{\partial }{\partial s} e^{-x} x^{s-1}
+	\right|
+	\leqq
+	\left|	e^{-x} x^s \frac{\log x}{ x}
+	\right|
+	\leqq	
+	\left|	e^{-x} x^s \frac{1}{ e}
+	\right|
+	\leqq	
+	e^{-x-1}x^s \leqq e^{-x-1} x^\beta,	\\
+	\quad
+	&\int_1^{+\infty} e^{-x-1} x^\beta dx
+	<	\int_0^{+\infty} e^{-x-1} x^\beta dx
+	<	\frac{1}{e} \int_0^{+\infty} e^{-x} x^\beta dx
+	=	\frac{\varGamma ( \beta + 1 )}{e}.
+\end{align*}
+したがって，定理6.21，$(2^\circ)$により，$G(s)$は微分可能で\[
+	G'(s) = \int_1^{+\infty} e^{-x} x^{s-1} \log x dx.
+\]
+$F(s)$については，
+\[
+	0 < x \leqq 1 \quad \text{のとき} \quad
+	e^{-x}x^{s-1} \leqq e^{-x} x^{\alpha-1},
+	\quad
+	\int_0^1	e^{-x} x^{\alpha-1} dx < \varGamma ( \alpha)
+\]
+であるから$F(s)$は$s$の連続関数である
+\footnote{
+定理6.19，$( 1^\circ )$
+}
+．任意に定めた$\varepsilon, 0 < \varepsilon < \alpha$，
+に対して，$ 0 < x \leqq 1$のとき
+\[
+	| e^{-x} x^{s-1} \log x|
+	\leqq
+	e^{-x} x^{\alpha-1} | \log x | = e^{-x} x^{\alpha-s-1} \cdot x^s | \log x|
+\]
+であるが，$y = 1 / x^\varepsilon$とおけば（\ref{eq6x54}）により
+\[
+	x^\varepsilon | \log x | 
+ = \frac{1}{y} | \log 1/y^{(1/\varepsilon)} |
+ = \frac{1}{y} \left| - \frac{1}{\varepsilon } \log y \right|
+ <
+ \frac{\log y }{\varepsilon y } \leqq \frac{1}{\varepsilon e}.
+\]
+\footnote{
+ $ 0 < x \leqq 1$のとき，$  0 < \varepsilon$の指数関数と考えると、
+$1 \geqq  x^\varepsilon > 0$であるから，$ 1 \leqq y$.
+}
+故に，$0 < x \leqq 1$のとき
+\begin{align*}
+&	\left|	\frac{\partial }{\partial s} e^{-x} x^{s-1} 
+		\right|
+	=
+		\left|	e^{-x} x^{s-1} \log x
+		\right|
+	\leqq 
+		e^{-x} x^{\alpha -1 } | \log x |
+	=	
+		e^{-x} x^{\alpha - \varepsilon -1} x^\varepsilon | \log x |
+	\leqq	
+		\frac{e^{-x} x^{\alpha - s - 1}}{\varepsilon e},	\\
+&	\int_0^1	e^{-x}	x^{\alpha -s - 1} dx < \int_0^1 e^{-x} x^{\alpha^s-1} + \int_1^{+\infty} e^{-x} x^{s-1} dx = \varGamma ( \alpha - \varepsilon).	
+\end{align*}
+したがって$F(s)$も定理6.21 $(2^\circ)$により微分可能で
+\[
+	F'(s) = \int_0^1 e^{-x} x^{s-1} \log x dx.
+\]
+以上$	\alpha \leq s \leqq \beta$と仮定したが$\alpha , \beta$は
+$0 < \alpha < \beta$なる任意の実数であった．故に
+$\varGamma(s)$は区間$(0, + \infty)$で微分可能な$s$の関数で
+\[
+	\varGamma' (s) = \int_0^{+\infty} e^{-x}x^{s-1} \log x dx ,\quad s > 0.
+\]
+導関数$\varGamma' (s)$はすなわち$\displaystyle \varGamma(s) = \int_0^{+\infty} e^{-x} x^{s-1} dx$を
+積分記号下で微分して得られる．
+
+同様に$\varGamma (s)$の$n$次導関数は
+\begin{equation}
+	\varGamma^{(n)} (s) = \int_0^{+\infty} e^{-x} x^{s-1} ( \log x)^n dx , \quad s > 0.
+\label{eq6x55}
+\end{equation}
+
+\例{6.17}
+定理6.21の応用の例として有名な積分：$\displaystyle \int_0^{+\infty} \frac{\sin x}{x} dx$の
+古典的な計算法を述べる．まず，
+\begin{equation}
+	\int_0^{+\infty}
+	e^{-px} \cos (qx) dx 
+	=
+	\frac{p}{p^2+q^2}, \quad p > 0,
+\label{eq6x56}
+\end{equation}
+なることを示す．この左辺の広義積分が絶対収束することは
+\begin{align*}
+	|e^{-px} \cos (qx) | \leqq e^{-px},
+	\quad
+	\int_0^{+\infty}	e^{-px} dx = \left[	-\frac{1}{p} e^{-px} \right]_0^{+\infty}=\frac{1}{p}
+\end{align*}
+によって明らかである．部分積分の公式(\ref{eq4x21})により
+\begin{align*}
+	\int	e^{-px} \cos (qx) dx = -\frac{1}{p} e^{-px} \cos (qx) - \frac{q}{p} \int e^{-px} \sin (qx) dx,	\\
+	\int	e^{-px} \sin (qx) dx = -\frac{1}{p} e^{-px} \sin (qx) + \frac{q}{p} \int e^{-px} \cos (qx) dx,	
+\end{align*}
+であるから
+\begin{align*}
+	\int_0^{+\infty} e^{-px} \cos (qx) dx
+&= 	\left[	-\frac{1}{p} e^{-px} \cos (qx)
+		\right]_0^{+\infty}
+	- \frac{q}{p} \int_0^{+\infty} e^{-px} \sin (qx) dx	\\
+&= \frac{1}{p} - \frac{q}{p} \int_0^{+\infty} e^{-px} \sin (qx) dx \\
+&= \frac{1}{p} + 	\frac{p}{q}	
+										\left( \left[	-\frac{1}{p} e ^{-px} \sin (qx) \right]_0^{+\infty} 
+												- \frac{q}{p} \int_0^{+\infty} e^{-qx} \cos (qx) dx 
+										\right)	\\
+&= \frac{1}{p} - \frac{q^2}{p^2} \int_0^{+\infty} e^{-px} \cos (qx ) dx.
+\end{align*}
+これを整理すると，
+\[
+	\frac{p^2+q^2}{p^2} \int_0^{+\infty} e^{-px} \cos (qx ) dx = \frac{1}{p}
+\]
+すなわち，
+故に(6・56)が成り立つ．
+さて$p$を固定すれば$ e^{-px} \cos (qx ) $は$x$と$q$の連続関数で
+$ | e^{-px} \cos (qx) | \leqq e^{-px}, \displaystyle \int_0^{+\infty} e^{-px} dx < + \infty$
+であるから，定理6.21，$(1^\circ)$により，
+(\ref{eq6x56})を$q$について積分記号下で積分して
+\[
+	\int_0^{+\infty} e^{-px} \left( \int_0^q \cos (qx) dq \right) dx = p \int_0^q \frac{dq}{p^2+q^2},
+\]
+すなわち
+\[
+	\int_0^{+\infty} e^{-px} \frac{ \sin (qx) }{x} dx = \Arctan \frac{q}{p}
+\]
+を得る．
+\footnote{	\small $q$について微分してみる．
+$\displaystyle
+	\left(	\frac{\sin qx }{x}
+	\right)_q' = \cos qx \cdot \frac{x}{x} = \cos qx.
+$
+　
+}
+\footnote{	\small
+（\ref{eq4x20}）$\displaystyle \int \frac{dx}{x^2+1} = \Arctan x$である．
+\[
+	\left(	\Arctan \frac{q}{p}
+	\right)'
+	=	\frac{1}{1+ (q/p)^2}\frac{1}{p} = \frac{p^2}{p^2+q^2} \frac{1}{p} = \frac{p}{p^2+q^2}
+\]
+}
+これを再び$q$について積分記号下で積分すれば
+\[
+	\int_0^{+\infty} e^{-px} \frac{1-\cos (qx) }{x^2} dx = \int_0^{q} \Arctan \frac{q}{p} dq
+\]
+を得るが，
+\footnote{	\small
+\[
+	\int_0^q	\frac{	\sin (qx)}{x} dq 
+= \left[	-	\frac{	\cos (qx) }{x^2}
+	\right]_0^q
+=	-	\frac{	\cos	(qx)	}	{x^2} + \frac{1}{x^2}
+\]
+}
+（\ref{eq4x23}）により
+\footnote{	\small
+（\ref{eq4x23}）$\displaystyle	\int f(x) dx = x f(x) - \int x f'(x) dx$
+}
+\[
+	\int \Arctan t dt = t \Arctan t - \int \frac{t dt}{t^2+1} = t \Arctan t - \frac{1}{2} \log (t^2+1)
+\]
+であるから$\displaystyle	t=\frac{q}{p}$とおくと，$\displaystyle	dt = \frac{dq}{p}$
+\begin{align*}
+	\int \Arctan \frac{q}{p} dq 
+&=	\int \Arctan t \cdot p dt = p \int \Arctan t dt \\
+&=	p \int \Arctan t dt = p \left(	t \Arctan t - \frac{1}{2} \log (t^2 + 1) \right)	\\
+&=	p	\left(	\frac{q}{p} \Arctan \frac{q}{p} - \frac{1}{2} \log \left( \frac{q^2}{p^2} +1 \right)
+			\right)	\\
+&=	q \Arctan \frac{q}{p} - \frac{p}{2} \log \left(\frac{q^2}{p^2} + 1  \right)
+\end{align*}
+すなわち，
+\begin{align*}
+	\int_0^q \Arctan \frac{q}{p} dq 
+&=	\left[	q \Arctan \frac{q}{p} - \frac{p}{2} \log \left( \frac{q^2}{p^2} \right)
+		\right]_0^q \\
+&	= q \Arctan \frac{q}{p} - \frac{p}{2} \log \left( \frac{q^2}{p^2} + 1 \right).
+\end{align*}
+故に$q=1$とおけば
+\begin{align}
+	\int_0^{+\infty} e^{-px} \frac{1 - \cos x}{x^2} dx 
+	&=	\Arctan \frac{1}{p} - \frac{p}{2} \log \left(	\frac{1}{p^2} + 1	\right)	\notag \\
+	&=	\Arctan \frac{1}{p} - \frac{p}{2} \log \left(	\frac{1+p^2}{p^2}	\right)	\notag \\
+	&= \Arctan \frac{1}{p} - \frac{p}{2} \log ( 1 + p^2 ) + p \log p	
+\label{eq6x57}
+\end{align}
+この等式は$p > 0 $として証明されたのであるが，$ p \geqq 0 $のとき
+\[
+	\left|	e^{-px} \frac{1- \cos x }{x^2} 	\right|	\leqq \frac{1 - \cos x }{x^2},	\qquad
+	\int_0^{+\infty} \frac{1 - \cos x } {x^2} dx < + \infty
+\]
+であるから，定理6.21，$(1^\circ)$により，左辺の積分は$p \geqq 0$のとき$p$の連続関数で
+ある．
+$\displaystyle \int_0^{+\infty} \frac{1 - \cos x }{x^2} dx < + \infty$なることは，$x$の関数
+\[
+	\frac{1 - \cos x }{x^2} = \frac{1}{2!} - \frac{x^2}{4!} + \frac{x^4}{6!} - \cdots
+\]
+\footnote{
+$\displaystyle	 \cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots $
+}
+が区間$[0,+\infty)$で連続で
+\footnote{　\small
+定理5.5 関数$f_n (x), n=1,2,3, \cdots , $はすべて区間$I$で連続であるとする．
+このとき
+\begin{list}{}{}
+	\item	$(2^\circ)$ 級数$\displaystyle \sum_{n=1}^{\infty} f_n (x) $が$I$で一様に収束すれば，
+その和：$s(x) = \displaystyle \sum_{n=1}^{\infty} f_n(x)$も$I$で連続である．
+\end{list}
+を利用するのだろうが，証明の詳細は保留。
+}
+$ x > 0$のとき$ 0 \leqq (1 - \cos x ) / x^2 \leqq 2/x^2 $であるから，
+\S \ref{sec4x3}，定理4.11，$(2^\circ)$によって明らかである．
+故に等式(\ref{eq6x57})の$p \to + 0$のときの極限をとって
+\begin{equation}
+	\int_0^{+\infty} \frac{1 - \cos x }{x^2} dx = \frac{\pi}{2}
+\label{eq6x58}
+\end{equation}
+を得る．したがって，部分積分の公式により
+\[
+	\int \frac{ \sin x }{x } dx = \frac{1 - \cos x }{x} + \int \frac{1 - \cos x }{x^2} dx
+\]
+であるから
+\begin{equation}
+	\int_0^{+\infty} \frac{ \sin x }{x} dx = \frac{\pi}{2}.
+\label{eq6x59}
+\end{equation}
+%

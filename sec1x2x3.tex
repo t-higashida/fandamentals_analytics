@@ -1,0 +1,124 @@
+\subsection{無理数}
+
+高校数学では\S 1.1で述べたように，循環しない無限小数が必ず実数を表わすことを明確に説明できなかった．実数の10進小数表示は後で数列の極限に関連して扱うが，ここで，\underline{循環しない無限小数は無理数を表わす}ことを証明しておく．
+
+循環しない無限小数
+\[
+	k.k_1k_2k_3	\cdots	k_n	\cdots,	k\text{は整数},
+\]
+が与えられたとして，
+\begin{align*}
+		a_n	&	=	k.k_1k_2k_3	\cdots	k_n	=	k	+\frac{k_1}{10}
+																				+\frac{k_2}{10^2}
+																				+	\cdots
+																				+\frac{k_n}{10^n}	\\
+		b_n	&	=	a_n+\frac{1}{10^n}	\\
+\end{align*}
+とおく．\S 1.1で述べたように，この無限小数が実数$\alpha$を表わすということは，
+実数$\alpha$がすべての自然数$n$について次の不等式を満たすことに他ならない：
+\begin{equation}
+	a_n	\leqq	\alpha	<	b_n.	\label{eq:1.9}
+\end{equation}
+明らかに$a_{n-1}	\leqq	a_n$．また，$0	\leqq	k_n	\leqq	9$であるから，
+\[
+	b_n=a_{n-1}+\frac{k_n+1}{10^n}	\leqq	a_{n-1}+\frac{10}{10^n}=b_{n-1}.
+\]
+循環しない無限小数を考えているから，ある位から先すべての$k_n$が$0$となることは
+ないし，また，ある位から先すべての$k_n$が$9$となることもない．すなわち，
+$1	\leqq	k_m$なる自然数$m$が無数にあり，また，$k_l	\leqq	8$なる自然数$l$が
+無数にある．このような$m$，$l$に対してはそれぞれ不等式：
+\[
+	a_{m-1}	<	a_m,	\quad	b_l	<	b_{l-1}
+\]
+が成り立つ．すなわち
+\begin{align}
+	a_1	\leqq	a_2	&	\leqq	\cdots	\leqq	a_n	\leqq	\cdots	
+									\leqq	a_{m-1}	<	a_m	\leqq	\cdots	\notag	\\
+								&	\leqq	b_l	<	b_{l-1}	\leqq	\cdots	
+									\leqq	b_n	\leqq	\cdots	\leqq	b_2	\leqq	b_1.	\label{eq:1.10}
+\end{align}
+すべての自然数$n$について（\ref{eq:1.9}）を満たす実数$\alpha$
+の存在を証明するために
+\[
+	A'	=	\{	r	\in	\Q	\:	|	\:
+						r	\geqq	a_n,	n=1,2,3,\cdots
+				\}
+\]
+とおいて，$\	Q$における$A'$の補集合を$A$とする．$\langle	A,	A'	\rangle$が有理数の切断をなすことは
+次のようにして容易に確かめられる．：（\ref{eq:1.10}）により$n=2$のとき$a_1	\leqq	a_2$，
+よって$a_1	\notin	A'$すなわち$a_1	\in	A$，また任意の$n	\in	\N$に対して$b_1	\geqq	a_n$，
+よって$b_1\in	A'$．すなわち$A$と$A'$は空集合でない；
+明らかに$A'$は切断の条件(ⅲ)'を満たす；「$\forall	n	\in	\N	\quad	r	\geqq	a_n$のとき，$s	\geqq	r,	s	\in	\Q$ならば$\forall	n	\in	\N	\quad	s	\geqq	a_n$」
+また$A$は少なくとも一つの$n$について$r	<	a_n$となる有理数$r$全体の集合であり，
+$r$と$a_n$のとの間には無数の有理数が存在する（定理1.4）から，$A$に属する最大の有理数はない．
+よって$\langle	A,	A'	\rangle$は有理数の切断をなす．
+\[
+	\alpha	=	\langle	A,A'	\rangle
+\]
+とおく．（\ref{eq:1.10}）はすべての自然数$n$に対して$a_n	\in	A$，$b_n	\in	A'$なることを示して
+いる．したがって定理1.3により，すべての自然数$n$に対して
+\[
+	a_n	<	\alpha	\leqq	b_n.
+\]
+さらに（\ref{eq:1.10}）は任意の$n$に対して$b_l	<	b_n$なる$l$が存在することを示している．
+故に$\alpha	\leqq	b_l	<	b_n$.すなわち，すべての$n$に対して
+\begin{equation}
+	a_n	<	\alpha	<	b_n	\label{eq:1.11}
+\end{equation}
+が成り立つ．これで与えられた無限小数$k.k_1k_2k_3	\cdots	$が実数$\alpha$を表わすことが
+証明された．
+
+この$\alpha$は\underline{無理数である}．このことを証明するために$\alpha$が有理数であったと
+仮定して，$\alpha=q/p$，$p$は自然数，$q$は整数，とおけば，不等式（\ref{eq:1.11}）は
+\begin{equation}
+	a_n	<	\frac{q}{p}	<	a_n	+	\frac{1}{10^n},\quad	n=0,1,2,3,\cdots	\label{eq:1.12}
+\end{equation}
+となる．ただしここで$a_0	=	k$とする．この一連の不等式は，逆に，無限小数
+$k.k_1k_2k_3	\cdots$を一意的に定める．しかもその定め方が，$q	>	0$である場合には，
+10進法で$q$を$p$で割って$q/p$の循環小数表示を求める\S 1.1で述べた操作と一致する．
+このことを確かめるために
+\[
+	r_n	=	10^{n-1}p\left(\frac{q}{p}-a_{n-1}	\right)
+			=	10^{n-1}q-10^{n-1}a_{n-1}p
+\]
+とおく．
+$10^{n-1}a_{n-1}=10^{n-1}k+10^{n-2}k_1+10^{n-3}k_2+\cdots	10^0	k_{n-1}$
+は整数であるから$r_n$も整数である．（\ref{eq:1.12}）により$n-1$の場合に辺々$a_{n-1}$を引くと
+\[
+	0	<	\frac{q}{p}	-	a_{n-1}	<	\frac{1}{10^{n-1}}
+\]
+であるから辺々に$10^{n-1}p$をかけると
+\[
+	0	<	r_n	<	p.
+\]
+また
+\[
+	r_{n+1}	=	10^n	p	\left(\frac{q}{p}-a_n	\right)
+					=	10^n	p	\left(\frac{q}{p}-a_{n-1}-\frac{k_n}{10^n}	\right)
+					=	10^n	p	\left(\frac{r_n}{10^{n-1}p}-\frac{k_n}{10^n}	\right)
+					=	10r_n-pk_n,
+\]
+すなわち
+\[
+	10r_n=pk_n+r_{n+1}.
+\]
+さらに$r_1=q-pk$であるから，結局
+\begin{align*}
+		q		&	=	pk	+r_1,			\quad	0	<	r_1	<	p,	\\
+	10r_1	&	=	pk_1+r_2,			\quad	0	<	r_2	<	p,	\\
+	10r_2	&	=	pk_2+r_3,			\quad	0	<	r_3	<	p,	\\
+				&	\cdots					\quad	\cdots				\\
+	10r_n	&	=	pk_n+r_{n+1},	\quad	0	<	r_{n+1}	<	p,	\\
+				&	\cdots					\quad	\cdots				\\
+\end{align*}
+を得る．これは，$q	>	0$である場合には，10進法で$q$を$p$で割る割算の操作に他ならない．
+\S 1.1で述べたように，$r_1,r_2,\cdots	,r_p$のうち少なくとも二つは一致するから
+この割算の操作は$q/p$の循環小数表示を与える．$q<0$である場合も事情は同様であって，
+したがって無限小数$k.k_1k_2k_3	\dots$は循環小数でなければならないことになって，
+仮定に矛盾する．故に$\alpha$は無理数である．
+\■
+
+これで循環しない無限小数はすべて無理数を表わすことが証明された．
+このことからすぐにわかるように，\underline{無理数は数直線$\R$上到る所稠密に分布してる}．
+すなわち，任意に与えられた二つの実数$\beta,\gamma,\beta	<	\gamma$，に対して
+$\beta	<	\alpha	<	\gamma$なる無理数$\alpha$は無数に存在する．

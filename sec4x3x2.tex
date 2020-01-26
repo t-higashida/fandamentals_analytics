@@ -1,0 +1,321 @@
+\subsection{広義積分の性質}
+\label{sec4x3x2}
+
+定積分について定理4.1で証明した性質は広義積分についても成り立つ．
+すなわち
+
+\定理{4.6}
+$f(x),	g(x)$は区間$(a,b)$で高々有限個の点を除いて連続な関数であって，その広義積分
+$\displaystyle	\int_a^b	f(x)	dx,	\:	\int_a^b	g(x)	dx$は収束しているとする．
+\begin{list}{}{}
+	\item	$(1^\circ)$ $a < c < b$ならば\footnote{$c$は不連続点であってもよい，}
+			\begin{equation}
+					\int_a^b	f(x)	dx	=	\int_a^c	f(x)	dx	+	\int_c^b	f(x)	dx.
+			\label{eq4x41}
+			\end{equation}
+	\item	$(2^\circ)$	$c_1	,	c_2$を定数とすれば，広義積分$	\displaystyle	\int_a^b	(c_1	f(x)	+	c_2	g(x))	dx$も収束して
+			\begin{equation}
+				\int_a^b	(c_1f(x)	+	c_2	g(x))	dx	=	c_1	\int_a^b	f(x)	dx	+	c_2	\int_a^b	g(x)	dx.
+			\label{eq4x42}
+			\end{equation}
+	\item	$(3^\circ)$ 区間$(a,b)$でつねに$f(x)	\geqq	g(x)$ならば
+			\begin{equation}
+				\int_a^b	f(x)	dx	\geqq	\int_a^b	g(x)	dx
+			\label{eq4x43}
+			\end{equation}
+であって，(\ref{eq4x43})において等号が成り立つのは$(a,b)$で$f(x),g(x)$の不連続点を除いてつねに$f(x)	=	g(x)$である場合に限る．
+	\item	$(4^\circ)$ さらに広義積分$\displaystyle	\int_a^b	|f(x)|	dx$が収束するならば
+			\begin{equation}
+					\left|
+						\int_a^b	f(x)	dx
+					\right|	\leqq	\int_a^b	|f(x)|	dx.
+			\label{eq4x44}
+			\end{equation}
+\end{list}
+
+\証明
+まず区間$(a,b)$で$f(x),	g(x)$が共に連続である場合について証明する．
+
+$(1^\circ)$ $a	<	c	<	b$のとき等式(\ref{eq4x41})が成り立つことは(\ref{eq4x36})によって
+\[
+	\int_a^b	f(x)	dx	\stackrel{(\ref{eq4x36})}{=}	
+												\lim_{s\rightarrow a+0}\int_s^c	f(x)	dx	+	\lim_{t\rightarrow b-0}	\int_c^t	f(x)	dx
+											=
+												\int_a^c	f(x)	dx	+	\int_c^b	f(x)	dx.	
+\]
+となり，示される．
+
+$(2^\circ)$ 広義積分$\displaystyle	\int_a^b$は定積分$\displaystyle	\int_s^t	,	a	<	s	<	t	<	b$，の
+$	t	\rightarrow	b-0$,$s	\rightarrow	a	+	0$のときの極限であるから，
+広義積分$\displaystyle	\int_a^b	(c_1	f(x)	+	c_2	g(x))	dx$が収束して(\ref{eq4x42})が成り立つことは
+定理4.1,$(2^\circ)$(\ref{eq4x5})から直ちにしたがう．
+\begin{align*}
+	\int_a^b	(c_1f(x)	+	c_2	g(x))	dx	
+&	\stackrel{(\ref{eq4x35})}{=}	\lim_{\substack{s\rightarrow a+0	\\	t\rightarrow b-0}}	\int_s^t	(c_1	f(x)	+	c_2	g(x))	dx
+	\stackrel{(\ref{eq4x5})}{=}
+		c_1	\lim_{\substack{s\rightarrow a+0	\\	t\rightarrow b-0}}	\int_s^t	f(x)	
+		+
+		c_2	\lim_{\substack{s\rightarrow a+0	\\	t\rightarrow b-0}}	\int_s^t	g(x)	dx	\\
+&	\stackrel{(\ref{eq4x35})}{=}	c_1	\int_a^b	f(x)	dx	+	c_2	\int_a^b	g(x)	dx.		
+\end{align*}
+
+$(3^\circ)$ 同様に，$(a,b)$でつねに$f(x)	\geqq	g(x)$のとき，不等式(\ref{eq4x43})が成り立つことは
+定理4.1,$(4^\circ)$によって，
+\begin{align*}
+	\int_a^b	f(x)	dx	
+		&\stackrel{(\ref{eq4x35})}{=}
+	\lim_{\substack{	s	\rightarrow	a+0	\\	t	\rightarrow	b-0}}	\int_s^t	f(x)	dx
+		\stackrel{(\text{定理4.1,$(4^\circ)$})}{\geqq}
+	\lim_{\substack{	s	\rightarrow	a+0	\\	t	\rightarrow	b-0}}	\int_s^t	g(x)	dx	\\
+		&\stackrel{(\ref{eq4x35})}{=}
+	\int_a^b	g(x)	dx	
+\end{align*}
+いま$(a,b)$で恒等的に$f(x)	=	g(x)$ではないと仮定して
+$h(x)	=	f(x)	-g(x)$とおけば，$h(x)$は$(a,b)$で連続，$h(x)	\geqq	0$で，ある点$c,	a	<	c	<	b$，
+において$h(c)	>	0$である．したがって，$a	<	s	<	c	<	t	<	b$なる$s,t$を$c$に十分近くにとれば，
+閉区間$[s,t]$でつねに$h(x)	>	0$となる．故に，(\ref{eq4x41})，(\ref{eq4x43})と定理4.1,$(4^\circ)$により
+\[
+	\int_a^b	h(x)	dx	\stackrel{(\ref{eq4x41})}{=}	\int_a^s	h(x)	dx	+	\int_s^t	h(x)	dx	+	\int_t^b	h(x)	dx	
+											\stackrel{(\ref{eq4x43})}{\geqq}	\int_s^t	h(x)	dx	>0.
+\]
+したがって，(\ref{eq4x42})により，
+\[
+	\int_a^b	f(x)	dx	\stackrel{(\ref{eq4x42})}{=}	\int_a^b	h(x)	dx	+	\int_a^b	g(x)	dx	>	\int_a^b	g(x)	dx.
+\]
+故に，(\ref{eq4x43})において等号が成り立つのは$(a,b)$で恒等的に$f(x)=g(x)$である場合に限る．
+
+$(4^\circ)$は，まず定理4.1,$(5^\circ)$の不等式(\ref{eq4x6})によって
+\[
+	\left|
+		\int_s^t	f(x)	dx	
+	\right|
+	\leqq	\int_s^t	|f(x)|	dx
+\]
+であるから，両辺の極限をとって
+\[
+	\left|
+		\int_a^b	f(x)	dx
+	\right|
+	=
+	\left|
+		\lim_{\substack{s \rightarrow a+0	\\	t	\rightarrow b-0}}	\int_s^t	f(x)	dx
+	\right|
+	=
+	\lim_{\substack{s \rightarrow a+0	\\	t	\rightarrow b-0}}
+	\left|
+		\int_s^t	f(x)	dx	\right|
+	\leqq	
+	\lim_{\substack{s \rightarrow a+0	\\	t	\rightarrow b-0}}
+	\int_s^t	|f(x)|	dx
+	=
+	\int_a^b	|f(x)|	dx
+\]
+となり，明らかである．
+
+これで$f(x),g(x)$が$(a,b)$で連続である場合には定理4.6が証明された．
+
+$f(x),g(x)$が$(a,b)$で有限個の点$c_1	,	c_2	,	\cdots	,	c_k	,	\cdots	,	c_m,	
+a	<	c_1	<	c_2	<	\cdots	<	c_k	<	\cdots	<	c_m	<	b$，
+を除いて連続である場合には，$c_0	=	a,	c_{m+1}	=	b$とおけば，広義積分の定義(\ref{eq4x37})
+により，
+\[
+	\int_a^b	f(x)	dx	\stackrel{(\ref{eq4x37})}{=}	\sum_{k=1}^{m+1}	\int_{c_{k-1}}^{c_k}	f(x)	dx,
+	\quad
+	\int_a^b	g(x)	dx	=	\sum_{k=1}^{m+1}	\int_{c_{k-1}}^{c_k}	g(x)	dx,
+\]
+となる．$f(x)	,g(x)$は各区間$(c_{k-1}	,	c_k)$において連続であるから，
+上記の(\ref{eq4x41})（$(c_{k-1},c_k)$で連続の場合）により，各区間$(c_{k-1},	c_k)$について成立し，
+したがって区間$(a,b)$についても成立する．
+\■
+
+\系
+広義積分$\displaystyle	\int_a^{+\infty},	\int_{-\infty}^b	,	\int_{-\infty}^{\infty}$
+についても上記の$(1^\circ),(2^\circ),(3^\circ),(4^\circ)$が成り立つ．
+
+広義積分についても$\displaystyle	\int_a^a	f(x)	dx	= 0$，また$a	<	b$のとき，
+\[
+	\int_b^a	f(x)	dx	=	-	\int_a^b	f(x)	dx
+\]
+と\underline{定義すれば}，\S	\ref{sec4x2x1}と同様に，等式(\ref{eq4x41})が$a,b,c$の大小の如何に関せず
+成立する．さらに
+\[
+	\int_{+\infty}^a	f(x)	dx	=	-	\int_a^{\infty}	f(x)	dx	,	\quad
+	\int_{+\infty}^{-\infty}	f(x)	dx	=	-	\int_{-\infty}^{\infty}	f(x)	dx
+\]
+等\underline{と定義すれば}，(\ref{eq4x41})は$a,b,c$のいずれかの一つ，あるいは二つを$+\infty,	-	\infty$
+で置き換えても成り立つ．
+
+\定理{4.7}
+$f(x)$を\underline{開区間$(a,b)$で連続な}$x$の関数とする．
+\footnote{定理4.7の仮定では，ここまで考慮してきた$(a,b)$で高々有限個の不連続点$c_i$を含む場合
+を除外されている．不連続の場合は，定理4.8で取り扱う．
+}
+\begin{list}{}{}
+	\item	$(1^\circ)$　広義積分$\displaystyle	\int_a^b	f(x)	dx$が収束するならば，点$c,	a	<	c	<	b$，を一つ選んで
+		\[
+			F(x)	=	\int_c^x	f(x)	dx
+		\]
+と置いたとき，$F(x)$は閉区間$[a,b]$で連続，開区間$(a,b)$で微分可能で
+\[
+	F'(x)	=	f(x)
+\]
+である，
+\footnote{
+$f(x)$が$(a,b)$で連続ならば$F(x)$の連続性は閉区間において言及できる，微分可能性は
+同じ開区間で言える．
+}
+$F(x)$は$f(x)$の原始関数である．
+	\item $(2^\circ)$　閉区間$[a,b]$で定義された連続関数$F(x)$で，開区間$(a,b)$において微分可能で
+$F'(x)	=	f(x)$なるものが存在するならば，広義積分$\displaystyle	\int_a^b	f(x)	dx$は収束して
+\[
+	\int_a^b	f(x)	dx	=	F(b)	-	F(a),	\quad	\textbf{(微分積分法の基本公式)}
+\]
+\end{list}
+
+\証明
+$(1^\circ)$ 
+$F(x)$が\underline{閉区間$[a,b]$}で連続であることをいう．
+\[
+	\lim_{x\rightarrow b-0}	F(x)
+=	\lim_{x\rightarrow b-0}	\int_c^x f(x)	dx	=	\int_c^b	f(x)	dx	=	F(b).
+\]
+よって$b$で連続である．
+また，$a	<	x	<	c$なるとき$\displaystyle	\int_c^x	f(x)	dx	=	-	\int_x^c	f(x)	dx$であるから，
+\[
+	\lim_{x\rightarrow a+0}	F(x)	=	-	\lim_{x\rightarrow a+0}	\int_x^c	f(x)	dx	
+	=
+-	\int_a^c	f(x)	dx	=	\int_c^a	f(x)	dx	=	F(a).
+\]
+よって$a$でも連続であり，閉区間$[a,b]$で連続である．
+$F(x)$が$(a,b)$で微分可能で$F'(x)	=f(x)$であることは，
+定理4.4によって示される（$(a,b)	\subset	[a,b]$）．
+
+$(2^\circ)$ $a	<	s	<	t	<	b$とすれば，微分積分法の基本公式（\ref{eq4x15}）により，
+$\displaystyle	\int_s^t	f(x)	dx	=	F(t)	-	F(s)$であるから
+\[
+	\lim_{\substack	{	t	\rightarrow	b-0	\\	s	\rightarrow	a+0	\\}}
+	\int_s^t	f(x)	dx
+	=
+	\lim_{t\rightarrow b-0}	F(t)	-	\lim_{s\rightarrow a+0}	F(s)	\stackrel{(1^\circ)}{=}	F(b)	-	F(a).
+\]
+故に$\displaystyle
+	\int_a^b	f(x)	dx	=	F(b)	-	F(a).
+$
+\■
+
+開区間$(a,b)$で定義された連続関数$f(x)$について極限：$\displaystyle	\lim_{x\rightarrow a+0}	f(x),
+\lim_{x\rightarrow b-0}	f(x)$が共に存在するときには，$\displaystyle	f(a)	=	\lim_{x\rightarrow a+0}f(x),
+f(b)	=	\lim_{x\rightarrow b-0}	f(x)$とおけば，\underline{$f(x)$は閉区間$[a,b]$で定義された連続関数}となり，
+したがって広義積分$\displaystyle	\int_a^b	f(x)	dx$は定積分
+$\displaystyle	\int_a^b	f(x)	dx$となる．故に，このとき
+\[
+	F(x)	=	\int_c^x	f(x)	dx	,	\quad	a	<	c	<	b,
+\]
+は閉区間$[a,b]$で微分可能で$F'(x)	=	f(x)$も$[a,b]$で連続，すなわち$F(x)$は
+$[a,b]$で滑らかな関数である．
+
+\定理{4.8}
+$f(x)$を開区間$(a,b)$で有限個の点$c_1,	c_2,	\cdots	,	c_m,	a<	c_1	<	c_2	<	\cdots	<	c_m	<	b$，
+を除いて連続な関数とする．
+
+\begin{list}{}{}
+	\item	$(1^\circ)$	広義積分$\displaystyle	\int_a^b	f(x)	dx$が収束するならば
+\[
+	F(x)	=	\int_a^x	f(x)	dx+	C,	\quad	\text{$C$は定数，}
+\]
+とおいたとき，$F(x)$は閉区間$[a,b]$で連続，$a,c_1,	c_2,	\cdots	,	c_m,	b$を除いて微分可能で
+$F'(x)=f(x)$である．
+	\item	$(2^\circ)$	閉区間$[a,b]$で定義された\underline{連続関数}$F(x)$で，$a,c_1,	c_2,	\cdots	,	c_m,	b$を
+除いて微分可能で$F'(x)	=	f(x)$なるものが存在するならば，広義積分$\displaystyle	\int_a^b	f(x)	dx$は
+収束して，
+\begin{equation}
+	\int_a^x	f(x)	dx	=	F(x)	-	F(a)	,	\quad	a	\leqq	x	\leqq	b.\quad	\textbf{(微分積分法の基本公式)}
+\label{eq4x45}
+\end{equation}
+\end{list}
+\証明
+$(1^\circ)$ $c_0	=	a$，$c_{m+1}	=b$とおく．$c_{k-1}	\leqq	x	\leqq	c_k$のとき，
+$c_{k-1}	<	c	<	c_k$なる点$c$を一つ定めれば，（\ref{eq4x41}）により
+\[
+	F(x)	=	\int_c^x	f(x)	dx	+	\int_a^c	f(x)	dx	+	C.
+\]
+故に，上記の定理4.7 $(1^\circ)$ により，$F(x)$は$[c_{k-1}	,	c_k]$で連続，
+$(c_{k-1},	c_k)$で微分可能で$F'(x)	=	f(x)$である．各閉区間$[c_{k-1},	c_k],	k=1,2,	\cdots,	m+1$，
+で連続な関数$F(x)$が$[a,b]$で連続であることは明らかであろう
+\footnote{
+$F(c-0)$は下から$c$に近づいたときの$f(x)$のの囲む面積で，断絶部分までの面積$F(c)$へ徐々に増えて
+近づく．
+$F(c+0)$は上から$c$に近づいたときの$f(x)$の囲む面積で，断絶部分までの面積$F(c)$へ徐々に減って近づく．
+}．
+
+$(2^\circ)$ $c_k	<	x	\leqq	c_{k+1}$として閉区間$[c_{j-1},	c_j],	\:	j=1,2,	\cdots	,	k,$，
+および$[c_k	,	x]$において$F(x)$に定理4.7，$(2^\circ)$を適用すれば，
+\[
+	\int_{c_{j-1}}^{c_j}	f(x)	dx	=	F(c_j)	-	F(c_{j-1}),
+	\quad	\int_{c_k}^x	f(x)	dx	=	F(x)	-	F(c_k)
+\]
+を得る．故に，$c_0	=a$であるから，
+\[
+	\int_a^x	f(x)	dx	=	\sum_{j=1}^k	\int_{c_{j-1}}^{c_j}	f(x)	dx	+	\int_{c_k}^x	f(x)	dx	=	F(x)	-	F(a).
+\]
+\■
+
+区間$(a,	+	\infty)$で定義された関数$f(x)$がすべての$t	,	t>a$，に対して$(a,t)$で高々有限個の点を除いて
+連続で広義積分$\displaystyle	\int_a^t	f(x)	dx$が収束しているとき，$	\displaystyle	F(x)	=	\int_a^x	f(x)	dx	+	C$，
+$C$は定数，は$(a	,	+	\infty)$で連続な$x$の関数（定理4.8（ⅰ））で
+\[
+	\int_a^t	f(x)	dx	=	[	F(x)	]_a^t	=	F(t)	-	F(a)
+\]
+であるから，極限$\displaystyle	\lim_{t\rightarrow +\infty}	F(t)$が存在するならば
+広義積分$\displaystyle	\int_a^{+\infty}	f(x)	dx$は収束して
+\[
+	\int_a^{+\infty}	f(x)	dx	=	\lim_{t\rightarrow +\infty}	[F(x)]_a^t.
+\]
+この右辺の記号$[F(x)]_a^{+\infty}$で表わす：
+\begin{equation}
+	[	F(x)	]_a^{\infty}	=	\lim_{t\rightarrow +\infty}	[F(t)]_a^t	=	\lim_{t\rightarrow	+\infty}	F(t)	-F(a).
+\label{eq4x46}
+\end{equation}
+そうすれば
+\[
+	\int_a^{+\infty}	f(x)	dx	=	[F(x)	]_a^{+\infty}.
+\]
+
+記号$[F(x)]_{-\infty}^b$および$[F(x)]_{-\infty}^{+\infty}$の意味も同様である．
+
+関数$f(x)$が閉区間$[a,b]$で有限個の点$c_1,	c_2,	\cdots	,	c_k	,	c_m	,	a	<	c_1	<	c_2	<	\cdots	<	c_k	<
+\cdots	<	c_m	<	b$，を除いて連続で各$c_k$において右および左からの極限：
+$\displaystyle	\lim_{x	\rightarrow	c_k	+	0}	f(x)	,	\lim_{x\rightarrow c_k-0}	f(x)$が共に存在するとき，
+$f(x)$は$[a,b]$で\textbf{区分的に連続}（priecewise continuous）であるという．このとき，
+$[a,b]$を$m+1$個の部分区間$I_1	=	[a,c_1],	I_2=[c_1,	c_2],	\cdots	,	I_k	=	[c_{k-1},	c_k],	\cdots	,	I_{m+1}	=	[c_m	,	b]$に分割すれば，
+\[
+	F(x)	=	\int_a^x	f(x)	dx	+	C	\quad	\text{$C$は定数},
+\]
+は各部分区間$I_k$において滑らかな関数となるから，\S	\ref{sec3x3} の意味で$[a,b]$で
+区分的に滑らかな関数である．
+
+逆に，$F(x)$が$[a,b]$で区分的に滑らかで，$c_1,	c_2,	\cdots	,	c_m	,	a	<	c_1	<	c_2	<	\cdots	<	c_m	<	b$，
+を除いて滑らかならば，$a	\leqq	x	\leqq	b,	x	\ne	c_k	,	k=1	,	2,	\cdots	,	m$，のとき
+$f(x)	=	F'(x),	c=c_k$のとき，たとえば$f(x)	=	D^+	F(c_k)$とおけば，
+$f(x)$は$[a,b]$で区分的に連続である．このとき$F(x)$は各閉区間$I_k	=	[c_{k-1},	c_k]$で滑らかである，
+すなわち$F(x)$の$I_k$への制限$F_{I_k}(x)$は滑らかな関数であるが，$f(x)$は必ずしも$I_k$で連続とは限らない．
+一般には
+\[
+	F_{I_k}	(c_k)	=	D^+	F(c_k)	\ne	D^-F(c_k)	=	\lim_{x\rightarrow c_k-0}	F'(x)	=	\lim_{x\rightarrow c_k-0}	f_{I_k}	(x).
+\]
+無限区間，たとえば$[a,	+\infty)$で定義された関数$f(x)$については，如何なる実数$f,	t>a$，
+対しても$f(x)$が$[a,t]$で区分的に連続であるとき，$f(x)$は$[a,	+\infty)$で区分的に連続であるという．
+たとえば，$f(x)$を
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=100.5mm,height=29.7mm]{p183.bmp}
+	\label{p183}
+\end{figure}
+\[
+	m	\pi	\leqq	x	<	(m+1)	\pi	\:	\text{のとき}	\:	f(x)	=	(-1)^m	\cos	x,	\quad	\text{$m$は整数，}
+\]
+と定義すれば，$f(x)$は$(-	\infty	,	+	\infty)$で区分的に連続な関数であって
+\[
+	F(x)	=	\int_0^x	f(x)	dx
+\]
+は区分的に滑らかな関数：$F(x)	=	|	\sin	x|$となる．

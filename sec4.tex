@@ -1,0 +1,290 @@
+\chapter{積分法}
+
+\section{定積分}
+\label{sec4x1}
+
+\subsection{定積分の定義}
+\label{sec4x1x1}
+
+$f(x)$の閉区間$[a,b]$で連続な関数とする．区間$[a,b]$に属する$m+1$個の点
+$x_0	,	x_1	,	x_2	,	\cdots	,	x_m$を
+\[
+	a=	x_0	<	x_1	<	x_2	<	\cdots	<	x_{k-1}	<	x_k	<	\cdots	<x_{m-1}	<	x_m	=b
+\]
+なるようにとり，区間$[a,b]$を$m$個の区間$[x_{k-1}	,	x_k],	\:	k=1,2,3,	\cdots	,	m,$に
+分割する．そして$m+1$個の点の集合$\varDelta = \{ \: x_0, x_1 , x_2 , \cdots	,	x_{m-1},	x_m	\}$
+によって定まるこの分割を分割$\varDelta$とよぶことにする．分割$\varDelta$が与えられたとき，
+各$k$について点$\xi_k,	\:	x_{k-1}	\leqq	\xi_k	\leqq	x_k$，を一つ選んで
+\[
+	\sigma_\varDelta	=	\sum_{k=1}^m	f(\xi_k)	(	x_k	-	x_{k-1})
+\]
+とおく．区間$[a,b]$でつねに$f(x)	>0$である場合には$f(\xi_k)	(	x_k	-	x_{k-1})$は
+矩形：
+\[
+	R_k	=	[	x_{k-1}	,	x_k	]	\times	[	0	,	f(\xi)	\:]	=	\{	(	x,y)	\:	|	\:	x_{k-1}	\leqq	x	\leqq	x_k,	0	\leqq	y	\leqq	f(\xi)	\:	\}
+\]
+の面積であるから，$\sigma_\varDelta$はいずれの二つも内点を共有しない$m$個の矩形の合併集合
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=12cm,height=6cm]{p153.bmp}
+\end{figure}
+$R_1	\cup	R_2	\cup	\cdots	\cup	R_k	\cup	\cdots	\cup	R_m$,すなわち上図の斜線を施した
+部分の面積である．厳密にいえば，われわれはまだ平面上の点集合の面積を定義していないから，
+$\sigma_\varDelta$を$R_1	\cup	R_2	\cup	\cdots	\cup	R_m$の面積と
+\underline{定義する}のである．\S \ref{sec2x2x2},定理2.4により$f(x)$は閉区間$[x_{k-1},	x_k]$
+において最大値と最小値をとる．$f(x)$の$[x_{k-1},	x_k]$における最大値を$\mathsf{M}_k$，
+最小値を$\mu_k$として
+\begin{align*}
+	S_\varDelta	&=	\sum_{k=1}^{m}	\mathsf{M}_k	(x_k	-	x_{k-1}),	\\
+	s_\varDelta	&=	\sum_{k=1}^{m}	\mu_k	(	x_k	-	x_{k-1})
+\end{align*}
+とおく．$\mu_k	\leqq	f(\xi_k	)	\leqq	\mathsf{M}_k$であるから
+\begin{equation}
+	s_\varDelta	\leqq	\sigma_\varDelta	\leqq	S_\varDelta.
+\label{eq4x1}
+\end{equation}
+仮定により$f(x)$は区間$[a,b]$で連続であるから，\S \ref{sec2x2x2}，定理2.3により，
+$f(x)$は$[a,b]$で一様連続である．すなわち，任意の正の実数$\varepsilon$に対応して
+一つの正の実数$\delta(\varepsilon)$が定まって，$[a,b]$に属する2点$x,x'$について，
+\[
+	|x	-x'|	<	\delta(\varepsilon)	\quad	\text{ならば}\quad	|f(x)	-	f(x')	|	<	\varepsilon
+\]
+となる．$\mu_k	=f(\alpha_k),	\mathsf{M}_k=f(\beta_k),	\:	x_{k-1}	\leqq	\alpha_k	\leqq	x_k,
+x_{k-1}	\leqq	\beta_k	\leqq	x_k$，であるから，したがって，
+\[
+	x_k	-	x_{k-1}	<	\delta(\varepsilon)	\quad	\text{ならば}	\quad	\mathsf{M}_k	-	\mu_k	<	\varepsilon.
+\]
+故に，$m$個の区間$[x_{k-1},	x_k]$の幅の最大値を
+\[
+	\delta	[	\varDelta	]	=	\max_k	(x_k	-	x_{k-1})
+\]
+で表せば，$\delta	[	\varDelta	]	<	\delta(\varepsilon)$ならば
+\[
+	S_\varDelta	-	s_\varDelta
+=	\sum_{k=1}^{m}	(	\mathsf{M}_k	-	\mu_k	)	(	x_k	-	x_{k-1})	
+<	\varepsilon	\sum_{k=1}^m	(	x_k	-	x_{k-1})
+<	\varepsilon	(b-a).
+\]
+$\delta(\varepsilon/(b-a))$を改めて$\delta(\varepsilon)$と書くことにすれば，
+すなわち，
+\begin{equation}
+	\delta[\varDelta]	<	\delta(\varepsilon)	\quad	\text{ならば}	\quad	S_\varDelta	-	s_\varDelta	<	\varepsilon.
+\label{eq4x2}
+\end{equation}
+
+\textbf{ここまでの結論}：閉区間で連続な関数においては，
+各区間の幅（の最大値を）十分に小さくすれば，面積の上限と下限の差をいくらでも縮めることができる――．
+
+　
+
+区間$[a,b]$の任意の分割$\varDelta'	=	\{	x_0'	,	x_1',	\cdots	,	x_{n-1}'	,	x_n'	\},
+	a=x_0'	<	x_1'	<	x_2'	<	\cdots	<	x_n'	=	b$,に対して$\varDelta$と$\varDelta'$の分点を
+合併して得られる$[a,b]$の分割を$\varDelta''	=	\varDelta	\cup	\varDelta'
+=\{x_0''	,	x_1''	,	x_2	''	,	\cdots	,	x_{q-1}''	,	x_q''	\}$，
+$a=x_0''	<	x_1''	<	\cdots	<	x_p''	<	\cdots	<	x_{q-1}''	<	x_q''=b$とし，
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=12cm,height=1.65cm]{p154.bmp}
+\end{figure}
+各$p,	1	\leqq	p	\leqq	q$について$\xi_p''	,	x_{p-1}	''	\leqq	\xi_p''	\leqq	x_p''$，
+を一つずつ選んで
+\[
+	\sigma_{\varDelta''}	=	\sum_{p=1}^{q}	f(\xi_p'')	(x_p''	-	x_{p-1}'')
+\]
+とおく．いま$x_{k-1}=	x_h'',	x_k=x_j''$であったとすれば，区間$[x_{k-1},	x_k]$は
+分割$\varDelta''$においては$j-h$個の区間$[	x_{p-1}''	,	x_p''],p=h+1	,	h+2,	\cdots	,j	,$
+に分割されていて，
+$\mu_k	\leqq	f(\xi_p'') \:$ ($\mu_k$は区間$f([	x_{k-1},	x_k])$の最小値)であるから，
+\[
+	\mu_k	(	x_k	-	x_{k-1}	)	=	\sum_{p=h+1}^{j}	\mu_k	(	x_p''	-x_{p-1})
+\leqq
+	\sum_{p=h+1}^j	f(\xi_p'')	(x_p''	-	x_{p-1}'')
+\]
+である．故に
+\[
+	s_\varDelta	\leqq	\sigma_{\varDelta''}.
+\]
+$\varDelta$と$\varDelta'$を入れ替えて同様に考えれば
+\[
+	\sigma_{\varDelta''}	\leqq	S_{\varDelta'}
+\]
+を得る（「任意の分割」の最小値は，$	\leqq	$「任意の分割」の最大値）．
+したがって
+\[
+	s_\varDelta	\leqq	S_{\varDelta'	}.
+\]
+故に，区間$[a,b]$のあらゆる分割$\varDelta$を考えれば，対応する$s_\varDelta$の全体の集合は
+上に有界であって，したがってその上限$s$が定まる：
+\[
+	s	=	\sup_\varDelta	s_\varDelta.
+\]
+明らかに$s	\leqq	S_{\varDelta'}$であるが，$\varDelta'$は任意の分割であったから
+（とくに分割$\varDelta$でも成り立ち），
+\[
+	s_\varDelta	\leqq	s	\leqq	S_\varDelta.
+\]
+故に，(\ref{eq4x1})と(\ref{eq4x2})により，
+\[
+	\delta[	\varDelta	]	<	\delta(\varepsilon)	\quad	\text{ならば} \quad | \sigma_\varDelta	-	s|	< \varepsilon.
+\]
+すなわち，任意の正の実数$\varepsilon$に対応して正に実数$\delta(\varepsilon)$が定まって，
+$\varDelta	[	\varDelta	]	<	\delta	(\varepsilon)$なる限り，分割
+$\varDelta	=	\{	x_0	,	x_1	,	x_2	,	\cdots	,	x_{m-1}	,	x_m	\},	\:	a=x_0	<	x_1	<	x_2	<	\cdots	<	x_{m-1}
+<	x_m	=	b$，点$\varepsilon_k$，$x_{k-1}	\leqq	\varepsilon_k	\leqq	x_k$，$k=1,2,	\cdots	,	m$の
+選び方の如何に関せず，
+\[
+	\left|	\sum_{k=1}^{m}	f(\xi_k)	(	x_k	-	x_{k-1}	)	-s	
+	\right|
+	\leqq	\varepsilon
+\]
+となる．このことを$\delta[	\varDelta	]	\rightarrow	0$\underline{のときの}
+$\displaystyle	\sigma_\varDelta	=	\sum_{k=1}^{m}	f(\xi_k)	(	x_k	-	x_{k-1})$
+\underline{の極限が}$s$\underline{である}といい表わし，
+\[
+	s	=	\lim_{\delta [ \varDelta ]\rightarrow 0}	\sum_{k=1}^m	f(\xi_k)	(x_k	-	x_{k-1})
+\]
+と書く．$\delta [ \varDelta	]	\rightarrow	0$のとき$m	\rightarrow + \infty$となることは
+言うまでもない．
+
+\定義{4.1}
+$\displaystyle	s	= \lim_{ \delta [ \varDelta ] \rightarrow 0}\sum_{k=1}^{m}	f(\xi_k)	(x_k	-	x_{k-1})$
+を，区間$[a,b]$における$f(x)$の\textbf{定積分}(definite integral)といい，
+記号$	\displaystyle	\int_a^b	f(x)	dx$で表わす：
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\lim_{ \delta [ \varDelta ]\rightarrow 0}	\sum_{k=1}^m	f(\xi_k)	(x_k	-	x_{k-1}).
+\label{eq4x3}
+\end{equation}
+$f(x)$を定積分$\displaystyle	\int_a^b	f(x)	dx$の\textbf{被積分関数}(integrand)といい，
+定積分$\displaystyle	\int_a^b	f(x)	dx$を求めることを$f(x)$を$x$について$a$から$b$まで
+\textbf{積分する}(integrate)という．
+また，$a,b$をそれぞれ定積分$\displaystyle	\int_a^b	f(x)	dx$の\textbf{下限},\textbf{上限}
+といい，$\displaystyle	\int_a^b	f(x)dx$に表される$x$を\textbf{積分変数}という．
+
+\例{4.1}
+区間$[a,b]$で$f(x)	=	c$が定数である場合には，$\displaystyle	\sum_{k=1}^m	(x_k	-	x_{k-1})=c(b-a)$
+であるから，
+\[
+	\int_b^a	c	dx	=	c(b-a).
+\]
+
+\例{4.2}
+$\displaystyle	\int_0^b	x^2	dx$を定積分の定義から直接求めてみよう．
+分割$\varDelta	=	\{	x_0	,	x_1	,	x_2	,	\cdots	,	x_{m-1}	,	x_m	\},
+0	=	x_0	<	x_1	<	\cdots	<	x_m=b$，を与えたとき
+\[
+	3	x_{k-1}^2	<	x_k^2	+	x_k	x_{k-1}	+	x_{k-1}^2	<	3x_k^2
+\]
+であるから，中間値の定理により，
+\[
+	3	\xi_k^2	=	x_k^2	+	x_k	x_{k-1}	+	x_{k-1}^2	,	\quad	x_{k-1}	<	\xi_k	<	x_k,
+\]
+なる$\xi_k$が存在する．
+\[
+	3	\xi_k^2	(	x_k	-	x_{k-1})	=	(	x_k^2	+	x_k	x_{k-1}	+	x_{k-1}^2)(x_k	-	x_{k-1})
+	=
+	x_k^3	-x_{k-1}^3
+\]
+であるから
+\[
+	3	\sum_{k=1}^{m}	\xi_k^2	(	x_k	-	x_{k-1})	=	\sum_{k=1}^{m}	(	x_k^3	-	x_{k-1}^3)	=b.
+\]
+故に
+\[
+	\int_0^b	x^2	dx	=	\lim_{\delta [ \varDelta ]\rightarrow 0}
+	\sum_{k=1}^m	\xi_k^2	(x_k	-	x_{k-1})	=	\frac{b^3}{3}.
+\]
+
+一般に定積分を上記の定義から直接求めることは難しい．
+
+高校数学で学んだ所によれば，区間$[a,b]$でつねに$f(x)>0$なる場合には，
+$\displaystyle	\int_a^b	f(x)	dx$は点集合：
+\[
+	K=	\{	(x,y)	\:	|	\:	a	\leqq	x	\leqq	b,	0	\leqq	y	\leqq	f(x)	\:\}
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=9cm,height=5cm]{p157.bmp}
+\end{figure}
+の面積に等しい．我々の立場では，現段階では，$\displaystyle	\int_a^b	f(x)	dx	$\underline{を}
+を$K$\underline{の面積という，}と定義することになる．
+
+\注意{}
+上記の定積分の定義4.1を導いた考察は，$f(x)$が区間$[a,b]$で必ずしも連続でない場合にも適用される．
+すなわち，$f(x)$は$[a,b]$で\underline{有界であると仮定して}，
+上限と下限が存在する（定義4.1を導いた考察では，最大値と最小値であった）．
+区間$[a,b]$の分割$\varDelta = \{ x_0,	x_1,	x_2,	\cdots	,	x_{m-1}	,	x_m	\},
+a=	x_0	<	x_1	<	x_2	<	\cdots	<	x_{m-1}	<	x_m	=b$，に対して$f(x)$の各区間$[x_{k-1}	,	x_k	]$における上限を
+$\mathsf{M}_k$，下限を$\mu_k$として
+\begin{align*}
+	S_\varDelta	&=	\sum_{k=1}^m	\mathsf{M}_k	(	x_k	-	x_{k-1}),	\\
+	s_\varDelta	&=	\sum_{k=1}^m	\mu_k	(	x_k	-	x_{k-1})
+\end{align*}
+とおく．そうすれば$[a,b]$の任意の二つの分割$\varDelta	,	\varDelta'$に対して
+\[
+	s_\varDelta	\leqq	S_{\varDelta'}
+\]
+となる．したがって，$[a,b]$のあらゆる分割$\varDelta$に関する$S_\varDelta$の下限を
+\[
+	S	=	\inf_\varDelta	S_\varDelta
+\]
+$s_\varDelta$の上限を\[
+	s	=	\sup_\varDelta	s_\varDelta
+\]
+とすれば
+\[
+	s	\leqq	S
+\]
+ここで等式：
+\[
+	s	=	S
+\]
+が成り立つとき，$f(x)$は区間$[a,b]$で\textbf{Riemann積分可能}であるという．
+分割$\varDelta$に関して，$x_{k-1}	\leqq	\xi_k	\leqq	x_k$ならば$\mu_k	\leqq	f(\xi_k)	\leqq	M_k$
+であるから
+\[
+	s_\varDelta	\leqq	\sum_{k=1}^m	f(\xi_k)	(x_k	-	x_{k-1})	\leqq	S_\varDelta.
+\]
+したがって$s=S$，すなわち$f(x)$が$[a,b]$でRiemann積分可能ならば
+\[
+	\lim_{\delta [ \varDelta ]\rightarrow 0}	\sum_{k=1}^m	f(\xi_k)	(x_k	-	x_{k-1})	=	s	=S.
+\]
+この左辺の極限を区間$[a,b]$における$f(x)$の定積分といい$\displaystyle	\int_a^b	f(x)	dx$で表わす：
+\[
+	\int_a^b	f(x)	dx	=	\lim_{\delta [ \varDelta ]\rightarrow 0}	\sum_{k=1}^m f(\xi_k)	(x_k	-	x_{k-1}).
+\]
+これがRiemann 積分法である．
+
+区間$[a,b]$で連続な関数はもちろん$[a,b]$でRiemann積分可能である（上限$S=$下限$s$）が，
+連続でなくても，たとえば$[a,b]$で有界で有限個の点を除いて連続な関数は$[a,b]$でRiemann積分可能である．
+また$[a,b]$で有界な単調関数は無数の点で不連続でも$[a,b]$でRiemann積分可能である（上限$S=$下限$s$）．
+\footnote{高木貞治”解析概論”p96参照}
+\証明
+単調増加の関数について言えば，$M_i = f(x_i) , m_i= f(x_{i-1})$.
+故に
+\begin{align*}
+	S_\varDelta &= f(x_1)(x_1 - a) + f(x_2)(x_2 - x_1) + \cdots + f(b)(b - x_{n-1}), \\
+	s_\varDelta &= f(a)(x_1 - a) + f(x_1)(x_2 - x_1) + \cdots + f(x_{n-1})(b - x_{n-1}).
+\end{align*}
+したがって，
+\[
+	S_\varDelta - s_\varDelta 
+= \sum(f(x_i) - f(x_{i-1}))(x_i-x_{i-1}) < (f(b)	-	f(a))\delta
+\]
+故に$\delta \rightarrow 0 $のとき$S_\varDelta - s_\varDelta \rightarrow 0 , S=s$.
+
+
+しかし$[a,b]$で有界な関数がすべてRiemann積分可能であるのではない．
+たとえば$x,	a	\leqq	x	\leqq	b$，が有理数ならば$f(x)=1$，無理数ならば$f(x)=0$と定義された関数
+$f(x)$はRiemann積分可能でない．なぜなら，この関数$f(x)$にちては，$\mathsf{M}_k=1$，
+$\mu_k=0$，したがって任意の分割に対して$S_\varDelta	=	b-a$，$s_\varDelta=0$となるからである．
+
+微分積分学ではRiemann積分法を扱うのが伝統であるが，この“解析入門”では
+有限個の点を除いて連続な関数の積分は広義積分として\S \ref{sec4x3}で扱い，無数の不連続点をもつ
+関数の積分はLebesque積分論
+\footnote{
+	本選書，“現代解析入門”後編“測度と積分”，参照
+}
+に譲ることにした．Lebesque積分論が出現してRiemann積分法は中間てきなものになってしまったからである
+\footnote{
+	高木貞治“解析概論”，p110参照．
+}

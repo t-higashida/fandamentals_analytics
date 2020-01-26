@@ -1,0 +1,286 @@
+\subsection{偏微分の順序}
+
+\定理{6.7}
+或る領域$D$において関数$f(x,y)$の偏導関数$f_x	(x,y)	,	f_y	(x,y)	,	f_{xy}	(x,y),	f_{yx}(x,y)$
+が存在して$f_{xy}	(x,y),f_{yx}(x,y)$が連続ならば等式:
+\begin{equation}
+	f_{yx}	(x,y)	=	f_{xy}	(x,y)
+\label{eq6x16}
+\end{equation}
+が成り立つ.
+
+\証明
+$(a,b)$を$D$に属する任意の点として
+\[
+	\varDelta	(h,k)	=	f(a+h	,	b+k)	-	f(a+h,	b)	-	f(a,b+k)	+	f(a,b)
+\]
+とおく．
+\[
+	\varphi	(x)	=	f(x,	b+k)	-	f(x,b)
+\]
+とおけば，仮定により$f_x	(x,y)$が存在するから，
+$\varphi	(x)$は$x$の微分可能な関数である．
+故に，平均値の定理（定理3.5）により，
+\[
+	\varDelta	(h,k)	=	\varphi	(a	+	h	)	-	\varphi	(a)	=	\varphi'	(a	+	\theta	h	)	h,	\quad	0	<	\theta	<	1,
+\]
+となるが，
+\[
+	\varphi'	(	a+	\theta	h	)	=	f_x	(a	+	\theta	h	,	b	+	k	)	-	f_x	(a	+	\theta	h	,	b)
+\]
+で，仮定により$f_{xy}	(x,y)$が存在して連続であるから，
+\begin{align*}
+	&	\varphi'	(a	+	\theta	h	)	=	f_{xy}	(a	+	\theta	h	,	b	+	\eta	k	)k,	\quad	0	<	\eta	<	1,	\\
+	&	f_{xy}	(a+	\theta	h	,	b	+	\eta	k)	=	f_{xy}(a,b)	+	\varepsilon	(h,k),	\\
+	&	\lim_{(h,k)\rightarrow(0,0)}	\varepsilon	(h,k)	=	\varepsilon	(0,0)	=	0.
+\end{align*}
+したがって
+\begin{equation}
+	\varDelta	(h,k)	=	(	f_{xy}	(a,b)	+	\varepsilon	(h,k))	hk.
+\label{eq6x17}
+\end{equation}
+故に，$k=h$とおけば，
+\[
+	\lim_{h\rightarrow0}	\frac{\varDelta	(h,h)}{h^2}	=	f_{xy}(a,b)
+\]
+を得る．
+\[
+	\varDelta	(h,k)	
+=	f(a+h	,	b+k)	-	f(a,b+k)	-	f(a+h,b)	+	f(a,b)
+\]
+と書き換え$x$と$y$を入れ換えて同様に考えれば
+\[
+	\lim_{h\rightarrow0}	\frac{\varDelta	(h,h)}{h^2}	=	f_{yx}(a,b),
+\]
+したがって$f_{yx}(a,b)	=	f_{xy}(a,b)$となるが，$(a,b)$は$D$に属する任意の点であった．
+故に等式（\ref{eq6x16}）が成り立つ．
+\■
+
+\定理{6.8}
+（Youngの定理）領域$D$において$f(x,y)$の偏導関数$f_x(x,y),f_y(x,y)$が存在して微分可能ならば等式:
+$f_{xy}(x,y)	=	f_{yx}(x,y)$が成り立つ．
+
+\証明
+
+上記の定理6.7の証明で
+\[
+	\varDelta	(h,k)	=	(f_x	(a+	\theta	h	,	b+k)	-	f_x	(a+	\theta	h	,	b))	h	,	\quad	0	<	\theta	<	1,
+\]
+
+を得る所まではそのまま成り立つ．仮定により
+\[
+	f_x (a+h , b+k) = f_x (a,b) + f_{xx}(a,b)h + f_{xy}(a,b)k + o(\sqrt{h^2 + k^2})
+\]
+であるから
+\begin{align*}
+	f_x(a+\theta h , b+k) &= f_x(a,b) +	f_{xx} (a,b) \theta h + f_{xy}(a,b)k + o( \sqrt{	\theta^2	h^2+k^2}), \\
+  f_x(a+\theta h , b) 	&= f_x(a,b) + f_{xx} (a,b) \theta h + o(	\theta	h),
+\end{align*}
+したがって
+\[
+	\varDelta(h,k) = f_{xy}(a,b) kh + h (o (\sqrt{\theta^2 h^2 + k^2}) - o(\theta	h)).
+\]
+ここで$k=h$とおけば
+\[
+	\varDelta(h,h) = f_{xy} (a,b) h^2 + h	(	o	(	\sqrt{(\theta^2 + 1) h^2 } ) - o(\theta h)).
+\]
+故に
+\begin{align*}
+	\lim_{h\rightarrow0}	\frac{\varDelta(h,h)}{h^2}
+&=f_{xy}(a,b)	+	\lim_{h\rightarrow 0}	\frac{o	(	\sqrt{(\theta^2 + 1) h^2 } ) - o(\theta h)}{h}	\\
+&=f_{xy}(a,b)	+	\lim_{h\rightarrow 0}	\left\{	\sqrt{(\theta^2 + 1)} \varepsilon_1(h) - \theta	\varepsilon_2 (h)	\right\},
+&	\text{ただし}	\varepsilon_1(h)	,	\varepsilon_2(h)	\to	0	\:	(	h	\to	0).	\\
+&=f_{xy}(a,b).
+\end{align*}
+同様に
+\[
+	\lim_{h\rightarrow 0} \frac{\varDelta(h,h)}{h^2} = f_{yx}(a,b)
+\]
+を得るから，$f_{xy}(a,b) = f_{yx}(a,b)$.
+\■
+
+上記の定理6.7では$f_{xy}(x,y), f_{yx}(x,y)$が両方とも存在して連続であると仮定したが，
+実はそのうちの一方の存在と連続性を仮定すれば十分である：
+
+定理{6.9}（Schwarzの定理）或る領域$D$において関数$f(x,y)$の偏導関数
+$f_x(x,y),f_y(x,y),f_{xy}(x,y)$が存在して$f_{xy}(x,y)$が連続ならば，
+偏導関数$f_{yx}(x,y)$も存在して$f_{xy}(x,y)$と一致する：$f_{yx}(x,y)=f_{xy}(x,y)$．
+
+\証明
+
+$(a,b)$を$D$に属する任意の点として
+\[
+	\varDelta(h,k) = f(a+h, b+k) - f(a+h,b) - f(a,b+k) + f(a,b)
+\]
+とおけば，（\ref{eq6x17}）により
+\[
+	\varDelta(h,k) = (f_{xy}(a,b) + \varepsilon(h,k)) hk.
+\]
+仮定により$f_y(x,y)$が存在するから，したがって，$h	\ne	0$のとき
+\begin{align*}
+	\lim_{k\rightarrow 0} (f_{xy}(a,b) + \varepsilon(h,k)) h = \lim_{k\rightarrow 0} \frac{\varDelta(h,k)}{k}
+&=	\lim_{h\rightarrow 0} \frac{f(a+h,b+k)-f(a+h,b)}{k}	-	\lim_{k\rightarrow 0} \frac{f(a,b+k)-f(a,b)}{k}	\\
+&=	f_y(a+h,	b)	-	f_y	(a,b).
+\end{align*}
+故に極限：$\lim_{k\rightarrow 0}	\varepsilon(h,k)$が存在して
+\[
+	\frac{f_y(a+h,b)-f_y(a,b)}{h}	=	f_{xy}(a,b)	+	\lim_{k\rightarrow 0} \varepsilon(h,k).
+\]
+$\displaystyle	\lim_{(h,k)\rightarrow (0,0)}	\varepsilon(h,k)=0$は，
+任意の正の実数$\varepsilon$に対応して正の実数$\delta ( \varepsilon)$が定まって
+$ 0 < \sqrt{h^2+hk^2} < \delta (\varepsilon)$ならば
+$|	\varepsilon (h,k) | < \varepsilon$となることを意味するから，
+\[
+	0	<	|h| < \delta	(\varepsilon) \quad \text{ならば} \quad | \lim_{k\rightarrow 0} \varepsilon(h,k)| \leqq \varepsilon,
+\]
+すなわち$	\lim_{h\rightarrow 0} \lim_{k\rightarrow 0} \varepsilon(h,k) = 0$である．
+\footnote{
+$\displaystyle \lim_{(x,y)\rightarrow (a,b)} f(x,y) =A$が存在する時，二つの\textbf{累次極限}
+\[
+	\lim_{x\rightarrow a} \left\{  \lim_{y\rightarrow b} f(x,y) \right\}, \quad
+	\lim_{y\rightarrow b} \left\{  \lim_{x\rightarrow a} f(x,y) \right\}
+\]
+が存在して，ともに$A$に等しい．但し$ \{ \cdots \}$内の極限は存在するものとする．
+\注意{}
+これがなぜ「命題」となり得るのだろうか？もし，上の命題で$f(x,y)$が$(a,b)$が連続ならば「命題」となならない．
+
+\証明
+$ \displaystyle \lim_{(x,y)\rightarrow (a,b)} f(x,y) =A$が存在するから，任意の$\varepsilon > 0$に対して，或る$\delta > 0$が存在して
+{\small
+\begin{align*}
+	\sqrt{(x-a)^2 + (y-b)^2} < \delta \Rightarrow |f (x,y) - A) < \varepsilon	\\
+\text{すなわち}	\quad
+	|y-b|^2 < \sqrt{\delta^2 - (x-a)^2} \Rightarrow |f (x,y) - A) < \varepsilon
+\end{align*}
+}
+$f(x,y)$が$(a,b)$が連続ならば，$A=f(a,b)$であるが，$(a,b)$が$f$の定義域に入るかどうか判っていないからこそ「命題」となり得る．
+
+また，同時に，$\displaystyle \lim_{y\rightarrow b}	f(x,y)$が存在しているから，$a$の近くの$x$に対して），
+任意の$\varepsilon > 0$にに対して，或る$\delta_x$が存在して，
+{\small
+\[
+	| y-b | < \delta_x <  \sqrt{\delta - (x-a)^2} < \delta
+  \Rightarrow 
+  |f(x,y) - \alpha_x | < \varepsilon
+\]
+}
+$\alpha_x = f(x,b)$（変数$y$について$f(x,y)$が$b$で連続）かどうかは判らないが，任意の
+$x$に対して$\delta_x$は存在している（$\alpha_x$が$x$について連続かどうかも判らない）．
+求めたい結果は，
+$ \displaystyle \lim_{x\rightarrow a} \alpha_x = A$即ち$ \displaystyle \lim_{x\rightarrow a} ( \alpha_x - A) = 0$である．
+任意の$\varepsilon$に対して$(x,y)$を$|x-a|^2 + |y-b|^2 | < \delta^2$に録り，さらに，
+{\small
+$|y -b | < \delta_x < \sqrt{\delta^2 - |x-a|^2}$
+}となるように
+$\delta_x$を選ぶと，このような$y$および$x$に対して
+\[
+ | \alpha_x - A | < |\alpha_x - f(x,y)| + |f(x,y) - A | < \varepsilon + \varepsilon
+\]
+となる．これが求める結論である．
+}
+
+故に
+\[
+	\lim_{n\rightarrow 0}	\frac{f_y(a+h,b) - f_y(a,b)}{h} = f_{xy}(a,b),
+\]
+すなわち$f_y(x,y)$は点$(a,b)$で$x$について偏微分可能であって，偏微分係数は
+\[
+	f_{yx} (a,b) = f_{xy} (a,b)
+\]
+である．
+\■
+
+等式：$f_{xy}(x,y) = f_{yx} (x,y)$ぽ無条件では成立しない．
+
+
+\例{6.6} 平面$\R^2$上で関数$f(x,y)$を
+\[
+	f(0,0) = 0, \quad
+ (x,y) \ne (0,0) \quad \text{のとき} \quad
+	f(x,y) = xy \frac{x^2-y^2}{x^2+y^2}
+\]
+と定義する．$(x,y)	\ne	 (0,0)$のとき$f(x,y)$は$x$にいて偏微分可能で
+\begin{align*}
+f_x(x,y)	
+	&=	y	\frac{x^2-y^2}{x^2+y^2} + xy	\frac{2x}{x^2+y^2}	+	(-1) xy \frac{x^2-y^2}{(x^2+y^2)^2}	2x	\\
+	&=	\frac{y(x^2-y^2)(x^2+y^2) + xy \cdot 2x ( x^2+y^2) - xy(x^2-y^2)2x}{(x^2+y^2)^2} \\
+	&=	\frac{y(x^4-y^4) + 2 x^4y + 2x^2y^3 - 2x^4y + 2x^2 y^3}{(x^2+y^2)^2}	\\
+	&=	y	\frac{x^4 - y^4 + 4x^2 y^2}{(x^2	+ y^2)^2},
+\end{align*}
+$f_x(x,y)$は$(x,y) \ne ( 0,0)$のとき明らかに連続で，$|f_x(x,y)| \leqq 2|y|$
+\footnote{\small
+\[
+	\frac{x^4-y^4 + 4x^2y^2}{(x^2+y^2} \leqq 2 
+  \Leftrightarrow
+	x^4-y^4 + 4x^2y^2 \leqq 2(x^4y^2+ y^4)
+	\Leftrightarrow
+	0 \leqq x^4 + 3y^4
+\]
+}
+であるから
+$\displaystyle	\lim_{(x,y)\rightarrow (0,0)} f_x(x,y)=0.$
+一方$f(x,0)=0$であるから$f_x(0,0)=0$，したがって$f_x(x,y)$は$\R^2$で連続である．
+同様に$f(x,y)$は$y$についても偏微分可能で$f_y(x,y)$は$\R^2$で連続，
+$(x,y)	\ne (0,0)$のとき
+\begin{align*}
+	f_y(x,y) 
+&=	x \frac{x^2-y^2}{x^2+y^2} - xy\frac{2y}{x^2+y^2} + (-1) xy\frac{(x^2-y^2)}{(x^2+y^2)}	2y	\\
+&=	\frac{x(x^2-y^2) - 2xy^2 (x^2+y^2) + 2x y^2(x^2-y^2)}{(x^2+y^2)^2}	\\
+&=	x\frac{x^4-y^4 - 2x^2y^2 - 2y^4  +	2x^2y^2 + 2y^4}{(x^2+y^2)^2}	\\
+&= x \frac{x^4 - y^4 - 4x^2 y^2}{(x^2+y^2)^2}.
+\end{align*}
+故に，$(x,y) \ne (0,0)$のとき，まず
+\begin{align*}
+	f_{xy}(x,y)
+&=	\frac{x^4-y^4 + 4x^2y^2}{(x^2+y^2)^2}	+	y	\frac{-4x^3 + 8x^2y}{(x^2+y^2)^2} + (-2) \frac{y(x^4 - y^4  +4x^2y^2}{(x^2+y^2)^3} (2y)	\\
+&=	\frac{x^4-y^4 + 4x^2y^2 -4y^4 + 8x^2y^2}{(x^2+y^2)} + \frac{-4y^2 ( x^2 - y^4 + 4x^2y^2)}{(x^2+y^2)^3}	\\
+&=	\frac{x^4-5y^4 + 12x^2y^2 (x^2 + y^2) -4x^2 (x^4-y^4 + 4x^2y^2)}{(x^2+y^2)^3}	\\
+&=	\frac{x^6-5x^2y^4 + 12x^4y^2 + x^4y^2 - 5y^6 + 12x^2y^4 - 4x^4y^2 + 4y^6 -16x^2y^4}{(x^2+y^2)^3}	\\
+&=	\frac{x^6+9x^4y^2 -9x^2y^4 -y^6}{(x^2+y^2)^3}
+\end{align*}
+つぎに
+\begin{align*}
+	f_{yx}(x,y) = 
+&=	\frac{x^4-y^4-4x^2y^2}{(x^2+y^2)^2} + \frac{x(4x^3-8xy^2)}{(x^2 + y^2)^2} + (-2)\frac{x(x^4 - y^4 - 4x^2y^2)}{(x^2+y^2)^3}2x \\
+&=	\frac{x^4-y^4-4x^2y^2 + 4x^4 - 8x^2y^2}{(x^2+y^2)^2}	+ \frac{-4x^2(x^4-y^4 - 4x^2 y^2)}{(x^2+y^2)^3} \\
+&=	\frac{(5x^4	-12x^2y^2 - y^4)(x^2+y^2) - 4x^2 ( x^4 -y^4 -4x^2y^2)}{(x^2+y^2)^3}	\\
+&=	\frac{5x^6 -12x^4y^2 -x^2y^4 + 5x^4y^2 - 12x^2y^4 -y^6 - 4x^6 + 4x^2y^4 + 16x^4y^2}{(x^2+y^2)^3}	\\
+&=	\frac{x^6+9x^4y^2 - 9x^2y^4 - y^6}{(x^2+y^2)^3}	=	f_{xy}(x,y)
+\end{align*}
+
+\[
+	f_x(0,y) = -y , \quad f_y(x,0) = x
+\]
+であるから，原点$(0,0)$においては，
+\[
+	f_{xy} (0,0) = -1, \quad f_{yx} (0,0) = 1
+\]
+となって，等式$f_{xy} (0,0) = f_{yx} (0,0)$は\underline{成立しない}．したがって，
+定理6.9により$f_{xy}(x,y)$は連続関数でないはずであるが，実際に$x \ne 0$のとき$f_{xy}(x,0)=1$
+であって，$f_{xy}(x,y)$は原点$(0,0)$で連続でない．また，定理6.8により$f_x(x,y),f_y(x,y)$少なくとも
+一方は微分可能でないはずであるが，実際に$f_x(x,y)$は原点$(0,0)$で微分可能でない．
+なぜなら，$f_{xy}(0,0) = -1$，$f_x(x,0)=0$であるから$f_{xx}(0,0)=$，したがって
+\begin{align*}
+ f_x(h,k) - f_x(0,0) -f_{xx} (0,0) h - f_{xy}(0,0) k
+	&=k \frac{h^4 - k^4 + 4 h^2 k^2}{(h^2+k^2)^2} + k = k \frac{2h^4 + 6h^2 k^2}{(h^2 + k^2)^2}	\\
+	&=k	\frac{h^4-k^4+4h^2k^2+h^4 + 2h^2k^2 + k^4}{(h^2+k^2)^2}	\\
+	&=k	\frac{2h^4+6h^2k^2}{(h^2+k^2)^2}
+\end{align*}
+が$o(\sqrt{h^*k^2})$とならないからである．――
+
+或る領域において$f(x,y)$の偏導関数$f_x(x,y), f_y(x,y), f_{xy}(x,y)$が存在して
+連続ならば，上記の定理6.9により，$f_{yx} (x,y)$も存在して連続である．しかし，
+このとき，必ずし$f_{xx}(x,y) , f_{yy}(x,y)$が存在するとは限らない．
+
+\例{6.7}例3.4の関数：
+\[
+	\varphi(t) = \sum_{n=1}^{\infty}	\frac{1}{2^n} | \sin ( \pi n! t)|
+\]
+は，数直線上到る所連続であるが各有理点で微分可能でない．故に
+\[
+	f(x,y) = \psi (x) \psi (y) , \quad \psi(u) = \int_0^u \varphi (t) dt,
+\]
+とおけば，$f_x(x,y) = \varphi (x) \psi(y), f_y(x,y) = \psi (x) \varphi(y), f_{xy}(x,y) = f_{yx} (x,y)
+= \varphi(x) \varphi(y)$はすべて連続であるが，$\varphi(x)$は有理店で微分不可能，
+$y \ne 0$のとき$\psi (y) \ne 0$であるから，$a$が有理数，$b \ne 0$ならば点$(a,b)$において
+偏微分係数$f_{xx}(a,b)$は存在しない.

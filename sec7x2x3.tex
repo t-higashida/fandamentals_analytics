@@ -1,0 +1,84 @@
+\subsection{閉区域上の積分}
+
+有界閉領域の境界を考察するためにまず曲線について述べる.
+$ \varphi (t) , \psi (t)$を閉区間
+$ I = [ a ,b ] $で定義された連続関数とすれば，
+$t$が数直線上を$a$から$b$まで動くとき点
+$P(t) = ( \varphi (t) , \psi (t))$は平面上を動いて`曲線'を描く.
+このとき点集合$ C = \{ P (t) \: | \: a \leqq t \leqq b \: \}$を
+\textbf{曲線}(curve)とよぶ.たとえば曲線の‘向き’を考える必要
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=60mm,height=50mm]{p336.bmp}
+\end{figure}
+があるというような場合には各$ t \in I$にそれぞれ点$P(t) \in C$を対応させる写像:
+$ t \to P(t)$を曲線と定義するが，本章ではその必要がないから\underline{点} $ P(t) , \: a \leqq t \leqq b$,
+\underline{の集合}$C$を曲線と定義したのである.曲線$C$に対して$C$を
+\begin{equation}
+	C = \{ P(t) \: | \: a \leqq t \leqq b \}, \quad P(t) = ( \varphi (t) , \psi (t)),
+\label{eq7x30}
+\end{equation}
+と表わす連続関数$ \varphi (t) , \psi (t)$は無数に存在する.たとえば
+\[
+	u( \tau ) = \varphi ( a + (b -a) \tau ) , \quad
+	v (\tau ) = \psi (a + (b -a) \tau) , 0 \leqq \tau \leqq 1,
+\]
+とおけば明らかに
+\[
+	C = \{ \: Q ( \tau ) \: |  0 \leqq \tau \leqq 1 \: \}, \quad
+	Q ( \tau ) = ( u( \tau )  , v ( \tau )), 
+\]
+(\ref{eq7x30})の右辺を曲線$C$の\textbf{パラメータ表示}，$t$をその\textbf{パラメ一夕}という.
+
+曲線$C=\{ P(t) \: | \: a \leqq t \leqq b \: \} , P (t) = ( \varphi (t) ,\psi (t)) ,$において$\varphi(t) ,\psi (t)$がが閉区間
+$[a,b]$での連続微分可能な関数でつねに$ | \varphi'(t)|^2 + | \varphi'(t) |^2 > 0$であるとき，すなわち
+$ \varphi'(t) , \psi' (t)$が同時に$0$にはならないとき，$C$を\textbf{滑らかな曲線}(smooth curve)という.
+$a$と$b$の間に$m-1$個の点$a_1 , a_2 , \cdots , a_{m-1}$をとり，$a_0 = a , a_m=b$として閉区間$[a,b]$を$m$個の閉区間
+$[a_{k-1} , a_k ] , \: k=1 , 2 , \cdots , m $，に分割すれば[砺一、，砺]，々=1，2，…，吻，に分割すれば曲線
+$C=\{ P(t) \: | \: a \leqq t \leqq b \: \}$も$m$個の曲線に分割される:
+\[
+	C = C_1 \cup C_2 \cup \cdots  \cup C_k \cup \cdots \cup C_m , \quad C_k = \{ P(t) | \: a_{k-1} \leqq t \leqq a_k \}.
+\]
+このときもしも各$C_k$が滑らかな曲線となるならば曲線$C$は\textbf{区分的に滑らか}
+(piecewise smooth)であるという.
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=80mm,height=30mm]{p337.bmp}
+\end{figure}
+また曲線$C= \{ ( \varphi (t) , \psi (t) \: | \: a \leqq t \leqq b \: \}$において恒等的に$ \varphi (t) = t $である揚合に
+は$C$は閉区間$[a,b]$で定義された連続関数 $ y = \psi (x  )$ のグラフ$G_\psi = \{ ( x , \psi (x)) \: | \: a \leqq x \leqq b \: \}$
+(\S \ref{sec2x1})に他ならない.同様に恒等的に$ \psi (t) = t $である揚合には$C$は連続関数$x=\varphi (y)$のグラフ
+$ \{ ( \varphi (y) , y ) \: | \: a \leqq y \leqq b \: \}$である．この二つの場合の
+$C$を\textbf{初等曲線}
+\footnote{
+服部晶夫氏による．
+}
+とよぶことにする.
+
+滑らかな曲線は有限個の初等曲線に分割される.
+
+\証明
+$ C= \{ \: P(t) \: | \: a \leqq t \leqq b \}, P(t) = ( \varphi (t) , \psi (t))$，を滑らかな曲線とする.
+閉区間$ [a,b]$で連続な$t$の関数
+$ | \varphi ' (t)|^2 + | \psi '(t)|^2 | $は，定理2.4により，最小値μをもつ.仮定により$ \mu >0$であるから，
+$ \mu = 2 \lambda^2 , \lambda > 0$，とおけば，
+\[
+	| \varphi'(t)|^2 + | \psi'(t)|^2 \geqq 2 \lambda^2
+\]
+したボって各点$t, a \leqq t \leqq b $，において$ \varphi '(t) | \geqq \lambda $となるかまたは
+$ | \psi '(t) | \geqq \lambda$となる．
+
+$ [ a, b ] $で連続な関数$ \varphi 't() , \psi '(t)$は，定理2.3により，$[ a,b]$で一様連続で
+あるから，$ \lambda$に対して正の実数$\delta $が定まって
+\[
+	| t - s | < \delta \quad \text{のとき} \quad | | \varphi'(t) - \varphi'(s) | < \lambda \: | \varphi'(t) - \varphi'(s) | < \lambda
+\]
+となる.そこで$ a_0 , a_1 , a_2 , \cdots , a_k , \cdots , a_m$を
+\[
+	a_0 = a < a_1 < \cdots < a_{k-1} < a_k < \cdots < a_m = b ,\quad a_k - a_{k-1} < \delta
+\]
+となるようにとって曲線$C$を$m$個の曲線$C_k = \{ P(t) \: | a_{k-1} \leqq t \leqq a_k \: \}$に分割して各
+$ C_k$が初等曲線であることを示す．
+$ | \varphi ' (a_k) | \geqq \lambda$または$ | \psi ' (a_k) | \geqq \lambda$と仮定してみる．
+そうすれば$ a_{k-1} \leqq t \leqq a_k $のとき $ | a_k - t| < \delta $，したがって $ | \varphi ' (a_k) - \varphi' (t) | \leqq \lambda$
+となるから$ \varphi'(t) > \varphi '(a_k) - \lambda \geqq 0 $，すなわち閉区間$ [ a_{k-1} , a_k ]$においてつねに

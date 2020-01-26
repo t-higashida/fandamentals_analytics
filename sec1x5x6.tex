@@ -1,0 +1,426 @@
+\subsection{可算集合，非可算集合}
+\label{sec1x5x6}
+
+無限集合$S$が与えられたとき，$S$のすべての要素$s$に番号をつけて
+\[
+	S=\{s_1,s_2,s_3,\cdots,s_n,	\cdots	\}
+\]
+と表わすことができるならば，$S$は\textbf{可算}である，またが
+\textbf{可付番}であるといい，$S$を\textbf{可算集合}（countable set），または
+\textbf{可付番集合}とよぶ．自然数全体の集合を$\N$で表わすことにすれば，
+このとき，$n	\in	\N$と$s_n	\in	S$は１対１に対応する．すなわち，
+$S$と$\N$の間に１対１の対応が存在するとき，$S$を可算集合とよぶのである．
+可算でない集合を\textbf{非可算集合}という．
+
+可算集合の無限部分集合がすべて可算であることは明らかである。有限集合と可算集合の合併
+集合は可算である．これも明らかであろう．二つの可算集合の合併集合は可算である．
+このことは
+\begin{align*}
+	S=\{s_,s_2,s_3,\cdots,s_n,\cdots	\}	\\
+	S=\{t_,t_2,t_3,\cdots,t_n,\cdots	\}	\\
+\end{align*}
+ならば
+\[
+	S	\cup	T	=	\{s_1,t_1,s_2,t_2,\cdots,s_n,t_n,\cdots	\}
+\]
+と表わされることから明らかである。
+
+集合$S$と$T$に対して$S$の要素$s$と$T$の要素$t$の対$(s,t)$の全体の集合を
+$S$と$T$の\textbf{直積}（direct product），または\textbf{直積}といい，
+$S	\times	T$で表わす．$\N	\times	\N$\underline{は可算集合である}.
+このことを見るためには，$\N	\times	\N$の各要素$(j,k)$を
+座標が$(j,k)$なる平面上の点と考え，
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,5.5)
+	%座標軸
+	\thicklines\put(0,0){\vector(1,0){5.5}}
+	\thicklines\put(0,0){\vector(0,1){5.5}}
+
+	%格子点
+	\thicklines\put(1,1){\circle{0.05}}
+	\thicklines\put(2,1){\circle{0.05}}
+	\thicklines\put(1,2){\circle{0.05}}
+	\thicklines\put(3,1){\circle{0.05}}
+	\thicklines\put(2,2){\circle{0.05}}
+	\thicklines\put(1,3){\circle{0.05}}
+	\thicklines\put(4,1){\circle{0.05}}
+	\thicklines\put(3,2){\circle{0.05}}
+	\thicklines\put(2,3){\circle{0.05}}
+	\thicklines\put(1,4){\circle{0.05}}
+	\thicklines\put(5,1){\circle{0.05}}
+	\thicklines\put(4,2){\circle{0.05}}
+	\thicklines\put(3,3){\circle{0.05}}
+	\thicklines\put(2,4){\circle{0.05}}
+	\thicklines\put(1,5){\circle{0.05}}
+	
+	%矢印
+	\thicklines\put(1.1 ,1 ){\vector( 1,0){0.8}}
+
+	\thicklines\put(1.9,1.1){\vector(-1,1){0.8}}
+
+	\thicklines\put(1.1,1.9){\vector( 2,-1){1.7}}
+
+	\thicklines\put(2.9,1.1){\vector(-1, 1){0.8}}
+	\thicklines\put(1.9,2.1){\vector(-1, 1){0.8}}
+
+	\thicklines\put(1.1,2.9){\vector( 3,-2){2.7}}
+
+	\thicklines\put(3.9,1.1){\vector(-1, 1){0.8}}
+	\thicklines\put(2.9,2.1){\vector(-1, 1){0.8}}
+	\thicklines\put(1.9,3.1){\vector(-1, 1){0.8}}
+
+	\thicklines\put(1.1,3.9){\vector( 4,-3){3.8}}
+
+	\thicklines\put(4.9,1.1){\vector(-1, 1){0.8}}
+	\thicklines\put(3.9,2.1){\vector(-1, 1){0.8}}
+	\thicklines\put(2.9,3.1){\vector(-1, 1){0.8}}
+	\thicklines\put(1.9,4.1){\vector(-1, 1){0.8}}
+
+	%座標軸上の数字
+	\thicklines\put(-0.3,1){1}
+	\thicklines\put(-0.3,2){2}
+	\thicklines\put(-0.3,3){3}
+	\thicklines\put(-0.3,4){4}
+	\thicklines\put(-0.3,5){5}
+
+	\thicklines\put(1,-0.3){1}
+	\thicklines\put(2,-0.3){2}
+	\thicklines\put(3,-0.3){3}
+	\thicklines\put(4,-0.3){4}
+	\thicklines\put(5,-0.3){5}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+これに上図に示したように番号を付けていけばよい．
+このとき，$i+h	<	j+k$なる点$(i,h)	\in	\N	\times	\N$の個数は
+\[
+	\frac{1}{2}(j+k-2)(j+k-1)
+\]
+であるから（別ノート有り，保留），
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{7.5mm}
+\begin{picture}(7,7)
+	%座標軸
+	\thicklines\put(0,0){\vector(1,0){7}}
+	\thicklines\put(0,0){\vector(0,1){7}}
+	%座標軸上の数字
+	\thicklines\put(-0.5,1){1}
+	\thicklines\put(-0.5,2){2}
+	\thicklines\put(-0.5,3){3}
+	\thicklines\put(-0.5	,4){4}
+
+	\thicklines\put(1,-0.5){1}
+	\thicklines\put(2,-0.5){2}
+	\thicklines\put(3,-0.5){3}
+	\thicklines\put(4,-0.5){4}
+
+	%格子点
+	\thicklines\put(1,1){\circle{0.05}}
+	\thicklines\put(1,2){\circle{0.05}}
+	\thicklines\put(1,3){\circle{0.05}}
+	\thicklines\put(1,4){\circle{0.05}}
+	\thicklines\put(1,5){\circle{0.06}}
+
+	\thicklines\put(2,1){\circle{0.05}}
+	\thicklines\put(2,2){\circle{0.05}}
+	\thicklines\put(2,3){\circle{0.05}}
+	\thicklines\put(2,4){\circle{0.06}}
+
+	\thicklines\put(3,1){\circle{0.05}}
+	\thicklines\put(3,2){\circle{0.05}}
+	\thicklines\put(3,3){\circle{0.06}}
+
+	\thicklines\put(4,1){\circle{0.05}}
+	\thicklines\put(4,2){\circle{0.06}}
+
+	\thicklines\put(5,1){\circle{0.06}}
+
+	%境界線(j,k)
+	\thicklines\path(0,6)(6,0)
+	\thicklines\put(3.1,3.1){$(j,k)$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+$(j,k)$の番号は
+\[
+	n=\frac{1}{2}(j+k-2)(j+k-1)+k
+\]
+となる．もちろん
+\[
+	(j,k)	\longrightarrow	n=\frac{1}{2}(j+k-2)(j+k-1)+k
+\]
+が$\N	\times	\N$と$\N$の間の1対1の対応を与えることは計算によっても容易に
+確かめらる．$\N	\times	\N$が可算であることは，\underline{二つの可算集合の
+直積は可算集合である}ことを示している．
+
+\underline{有理数全体の集合$\Q$は可算である．}
+
+\証明
+正の有理数全体の集合を$\Q^{+}$，負の有理数全体の集合を$\Q^{-}$とすれば
+\[
+	\Q=\{0\}	\cup	\Q^{+}	\cup	\Q^{-}
+\]
+であって，$r	\rightarrow	-r$は$\Q^{+}$と$\Q^{-}$の間の1対1の対応を与える．したがって
+$\Q$が可算集合なることを示すには$\Q^{+}$が可算であることをいえばよい．
+正の有理数$r$はすべて規約分数：$r=q/p$，$p$，$q$は互いに素な自然数，の形にただ一通りに
+表わされる．互いに素な自然数$p$，$q$の対$(p,q)$の全体から成る$\N	\times	\N$の部分
+集合を$P$とし，各既約分数$r	=	q/p	\in	\Q^{+}$に$(p,q)	\in	P$を対応させれば，
+$\Q^{+}$と$P$の間に1対1の対応が定まる．$\N	\times	\N$が可算集合だから$P$も可算で，
+したがって$\Q^{+}$も可算集合である．
+\■
+
+\underline{任意の実数}$a,b,a<b$
+\underline{に対して，}$a	\leqq	\rho	\leqq	b$
+\underline{なる実数}$\rho$\underline{全体の集合，すなわち，閉区間}
+$I=[a,b]$\underline{は非可算}　
+\underline{集合である. }
+
+\証明　
+$I$が可算である，すなわち
+\[
+	I=	\{	\rho_1,\rho_2,\rho_3,\cdots,\rho_m,\cdots	\}
+\]
+であると仮定して矛盾を導く．$I$の幅$b-a$より小さい正の実数$\varepsilon$を一つ定めて，
+各$n$について$\rho_n$を中心とする幅$\varepsilon/2^n$の開区間
+\[
+	U_n=\left(
+		\rho_n-\frac{\varepsilon}{2^{n+1}},\rho_n+\frac{\varepsilon}{2^{n+1}}
+			\right)
+\]
+\vspace{0.3cm}
+\begin{figure}[htb]
+		\begin{center}
+		\setlength{\unitlength}{0.9cm}
+			\begin{picture}(2,1)
+				\thicklines	\path(-3,1)(6,1)
+				\thicklines \put(-2,0.9){$[$}
+				\thicklines \put(-0.02,0.9){$($}
+				\thicklines \put(1.92,0.9){$)$}
+				\thicklines \put(5,0.9){$]$}
+				\thicklines \put(-2,0.5){$a$}
+				\thicklines \put(1,0.9){$|$}
+				\thicklines \put(1,0.5){$\rho_n$}
+				\thicklines \put(1,1.5){$U_n$}
+				\thicklines \put(5,0.4){$b$}
+
+				\thicklines	\qbezier[15](0,1)(0,0)(0,-0.5)
+				\thicklines	\qbezier[15](2,1)(2,0)(2,-0.5)
+				\thicklines	\put(0.7,-0.5){\vector(-1,0){0.7}}
+				\thicklines	\put(1.3,-0.5){\vector(1,0){0.7}}
+				\thicklines \put(0.75,-0.5){$\displaystyle\frac{\varepsilon}{2^n}$}
+
+		\end{picture}
+\end{center}
+\end{figure}
+
+\pagebreak
+をとれば，$\rho_n	\in	U_n$であるから，$I$は$U_1,U_2,\cdots,U_n,\cdots$で覆われる：
+\[
+	I	\subset	U_1	\cup	U_2	\cup	U_3	\cup	\cdots	\cup	U_n	\cup	\cdots.
+\]
+このことと，区間$U_n$の幅の総和：
+\[
+	\sum_{n=1}^\infty	\frac{\varepsilon}{2^n}=\varepsilon
+\]
+が$I$の幅$b-a$より小さいことと矛盾することは容易に想像されるが，矛盾することを
+証明するために、まず\underline{区間縮小法を用いて}，$I$が$U_n$の有限個で覆われる，
+すなわち
+\[
+	I	\subset	U_1	\cup	U_2	\cup	U_3	\cup	\cdots	U_m
+\]
+\underline{なる自然数$m$が存在することを示そう}．このために，
+\[
+	W_n	=	U_1	\cup	U_2	\cup	U_3	\cup	\cdots	\cup	U_n
+\]
+とおいて、すべての$n$について$I$が$W_n$に含まれない：
+$I	\not\subset	W_n$と仮定する（☆）．区間$I$をその中点$c=(a+b)/2$によって二つの区間に分割する：
+\[
+	I=[a,c]	\cup	[c,b].
+\]
+\begin{figure}[htb]
+		\begin{center}
+		\setlength{\unitlength}{0.9cm}
+			\begin{picture}(2,1)
+				\thicklines	\path(-3,1)(6,1)
+				\thicklines \put(-2,0.9){$[$}
+				\thicklines \put(5,0.9){$]$}
+				\thicklines \put(5,0.4){$b$}
+				\thicklines \put(-2,0.5){$a$}
+				\thicklines \put(1.5,0.9){$[$}
+				\thicklines \put(1.5,0.9){$]$}
+				\thicklines \put(1.5,0.4){$c$}
+		\end{picture}
+\end{center}
+\end{figure}
+
+もしも$[a,c]	\subset	W_m$，$[c,b]\subset	W_l$ならば，$m$と$l$の大きい方を
+$n$としたとき$I	\subset	W_n$となって仮定（☆）に反する．故に二つの区間$[a,c]$，$[c,b]$のうち
+すくなくとも一つはいずれの$W_n$にも含まれない．その区間を$I_1=[a_1,b_1]$とすれば，
+\[
+	I_1	\subset	I,	\quad	b_1-a_1	=	\frac{1}{2}(b-a)
+\]
+であって，すべての$n$について$I_1	\not\subset	W_n$．同じ論法を$I_1$に適用すれば
+\[
+	I_2=[a_2,b_2]	\subset	I_1,	\quad	b_2-a_2=\frac{1}{2}(b_1-a_1)=\frac{1}{2^2}(b-a)
+\]
+で，すべての$n$について$I_2	\not\subset	W_n$になる閉区間$I_2$を得る．以下同様にして，
+すべての$n$について$I_k	\not\subset	W_n$なる閉区間
+\[
+	I_k=[a_k,b_k],\quad	b_k-a_k=\frac{1}{2^k}(b-a),
+\]
+の列：$I_1,I_2,\cdots,I_k,\cdots$で
+\[
+	I_1	\supset	I_2	\supset	I_3	\supset	\cdots	\supset	I_k	\supset	\cdots
+\]
+なるものを得る．
+
+\pagebreak
+
+$\displaystyle
+	\lim_{k\rarrow\infty}(b_k-a_k)=0$であるから，区間縮小法により，すべての$k$について
+$c	\in	I_k$なる実数$c$が定まる．
+\begin{figure}[htb]
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,2)
+				\thicklines	\path(-3,1)(5,1)
+				\thicklines \put(-3.03,0.9){$($}
+				\thicklines \put(4.95,0.9){$)$}
+				\thicklines \put(3,0.4){$b_k$}
+				\thicklines \put(3,0.9){$]$}
+				\thicklines \put(0,0.5){$a_k$}
+				\thicklines \put(0,0.9){$[$}
+				\thicklines \put(1,0.9){$|$}
+				\thicklines \put(1,0.4){$c$}
+				\thicklines \put(1,1.4){$U_m$}
+
+				\thicklines	\qbezier[10](-3,1)(-3,0.4)(-3,-0.2)
+				\thicklines	\qbezier[10](5,1)(5,0.4)(5,-0.2)
+
+				\thinlines	\put(0.5,0){\vector(-1,0){3.5}}
+				\thinlines	\put(1.5,0){\vector(1,0){3.5}}
+				\thicklines \put(0.7,-0.1){$\displaystyle	\frac{\varepsilon}{2^m}$}
+
+		\end{picture}
+\end{center}
+\end{figure}
+
+$c\in	I$だから，$c$は$\rho_n$のいずれかと一致
+する：$c=\rho_m$．
+すなわち$c$は幅$\varepsilon/2^m$の閉区間$U_m$の中点になっている．
+したがって，$c	\in	I_k=[a_k,b_k]$，
+$\displaystyle
+\lim_{k	\rarrow	\infty}(b_k-a_k)=0$
+だから，$k$を十分に大きくとれば（実数の連続性により）$I_k	\subset	U_m	\subset	W_m$となる．
+これはすべての$n$について$I_k	\not\subset	W_n$であったことと矛盾する．
+
+これで或る自然数$m$について
+\[
+	I	\subset	W_m	=	U_1	\cup	U_2	\cup	U_3	\cup	\cdots	\cup	U_m
+\]
+であることがわかった．故に$I$の幅は$U_1,U_2,\cdots,U_m$の幅の総和より小さい：
+（任意の$i,j:1\leqq	i,j	\leqq	m$について$U_i	\cap	U_j	=	\varnothing$の場合が最大で）
+\[
+	b-a	<	\sum_{n=1}^m	\frac{\varepsilon}{2^n}	<	\varepsilon.
+\]
+これは$\varepsilon	<	b-a$であったことに矛盾する．
+\■
+
+上の証明の最後の段階で，一般に閉区間$I=[a,b]$が有限個の開区間$U_n=(u_n,v_n),	\:	n=1,2,\cdots,m,$で
+覆われているならば
+\[
+	b-a	<	\sum_{n=1}^m	(v_n-u_n)
+\]
+であることを用いた．このことは自明であろうが，念のため開区間の個数$m$に関する帰納法による証明を
+述べる．$I$が$m-1$個の開区間で覆われている場合にはこのことがすでに証明されたものと仮定しよう．
+$b$は$U_n$のいずれかに属するから，$U_1,U_2,\cdots,U_m$の番号を適当に付け替えて，$b	\in	U_m$
+としてよい．このとき，もしも$u_m	\leqq	a$ならば，
+\[
+	b-a	<	v_m-u_m	\leqq	\sum_{n=1}^m	(v_n-u_n)
+\]
+なることは明らかである．$u_m	>	a$のときには，$I$から$U_m$で覆われている部分を
+\begin{figure}[htb]
+		\begin{center}
+		\setlength{\unitlength}{1cm}
+			\begin{picture}(2,2)
+
+				\thicklines	\path(-4,1)(6,1)
+
+				\thicklines \put(-3.0,0.9){$[$}
+				\thicklines \put(-3.0,0.5){$a$}
+				
+				\thicklines \put(-1.0,0.9){$($}
+				\thicklines \put(-1,0.5){$u_m$}
+				
+				\thicklines \put(3,0.4){$b$}
+				\thicklines \put(3,0.9){$]$}
+				
+				\thicklines \put(4.95,0.9){$)$}
+				\thicklines \put(4.9,0.5){$v_m$}
+
+		\end{picture}
+\end{center}
+\end{figure}
+除いた残りは閉区間$[a,u_m]$であって，$[a,u_m]$は$U_n,	\:	n=1,2,\cdots,m-1$，で覆われているから，
+帰納法の仮定により
+\[
+	u_m-a	<	\sum_{n=1}^{m-1}(v_n-u_n).
+\]
+故に
+\[
+	b-a	=	u_m-a+b-u_m	<	\sum_{n=1}^{m-1}	(	v_n-u_n	)	+	v_m	-	u_m,
+\]
+すなわち
+\[
+	b-a	<	\sum_{n=1}^m	(v_n-u_n).
+\]
+これで閉区間$[a,b],	\:	a<b,$はすべて非加算集合であることが証明された．
+開区間$(a,b),	a<b$，も，閉区間をその部分集合として含むから，非加算集合である．
+実数全体の集合$\R$をもちろん非加算である．集合$S$が可算であるというのは，
+$S$からその要素を適当な順序で順次に取り出しそれに番号をつけて
+$s_1,s_2,s_3,\cdots$
+と表わしていけば$S$のすべての要素に番号がついて
+\[
+	S	=	\{s_1,s_2,s_3,\cdots	,	s_n,\cdots	\}
+\]
+となるということである．$S$が非可算集合のときには，$S$からその要素$s_1,s_2,s_3,\cdots$
+をどんな順序で取り出していっても，取り出した要素全体の集合：
+\[
+	\{s_1,s_2,s_3,	\cdots,	s_n,	\cdots	\}
+\]
+に属さない$S$の要素が残る．可算集合も非可算集合も共に無数の要素から成り立っているが，
+非可算集合は可算集合よりももっと多くの要素から成り立っていると考えられる．
+
+有理数全体の集合$\Q$は可算であるから
+\[
+	\Q	=	\{r_1,r_2,r_3,	\cdots	,	r_n	,	\cdots	\}
+\]
+と表わされる．一方，$\Q$は数直線$\R$上到る所稠密である．すなわち，$\R$上に
+どんな区間$(c,d)$，$c<d$をとっても，$(c,d)$に属する有理数が無数に存在する．
+いま各有理数$r_n$に対して$\R$上に$r_n$を含む開区間$U_n=(u_n,v_n)$，
+$u_n	<	r_n	<	v_n$，をとって
+\[
+	W	=	U_1	\cup	U_2	\cup	U_3	\cup	\cdots	U_n	\cup	\cdots
+\]
+とおけば，$\R$上$\Q$が到る所稠密だから，一見$W$は$\R$全体を覆っているように思えるが，
+実はそうでない．正の実数$\varepsilon$を一つ定めて，$U_n$として$r_n$を中点とする
+幅$\varepsilon/2^n$の開区間をとれば，上述の閉区間が可算集合でないことの証明と
+同じ論法によって，$\R$上に$b-a>\varepsilon$なるどんな閉区間$[a,b]$をとっても
+\[
+	[a,b]	\not\subset	W
+\]
+となる．開区間$U_n$の幅の総和が
+$\displaystyle
+	\sum_{n=1}^\infty	\frac{\varepsilon}{2^n}	=	\varepsilon
+$
+であることは，$\R$上$\Q$が到る所稠密であるにも拘わらず，$\Q$は$\R$のきわめて
+小さい部分を占めるに過ぎないことを示していると考えられる．

@@ -1,0 +1,136 @@
+\section{連続関数}
+\subsection{連続関数}
+\label{sec2x2x1}
+
+\定義{2.2}
+$f(x)$を或る区間$I$で定義された関数とする。このとき、点$a	\in	I$において、
+\[
+	\lim_{x	\rightarrow	a}f(x)	=	f(a)
+\]
+ならば$f(x)$は$a$で\textbf{連続}である、あるいは$x=a$で連続であるという．
+関数$f(x)$がその定義域$I$に属するすべての点で連続であるとき、
+$f(x)$を\textbf{連続関数}、または$x$の連続関数とよぶ。
+
+この連続関数の定義はすでに高校数学で学んだが，そこでは極限：
+$\displaystyle	
+	\lim_{x	\rightarrow	a}	f(x)$
+が明確に定義されていなかった。
+極限の定義までさかのぼっていえば：
+\underline{任意の正の実数$\varepsilon$に対応して正の実数
+$\delta(\varepsilon)$を選んで}
+\[
+	|x-a|	<	\delta(\varepsilon)	\quad	\text{ならば}	\quad
+	|f(x)-f(a)|<\varepsilon 
+\]
+\underline{となるようにできるとき，$f(x)$
+は$a$で連続であると定義する}のである．
+$x=a$のとき$f(x)=f(a)$であるから，この定義では(2.1)における条件
+$0	<	|x-a|$は不要である．
+
+\例{2.4}
+上記の例2.2の開区間$(0,1)$で定義された関数$f(x)$について考察する．
+\[
+	f(x)=\begin{cases}
+					\:	0			\quad	&\text{($x$が無理数の場合)}	\\
+					\:	1/p		\quad	&\text{($x$が有理数$q/p$，$p,q$は互いに素，の場合)}	\\
+				\end{cases}
+\]
+
+$a$，$(0<a<1)$が有理数のときには，$a$を既約分数：$a=q/p$で表わせば
+$f(a)=1/p$であるから，$\varepsilon =1/2p$に対しては，どんな正の実数
+$\delta $をとっても$|x-a|<\delta $なる無理数$x$が存在して$f(x)=0,$
+したがって$|f(x)-f(a)|=1/p>\varepsilon $となる．
+故に$f(x)$は有理数$a$では連続でない．
+
+$a$，$(0<a<1)$が無理数のときには，任意に与えられた正の実数$\varepsilon $に対して$p	\leqq	1/\varepsilon $
+なる既約分数$q/p$，$0<q/p<1$，は有限個（$\varepsilon >0$の場合の0個も含む）しかないから，正の実数$\delta $を
+開区間$(a-\delta,a+\delta)$が$p	\leqq	1/\varepsilon $なる既約分数$q/p$を
+一つも含まないように選ぶことができる．このように$\delta $を選んだとき，
+$|x-a|<\delta $なる$x$が有理数ならば$x$は$p>1/\varepsilon $なる既約分数：
+$x=q/p$として表わされ，$f(x)=1/p$となる．したがって，$f(a)=0$であるから，
+$f(x)-f(a)=1/p	<	\varepsilon $．
+$x$が無理数ならばもちろん$f(x)-f(a)=0	<\varepsilon $．いずれにしても
+$|x-a|<\delta $のとき$f(x)-f(a)<\varepsilon $となる．故に$f(x)$は無理点$a$で連続である．
+このように，$f(x)$は開区間$(0,1)$内のすべての有理点で不連続，すべての無理点で
+連続な関数である．―― 
+
+$f(x),g(x)$\underline{が区間}$\:I\:$\underline{で定義された連続関数ならば，
+その一次結合}$:c_1f(x)+c_2g(x),c_1,c_2\:$\underline{は定数},
+\underline{およびその積}$\:	:f(x)g(x)	\:$\underline{は区間}
+$\:I\:$\underline{で定義された連続関数である}．さらに$I\:$
+\underline{に属する各点}$\:x\:$\underline{で}$g(x)\ne	0$\underline{ならば商}
+$\:	f(x)/g(x)	\:$\underline{も}$\:	I	\:$\underline{で}\underline{}
+\underline{定義された連続関数である.}
+このことは関数の極限に関する演算の法則によって明らかである．
+
+
+数直線$\R$上で$x$は明らかに$x$の連続関数である．したがって$x^2=x	\cdot	x$，$x^3=	x	\cdots	x^2$，
+$\cdots$，$x^n=x	\cdot	x^{n-1},\cdots$は$x$の連続関数，したがってそれらの1次結合，すなわち
+多項式：
+\[
+	f(x)=c_0x^n	+	c_1x^{n-1}	+	\cdots	+	c_n
+\]
+は$x$の連続関数である．有理式：$f(x)/g(x)$は$g(x)	=0$なる点$x$を除いて連続である．
+
+$f(x)$を区間$I$で定義された関数としたとき，点$a	\in	I$において
+\[
+	\lim_{x	\rightarrow	a+0}	f(x)	=	f(a)
+\]
+ならば$f(x)$は\textbf{$a$で右に連続}であるといい，
+\[
+	\lim_{x	\rightarrow	a-0}	f(x)	=	f(a)
+\]
+ならば$f(x)$は\textbf{$a$で左に連続}であるという．
+$a$が区間$I$の左端であるとき，たとえば$I=[a,b)$のときには
+$f(x)$が$a$で連続であるということは$a$で右に連続であることと一致する．
+$a$が$I$で右端である場合についても同様なことが成り立つ．――
+
+一般に$f$を実数の集合$D$で定義された関数，$E	\subset	D$を$D$の任意の部分集合としたとき，
+$f$からその定義域を$E$に縮小して得られる関数を$f$の$E$への\textbf{制限}(restriction)
+といい，$f|E$あるいは$f_E$で表わす．$f_E$は，すなわち，$E$を定義域とする関数で，
+$x	\in	E$のとき$f_E(x)=f(x)$である．
+
+$f(x)$を区間$I$で定義された関数，$J	\subset	I$を$I$の部分区間とする．
+$f(x)$の$J$への制限$f_J(x)$が連続関数であるとき$f(x)$\underline{は区間}$J$
+\underline{で連続である}という．一般に関数に関する或る性質$\mathcal{A}$に対して，
+$f_J(x)$\underline{が}$\mathcal{A}$\underline{であるとき}$f(x)$\underline{}
+\underline{は}$J$\underline{で}$\mathcal{A}$\underline{であるという}
+ことにする．
+
+たとえば，$a	<	c	<	b$として，区間$(a,b)$で関数$f(x)$を$a<	x	<	c$のとき
+$f(x)=x,	c	\leqq	x	b$のとき$f(x)=x-1$と定義すれば，$f(x)$は$c$で不連続であるが
+区間$[c,b)$では連続である．$f_{[c,b)}(x)$が$c$で連続であるということは
+$f(x)$が$c$で右に連続であることを意味するからである．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,2)
+	%座標軸
+	\thicklines\put(-2,0){\vector(1,0){5.5}}\put(3.5,-0.3){$x$}
+	\thicklines\put(0,-2){\vector(0,1){4}}\put(-0.3,2){$y$}
+
+	%区間
+	\put(-1,-0.05){$($}
+	\put(1,-0.05){$|$}
+	\put(3,-0.05){$]$}
+
+	\put(-1,-0.4){$a$}
+	\put(1,-0.4){$c$}
+	\put(2,-0.4){$1$}
+	\put(3,-0.4){$b$}
+	\path(-1,-1)(1,1)
+	\path(1,-1)(3,1)
+	\put(1,-1){\circle*{0.07}}
+
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\vspace*{2cm}
+$f_J(x)$が$\mathcal{A}$であるとき$f(x)$は$J$で$\mathcal{A}$であるという言い方は
+\underline{$J	\subset	I$が部分区間であるときに限る}のであって，
+任意の部分集合$E	\subset	I$には適用しない．たとえば$E	=	\{a\}$がただ一つの
+点$a	\in	I$からなる集合であるとき，1点$a$で定義された関数$f_{\{a\}}(x)$が
+連続である，などといっても無意味であろう．

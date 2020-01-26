@@ -1,0 +1,39 @@
+\subsection{対数関数}
+\label{sec2x3x3}
+
+正の実数$a,	a	\ne	1$を一つ定めたとき，指数関数$f(x)	=	a^x$は
+$\R	=	(-\infty	,	+	\infty)$で定義された連続な単調関数であって，
+その値域$f(\R)$は$\R^+	=	(0,+\infty)$である．
+故に，定理2.7により,$f$の逆関数$f^{-1}$は$\R^+$で定義された連続な単調関数である．
+この逆関数$f^{-1}(x)$を$\log_a	x$で表し，それを$a$を\textbf{底(base)}とする
+\textbf{対数関数(logarithmic function)}とよぶ．$\log_a	x$は$a>1$のときは
+単調増加，$0	<	a	<	1$のときは単調減少で，その値域は$\R$である．
+
+定義により等式：$\log_a	x=	\xi$は$x	=	a^\xi$と同値である．このことから，
+高等数学で学んだように，次の公式が導き出される：
+\begin{align*}
+	\log_a	(xy)	&=	\log	a	x	+	\log_a	y,	\\
+	\log_a	\left(\frac{y}{x}	\right)	&=	\log_a	y	-	\log_a	y,	\\
+	\log_a	(x^\lambda)	&=	\lambda	\log_a	x,	\quad	\lambda	\in	\R.
+\end{align*}
+$\log_a	x	=	\xi$とおけば$x	=	a^\xi$．この両辺を$b$を底とする対数をとれば，
+$\log_b	x	=	\xi	\log_b	a$．すなわち
+\begin{equation}
+	\log_b	x	=	\log_b	a	\cdot	\log_a	x.
+  \label{eq2x12}
+\end{equation}
+$\displaystyle	e	=	\sum_{n=0}^\infty	1/n!$を底とする対数$\log_a	x$を
+\textbf{自然対数}という．自然対数$\log_\varepsilon x$を，
+底$e$を略して$\log	x$と書く．$\log	x$は$x$の単調増加関数で，
+$\displaystyle	\lim_{x	\rightarrow	+\infty}	=	+\infty$，
+$\displaystyle	\lim_{x	\rightarrow	0}	=	-\infty$である．
+
+\例{2.9}
+$\displaystyle \lim_{x	\rightarrow	+	\infty}	e^t	/t	=	+\infty$であるから，
+$x=e^t$とおけば
+\[
+		\lim_{x\rightarrow	+\infty}	\frac{x}{\log	x}	
+	=	\lim_{t\rightarrow	+\infty}	\frac{e^t}{t}
+	=	+	\infty.
+\]
+\■

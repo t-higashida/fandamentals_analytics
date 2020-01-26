@@ -1,0 +1,72 @@
+\subsection{Abelの級数変形の公式}
+\label{sec5x2x3}
+
+\S	\ref{sec4x3x3}，例4.7で絶対収束しない広義積分
+$\displaystyle	\int_0^{+\infty}	(	\sin	x	/	x)	dx$が収束することを
+部分積分の公式を用いて証明した．級数の和に関して部分積分の公式に相当するものが
+Abelの級数変形の公式であって，これを応用して与えられた級数が条件収束することを
+証明できる場合がある．
+
+級数$\displaystyle	\sum_{n=1}^{\infty}	a_n	,	\sum_{n=1}^{\infty}	b_n$の部分和を
+$s_m	=	\displaystyle	\sum_{n=1}^{m}	a_n,	t_m	=	\sum_{n=1}^{m}	b_m	$として
+級数$\displaystyle	\sum_{n=1}^{\infty}	a_n	t_n$を考察する．ここで
+$a_n	,	b_n$は複素数でもよい．$s_0	=	0$とおけば，$k	\geqq	1$として，
+\begin{align*}
+	\sum_{n=k}^{m}	a_n	t_n	
+&=	(s_k	-	s_{k-1})	t_k	+	(s_{k+1}	-	s_k)	t_{k+1}	+	\cdots	+	(s_{m-1}	-	s_{m-2})	t_{m-1}	+	(s_m	-	s_{m-1})	t_m	\\
+&=	-	s_{k-1}	t_k	-	s_k	(t_{k+1}	-	t_k)	-	\cdots	-	s_{m-1}	(t_m	-	t_{m-1})	+	s_m	t_m	\\
+&=	s_m	t_m	-	s_{k-1}t_k	-	s_k	b_{k+1}	-	s_{k+1}	b_{k+2}	-	\cdots	-	s_{m-1}b_m,
+\end{align*}
+すなわち
+\begin{equation}
+	\sum_{n=k}^{m}	a_n	t_n	=	[	s_mt_m	-	s_{k-1}	t_k	]	-	\sum_{n=k}^{m-1}	s_n	b_{n+1}.
+\label{eq5x18}
+\end{equation}
+これが\textbf{Abelの級数変形}の公式である．
+
+$\displaystyle	|s_n|	\leqq	\mu	<	+	\infty,\sum_{n=1}^{\infty}	|b_n|	<	+	\infty$ならば
+$\displaystyle	\sum_{n=k}^{\infty}	|s_n	b_{n+1}	|	\leqq	
+\sum_{n=k}^{\infty}	\mu	|	b_{n+1}	|	\leqq
+\mu	\sum_{n=1}^{\infty}	|	b_n	|	<	+	\infty$，
+すなわち級数$\displaystyle	\sum_{n=1}^{\infty}	s_n	b_{n+1}$は絶対収束する．
+故に級数$\displaystyle	\sum_{n=1}^{\infty}	a_n	t_n	$が与えられたとき，
+$b_n	=	t_n	-	t_{n-1}	\:	(	n	\geqq	2),	b_1	=	t_1$とおけば，公式（\ref{eq5x18}）から
+直ちにつぎの収束の判定法を得る：
+\begin{list}{}{}
+	\item	$(1^\circ)$ $\displaystyle	\sum_{n=1}^{\infty}	a_n$が（$s$に）収束し$\displaystyle	\sum_{n=2}^{\infty}	(t_n	-	t_{n-1})$が
+絶対収束すれば$\displaystyle	\sum_{n=1}^{\infty}	a_n	t_n	=	[ s	t	-	s_0	t_1	]	-	\sum_{n=1}^{\infty}	s_n	b_{n+1}	$も収束する．
+	\item	$(2^\circ)$	部分和$\displaystyle	s_m	=	\sum_{n=1}^{m}	a_n$のなす数列$\{	s_m	\}$が有界
+（$	|s_n|	\leqq	\mu$），$\{t_n\},	t_n	>	0$，が単調減少数列で
+$\displaystyle	\lim_{n\rightarrow\infty}	t_n	=0$ならば（定理1.20 $(2^\circ)$），
+\[
+	\sum_{n=1}^{\infty}	a_n	t_n	=	\lim_{m\rightarrow\infty}	[s_m	t_m	-	s_0	t_1]	-	\sum_{n=1}^{\infty}	s_n	b_{n+1}
+															=	0	-	\sum_{n=1}^{\infty}	s_n	b_{n+1}
+\]
+は収束する．
+\end{list}
+
+\例{5.3}
+$\theta$を$2\pi$の整数倍ではない実数とし，$a_n	=	e^{i	n	\theta}$とおけば，
+$e^{i	\theta}	\ne	1$であるから
+$s_m	=	\displaystyle	\sum_{n=1}^{m}	e^{in\theta	}	=	e^{i	\theta}	(	e^{i	m	\theta}-1)	/	(e^{i	\theta}	-	1)$
+\footnote{	初項$e^{i	\theta}$，公比$e^{i	\theta}$の等比級数．
+\begin{align*}
+	s_m										&=	e^{i	\theta}	+	e^{i	2	\theta}	+	\cdots	+	e^{i	m	\theta}	\\
+	e^{i	\theta}	s_m			&=	e^{i	2	\theta}	+	e^{i	3	\theta}	+	\cdots	+	e^{i	(m+1)	\theta}	\\	
+(1-	e^{i	\theta}	)s_m	&=	e^{i\theta}	-	e^{i	(m+1)	\theta}	\\
+									s_m		&=	\frac{e^{i	\theta}(	1	-	e^{i	m	\theta})}{1	-	e^{i\theta}}
+\end{align*}
+}
+，
+したがって$|s_m|	\leqq	2	/	|	e^{i	\theta	}	-	1|$．故に，上記
+$(2^\circ)$により，任意の$0$に収束する単調減少数列$\{t_n\}$に対して，
+級数$\displaystyle	\sum_{n=1}^{\infty}	t_n	e^{in	\theta}$は収束する．
+すなわち，
+$	\displaystyle	\sum_{n=1}^{\infty}	t_n	e^{i	n	\theta}	=	\sum_{n=1}^{\infty}	t_n	(\cos	(n	\theta)	+	i	\sin	(n	\theta))$であるから，
+$\displaystyle	\sum_{n=1}^{\infty}	t_n	\cos	(	n	\theta)$，
+$\displaystyle	\sum_{n=1}^{\infty}	t_n	\sin	(n	\theta)$は共に収束する．
+$\theta	=	\pi$のとき$\displaystyle	\sum_{n=1}^{\infty}	t_n	\cos	(n	\theta)$は
+交代級数$\displaystyle	\sum_{n=1}^{\infty}	(-1)^n	t_n$となるから，この結果は
+交代級数の収束に関する\S	\ref{sec1x5x4}，定理1.23の拡張である．
+
+

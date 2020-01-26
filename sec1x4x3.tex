@@ -1,0 +1,146 @@
+\subsection{極限の大小，加法，減法}
+\label{sec1x4x3}
+
+数列$\{\alpha_n\}$から有限個または無限個の項を取り除いて得られた数列$\{\alpha_{m_n}\}$，
+\[
+	m_1	<	m_2	<	m_3	<	\cdots	<	m_n	<	\cdots	\quad	(k	\leqq	m_k;k=1,2,\cdots)
+\]
+を$\{\alpha_n	\}$の\textbf{部分列}(subsequence)という．たとえば
+\[
+	\alpha_1,\alpha_2,\alpha_6,\cdots,\alpha_{n!},\cdots
+\]
+すなわち$\{\alpha_{n!}\}$は$\{\alpha_n\}$の部分列である．
+数列$\{\alpha_n\}$は$\alpha$が$\alpha$に収束するとき，
+$\{\alpha_n\}$の部分列$\{\alpha_{m_n}\}$は同じ極限$\alpha$に収束する．
+
+\証明
+
+任意の$\varepsilon	>	0$に対して
+ある$n_0(\varepsilon)$が存在して，$n	>	n_0(\varepsilon)	\Longrightarrow	|\alpha_n	-	\alpha|	<	\varepsilon$
+である．
+$m_n	\geqq	n	\quad	(n=1,2,3,\dots)$であるから，$m_n	>	n_0(\varepsilon)$となり，したがって
+$|\alpha_n	-	\alpha|	<	\varepsilon$．
+
+繰り返しになるが，
+任意の$\varepsilon	>	0$に対してある$n_0(\varepsilon)$が存在し，
+$m_n	>	n_0(\varepsilon)	\Longrightarrow	|	\alpha_{m_n}	-	\alpha	|	<	\varepsilon$．
+すなわち$\displaystyle	\lim_{n	\rightarrow	\infty}	\alpha_{m_n}	=	\alpha$.
+\■
+
+これは収束の定義1.4から明らかであろう．また収束する数列$\{\alpha_n\}$の有限個の項を
+変えてもその極限$\lim_{n	\rightarrow	\infty}\alpha_n$は変わらない．
+すなわち数列$\{\alpha_n\},\{\beta_n\}$が与えられ，$N_0=\{n	\in	\N	\:	|	\:	\alpha_n	\ne	\beta_n	\}$
+$N_0$を有限集合とするとき
+$\displaystyle	
+	\lim_{n	\rightarrow	\infty}	\alpha_n	=	\alpha	\Longrightarrow	\lim_{n	\rightarrow	\infty}	\beta_n	=	\alpha
+$．
+これも明らかである．
+
+\定理{1.14}
+数列$\{\alpha_n\}$，$\{\beta_n\}$が収束するとき，無数の自然数$n$について
+$\alpha_n	\leqq	\beta_n$ならば
+$\displaystyle	\lim_{n	\rightarrow	\infty}	\alpha_n	\leqq	\lim_{n	\rightarrow	\infty}\beta_n$
+
+\証明
+$\displaystyle
+	\alpha	=	\lim_{n\rightarrow	\infty}	\alpha_n$，
+$\displaystyle
+	\beta	=	\lim_{n\rightarrow	\infty}	\beta_n
+$
+とおいて，$\alpha	>	\beta$であったとしよう．$\beta	<		r	<	\alpha$なる
+有理数$r$を一つ定めれば，定理1.12により，有限個の$n$を除いて$\beta_n	<	r$，
+また有限個の$n$を除いて$\alpha_n	>	r$となる．したがって$\alpha_n	\leqq	\beta_n$
+となる無数の$n$のうち有限個の$n$を除いて$\beta_n	<	r	<	\alpha_n$が成り立つことになり，
+矛盾を生じる．すなわち$\alpha	>	\beta$ではあり得ない．故に$\alpha	\leqq	\beta$．
+\■
+
+すべての$n$について$\rho_n	=	\rho$なる数列$\{\rho_n\}$はもちろん$\rho$に収束するから，
+上の定理1.14の$\{\alpha_n\}$または$\{\beta_n\}$を$\{\rho_n\}$で置き換えれば，次の系を
+得る．
+
+\系
+数列$\{\alpha_n\}$が収束するとき，無数の$n$について$\alpha_n	\leqq	\rho$ならば
+$\lim_{n	\rightarrow	\infty}	\alpha_n	\leqq	\rho$；
+また無数の$n$について$\alpha_n	\geqq	\rho$ならば$\lim_{n	\rightarrow	\infty}\alpha_n	\leqq	\rho$
+
+\定理{1.15}
+数列$\{\alpha_n\}$，$\{\beta_n\}$が収束するならば$\{\alpha_n+\beta_n\}$，
+$\{\alpha_n-\beta_n\}$も収束する．
+そして
+\begin{align*}
+	\lim_{n	\rightarrow	\infty}	(\alpha_n+\beta_n)	=	\lim_{n	\rightarrow	\infty}	\alpha_n
+																									+	\lim_{n	\rightarrow	\infty}	\beta_n	\\
+	\lim_{n	\rightarrow	\infty}	(\alpha_n-\beta_n)	=	\lim_{n	\rightarrow	\infty}	\alpha_n
+																									-	\lim_{n	\rightarrow	\infty}	\beta_n	\\
+\end{align*}
+\証明
+$	\displaystyle
+	\alpha=\lim_{n	\rightarrow	\infty}	\alpha_n
+$，
+$	\displaystyle
+	\beta=\lim_{n	\rightarrow	\infty}	\beta_n
+$
+とおく．任意に与えられた正の実数$\varepsilon$に対して
+$0	<	r	<	\varepsilon$なる有理数$r$を一つ選べば，
+$r/2$に対応して一つの自然数$n_1=n_1(r/2)$が定まって
+\[
+	n	>	n_1	\quad	\text{ならば}	\quad	|\alpha_n	-	\alpha|	<	\frac{r}{2}
+\]
+同様に一つの自然数$n_2=n_2(r/2)$が定まって
+\[
+	n	>	n_2	\quad	\text{ならば}	\quad	|\beta_n-\beta|	<	\frac{r}{2}
+\]
+したがって$n_0(r/2)=\max	\{	n_1,n_2\}$とおけば
+\[
+	n	>	n_0\left(\frac{r}{2}\right)	\Longrightarrow	|	\alpha_n-\alpha	|	<	\frac{r}{2}	
+	\quad	\text{かつ}	\quad	|	\beta_n-\beta	|	<	\frac{r}{2}
+\]
+すなわち
+\[
+	|\alpha_n+\beta_n-(\alpha+\beta)|	\leqq	|\alpha_n-\alpha|+|\beta_n-\beta|
+																		<	\frac{r}{2}+\frac{r}{2}
+																		=	r	<	\varepsilon
+\]
+以上より
+\[
+	\lim_{n	\rightarrow	\infty}(\alpha_n+\beta_n)	=	\alpha+\beta
+	=		\lim_{n	\rightarrow	\infty}\alpha_n
+		+\lim_{n	\rightarrow	\infty}\beta_n.
+\]
+つぎに，
+\[
+	|\alpha_n-\beta_n-(\alpha-\beta)|	\leqq	|\alpha_n-\alpha|+|\beta-\beta_n|
+																		<	\frac{r}{2}+\frac{r}{2}
+																		=	r	<	\varepsilon
+\]
+以上より
+\[
+	\lim_{n	\rightarrow	\infty}(\alpha_n-\beta_n)	=	\alpha-\beta
+	=		\lim_{n	\rightarrow	\infty}\alpha_n
+		-\lim_{n	\rightarrow	\infty}\beta_n.
+\]
+\■
+
+すべての項$\alpha_n$が有理数なる数列$\{a_n	\}$を
+\textbf{有理数列}という．
+
+\定理{1.16}
+実数はすべての有理数列の極限である．すなわち，任意の実数$\alpha$
+に対して，$\alpha$に収束する$\{a_n\}$が存在する．
+
+\証明
+定理1.5により，おのおのの自然数$n$に対して
+\[
+	a_n	<	\alpha	<	a_n+\frac{1}{n}
+\]
+なる有理数$a_n$が存在する．任意に与えられた正の実数$\varepsilon$に対して$0<r<\varepsilon$
+なる有理数$r$を選び，
+$\displaystyle	n_0>\frac{1}{r}$なる自然数$n_0$を一つ定めて$n_0(\varepsilon)=n_0$
+とおけば，$1/n_0	<	r	<	\varepsilon$だから，
+\[
+	n	>	n_0(\varepsilon)	\quad	\text{のとき}	\quad	
+	|a_n-\alpha|	=	\alpha-a_n
+								\leqq	\frac{1}{n}	<	\frac{1}{n_0}	<	\varepsilon
+\]
+すなわち有理数列$\{a_n\}$は$\alpha$に収束する．
+\■	

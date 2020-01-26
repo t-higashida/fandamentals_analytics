@@ -1,0 +1,363 @@
+\subsection{実数の乗法，除法}
+
+われわれは未だ実数の乗法、除法を定義していない。上の定理1.16によれば、
+実数はすべて有理数列の極限として表わされる．したがって、二つの実数
+$\alpha$，$\beta$の積$\alpha\beta$を定義するには、
+$\alpha$，$\beta$をそれぞれ有理数列$\{\alpha_n\}$，$\{\beta\}$の
+極限：
+$	\displaystyle
+	\alpha=\lim_{n	\rightarrow	\infty}\alpha_n$，
+$	\displaystyle
+	\beta=\lim_{n	\rightarrow	\infty}\beta_n$，
+として表して、$\alpha\beta=\lim_{n	\rightarrow	\infty}\alpha_n\beta_n$
+とおけばよいであろうことは容易に想像がつく．
+
+\補題{1.2}
+\begin{list}{}{}
+	\item（1$^{\circ}$）有理数列$\{a_n\}$，$\{b_n\}$が収束するならば，
+	$a_n$，$b_n$の積を項とする数列$\{a_nb_n\}$も収束する．
+	\item（2$^{\circ}$）
+		$	\displaystyle
+		\alpha=\lim_{n	\rightarrow	\infty}a_n$，
+		$	\displaystyle
+		\beta=\lim_{n	\rightarrow	\infty}b_n$なるとき，
+		$	\displaystyle
+		\lim_{n	\rightarrow	\infty}a_nb_n$は$\alpha$と$\beta$だけによって一意的		に定まり，$\alpha$，$\beta$に収束する有理数列$\{\alpha_n\}$，
+		$\{\beta_n\}$のとり方にはよらない．
+\end{list}
+\証明
+
+（1$^{\circ}$）（2$^{\circ}$）の証明の共通部分：
+仮定により$\{\alpha_n\}$，$\{\beta_n\}$は収束しているから，
+Cauchyの判定法により、任意の正の実数$\varepsilon$に対応して
+自然数$m_0(\varepsilon)$が定まって
+\[
+	n>m_0(\varepsilon),\:	m>m_0(\varepsilon)	\Longrightarrow
+	|a_n-a_m|	<	\varepsilon,\quad
+	|b_n-b_m|	<	\varepsilon	\quad
+\]
+となる．$\varepsilon=1,m_1=m_0(1)+1$とおけば，$n>m_0(1)$のとき
+$|a_n-a_{m_1}|<1$．三角不等式より$|a_n|-|a_{m_1}|<|a_n-a_{m_1}|$であるから，
+したがって$n>m_0(1)$のとき$|a_n|<1+|a_{m_1}|$．
+故に、$|a_1|,|a_2|,\cdots,|a_{m_0(1)}|,1+|a_{m_1}|$のいずれよりも大きい有理数
+$c$に対しては、すべての$n$について$|a_n|<c$となる。
+$|b_n|$についても同様であるから、有理数$c$を適当に選べば、すべての
+$n$について
+\[
+	|a_n|	<	c,	\quad	|b_n|<c	\quad	(\{a_n\},\{b_n\}	\:\text{は有界})
+\]
+（1$^{\circ}$）　数列$\{a_nb_n\}$が収束する事をCauchyの判定法を用いて証明しよう．
+\begin{align*}
+	|a_nb_n-a_mb_m|	&=			|(a_n-a_m)b_n+a_m(b_n-b_m)|	\\
+									&\leqq	|a_n-a_m||b_n|+|a_m||b_n-b_m|,	\\
+\end{align*}
+したがって，有理数$c$を適当に選べば，すべての$n$について
+\begin{align*}
+	|a_nb_n-a_mb_m|	\leqq	c	|a_n-a_m|+c|b_n-b_m|.
+\end{align*}
+任意に与えられた正の実数$\varepsilon$に対して$0<r<\varepsilon$なる有理数$r$を一つに選んで
+$n_0(\varepsilon)=m_0(r/2c)$とおけば，$n	>	n_0(\varepsilon)$，$m>n_0(\varepsilon)$
+のとき，$|a_n-a_m|<r/2c$，$|b_n-b_m|<r/2c$となるから，
+\[
+	|a_nb_n-a_mb_m|<c	\cdot	\frac{r}{2c}+c\cdot	\frac{r}{2c}=r	<	\varepsilon
+\]
+故に$\{a_nb_n\}$は収束する．
+
+（2$^{\circ}$）　
+まず$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_n'=\lim_{n	\rightarrow	\infty}	a_n
+$なる任意の有理数列$\{a_n'\}$に対して，
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_n'b_n=\lim_{n	\rightarrow	\infty}	a_nb_n
+$
+なることを示す．有理数$c$を適当に選べば，すべての$n$について$|b_n|<c$であるから
+\[
+	|a_n'b_n	-	a_nb_n|	=	|a_n'-a_n||b_n|	\leqq	c	|	a_n'	-	a_n|.
+\]
+正の実数$\varepsilon$が与えられたとき，$0<r<\varepsilon$なる有理数$r$を一つ選べば，
+定理1.15によって
+\[
+	\lim_{n	\rightarrow	\infty}(a_n'-a_n)	=	\lim_{n	\rightarrow	\infty}a_n'-\lim_{n	\rightarrow	\infty}	a_n=0
+\]
+であるから，$r/c$に対応して自然数$n_0$が定まって$n>n_0$ならば
+$|a_n'-a_n|<	r/c$となる.故に$n_0(\varepsilon)=n_0$とおけば，
+\[
+	n	>	n_0(\varepsilon)	\quad	\text{のとき}	\quad	|a_n'b_n-a_nb_n|<c\cdot\frac{r}{c}	=	r	<	\varepsilon
+\]
+すなわち
+\[
+	\lim_{n	\rightarrow	\infty}	(	a_n'b_n-a_nb_n)	=	0,
+\]
+したがって
+\[
+	\lim_{n	\rightarrow	\infty}a_n'b_n	-	\lim_{n	\rightarrow	\infty}	a_nb_n
+	=	\lim_{n	\rightarrow	\infty}(a_n'b_n-a_nb_n)=0.
+\]
+これで$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_n'=	\lim_{n	\rightarrow	\infty}	a_n$
+ならば$\displaystyle
+\lim_{n	\rightarrow	\infty}	a_n'b_n	=	\lim_{n	\rightarrow	\infty}a_n'b_n$
+なることが分かった．同様に，
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	b_n'=	\lim_{n	\rightarrow	\infty}	b_n$
+ならば$\displaystyle
+\lim_{n	\rightarrow	\infty}	a_n'b_n'	=	\lim_{n	\rightarrow	\infty}a_n'b_n$
+
+
+故に，$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_n'=	\lim_{n	\rightarrow	\infty}	a_n$，
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	b_n'=	\lim_{n	\rightarrow	\infty}	b_n$
+ならば
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}a_n'b_n'	=	\lim_{n	\rightarrow	\infty}a_nb_n$
+\■
+
+\定義{1.5}実数$\alpha$，$\beta$が与えられたとき，それをそれぞれ有理数列$\{a_n\}$，$\{b_n\}$
+の極限として
+$\displaystyle
+	\alpha=\lim_{n	\rightarrow	\infty}	a_n$，
+$\displaystyle
+	\beta=\lim_{n	\rightarrow	\infty}	b_n$
+としてあらわして，$\alpha$と$\beta$の積$\alpha\beta$を
+\[
+	\alpha\beta=\lim_{n	\rightarrow	\infty}	a_nb_n
+\]
+と定義する．――
+
+上の補題1.2はこの定義によって$\alpha$と$\beta$の積が一意的に定まることを保証する．
+積$\alpha\beta$を$\alpha	\cdot	\beta$と書くこともある．
+
+有理数$a$は項$a_n$がすべて$a$に等しい数列：$\{	a	\}$の極限である．
+このことから，$\alpha	=	a$，$\beta	=	b$が有理数のときには，
+ここで定義した積$\alpha	\beta$が既知であった有理数としての積
+$ab$と一致することがわかる．
+
+乗法に関する\textbf{結合法則}，\textbf{交換法則}，加法と乗法に関する
+\textbf{分配法則}が有理数について成り立つことは既知であるが，
+それがそのまま極限に移行して実数についても成り立つことはほとんど明らかだろう．
+すなわち
+
+\定理{1.17}
+任意の実数$\alpha$，$\beta$，$\gamma$について
+\begin{align*}
+	\alpha	(	\beta	\gamma)		&=	(\alpha	\beta)	\gamma,	\\
+	\alpha	\beta							&=	\beta	\alpha,	\\
+	\alpha	(	\beta	+	\gamma)	&=	\alpha	\beta	+	\alpha	\gamma.
+\end{align*}
+\証明
+
+$\alpha$，$\beta$，$\gamma$を有理数列の極限として
+$\displaystyle
+	\alpha	=	\lim_{n	\rightarrow	\infty}	a_n$，
+$\displaystyle
+	\beta	=	\lim_{n	\rightarrow	\infty}	b_n$，
+$\displaystyle
+	\gamma	=	\lim_{n	\rightarrow	\infty}	c_n$と
+表わす．定義により
+\begin{align*}
+	\beta\gamma=\lim_{n	\rightarrow	\infty}b_nc_n,	\quad
+	\alpha\beta=\lim_{n	\rightarrow	\infty}a_nb_n,	\quad
+	\text{また}	\quad	a_n(b_nc)=(a_nb_n)c_n
+\end{align*}
+であるから
+\begin{align*}
+		\alpha(\beta\gamma)	=	\lim_{n	\rightarrow	\infty}	a_n(b_nc_n)	
+												=	\lim_{n	\rightarrow	\infty}	(a_nb_n)c_n
+												=	(\alpha\beta)\gamma.
+\end{align*}
+同様に
+\begin{align*}
+	\alpha\beta	=	\lim_{n	\rightarrow	\infty}	a_n	b_n
+							=	\lim_{n	\rightarrow	\infty}	b_n	a_n
+							=	\beta	\alpha
+\end{align*}
+定理1.15により
+\begin{align*}
+	\beta	+	\gamma	&	=	\lim_{n	\rightarrow	\infty}	b_n	+	\lim_{n	\rightarrow	n}	c_n
+										=	\lim_{n	\rightarrow	\infty}	(b_n	+	c_n)	\\
+	\alpha\beta	+	\alpha\gamma	
+									&	=	\lim_{n	\rightarrow	\infty}	a_nb_n	+
+											\lim_{n	\rightarrow	\infty}	a_nc_n
+										=	\lim_{n	\rightarrow	\infty}(a_nb_n	+	a_nc_n)	\\
+\end{align*}
+だから
+\begin{align*}
+	\alpha(\beta+\gamma)	=	\lim_{n	\rightarrow	\infty}	a_n(b_n+c_n)	
+											&	=	\lim_{n	\rightarrow	\infty}	(a_nb_n	+	a_nc_n)
+												=\alpha\beta+\alpha\gamma.	\\
+\end{align*}
+\■
+$0$はすべての項が$0$に等しい数列$\{0\}$の極限であるから
+\[
+	\alpha	\cdot	0	=	0	\cdot	\alpha	=	0
+\]
+なることは明らかであろう．同様に
+\[
+	\alpha	\cdot	1	=	1	\cdot	\alpha=	\alpha.
+\]
+すなわち$1$は実数の乗法における単位元である．
+
+実数の\textbf{逆数}を定義するために次の補題を証明する：
+
+\補題{1.3}
+実数$\alpha$，$\alpha	\ne	0$が与えられたとき，$\alpha$を有理数列の極限として
+$\alpha=	\lim_{n	\rightarrow	\infty}	a_n$，$a_n	\ne	0$，
+と表わせば，$a_n$の逆数$1/a_n$を項とする数列$\{1/a_n\}$は収束する．
+
+\証明
+$c$を$\alpha>0$のときは$\alpha	>	c	>	0$，$\alpha	<	0$のときは$\alpha	<	c	<	0$なる有理数とする．
+定理1.12により，$\alpha	>	0$か$\alpha	<	0$かにしたがって，有限個の自然数$n$を除いて
+$a_n	>	c$となるかまたは$a_n	<	c$となる．いずれにしても，有限個の$n$を除いて
+$|a_n|>|c|$となるが，有限個の項$a_n$を変えても
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_n$
+は変わらないから，すべての$n$について
+\[
+	|a_n|	>	|c|	>	0
+\]
+としてよい．$\{\alpha_n\}$は収束しているから，任意の正の実数$\varepsilon$
+に対応して自然数$m_0(\varepsilon)$が定まって
+\[
+	n	>	m_0(\varepsilon),	m>m_0(\varepsilon)	\quad	\text{ならば}	\quad |a_n-a_m|	<	\varepsilon
+\]
+となる．
+\[
+	\left|	\frac{1}{a_n}-\frac{1}{a_m}	\right|
+	=
+	\left|	\frac{a_m-a_n}{a_na_m}	\right|
+	<	\frac{1}{|c|^2}|a_n-a_m|
+\]
+であるから，任意に与えられた正の実数$\varepsilon$に対して$0	<	r	<	\varepsilon$なる有理数
+$r$を一つ選んで$n_0(\varepsilon)=m_0(|c|^2r)$とおけば
+\[
+	n	>	n_0(\varepsilon),m>n_0(\varepsilon)	\quad	\text{のとき}	\quad	
+	\left|	\frac{1}{a_n}-\frac{1}{a_m}		\right|	<	\frac{1}{|c|^2}|c|^2	r	=	r	<	\varepsilon
+\]
+となる．故に，Cauchyの判定法により，数列$\{1/a_n\}$は収束する．
+\■
+
+\定義{1.6}
+実数$\alpha$，$\alpha	\ne	0$に対して，$\alpha$を有理数列の極限として
+$\displaystyle
+	\alpha	=	\lim_{n	\rightarrow	\infty}
+a_n$，$a_n	\ne	0$，と表わして，$\alpha$の\textbf{逆数}$1/\alpha$を
+\[
+	\frac{1}{\alpha}	=	\lim_{n	\rightarrow	\infty}	\frac{1}{a_n}
+\]
+と定義する．――
+
+積の定義により
+\[
+	\alpha	\cdot	\frac{1}{\alpha}	=	\frac{1}{\alpha}	\cdot	\alpha	=	1.
+\]
+数列$\{1/\alpha\}$が収束することは補題1.3が保証しているが，
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	1/a_n$
+が$\alpha$だけによって定まり，$\alpha$に収束する数列$\{a_n\}$の選び方によらないことは
+確かめておかなければならない．このために
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_n'=\alpha
+$
+なる数列$\{a_n'\}$を任意にとって
+$\displaystyle
+	(1/\alpha)'=\lim_{n	\rightarrow	\infty}	1/a_n'
+$
+とおく．すると，$\alpha(1/\alpha)'=1$となるから，
+\[
+	\frac{1}{\alpha}	=	\frac{1}{\alpha}	\cdot	1
+		=	\frac{1}{\alpha}\left(\alpha\left(\frac{1}{\alpha}\right)'\right)
+		=	\left(\frac{1}{\alpha}	\cdot	\alpha	\right)\left(\frac{1}{\alpha}\right)'
+		=	1	\cdot	\left(\frac{1}{\alpha}	\right)'
+		=	\left(\frac{1}{\alpha}	\right)'.
+\]
+すなわち$1/\alpha$は$\alpha$だけによって一意的に定まる．
+
+任意の実数$\beta$を実数$\alpha$，$\alpha	\ne	0$，で割った\textbf{商}を
+\[
+	\frac{\beta}{\alpha}	=	\frac{1}{\alpha}	\cdot	\beta
+\]
+と定義する．明らかに
+\[
+	\alpha	\cdot	\frac{\beta}{\alpha}	=	\beta.
+\]
+\定理{1.18}
+実数$\alpha$，$\beta$について，$\alpha	>	0$，$\beta	>	0$ならば$\alpha\beta	>	0$．
+
+\証明
+$\alpha$，$\beta$を有理数列の極限として
+$\displaystyle
+	\alpha=\lim_{n	\rightarrow	\infty}	a_n$，
+$\displaystyle
+	\beta=\lim_{n	\rightarrow	\infty}	b_n$と表わす．
+$\alpha	>	a	>	0$，
+$\beta	>	b	>	0$なる有理数$a,b$をとれば，
+定理1.12により，有限個の$n$を除いて$a_n	>	a$，
+$b_n	>	b$，したがって$a_nb_n	>	ab$となる．故に，
+定理1.14の系により
+\[
+	\alpha\beta	=	\lim_{n	\rightarrow	\infty}	a_nb_n	\geqq	ab	>	0.
+\]
+\■
+
+以上で有理数の切断として厳密に定義された実数について，大・小，加・減・乗・除に
+関する基本的な法則：
+\begin{align*}
+	\alpha+(\beta+\gamma)	&=(\alpha+\beta)+\gamma,		&\alpha(\beta\gamma)	&=(\alpha\beta)\gamma,	\\
+	\alpha+\beta					&=\beta+\alpha,							&\alpha\beta					&=\beta\alpha,	\\
+	\alpha(\beta+\gamma)	&=\alpha\beta+\alpha\gamma,	&(\beta+\gamma)\alpha	&=\beta\alpha+\gamma\alpha,	\\
+	\alpha+0							&=0+\alpha=\alpha						&\alpha	\cdot	1				&=1	\cdot	\alpha	=	\alpha,	\\
+	(\beta-\alpha)+\alpha	&=\beta,										&\alpha	\cdot	\left(\frac{\beta}{\alpha}\right)&=\beta,	\\
+												&														&\alpha	\cdot	0	&=	0	\cdot	\alpha	=	0,	\\
+	&\alpha<	\gamma,\:	\beta	\leqq	\gamma	\quad	\text{ならば}	\quad	\alpha+	\beta	<	\gamma	+	\delta\\
+	&\alpha	>	0,\:	\beta	>	0	\quad	\text{ならば}	\quad	\alpha\beta>0
+\end{align*}
+が確立された．実数全体の集合$\R$は，すなわち加・減・乗・除に関して体をなしている．故に$\R$を\textbf{実数体}とよぶ．
+
+高校数学で学んだ実数の大・小，加・減・乗・除に関するいろいろな公式は上記の基本法則から容易に導き出される．たとえば
+\[
+	\alpha\beta=\alpha(\beta-\gamma+\gamma)	=\alpha(\beta-\gamma)	+	\alpha\gamma
+\]
+であるから
+\[
+	\alpha(\beta-\gamma)=\alpha\beta-\alpha\gamma.
+\]
+同様に
+\[
+	(\beta-\alpha)\gamma	=	\beta\gamma-\alpha\gamma.
+\]
+ここで$\beta=0$とおけば
+\[
+	\alpha(-\gamma)=(-\alpha)\gamma	=	-\alpha\gamma.
+\]
+したがって$(-\alpha)(-\gamma)=-((-\alpha)\gamma)=-(-\alpha\gamma)=\alpha\gamma$，すなわち
+\[
+	(-\alpha)(-\gamma)=\alpha\gamma.
+\]
+この式から
+\[
+	\alpha	<	0	,	\quad	\beta	<	0	\quad	\text{ならば}	\quad	\alpha\beta	>	0
+\]
+なることがすぐにわかる．同様に
+\[
+	\alpha	<	0	,\quad	\beta	>	0	\quad	\text{ならば}	\quad	\alpha	\beta	<	0.
+\]
+したがって
+\[
+	|\alpha\beta|=|\alpha||\beta|.
+\]
+また，$\alpha	>	0,1/\alpha	<	0$とすれば$1=\alpha	\cdot	1/\alpha	<	0$となって矛盾を生じるから，
+\[
+	\alpha	>	0	\quad	\text{ならば}	\quad	\frac{1}{\alpha}	>	0.
+\]
+$\alpha	>	\beta	>	0$ならば$\alpha	-	\beta	>	0$，$\alpha	\beta	>	0$
+したがって$1/\alpha\beta	>	0$．故に
+\[
+	\frac{1}{\beta}	-	\frac{1}{\alpha}	=	\frac{\alpha	-	\beta}{\alpha\beta}	>	0
+	\quad	\text{したがって}	\quad	\frac{1}{\beta}	>	\frac{1}{\alpha}.
+\]
+すなわち
+\[
+	\alpha	>	\beta	\quad	\text{ならば}	\quad	\frac{1}{\beta}	>	\frac{1}{\alpha}	>	0.
+\]
+高校数学で学んだこの種の公式は以後自由に使うことにする．

@@ -1,0 +1,147 @@
+\subsection{開集合，閉集合}
+\label{sec1x6x3}
+
+集合$S	\subset	\R^2$に属する点がすべて$S$の内点であるとき，$S$を開集合(open	set)という．たとえば
+$\varepsilon$近傍$U_\varepsilon(P)$は開集合である．点$P$を含む任意の開集合を$P$の\textbf{近傍}という．
+$S$の境界点がすべて$S$に含まれるとき，$S$を\textbf{閉集合}(closed	set)という．すなわち，
+$[S]=S$なるとき$S$を閉集合と呼ぶのである．
+
+\証明
+必要性：$S$が閉集合であるから定義より$\partial	S	\subset	S$，
+したがって$[S]=\partial	S	\cup	S	\subset	S$．
+
+十分性：$S	\cup	\partial	S=[S]	=	S$ならば$\partial	S	\subset	S$．
+\■
+
+
+
+$S$に属さない$S$の境界点は$S$の集積点であるから，
+$S$が閉集合であるための必要かつ十分な条件は$S$の集積点がすべて$S$に属することである．
+\footnote{\small 
+$M \subset \C$が閉集合であることの必要十分条件は，任意の点列$\{z_n \} \subset M$に
+対して$\displaystyle\lim_{n\rightarrow \infty} z_n = z_0$ならば$z_0 \in M$となることである．
+}
+
+\証明
+必要性：$S$を閉集合とする，すなわち$[S]=	S	\cup	\partial	S=S$．
+$D(S)	\subset	S	\cup	\partial	S$であるから任意の$D(S)	\subset	S	\cup	\partial	S=S$．
+
+十分性：$S$の集積点はすべて$S$に属し（$D(S)	\subset	S$），$\partial	S	\subset	D(S)=\Int	S	\cup	\partial	S$であるから，
+$\partial	S	\subset	S$．定義より$S$は閉集合である．
+
+\■
+
+\underline{任意の点集合}$S$\underline{の閉包}$[S]$\underline{は閉集合である．}
+\証明
+$[S]$の境界点$P$は$S$の境界点であることをいえばよい．
+（証明の流れ：$p	\in	\partial	[S]	\Rightarrow	p	\in	\partial	S	\Rightarrow	p	\in	[S]	\stackrel{\mathrm{def}}{=}S	\cup	\partial	S$
+）
+このためには任意の正の実数$\varepsilon$に対して$U_\varepsilon(P)	\cap	S$が空集合でないことを示せばよい．
+$P$が$[S]$の境界点であるから，$U_\varepsilon(P)	\cap	[S]	\ne	\varnothing$，$U_\varepsilon(P)$は$[S]$に属する点$Q$を含む．
+このとき$\delta=\varepsilon-|QP|$とおけば，$\delta>0$であって，
+$U_\delta(Q)	\subset	U_\varepsilon(P)$．$Q$は$[S]=S	\cup	\partial	S$に属しているから
+($Q	\in	S$，$Q	\in	\partial	S$のいずれの場合も)
+$U_\delta(Q)	\cap	S$は空集合でない．故に$U_\varepsilon(P)	\cap	S$も空集合でない．
+\■
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(8,5)
+
+	%半径\varepsilon
+	\thinlines\put(4,3){\vector(1,0){3}}
+	\put(5.25,3.1){$\varepsilon$}
+
+	%円
+		\thicklines	\put(4,3){\circle{0.07}}
+		\thicklines \put(4,3){\circle{6}}
+
+	%P
+	\put(3.6,2.6){$P$}
+
+	%円
+		\thicklines	\put(4,5){\circle{0.07}}
+		\thicklines \put(4,5){\circle{2}}
+	%Q
+	\put(3.6,4.6){$Q$}
+
+	%半径\delta
+	\thinlines\put(4,5){\vector(0,1){1}}
+	\put(3.75,5.5){$\delta$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+$S$を$\varnothing$でも$\R^2$でもない点集合とし，$S'$を$S$の$\R^2$における補集合とする．
+$P$が$S$の境界点であるための必要かつ十分な条件は，すべての正の実数$\varepsilon$に対して
+$U_\varepsilon(P)	\cap	S	\ne	\varnothing$，$U_\varepsilon(P)	\cap	S'	\ne	\varnothing$
+なることであるから$S$の境界はすなわち$S'$の境界である．
+\[
+	\partial	S	=	\partial	S'.
+\]
+したがって$S$が開集合ならば（$S$に属する点は内点であり$S	\cap	\partial	S	=	\varnothing$），
+$S'$の境界（$\partial	S'	=	\partial	S$）は$S'$に含まれる（$\partial	S	\subset	S'$）．
+故に$S$\underline{が開集合ならば}$S'$\underline{は閉集合である．}
+$S$\underline{が閉集合ならば}$S'$\underline{はその境界点を含まない．}\underline{故に}$S$
+\underline{が閉集合ならば}$S'$\underline{は開集合である．}
+
+$\varnothing$と$\R^2$は開集合であると同時に閉集合である．
+
+\証明
+まず，$\R^2$が開集合であり，かつ，閉集合であることを示す．
+$p	\in	\R^2$とする．任意の正数$\varepsilon	>	0$に対して$U_\varepsilon(P)	\subset	\R^2$であるから，
+$p$は$\R^2$の内点である．$P$は任意であるから，$\R^2$は開集合である．$\R$の点はすべて内点であるから，
+$\partial	\R^2	=	\varnothing$となる．したがって$\partial	\R^2	=	\varnothing	\subset	\R^2$であり，
+$\R^2$は閉集合である．
+
+次に，$\varnothing$は開集合であり，かつ，閉集合であることを示す．これは，$\R^2$が開集合であり，
+かつ閉集合であるから，この補集合である$\varnothing$は開集合であり，閉集合である．
+\■
+
+
+
+
+\underline{いくつかの（有限個または無数の）閉集合の共通部分（交わり，intersection)は閉集合である}.
+
+\証明
+$\mathscr{S}$をいくつかの閉集合$S$の集合とし，それらの閉集合$S$の共通部分を
+$T=\bigcap_{S	\in	\mathscr{S}}	S$で表わす．一般に$T	\subset	S$ならば$[T]	\subset	[S]$
+である（$\varnothing	\ne	U_\varepsilon(P)	\cap	T	\subset		U_\varepsilon(P)	\cap	S$）から，
+\[
+	[T]	\subset	\bigcap_{S	\in	\mathscr{S}}[S]	=	\bigcap_{S	\in	\mathscr{S}}S	=	T.
+\]
+故に$[T]=T$，すなわち$T$は閉集合である．
+\■
+
+\underline{いくつかの開集合の合併集合は開集合である．}
+
+\証明
+$\mathscr{S}$をいくつかの開集合$U$の集合とし，それらの開集合$U$の合併集合を
+$W=\bigcup_{U	\in	\mathscr{S}}	U$とする．$U$の補集合$U'$は閉集合であるから，
+$W$の補集合$W'=\bigcap_{U\in	\mathscr{S}}	U'$も，
+上記の結果により閉集合である．故に$W$は開集合である．
+\■
+
+\underline{有限個の開集合の共通部分は開集合である．}
+
+\証明$U_1,U_2,\cdots,u_n$を開集合とし
+$U=U_1	\cap	U_2	\cap	\cdots	\cap	U_n$とおく．
+点$P	\in	U$を任意にとれば，$P	\in	U_k$であるから，
+正の実数$\varepsilon_k$が存在して$P$の$\varepsilon_k$近傍
+$U_{\varepsilon_k}(P)$は$U_k$に含まれる：
+$U_{\varepsilon_k}(P)	\subset	U_k$．
+$\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_n$の最小値を
+$\varepsilon$とすれば，$U_\varepsilon(P)$は$U_k$のすべてに含まれるから，
+$U_\varepsilon(P)	\subset	U$，すなわち$P$は$U$の内点である．
+故に$U$は開集合である．
+\■
+
+\underline{有限個の閉集合の合併集合は閉集合である．}
+
+\証明
+$S_1,S_2,\cdots,	S_n$を閉集合，$S=S_1	\cup	S_2	\cup	\cdots	S_n$とすれば，
+$S_k'$は開集合，したがって$S'=S_1'	\cap	\cdots	\cap	S_n'$は
+開集合，故に$S$は閉集合である．
+\■

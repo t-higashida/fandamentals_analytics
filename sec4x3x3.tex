@@ -1,0 +1,390 @@
+\subsection{収束の条件}
+\label{sec4x3x3}
+
+$f(x)$が区間$[a,b)$が連続であるとき，$\displaystyle	F(t)	=	\int_a^t	f(x)	dx	,	a	<	t	<	b$，
+とおけば，広義積分$	\displaystyle	\int_a^b	f(x)	dx$が収束するということは
+$t	\to	b-0$のとき関数$F(t)$が収束することに他ならない．
+Cauchyの判定法（\S \ref{sec2}，定理2.1）により，
+$t	\to	b-0$のとき$F(t)$が収束するための必要かつ十分な条件は任意の正の実数$\varepsilon$に対応して
+正の実数$\delta (\varepsilon)$が定まって
+\[
+	b	-	\delta	(	\varepsilon)	<	s	<	t	<	b	\quad	\text{ならば}	\quad	|F(t)	-	F(s)	|	<	\varepsilon
+\]
+となることである．
+$\displaystyle	F(t)	-	F(s)	=	\int_s^t	f(x)	dx$であるから，
+したがって，\underline{広義積分	$\displaystyle	\int_a^b	f(x)	dx$が
+収束するための} \underline{必要十分な条件は任意の正の実数$\varepsilon$に対応して
+正の実数$\delta	(\varepsilon)$が定まって}
+\begin{equation}
+	b-	\delta(\varepsilon)	<	s	<	t	<	b	\quad	\text{ならば}	\quad	
+	\left|	\int_s^t	f(x)	dx
+	\right|	<	\varepsilon
+\label{eq4x47}
+\end{equation}
+\underline{となることである}．これが広義積分の収束に関する
+\textbf{Cauchyの判定法}である．
+$f(x)$が$(a,b]$あるいは$(a,b)$で連続である場合の広義積分$\displaystyle	\int_a^b	f(x)	dx$
+に関して同様なCauchyの判定が成り立つことはいうまでもない．
+
+Cauchyの判定法によれば，\underline{区間} $(a,b)$ \underline{で連続で有界な関数$f(x)$の広義積分}
+$\displaystyle	\int_a^b	f(x)	dx$\underline{はつねに収束する}．なぜならば，仮定により
+$a	<	x	<	b$のとき$|f(x)	|	\leqq	C$なる定数$C$が存在するから，
+定理4.1，$(4^\circ)$，$(5^\circ)$により，$b-	\delta	<	s	<		t	<	b$ならば
+\[
+	\left|	\int_s^t	f(x)	dx
+	\right|
+	\leqq	
+	\int_s^t	|f(x)|	dx	
+	\leqq
+	\int_s^t	C	dx	=	C(t-s)	<	C	\cdot	\delta
+\]
+となるからである．
+
+区間$[a,	+	\infty)$で連続な関数$f(x)$の
+\underline{広義積分}	$\displaystyle	\int_a^{+\infty}	f(x)	dx$が収束するための
+必要かつ十分な条件は任意の正の実数$\varepsilon$ \underline{に対応して実数} $\nu	(	\varepsilon) $
+\underline{が定まって}
+\begin{equation}
+	\nu	(\varepsilon)	<	s	<	t	\quad	\text{ならば}	\quad	
+		\left|	\int_s^t	f(x)	dx	
+		\right|	<	\varepsilon
+\label{eq4x48}
+\end{equation}
+\underline{となることである}．このCauchyの判定法は，
+$f(x)$が$[a,	+\infty)$で連続でない場合でも，すべての$t,	t>a$，
+に対して$f(x)$が$[a,t]$で有限個の点を除いて連続で広義積分
+$\displaystyle	\int_a^t	f(x)	dx$が収束しているなば成り立つ．
+いうまでもなく広義積分$\displaystyle	\int_{-\infty}^b	f(x)	dx,
+\int_{-\infty}^{+\infty}	f(x)dx$の収束に関しても
+同様なCauchy の判定法が成立する．
+
+\定理{4.9}
+\begin{list}{}{}
+	\item	$(1^\circ)$ $f(x)$が区間$[a,b)$で連続であるとき，広義積分$\displaystyle	\int_a^b	|f(x)|	dx$
+が収束すれば広義積分$\displaystyle	\int_a^b	f(x)	dx$も収束する．
+	\item $(2^\circ)$ $f(x)$が区間$[a,	+	\infty)$で連続であるとき，広義積分$\displaystyle	\int_a^{+\infty} |f(x)| dx$
+が収束すれば広義積分$\displaystyle	\int_a^{+\infty}	f(x)	dx$も収束する．
+\end{list}
+
+\証明
+$a	<	s	<	t	<	b$とすれば，(\ref{eq4x6}）により
+\begin{equation}
+	\left|	\int_s^t	f(x)	dx	
+	\right|
+	\leqq
+	\int_s^t	|f(x)|	dx.
+\label{eq4x49}
+\end{equation}
+故に上記のCauchyの判定法により，$(1^\circ)$ $\displaystyle	\int_a^b	|f(x)|dx$が収束すれば
+$\displaystyle	\int_a^b	f(x)	dx$も収束し，$(2^\circ)$ $\displaystyle	\int_a^{+\infty}	|f(x)|	dx$が収束すれば
+$\displaystyle	\int_a^{+\infty} f(x)	dx$も収束する．
+
+この証明の核心は不等式（\ref{eq4x49}）にあるのであって，したがって，定理4.9は
+$f(x)$が若干の不連続点をもつ一般の場合にも成り立つ．すなわち
+
+\定理{4.10}
+\begin{list}{}{}
+	\item	$(1^\circ)$ $f(x)$が区間$(a,b)$で高々有限個の点を除いて連続であるとき，
+広義積分 $\displaystyle	\int_a^b	|f(x)|	dx$が収束すれば広義積分$\displaystyle	\int_a^b	f(x) dx$も
+収束する．
+	\item $(2^\circ)$ $f(x)$がすべての$	t,	\:	t>a$に対して区間$(a,t)$で高々有限個の点を除いて
+連続であるとき，広義積分$\displaystyle	\int_a^{+\infty} |f(x)| dx$が収束するならば
+広義積分$\displaystyle	\int_a^{+\infty} f(x) dx$も収束する．
+\end{list}
+
+広義積分$\displaystyle	\int_a^b	|f(x)|	dx	$が収束するとき広義積分$\displaystyle	\int_a^b	f(x)	dx$は
+\textbf{絶対収束}するという．広義積分$\displaystyle	\int_a^{+\infty}	f(x)	dx	$，
+$\displaystyle	\int_{-\infty}^b	f(x)dx,\int_{-\infty}^{+\infty}	f(x)	dx$の絶対収束の意味も同様である．収束する広義積分に絶対収束するものとしないものがある
+のは，収束する無限級数に絶対収束するものとしないものがあると類似の現象である．
+
+\例{4.7}
+（\ref{eq3x23}）により$\displaystyle	\lim_{x\rightarrow	0}	(\sin	x	/	x)	=1$であるから，
+$x=0$における$\sin	x	/x	$を$1$と定義すれば，$\sin	x	/	x$は$(-\infty,	+	\infty)$で連続な関数と成る．
+この連続関数の広義積分$\displaystyle	\int_0^{+\infty}	(\sin	x	/	x)	dx$について考察する．
+\footnote{『微分と積分』岩波 p25 \S 1.4 例1.36を合わせて参照．
+}
+$0	<	s	<	t$とすれば，部分積分の公式（\ref{eq4x22}）により
+\[
+	\int_s^t	\frac{	\sin	x	}{x}	
+	=	
+	\left[
+		-	\frac{\cos	x}{x}
+	\right]_s^t	-	\int_s^t	\frac{	\cos	x}{x^2}	dx
+\]
+となるが，
+\[
+	\int_s^t	\left|	\frac{	\cos	x}{x^2}	
+						\right|	dx
+	\leqq
+	\int_s^t	\frac{dx}{x^2}
+	=
+	\left[
+		-\frac{	1}{x}
+	\right]_s^t	=	\frac{1}{s}	-	\frac{1}{t}
+\]
+であるから，
+\begin{align*}
+	\left|
+		\int_s^t	\frac{	\sin	x}{x}	dx
+	\right|
+	&=
+	\left|
+		\left[
+			-\frac{\cos	x}{x}
+		\right]_s^t
+		-
+		\int_s^t	\frac{\cos	x}{x^2}	dx
+	\right|
+	=
+	\left|
+		\left[
+			-\frac{\cos	x}{x}
+		\right]_s^t
+		+
+		\int_t^s	\frac{\cos	x}{x^2}	dx
+	\right|	\\
+	&\leqq
+	\left|
+		\left[
+			-\frac{\cos	x}{x}
+		\right]_s^t
+	\right|
+		+
+	\left|
+		\int_s^t	\frac{\cos	x}{x^2}	dx
+	\right|	
+	=
+	\left|
+		\left[
+			-\frac{\cos	x}{x}
+		\right]_s^t
+	\right|
+		+
+	\left|
+		\int_t^s	\frac{\cos	x}{x^2}	dx
+	\right|	
+	\leqq
+	\left|
+		\left[
+			-\frac{\cos	x}{x}
+		\right]_t^s
+	\right|
+		+
+		\int_s^t		\left|	\frac{\cos	x}{x^2}	\right|	dx	\\
+	&\leqq
+	\frac{1}{t}	+	\frac{1}{s}	+	\frac{1}{s}	-	\frac{1}{t}	=	\frac{2}{s}.	
+\end{align*}
+故に，Cauchyの判定法により，広義積分$\displaystyle	\int_0^{+\infty}	(\sin	x	/	x)	dx$は
+収束する．しかし
+$\displaystyle	\int_0^{+\infty}	(\sin	x	/	x)	dx$は絶対収束しない．
+\証明	自然数$n,	n	\geqq	2$，に対して，
+区間$(n\pi	-	\pi,	n\pi)$で$\displaystyle	\left|	\frac{1}{x}	\right|	\geqq	\left|	\frac{1}{n	\pi}	\right|$
+であるから，
+\[
+	\int_{n	\pi	-\pi}^{n\pi}	\left|	\frac{	\sin	x}{x}		\right|	dx	
+	\geqq	
+	\frac{1}{n\pi}	\int_{n	\pi	-	\pi}^{n\pi}	|	\sin	x	|	dx
+\]
+となるが，区間$(n\pi	-	\pi,	n\pi)$で$\sin	x$の符号は一定であるから，
+
+\[
+	\int_{n	\pi	-	\pi}^{n\pi}	|	\sin	x	|	dx	=	
+	\left|
+		\int_{n\pi	-	\pi}^{n\pi}	\sin	x	dx
+	\right|
+	=
+	|	\cos	(n	\pi	-	\pi)	-	\cos	(	n	\pi)	|	=2.
+\]
+したがって
+\[
+	\int_\pi^{m\pi}	\left|	\frac{	\sin	x}{x}	\right|	dx
+	=
+	\sum_{n=2}^m	\int_{n\pi-\pi}^{n\pi}	\left|
+																			\frac{\sin	x}{x}
+																		\right|	dx
+	\geqq	\frac{2}{\pi}	\left(
+												\frac{1}{2}	+	\frac{1}{3}	+	\cdots	+	\frac{1}{m}
+											\right),
+\]
+故に，\S	\ref{sec1x5x4}，例1.4により
+\[
+	\lim_{m\rightarrow +\infty}	\int_\pi^{m\pi}	\left|	\frac{\sin	x}{x}	\right|	dx	=	+	\infty.
+\]
+すなわち，広義積分$\displaystyle	\int_0^{+\infty}	|	\sin	x	/	x|	dx$は発散する．
+\■
+
+\underline{一般に} $F(t)$ \underline{を区間} $[a,b)$ 
+\underline{で単調非減少な} $t$ \underline{の関数とすれば}，
+$\displaystyle	\lim_{t\rightarrow b-0}	F(t)	=	\alpha$，$\alpha$\underline{は実数}，
+\underline{であるか}， 
+\underline{または} $\displaystyle	\lim_{t	\to	b-0}	F(t)	=	+	\infty$
+\underline{である}．
+\証明 $I=[a,b)$とし，関数$F(t)$の値域$F(I)	=	\{	F(t)	\:	|	\:	a	\leqq	t	<	b	\}$を考察する．
+$F(I)$が上に有界である場合には，$F(I)$の上限を$\alpha$とすれば，任意の正の実数$\varepsilon$
+に対して$\alpha	-	\varepsilon	<	F(\tau)$なる$\tau$，$a	<	\tau	<	b$，が存在する．$F(t)$は単調非減少であるから，
+$\tau < t < b$ならば$\alpha	-	\varepsilon	<	F(t)	\leqq	\alpha$．故に$\displaystyle	\lim_{t\rightarrow b-0}	F(t)=\alpha$，
+$F(I)$が上に有界で無い場合には，任意の実数$\mu$に対して$F(\tau) > \mu$なる$\tau$，$a	<	\tau < b$，が存在して
+$\tau	<	t	<	b$ならば$F(t)	>	\mu$となる．故に$\displaystyle	\lim_{t\rightarrow b-0}	F(t)	=	+	\infty$．
+\■
+
+いま$f(x)$が区間$[a,b)$で連続であるとして$\displaystyle	F(t)	=	\int_a^t	|f(x)|	dx$とおけば，
+$a	\leqq	s	<	t	<	b$のとき
+\[
+	F(t)	-	F(s)	=	\int_s^t	|f(x)|	dx	\geqq	0,
+\]
+すなわち$F(t)$は$[a,b)$で単調非減少な$t$の関数である．したがって，上記の結果により，
+$\displaystyle	\lim_{t\rightarrow b-0}	F(t)	=	\alpha$，$\alpha$は実数，であるか
+$\displaystyle	\lim_{t\rightarrow b-0}	F(t)	=	+	\infty$であるかのいずれかである．
+故に広義積分$\displaystyle	\int_a^b	|	f(x)	|	dx$が収束しないときには
+\[
+	\lim_{t\rightarrow b-0}	\int_a^t	|	f(x)	|	dx	=	+	\infty
+\]
+となる．このとき広義積分$\displaystyle	\int_a^b	|f(x)	|	dx$は$+	\infty$は発散するといい，
+\[
+	\int_a^b	|f(x)|dx	=	+	\infty
+\]
+と書く．不等式：$\displaystyle	\int_a^b	|f(x)|	dx	<	+	\infty$は広義積分
+$\displaystyle	\int_a^b	f(x)	dx$が絶対収束することを意味する．
+
+このことは一般に成り立つ．すなわち，$f(x)$が区間$(a,b)$で高々有限個の点を除いて連続であるとき，
+広義積分$\displaystyle	\int_a^b	|	f(x)	|	dx$は収束するか，$+	\infty$に発散するかのいずれかであって，
+$\displaystyle	\int_a^b	|	f(x)|	dx	<	+	\infty$は広義積分
+$\displaystyle	\int_a^b	f(x)	dx$が絶対収束することを意味する．
+広義積分$\displaystyle	\int_a^{+\infty}	f(x)	dx$，
+$\displaystyle	\int_{-\infty}^b	f(x)	dx$，$\displaystyle	\int_{-\infty}^{+\infty}	f(x)	dx$について
+も同様である．――
+
+
+級数の場合と同様に，関数$f(x)$の広義積分が絶対収束することを証明するのに，
+$|f(x)|$をその広義積分が収束することが知られた標準的な関数$r(x)$，$r(x)	\geqq	0$，
+と比較する方法がしばしば用いられる．たとえば
+
+\定理{4.11}
+\begin{list}{}{}
+	\item	$(1^\circ)$	$f(x)$が区間$[a,b)$で連続で或る指数$\alpha$，$0	<	\alpha	<	1$，
+に対して不等式：
+\[	
+	|f(x)|	\leqq	\frac{C}{(b-x)^\alpha},	\quad	\text{$C$は定数，}
+\]
+を満たすならば，広義積分$\displaystyle	\int_a^b	f(x)	dx$は絶対収束する．
+	\item	$(2^\circ)$ $f(x)$が区間$[a,+\infty)$，$a	>	0$，で連続である指数$\alpha,	\:	\alpha	>	1$，
+対して不等式：
+\[
+	|f(x)|	\leqq	\frac{C}{x^\alpha}	,	\quad	\text{$C$は定数},
+\]
+を満たすならば，広義積分$\displaystyle	\int_a^{+\infty}	f(x)dx$は絶対収束する．
+\end{list}
+\証明
+$(1^\circ)$ $0	<	\alpha	<	1$のとき，$\displaystyle	\frac{(b-x)^{1-	\alpha}}{(\alpha	-1)}$は
+$[a,b]$で連続，$[a,b)$で微分可能でその導関数：
+\[
+	\frac{d}{dx}	\frac{(b-x)^{1-\alpha}}{\alpha	-1}	
+	=	(1-\alpha)	\frac{(b-x)^{-\alpha}}{\alpha	-1}	(-1)
+	=	\frac{1}{(b-x)^\alpha}
+\]
+は$[a,b)$で連続であるから，定理4.7，$(2^\circ)$により，
+\[
+	\int_a^b	\frac{1}{(b-x)^\alpha}	dx
+	=	
+	\left[	
+		\frac{(b-x)^{1-\alpha}}{\alpha	-	1}
+	\right]_a^b	
+	=	\frac{(b-a)^{1-\alpha}}{1	-	\alpha},
+\]
+故に
+\[
+	\int_a^b	|f(x)|	dx	\leqq	\int_a^b	\frac{C}{(b-x)^\alpha	}	dx
+	=
+	C	\frac{(b-a)^{1-\alpha}}{1-\alpha}	<	+	\infty.
+\]
+
+$(2^\circ)$の証明も同様である．すなわち，$a	>	1$のとき，
+\[
+	\int_a^{+\infty}	|f(x)	|	dx	\leqq
+	\int_a^{+\infty}	\frac{C}{x^\alpha}	dx
+	=
+	\left[	
+			\frac{C}{(1-\alpha)	x^{\alpha-1}}
+	\right]_a^{+\infty}
+	=
+	\frac{C}{(\alpha	-1)a^{\alpha	-1}}	<	+	\infty.
+\]
+\■
+
+この$(2^\circ)$の証明で（\ref{eq4x46}）の記号$[]_a^{+\infty}$を用いた．
+
+\例{4.8}
+$x$の関数$e^{-x}x^{s-1}$は区間$(0,	+	\infty)$で連続でつねに$e^{-x}x^{s-1}	>	0$であるが，
+$s	>	0$のとき広義積分：
+\begin{equation}
+	\varGamma	(s)	=	\int_0^{+\infty}	e^{-x}	x^{s-1}	dx
+\label{eq4x50}
+\end{equation}
+は収束する．\証明
+（\ref{eq2x6}）により$\displaystyle	\lim_{x\rightarrow	+\infty}	e^{-x}x^{s-1}	=0$であるから，
+$x	\geqq	c$ならば$e^{-x}x^{s+1}	\leqq	1$となる正の実数$c$が存在する．
+このような$c$を一つ定めれば，
+\begin{list}{}{}
+	\item	（Ⅰ）$x	\geqq	c$のとき
+			\[
+				|	e^{-x}	x^{s-1}	|	=	\frac{e^{-x}x^{s+1}}{x^2}	\leqq	\frac{1}{x^2}
+			\]
+			となるから，上記の定理4.11，$(2^\circ)$により，広義積分$\displaystyle	\int_c^{+\infty}	e^{-x}x^{s-1}dx$は収束する．
+	\item	（Ⅱ）$0	<	x	\leqq	c$のとき，
+\begin{list}{}{}
+	\item	（ⅰ）$0	<	s	<	1$なる場合には
+			\[
+				|	e^{-x}	x^{s-1}	|	=	e^{-x}	x^{s-1}	<	\frac{1}{x^{1-s}}
+			\]
+			であるから，定理4.11，$(1^\circ)$により，広義積分$\displaystyle	\int_0^c	e^{-x}	x^{s-1}	dx$は収束する．
+	\item	（ⅱ）$s	\geqq	1$なる場合には
+			\[
+				|	e^{-x}	x^{s-1}	|	\leqq	x^{s-1}	\leqq	c^{s-1}
+			\]
+			であるから，$\displaystyle	\int_0^c	e^{-x}	x^{s-1}	dx$が収束することは明らかである．
+\end{list}
+
+\end{list}
+故に広義積分
+\[
+	\int_0^{+\infty}	e^{-x}x^{s-1}	dx	=	\int_0^c	e^{-x}x^{s-1}	dx	+	\int_c^{+\infty}	e^{-x}x^{s-1}dx
+\]
+は収束する．
+\■
+
+$\displaystyle	\varGamma	(s)	=	\int_0^{+\infty}	e^{-x}	x^{s-1}	dx$は区間$(0,	+	\infty)$で定義された
+$s$の関数である．この関数を\textbf{ガンマ関数}（Gamma function）とよぶ．
+$0	<	\varepsilon	<	t$とすれば，部分積分の公式（\ref{eq4x22}）により
+\[
+	\int_\varepsilon^t	e^{-x}	x^s	dx	=	[-e^{-x}	x^s]_\varepsilon^t	+	\int_\varepsilon^t	e^{-x}	s	x^{s-1}	dx.
+\]
+$s	>	0$として$\varepsilon	\to	+0	,	t	\to	+	\infty$のときの極限をとれば（\ref{eq2x6}）より，
+\[
+	\lim_{	\substack{	t	\rightarrow	+	\infty	\\	s	\to	+	0}}	[e^{-x}	x^s]
+=	\lim_{t\rightarrow +\infty}	e^{-t}	t^s	-	\lim_{\varepsilon	\rightarrow +0}	e^{-\varepsilon}\varepsilon^s	=0
+\]
+であるから，
+\[
+	\int_0^{+\infty}	e^{-x}x^s	dx	=	s	\int_0^{+\infty}	e^{-x}	x^{s-1}	dx,
+\]
+すなわち
+\begin{equation}
+	\varGamma	(s+1)	=	s	\varGamma	(s)	,	\quad	s	>	0.
+\label{eq4x51}
+\end{equation}
+自然数$n$が与えられたとき，（\ref{eq4x51}）を繰返し用いて
+\begin{align*}
+	\varGamma	(n+1)	&=	n	\varGamma	(n)	=	n(n-1)	\varGamma	(n-1)	=	n	(n-1)	(n-2)	\varGamma(n-2)	\\
+								&=	\cdots	=	n!	\varGamma(1)
+\end{align*}
+を得る．
+\[
+	\varGamma	(1)	=	\int_0^{+\infty}	e^{-x}	dx	=	[-e^{-x}	]_0^{+\infty}	=	1
+\]
+であるから，
+\begin{equation}
+	\varGamma	(n+1)	=	n!.
+\label{eq4x52}
+\end{equation}
+
+

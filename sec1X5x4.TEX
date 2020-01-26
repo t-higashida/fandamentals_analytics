@@ -1,0 +1,544 @@
+\subsection{無限級数}
+\label{sec1x5x4}
+
+数列$\{a_n\}$が与えられたとき
+\[
+	a_1+a_2+a_3+\cdots+a_n+\cdots
+\]
+の形の式を\textbf{無限級数}（infinite series）、あるいは単に
+\textbf{級数}（series）といい，$a_n$をその
+\textbf{第$n$項}（n-th term）という．また、この級数を
+\[
+	\sum_{n=1}^\infty	a_n
+\]
+と表わす．無限級数
+$\displaystyle
+	\sum_{n=1}^\infty	a_n
+$の第$n$項までの和：
+\[
+	s_n	=	a_1+a_2+a_3+\cdots+a_n	=	\sum_{k=1}^n	a_n
+\]
+をこの級数の\textbf{部分和}（partial sum）という。この部分和の
+成す数列$\{s_n\}$が収束するとき級数
+$\displaystyle
+		\sum_{n=1}^\infty	a_n
+$は\textbf{収束する}といい，
+$\displaystyle
+	s=	\lim_{n	\rightarrow	\infty}	s_n
+$をこの無限級数の\textbf{和}(sum)とよんで
+\[
+	s=a_1+a_2+a_3+	\cdot	+	a_n	+	\cdot
+\]
+または
+\[
+	s=\sum_{n=1}^\infty	a_n
+\]
+と書く．数列$\{s_n\}$が収束しないとき級数
+$\displaystyle
+	\sum_{n=1}^\infty	a_n
+$は\textbf{発散する}という。
+
+各項$a_n$が負でないとき，$\{s_n\}$は単調非減少数列であるから，
+$\{s_n\}$が収束しなければそれは$+\infty$に発散する．
+このとき級数
+$\displaystyle
+	\sum_{n=1}^\infty	a_n$は$+\infty$に発散するといい
+$\displaystyle
+		\sum_{n=1}^\infty	a_n	=	+\infty
+$と書く．
+
+\定理{1.21}
+
+級数$\displaystyle
+\sum_{n=1}^\infty	a_n$の項の絶対値$|a_n|$を項とする級数
+$\displaystyle
+\sum_{n=1}^\infty	|a_n|$が収束するならば、もとの級数
+$\displaystyle
+\sum_{n=1}^\infty	a_n$も収束する．
+
+\証明
+$\displaystyle
+s_n=\sum_{k=1}^n	a_k$，
+$\displaystyle
+\sigma_n=\sum_{k=1}^n	|a_k|$とおけば，$m<n$のとき
+\[
+	|s_n-s_m|	=	\left|	\sum_{k=m+1}^n	a_k	\right|
+						\leqq	\sum_{k=m+1}^n	|a_k|
+						=	|\sigma_n	-	\sigma_m|
+\]
+であるから、Cauchyの判定法により，$\{	\sigma_n	\}$が
+収束すれば$\{s_n\}$も収束する．
+\■
+
+$\displaystyle
+	\sum_{n=1}^\infty	|a_n|$
+が収束するとき級数
+$\displaystyle
+	\sum_{n=1}^\infty	a_n
+$は\textbf{絶対収束}する（coverge absolutely）という．
+$\displaystyle
+	\sum_{n=1}^\infty	|a_n|$は負でない実数に収束するか
+$+\infty$に発散するかのいずれかであるから、
+\underline{不等式}
+\[
+	\sum_{n=1}^\infty	|a_n|	<	+	\infty
+\]
+\underline{は}
+$\displaystyle
+	\sum_{n=1}^\infty	a_n
+$
+\underline{が絶対収束することを意味する．}
+
+\定理{1.22}
+収束する級数$\displaystyle
+	\sum_{n=1}^\infty	r_n,\quad	r_n	\geqq	0$，
+が与えられたとする．級数
+$\displaystyle
+	\sum_{n=1}^\infty	a_n
+$に対して一つの自然数$m$を定めて
+\[
+	n	\geqq	m	\quad	\text{のとき}	\quad	|a_n|	\leqq	r_n
+\]
+となるようにできるならば，
+$\displaystyle
+	\sum_{n=1}^\infty	a_n
+$は絶対収束する．
+
+\証明
+$n	>	m$とすれば
+\[
+	\sum_{k=1}^n	|a_k|	\leqq	\sum_{k=1}^{m-1}|a_k|	+	\sum_{k=m}^{n}	r_k
+											\leqq	\sum_{k=1}^{m-1}|a_k|	+	\sum_{k=m}^\infty	r_k
+											<	\infty.
+\]
+故に$\displaystyle
+	\sum_{n=1}^\infty	|a_n|	<	+\infty
+$
+\■
+
+収束することが知られている標準的な級数
+$\displaystyle
+	\sum_{n=1}^\infty	r_n,	\:	r_n	\geqq	0$，と
+級数$\displaystyle
+	\sum_{n=1}^\infty	a_n$
+を比較して、この定理によって$
+\displaystyle
+	\sum_{n=1}^\infty	a_n$
+が絶対収束することを証明する方法はしばしば用いられる．
+標準的な級数としてよく用いられるのは等比級数
+$\displaystyle
+	\sum_{n=1}^\infty	ar^n,	\:	0	<	r	<	1$，
+である．
+
+\subsubsection{巾級数}
+
+$\displaystyle
+	\sum_{n=0}^\infty	a_n	x^n$の形の級数を
+\textbf{巾（べき）級数} (power	series），あるいは
+$x$の巾級数という．
+
+\例{1.3}
+$x$を任意の実数として巾級数$\displaystyle
+\sum_{n=0}^\infty	x^n/n!$を考察する．
+$m$を$m	\geqq	2|x|$なる自然数とすれば
+$\left(
+\displaystyle	1	>	\frac{2|x|}{m},\frac{2|x|}{m+1},\frac{2|x|}{m+2},\cdots
+\right)$，
+$n	\geqq	m$のとき
+\begin{align*}
+	\frac{|x|^n}{n!}	&=	\frac{|x|^m}{m!}	\cdot	\frac{|x|}{m+1}
+																				\cdot	\frac{|x|}{m+2}
+																				\cdots
+																				\cdot	\frac{|x|}{n}	\\
+										&=	\frac{2^m|x|^m}{m!}
+												\frac{2|x|}{m+1}
+												\frac{2|x|}{m+2}
+												\cdots
+												\frac{2|x|}{n}\left(\frac{1}{2}	\right)^n	\\
+									&\leqq\frac{2^m|x|^m}{m!}
+												1\cdot
+												1\cdot
+												\cdots
+												1\left(\frac{1}{2}	\right)^n	\\
+										&=	\frac{2^m|x|^m}{m!}
+												\left(\frac{1}{2}	\right)^n.
+\end{align*}
+$M=2^m|x|^m/m!$とおけば
+\[
+	\sum_{n=0}^\infty	M	\left(\frac{1}{2}\right)^n
+			=	2M	<	+	\infty.
+\]
+故に，定理1.22により，
+$\displaystyle
+	\sum_{n=0}^\infty	x^n/n!$は\underline{絶対収束する．}――
+
+級数$\displaystyle
+	\sum_{n=0}^\infty	1/n!$の和を$e$で表わす：
+\begin{equation}
+	e=1	+\frac{1}{1!}
+			+\frac{1}{2!}
+			+\frac{1}{3!}
+			+	\cdots
+			+\frac{1}{n!}
+			+	\cdots	.
+\end{equation}
+$e$は数学上で最も重要な定数の一つで，その値は$e=2.71828\cdots$である．
+\begin{equation}
+	e=	\lim_{n	\rightarrow	\infty}	\left(1+\frac{1}{n}	\right)^n.
+	\label{eq1x17}
+\end{equation}
+この等式を証明するために，$e_n=(1+1/n)^n$とおけば，２項定理により
+\begin{align*}
+	e_n&=1	+	\frac{n}{1!}\frac{1}{n}
+				+	\frac{n(n-1)}{2!}\frac{1}{n^2}
+				+	\frac{n(n-1)(n-2)}{3!}\frac{1}{n^3}
+				+	\cdots
+				+	\frac{n(n-1)\cdots	(n-k+1)}{k!}	\cdot	\frac{1}{n^k}
+				+	\cdots
+				+	\frac{n!}{n!}\frac{1}{n^n}	\\
+		&=1	+	\frac{1}{1!}
+				+	\frac{1}{2!}\left(1-\frac{1}{n}\right)
+				+	\frac{1}{3!}\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)
+				+	\cdots
+				+	\frac{1}{k!}\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\cdots\left(1-\frac{k-1}{n}\right)
+				+	\cdots
+				+	\frac{1}{n!}	
+\end{align*}
+となる．
+\[
+	a_{n,k}	=	\frac{n(n-1)(n-2)\cdots	(	n-k+1)}{k!}	\frac{1}{n^k}
+\]
+とおけば，すなわち
+\[
+	e_n=1+\sum_{k=1}^n	a_{n,k}
+\]
+である．
+\begin{align*}
+		a_{n,k}	&=\frac{1}{k!}\left(1-\frac{1}{n}\right)
+													\left(1-\frac{2}{n}\right)
+													\cdots
+													\left(1-\frac{k-1}{n}\right)	\\
+		a_{n+1,k}	&=\frac{1}{k!}\left(1-\frac{1}{n+1}\right)
+													\left(1-\frac{2}{n+1}\right)
+													\cdots
+													\left(1-\frac{k-1}{n+1}\right)	\\
+\end{align*}
+であり，$i=1,\dots,k-1$で
+$\displaystyle
+	1-\frac{i}{n}	<	1-\frac{i}{n+1}
+$であるから
+\[
+	a_{n,k}	<		a_{n+1,k}	<	\frac{1}{k!},
+\]
+したがって
+\[
+	e_n	<	e_{n+1}	<	1	+	\sum_{k=1}^\infty	\frac{1}{k!}	=	e.
+\]
+故に$\{e_n\}$は単調増加数列であって上に有界，よって
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	e_n	\leqq	e$
+
+$m<n$のとき各$k$に対して$a_{n,k}	>	0$であるから，
+\[
+1+\sum_{k=1}^m	a_{n,k}	\leqq	1+\sum_{k=1}^{m+1}	a_{n,k}
+																				\leqq	\cdots
+																				\leqq	1+\sum_{k=1}^n	a_{n,k},
+\]
+また，$m>n$のとき
+\begin{align*}
+	1+\sum_{k=1}^m	a_{n,k}	=	1	&+	\frac{1}{1!}	\\
+															&+	\frac{1}{2!}\left(1-\frac{1}{n}\right)	\\
+															&+	\frac{1}{3!}\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)	\\
+															&+	\frac{1}{4!}\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\left(1-\frac{3}{n}\right)	\\
+															&+	\cdots	\\
+															&+	\frac{1}{n!}\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\left(1-\frac{3}{n}\right)
+																\cdots
+																	\left(1-\frac{n-1}{n}\right)	\\
+															&+	\cdots	\\
+															&+	\frac{1}{m!}\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\left(1-\frac{3}{n}\right)
+																\cdots
+																	\left(1-\frac{n-1}{n}\right)
+																	\underbrace{\left(1-\frac{n}{n}\right)}_{=0}
+																	\left(1-\frac{n+1}{n}\right)
+																	\cdots
+																	\left(1-\frac{m}{n}\right)	\\
+													&=	1+\sum_{k=1}^n	a_{n,k}
+\end{align*}
+である．よって任意の$m$に対して，
+\[
+	e_n=1+\sum_{k=1}^n	a_{n,k}	\geqq	1+\sum_{k=1}^m	a_{n,k}.
+\]
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_{n,k}	=	1/k!$
+であるから，任意の$m$に対して，
+\[
+	\lim_{n	\rightarrow	\infty}	e_n
+	=
+	\lim_{n	\rightarrow	\infty}	\left(	1+\sum_{k=1}^n	a_{n,k}	\right)
+	\geqq	
+	\lim_{n	\rightarrow	\infty}	
+		\left(	1+\sum_{k=1}^m	a_{n,k}	\right)
+	=
+	1	+	\sum_{k=1}^m	\frac{1}{k!}.
+\]
+したがって
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	e_n	\geqq	1+	\sum_{k=1}^\infty	\frac{1}{k!}=e
+$．
+故に$\lim_{n	\rightarrow	\infty}	e_n	=	e$，すなわち(1.17)が成り立つ．$e$の大きさを評価しておく．
+\begin{align*}
+	e	&=			1	+\frac{1}{1!}	+\frac{1}{2!}	+\cdots	+\frac{1}{n!}+\cdots	\\
+		&=			1+	1						+\frac{1}{2!}	+\cdots	+\frac{1}{n!}+\cdots	\\
+		&\geqq	2.
+\end{align*}
+また
+\begin{align*}
+	3!	=	3	\cdot	2	\cdot	1					>	2^2,	\quad
+	4!	=	4	\cdot	3	\cdot	2	\cdot	1	>	2^3,	\quad
+	\cdots	\quad
+	n!	&=	n\cdot(n-1)	\cdots	3	\cdot	2	>	2^{n-1}	\\	
+\end{align*}
+であるから，
+\begin{align*}
+	e	&=	1	+\frac{1}{1!}	+\frac{1}{2!}		+\frac{1}{2^3}	+\frac{1}{2^4}	+\cdots	+\frac{1}{n!}+\cdots	\\
+		&<	1	+\frac{1}{1!}	+\frac{1}{2^1}	+\frac{1}{2^2}	+\frac{1}{2^3}	+\cdots	+\frac{1}{2^{n-1}}+\dots	\\
+\end{align*}
+\begin{align*}
+		=1+2=3.	\\
+		\therefore	2	<	e	<	3	\\
+\end{align*}
+ここで$e$は無理数であることを証明しておく．
+
+\証明
+$e=q/m,\:	m,q$は自然数，と仮定すれば$m!e=(m-1)!q$は整数，また$m!(1+1/1!+\cdots+1/m!)$も整数であるから，
+\[
+	e=	1	+	\frac{1}{1!}
+				+	\frac{1}{2!}
+				+	\frac{1}{3!}
+				+	\cdots
+				+	\frac{1}{m!}
+				+	\frac{1}{(m+1)!}
+				+	\frac{1}{(m+2)!}
+				+	\cdots						\quad	\text{(1.16)}
+\]
+により，
+\[
+	m!\left\{e-(1	+	\frac{1}{1!}
+						+	\frac{1}{2!}
+						+	\frac{1}{3!}
+						+	\cdots
+						+	\frac{1}{m!}
+				)
+		\right\}
+	=
+	m!\sum_{k=1}^\infty	\frac{1}{(m+k)!}
+\]
+も整数でなければならない．一方，
+\[
+	m!\sum_{k=1}^\infty	\frac{1}{(m+k)!}
+		=	\sum_{k=1}^\infty	\frac{1}{(m+1)(m+2)\cdots(m+k)}
+		=(*)
+\]
+であるが
+\begin{align*}
+	&(m+1)(m+2)	>	(m+1)^2	\\
+	&(m+1)(m+2)(m+3)	>	(m+1)^3	\\
+	\cdots	\\
+	&(m+1)(m+2)(m+3)	\cdots	(m+k)	>	(m+1)^k	\\
+\end{align*}
+であるから，
+\begin{align*}
+	(*)	&<	\sum_{k=1}^\infty	\frac{1}{(m+1)^k},	\qquad	\text{初項}\frac{1}{m+1},\text{公比}\frac{1}{m+1}\text{の等比数列}\\
+			&=	\frac{\displaystyle
+								\frac{1}{1+m}
+							}{\displaystyle
+								1	-	\frac{1}{1+m}
+							}	=	\frac{1}{m}	\\
+			&<	1	\\
+\end{align*}
+であり，整数でないので矛盾である．故に$e$は無理数である．
+\■
+
+\underline{級数}
+$\displaystyle
+\sum_{n=1}^\infty	a_n$
+\underline{が収束するならば}
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_n	=	0$
+\underline{である．}
+なぜなら，
+$s_n=a_1+a_2+\cdot	+	a_n$，
+$\displaystyle
+	s=\lim_{n	\rightarrow	\infty}	s_n$とおけば
+\[
+	\lim_{n	\rightarrow	\infty}	a_n
+		=	
+	\lim_{n	\rightarrow	\infty}	(s_n-s_{n-1})
+		=
+	\lim_{n	\rightarrow	\infty}	s_n	-	\lim_{n	\rightarrow	\infty}	s_{n-1}
+		=	0
+\]
+となるからである。このように$\displaystyle
+	\lim_{n	\rightarrow	\infty}	a_n	=	0$は
+$\displaystyle
+	\sum_{n=1}^\infty	a_n$が収束するための必要条件であるが，
+もちろんそれは十分条件ではない．
+
+\例{1.4}
+$\displaystyle
+	\lim_{n	\rightarrow	\infty}	\frac{1}{n}	=0$であるが
+$\displaystyle
+	\sum_{n=1}^\infty	\frac{1}{n}$は発散する．
+
+\証明
+自然数$k$に対して，
+$2^k	<	n	\leqq	2^{k+1}$，
+{\small
+$\left(\displaystyle
+	\frac{1}{2^{k+1}}	\leqq	\frac{1}{n}	<	\frac{1}{2^k}
+\right)$}
+なる$2^k$個の自然数$n$について
+$1/n$の和をとれば
+\[
+	\sum_{n=2^k+1}^{2k+1}	\frac{1}{n}	=	2^k	\frac{1}{n}
+>	\frac{2^k}{2^{k+1}}	=	\frac{1}{2}.
+\]
+故に，任意の自然数$m$に対して，
+\begin{align*}
+	\sum_{n=1}^\infty	\frac{1}{n}	
+			&=1	+	\frac{1}{2}
+						+\left(		\frac{1}{3}
+						+					\frac{1}{4}	\right)
+						+\left(		\frac{1}{5}
+						+					\cdots
+						+					\frac{1}{8}	\right)
+						+\left(		\frac{1}{9}
+										+	\cdots
+						+					\frac{1}{16}	\right)
+											+	\cdots	
+						+\left(		\frac{1}{2^k+1}
+											+	\cdots
+											+	\frac{1}{2^{k+1}}	\right)
+											+	\cdots	\\
+			&=1	+	\frac{1}{2}
+					+
+					\sum_{k=1}^\infty	\sum_{n=2^k+1}^{2^{k+1}}\frac{1}{n}	\\
+			&>1	+	\frac{1}{2}
+					+
+					\sum_{k=1}^m	\sum_{n=2^k+1}^{2^{k+1}}\frac{1}{n}	\\
+			&=1	+	\frac{1}{2}
+					+	
+					\underbrace{
+						\left(		\frac{1}{3}
+										+	\frac{1}{4}	
+						\right)}_{k=1}
+					+
+					\underbrace{
+						\left(		\frac{1}{5}
+										+	\cdots
+										+	\frac{1}{8}	
+						\right)}_{k=2}
+					+
+					\underbrace{
+						\left(		\frac{1}{9}
+										+	\cdots
+										+	\frac{1}{16}
+						\right)}_{k=3}
+					+	\cdots	+
+					\underbrace{
+						\left(		\frac{1}{2^m+1}
+											+	\cdots
+											+	\frac{1}{2^{m+1}}
+						\right)}_{k=m}	\\
+			&>1	+	\frac{1}{2}
+					+
+					\underbrace{
+						\left(	\frac{1}{4}
+									+	\frac{1}{4}
+						\right)}_{k=1}
+					+
+					\underbrace{
+						\left(	\frac{1}{8}
+									+	\cdots
+									+	\frac{1}{8}
+						\right)}_{k=2}
+					+
+					\underbrace{
+						\left(	\frac{1}{16}
+									+	\cdots
+									+	\frac{1}{16}
+						\right)}_{k=3}
+					+	\cdots	+
+					\underbrace{
+						\left(	\frac{1}{2^{k+1}	}
+									+	\cdots
+									+	\frac{1}{2^{k+1}}
+						\right)}_{k=m}	\\
+		&>	1+	\frac{m+1}{2}.	\\
+\end{align*}
+故に$\displaystyle
+	\sum_{n=1}^\infty	\frac{1}{n}	=	+	\infty.
+$
+\■
+\pagebreak
+
+収束する級数$\displaystyle
+	\sum_{n=1}^\infty	a_n$が絶対収束しないとき，
+級数$\displaystyle
+\sum_{n=1}^\infty	a_n$
+は\textbf{条件収束}する（converge conditionally）という．
+正負の項	が交互に現れる級数を\textbf{交代級数}
+（alternating series）という．
+
+
+\定理{1.23}
+数列$\{a_n\}$，$a_n	>	0$，が$0$に収束する単調非減少数列ならば、
+交代級数
+\[
+	a_1-a_2+a_3-a_4+a_5-	\cdots
+\]
+は収束する．
+\footnote{
+例5.12,例5.13 での定理の利用方法を参照.
+}
+その和を$s$，部分和を
+\[
+	s_n=a_1-a_2+a_3-a_4+	\cdots	+	(-1)^{n+1}	a_n
+\]
+とすれば
+\[
+	s_{2n-1}	>	s	>s_{2n}.
+\]
+
+\証明
+\begin{align*}
+	&s_{2n-1}=	a_1	-	(a_2-a_3)	-	(a_4-a_5)	-	\cdots	-	(a_{2n-2}-a_{2n-1}),	\\
+	&s_{2n}	=(a_1	-	a_2)	+(a_3	-	a_4)	+	\cdots	+	(a_{2n-1}-a_{2n}),	\\
+	&s_{2n-1}	-	s_{2n}	=	a_{2n}
+\end{align*}
+であるから
+\[
+	s_1	>	s_3	>	s_5	>	\cdots	>	s_{2n-1}	>	\cdots	>	s_{2n}	>	\cdots	>	s_4	>	s_2.
+\]
+であるから，数列$\{s_{2n-1}\}$，$\{s_{2n}\}$はそれぞれ，
+下に有界な単調非増加数列，上に有界な単調非減少数列であり，定理1.20により収束する．
+さらに$n	\rightarrow	\infty$のとき$s_{2n-1}-s_{2n}	=	a_{2n}	\rightarrow	0$
+であるから，
+$\displaystyle
+\lim_{n\rightarrow	\infty}	s_{2n-1}	=	\lim_{n\rightarrow\infty}s_{2n}.$
+故に数列$\{s_n\}$も収束し，
+$\displaystyle
+s=\lim_{n\rightarrow\infty}s_n$
+$s$は，$\{s_{2n-1}\}$，$\{s_{2n}\}$の下限，上限である（定理1.20）から，
+$s_{2n-1}	>	s	>	s_{2n}.$
+
+\■
+
+\例{1.5}
+$1-1/2+1/3-1/4+\cdots$は収束する．例1.4で示したように
+$\displaystyle
+	\sum_{n=1}^\infty	1/n
+$は発散するから，これは条件収束する級数の一例である．――
+
+絶対収束しない級数が条件収束するか否かを判定することは，交代級数の場合を
+除けば、一般に難しい．

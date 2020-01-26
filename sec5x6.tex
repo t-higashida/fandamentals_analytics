@@ -1,0 +1,756 @@
+\section{無限乗積}
+
+数列$\{a_n\},	a_n	\ne	0,$が与えられたとき
+\[
+	a_1a_2a_3	a_4	\cdots	a_n	\cdots
+\]
+の形の式を\textbf{無限乗積}（infinite product)といい，$\displaystyle	\prod_{n=1}^{\infty}a_n$で表す．
+そして
+\[
+	p_m	=	a_1	a_2	a_3	\cdots	a_m	=	\prod_{n=1}^{m}	a_n
+\]
+をその\textbf{部分積}（partial product）という．部分積$p_m$のなす数列$\{p_m\}$が収束して
+その極限$\displaystyle	p=\lim_{m\rightarrow	\infty}	p_m$\underline{が$0$}
+\underline{でないとき},
+無限乗積$\displaystyle	\prod_{n=1}^{\infty}	a_n$は$p$に\textbf{収束}するといい，
+\[
+	p=\prod_{n=1}^{\infty}	a_n	=	a_1a_2	a_3\cdots	a_n	\cdots
+\]
+と書く．$p=0$なる場合を除外したのは，乗法に関して$0$は逆元を持たない特異な数だからである．
+数列$\{p_n\}$が収束しないかまたは$0$に収束するとき，無限乗積$\displaystyle	\prod_{n=1}^{\infty}a_n$は
+\textbf{発散}するという．$\displaystyle	\prod_{n=1}^{\infty}	a_n$が$p$に収束するならば
+\[
+	\lim_{n\rightarrow	\infty}	a_n=\lim_{n\rightarrow	\infty}	\frac{p_n}{p_{n-1}}
+	=
+	\frac{	\displaystyle	\lim_{n\rightarrow	\infty}	p_n}{
+					\displaystyle	\lim_{n\rightarrow	\infty}p_{n-1}}
+	=
+	\frac{p}{p}=1
+\]
+であるから，はじめから
+\[
+	a_n=1	+	u_n,	\quad	u_n	>	-1,	\quad	u_n	\rightarrow	0	\:	(n	\rightarrow	\infty)
+\]
+として無限乗積$\displaystyle	\prod_{n=1}^{\infty}	(1+u_n)$を考察する．
+目標は$\displaystyle	\prod_{n=1}^{\infty}	(1+u_n)$が収束するための十分条件で$u_n$によって簡明に表される
+ものを求めることにある．
+
+このために
+\[
+	l_n	=	\log	(1+u_n)
+\]
+とおいて，無限乗積$\displaystyle	\prod_{n=1}^{\infty}	(1+u_n)$を無限級数$\displaystyle	\sum_{n=1}^{\infty}	l_n$に変換する．
+\[
+	\log	p_m	=	\log	\prod_{n=1}^{m}(1+u_n)	=	\sum_{n=1}^{m}	l_n
+\]
+であるから，無限乗積$\displaystyle	\lim_{m\rightarrow	\infty}p_m	=	p	\ne	0$が存在すれば，$\log	x$の連続性により，
+\[
+	\sum_{n=1}^{\infty}	l_n	=	\lim_{m\rightarrow	\infty}\sum_{n=1}^{m}	l_n
+													=	\lim_{m\rightarrow	\infty}\log	p_m	=	\log	p.
+\]
+$\displaystyle	s_m=\sum_{n=1}^{m}l_n$とおくと，逆に
+\[
+	e^{s_m}	=	\exp	\left(
+									\sum_{n=1}^{m}	l_n
+								\right)
+					=	\exp	\left(
+									\sum_{n=1}^{m}	(	1	+	u_n)
+								\right)
+					=	\exp	\left(	\prod_{n=1}^m	(1+u_n)
+									\right)
+					=	\prod_{n=1}^{m}	(1+u_n)
+					=	p_m
+\]
+であるから，級数$s_m$が収束すれば$\displaystyle	s=\lim_{m\rightarrow	\infty}	s_m$，
+\[
+	\lim_{m\rightarrow	\infty}	p_m	=	e^s	\ne	0.
+\]
+すなわち，\underline{無限乗積$	\displaystyle	\prod_{n=1}^\infty	(1+u_n)$が収束するための必要かつ十分な条件は
+無限級数$\displaystyle	\sum_{n=1}^{\infty}	l_n$が収束すること } \underline{であって，収束する場合には}
+\begin{equation}
+	\prod_{n=1}^{\infty}(1+u_n)	=	e^s,	\quad	s	=	\sum_{n=1}^{\infty}	l_n.
+	\label{eq5x53}
+\end{equation}
+$\displaystyle	p	=	\lim_{m\rightarrow	\infty}	p_m	=0$ならば
+$\displaystyle	\sum_{n=1}^{\infty}	l_n	=	-	\infty$となるから，
+$p=0$なる場合を無限乗積の収束から除外しなれければこの結果は成立しない．
+
+\定理{5.20}
+無限級数$\displaystyle	\sum_{n=1}^{\infty}	u_n$
+が絶対収束するならば無限乗積$\displaystyle	\prod_{n=1}^\infty	(1+u_n)$
+は収束する．
+
+\証明
+$u_n	\to	0	\:	(n	\to	\infty	)	$と仮定しているから,
+自然数$n_0$が定まって
+\[
+	n	>	n_0	\quad	\text{ならば}	\quad	|u_n	|	<	\frac{1}{2}
+\]
+となる．
+$(d/du)\log	x	=	1	/	x	,	\:	(	x>0)	$である
+\footnote{
+（\ref{eq3x19}）
+}
+から，
+平均値の定理（定理3.5）により，
+\begin{align*}
+	\frac{	\log	(1+u_n)	-	\log(1)}{1+u_n	-	1}	=	\frac{1}{\theta(1+u_n)+ (1-\theta)\cdot	1},	\quad	0	<	\theta	<	1.	\\
+\Longrightarrow 	
+	l_n	=	\log	(1+u_n)	=	\frac{u_n}{1+	\theta	u_n},
+	\quad	0	<	\theta	<	1.
+\end{align*}
+$|u_n	|	<1/2$ならば$	1	+	\theta_n	u_n	\geqq	1	-	|	u_n	|	>	1/2$となるから，
+したがって$1/2	<	1	+	\theta_n	u_n	=	u_n	/	l_n$，
+\[
+	n	>	n_0	\quad	\text{ならば}	\quad	|l_n	|	\leqq	2|u_n|.
+\]
+故に$\displaystyle	\sum_{n=1}^{\infty}	u_n	$が絶対収束すれば
+$\displaystyle	\sum_{n=1}^{\infty}	l_n$
+も絶対収束し
+\footnote{
+（\ref{eq5x10}）
+}
+，したがって無限乗積$\displaystyle	\prod_{n=1}^\infty	(1+u_n)$は収束する．
+\■
+　　
+級数$\displaystyle	\sum_{n=1}^{\infty}	u_n$が絶対収束するとき，
+無限乗積$\displaystyle	\prod_{n=1}^\infty	(1+u_n)$は絶対収束するという．
+このとき，$\displaystyle\sum_{n=1}^{\infty}	l_n$も絶対収束するから
+\footnote{
+定理5.20の証明中$	|l_n|	<	2	|	u_n|$と，（\ref{eq5x10}）の記述を組み合わせれば
+判る．
+}
+，
+\S	\ref{sec5x1x1}，定理5.1，$(1^\circ)$により，
+和$\displaystyle	s=	\sum_{n=1}^\infty	l_n$は
+項$l_n$の順序を変更しても変らない．
+故に（\ref{eq5x53}）により，無限乗積$p	=	\displaystyle	\prod_{n=1}^\infty	(1+u_n)$
+も項$1+u_n$の順序を変更しても変わらない．
+
+
+$\displaystyle	\prod_{n=1}^\infty	(1+u_n)$が収束はするけれども絶対収束しないとき，
+無限乗積$\displaystyle	\prod_{n=1}^\infty	(1+	u_n)$は条件収束するという．
+平均値の定理により
+\begin{align*}
+&	e^{l_n}	=	e^{\log(1+u_n)}	=	1+u_n	,	\quad	\frac{e^{l_n}	-	e^0}{l_n	-	0}	=	e^{l_n	\theta},	0	<	\theta	<1	\\
+&\Rightarrow
+	u_n	=	e^{l_n}	-1	=	e^{\theta	l_n}	l_n,	\quad	0	<	\theta	<1,
+\end{align*}
+であるから，$|l_n|	<	1$のとき
+\[
+	|	u_n	|	=	|	e^{\theta	l_n}	|	|l_n	|	\leqq	e	\cdot	|l_n|	.
+\]
+\footnote{
+$\theta , l_n$は実数で指数関数$e^{\theta l_n}$は単調増加関数.
+}
+したがって$	\displaystyle	\sum_{n=1}^{\infty}	l_n	$が絶対収束すれば
+\footnote{
+ある十分に大きな$n$より大きい自然数で$|	l_n|	<	1$，
+}
+$	\displaystyle	\sum_{n=1}^{\infty}	u_n$も絶対収束する
+\footnote{
+（\ref{eq5x10}）付近の記述.
+}
+．
+故に無限乗積$	\displaystyle	\prod_{n=1}^\infty	(1+	u_n)$
+が条件収束するときには，
+\footnote{条件収束の定義は「絶対収束しないこと」.
+$\displaystyle	\prod_{n=1}^\infty (1+u_n)$が絶対収束することの定義は
+「$\displaystyle	\sum_{n=1}^{\infty}	u_n$が絶対収束すること」.
+}
+級数$	\displaystyle	\sum_{n=1}^{\infty}	l_n$も条件収束する．
+したがって，このとき，定理5.1,	$(2^\circ)$により，任意に与えられた実数
+$\xi$に対して$	\displaystyle	\sum_{n=1}^{\infty}	l_{\gamma	(n)}	=	\xi$となるように
+級数$\displaystyle	l_n$の項	の順序を変更することができる．
+故に，（\ref{eq5x53}）により，任意の正の実数$\eta	=	e^{\xi}$に対して
+\[
+	\prod_{n=1}^\infty	(1+	u_{\gamma	(n)}	)	=	\eta
+\]
+となるように無限乗積	$	\displaystyle	\prod_{n=1}^\infty	(1+	u_n)$の項の
+順序を変更することができる．
+$\displaystyle	\prod_{n=1}^\infty	(1+u_n)$
+が項の順序を変更しても変わらないのは絶対収束の揚合に限るのである．
+
+\例{5.15}
+$	\displaystyle	\sum_{n=1}^{\infty}	1/n^2$は
+\S	\ref{sec5x2x1}で述べた収束する標準的な正項級数の一つである．
+故に，$\displaystyle	\sum_{n=1}^{\infty}	(-1)	\frac{1}{4n^2}$は絶対収束する．
+故に，無限乗積$	\displaystyle	\prod_{n=1}^\infty	(1-	1/4n^2)	$は絶対収束する．
+その値は
+\begin{equation}
+	\prod_{n=1}^{\infty}	
+\left(	1	-	\frac{1}{4n^2}
+\right)
+=	\frac{2}{\pi}
+\label{eq5x54}
+\end{equation}
+である．
+（\ref{eq5x54}）を\textbf{Wallisの公式}という．
+\証明
+$\displaystyle	S_n	=	\int_0^\infty	(	\sin	x)^n	dx$について
+\S	\ref{sec4x2x3}，例4.4で述べた結果によれば，
+\begin{align*}
+	S_{2n}		&=	\frac{\pi}{2}	\cdot	\frac{1}{2}	\cdot	\frac{3}{4}	\cdot	\frac{5}{6}	\cdot	\cdots	\cdot	\frac{2n-1}{2n},	\\
+	S_{2n+1}	&=	\frac{2}{4}	\cdot	\frac{4}{5}	\cdot	\frac{6}{7}	\cdot	\cdots	\cdot	\frac{2n}{2n+1},	
+\end{align*}
+であって，さらに，（\ref{eq4x27}）により，$n	\to	\infty$のとき
+$	S_{2n}	/	S_{2n+1}	\to	1$である．
+\[
+	\frac{S_{2m}}{S_{2m+1}}
+=	\frac{\pi}{2}	\cdot	\frac{\pi}{2}	\cdot	
+											\frac{1	\cdot	3}{2^2}	\cdot	\cdots	\cdot
+											\frac{(2m-1)(2m+1)}{(2m)^2}
+=	\frac{\pi}{2}	\prod_{n=1}^m	\left(
+																1	-	\frac{1}{(2n)^2}
+															\right)
+\]
+であるから，
+\[
+	\prod_{n=1}^\infty	\left(	1	-	\frac{1}{4n^2}
+											\right)
+=	\lim_{m\rightarrow\infty}	\prod_{n=1}^m
+											\left(
+												1	-	\frac{1}{(2n)^2}
+											\right)
+=	\frac{2}{\pi}	\lim_{m\rightarrow\infty}	\frac{2_{2m}}{S_{2m+1}}
+=	\frac{2}{\pi}.
+\]
+\■
+
+\例{5.16}
+（\ref{eq4x50}）で定義したガンマ関数
+$\varGamma	(s)$は
+\begin{equation}
+	\varGamma	(s)
+=	\lim_{m\rightarrow\infty}	\frac{(m-1)!m^s}{s(s+1)(s+2)	\cdots	(s+m-1)},
+\quad	s	>	0
+\label{eq5x55}
+\end{equation}
+と表わされる．
+\証明
+\[
+	\frac{(m-1)!m^s}{(s+1)(s+2)	\cdots	(s+m-1)}
+=	\prod_{n=1}^{m-1}	\frac{n(n+1)^s}{(s+n)n^s}
+\]
+\footnote{
+分子の$(n+1)^s$と分母の$n^s$がキャンセルされて$m^s$が残る．
+}
+であるから
+\[
+	\frac{n(n+1)^s}{(s+n)n^s}
+=	\left(	1+	\frac{1}{n}
+\right)^s
+	\bigg/
+\left(	1	+	\frac{s}{n}
+\right)
+=	1	+	u_n
+\]
+とおけば，(\ref{eq5x55}）の右辺は
+\[
+	\frac{1}{s}	\prod_{n=1}^\infty	(1	+u_n)
+\]
+と書かれる．
+Taylorの公式により
+\[
+	(1+x)^s
+=	1	+	sx	+	\frac{1}{2}	s(s-1)(1+	\theta	x)^{s-2}	x^2,
+\quad	0	<	\theta	<1,
+\]
+であるかち
+\[
+	\left(	1	+	\frac{s}{n}
+	\right)u_n
+=	\left(	1	+	\frac{1}{n}
+	\right)^s
+	-	1	-	\frac{s}{n}
+=	\frac{1}{2}	s(s-1)
+	\left(	1	+	\frac{\theta}{n}
+	\right)^{s-2}
+	\frac{1}{n^2},
+	\quad	0	<	\theta	<1,
+\]
+となるが，明らかに$(1	+	\theta	/	n	)^{s-2}	<	2^s$，故に
+\[
+	u_n	<	2^{s-1}	s	(s-1)	\frac{1}{n^2},
+\]
+したがって正項級数$	\displaystyle	\sum_{n=1}^{\infty}	u_n$
+収束する．故に定理5.20により無限乗積$	\displaystyle	\prod_{n=1}^\infty	(1+u_n)$
+は収束する，すなわち，（\ref{eq5x55}）の右辺の極限は存在する．
+この極限が$\Gamma(s)$に等しいことを証明するために，広義積分：
+\[
+	\int_0^1	t^{s-1}	(1-t)^m	dt
+\]
+を考察する．
+$s>0$としているから，この広義積分が収束することは
+\S	\ref{sec4x3x3}，定理4.11によって明らかである．
+部分積分の公式（\ref{eq4x22}）により
+\[
+	\int_0^1	t^{s-1}	(1-t)^m	dt
+=	\left[
+		\frac{t^s}{s}	(1-t)^m
+	\right]_0^t
++	\frac{m}{s}	\int_0^1	t^s(1-t)^{m-1}	dt
+\]
+であるが，$ [ (	t^s	/	s)(1-t)^m	]_0^1	=	0$
+ある．故に
+\begin{align*}
+	\int_0^1	t^{s-1}	(1-t)^m	dt
+&=	\frac{m}{s}	\int_0^1	t^s	(1-t)^{m-1}	dt
+&=	\cdots		\\
+&=	\frac{m}{s}	\cdot	\frac{m-1}{s+1}	\cdot	\cdots	\cdot	\frac{1}{s+m-1}	\int_0^1	t^{s+m-1}	dt	\\
+&=	\frac{m!}{s(s+1)	\cdots	(s+m)}.
+\end{align*}
+したがって，$	t	=	x/m$とおいて積分変数$t$を$x$に変換すれば
+\[
+	\int_0^m	x^{s-1}	
+\left(	1	-	\frac{x}{m}
+\right)^m	dt
+=	\frac{m!	m^s}{s(s+1(s+2)	\cdot	(s+m)}
+\]
+を得る．
+故に（\ref{eq5x55}）を証明するには
+\[
+	\lim_{m\rightarrow\infty}	\int_0^m	x^{s-1}
+\left(	1	-	\frac{x}{m}
+\right)^m	dx
+=	\int_0^{+\infty}	x^{s-1}	e^{-x}	dx	=	\varGamma	(s)
+\]
+となることを示せばよい．このために
+\[
+	\begin{cases}	\displaystyle
+		\:	0	<	x	\leqq	m	\quad	\text{のとき}	\quad	f_m(x)	=	x^{s-1}	\left(	1	-	\frac{x}{m}	\right)^m,	\\
+		\:	x	\geqq	m			\quad	\text{のとき}	\quad	f_m(x)	=	0	\\
+	\end{cases}
+\]
+とおいて	\S	\ref{sec5x4x3}で述べた優関数をもつ関数列に関する定理5.12を援用する．
+$	f_m(x)$は区間	$(0,+\infty)$で定義された$x$の連続関数であって，
+（\ref{eq2x7}）により，
+$	\displaystyle	\lim_{m\rightarrow\infty}	(1	-	x/m)^m	=	e^{-x}$
+であるから，
+\[
+	\lim_{m\rightarrow\infty}	f_m	(x)	=	x^{s-1}e^{-x},
+\]
+また
+\[
+	0	\leqq	f_m	(x)	\leqq	x^{s-1}	e^{-x}
+\]
+である．なぜなら
+\[
+	1	-	\frac{x}{m}	\leqq	1	-	\frac{x}{m}	+	\frac{x^2}{4m^2}
+=	\left(	1	-	\frac{x}{2m}
+	\right)^2
+\]
+であるから，$	0	<	x	\leqq	m$
+\footnote{
+積分の下限$0$，上限$m$
+}
+のとき
+\[
+	\left(	1	-	\frac{x}{m}
+	\right)^m
+\leqq
+	\left(	1	-	\frac{x}{2m}
+	\right)^{2m}
+\leqq
+	\left(	1	-	\frac{x}{4m}
+	\right)^{4m}
+\leqq
+	\left(	1	-	\frac{x}{8m}
+	\right)^{8m}
+\leqq
+	\cdots	,
+\]
+\footnote{同様に，
+\begin{align*}
+1	-	x/2m	\leq	1	-	2	\cdot	x/4m	+	x^2/16	m^2	=	\left(	1	-	x/4m	\right)^2,	\quad
+1	-	x/4m	\leq	1	-	2	\cdot	x/8m	+	x^2/64	m^2	=	\left(	1	-	x/8m	\right)^2,	\cdots
+\end{align*}
+
+
+}
+したがって
+\[
+	\left(	1	-	\frac{x}{m}
+	\right)^m
+	\leqq
+	\lim_{k\rightarrow\infty}	\left(	1	-	\frac{x}{2^k	m}	\right)^{2^k	m}
+=	e^{-x}
+\]
+となるからである．
+このように$	x^{s-1}	e^{-x}	$は関数列$\{	f_m(x)	\}$の優関数であって，
+（\ref{eq4x50}）により
+\[
+	\int_0^{+\infty}	x^{s-1}	e^{-x}	dx
+=	\Gamma	(s)	<	+	\infty
+\]
+故に，定理5.12により
+\begin{align*}
+	\lim_{m\rightarrow\infty}	\int_0^m
+\left(	1	-	\frac{x}{m}
+\right)^m	dx
+=	\lim_{m\rightarrow\infty}	\int_0^{+\infty}	f_m	(x)	dx
+=	\int_0^{+\infty}	\lim_{m\rightarrow\infty}	f_m	(x)	dx
+=	\int_0^{+\infty}	x^{s-1}	e^{-x}	dx	=	\varGamma	(s)	
+\end{align*}
+となる．
+\■
+
+必ずしも絶対収束しない無限乗積についてはづぎの収束の判定法がある．
+
+\定理{5.21}
+級数$	\displaystyle	\sum_{n=1}^{\infty}	u_n$と
+$	\displaystyle	\sum_{n=1}^{\infty}	u_n^2$が共に収束すれば無限乗積
+$	\displaystyle	\prod_{n=1}^{\infty}	(1	+u_n)$は収束する．
+
+\証明
+まず$	|u_n	|	<	1/4$ならば
+\begin{equation}
+	u_n	-	u_n^2	\leqq	l_n	=	\log	(1+u_n)	\leqq	u_n
+\label{eq5x56}
+\end{equation}
+であることを示す．
+$	u	=	u_n$とおけば，
+Taylorの公式（\ref{eq3x39}）により
+\begin{align*}
+	\log	(1+u)	
+&=	\log	(1+0)	+	\frac{1}{1+0}u	-	\frac{1}{2!(1+u\theta)^2}u^2	\\
+&=	u	-	\frac{1}{2	(1+u	\theta	)^2}	u^2,	\quad	0	<	\theta	<	1,
+\end{align*}
+であるから，
+$\log(1	+	u	)	\leqq	u$なることは明らかである．
+$	|	u|	<	1/4$であるから$	1	+	\theta u	\geqq	1	-	|	u	|		>	3/4$，
+\footnote{
+\begin{align*}
+	1+\theta	u	>	3/4	
+\Rightarrow	4/3	<	1/(1+\theta	u)	
+\Rightarrow	16/18	<	1/2	(1+\theta	u)^2	
+\Rightarrow		1	-	1/2	(1+	\theta	u)^2	<	1	-	16/18	
+\end{align*}
+}
+したがって
+\[
+	\log	(1+u)	-	u	+	u^2	=	
+\left(	1	-	\frac{1}{2	(1+	\theta	u)^2}
+\right)	u^2
+\geqq	u^2	/9	\geqq	0.
+\]
+すなわち不等式（\ref{eq5x56}）が成り立つ．
+故に$	k_0	$を$	n	>	k_0$のとき$	|	u_n	|	<	1/4$となるように定めれば，
+$	m	>	k	>	k_0$のとき
+\begin{equation}
+	\sum_{n=k}^{m}	u_n	-	\sum_{n=k}^{m}	u_n^2
+\leqq	\sum_{n=k}^{m}	l_n
+\leqq	\sum_{n=k}^{m}	u_n.
+\label{eq5x57}
+\end{equation}
+一般に級数$	\displaystyle	\sum_{n=1}^{\infty}	a_n$が収束するための必要かつ十分な条件は，
+Cauchyの判定法によれば，
+任意の正の実数$	\varepsilon$に対応して一つの自然数	$n_0	(	\varepsilon)$が定まって，
+$	m	>	k	>	n_0(\varepsilon)$ならば
+$	\displaystyle	\left|	\sum_{n=k}^{m}	a_n	\right|	<	\varepsilon$となることである．
+故に，（\ref{eq5x57}）により，
+級数$	\displaystyle	\sum_{n=1}^{\infty}	u_n$と$	\displaystyle	\sum_{n=1}^{\infty}	u_n^2$が共に
+収束すれば$	\displaystyle	\sum_{n=1}^{\infty}	l_n$も収束し，
+したがって無限乗積$	\displaystyle	\prod_{n=1}^{\infty}	(1+u_n)$は収束する．
+\■
+
+この定理により，たとえば，$	m\displaystyle	\prod_{n=1}^{\infty}	(1+	(-1)^n	/	n)$条件収束する無限乗積である
+ことがわかる．
+
+\subsubsection{問　題}
+
+\textbf{38}　級数
+$\displaystyle		\sum_{n=1}^{\infty}	a_n	,	\sum_{n=1}^{\infty}	b_n$
+に対して$	c_n	=	a_1	b_n	+	a_2	b_{n-1}	+	\cdots	+	a_n	b_1$とおく．
+$	\displaystyle	\sum_{n=1}^{\infty}	a_n$が絶対収束しているとき
+$	\displaystyle	\sum_{n=1}^{\infty}	b_n$が収束すれば
+$	\displaystyle	\sum_{n=1}^{\infty}	c_n$も収束して分配法則
+$\displaystyle	\sum_{n=1}^{\infty}	c_n	=	\sum_{n=1}^{\infty}	a_n	\sum_{n=1}^{\infty}	b_n$が
+成り立つ（藤原松三郎“微分積分学Ⅰ”，p73）．このことを証明せよ．
+
+
+\証明
+\[
+	A_n	=	\sum_{i=1}^{n}	a_i	,	\quad	B_n	=	\sum_{i=1}^{n}	b_i,	\quad	B	=	\sum_{i=1}^{\infty}	b_i
+\]
+とおき，
+\begin{align*}
+	C_n	&=	c_1	+	c_2	+	\cdots	+	c_n	\\
+			&=	a_1	b_1	+	(a_1 b_2	+	a_2	b_1)	+	\cdots	+	(a_1	b_n	+	\cdots	+	a_n	b_1)	\\
+			&=	a_1	B_n	+	a_2	B_{n-1}	+	\cdots	+	a_n	B_1
+\end{align*}
+とおく．$B_n	-	B	=	\varepsilon_n$とおくと$n	\to	\infty$のとき$\varepsilon_n	\to	0$．
+
+一方$C_n	=
+(a_1	+	a_2	+	\cdots	+	a_n)	B - (a_1	+	a_2	+	\cdots	+	a_n)	B +	a_1	B_n	+	a	_2	B_{n-1}	+	\cdots	+	a_n	B_1	
+=	A_n	B	+	(a_1	\varepsilon_n	+	a_2	\varepsilon_{n-1}	+	\cdots	+	a_n\varepsilon_1)	$と書ける．
+すなわち
+\[
+	C_n	- A_n B =	a_1	\varepsilon_n	+	a_2	\varepsilon_{n-1}	+	\cdots	+	a_n\varepsilon_1
+\]
+仮定により$\displaystyle	\sum	a_n$は絶対収束しているから，任意の正の実数$\varepsilon$に対して
+ある自然数$m$が存在し$n	>	m$ならば$|a_{m+1}	|	+	|	a_{m+2}|	+	\cdots	+	|a_n|	<	\varepsilon$
+となっている．一方$\{	\varepsilon_n	\}$は収束しているから有界であり$|\varepsilon_n	|	<K$となる
+$K$が存在する．
+すなわち
+\begin{align*}
+	|C_n	- A_n B| 
+&=	|a_1	\varepsilon_n	+	a_2	\varepsilon_{n-1}	+	\cdots	+	a_{m}\varepsilon_{n-m}	+	a_m	\varepsilon_{n-m+1}	+	\cdots	+	a_n\varepsilon_1|	\\
+&\leqq
+	|a_1	\varepsilon_n|	+	|	a_2	\varepsilon_{n-1}|		+	\cdots	+	|	a_{m}\varepsilon_{n-m}|	+	|	a_{m+1}	\varepsilon_{n-m+1}|	+	\cdots	+	|	a_n\varepsilon_1|	\\
+&\leqq
+	|a_1	\varepsilon_n|	+	|	a_2	\varepsilon_{n-1}|		+	\cdots	+	|	a_{m}\varepsilon_{n-m}|	+	|	a_{m+1}	K|	+	\cdots	+	|	a_n	K|	\\
+&\leqq
+	|a_1	\varepsilon_n|	+	|	a_2	\varepsilon_{n-1}|		+	\cdots	+	|	a_{m}\varepsilon_{n-m}|	+	K(|	a_{m+1}|	+	\cdots	+	|	a_n|)
+\end{align*}
+また$\max	\{	\varepsilon_{n-m},	\varepsilon_{n-m+1},	\cdots	,	\varepsilon_n	\}	=	\eta_n$
+とすると，ある$n_0$が存在して$	n	>	n_0$ならば$\eta_n	<	\varepsilon$となる．
+したがって$	n>n_0$のとき
+\begin{align*}
+	|	C_n	-	A_n	B|	&	\leqq	\eta_n(|a_1|	+	|a_2|	+	\cdots	+	|a_m	|	)	+	K(	|a_{m+1}|	+	|a_{m+2}|	+	\cdots	+	|a_n|)	\\
+									&	<	\varepsilon	(	|a_1|	+	|a_2|	+	\cdots	+	|a_{m}	|	)	+	K	\varepsilon	.
+\end{align*}
+\footnote{
+$m$を中心にして，上下に$n$が広がっている。
+}
+よって$\displaystyle	\lim	C_n	=	\lim (A_n	B)	=	(\lim	A_n)	B	=AB$が成り立つ．
+\■
+
+\textbf{39}　級数
+$\displaystyle	1	+	\left(	\frac{1}{2}	\right)^p
++	\left(	\frac{1	\cdot	3}{2	\cdot	4}	\right)^p
++	\left(	\frac{1	\cdot	3	\cdot	5}{2	\cdot	4	\cdot	6}	\right)^p
++	\cdots
+$は$p	>	2$のとき収束し$	p	\leqq	2$のとき発散する
+（藤原松三郎“微分積分学1”，P.137，問51)．このことを証明せよ（Gaussの判定法を適用せよ）．
+
+\証明
+$n	\geqq	2$のとき
+\[
+	a_n	=
+\left\{
+	\frac{1	\cdot	3	\cdot	\cdots	\cdot	(2n-3)}{2	\cdot	4	\cdot	\cdots	\cdot	(2n-2)}
+\right\}^p
+\]
+とおくと
+\begin{align*}
+	\frac{a_n}{a_{n+1}}
+&=
+	\left(	\frac{2n}{2n-1}	
+	\right)^p
+=	\left(	\frac{1}{\displaystyle	1	-	\frac{1}{2n}}
+	\right)^p	\\
+&=\left\{	1	+	\frac{1}{2n}	+	\left(	\frac{1}{2n}	\right)^2	+	\cdots	
+	\right\}^p
+=	1	+	\frac{\frac{p}{2}}{n}	+	O\left(\frac{1}{n^2}	\right)
+\end{align*}
+である．これにGauss の判定法
+\footnote{\small
+\textbf{Gaussの判定法}
+
+正項級数$\displaystyle	\sum	a_n$において$\displaystyle	\frac{a_n}{a_{n+1}}=	1	+	\frac{\sigma}{n}	+	O\left(	\frac{1}{n^{1+\delta}}	\right)$
+とする．このとき$\sigma	>1$ならば$\displaystyle	\sum	a_n$は収束し，$\sigma	\leqq	1$ならば発散する．
+}
+を適用すればよい．
+\■
+
+\textbf{40}
+　正項級数$	\displaystyle	\sum_{n=1}^{\infty}	a_n	$は
+$	\displaystyle	\liminf_{n\rightarrow\infty}	n	\left(	\frac{a_n}{a_{n+1}}	-1	\right)	>1$
+なるとき収束し，$\displaystyle	\limsup_{n\rightarrow\infty}	n	\left(	\frac{a_n}{a_{n+1}}	-1	\right)
+<	1$なるとき発散する（Raabeの判定法）．このことを証明せよ．
+
+\証明
+下限の定義によりある番号$m$から先の$n$に対して
+\[
+	n	\left(
+			\frac{a_n}{a_{n+1}}	-	1
+		\right)	\geqq	\rho	>	1
+\]
+つまり
+\[
+	na_n	-	(n+1)	a_{n+1}	\geqq	(\rho	-1)	a_{n+1}
+\]
+が成り立つ．$n	\geqq	m$のとき
+$n	=	m,	m+1,	\cdots	,	n	$とおいて辺辺加えると
+\begin{align*}
+		m	a_m	-	(m+1)	a_{m+1}				&\geqq	(\rho	-1)	a_{m+1}	\\
+	(m+1)a_{m+1}	-	(m+2)	a_{m+2}	&\geqq	(\rho	-1)	a_{m+2}	\\
+	(m+2)a_{m+2}	-	(m+3)	a_{m+3}	&\geqq	(\rho	-1)	a_{m+3}	\\
+	&\cdots	\\
+	na_n	-	(n+1)	a_{n+1}	&\geqq	(\rho	-1)	a_{n+1}	\\
+	&\Longrightarrow	\\
+	m	a_m	-	(n+1)	a_{n+1}	&\geqq	(	\rho	-	1)	\{	a_{m+1}	+	\cdots	+	a_{n+1}	\}.
+\end{align*}
+\footnote{
+$a	>	b,	c	>	d$ならば$a+c	>	b+d$．なぜならば$	a+c	>	a+d	>	b+d$．
+}
+ゆえに
+\[
+	a_{m+1}	+	\cdots	+	a_{n+1}	\leqq
+\frac{1}{\rho	-1}	(	m	a_m	-	(n+1)	a_{n+1}	)	<	\frac{1}{\rho	-1}	m	a_m.
+\]
+ここで$	a_1	+	\cdots	+	a_m	=	K$とおくと部分和
+\[
+	A_n	=	\sum_{k=1}^{n}	a_k	<	\sum_{k=1}^{n+1}	a_k	<	K	+	\frac{1}{\rho	-	1}	m	a_m
+\]
+は上に有界となるから$\{	A_n	\}$は収束する．
+
+次に発散の場合であるが，$	\displaystyle	\rho	=	\limsup_{n\rightarrow\infty}
+n	\left(
+		\frac{a_n}{a_{n+1}}	-1
+	\right)
+$とおくと，仮定より$	\rho	<	1$であるから
+上極限の性質{
+\footnote{
+\S \ref{sec1x5x3} 上極限の性質の(ⅰ)
+}
+}より$\varepsilon	=	1	-	\rho$に対しても，
+\[
+	n	\left(
+			\frac{a_n}{a_{n+1}}	-	1
+		\right)
+		<	\rho	-	\varepsilon	=	1
+\]
+を満たす$n$が無数に存在する．これらの$n$のうち最小のものを$N$とおく．
+$n	\geqq	N$なる$n$については，
+\begin{align*}
+	\frac{a_n}{a_{n+1}}	-1	<	\frac{1}{n}	
+&\Rightarrow	\frac{a_n}{a_{n+1}}	<	1	+	\frac{1}{n}	\\
+&\Rightarrow	\frac{a_{n+1}}{a_n}	>	\frac{n}{n+1}	>	\frac{n-1}{n}	\\
+&\Rightarrow	a_{n+1}	>	\frac{n-1}{n}	a_n
+\end{align*}
+であるが，帰納的に
+\[
+	a_{n}	>	\frac{n-2}{n-1}	\frac{n-3}{n-2}	\cdots	\frac{N-1}{N}	a_N	=	\frac{N-1}{n-1}	a_N	>	\frac{1}{n-1}	a_N	>	\frac{1}{n}	a_N
+\]
+$\displaystyle	\sum_{k=N+1}^{\infty}	\frac{1}{k-1}$は発散し
+\footnote{
+例1.4
+}
+，
+（\ref{eq5x11}）より，したがって，$	\displaystyle	\sum_{n=1}^{\infty}	a_n$は発散する．
+\■
+
+\textbf{41}
+　級数$\displaystyle	1	+	\frac{a}{b}	+	\frac{a(a+1)}{b	(b+1)}	+	\frac{a	(a+1)(a+2)}{b	(b+1)	(b+2)}	+	\cdots	$は
+$	b-1	>	a	>	0$なるとき収束することを証明せよ．
+
+\証明
+\[
+	a_n	=	\frac{a	(a+1)	\cdots	(a+n-1)}{b	(b+1)	\cdots	(b+n-1)}
+\]
+とおく．
+\begin{align*}
+	n	\left(
+			\frac{a_n}{a_{n+1}}	-1
+		\right)
+	&=
+	n	\left(	\frac{	\displaystyle
+								\frac{	a	(a+1)	\cdots	(a+n-1)}{b	(b+1)	\cdots	(b+n-1)}
+						}{	\displaystyle
+								\frac{a	(a+1)	\cdots	(a+n-1)	(a+n)}{	b	(b+1)	\cdots	(b+n-1)	(b+n)}
+						}	-	1
+		\right)	\\
+	&=
+	n	\left(
+			\frac{b+n}{a+n}
+		-1
+		\right)
+	=
+		\frac{b-a}{\displaystyle	\frac{a}{n}	-1}	\to	b-a > 1
+\end{align*}
+であるから問題40のRaabeの判定法を適用すると収束することがわかる．
+\■
+
+\textbf{42}
+	区間$[0,	+	\infty)$において一様に$0$に収束する連続関数列
+$\{	f_n	(x)	\}$で$\displaystyle	\int_0^{+\infty}	f_n	(x)	dx	=	1$なるものの例を挙げよ．
+
+\証明
+定積分$\displaystyle	\int_0^{+\infty} \frac{dt}{t^2+1}	=	\frac{\pi}{2}$の積分変数$t$を
+$	x	=	nt$，$n$は自然数，に変換すると
+\[
+	\int_0^{+\infty} \frac{dt}{t^2+1}
+=	\int_0^{+\infty}	\frac{\displaystyle	\frac{dx}{n}}{\displaystyle	\frac{x^2}{n^2}	+1}
+=	\int_0^{+\infty}	\frac{n	dx}{x^2	+	n^2}
+=	\frac{\pi}{2}
+\]
+となる．$\displaystyle	f_n	(x)	=	\frac{2}{\pi}\frac{n}{x^2+n^2}$とおくと
+$\displaystyle	\int_0^{+\infty}	f_n(x)	dx=1$．$\displaystyle	f_n(x)	\leqq	\frac{2}{\pi}	\frac{1}{n}$であるから
+関数列$\{	f_n(x)\}$は一様に$0$に収束する.
+\■
+
+\footnote{\small 微小なものでも無限に積み重ねれば$1$になる．
+というのも，$\displaystyle	\lim_{n\rightarrow\infty}	\int	=	\int	\lim_{n\rightarrow\infty}$であるから，
+$\displaystyle	1	=	\lim_{n\rightarrow\infty}	0$ということを示している例だから．
+}
+
+\textbf{43}
+　巾級数$\displaystyle	1	+	\sum_{n=1}^{\infty}	\frac{(n!)^2}{(2n)!}	x^n$の収束半径を求めよ．
+
+\証明
+$\displaystyle	a_n	= \frac{(n!)^2}{(2n)!}$とおいて，
+$n$と$n+1$の場合の比（公比）を計算してみる．
+\[
+	\lim_{n\rightarrow\infty}	\frac{a_{n+1}x^{n+1}}{a_nx^n}
+	=
+	\lim_{n\rightarrow\infty}	\frac{(n+1)^2x}{(2n+2)(2n+1)}
+	=
+	\frac{x}{4}
+\]
+$x	>0$とすると，\textbf{ダランベール（d'Alembert）の判定法}
+\footnote{\small
+実数や複素数を項にもつ級数が、収束するか発散するかを判定する方法。級数における前後の項の比を考え，
+もしこの比の極限が 1 未満であれば、級数は絶対収束する。すなわち，
+\[
+\lim_{n\rightarrow\infty}	
+\left|
+	\frac{a_{n+1}}{a_n}
+\right|
+	<	1
+\]
+であれば，級数$\displaystyle	\sum_{n=1}^{\infty}	a_n$は絶対収束する。また
+\[
+	\lim_{n\rightarrow\infty}
+\left|	\frac{a_{n+1}}{a_n}
+\right|	>	1
+\]
+であれば，級数は発散する．もし極限がちょうど$1$であれば，級数は収束する場合もあるし，
+発散する場合もある．
+}
+により，$\displaystyle	1	+	\sum_{n=1}^{\infty}	a_n	x^n$
+は$x	<	4$のとき収束し$x	>	4$のとき発散する．ゆえに求める収束半径は$4$である．
+\■
+
+
+\textbf{44}
+　$f_n(x)	,	n=1,2,3,	\cdots$，は区間$I$で連続な$x$の関数で$f_n	(x)	>	-1$であるとする．
+級数$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$が区間$I$において一様に絶対収束するならば
+無限積$\displaystyle	\prod_{n=1}^{\infty}	(1+	f_n(x))$は$I$において連続な$x$の関数である．
+このことを証明せよ．
+
+\証明
+仮定より$\sum	f_n(x)$が一様に絶対収束するとき，十分大きな$n_0$から先の$n$について
+$(f_n	(x))^2	<	|	f_n(x)|$であるから
+\footnote{
+$\varepsilon	<1$の場合に成り立つ。
+}
+$\sum	(f_n	(x))^2$も一様に収束する．
+\footnote{
+(\ref{eq5x21})の辺の記述を参考。
+
+}
+さらに$|	f_n	(x)	|	<	1/4	$となるから，（\ref{eq5x56}）より$	|	\log	(1+	f_n(x))	-	f_n(x)	|	<	f_n^2(x)$
+となり，$	\sum	\{	\log	(1+	f_n(x))	-	f_n	(x)	\}$は一様に絶対収束する．
+したがって
+\[
+	\sum	\log	(1	+	f_n	(x))	=	\sum	\{	\log	(1+	f_n(x))	-	f_n	(x)	\}	+	\sum	f_n	(x)
+\]
+も一様に絶対収束する．ゆえに$\sum	\log	(1+f_n(x))	=	\log	\prod	(1+f_n(x))$は$x$の
+連続関数
+\footnote{
+定理5.5$(2^\circ)$
+}
+，したがって$\displaystyle	\text{exp}\left( \log\prod (1+f(x))\right) =\prod_{n=1}^\infty	(1+f_n(x))$も$x$の連続関数である．
+\■

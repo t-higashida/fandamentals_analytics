@@ -1,0 +1,217 @@
+\subsection{Taylorの公式}
+
+$1$変数の関数に関する Taylor の公式（\ref{eq3x39}）
+\begin{align*}	
+	f(x)	&=	f(a)	+	\frac{f'(a)}{1!}	(x-a)	+	\frac{f''(a)}{2!}	(x-a)^2	+\cdots	+	\frac{f^{(n-1)}(a)}{(n-1)!}	(x-a)^{n-1}	+	R_n,	\notag	\\
+				&\quad	R_n	=	\frac{f^{(n)}(\xi)}{n!}	(x-a)^n,	\quad	\xi=a+	\theta(x-a),	\quad	0	<	\theta	<	1,
+\end{align*}
+は，$x$を$a+h$で置き換えれば，
+\begin{align*}
+	f(a+h)	
+			&=	f(a)	+	\frac{f'(a)}{1!}h
+				+	\frac{f''(a)}{2!}h^2
+				+	\cdots
+				+	\frac{f^{(n-1)}(a)}{(n-1)!}	h^{n-1}
+				+	R_n, \\
+&\quad
+	R_n = \frac{f^{(n)}(a+	\theta h ) }{n!} h^2, 
+	\quad	0	<	\theta	< 1,
+\end{align*}
+と書かれる．本項ではこの公式の$2$変数の関数への拡張について述べる．
+
+$f(x,y)$を領域$D$で定義された$\mathcal{C}^\infty$級の関数，
+$A=(a,b)$を$D$に属する一つの点とし，
+点$P=(a+h	,	b+k)$に対して線分
+$AP	=	\{	(a+th,	b+tk)	\:	|	\:	0	\leqq	t	\leqq	1	\}$
+が$D$内に在るとする．
+\footnote{
+それ以外の点$P$（つまり，線分$AP$が$D$に属さないような点$P$については除外して考えており，
+そのような場合に，Taylorの公式を拡張できるかどうかは，今のところ定かではない。
+}
+このとき十分小さい正の実数$\varepsilon$については
+\[
+	-	\varepsilon	<	t	<	1	+	\varepsilon	
+	\quad	\text{ならば}	\quad
+	(a	+	t	h	,	b+	t	k)	\in	D
+\]
+となるから，$	f(a	+	th,	b+tk)$は，
+定理6.11
+\footnote{
+\定理{6.l1}
+$\varphi	(t)	,	\psi	(t)$が$t$について$n$回連続微分可能，$f(x,y)$が$D$で$x,y$
+について$n$回連続微分可能ならば$f(\varphi	(t)	,	\psi	(t))$は$n$回連続微分可能な$t$の関数
+である．	
+}
+により，開区間$(	-	\varepsilon	,	1	+	\varepsilon)$で定義された
+\underline{$t$の}$n$回連続微分可能な関数となる．（\ref{eq6x18}）
+\begin{equation*}
+	\frac{d}{dt}	f(	\varphi	(t),	\psi	(t)	)	
+	=
+	f_x	(	\varphi	(t),	\psi	(t))	\varphi'	(t)	+	f_y	(	\varphi	(t),	\psi	(t))	\psi'(t).
+\end{equation*}
+により
+\[
+	\frac{d}{dt}	f(a	+	th,	b	+	tk)
+	=	h	f_x	(	a+th	,	b	+	tk)	+	k	f_y(	a+	th	,	b	+	tk).
+\]
+この右辺を$2$変数$x,y$の関数:
+\[
+	\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}
+	\right)	f(x,y)
+	\stackrel{\text{def}}{=}
+	h	f_x	(x,y	)	+	k	f_y(	x,y)
+\]
+に$x	=	a+	th,	y	=	b+	tk$を代入したものと考えて，
+\[
+	\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}	\right)
+	f(	a+	th,	b	+	tk)
+\]
+と書くことにすれば，すなわち
+\[
+	\frac{d}{dt}
+	f(a+	th	,	b	+	tk)
+	=
+	\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}
+	\right)	f(a	+	th,	b+tk).
+\]
+この式において
+$f(x,y)$を$	(	h	\partial / \partial x + k \partial / \partial y) f(x,y)$で置き換えれば
+\[
+	\frac{d^2}{dt^2}
+	f	(a+	th	,	b	+	tk)
+	=
+	\left(	h	\frac{\partial }{\partial x}	+	k \frac{\partial }{\partial y}
+	\right)^2
+	f(a	+	th,	b+	tk)
+\]
+を得る．
+もちろん$	(	h	\partial / \partial x + k \partial / \partial y)^2$
+は$	(	h	\partial / \partial x + k \partial / \partial y)(h \partial / \partial x + k \partial / \partial y)$
+を意味する．同様にして$n$以下の任意の自然数$m$に対して
+\begin{equation}
+	\frac{d^m}{dt^m}
+	f	(	a	+	th,	b	+	tk	)
+	=
+	\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}
+	\right)^m
+	f	(a	+th,	b+tk)
+\label{eq6x27}
+\end{equation}
+を得る．$F(t) = f( a+ th, b + tk)$
+とおけば，Taylor の公式（\ref{eq3x39}）
+\begin{align*}
+	f(x)	&=	f(a)	+	\frac{f'(a)}{1!}	(x-a)	+	\frac{f''(a)}{2!}	(x-a)^2	+ \cdots	+	\frac{f^{(n-1)}(a)}{(n-1)!}	(x-a)^{n-1}	+	R_n,	\notag	\\
+				&	R_n	=	\frac{f^{(n)}(\xi)}{n!}	(x-a)^n,	\quad	\xi=a+	\theta(x-a),	\quad	0	<	\theta	<	1,
+\end{align*}
+により，$	-	\varepsilon	<	 t < 1	+ \varepsilon$のとき
+\begin{align*}
+	F(t)
+&=	F(0) + \frac{F'(0)}{1!}t +\frac{F''(0)}{2!}t^2 + \cdots + \frac{F^{(n-1)}(0)}{(n-1)!}t^{n-1} + R_n, \\
+&\quad
+	R_n = \frac{F^{(n)}(\theta t) }{n!} t^n , \quad 0 < \theta < 1.
+\end{align*}
+この式はもちろん$t=1$のときに成り立つから，$t=1$
+\footnote{
+定義域は開区間$(-\varepsilon < t < 1 + \varepsilon)$．
+}
+とおけば，（\ref{eq6x27}）により
+\begin{align}
+		f(a	+	h	,	b	+	k)
+&	=	f(a,b)
+		+ \sum_{m=1}^{n-1}	\frac{1}{m!}	
+			\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}
+			\right)^m	f(a,b)	+	R_n,	\notag \\
+&	\quad
+	R_n	=	\frac{1}{n!}
+	\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}
+\right)^n	f(a	+	\theta	h	,	b	+	\theta	k),
+\quad	0	<	\theta	<	1.
+\label{eq6x28}
+\end{align}
+これが$2$変数の関数に関する Taylor の公式である．
+
+定理6.7により
+$	(	h	\partial / \partial x + k \partial / \partial y )^m f(x,y)$
+において$	(	\partial / \partial x) ( \partial / \partial y) = ( \partial / \partial y)(\partial / \partial x)$
+としてよいから，2項定理を用いて計算すれば
+\footnote{\small
+	\S \ref{sec6x2x4}	と数学的帰納法による.
+}
+\begin{align*}
+	\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}
+	\right)^2	f(x,y)
+&=		
+	\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}
+	\right)
+	\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}
+	\right)
+f(x,y)	\\
+&=
+	\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}
+	\right)
+	\left(	h	\frac{\partial f(x,y)}{\partial x}	+	k	\frac{\partial f(x,y)}{\partial y}
+	\right)	\\
+&=
+	\left(	h^2	\frac{\partial^2 f(x,y)}{\partial x^2}
+			+		hk	\frac{\partial^2 f(x,y)}{\partial x \partial y}
+			+		kh	\frac{\partial^2 f(x,y)}{\partial y \partial x}
+			+		k^2	\frac{\partial^2 f(x,y)}{\partial x	\partial y}
+	\right)	\\
+&=
+	\left(	h^2	\frac{\partial^2 f(x,y)}{\partial x^2}
+			+		2 hk	\frac{\partial^2 f(x,y)}{\partial x \partial y}
+			+		k^2	\frac{\partial^2 f(x,y)}{\partial y^2}
+	\right)	\\
+\left(	h	\frac{\partial }{\partial x}	+	k	\frac{\partial }{\partial y}
+	\right)^m	f(x,y)	
+&=	\sum_{q=0}^{m}	\binom{m}{q}	h^{m-q}	k^q	\frac{\partial^m f(x,y)}{\partial x^{m-q} \partial y^q}	
+\end{align*}
+を得る．$\displaystyle	\binom{m}{q}=\frac{m!}{p!q!},	p	=	m-q$であるから，
+したがってTaylor の公式（\ref{eq6x28}）は
+\begin{align}
+	f(	a	+	h,	b+k)
+		&=	f(a,b)	+	\sum_{1 \leq p+q \leq n-1 }^{}
+			\frac{1}{p!q!} \frac{\partial^{p+q} f(a,b)}{\partial x^p \partial y^q} h^p k^q + R_n, \notag \\
+	R_n	&=	\sum_{p+q=n}
+			\frac{1}{p!q!} \frac{\partial^n}{\partial x^p \partial y^q} f(a + \theta h , b + \theta k) h^p k^q, \quad 0 < \theta < 1,
+	\label{eq6x29}
+\end{align}
+と書かれる．ここで$ \partial^{p+q} f(a,b) / \partial x^p \partial y^q$は偏導関数
+$\partial^{p+q} f(x,y) / \partial x^p \partial y^q$の
+$x = a, y=b$における値であって，$\displaystyle	\sum_{1 \leq p+q \leq n-1}^{}$
+は$1 \leqq p + q \leqq n-1$なる条件を満たす負でない整数$p,q$のすべての対$(p,q)$についてとった和を，
+$\displaystyle	\sum_{p+q=n}^{}$は$p+q=n$なる負でない整数$p,q$のすべての対$(p,q)$についての和を表わす．
+$R_n$を剰余項という．
+
+$	x=	a+h,	y=b+k$とおけば（\ref{eq6x29}）は
+\begin{align}
+f(x,y)
+		&= f(a,b) + \sum_{1 \leq p+q \leq n-1}^{}
+								\frac{1}{p!q!} \frac{\partial^{p+q} f(a,b)}{\partial x^p \partial y^q} (x-a)^p (y-b)^q + R_n, \notag \\
+		& \quad R_n = \sum_{p+q=n}^{}	\frac{1}{p!q!} \frac{\partial^{p+q} f( \xi , \eta)}{\partial x^p \partial y^q}
+					(x-a)^p  (y-b)^q, \notag \\
+		&	\quad	\xi = a + \theta ( x-a ) \quad	, \eta = b + \theta ( y -b) , \quad 0 < \theta < 1 ,
+\label{eq6x30}	
+\end{align}
+となる．
+
+線分$AP$が$D$内に在るような点$P=(x,y)$の全体の集合を$D_A$で表わす：
+\footnote{
+境界がくぼんでいない集合（凸集合）
+}
+$D_A = \{ P \: | \: AP \subset D \: \}$は明らかに$D$の部分領域である．
+Taylor の公式（\ref{eq6x30}）においてはもちろん$(x,y) \in D_A$と仮定しているのである．
+$f(x,y)$が$\mathcal{C}^\infty$級の関数ならば任意の自然数$n$に対して（\ref{eq6x30}）が成り立つ．
+このとき或る領域$W, A \in W \subset D_A$，の各点$(x,y)$において
+\[
+	\lim_{n\rightarrow\infty} R_n = 0 
+\]
+となるならば，$f(x,y)$は$W$において無限級数の和として
+\begin{equation}
+	f(x,y) = f(a,b)
++ \sum_{n=1}^{\infty}	
+	\sum_{p+q=n}^{}
+	\frac{1}{p!q!} \frac{\partial^{p+q} f(a,b)}{\partial x^p \partial y^q} (x-a)^p (y-b)^q
+\label{eq6x31}
+\end{equation}
+と表わされる（と定義する，定義して妥当である）．

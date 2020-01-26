@@ -1,0 +1,130 @@
+\section{無限級数の微分積分}
+\subsection{一様収束する級数}
+\label{sec5x4x1}
+
+\定理{5.8}
+$f_n(x),	n=1,2,3,	\cdots	,	$が区間$[a,b]$で連続な関数で
+関数列$\{	f_n	(x)	\}$が$[a,b]$で一様に収束するならば，
+極限$\displaystyle	f(x)	=	\lim_{n\rightarrow\infty}	f_n(x)$も$[a,b]$で連続で
+\begin{equation}
+	\int_a^b	f(x)	dx	=	\lim_{n\rightarrow\infty}	\int_a^b	f_n(x)	dx,
+	\quad	f(x)	=	\lim_{n\rightarrow\infty}	f_n(x).
+\label{eq5x25}
+\end{equation}
+\footnote{
+	極限と積分の順序を交換できる．
+}
+
+\証明
+$f(x)$が$[a,b]$で連続であることはすでに定理5.5,$(1^\circ)$で証明した．
+仮定により任意の正の実数$\varepsilon$に対応して自然数$n_0	(	\varepsilon)$が
+定まって，$a	\leqq	x	\leqq	b$のとき
+\[
+	n	>	n_0(	\varepsilon)	\quad	\text{ならば}	\quad
+	|	f_n	(	x)	-	f(x)	|	<	\varepsilon
+\]
+となる．したがって，\S	\ref{sec4x1}，定理4.1により，
+\[
+	\left|	\int_a^b	f_n(	x)	dx	-	\int_a^b	f(x)	dx
+	\right|
+	\leqq
+	\int_a^b	|f_n	(	x)	-	f(x)	|	dx
+	<
+	\int_a^b	\varepsilon	dx	=	\varepsilon	(b-a).
+\]
+故に$\displaystyle	\lim_{n\rightarrow\infty}	\int_a^b		f_n(x)	dx	=	\int_a^b	f(x)	dx$．
+\■
+
+\例{5.8}
+$f_n	(x)$を例5.5で定義した区間$[0,3]$で連続な関数とし，
+$g_n(x)	=	n	f_n(x)$とおけば，各点$x	,	0	\leqq	x	\leqq	3$，
+において$\displaystyle	\lim_{n\rightarrow\infty}	g_n	(x)	=	0$となるが，
+\begin{align*}
+	\int_0^3	g_n(x)	dx	&=	n	\int_0^3	f_n(x)	dx	\\
+												&=	n	\int_0^{1/n}	nx	dx	+	n	\int_{1/n}^{2/n}	(2-nx	)	dx	\\
+												&=	n	\left[
+																\frac{n}{2}x^2
+															\right]_0^{1/n}
+															+
+														n	\left[
+																2x	-	\frac{n}{2}x^2
+															\right]_{1/n}^{2/n}	\\
+												&=	n	\left(
+																\frac{n}{2}	\frac{1}{n^2}
+															\right)
+															+
+														n	\left\{
+																2	\frac{2}{n}
+															-	\frac{n}{2}	\frac{4}{n^2}
+															-	\left(
+																	2	\frac{1}{n}	-	\frac{n}{2}\frac{1}{n^2}
+																\right)
+															\right\}	\\
+												&=	1
+\end{align*}
+したがって$\displaystyle	\lim_{n\rightarrow\infty}	\int_0^3	g_n	(x)	dx	=	1$
+は$\displaystyle	\int_0^3	\lim_{n\rightarrow\infty}	g_n	(x	)	dx	=	0$と
+等しくならない．このように，（\ref{eq5x25}）は無条件では成立しない．
+\□
+
+\pagebreak
+
+\定理{5.9}
+関数$f_n	(x)$はすべて区間$I$で連続であるとする．
+\begin{list}{}{}
+	\item	$(1^\circ)$	級数$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)	$が$I$で一様に収束すれば，
+$I$に属する任意の2点$c,	x$に対して，
+\begin{equation}
+	\int_c^x	\sum_{n=1}^{\infty}	f_n(x)	dx	=	\sum_{n=1}^{\infty}	\int_c^x	f_n	(x)	dx.
+\label{eq5x26}
+\end{equation}
+	\item	$(2^\circ)$	各関数$f_n	(x)$が$I$で連続微分可能，$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$
+が$I$で収束し，さらに$\displaystyle	\sum_{n=1}^{\infty}	f_n'	(x)$が$I$で一様に収束するならば，
+和$\displaystyle	\sum_{n=1}^{\infty}	f_n	(x)$も$I$で連続微分可能で
+\begin{equation}
+	\frac{d}{dx}	\sum_{n=1}^{\infty}	f_n	(x)	=	\sum_{n=1}^{\infty}	f_n'(x).
+\label{eq5x27}
+\end{equation}
+\end{list}
+\証明
+$(1^\circ)$	$\displaystyle	s_m	(x)	=	\sum_{n=1}^{m}	f_n	(x),		s(x)	=	\sum_{n=1}^{\infty}	f_n	(x)$
+とおけば，定理5.5，$(2^\circ)$により，$s(x)$は区間$I$で連続であって，
+仮定により関数列$\{	s_m	(x)	\}$は$s(x)$に$I$で一様に収束するから，定理5.8により
+\[
+	\int_c^x	s(x)	dx	=	\lim_{m\rightarrow\infty}	\int_c^x	s_m	(x)	dx
+	=
+	\lim_{m\rightarrow\infty}	\sum_{n=1}^{m}	\int_c^x	f_n	(x)	dx.
+\]
+すなわち（\ref{eq5x26}）が成り立つ．
+
+$(2^\circ)$	$\displaystyle	t(x)	=	\sum_{n=1}^{\infty}	f_n	'	(x)	$とおけば，
+\underline{$t	(x)$は$I$で連続であって}，
+\footnote{結論1}
+\footnote{
+定理5.5$(2^\circ)$
+}
+$(1^\circ)$により
+\[
+	\int_c^x	t(x)	dx	=	\sum_{n=1}^{\infty}	\int_c^x	f_n'(x)	dx	=	\sum_{n=1}^{\infty}	(f_n(	x)	-	f_n	(c)),
+\]
+\footnote{
+$(1^\circ)$の仮定部分「一様に収束すれば」は，$(2^\circ)$でも仮定としている．
+}
+したがって
+\[
+	\sum_{n=1}^{\infty}	f_n(x)	=	\int_c^x	t(x)	dx	+	C	,	\quad	C=\sum_{n=1}^{\infty}	f_n(c).
+\]
+\footnote
+{	\small
+	$\displaystyle	\sum_{n=1}^{\infty}	(f_n(x)	-	f_n(c))	=	\sum_{n=1}^{\infty}	f_n(x)	-	\sum_{n=1}^{\infty}	f_n(c)$
+が成り立つことは，定理1.15を用いて確認できそう．
+}
+故に，$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)	$は$I$で連続微分可能であって，
+$\displaystyle	\frac{d}{dx}	\sum_{n=1}^{\infty}	f_n(x)	=	t(x)$，
+すなわち（\ref{eq5x27}）が成り立つ．
+\■
+
+この定理5.9は，或る条件のもとでは，級数の和$\displaystyle	\sum_{n=1}^{\infty}	f_n(x)$を
+積分あるいは微分するには，その各項$f_n(x)$を別々に積分あるいは微分すればよいことを示す．
+級数の項を別々に積分あるいは微分することを\textbf{項別に}積分するあるいは微分するという．
+

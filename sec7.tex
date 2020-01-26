@@ -1,0 +1,215 @@
+\chapter{積分法（多変数）}
+
+\section{積分}
+まず2変数の関数の積分について述べる．
+
+\subsection{積分の定義}
+$I,J$を数直線$\R$上の区間としたとき，その直積$I \times J =\{ (x,y) \: | \: x \in I , y \in J \: \}$を
+平面$ \R^2 = \R \times \R$\textbf{上の区間}といい，$ I = [a.b] , J = [c,d]$が閉区間であるとき
+\[
+	K = I \times J =
+\{	\:
+	(x,y)	\: | \: a \leqq x \leqq b \quad , c \leqq y \leqq d
+\:	\}
+\]
+を平面$ \R^2$上の閉区間という．本章では，簡単のため，閉区間$K$をまた\textbf{矩形}とよぶことにする．
+すなわち，本章では，平面$\R^2$上の矩形といえばその辺が座標軸に平行な矩形を意味するものと約束する．
+
+$ f(x,y)$を矩形$ K = \{	\:
+	(x,y) \: | \: a \leqq x \leq b , c \leqq y \leqq d
+\:	\}$
+において連続な2変数$ x,y$の関数とすれば，$K$における$ f(x,y)$の積分は1変数の連続関数
+$ f(x)$の定積分
+$	\displaystyle	\int_a^b f(x) dx
+$
+と同様に定義される．すなわち，区間$ I = [ a,b] , J = [c,d]$をそれぞれ分点
+$
+	x_1 , x_2 , \cdots	, x_{m-1} , a< x_1 < x_2 < \cdots < x_{j-1} x_j < \cdots < x_{m-1} < b,
+	y_1	,	y_2	,	\cdots	,	y_{n-1},	c< y_1 < 				\cdots	<	y_{k-1}	<	y_k	<	\cdots	<	y_{n-1}	<	d
+$，
+によって$m$個の区間$ I_j = [ x_{j-1} , x_j	]	,	j=1,2,	\cdots	,	m$，$n$個の区間
+$
+	J_k	=	[	y_{k-1}	,	y_k	]	,	k	=	1,2	,	\cdots,	n
+$
+に分割すれば矩形	$K	=	I	\times	J$は$mn$個の小矩形
+\begin{align*}
+	K_{jk}	=	I_j	\times	J_k
+=	\{
+		(x,y)	\:	|	\:	x_{j-1}	\leqq	x	\leqq	x_j	,	y_{k-1}	\leq	y	\leqq	y_k	
+	\}	\\
+	j=1,2,	\cdots	,	m	,	\quad	k	=1,2,	\cdots,	n,
+\end{align*}
+に分割される．ここで$	x_0	=	a	,	x_m	=	b	,	y_0	=	c	,	y_n	=	d$としていることはいうまでもない．
+点集合$	\{	x_0	,	x_1	,	\cdots	,	x_m	\}	,	\{	y_0	,	y_1	,	\cdots	,	y_n	\}$の対を
+\[
+	\varDelta
+	=
+	(	\{	x_0	,	x_1	,	\cdots	,	x_m	\},	\{	y_0	,	y_1,	\cdots	,	y_n	\}
+	)
+\]
+として，この分割を矩形$K$の分割$	\varDelta $とよぶ．$K$の分割$ \varDelta $に対して各小矩形$K_{jk}$
+に属する点$P_{jk}	=	(	\xi_{jk},	\eta_{jk}	)	,	x_{j-1}	\leqq	\xi_{jk}	\leqq	x_j	,	y_{k-1}	\leqq	\eta_{jk}	\leqq	y_k$，
+を任意に一つ選んで
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=130mm,height=100mm]{p318.bmp}
+	\label{p318}
+\end{figure}
+\[
+	\sigma_\varDelta = \sum_{j=1}^{m}\sum_{k=1}^{n}	f( \xi_{jk},\varepsilon_{jk}) (x_j - x_{j-1})(y_k - y_{k-1})
+\]
+とおく．$( x_j - x_{j-1})(y_k - y_{k-1})$はいうまでもなく小矩形$K_{jk}$の面積である．
+さらに小矩形$K$沸の直径の最大値を
+\[
+	\delta [ \varDelta ] = \max_{j,k} \sqrt{(x_j - x{j-1})^2 + (y_k - y_{k-1})^2}
+\]
+
+で表わす．そうすれば$ \delta [ \varDelta ] \to 0 $ \underline{のときの} $ \sigma_\delta $ \underline{の極限}
+\[
+	s = \lim_{ \delta [ \varDelta ] \to 0} \sigma_\varDelta
+\]
+\underline{が存在する，}
+すなわち，一つの実数$s$が存在して任意の正の実数$ \varepsilon $に対応して正の実数
+$\delta ( \varepsilon ) $が定まって，
+$ \delta [ \varDelta ] < \delta ( \varepsilon ) $なる限り，
+$K$の分割と点$P_{jk} = ( \xi_{jk} , \eta_{jk})$の選び方の如何に関せず，
+\[
+	| \sigma_\delta - S | < \varepsilon
+\]
+となる．
+
+\証明
+x
+証明は153-155ページで述べた1変数の関数の場合の証明と同様である．
+すなわち，定理6.3により，$ f(x,y)$は各矩形$ K_{jk}$において最大値$M_{jk}$と最小値$\mu_{jk}$をもつ．
+\begin{align*}
+	S_\varDelta = \sum_{j=1}^{m} \sum_{k=1}^{n} M_{jk} ( x_j - x_{j-1})(y_k - y_{k-1}). \\
+	s_\varDelta = \sum_{j=1}^{m} \sum_{k=1}^{n} \mu_{jk} ( x_j - x_{j-1})(y_k - y_{k-1})
+\end{align*}
+とおけば，
+\[
+	\mu_{jk} \leqq f ( \xi_{jk}, \eta_{jk} ) \leqq M_{jk}
+\]
+であるから
+\begin{equation}
+	s_\varDelta \leqq \sigma_\varDelta \leqq S_\varDelta
+\label{sec7x1}
+\end{equation}
+一方，定理6.2により$f(x,y)$は$K$において一様連続である，すなわち，任意の
+正の実数$\varepsilon$に対応して正の実数$ \varepsilon $が定まって$K$に属する2点$(x,y)$，
+$(x',y')$について
+\[
+	\sqrt{(x-x')^2 + ( y - y')^2} < \delta ( \varepsilon ) 
+\quad \text{ならば} \quad | f(x,y) - f(x' , y') | < \varepsilon
+\]
+となる．故に$ \delta[ \varDelta ] < \delta ( \varepsilon  )$ならば
+$ M_{jk} - \mu < \varepsilon $，したがって，小矩形$K$の面積
+$x_j - x_{j-1})(y_k - y_{k-1}$の総和は$\kappa$の面積$ ( b - a ) ( d -c )$に等しいから，
+\[
+	S_\varDelta - s_\varDelta < \sum_{j=1}^{m}\sum_{k=1}^{n} (x_j - x{j-1}) (y_k - y_{k-1}) = \varepsilon ( b - a ) (d-c).
+\]
+$\delta ( \varepsilon / (b-a)(d-c)$を改めて$\varepsilon( \varepsilon )$と書くことにすれば，すなわち
+\begin{equation}
+	\delta [ \varDelta ] < \delta ( \varepsilon ) \quad \text{ならば} \quad S_\varDelta - s_\varDelta < \varepsilon
+\label{sec7x2}
+\end{equation}
+矩形$K$の任意の分割$ \varDelta' = ( \{ x_0' , x_1' , \cdots , x_h' \} , \{ y_0' , y_1 ' , \cdots , y_i' \})$に対して$\varDelta$と
+$ \varDelta'$と分点を合併して得られる$K$の分割，すなわち
+\begin{align*}
+	\{ x_0'' , x_1'' , \cdots , y_p'' \} = \{ x_0 , x_1 , \cdots , x_m \} \cup \{ y_0 ', y_1' , \cdots , x_k' \}, \\
+	\{ y_0'' , y_1'' , \cdots , y_q'' \} = \{ y_0 , y_1 , \cdots , y_n \} \cup \{ y_0' , y_1' , \cdots , y_l' \}
+\end{align*}
+とおいて得られる$K$の分割
+\[
+	\varDelta'' = ( x_0'' , x_1'' , \cdots , x_p'' \} , \{ y_0'' , y1'' , \cdots , y_q'' )
+\]
+を考え，点 $ ( \chi_{\lambda \mu} '' , \eta_{\lambda \nu ''}, x_{\lambda - 1 } '' \leqq \xi_{\lambda \nu } '' \leqq x_\lambda'',
+y_{\nu-1}'' \leqq \eta_{\lambda \nu} '' \leqq y_{\nu}''$を任意に選んで，
+\[
+	\sigma_{\varDelta ''} = \sum_{\lambda=1}^{p} \sum_{\nu=1}^{q} f( \xi_{\lambda \nu }'' , \eta_{\lambda \nu} '' ) ( x_\lambda '' - x_{\lambda -1} '' )( y_\nu'' - y_{\nu -1 } '' )
+\]
+とおく．いま$ x_{j-1} = x_\rho '' , x_j = x_\sigma '' , y_{k-1} = y_\tau '' , y_k = y_\tau''$であったとすれば，小矩形
+$K_{jk}$は分割$ \varDelta ''$においては $ ( \\sigma - \rho)( \tau - \kappa)$個の小矩形
+$ K_{\lambda \nu}'' , \lambda = \rho + 1 , \rho  +2 , \cdots \sigma , \nu = \kappa + 1 , \kappa +2 , \cdots , \tau $，に分割されて
+$ \nu_{jk} \leqq f ( \chi_{\lambda , \nu} '' , \eta_{\lambda \nu} '' )(x_\lambda '' - x_{\lambda-1}'') ( y_\nu '' - y_{\nu-1} '' )$．
+故に
+\[
+	s_\varDelta \leqq \sigma_{\varDelta ''},
+\]
+84≦σ4〃，
+同様に
+\[
+	\delta_{\varDelta''} \leqq S_{\varDelta'}.
+\]
+したがって
+\[
+	s_\varDelta \leqq S_{\varDelta'}.
+\]
+故に，矩形$K$のあらゆる分割$\varDelta$を考えれば対応する$ s_\varDelta$の全体の集合
+上限$s$が定まる：
+\[
+	s = \sup_{\varDelta } s_\varDelta
+\]
+明らかに$ s \leqq S_{\varDelta'} $であるが，
+$ \varDelta'$は任意の分割であったから，
+\[
+	s_\varDelta \leqq s \leqq S_\varDelta,
+\]
+故に，\ref{eq7x1}と\ref{eq7x2}により，
+\[
+	\delta [ \varDelta ] < \delta(\varepsilon) \quad \text{のとき} \quad | \sigma_\varDelta - s | < \varepsilon
+\]
+となる．
+\■
+
+\定義{7.1}
+$ \displaystyle s = \lim_{\delta [ \varDelta ]\rightarrow 0} \sigma_\varDelta$を
+矩形$K = 
+\{ (x,y) \: | \: a \leqq x \leqq b , c \leqq y d 
+\}
+$における$ f(x,y)$の積分あるいは$f(x,y)$の$K$上の積分といい，記号
+$ \displaystyle \int_K f(x,y) dxdy$で表わす：
+\begin{equation}
+	\int_K f(x,y) dxdy = \lim_{\delta [ \varDelta ] \rightarrow 0} \sum_{j=1}^{m} \sum_{k=1}^{n}
+	f (\chi_{jk}, \varepsilon_{jk})(x_j - x{j-1})( ( y_k - y_{k-1}).
+\label{sec7x3}
+\end{equation}
+積分$ \displaystyle \int_K f(x,y) dx dy$を求めることを$f(x,y)$を$K$上で積分するという．
+$ \displaystyle \int_K f(x,y) dxdy$をまた記号$ \displaystyle \int_a^b \int_c^d f(x,y) dx dy$で表わす：
+\[
+	\int_a^b \int_c^d f(x,y) dx dy
+= \lim_{\delta [ \varDelta ]\rightarrow 0} 
+	\sum_{j=1}^{m}	\sum_{k=1}^{n}	f(	\xi_{jk} , \eta_{jk}) ( x_j - x_{j-1} ) ( y_k y_{k-1}).
+\]
+
+この左辺の形の積分を\textbf{2重積分} ( double integral ) という．
+$
+	\displaystyle	\int_a^b \int_c^d f(x,y) dxdy
+$
+における変数$x,y$を積分変数ということは1変数関数の定積分の場合と同様である．
+$
+f(\xi_{jk}, \eta_{jk}) = f(P_{jk}), P_{jk} = ( \eta_{jk} , \eta_{ik}) , \omega_{jk} = (x_j - x_{j-1})(y_k - y_{k-1})
+$
+とおけば，（\ref{eq7x3}）は
+\begin{equation}
+	\int_K f(x,y) dx dy = \lim_{\delta [ \varDelta ]\rightarrow 0} \sum_{j=1}^m \sum_{k=1}^{n} f(P_{jk}) \omega_{jk}
+\label{sec7x4}
+\end{equation}
+と書かれる．この書き方にしたがって，$ f(P) = f(x,y), P=(x,y)$，とおいて'
+積分
+$
+	\int_K f(x,Y) dx dy
+$
+を
+$
+	\int_K f(P) d w
+$
+などと略記することがある．
+
+
+%b)積分の性質
+%つぎの定理は1変数の関数の定積分の性質に関する定理4.1の類似である.
+%(z3)五姻繭一脇属混∫(ξ幽卿・一伽)(翫一伽)・・
+%積砿、、
+%∫ゆ，ッ)伽吻をまた記号∫(ω，雪)伽@で表わす:
+%π∫剛繭一撫紬(ξ幽η沸)瞬μ)(彿一伽).

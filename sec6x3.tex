@@ -1,0 +1,260 @@
+\section{極限の順序}
+\subsection{極限の順序}
+\label{sec6x3}
+
+2重数列$\{\alpha{mn}\}$について極限$ \displaystyle	\alpha_m = \lim_{n\rightarrow \infty}	a_{mn}$が存在すると
+仮定する．$ \alpha_m = \lim_{n\to \infty} a_{mn}$
+
+は任意の正の実数$ \varepsilon$に対応して自然数$ n_0 ( \varepsilon , m)$が定まって
+\[
+	n > n_0 ( \varepsilon , m ) \quad \text{のとき} \quad | a_{mn} - \alpha_m | < \varepsilon
+\]
+となることを意味するが，一般には$ n_0( \varepsilon , m)$は$m$にも関係する．
+もしもここで$ n_0(\varepsilon , m ) = n_0( \varepsilon $を$m$に無関係に定めることができるならば
+$ n \to \infty$のときの$ a_{mn}$の$\alpha_m$への収束は\textbf{$m$に関して一様}である，
+$ a_{mn} \to \alpha_m \: ( n \to \infty)$の収束は$m$に関して一様である，
+また，$ n \to \infty$のとき$a_{mn}$は$m$に関して一様に$\alpha_m$に収束するという．
+
+前節の例6.9で見たように$\displaystyle \lim_{m\rightarrow \infty}\lim_{n\rightarrow \infty}	a_{mn}$
+が存在しても$\displaystyle	\lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}$が存在するとは
+限らない．しかし$ n \to \infty$\underline{のとき} $ a_{mn}$ \underline{が}$m$ \underline{に関して一様に}
+$ \alpha_m$ に収束し$m \to \infty$ \underline{のとき} $ \alpha_m$ \underline{が}
+$ \alpha $ \underline{に収束するならば2重数列} $\{a_{mn}\}$ \underline{は} $ \alpha$
+\underline{に収束する}:
+$\displaystyle \lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}} a_{mn} = \alpha$．
+
+\証明
+
+任意の正の実数$ \varepsilon $に対応して自然数$ n_0( \varepsilon ) , m_0 ( \varepsilon )$
+が定まって
+\begin{align*}
+	n > n_0( \varepsilon ) \quad \text{のとき} \quad | a_{mn} - \alpha_m | < \varepsilon, \\
+	m > m_0( \varepsilon ) \quad \text{のとき} \quad | a_{m} - \alpha | < \varepsilon
+\end{align*}
+となるから，
+\[
+	m > m_0( \varepsilon ) , n > n_0 ( \varepsilon ) \quad \text{のとき} \quad | a_{mn} - \alpha | < 2 \varepsilon.
+\]
+故に$ \displaystyle \lim_{\substack{m\rightarrow \infty \\n\rightarrow \infty \\}}	a_{mn} = \alpha$．
+\■
+
+2重数列$ \{ \alpha_{mn} \}$はすなわち$ \N \times \N$で定義された2変数$m,n$の関数であるが，
+数直線上の二つの区間$I,J$の直積$I \times J$で定義された2変数$x,y$の関数
+$f(x,y)$についても同様な結果が成り立つ．
+
+$f(x,y)$が$x$を固定したとき$y$について連続であるとすれば，各$b \in J$に対して
+$ \lim_{y\rightarrow 0} f(x,y) = f(x,b)$である．
+この収束が$x$に関して一様であるとき，すなわち任意の正の実数
+$ \varepsilon $に対応して$x$に無関係な正の実数$ \delta ( \varepsilon ) = \delta ( \varepsilon ( \varepsilon , b)$が定まって
+\[
+	|y-b | < \delta ( \varepsilon ) \quad \text{ならば} \quad 
+| f(x,y) - f(x,b) | < \varepsilon
+\]
+となるとき，関数$f(x,y)$は$ x $に関して一様に$ y$について連続であるという．
+
+$f(x,Y)$\underline{が} $x$ \underline{について連続で} $x$ \underline{に関して一様に} $y$
+\underline{について連続ならば} $f(x,y)$ \underline{は2変数}$x,y$の関数としても連続である．
+
+\証明
+点$(a,b) \in I \times J$を任意にとる．任意の正の実数$ \varepsilon $
+に対応して，仮定により，正の実数$ \delta ( \varepsilon ) $が定まって
+\[
+	| y- b| < \delta ( \varepsilon ) \quad \text{ならば} \quad | f(x,y) - f(x,b) | < \varepsilon
+\]
+となる．さらに，$f(x,b)$が$x$について連続であるから，正の実数$ \gamma ( \varepsilon ) $が定まって
+\[
+	|x-a | < \gamma ( \varepsilon ) \quad \text{ならば} \quad | f(x,b) - f(a,b) | < \varepsilon
+\]
+となる．したがって
+\[
+	|x-a| < \gamma ( \varepsilon), | y-b| < \delta ( \varepsilon ) \quad \text{ならば} \quad
+|f(x,y) - f(a,b)| < 2\varepsilon
+\]
+故に$\displaystyle \lim_{(x,y)\rightarrow (a,b)} f(x,y) = f(a,b)$であるが，
+$(a,b)$は$ I \times J$の任意の点であった．故$f(x,y)$は2変数$(x,y)$の連続関数である．
+\■
+
+$f(x,y)$を例6.2の関数
+\[
+	f(x,y)= \begin{cases}
+\displaystyle		\quad	\frac{2xy}{x^2+y^2}		&	\quad (x,y) \ne (0,0) \\
+\\
+								\quad	0											&	\quad	(x,y)	=	(0,0)
+					\end{cases}
+\]
+とする．$f(x,y)$が$x$についても$y$についても連続であるが
+2変数$x,y$の関数としては原点$(0,0)$で連続でない．
+$f(x,0)=0, y \ne 0$のとき $f(x,y) = 2xy / (x^2 + y^2)$であるから，与えられた
+$ \varepsilon, 0 < \varepsilon < 1$，に対して
+\[
+	|y| < \delta \quad \text{ならば} \quad | f(x,y) - f(x,0) | < \varepsilon
+\]
+となるためには，
+\begin{align*}
+	\left|	\frac{2xy}{(x^2*y^2)}
+	\right|	<	\varepsilon	
+&	\Leftrightarrow |2xy| < \varepsilon (x^2 + y^2)
+  \Leftrightarrow |2xy| < \varepsilon x^2 + \varepsilon y^2
+	\Leftrightarrow \varepsilon |y|^2 - 2|x||y| + \varepsilon |x^2| > 0	\\
+&	\Leftrightarrow |y| > \frac{|x| + \sqrt{|x|^2 - \varepsilon^2 |x|^2 }}{\varepsilon}
+  \Leftrightarrow |y| > \frac{|x| + |x| \sqrt{ 1 - \varepsilon^2}}{\varepsilon}	\\
+&	\Leftrightarrow |y| > \frac{|x|}{\varepsilon}(1 + \sqrt{ 1 - \varepsilon^2})	\\
+\end{align*}
+つまり$\delta$は
+\[
+	\delta >  \frac{|x|}{\varepsilon}(1 + \sqrt{ 1 - \varepsilon^2})
+\]
+でなければならない．故に極限$ \displaystyle \lim_{y\rightarrow 0} f(x,y) = f(x,0)$の収束は$x$関して一様
+でない．
+
+\定理{6.18}
+2重数列$\{a_{mn} \}$が与えられたとき極限$\displaystyle \alpha_m = \lim_{n\rightarrow \infty} a_{mn}$
+および $ \displaystyle \lim_{m\rightarrow \infty} a_{mn}$
+が存在して$ a_{mn} \to \alpha_m \: ( n \to \infty) $の収束が$m$に関して一様.ならば，
+極限$\displaystyle \lim_{m\rightarrow \infty} \lim_{n\rightarrow \infty}
+a_{mn}, \lim_{n\rightarrow \infty} \lim_{m\rightarrow \infty} a_{mn}$が共に存在して等式：
+\begin{equation}
+	\lim_{m\rightarrow \infty} \lim_{n\rightarrow \infty} a_{mn}
+= \lim_{n\rightarrow \infty} \lim_{m\rightarrow \infty} a_{mn}
+\label{eq6x41}
+\end{equation}
+が成り立つ．
+
+\証明
+仮定により，任意の正の実数$\varepsilon$に対応して自然数$ n_0 ( \varepsilon )$が定まって
+\begin{equation}
+	n > n_0 ( \varepsilon ) \quad \text{のとき} \quad |a_{mn} - \alpha_m | < \varepsilon
+\label{eq6x42}
+\end{equation}
+となる．また，おのおのの$n$について自然数$m_0 ( \varepsilon , n ) $が定まって
+\[
+	m > k > m_0(\varepsilon , n ) \quad \text{のとき} \quad | a_{mn} - a_{kn} |	< \varepsilon
+\]
+となる
+\footnote{Cauchy の判定法
+}
+．故に$ \varepsilon $に対して$ n > n_0 ( \varepsilon ) $なる$n$を一つ定めて
+$m_0 ( \varepsilon ) = m_0 ( \varepsilon , n )$とおけば，
+\[
+	\alpha_m - \alpha_k  \leqq | \alpha_m - a_{mn} | + | a_{mn} - a_{kn} | + | a_{kn}-\alpha_k |
+\]
+であるから
+\footnote{
+	(\ref{eq6x42})を$m,k$と2回使い，$m_0(\varepsilon,n)$を真ん中の絶対値に使う．
+}
+，
+\[
+	m > k > m_0 ( \varepsilon) \quad \text{のとき} \quad | \alpha_m - \alpha_k | < 3 \varepsilon
+\]
+となるが，$ \varepsilon $は任意の実数であった．
+故に，Cauchy の判定法により，極限$ \displaystyle \lim_{m \to \infty} \alpha_m$
+が存在する．(\ref{eq6x42}）により
+\[
+	n > n_0( \varepsilon ) \quad \text{のとき} \quad 
+\left| \lim_{m\rightarrow \infty}	a_{mn} - \lim_{m\rightarrow \infty} \alpha_m
+\right| \leqq \varepsilon
+\]
+\footnote{
+有界な数列には上極限と下極限が存在し，収束する場合には上極限と上限は一致する。
+$\varepsilon$が上極限の場合に$\varepsilon$と等号，上極限でない場合には不等号。
+}
+故に
+\[
+	\lim_{n\rightarrow \infty} \lim_{m\rightarrow \infty} a_{mn}
+= \lim_{m\rightarrow \infty} \alpha_m
+= \lim_{m\rightarrow \infty} \lim_{n\rightarrow \infty} a_{mn}
+\]
+\■
+
+この定理によれば$ a_{mn} \to \alpha_m ( n \to \infty)$の収束が$m$に関して一様であるという仮
+定の下では極限$ \displaystyle \lim_{m\rightarrow \infty} \lim_{n\rightarrow \infty} a_{mn} $
+は$ \lim_{m\rightarrow \infty} $ と $\lim_{n\rightarrow \infty}$の
+順序によらない，すなわち$ \displaystyle \lim_{m\rightarrow \infty}$と
+$ \displaystyle \lim_{n\rightarrow \infty}$を交換しても変わらない．
+このことは無条件では成立しない．
+
+\例{6.13}
+$a_{mn} = (-1)^n m / (m+n)$とおけば
+$ \lim_{n\rightarrow \infty} a_{mn} = 0 , \lim_{m\rightarrow \infty} \lim_{n\rightarrow \infty} a_{mn} = 0,
+\lim_{m\rightarrow \infty} a_{mn} = (-1)^n$であるが，
+$ \displaystyle \lim_{m\rightarrow \infty} \lim_{m\rightarrow \infty} a_{mn} = \lim_{n\rightarrow \infty} (-1)^n$
+は存在しない，
+
+また，たとえば，$ a_{mn} = m / (m+n)$とおけば$ \displaystyle \lim_{n\rightarrow \infty} a_{mn} = 0 ,
+\lim_{m\rightarrow \infty} \lim_{n\rightarrow \infty} a_{mn} = 0, \lim_{m\rightarrow \infty} a_{mn} = 1$
+であって，極限$ \displaystyle lim_{n \to \infty } lim_{m \to \infty } a_{mn} = 1$は存在するが等式
+（\ref{eq6x41}）は成立しない．
+
+定理6.18によれば，したがって，$a_{mn} \to 0 \: ( n \to \infty)$の収束は\underline{$m$に関して一様でない}はずである．
+実際与えられた$ \varepsilon , 0 < \varepsilon < 1 $，に対して
+$ n > n_0$のとき$ a_{mn} < \varepsilon $となったとすれば
+$ m < \varepsilon ( m + n_0 + 1)$，したがって$ n_0 > (1/\varepsilon - 1) m -1 $となるから，
+すべての$m$について$ n > n_0 ( \varepsilon ) $のとき$ a_{mn} < \varepsilon $となるように$n_0( \varepsilon$
+を定めることはできない．――
+
+2重数列$\{a_{mn}\}$はすなわち$\N \times \N$で定義された2変数$m,n$の関数
+$a(m,n) = a_{mn}$である．数直線$\R$上の或る区間$I$で定義された関数列$\{ f_n(x) \}$を
+$ I \times \N$で定義された$x$と$n$の関数$f(x,n) = f_n (x)$と考えれば，
+$ f(x,n)$に関して上記の定翠6.18と同様な結果が成り立つ.
+すなわち，関数列$\{f_n(x)\}$が区間$I$において\underline{一様に収束する}とき，
+点$c \in I$に対して極限$ \displaystyle \lim_{x\rightarrow  c} f(_n(x)$が存在すれば極限
+$ \displaystyle \lim_{x\rightarrow c} \lim_{n\rightarrow  \infty} f_n(x)$および
+$ \displaystyle \lim_{n\rightarrow \infty} \lim_{x\rightarrow c} f_n(x) $が存在して等式
+\begin{equation}
+	\lim_{x\rightarrow c} \lim_{n\rightarrow \infty} f_n(x)
+= \lim_{n\rightarrow \infty} \lim_{x\rightarrow c} f_n(x)
+\label{eq6x43}
+\end{equation}
+が成り立つ．特に区間$I$で$f_n(x)$が連続で$\{f_n(x) \}$が一様に収束する揚合には
+任意の点$c \in I$に対して$ \displaystyle \lim_{x\rightarrow c} f_n(x) = \lim_{n\rightarrow \infty} f_n (c)$であるから，
+（\ref{eq6x43}）により，
+\[
+	\lim_{x\rightarrow c} \lim_{n\rightarrow \infty} f_n(x) = \lim_{n\rightarrow \infty} f_n(c).
+\]
+すなわち$\displaystyle f(x) = \lim_{n\rightarrow \infty} f_n( x) $は$I$で連続である．
+この結果は\S \ref{sec5x3}の定理5.5，($1^\circ$)に他ならない．
+
+$f_n(x)$が閉区間$[a,b]$で連続な関数で関数列$ \{ f_n (x) \}$が$[a,b]$で一様に収束すれば
+\begin{equation}
+	\lim_{n\rightarrow \infty}
+	\int_a^b	f_n(x) dx = \int_a^b \lim_{n\rightarrow \infty}	f_n(x) dx,
+\label{eq6x44}
+\end{equation}
+これは \S 5.4 の定理5.8である．定積分は有限和の極限であるから，この定理5.8も
+極限の順序に関する定理であり．実際（\ref{eq6x44}）を定理6.18を用いてつぎのようにして
+直接証明することができる：\S \ref{sec4x1}で，定理4.2に関連して述べたように，関数
+$g(x)$が$[a,b]$で連続ならば
+\[
+	\frac{1}{b-a}\int_a^b g(x) dx = \lim_{m\rightarrow \infty}\frac{1}{m} \sum_{k=1}^{m}g(x_k),\quad x_k = a+ \frac{k(b-a)}{m}.
+\]
+仮定により$\{f_n(x) \}$は$[a,b]$で一様に収束するから，$	\displaystyle	f(x) = \lim_{n\rightarrow \infty}	f_n(x)$は
+$[a,b]$で連続である。また，任意の正の実数$\varepsilon$に対応して自然数$n_0(\varepsilon )$が定まって
+\[
+	n	>	n_0	(	\varepsilon	)	\quad \text{のとき}\quad | f_n(x) - f(x)| < \varepsilon
+\]
+となる．
+\[
+	a_{mn} = \frac{1}{m} \sum_{k=1}^{m}	f_n(x_k), \quad
+	\alpha_m = \frac{1}{m} \sum_{k=1}^{m}	f(x_k)
+\]
+とおけば，したがって
+\[
+	n	>	n_0	(	\varepsilon	)	\quad	\text{のとき}	\quad | a_{mn} - \alpha_m | < \varepsilon
+\]
+となり，$n_0(\varepsilon)$は$m$に関係なく定まる．
+すなわち$ n \to \infty$のとき$ a_{mn}$は$m$に関して一様に$ \alpha_m$に収束する.
+そして極限：
+\[
+	\lim_{m\rightarrow \infty}	a_{mn}	=	\frac{1}{b-a}	\int_a^b f_n(x) dx
+\]
+が存在する．故に，定理6.18により，
+\[
+	\lim_{n\rightarrow \infty}	\lim_{m\rightarrow \infty}	a_{mn}	=
+	\lim_{m\rightarrow \infty}	\lim_{n\rightarrow \infty}	a_{mn}	=
+	=	\lim_{m\rightarrow \infty}	\alpha_m	=	\frac{1}{b-a} \int_a^b f(x) dx.
+\]
+したがって
+\[
+	\lim_{n\rightarrow \infty}	\int_a^b f_n(x) dx = \int_a^b f(x) dx,
+\]
+\■

@@ -1,0 +1,236 @@
+\chapter{微分法}
+
+\section{微分係数，導関数}
+\label{sec3x1}
+
+$f(x)$を或る区間$I$で定義された関数とし、$a$を$I$に属する一つの点とすれば
+$(f(x)-f(a))/(x-a)$は$I$で\underline{$a$を除いて定義された$x$の関数}となる．このとき極限：
+\[
+	\lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}
+\]
+が存在するならば、$f(x)$は$a$で\textbf{微分可能}（differentiable）である，
+あるいは$x=a$で微分可能であるという．そしてこの極限を$a$における
+$f(x)$の\textbf{微分係数}（differential	coefficient）といい，$f'(a)$であらわす：
+\begin{align}
+	f'(a)	=	\lim_{x	\rightarrow	\infty}	\frac{f(x)-f(a)}{x-a}.
+	\label{eq3.1}
+\end{align}
+$f(x)$が$I$に属するすべての点$x$で微分可能であるとき，$f(x)$は微分可能である，
+あるいは$f(x)$は$x$について微分可能であるという．このとき$f'(x)$も
+$I$で定義された$x$の関数となる．
+$f'(x)$を$f(x)$の\textbf{導関数}（derived	function,	derivative）
+とよび、$f(x)$から$f'(x)$を求めることを$f(x)$を\textbf{微分する}，
+あるいは，$f(x)$を$x$について，微分するという．(\ref{eq3.1})の
+$a$を$x$で，$x$を$x-h$で置き換えれば，
+\begin{equation}
+	f'(x)	=	\lim_{h	\rightarrow	0}	\frac{f(x+h)-f(x)}{h}.
+\end{equation}
+$y=f(x)$とおいたとき、$f'(x)$を$dy/dx$で表わす．$dy/dx$を\textbf{微分商}（differntial	quotient）
+ということもある．$\varDelta	x	=	h$，$\varDelta	y	=	f(x	+	\varDelta	x)	-	f(x)$とおけば
+\[
+	\frac{dy}{dx}	=	f'(x)	=	\lim_{\varDelta	x	\rightarrow	0}	\frac{\varDelta	y}{\varDelta	x}.
+\]
+このとき、独立変数$x$が$\varDelta	x$だけ増加して$x	+	\varDelta	x$となるとき従属変数$y$が、
+$\varDelta	y$だけ増加して$y	+	\varDelta y$となる，という意味で、$\varDelta	x$，$\varDelta	y$をそれぞれ，
+$x,y$の\textbf{増分}(increment)という．
+
+$f(x)$が$x$で微分可能なとき
+\begin{align*}
+	&\frac{f(x+h)-f(x)}{h}=f'(x)+\varepsilon(h,x) \\
+  &\text{つまり} \\
+ 	&\varepsilon(h,x) = f'(x) - \frac{f(x+h)-f(x)}{h}
+\end{align*}
+\[
+\]
+とおけば、$\varepsilon(h,x)$は$h,h\ne	0$の関数 であって、
+$\displaystyle \lim_{h\rightarrow	0}	\varepsilon(h,x)=0$である．
+$\varepsilon(h,x)$は$h	\ne	0$で定義された$h$の関数であるが、$h=0$のとき$\varepsilon(0,x)=0$と
+定義すれば、$h=0$の場合も含めて
+\begin{equation}
+	f(x+h)-f(x)	=	f'(x)	h	+	\varepsilon(h,x)h,	\quad	\lim_{h\rightarrow	0}	\varepsilon(h,x)=0
+	\label{eq3x3}
+\end{equation}
+が成り立つ．$y=f(x)$とおけば，すなわち
+\[	\varDelta	y	=	\frac{dy}{dx}\varDelta x	+	\varepsilon(\varDelta	x	,x)	\varDelta	x
+\]
+一般に
+$\displaystyle	\lim_{x	\rightarrow	0}	\alpha(x)	=	\alpha(0)=0$なる関数$\alpha(x)$を
+\textbf{無限小}といい、$\varepsilon(x),\alpha(x)$が無限小であるとき、
+無限小$\varepsilon(x)\alpha(x)$を記号$o(\alpha(x))$で表わす．
+小文字の$o$で$\varepsilon(x)$を代表するわけである．記号$o(\alpha(x))$は関数$\varepsilon(x)$の具体的な
+形に関心が無い場合には便利である．この記号を用いれば、上の式は
+\begin{equation}
+	\varDelta	y =	\frac{dy}{dx}	\varDelta	x	+	o	(\varDelta	x),
+	\label{eq3x4}
+\end{equation}
+その上の式(3.3)は
+\begin{equation}
+	f(x+h)-f(x)	=f'(x)h	+	o(h)
+	\label{eq3x5}
+\end{equation}
+と書かれる．$x$を$a$、$x+h$を$x$で置き換えれば
+\begin{equation}
+	f(x)-f(a)	=f'(a)(x-a)	+	o(x-a)
+  \label{eq3x6}
+\end{equation}
+$a$で微分可能な関数$f(x)$に対して、１次方程式
+\begin{equation}
+	y=f(a)	+	f'(a)(x-a)
+  \label{eq3x7}
+\end{equation}
+の定める直線：
+\[
+	\{	(x,y)	\:	|	\:	y=f(a)+f'(a)(x-a),	\quad	x	\in	\R	\}	
+\]
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=9cm,height=6cm]{p108.bmp}
+	\label{p108}
+\end{figure}
+を関数$f(x)$のグラフ：$G_f=\{x,f(x)	\:	|	\:	x	\in	I\}$の点$(a,f(a))$における
+\textbf{接線}(tangent line)とよぶ．高校数学では点$(a,f(a))$における
+グラフ$G_f$の接線というものがあって、その方程式が(\ref{eq3x7})であると考えたが，
+われわれの立場では、方程式(\ref{eq3x7})の定める直線を$(a,f(a))$における$G_f$の接線と定義するのである．
+――
+
+関数$y=f(x)$の微分係数を表わす記号は$f'(x)$，$dy/dx$の他に$y'$，$\dot{y}$，$df(x)/dx$，
+$d(f(x))/dx$，$(d/dx)f(x)$，$Df(x)$，等，いろいろある．$\displaystyle	dy/dx=\lim_{\varDelta	x	\rightarrow	0}
+\varDelta	y/	\varDelta	x$の分母$dy$，分子$dx$はそれぞれ、'無限に小さくなった’増分
+‘$\varDelta	y$'，‘$	\varDelta	x$の意味を与える1つの方法として，
+$x$の関数$y=f(x)$の\textbf{微分}（differntial）$dy=df(x)$を
+\begin{equation}
+	dy=df(x)	=	f'(x)	\varDelta	x
+\end{equation}
+と定義する．微分$dy=df(x)=f'(x)\varDelta	x$を変数$x$と変数$\varDelta	x$の両方の関数と考える
+のである．そうすれば、$x$を$x$の関数と見たときその微分係数は
+$\displaystyle	x'=\lim_{\varDelta	x	\rightarrow	0}	\varDelta	x	/	\varDelta	x=1$であるから，
+\[
+	dx	=	\varDelta	x,
+\]
+したがって
+\[
+	\frac{dy}{dx}	=	\frac{f'(x)\varDelta	x}{\varDelta	x}=f'(x).
+\]
+
+\定理{3.1}
+点$x$で$f(x)$が微分可能ならば、その点$x$で$f(x)$は連続である．
+
+\証明
+$y=f(x)$とおけば、(3.4)により、$\varDelta	x	\rightarrow	0$のとき
+$\varDelta	y	\rightarrow	0$，すなわち，$f(x+\varDelta	x)	-	f(x)	\rightarrow	0$．
+故に$f(x)$は$x$で連続である．
+\■
+
+この証明で点$x$の$x$は区間$I$に属する１つの点，$f(x)$の$x$は変数，
+$\varDelta	x$は$x$とは関係の無い別な変数$h$であって、はじめは混乱しやすいが，
+このような記号の用法は少数の文字で間に合い，式が短く書けるので経済的であり，
+また，考察している状況を示唆する，たとえば$\varDelta	x$は$x	+	h$の$h$であって
+$t+h$の$h$ではないことを示唆する，ということもあって，慣れれば便利である．
+
+\系
+或る区間で定義された微分可能な関数は連続関数である．
+
+上の定理3.1が示すように，$f(x)$が点$x$で微分可能ならば$f(x)$はその点$x$
+で連続であるが，$x$以外の点における$f(x)$の連続性については何もいえない．
+
+\例{3.1}
+区間$(0,1)$で連続関数$f(x)$をつぎのように定義する．
+$x$が無理数のときは$f(x)=0$，$x$が有理数のときは$x$を規約分数：
+$x=q/p$，$p$と$q$は互いに素な自然数，の形に表わして
+$f(x)=1/p^3$とおく．この関数$f(x)$が区間$(0,1)$内のすべて有理点で
+不連続なことは明らかであろう．$\alpha$を区間$(0,1)$内の
+$\alpha=b\sqrt{2}/a$，$a$と$b$は自然数，の形の無理数とすれば
+$f(x)$は$x=\alpha$で微分可能である．
+\証明
+\[
+	\lim_{x\rightarrow	\alpha}	\frac{f(x)-f(\alpha)}{x-\alpha}=0
+\]
+であることを証明するのであるが，まず既約分数$q/p$，$0	<	q/p	<	1$，に対して
+$q/p-\alpha$を下から評価する．
+\[
+	\left(\frac{q}{p}+\alpha	\right)\left(\frac{q}{p}-\alpha	\right)
+	=
+	\frac{q^2}{p^2}-\alpha^2	=	\frac{q^2}{p^2}-\frac{2b^2}{a^2},
+\]
+したがって
+\[
+	a^2p^2\left(\frac{q}{p}	+	\alpha	\right)
+				\left(\frac{q}{p}	-	\alpha	\right)
+	=	a^2q^2	-	2b^2p^2.
+\]
+この等式の左辺は$0$でなく，右辺は整数である．ゆえに
+\[
+	a^2p^2	\left(	\frac{q}{p}+\alpha	\right)\left|	\frac{q}{p}	-	\alpha	\right|	\geqq	1.
+\]
+$q/p$も$\alpha$も$0$と$1$の間にあるから$q/p-\alpha	<	2$．したがって
+\begin{equation}
+	\left|	\frac{q}{p}	-	\alpha \right| > \frac{1}{2 a^2 p^2}.
+\end{equation}
+$x,\:	x	\ne	\alpha$，が無理数ならば
+	\[
+	\frac{f(x)-f(\alpha)}{x-\alpha}	=	0
+\]
+となることは関数$f(x)$の定義によって明らかであるから，$x$は既約分数：
+$x=q/p$であるとする．そうすれば
+\[
+	\frac{f(q/p)-f(\alpha)}{q/p-\alpha}
+	=
+	f	\left(	\frac{q}{p}	\right)
+		\left/	\left(	\frac{q}{p}		-	\alpha	\right)
+  =
+  \left(\frac{1}{p^3}\right) \right/	\left(	\frac{q}{p}		-	\alpha	\right),
+\]
+したがって(3.9)により
+\[
+	\left|	\frac{f(q/p)-f(\alpha)}{q/p-\alpha}	\right|
+	=
+	\left(	\frac{1}{p^3}	\right)	\left/	\left| \frac{q}{p} - \alpha	\right|
+	<
+	\left(	\frac{1}{p^3}	\right)	\right/	\frac{1}{2a^2p^2}
+	=\frac{2a^2}{p}.
+\]
+任意の正の実数$M$に対して$p<M$なる既約分数$q/p,\:	0	<	q/p	<	1$，は有限個しかないから，
+$q/p	\rightarrow	\alpha	$のとき$p	\rightarrow	+\infty$，したがって$2a^2/p	\rightarrow	0$
+となる．ゆえに
+\[
+	\lim_{\displaystyle	q/p	\rightarrow	\alpha}	
+		\frac{f(q/p)-f(\alpha)}{q/p	-	\alpha}	=	0.
+\]
+すなわち$f(x)$は$x=\alpha$で微分可能で$f'(\alpha)=0$である．
+\■
+
+無理点$\alpha$は明らかに区間$(0,1)$で到る所稠密に分布している．
+ゆえに\underline{$f(x)$が不連続な点と微分可能な点がそ} \underline{れぞれ区間$(0,1)$
+で到る所稠密に分布している．}
+このような奇妙な現象を観察することは微分の精密な意味の把握に有効である．
+
+微分係数の定義：
+$\displaystyle f'(a)=\lim_{x	\rightarrow	a}(f(x)-f(a))/(x-a)$において，
+$a$が$f(x)$の定義域$I$の左端である場合，たとえば$I=[a,b]$なる場合には，\S 2.1で述べたように，
+$\displaystyle \lim_{x	\rightarrow	a}$は$x$が右から$a$に近づいたときの極限：
+$\displaystyle \lim_{x\rightarrow	a+0}$を意味するから，
+\[
+	f'(a)=\lim_{x	\rightarrow	a+0}\frac{f(x)-f(a)}{x-a}.
+\]
+一般に，$a$が$I$の内点であっても，極点：
+$\displaystyle	\lim_{x	\rightarrow	a+0}(f(x)-f(a))/(x-a)$が存在するならば，
+この極限を$f(x)$の$a$における\textbf{右微分係数}（right	differential	coefficient）
+といい，$D^{+}f(a)$で表わす：
+\[
+	D^{+}f(a)	=	\lim_{x	\rightarrow	a	+	0}\frac{f(x)-f(a)}{x-a}.
+\]
+そして，このとき，$f(x)$は$a$で右へ微分可能である，あるいは
+\textbf{右微分可能}(right	differentiable)であるという．
+\[
+	D^{+}f(x)	=	\lim_{h	\rightarrow	+0}	\frac{f(x+h)	-	f(x)}{h},
+\]
+また，$y=f(x)$とおけば
+\[
+	D^{+}y	=	\lim_{\varDelta	x	\rightarrow	+0}	\frac{\varDelta	y}{\varDelta	x}
+\]
+であることはいうまでもない．\textbf{右微分係数}$D^{-}f(x)$も同様に定義される．
+
+たとえば$f(x)$が区間$I=[a,b]$で定義された微分可能な関数ならば，
+$f'(a)=D^{+}f(a)$，$f'(b)=D^{-}f(b)$である．また，区間$I$で定義された関数
+$f(x)$が$I$の内点$a$で右へも左へも微分可能で$D^{+}f(a)=D^{-}f(a)$ならば，
+$f(x)$は$a$で微分可能で$f'(a)=D^{+}f(a)=D^{-}f(a)$である．

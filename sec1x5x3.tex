@@ -1,0 +1,321 @@
+\subsection{上極限，下極限}
+\label{sec1x5x3}
+
+有界な数列$\{a_n\}$が与えられたとして，$\{a_n\}$から初めの
+$m$個の項を除いた残り：
+$a_{m+1},a_{m+2},\cdots,a_{m+n},\cdots$
+の下限を$\alpha_m$とする：
+\[
+	\alpha_m	=	\inf_n	a_{m+n}.
+\]
+明らかに$\{\alpha_m\}$は単調非減少で有界である．
+故に，定理1.20により，$\{\alpha_m\}$は収束する．
+その極限：
+$\displaystyle
+	\lim_{m	\rightarrow	\infty}	\alpha_m
+$
+を数列$\{a_n\}$の\textbf{下極限}（inferior	limit）といい
+$\displaystyle
+	\liminf_{n	\rightarrow	\infty}	a_n,
+$または
+$
+\displaystyle
+	\varliminf_{n	\rightarrow	\infty}	a_n
+$
+で表わす．
+$\displaystyle
+	\alpha	=	\liminf_{n	\rightarrow	\infty}	a_n$は次の性質をもつ：
+正の実数$\varepsilon$が任意に与えられたとき，
+\begin{list}{}{}
+	\item	（ⅰ）$a_n	\leqq	\alpha-\varepsilon$なる項$a_n$は高々有限個しかない，
+	\item	（ⅱ）$a_n	<\alpha	+	\varepsilon$なる項$a_n$は無数にある．
+\end{list}
+
+\証明
+何故なら，$\alpha$は$\{\alpha_m\}$の上限である（定理1.20.（ⅰ））から，
+正数$\varepsilon$に対応して自然数$m_0(\varepsilon)$が定まって
+\[
+	m	>	m_0(\varepsilon)	\quad	\text{のとき}	\quad	\alpha	-	\varepsilon	<	\alpha_m	\leqq	\alpha
+\]
+となっているが，
+$\displaystyle
+	\alpha_m=\inf_n	a_{m+n}$，すなわち
+$\displaystyle
+	\alpha_m=\inf_{n>m}a_n$
+であるから，$n>m$ならば$a_n\geqq	\alpha_m>	\alpha	-\varepsilon$，
+対偶をとって言い換えれば，$a_n	\leqq	\alpha-\varepsilon$ならば
+$n	\leqq	m$である（（ⅰ））．
+
+また各$m$に対して，下限の性質より
+$n>m$なるすべての$n$に対して$a_n	<	\alpha_m+	\varepsilon$なる$a_n$である
+（（ⅱ））．
+\■
+
+同様に，$\displaystyle
+\beta_m	=	\sup_n	a_{m+n}$とおけば，単調非増加数列$\{\beta_m\}$
+は収束する．
+
+その極限：
+$\displaystyle
+	\lim_{m	\rightarrow	\infty}	\beta_m$を$\{a_n\}$の
+\textbf{上極限}（superior	limit）といい
+$\displaystyle
+\limsup_{n	\rightarrow	\infty}	a_n,
+$または
+$\varlimsup_{n	\rarrow	\infty}	a_n$で表わす．
+$\displaystyle
+	\beta=\limsup_{n	\rarrow	\infty}	a_n$とおけば
+，正の実数$\varepsilon$が任意に与えられたとき，
+\begin{list}{}{}
+	\item	（ⅰ）$a_n	\geqq	\beta	+	\varepsilon$なる項$a_n$は高々有限個しかない，
+	\item	（ⅱ）$a_n	>	\beta	-	\varepsilon$なる項$a_n$は無数に存在する．
+\end{list}
+\証明
+何故なら，$\beta$は$\{\beta_m\}$の下限である（定理1.20（ⅱ））から，任意の正数$\varepsilon$
+に対応して自然数$m_0(\varepsilon)$が定まって
+\[
+	m	>	m_0(\varepsilon)	\quad	\text{のとき}	\quad	\beta	\leqq	\beta_m	\leqq	\beta+\varepsilon
+\]
+となっているが，$\displaystyle
+\beta_m=\sup_n	a_{m+n}$，すなわち$\displaystyle
+\beta_m=\sup_{n>m}	a_m$であるから，$n>m$ならば，$a_n	\leqq	\beta_m	<	\beta+\varepsilon$，
+対偶をとって言い換えれば，$\beta+\varepsilon	<	a_n$ならば，
+$n	\leqq	m$（（ⅰ））．
+
+また各$m$に対して，上限の性質より，$n>m$なるすべての$n$に対して$\beta_m-\varepsilon	<	a_n$
+である（（ⅱ））．
+\■
+
+このように，\underline{
+有界な数列$\{a_n\}$に対して常にその上極限：}
+$\displaystyle
+\limsup_{n	\rarrow	\infty}	a_n$
+\underline{と下極限}
+$\displaystyle
+\liminf_{n	\rarrow	\infty}	a_n$
+\underline{が定まる}．
+$\displaystyle
+\inf_n	a_{m+n}	\leqq	\sup_n	a_{m+n}$だから
+\[
+	\liminf_{n	\rarrow	\infty}	a_n	\leqq	\limsup_{n	\rarrow	\infty}a_n.
+\]
+\underline{ここで等式が成り立つための必要かつ十分な条件は数列}
+$\{a_n\}$
+\underline{が収束することである．}
+
+\証明
+まず等式が成り立っているとして
+\[
+	a=\liminf_{n	\rarrow	\infty}	a_n	=\limsup_{n	\rarrow	\infty}	a_n
+\]
+とおけば，上極限，下極限の性質（ⅰ）により，正の実数$\varepsilon$が任意に与えられたとき，
+有限個の項$a_n$を除いて
+\[
+	a-\varepsilon	<	a_n	<	a+\varepsilon
+\]
+となる．故に，定理1.12により，数列$\{a_n\}$は$a$に収束する．
+
+逆に数列$\{a_n\}$が$a$に収束すると仮定すれば，任意の正の実数$\varepsilon$に対応して
+自然数$m_0(\varepsilon)$が定まって
+\[
+	n	>	m_0(\varepsilon)	\quad	\text{のとき}	\quad	a-\varepsilon	<	a_n	<	a+\varepsilon
+\]
+となる．
+$m>m_0$のとき，
+\begin{align*}
+	&a-\varepsilon	<	a_m			<	a+\varepsilon	\\
+	&a-\varepsilon	<	a_{m+1}	<	a+\varepsilon	\\
+	&a-\varepsilon	<	a_{m+2}	<	a+\varepsilon	\\
+	&\quad	\cdots\cdots	\\
+\end{align*}
+となる．すなわち$a-\varepsilon$，$a+\varepsilon$は$\{a_m,a_{m+1},a_{m+1},\cdots,\}$の
+上界，下界である．
+$\displaystyle
+\alpha_m	=	\inf_n	a_{m+n}$（下界の集合の最大値），$\displaystyle
+\beta_m=\sup_n	a_{m+n}$（上界の集合の最小値）とおけば，
+したがって，
+\[
+	m	>	m_0(\varepsilon)	\quad	\text{のとき}	\quad	a-\varepsilon	\leqq	\alpha_m	\leqq	\beta_m	\leqq	a+\varepsilon
+\]
+故に，たとえば，$n_0(\varepsilon)=m_0(\varepsilon/2)$とおけば，
+\[
+	m>n_0(\varepsilon)	\quad	\text{のとき}	\quad
+	a-\varepsilon	<	a-\frac{\varepsilon}{2}	\leqq	\alpha_m	\leqq	\beta_m	\leqq	a+\frac{\varepsilon}{2}	<	a+\varepsilon
+\]
+となる．したがって
+\[
+	m>n_0(\varepsilon)	\quad	\text{のとき}	\quad	|\alpha_m-a|	<	\varepsilon,\quad	|\beta_m-a|	<	\varepsilon
+\]
+となる．つまり
+\[
+	\lim_{m	\rarrow	\infty}	\alpha_m	=	\lim_{m	\rarrow	\infty}	\beta_m	=	a
+\]
+すなわち
+\[
+	\liminf_{n	\rarrow	\infty}	a_n	=	\limsup_{n	\rarrow	\infty}	a_n	=a.
+\]
+\■
+
+これで「有界な数列」$\{a_n\}$が収束するための必要かつ十分な条件は$\{a_n\}$の下極限と
+上極限が一致することであって，$\{a_n\}$が収束するときには
+\[
+	\liminf_{n	\rarrow	\infty}	a_n	=	\limsup_{n	\rarrow	\infty}	a_n	=\lim_{n	\rarrow	\infty}a_n
+\]
+であることがわかった．
+
+数列$\{a_n\}$が「上に有界でない」場合にはその上極限を
+\[
+	\limsup_{n\rarrow\infty}a_n=+\infty
+\]
+と定義し，$\{a_n\}$が「下に有界でない」場合にはその下極限を
+\[
+	\liminf_{n\rarrow\infty}a_n=-\infty
+\]
+と定義する．
+
+$\{a_n\}$が「上に有界でないが下に有界」のときには
+$	\displaystyle
+	\alpha_m=\inf_n	a_{m+n}$
+が定まり$\{\alpha_m\}$が単調非減少数列となる，
+たとえば，
+\[
+	a_n	=	\begin{cases}
+					\:	n		\quad		(n=2m)	\\
+					\:	\displaystyle	\frac{1}{n}		\quad		(n=2m+1)
+				\end{cases}
+\]
+のとき，
+\[
+	\limsup_{n\rarrow\infty}	a_n	=	\infty,\quad
+	\liminf_{n\rarrow\infty}	a_n	=	0.
+\]
+といった場合である．
+したがって
+$\{\alpha_m\}$は収束するか，
+または$+\infty$に発散する．
+いずれにしても$\displaystyle\lim_{m\rarrow\infty}\alpha_m$は確定するから
+\[
+	\liminf_{n\rarrow\infty}	a_n	=	\lim_{m\rarrow\infty}\alpha_m
+\]
+と定義する．
+$\displaystyle
+	\liminf_{n\rarrow\infty}a_n	=+\infty$なる場合には，
+$n>m$ならば$\alpha_m	\leqq	a_n$であるから，
+$\displaystyle\lim_{n\rarrow\infty}a_n=+\infty$となる（下極限ですら発散するのだから，
+$a_n$は発散する，正の無限大に発散の定義：定理1.20の次の記述を参照）．
+この場合を除けば
+下極限：$\displaystyle\alpha=\liminf_{n\rarrow\infty}a_n$は$\{a_n\}$が有界
+な場合の下極限と同じ性質（ⅰ），（ⅱ）をもつ．
+
+$\{a_n\}$が下に有界でないが上に有界なときの上極限：
+$\displaystyle
+	\limsup_{n\rarrow\infty}a_n$も
+同様に定義される，
+すなわち$\displaystyle
+\beta_m=\sup_m	a_{m+n}$が定まり$\{\beta_m\}$は単調非増加数列となる．
+したがって$\{\beta_m\}$は収束するかまたは$-\infty$に発散する．いずれにしても
+$\displaystyle
+	\lim_{m\rarrow\infty}\beta_m$は確定するから
+\[
+	\limsup_{n\rarrow\infty}a_n	=	\lim_{m\rarrow\infty}\beta_m
+\]
+と定義する．
+$\displaystyle
+	\limsup_{n\rarrow\infty}a_n=-\infty$なる場合には，
+$n>m$ならば$a_n	\leqq	\beta_m$であるから，
+$\displaystyle
+	\lim_{n\rarrow\infty}a_n=-\infty$となる．
+この場合を除けば上極限：
+$\displaystyle
+	\beta_m=\limsup_{n\rarrow\infty}a_n$は$\{a_n\}$が有界な場合の
+上極限と同じ性質（ⅰ），(ⅱ）をもつ．
+
+\例{1.2}
+$\alpha$を$\alpha>1$なる実数，$k$を自然数とすれば
+\[
+	\lim_{n\rarrow\infty}\frac{\alpha^n}{n^k}=+\infty.
+\]
+\証明
+$a_n=\alpha^n/n^k$とおく．
+\[
+	\lim_{n\rarrow\infty}\frac{(n+1)^k}{n^k}
+	=
+	\lim_{n\rarrow\infty}\left(1+\frac{1}{n}\right)^k
+	=
+	\left(1+\lim_{n\rarrow\infty}\frac{1}{n}\right)^k
+	=
+	1^k=1
+\]
+であるから
+\[
+	\lim_{n\rarrow\infty}\frac{a_{n+1}}{a_n}
+	=
+	\lim_{n\rarrow\infty}	\frac{\displaystyle
+													\frac{\alpha^{n+1}}{(n+1)^k}
+															}{\displaystyle
+													\frac{\alpha^n}{n^k}
+															}
+	=
+	\lim_{n\rarrow\infty}\alpha\frac{n^k}{(n+1)^k}
+	=
+	\alpha\lim_{n\rarrow\infty}\frac{n^k}{(n+1)^k}
+	=
+	\alpha>1.
+\]
+故に$n>n_0$ならば$a_{n+1}/a_n	>	1$，すなわち$a_{n+1}>a_n$となるように自然数$n_0$を
+定めることができる．数列$\{a_n\}$はすなわち$n>n_0$のとき単調増加であって，
+したがって，$\{a_n\}$は$+\infty$に発散するか収束するかのいずれかである
+（定理1.20（2$^\circ$)は．成り立たない）
+いま$\{a_n\}$が$\beta$に収束したとすれば
+\[
+	\alpha
+		=
+	\lim_{n\rarrow\infty}\frac{a_{n+1}}{a_n}
+		=
+	\frac{\displaystyle	
+					\lim_{n\rarrow\infty}a_{n+1}}{
+				\displaystyle
+					\lim_{n\rarrow\infty}a_n}
+		=
+	\frac{\beta}{\beta}=1
+\]
+となって$\alpha>1$なることに矛盾する．故に$\{a_n\}$は$+\infty$に発散する．
+\■
+
+この結果はまた直接計算によっても確かめられる．
+すなわち$\alpha=1+\sigma$，$\sigma>0$，
+とおけば，２項定理により
+\[
+	\alpha_n	=	(1+\sigma)^n
+						=	1	+\binom{n}{1}\sigma
+							+	\cdots
+							+	\binom{n}{k+1}\sigma^{k+1}+\cdots
+\]
+であるから，
+\begin{align*}
+	\frac{\alpha^n}{n^k}	
+		&>	
+			\frac{1}{n^k}\binom{n}{k+1}\sigma^{k+1}
+		=
+			\frac{n(n-1)(n-2)\cdots	(n-k+1)(n-k)}{n^k(k+1)!}\sigma^{k+1}	\\
+		&=
+			\left(1-\frac{1}{n}\right)
+			\left(1-\frac{2}{n}\right)	\cdots
+			\left(1-\frac{k-1}{n}\right)
+			\frac{\sigma^{k+1}}{(k+1)!}(n-k)
+		>	\text{(*)}
+\end{align*}
+ここで，
+$n>2k$のとき
+\[
+		\left(	1	-	\frac{k-1}{n}	\right)
+	>	\left(	1	-	\frac{k-1}{2k}	\right)
+	=	\frac{k+1}{2k}
+	=	\left(	\frac{1}{2}	+	\frac{1}{2k}	\right)
+	>	\frac{1}{2}
+\]
+であるから，
+\begin{align*}
+	(*)	>	\frac{\sigma^{k+1}}{2^{k-1}(k+1)!}(n-k).	
+\end{align*}
+故に$\lim_{n\rarrow\infty}\alpha^n/n^k=+\infty$．

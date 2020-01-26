@@ -1,0 +1,324 @@
+\section{実数の加法，減法}
+
+本説では有理数の切断として定義された実数の加法，減法について述べる．実数の加・減・乗・除の演算は
+高校数学で自由に駆使してきたのであるが，そこでは実数が明確に定義されていなかったのであるから，
+その演算も明確な根拠に欠けていたわけである．
+
+以下本節では$\Q$の任意の部分集合$S$に対して$S'$は$S$の$\Q$における補集合を表わすものと約束しておく．$S	\cup	S'=\Q$，$S	\cap	S'	=	\varnothing$，$(S')'=S$なることはいうまでもない．
+
+有理数の任意の二つの集合$S,T$が与えられたとおきに，$s	\in	S,t	\in	T$の和$s+t$全体の集合を
+$S+T$で表わす：
+\[
+	S+T	=	\{s+t	\:	|	\:	s	\in	S,	t	\in	T	\}.
+\]
+また同様に
+\[
+	S+t	=	\{	s+	t	\:	|	\:	s	\in	S	\},
+\]
+などと書く．
+
+{\small
+実数$\alpha	=	\langle	A,	A'	\rangle$について$A=\{r	\in	\Q	\:	|	\:	r	<	\alpha	\}$
+であるから，二つの実数の和を次ぎのように定義するのは当然であろう：
+}
+
+\定義{1.3}
+二つの実数$\alpha	=	\langle	A,A'	\rangle$，$\beta=\langle	B,B'	\rangle$が任意に与えられたとき，
+$\alpha,\beta$の和を
+\[
+	\alpha	+	\beta	=	\sigma,	\quad	\sigma=\langle	S,S'	\rangle,\quad	S=A+B
+\]
+と定義する．
+
+ここで$\langle	S,S'	\rangle$が有理数の切断になっていることは次のようにして容易に確かめられるのであるが，まず，以下しばしば用いられる有理数の和に関する一つの性質を補題として述べておく：
+
+\補題{1.1}
+$a,b$が有理数のとき，$r	<	a	+	b$なる有理数$r$に対して$r=s+t,s<\alpha,t<b$なる有理数
+$s,t$が存在する．
+
+\証明
+$s=a-(a+b-r)/2$，$t=b-(a+b-r)/2$とおけば，明らかに$s+t=r$，
+\begin{align*}
+	a-s	&=	a	-	\{	a-(a+b-r)/2	\}	=	(a+b-r)/2	> 0	\\
+	b-t	&=	b	-	\{	b-(a+b-r)/2	\}	= (a+b-r)/2	>	0
+\end{align*}
+であるから，$s	<	a$，$t<b$である．
+\■
+
+さて$\langle	S,S	\rangle$が有理数の切断であることの証明であるが，まず$S$が空集合でないことは
+明らかである．つぎに$u	\in	A',	v	\in	B'$を任意にとれば，すべての$r	\in	A$，$s	\in	B$について
+$r+s<u+v$，つまり$r+s	\ne	u+v$，したがって$u+v	\notin	S$，すなわち$S'$も空集合でない．
+
+$S$に属する有理数$a+b$，$a	\in	A$，$b	\in	B$，を任意にとったとき，$r	<	a+b$なる有理数
+$r$は，補題1.1により，$s	<	a,\:	t	<	b$なる二つの有理数$s,t$の和として表わされる：
+$r=s+t$．$a	\in	A$だから$s	\in	A$，同様に$t	\in	B$．故に$r=s+t	\in	S$．すなわち$S$は切断の条件
+（ⅲ）を満たす．$S$に属する最大の有理数がないことは，$A$，$B$に最大数がないことから
+明らかである．
+
+\定理{1.7}
+
+実数の加法について結合法則と交換法則が成り立つ．すなわち，任意の実数$\alpha$，$\beta$，$\gamma$に
+ついて
+\begin{align*}
+		\alpha	+	(\beta	+	\gamma)	&=	(\alpha	+	\beta)	+	\gamma	\\
+								\alpha	+	\beta	&=	\beta	+	\alpha	\\
+\end{align*}
+
+\証明
+$\alpha	=	\langle	A,A'	\rangle$，$\beta	=	\langle	B,B'	\rangle$，
+$\gamma	=	\langle	C,C'	\rangle$とすれば，有理数に関する結合法則，交換法則により
+\[
+	A+(B+C)	=	(A+B)+C,\quad	A+B=B+A
+\]
+故に，定義1.3により，$\alpha+(\beta+\gamma)=(\alpha+\beta)+\gamma,
+\alpha+\beta=\beta+\alpha$．
+\■
+
+結合法則により，たとえば
+\[
+		((	\alpha	+	\beta	)	+	\gamma	)	+	\delta	
+	=	(	\alpha	+	\beta)	+	(	\gamma	+	\delta)
+	=	\alpha	+	(	\beta	+	(\gamma	+	\delta))
+\]
+である．このようにどこに括弧を入れても和は同じであるから，ふつう実数の和を
+表わすのに括弧を略して，たとえば
+\[
+	\alpha	+		\beta	+	\gamma	+	\delta
+\]
+と書く．これは高校数学で学んだ通りである．
+
+$\alpha	=	a$，$\beta	=	b$が有理数のときには，定義1.3による実数としての和
+$\alpha	+	\beta$と既知であった有理数としての和$a+b$は一致する：
+$\alpha	+	\beta	=	a	+	b$．
+なぜかといえば，
+\begin{align*}
+	\alpha	&=\langle	A,A'	\rangle,	\quad	\beta=\langle	B,B'	\rangle	\\
+				A	&	=\{	r	\in	\Q	\:	|	\:	r	<	a	\},	\quad
+				B		=\{	s	\in	\Q	\:	|	\:	s	<	b	\}
+\end{align*}
+のように表すと、$A+B=\{	r	\in	\Q	\:|	\:	t	<	a+b	\}$が成立する。
+
+$\because$
+
+$t_0	\in	A+B$とすると$A+B$の定義より$t_0=r+s,	\:	r	\in	A,	s	\in	B$を満たす$r,s$が存在する．
+$r	\in	A,	\:	s	\in	B$ならば$r<a,s<b$であるから，$t_0=r+s<a+b$．
+したがって$t_0	\in	\{	t\in	\Q	\:|\:	t<a+b	\}$．
+すなわち$A+B	\subset	\{	t\in	\Q	\:|\:	t<a+b	\}$．
+
+一方、$t_0	\in	\{	t\in	\Q	\:|\:	t<a+b	\}$とすると$t_0	<	a+b$．
+補題1.1により$t_0	<	a+b$なる有理数$t_0$に対して、
+$r_0	<	a,	\:	s_0<b,	\:	t_0=r_0+s_0$なる有理数$r_0,s_0$が存在する．
+このとき$r_0	\in	A,s_0	\in	B$であるから$A+B$の定義より
+$t_0	\	in	A+B$，したがって$A+B	\subset	\{	t\in	\Q	\:|\:	t<a+b	\}$
+
+以上より$A+B	=	\{	t\in	\Q	\:|\:	t<a+b	\}$．
+\begin{align*}
+	\therefore	\quad
+	\alpha	+	\beta	
+		&=	\langle	A+B,(A+B)'	\rangle	\\
+		&=	\langle	\{	t\in	\Q	\:|\:	t<a+b	\},\{	t\in	\Q	\:|\:	t	\geqq	a+b	\}	\rangle	\\
+		&=	a+b	\quad	\text{（切断Ⅱ型）}
+\end{align*}
+
+$\beta	=	b$が有理数，$\alpha=\langle	A	,	A'	\rangle$が任意の実数のとき
+\begin{equation}
+	\alpha	+	b	=	\langle	A	+	b,A'+b	\rangle	.\label{eq:1.13}
+\end{equation}
+
+$\because$
+
+$b=\langle	B,B'	\rangle$とする．
+
+
+この式を証明するには$A+B=A+b,	\:	(A+B)=(A+b)'$なることを示せばよい．
+$t	\in	A+B$とすると$A+B$の定義より$r	\in	A,\;	s	\in	B,	\:	t=s+r$なる
+$r,s$が存在し，$B$に定理1.3を適用して$s	<	b$．
+この事実と$A$に定理1.3を適用することにより$r-(b-s)	<	r-0	<	\alpha$.
+$r-(b-s)$に定理1.3を適用することにより$r-(b-s)	\in	A$．
+
+$r	\in	A,s	\in	B$とすれば，
+$s<b$だから$r-(b-s)<r$，したがって$r-(b-s)	\in	A$．故に
+\[
+	r+s=(r-(b-s))+b	\in	A	+	b.
+\]
+したがって，$A+B	\subset	A+b$．
+
+一方$t	\in	A+b$とすれば$r	\in	A,	\:	t=r+b$なる$r$が存在する．
+有理数の切断の定義（ⅱ）より$A$には最大の有理数は存在しないから，
+$r	<	t_0,	\:	t_0	\in	A$なる$t_0$が存在する．
+このとき$b-(t_0-r)	<	b	\in	B$であるから，
+\[
+	t=r+b=t_0+(b-(t_0-r))	\in	A+B.
+\]
+したがって、$A+b	\subset	A+B$．
+以上より$A+B=A+b$．
+
+次に、$(A+B)'=(A+b)'$を示す．
+\begin{align*}
+	t	\in	(A+b)'
+		&\Longleftrightarrow
+			t	\notin	A+b	\\
+		&\Longleftrightarrow
+			t-b	\notin	A	\\
+		&\Longleftrightarrow
+			t-b	\in	A'		\\
+		&\Longleftrightarrow
+			t	\in	A'+b		\\
+\end{align*}
+以上より$\alpha	+	b	=	\langle	A+B,(A+B)'	\rangle
+										=	\langle	A+b,(A+b)'	\rangle$．
+ただし$A+b$とは$A+b	=	\{r	\in	\Q	\:	|	\:	r=a+b,	\:	a	\in	A	\}$．
+\■
+
+上の式(\ref{eq:1.13})で$b=0$とおけば，$\alpha+0=\langle	A+0,A'+0	\rangle=\alpha$，
+したがって，交換法則を用いれば，
+\[
+	0+\alpha=\alpha+0	=	\alpha.
+\]
+すなわち，$0$は加法に関する単位元である．
+
+つぎに実数$\alpha$に対して$-\alpha$を定義しよう．まず$\alpha=a$が有理数のときは$-\alpha=-a$
+とおく．これは当然であろう．$\alpha=\langle	A,A'	\rangle$が無理数のときは
+\[
+	-\alpha=\langle	-A',-A	\rangle,\:	-A'	=\{-r	\	|	\:	r	\in	A'	\}	
+																	\:	-A	=\{-r	\	|	\:	r	\in	A		\}
+\]
+と定義する．$\langle	A,A'	\rangle$はⅠ型であるから，$\langle	-A',-A	\rangle$が
+有理数の切断をなしている．
+
+$\because$
+$A	\ne	\varnothing$であるから$-A	\ne	\varnothing$，同様に$-A'	\ne	\varnothing$．
+$A	\cap	A'	\varnothing$であるから$(-A')	\cap	(A')	=	\varnothing$．
+$A	\cup	A'	=	\Q$であるから$(-A)	\cup	(-A')	=	\Q$．$t	\in	-A'$，$s	\in	-A$とすると
+$-t	\in	A'$，$-s	\in	A$であるから$-s	<	-t$，よって$t	<	s$．
+$\alpha$は無理数であるから$A'$に属する最少数は存在しない．よって$-A'$に属する最大数は
+存在しない．
+
+以上より$\langle	-A',-A	\rangle$は有理数の切断である．
+\■
+
+\定理{1.8}
+\[
+	-\alpha+\alpha=\alpha+(-\alpha)=0
+\]
+\証明
+$\alpha=\langle	A,A'	\rangle$が無理数のときを考えればよい．
+このとき$-\alpha	=	\langle	-A',-A	\rangle$であり，
+$\alpha+(-\alpha)=\langle	A+(-A'),(A+(-A))'	\rangle=0$，$A+(-A')=\{t	\in	\Q	\:	|	\:	t	<	0	\}$
+が成り立つことを証明する．
+
+$t_0	\in	A+(-A')$とすると，$r	\in	A,s	\in	-A',t_0=r+s$なる$r,s$が存在する．
+このとき$-s	\in	A'$，
+したがって$-s	>	r$だから$r	+	s	<	0$すなわち$t_0	\in	\{t	\in	\Q	\:	|	\:	t<0	\}$，
+$A+(-A')	\subset	\{t	\in	\Q	\:	|	\:	t<0	\}$
+
+逆に$t_0	\in	\{t	\in	\Q	\:	|	\:	t<0	\}$なる有理数$t_0$は
+$t_0=r+s$，$r	\in	A,s	\in	-A'$と表される．
+このことを確かめるために$1/m	<	-t_0$なる自然数
+$m$を定める．定理1.5により$r<\alpha	\leqq	r+1/m$なる有理数$r$が存在する．
+$s=t_0-r$とおけば，
+\[
+	-s=r-t_0	>	r+\frac{1}{m}	\geqq	\alpha,
+\]
+したがって$-s	\in	A'$．故に$t_0=r+s$，$r	\in	A$，$s	\in	-A'$．
+つまり$t_0	\in	A+(-A')$．
+
+これで
+\[
+	A+(-A')=\{t	\in	\Q	\:	|	\:	t	<	0	\}
+\]
+なることが証明された．故に$\alpha+(-\alpha)	=	0$．したがって，交換法則により，
+$-\alpha+\alpha=0$．
+\■
+
+この定理1.8は加法に関して$-\alpha$が$-\alpha$の逆元であることを示している．
+$\beta+(-\alpha)$を$\beta-\alpha$と書く．
+結合法則により
+\begin{align*}
+	(\beta-\alpha)+\alpha	&=(\beta+(-\alpha))+\alpha	\\
+												&=\beta+((-\alpha)+\alpha)	\\
+												&=\beta+0	\\
+												&=\beta	\\
+	(\beta+\alpha)-\alpha	&=\beta+((-\alpha)+\alpha)	\\
+												&=\beta+0	\\
+												&=\beta
+\end{align*}
+である．
+
+これで有理数の切断として定義された実数について加法と減法に関する
+基本的な法則が確立された．これから高校数学で学んだ加法，減法に関する
+いろいろな公式を導き出すことは容易である．たとえば
+\[
+	\alpha=(\alpha-(\beta-\gamma))+(\beta-\gamma)=((\alpha-(\beta-\gamma))+\beta)-\gamma
+\]
+であるから
+\[
+	\alpha+\gamma-\beta=((\alpha-(\beta-\gamma))+\beta)-\beta=\alpha-(\beta-\gamma),
+\]
+すなわち
+\[
+	\alpha-(\beta-\gamma)=\alpha+\gamma-\beta.
+\]
+また，ここで$\alpha=\beta=0$とおけば，
+\[
+	-(-\gamma)=\gamma
+\]
+実数の大小と加法の関係について，次の二つの定理が成り立つ．
+
+\定理{1.9}
+$	\alpha	\leqq	\gamma,\:	\beta	\leqq	\delta$ならば$\alpha	+	\beta	\leqq	\gamma	+	\delta$．
+
+\証明
+
+$\alpha=\langle	A,A'	\rangle$，$\beta=	\langle	B,B'	\rangle$，$\gamma=\langle	C,C'	\rangle$，
+$\delta=\langle	D,D'	\rangle$とすれば，仮定により$A	\subset	C$，$B	\subset	D$．故に
+$A+B	\subset	C+D$，すなわち$\alpha+\beta	\leqq	\gamma+\delta$．
+\■
+
+\定理{1.10}
+$\alpha	<	\gamma$，$\beta	\leqq	\delta$ならば$\alpha+\beta	<	\gamma	+	\delta$．
+
+\証明
+上の定理1.9により$\alpha+\beta	\leqq	\gamma+\delta$である．$\alpha	+	\beta	<	\gamma	+	\delta$
+なることを示すために$\alpha	+	\beta=\gamma+\delta$と仮定しよう．$\beta	\leqq	\delta$だから，
+定理1.9を用いて，$\delta-\beta	\geqq	\beta-\beta=0$を得る．
+故に，再び定理1.9を用いて，
+\[
+	\alpha=\alpha+\beta-\beta=\gamma+\delta-\beta=\gamma+(\delta-\beta)	\geqq	\gamma
+\]
+これは$\alpha	<	\gamma$に矛盾する．故に$\alpha+\beta	<	\gamma	+	\delta$．
+\■
+
+\系{1}
+不等式$\alpha	>	\beta$は$\alpha-\beta	>	0$と同値である．
+
+\証明
+$\alpha	>	\beta$とする．$\alpha+(-\beta)	>	\beta	+	(-\beta)$
+　$\therefore$$\alpha-\beta>0$．
+
+逆に，$\alpha-\beta>0$とする．
+$\alpha-\beta+\beta	>	0	+	\beta$．
+　$\therefore$$\alpha	>	\beta$．
+\■
+
+\系{2}
+$\alpha	<	0$は$-\alpha	>	0$と同値である．
+\■
+
+以上で実数の大小，加法，減法について高校数学で学んだことの基礎が確立された．
+
+任意の実数$\alpha$の絶対値$|\alpha|$を
+\begin{align*}
+	\begin{cases}
+		\alpha	\geqq	0	\text{　のとき　}	|\alpha|=\alpha,	\\
+		\alpha	<			0	\text{　のとき　}	|\alpha|=-\alpha
+	\end{cases}
+\end{align*}
+と定義する．
+
+\定理{1.11}
+$|\alpha+\beta|	\leqq	|\alpha|+|\beta|$．
+証明は高校数学で学んだ通りである．――
+
+二つの実数$\alpha$，$\beta$に対して$|\alpha-\beta|$を数直線上の2点
+$\alpha$，$\beta$の\textbf{距離}という．
